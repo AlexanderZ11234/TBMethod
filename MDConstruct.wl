@@ -5,7 +5,9 @@ BeginPackage["TBMethod`MDConstruct`"]
 (* Declare your package's public symbols here. *)
 
 (* Exported symbols added here with SymbolName::usage *) 
-HMatrixFromHoppings::usage = "Constructs the real-space tight-binding Hamiltonian matrix from two sets of points from a given hopping function, depending on the coordinates of one pair of points, within the space distance.";
+HMatrixFromHoppings::usage = "Constructs the real-space tight-binding Hamiltonian matrix from two sets of points from a given hopping function, depending on the coordinates of one pair of points, within the space distance upper limit.";
+
+ParallelHMatrixFromHoppings::usage = "Parallel version of ParallelHMatrixFromHoppings."
 
 HBloch::usage = "Constructs the reciprocal space Bloch Hamiltonian matrix, with automatic consideration of opposite hoppings.";
 
@@ -88,7 +90,28 @@ AttachFreeQ[fipts:{fpts:coordspattern, ipts:coordspattern}, dist_Real] := Length
 (*HMatrixFromHoppings[pts:coordspattern, tFunc_, dist_Real, sumfunc_:Sum] := HMatrixFromHoppings[{pts, pts}, tFunc, dist, sumfunc];*)
 (*General::maxrec: "Recursion limit exceeded; positive match might be missed."*)
 
-HMatrixFromHoppings[fipts:{fpts:coordspattern, ipts:coordspattern}, tFunc_, dist_Real, sumfunc_:Sum] :=
+HMatrixFromHoppings[fipts:{fpts:coordspattern, ipts:coordspattern}, tFunc_, dist_Real] :=
+Block[{dim = Length /@ fipts, neighbourinfos = neighbourInfos[fipts, dist], len, (*lenup = 1000,*) summand},
+	len = Length[neighbourinfos];
+	summand[ij_] := KroneckerProduct[SparseArray[ij -> 1, dim], tFunc[fpts[[#]], ipts[[#2]]] & @@ ij];
+	Which[
+		len == 0, KroneckerProduct[SparseArray[{}, dim], tFunc[fpts[[1]], ipts[[1]]]],
+		len > 0 , Sum[summand[ij], {ij, neighbourinfos}]
+	]
+];
+
+ParallelHMatrixFromHoppings[fipts:{fpts:coordspattern, ipts:coordspattern}, tFunc_, dist_Real, ops:OptionsPattern[ParallelSum]] :=
+Block[{dim = Length /@ fipts, neighbourinfos = neighbourInfos[fipts, dist], len, (*lenup = 1000,*) summand},
+	len = Length[neighbourinfos];
+	summand[ij_] := KroneckerProduct[SparseArray[ij -> 1, dim], tFunc[fpts[[#]], ipts[[#2]]] & @@ ij];
+	Which[
+		len == 0, KroneckerProduct[SparseArray[{}, dim], tFunc[fpts[[1]], ipts[[1]]]],
+		len > 0 , ParallelSum[summand[ij], {ij, neighbourinfos}, ops]
+	]
+];
+
+
+(*HMatrixFromHoppings[fipts:{fpts:coordspattern, ipts:coordspattern}, tFunc_, dist_Real, sumfunc_:Sum] :=
 Block[{dim = Length /@ fipts, neighbourinfos = neighbourInfos[fipts, dist], len, (*lenup = 1000,*) summand},
 	len = Length[neighbourinfos];
 	summand[ij_] := KroneckerProduct[SparseArray[ij -> 1, dim], tFunc[fpts[[#]], ipts[[#2]]] & @@ ij];
@@ -101,7 +124,7 @@ Block[{dim = Length /@ fipts, neighbourinfos = neighbourInfos[fipts, dist], len,
 		len == 0, KroneckerProduct[SparseArray[{}, dim], tFunc[fpts[[1]], ipts[[1]]]],
 		len > 0 , sumfunc[summand[ij], {ij, neighbourinfos}]
 	]
-];
+];*)
 
 (*HMatrixFromHoppings[pts:coordspattern, tFunc_, dist_Real] := HMatrixFromHoppings[{pts, pts}, tFunc, dist];
 HMatrixFromHoppings[fipts:{fpts:coordspattern, ipts:coordspattern}, tFunc_, dist_Real] :=
