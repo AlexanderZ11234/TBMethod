@@ -1,0 +1,192 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7262,        182]
+NotebookOptionsPosition[      5005,        129]
+NotebookOutlinePosition[      6843,        176]
+CellTagsIndexPosition[      6800,        173]
+WindowTitle->HCSRDiagOffDiagBlocks
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {GridBox[{
+      {
+       ItemBox[Cell[BoxData[
+         RowBox[{
+          TemplateBox[{12},
+           "Spacer1"], Cell["T B METHOD SYMBOL", "PacletNameCell",
+           TextAlignment->Center,ExpressionUUID->
+           "b2216017-e566-4825-b71a-f563b7c222bd"], 
+          TemplateBox[{8},
+           "Spacer1"]}]],
+         TextAlignment->Center,ExpressionUUID->
+         "6765e631-e693-48ef-b2c4-f36bc349b55d"],
+        Background->RGBColor[0.490196, 0.576471, 0.690196],
+        ItemSize->Full], ""}
+     },
+     GridBoxAlignment->{"Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {Full, 
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[Cell[BoxData[
+     TagBox[
+      ActionMenuBox[
+       FrameBox[Cell[TextData[{
+         "URL",
+         " ",
+         Cell[BoxData[
+          GraphicsBox[
+           {GrayLevel[0.66667], Thickness[0.13], 
+            LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+           AspectRatio->1,
+           ImageSize->20,
+           PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+          "29d6d8c3-0af0-47ad-9c3b-1b2c9deb1dc8"]
+        }],ExpressionUUID->"5c296697-86f0-441b-9a89-70b70a8ddcf8"],
+        StripOnInput->False], {"\<\"TBMethod/ref/HCSRDiagOffDiagBlocks\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["TBMethod/ref/HCSRDiagOffDiagBlocks"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/TBMethod/ref/\
+HCSRDiagOffDiagBlocks.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$17408], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"] <> 
+            "TBMethod/ref/HCSRDiagOffDiagBlocks" <> ".html"], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"],
+      MouseAppearanceTag["LinkHand"]]],
+     LineSpacing->{1.4, 0},ExpressionUUID->
+     "cffd8548-6c13-48ec-a64e-a89cac4dadb3"]], "AnchorBar",
+     CacheGraphics->False,ExpressionUUID->
+     "09ffcbdb-65d3-402d-bf2d-6b3f53a5d7d3"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"7818f21f-e36c-4f19-9870-c6ba954c25cd"],
+
+Cell["TBMethod`MDConstruct`", "ContextNameCell",ExpressionUUID->"c93e9493-e5df-4fe8-8eab-0423593c4b9b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {Cell[TextData[{
+     Cell[
+     "HCSRDiagOffDiagBlocks", "ObjectName",ExpressionUUID->
+      "ff6fba93-861c-4fa2-b643-c6eb907d7faf"],
+     Cell[BoxData[
+      TemplateBox[{8},
+       "Spacer1"]],ExpressionUUID->"50c41328-63ff-4f4c-9c21-b9a88c906a8e"],
+     Cell[BoxData[
+     ""], "ObjectNameTranslation",ExpressionUUID->
+      "f5690a95-e6ef-4997-8d5e-62ae708183f2"]
+    }],ExpressionUUID->"51927bd6-5d0a-4f90-b231-b57cbc9c641c"], 
+    "\[SpanFromLeft]"}
+  }]], "ObjectNameGrid",ExpressionUUID->"8d9a027e-251b-4e3d-99f3-\
+00d2f6c2be67"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell["xxx",ExpressionUUID->"56bb10bd-f47d-48c0-a252-048ac521f533"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
+ CellID->27210702,ExpressionUUID->"77058a1f-a621-4c37-9081-ba4caab1b6f4"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"3db2ead2-59af-4451-beb1-cd3acbe8c62e"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{900, 676},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"HCSRDiagOffDiagBlocks",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
+  "ExampleCounter" -> 1, 
+  "Openers" -> {
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}}, 
+  "NewStyles" -> True, "CitationPopupData" -> $Failed, "ShowCitation" -> 
+  False, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2022, 3, 30, 20, 0, 46.7071477}", 
+    "history" -> {"XX", "", "", ""}, "context" -> "TBMethod`MDConstruct`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "T B Method Symbol", "language" -> "en", "paclet" -> "TBMethod", "status" -> 
+    "None", "summary" -> "xxx", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "HCSRDiagOffDiagBlocks", "titlemodifier" -> "", "windowtitle" -> 
+    "HCSRDiagOffDiagBlocks", "type" -> "Symbol", "uri" -> 
+    "TBMethod/ref/HCSRDiagOffDiagBlocks", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (February 4, 2022)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (February 4, 2022)",
+   StyleDefinitions -> "Default.nb"],
+ExpressionUUID->"7b8facd8-eed3-44e6-bfb3-8ab715f79e62"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[593, 21, 3344, 76, 70, "AnchorBarGrid",ExpressionUUID->"7818f21f-e36c-4f19-9870-c6ba954c25cd",
+ CellID->1],
+Cell[3940, 99, 103, 0, 70, "ContextNameCell",ExpressionUUID->"c93e9493-e5df-4fe8-8eab-0423593c4b9b"],
+Cell[CellGroupData[{
+Cell[4068, 103, 564, 14, 70, "ObjectNameGrid",ExpressionUUID->"8d9a027e-251b-4e3d-99f3-00d2f6c2be67"],
+Cell[4635, 119, 273, 5, 70, "Usage",ExpressionUUID->"77058a1f-a621-4c37-9081-ba4caab1b6f4",
+ CellID->27210702]
+}, Open  ]],
+Cell[4923, 127, 78, 0, 70, "FooterCell",ExpressionUUID->"3db2ead2-59af-4451-beb1-cd3acbe8c62e"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

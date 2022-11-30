@@ -1,0 +1,246 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9302,        236]
+NotebookOptionsPosition[      6934,        182]
+NotebookOutlinePosition[      8775,        229]
+CellTagsIndexPosition[      8732,        226]
+WindowTitle->CentralBlockGreens
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {GridBox[{
+      {
+       ItemBox[Cell[BoxData[
+         RowBox[{
+          TemplateBox[{12},
+           "Spacer1"], Cell["T B METHOD SYMBOL", "PacletNameCell",
+           TextAlignment->Center,ExpressionUUID->
+           "dfa6845f-4e77-4edd-ba98-5ff467a0d6e1"], 
+          TemplateBox[{8},
+           "Spacer1"]}]],
+         TextAlignment->Center,ExpressionUUID->
+         "8037830a-439a-4882-9c11-a2b710986207"],
+        Background->RGBColor[0.490196, 0.576471, 0.690196],
+        ItemSize->Full], ""}
+     },
+     GridBoxAlignment->{"Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {Full, 
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[{
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "Related Guides",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "68c56fa6-b0f1-4284-9060-7b3db0a305c2"]
+         }],ExpressionUUID->"09cba113-7936-4f54-b3df-685d8125d9ff"],
+         StripOnInput->False], {"\<\"TBMethod\"\>":>Documentation`HelpLookup[
+        "paclet:TBMethod/guide/TBMethod"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"MoreAbout"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "485c2479-d15e-4a5d-b7d2-4324c26b213b"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "URL",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "cd5b1033-406c-4d62-b58a-e391fff6b4f5"]
+         }],ExpressionUUID->"3ee98300-8e43-464a-a0fb-0132da53cebb"],
+         StripOnInput->False], {"\<\"TBMethod/ref/CentralBlockGreens\"\>":>
+        None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+        Module[{DocumentationSearch`Private`nb$}, 
+         DocumentationSearch`Private`nb$ = NotebookPut[
+            Notebook[{
+              Cell["TBMethod/ref/CentralBlockGreens"]}, Visible -> False]]; 
+         SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+         FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+         NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+        Delimiter, "\<\"Copy web URL\"\>":>
+        Module[{DocumentationSearch`Private`nb$}, 
+         DocumentationSearch`Private`nb$ = NotebookPut[
+            Notebook[{
+              Cell[
+               BoxData[
+                MakeBoxes[
+                 Hyperlink[
+                 "http://reference.wolfram.com/language/TBMethod/ref/\
+CentralBlockGreens.html"], StandardForm]], "Input", TextClipboardType -> 
+               "PlainText"]}, Visible -> False]]; 
+         SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+         FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+         NotebookClose[DocumentationSearch`Private`nb$]; 
+         Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+          NotebookLocate[{
+            URL[If[
+               TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$15408], 
+               "http://reference.wolfram.com/system-modeler/", 
+               "http://reference.wolfram.com/language/"] <> 
+             "TBMethod/ref/CentralBlockGreens" <> ".html"], None}]}]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"URLMenu"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "a5ce62d6-e224-4a98-8eb6-323070413bbf"]
+    }], "AnchorBar",
+     CacheGraphics->False,ExpressionUUID->
+     "2385ca28-3c99-4121-9640-76d9a105a6a8"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"dfd3dad0-da0c-4be8-b3fd-82384b9c0edc"],
+
+Cell["TBMethod`LGFF`", "ContextNameCell",ExpressionUUID->"086ddd7f-44e2-4c3a-a7e2-26e9e6e8fde8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {Cell[TextData[{
+     Cell[
+     "CentralBlockGreens", "ObjectName",ExpressionUUID->
+      "f0ad3b31-ee22-4892-8cac-328683eb73de"],
+     Cell[BoxData[
+      TemplateBox[{8},
+       "Spacer1"]],ExpressionUUID->"c2814a5c-8362-4bc6-b57c-660728d053ad"],
+     Cell[BoxData[
+     ""], "ObjectNameTranslation",ExpressionUUID->
+      "6421b0c2-499a-4abf-bbe7-75fac41519ba"]
+    }],ExpressionUUID->"a3bb3bbb-a3bf-4dd0-bdbf-3c673f20aec2"], 
+    "\[SpanFromLeft]"}
+  }]], "ObjectNameGrid",ExpressionUUID->"b6df1d77-7132-4074-a2e0-\
+4667dc7a4bf1"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"CentralBlockGreens", "[", "]"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "0707fec0-8389-40f1-bccd-4aa5fbb37ef1"],
+     " \[LineSeparator]XXXX"
+    }],ExpressionUUID->"e07d299f-d689-472b-aa55-67390e7c6284"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
+ CellID->725078113,ExpressionUUID->"99d2a5ea-a400-45a7-899d-d0a5385f7bc2"]
+}, Open  ]],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, "RelatedGuide.png"]],
+     ImageSizeCache->{50., {27., 33.}}], GridBox[{
+      {
+       StyleBox[
+        RowBox[{"Related", " ", "Guides"}], "MoreAboutSection"]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["TBMethod"]], "paclet:TBMethod/guide/TBMethod"},
+          "RefLinkPlain",
+          BaseStyle->{"MoreAbout"}]], "MoreAbout",ExpressionUUID->
+         "9dfdd2af-0743-4e61-9abf-609de759461f"]}]}
+     }]}
+  }]], "MoreAboutSection",ExpressionUUID->"028649e5-67cd-4836-aabf-\
+e62458f034da"],
+
+Cell[" ", "FooterCell",ExpressionUUID->"43cc339a-d513-4ab0-81ff-c11cb25cf0ee"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{900, 676},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"CentralBlockGreens",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
+  "ExampleCounter" -> 1, 
+  "Openers" -> {
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}}, 
+  "NewStyles" -> True, "CitationPopupData" -> $Failed, "ShowCitation" -> 
+  False, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2022, 3, 30, 20, 0, 43.5342889}", 
+    "history" -> {"XX", "", "", ""}, "context" -> "TBMethod`LGFF`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "T B Method Symbol", "language" -> "en", "paclet" -> "TBMethod", "status" -> 
+    "None", "summary" -> "CentralBlockGreens[] XXXX", "synonyms" -> {}, 
+    "tabletags" -> {}, "title" -> "CentralBlockGreens", "titlemodifier" -> "",
+     "windowtitle" -> "CentralBlockGreens", "type" -> "Symbol", "uri" -> 
+    "TBMethod/ref/CentralBlockGreens", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (February 4, 2022)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (February 4, 2022)",
+   StyleDefinitions -> "Default.nb"],
+ExpressionUUID->"bb4a36fb-188e-4226-85f0-a1e62dfad76b"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[590, 21, 4356, 103, 70, "AnchorBarGrid",ExpressionUUID->"dfd3dad0-da0c-4be8-b3fd-82384b9c0edc",
+ CellID->1],
+Cell[4949, 126, 96, 0, 70, "ContextNameCell",ExpressionUUID->"086ddd7f-44e2-4c3a-a7e2-26e9e6e8fde8"],
+Cell[CellGroupData[{
+Cell[5070, 130, 561, 14, 70, "ObjectNameGrid",ExpressionUUID->"b6df1d77-7132-4074-a2e0-4667dc7a4bf1"],
+Cell[5634, 146, 500, 11, 70, "Usage",ExpressionUUID->"99d2a5ea-a400-45a7-899d-d0a5385f7bc2",
+ CellID->725078113]
+}, Open  ]],
+Cell[6149, 160, 700, 18, 70, "MoreAboutSection",ExpressionUUID->"028649e5-67cd-4836-aabf-e62458f034da"],
+Cell[6852, 180, 78, 0, 70, "FooterCell",ExpressionUUID->"43cc339a-d513-4ab0-81ff-c11cb25cf0ee"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

@@ -1,0 +1,295 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11251,        285]
+NotebookOptionsPosition[      8735,        230]
+NotebookOutlinePosition[     10620,        277]
+CellTagsIndexPosition[     10577,        274]
+WindowTitle->CoordinatesGroupByRegions
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {GridBox[{
+      {
+       ItemBox[Cell[BoxData[
+         RowBox[{
+          TemplateBox[{12},
+           "Spacer1"], Cell["T B METHOD SYMBOL", "PacletNameCell",
+           TextAlignment->Center,ExpressionUUID->
+           "dd823d3e-4c9e-4b3e-88cb-6ebb04740cef"], 
+          TemplateBox[{8},
+           "Spacer1"]}]],
+         TextAlignment->Center,ExpressionUUID->
+         "2c4a6604-e21d-423d-b1de-0174fa7348b0"],
+        Background->RGBColor[0.490196, 0.576471, 0.690196],
+        ItemSize->Full], ""}
+     },
+     GridBoxAlignment->{"Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {Full, 
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[{
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "See Also",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "7085f897-ee08-49dd-b52c-f8bd16c76aea"]
+         }],ExpressionUUID->"c2dcf179-cc32-4f93-8bf9-cce64ad05bff"],
+         StripOnInput->False], {"\<\"DisjointedShellDivisionRegions\"\>":>
+        Documentation`HelpLookup[
+        "paclet:TBMethod/ref/DisjointedShellDivisionRegions"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"SeeAlso"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "48ce0b91-b67f-4859-bd91-3510babd73a7"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "Related Guides",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "0c65cd97-893e-4315-b752-05309d28252b"]
+         }],ExpressionUUID->"45749d5e-6b04-43f5-ad71-b0bf65fb0abc"],
+         StripOnInput->False], {"\<\"TBMethod\"\>":>Documentation`HelpLookup[
+        "paclet:TBMethod/guide/TBMethod"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"MoreAbout"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "2cab7b2b-1831-456b-804f-e02dd4f7dc32"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "URL",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "7eb2a0c7-0a14-44de-a6c2-6ab54d60be62"]
+         }],ExpressionUUID->"0ddb0644-0d81-4a82-a4a4-9c216a8b471b"],
+         StripOnInput->
+          False], {"\<\"TBMethod/ref/CoordinatesGroupByRegions\"\>":>
+        None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+        Module[{DocumentationSearch`Private`nb$}, 
+         DocumentationSearch`Private`nb$ = NotebookPut[
+            Notebook[{
+              Cell["TBMethod/ref/CoordinatesGroupByRegions"]}, Visible -> 
+             False]]; SelectionMove[
+          DocumentationSearch`Private`nb$, All, Notebook]; 
+         FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+         NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+        Delimiter, "\<\"Copy web URL\"\>":>
+        Module[{DocumentationSearch`Private`nb$}, 
+         DocumentationSearch`Private`nb$ = NotebookPut[
+            Notebook[{
+              Cell[
+               BoxData[
+                MakeBoxes[
+                 Hyperlink[
+                 "http://reference.wolfram.com/language/TBMethod/ref/\
+CoordinatesGroupByRegions.html"], StandardForm]], "Input", TextClipboardType -> 
+               "PlainText"]}, Visible -> False]]; 
+         SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+         FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+         NotebookClose[DocumentationSearch`Private`nb$]; 
+         Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+          NotebookLocate[{
+            URL[If[
+               TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$16165], 
+               "http://reference.wolfram.com/system-modeler/", 
+               "http://reference.wolfram.com/language/"] <> 
+             "TBMethod/ref/CoordinatesGroupByRegions" <> ".html"], None}]}]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"URLMenu"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "33fe135a-ea68-45aa-9fdd-84f6f4acce17"]
+    }], "AnchorBar",
+     CacheGraphics->False,ExpressionUUID->
+     "7cb23513-f404-46bf-9da0-d3fc27141caa"]}
+  }]], "AnchorBarGrid",
+ CellID->1,ExpressionUUID->"46e73a91-cfcb-489f-8bc2-9420eeb9c3dc"],
+
+Cell["TBMethod`MDConstruct`", "ContextNameCell",ExpressionUUID->"cfdbff68-a2fb-4118-a527-bdeb1a39527d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {Cell[TextData[{
+     Cell[
+     "CoordinatesGroupByRegions", "ObjectName",ExpressionUUID->
+      "a1487733-cd7c-45e7-9195-e0df7e2537ff"],
+     Cell[BoxData[
+      TemplateBox[{8},
+       "Spacer1"]],ExpressionUUID->"813ee9a0-65f0-40cf-856c-a4b36487156c"],
+     Cell[BoxData[
+     ""], "ObjectNameTranslation",ExpressionUUID->
+      "afdc49b6-be46-4f27-93c6-570f585ac2af"]
+    }],ExpressionUUID->"f58434e3-e8f5-4abb-95a7-0c37026f75e7"], 
+    "\[SpanFromLeft]"}
+  }]], "ObjectNameGrid",ExpressionUUID->"4bed5ef4-bad5-4a1f-ac66-\
+140d0d920458"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"CoordinatesGroupByRegions", "[", "]"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "cca19350-6d77-4772-983f-3932a61d2d99"],
+     "\[LineSeparator]XXXX"
+    }],ExpressionUUID->"a37a22e3-37e4-449e-80fc-f5b1c4b288ed"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
+ CellID->554257595,ExpressionUUID->"5a126ca7-2bb8-4430-bcf9-d6c41f48c0ea"]
+}, Open  ]],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, 
+       "RelatedFunction.png"]],
+     ImageSizeCache->{50., {27., 33.}}], GridBox[{
+      {
+       StyleBox[
+        RowBox[{"See", " ", "Also"}], "SeeAlsoSection"]},
+      {Cell[TextData[Cell[BoxData[
+        TemplateBox[{
+          Cell[
+           TextData["DisjointedShellDivisionRegions"]], 
+          "paclet:TBMethod/ref/DisjointedShellDivisionRegions", 
+          "TBMethod Package Symbol"},
+         "PackageLink",
+         BaseStyle->"InlineFormula"]], "InlineFormula",
+        FontFamily->"Source Sans Pro",ExpressionUUID->
+        "1e114899-f97f-499a-a565-b504ed0c02a2"]], "SeeAlso",ExpressionUUID->
+        "39650080-35ee-4837-afea-9eced75d9e5f"]}
+     }]}
+  }]], "SeeAlsoSection",ExpressionUUID->"72d947f7-625d-49b2-9825-\
+1363324c30c3"],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, "RelatedGuide.png"]],
+     ImageSizeCache->{50., {27., 33.}}], GridBox[{
+      {
+       StyleBox[
+        RowBox[{"Related", " ", "Guides"}], "MoreAboutSection"]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["TBMethod"]], "paclet:TBMethod/guide/TBMethod"},
+          "RefLinkPlain",
+          BaseStyle->{"MoreAbout"}]], "MoreAbout",ExpressionUUID->
+         "4eb16696-85c1-48cb-be6c-95c69452cb85"]}]}
+     }]}
+  }]], "MoreAboutSection",ExpressionUUID->"bcf31576-a504-472e-ae61-\
+bb064f77092a"],
+
+Cell[" ", "FooterCell",ExpressionUUID->"525cbd09-fa45-4354-9c2e-bffea11929c6"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{900, 676},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"CoordinatesGroupByRegions",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
+  "ExampleCounter" -> 1, 
+  "Openers" -> {
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}}, 
+  "NewStyles" -> True, "CitationPopupData" -> $Failed, "ShowCitation" -> 
+  False, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2022, 3, 30, 20, 0, 44.4472087}", 
+    "history" -> {"XX", "", "", ""}, "context" -> "TBMethod`MDConstruct`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "T B Method Symbol", "language" -> "en", "paclet" -> "TBMethod", "status" -> 
+    "None", "summary" -> "CoordinatesGroupByRegions[] XXXX", "synonyms" -> {},
+     "tabletags" -> {}, "title" -> "CoordinatesGroupByRegions", 
+    "titlemodifier" -> "", "windowtitle" -> "CoordinatesGroupByRegions", 
+    "type" -> "Symbol", "uri" -> "TBMethod/ref/CoordinatesGroupByRegions", 
+    "WorkflowDockedCell" -> ""}, "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (February 4, 2022)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (February 4, 2022)",
+   StyleDefinitions -> "Default.nb"],
+ExpressionUUID->"5bc3f4b3-2539-4ad8-8b45-70922e2a518b"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[597, 21, 5252, 127, 70, "AnchorBarGrid",ExpressionUUID->"46e73a91-cfcb-489f-8bc2-9420eeb9c3dc",
+ CellID->1],
+Cell[5852, 150, 103, 0, 70, "ContextNameCell",ExpressionUUID->"cfdbff68-a2fb-4118-a527-bdeb1a39527d"],
+Cell[CellGroupData[{
+Cell[5980, 154, 568, 14, 70, "ObjectNameGrid",ExpressionUUID->"4bed5ef4-bad5-4a1f-ac66-140d0d920458"],
+Cell[6551, 170, 506, 11, 70, "Usage",ExpressionUUID->"5a126ca7-2bb8-4430-bcf9-d6c41f48c0ea",
+ CellID->554257595]
+}, Open  ]],
+Cell[7072, 184, 875, 22, 70, "SeeAlsoSection",ExpressionUUID->"72d947f7-625d-49b2-9825-1363324c30c3"],
+Cell[7950, 208, 700, 18, 70, "MoreAboutSection",ExpressionUUID->"bcf31576-a504-472e-ae61-bb064f77092a"],
+Cell[8653, 228, 78, 0, 70, "FooterCell",ExpressionUUID->"525cbd09-fa45-4354-9c2e-bffea11929c6"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

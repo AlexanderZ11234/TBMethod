@@ -1,0 +1,808 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     29564,        798]
+NotebookOptionsPosition[     24562,        700]
+NotebookOutlinePosition[     26621,        747]
+CellTagsIndexPosition[     26578,        744]
+WindowTitle->TBMethod
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {GridBox[{
+      {
+       ItemBox[Cell[BoxData[
+         RowBox[{
+          TemplateBox[{12},
+           "Spacer1"], Cell["T B METHOD GUIDE", "PacletNameCell",
+           TextAlignment->Center,ExpressionUUID->
+           "89359ccb-7d2a-4804-8cbc-1dbc28d13acc"], 
+          TemplateBox[{8},
+           "Spacer1"]}]],
+         TextAlignment->Center,ExpressionUUID->
+         "ba6c5cca-5545-4045-9f29-cb273a8ee266"],
+        Background->RGBColor[0.85098, 0.396078, 0],
+        ItemSize->Full], ""}
+     },
+     GridBoxAlignment->{"Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {Full, 
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[{
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "Functions",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "c2268bb8-9c2b-473e-b0e9-bf5e3f21f43a"]
+         }],ExpressionUUID->"fbd235d5-a619-4b44-93e9-3ccff65842db"],
+         StripOnInput->False], {"\<\"AttachFreeQ\"\>":>
+        Documentation`HelpLookup[
+        "paclet:TBMethod/ref/AttachFreeQ"], "\<\"BerryCurvature\"\>":>
+        Documentation`HelpLookup[
+        "paclet:TBMethod/ref/BerryCurvature"], "\<\"CentralBlockGreens\"\>":>
+        Documentation`HelpLookup[
+        "paclet:TBMethod/ref/CentralBlockGreens"], "\<\"CentralGreen\"\>":>
+        Documentation`HelpLookup[
+        "paclet:TBMethod/ref/CentralGreen"], "\<\"CoordinatesGroupByRegions\"\
+\>":>Documentation`HelpLookup[
+        "paclet:TBMethod/ref/CoordinatesGroupByRegions"], \
+"\<\"DisjointedShellDivisionRegions\"\>":>Documentation`HelpLookup[
+        "paclet:TBMethod/ref/DisjointedShellDivisionRegions"], \
+"\<\"HBloch\"\>":>Documentation`HelpLookup[
+        "paclet:TBMethod/ref/HBloch"], "\<\"HCSRDiagOffDiagBlocks\"\>":>
+        Documentation`HelpLookup[
+        "paclet:TBMethod/ref/HCSRDiagOffDiagBlocks"], "\<\"HLeadBlocks\"\>":>
+        Documentation`HelpLookup[
+        "paclet:TBMethod/ref/HLeadBlocks"], "\<\"HMatrixFromHoppings\"\>":>
+        Documentation`HelpLookup[
+        "paclet:TBMethod/ref/HMatrixFromHoppings"], \
+"\<\"LocalDOSRealSpace\"\>":>Documentation`HelpLookup[
+        "paclet:TBMethod/ref/LocalDOSRealSpace"], \
+"\<\"LocalDOSReciprocalSpace\"\>":>Documentation`HelpLookup[
+        "paclet:TBMethod/ref/LocalDOSReciprocalSpace"], "\<\"PathSample\"\>":>
+        Documentation`HelpLookup[
+        "paclet:TBMethod/ref/PathSample"], "\<\"Sigma\"\>":>
+        Documentation`HelpLookup[
+        "paclet:TBMethod/ref/Sigma"], "\<\"SurfaceGreen\"\>":>
+        Documentation`HelpLookup[
+        "paclet:TBMethod/ref/SurfaceGreen"], "\<\"Transmission\"\>":>
+        Documentation`HelpLookup["paclet:TBMethod/ref/Transmission"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"GuideFunction"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "24b30a56-c6f3-48fc-b003-6e9f8b8a7319"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "URL",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "64bf4708-6124-4c2b-ac56-858b6f23b570"]
+         }],ExpressionUUID->"7201771e-cb39-4e58-93e6-3dbdfa64451e"],
+         StripOnInput->False], {"\<\"TBMethod/guide/TBMethod\"\>":>
+        None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+        Module[{DocumentationSearch`Private`nb$}, 
+         DocumentationSearch`Private`nb$ = NotebookPut[
+            Notebook[{
+              Cell["TBMethod/guide/TBMethod"]}, Visible -> False]]; 
+         SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+         FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+         NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+        Delimiter, "\<\"Copy web URL\"\>":>
+        Module[{DocumentationSearch`Private`nb$}, 
+         DocumentationSearch`Private`nb$ = NotebookPut[
+            Notebook[{
+              Cell[
+               BoxData[
+                MakeBoxes[
+                 Hyperlink[
+                 "http://reference.wolfram.com/language/TBMethod/guide/\
+TBMethod.html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, 
+             Visible -> False]]; 
+         SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+         FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+         NotebookClose[DocumentationSearch`Private`nb$]; 
+         Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+          NotebookLocate[{
+            URL[If[
+               TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$13522], 
+               "http://reference.wolfram.com/system-modeler/", 
+               "http://reference.wolfram.com/language/"] <> 
+             "TBMethod/guide/TBMethod" <> ".html"], None}]}]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"URLMenu"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "8b6f24a3-6241-42eb-8d8b-1557620f2430"]
+    }], "AnchorBar",
+     CacheGraphics->False,ExpressionUUID->
+     "01816197-b728-45d1-b49f-64826d60cd92"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"cb172e21-05c8-4ccb-9839-5c551f104817"],
+
+Cell[CellGroupData[{
+
+Cell["TBMethod", "GuideTitle",
+ CellID->22888259,ExpressionUUID->"9223e687-b07c-4988-9af6-4eb05ebc69df"],
+
+Cell[TextData[{
+ ButtonBox["Context",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Context"],
+ " ",
+ StyleBox["\"TBMethod`\"", "InlineCode"],
+ " (Tight-Binding Method) is trying to provide a facilitation of fast \
+construction of tight-binding models and related quantum transport \
+calculation. So far it contains two subpackages, ",
+ StyleBox["\"TBMethod`MDConstruct`\"", "InlineCode"],
+ " (Model Construction) for tight-binding model construction and ",
+ StyleBox["\"TBMethod`LGFF`\"", "InlineCode"],
+ " (lattice Green's function formalism) for quantum transport.\nIt can be \
+loaded by ",
+ Cell[BoxData[
+  TemplateBox[{"Needs", "paclet:ref/Needs"},
+   "RefLink",
+   BaseStyle->{"InlineCode"}]],ExpressionUUID->
+  "116df47a-5e11-46e3-9620-ac19b3942236"],
+ StyleBox["[\"TBMethod`\"]", "InlineCode"],
+ "; if parallel computation is intended, it can be tailed with ",
+ Cell[BoxData[
+  TemplateBox[{"ParallelNeeds", "paclet:ref/ParallelNeeds"},
+   "RefLink",
+   BaseStyle->{"InlineCode"}]],ExpressionUUID->
+  "a14dfc0c-39f9-40f9-a3e3-b4d65809b921"],
+ StyleBox["[\"TBMethod`\"]", "InlineCode"],
+ "."
+}], "GuideAbstract",
+ CellID->663849441,ExpressionUUID->"3886dc47-08c8-4470-9583-0a23115e5d7a"],
+
+Cell["\t", "GuideDelimiterSubsection",ExpressionUUID->"51a8e270-dde9-4fac-af25-90f88006668a"],
+
+Cell[CellGroupData[{
+
+Cell["Model Construction", "GuideFunctionsSubsection",
+ CellID->251962891,ExpressionUUID->"64661832-ed33-433e-9353-ba97d9800105"],
+
+Cell[TextData[{
+ "01. ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["AttachFreeQ"]], "paclet:TBMethod/ref/AttachFreeQ", 
+    "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "821d6d8d-3032-41b5-a281-cd9935c5c0c1"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " tests if two groups of points are totally out of contact."
+}], "GuideText",
+ CellID->654270987,ExpressionUUID->"97808ae8-0956-43cc-8c2d-142e4b23ad25"],
+
+Cell[TextData[{
+ "02. ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["BerryCurvature"]], "paclet:TBMethod/ref/BerryCurvature", 
+    "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "43525e02-0562-4235-8e57-e29fe75ace59"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " calculates Berry curvature from a (locally gapped) Bloch Hamiltonian \
+matrix in any dimension."
+}], "GuideText",
+ CellID->82560336,ExpressionUUID->"7ade6f4a-200d-433d-8a01-862bf1ec9ce8"],
+
+Cell[TextData[{
+ "03. ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["CoordinatesGroupByRegions"]], 
+    "paclet:TBMethod/ref/CoordinatesGroupByRegions", 
+    "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "35e62d8f-dd46-45dc-a827-ecc68e0ba5d4"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " groups the CSR atoms into groups according to a set of regions."
+}], "GuideText",
+ CellID->48652837,ExpressionUUID->"fbc8f7e4-09c7-4988-85b7-8716af310170"],
+
+Cell[TextData[{
+ "04. ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["DisjointedShellDivisionRegions"]], 
+    "paclet:TBMethod/ref/DisjointedShellDivisionRegions", 
+    "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "dafb13c3-9456-4eff-b2c9-6be60c8a75f4"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " generates a group of ",
+ Cell[BoxData[
+  StyleBox["n",
+   FontSlant->"Italic"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "d3018cd2-b4fa-48b3-873e-d780463444ba"],
+ "D regions, which forms the disjointed shellwise covering division of the \
+encompassing ",
+ Cell[BoxData[
+  StyleBox["n",
+   FontSlant->"Italic"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "23476173-7c3e-49ac-ad99-06f68d983afe"],
+ "D region of CSR, and typically ",
+ Cell[BoxData[
+  RowBox[{
+   StyleBox["n",
+    FontSlant->"Italic"], " ", "=", " ", 
+   RowBox[{"2", " ", "and", " ", "3"}]}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "122ec6b7-5c94-4412-b753-33c82259f54a"],
+ "."
+}], "GuideText",
+ CellID->279369656,ExpressionUUID->"826dc793-0983-4037-aa74-424fbea186e7"],
+
+Cell[TextData[{
+ "05. ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["HBloch"]], "paclet:TBMethod/ref/HBloch", 
+    "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "f3ebd4f9-254a-4e01-9030-ab466880056a"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " constructs the Bloch Hamiltonian matrix from the real-space Hamiltonian \
+matrixes."
+}], "GuideText",
+ CellID->229047313,ExpressionUUID->"73f394a3-0352-43af-bd56-3977d9bc1d92"],
+
+Cell[TextData[{
+ "06. ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["HCSRDiagOffDiagBlocks"]], 
+    "paclet:TBMethod/ref/HCSRDiagOffDiagBlocks", "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "3a5a0b9d-6fb0-42cd-8f50-56700c542a2b"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " constructs the Hamiltonian matrixes of ",
+ Cell[BoxData[
+  StyleBox["n",
+   FontSlant->"Italic"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "8890b947-3026-4fd4-bb23-523045a9fb79"],
+ " diagonal blocks and ",
+ Cell[BoxData[
+  RowBox[{"(", 
+   RowBox[{
+    StyleBox["n",
+     FontSlant->"Italic"], "\[Minus]", "1"}], ")"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "4a2f5129-812c-4f0d-9b9f-429fabe4baf0"],
+ " second-diagonal blocks, where ",
+ Cell[BoxData[
+  StyleBox["n",
+   FontSlant->"Italic"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "24ac14a1-a1c8-4ee0-b2e6-073e07cb7044"],
+ " is the division number of CSR."
+}], "GuideText",
+ CellID->346535429,ExpressionUUID->"3e180a0a-aea8-4a37-a63a-81d6d3e1448f"],
+
+Cell[TextData[{
+ "07. ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["HLeadBlocks"]], "paclet:TBMethod/ref/HLeadBlocks", 
+    "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "2bede823-35d7-420f-af62-045b7a3000c0"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " constructs three Hamiltonian matrixes within lead cell, between the lead \
+cells (in the direction from infinite to CSR), and between lead cell and the \
+outer region of CSR."
+}], "GuideText",
+ CellID->325438966,ExpressionUUID->"4cb3320b-b10f-4f2d-a980-c8e2e1407d7a"],
+
+Cell[TextData[{
+ "08. ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["HMatrixFromHoppings"]], 
+    "paclet:TBMethod/ref/HMatrixFromHoppings", "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "e015bcde-981f-4cb2-9986-8b1220f4825f"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " constructs real-space Hamiltonian matrix."
+}], "GuideText",
+ CellID->35668300,ExpressionUUID->"19293b17-a620-43ad-9117-5d4e8f006864"],
+
+Cell[TextData[{
+ "09. ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["PathSample"]], "paclet:TBMethod/ref/PathSample", 
+    "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "0174eafc-68d2-4f7e-9579-d71ba64313bb"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " makes even samplings along a multinoded line, typical application as \
+sampling Brillouin zone for band structure plotting, given high-symmetry \
+points as nodes."
+}], "GuideText",
+ CellID->178701211,ExpressionUUID->"725e038e-52ed-4542-9058-c276c48cbf5c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Lattice Green's function formalism", "GuideFunctionsSubsection",
+ CellID->595598371,ExpressionUUID->"f1db6b28-7042-4e1c-977f-cc7b553b1908"],
+
+Cell[TextData[{
+ "01. ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["CentralBlockGreens"]], 
+    "paclet:TBMethod/ref/CentralBlockGreens", "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "48977003-e72b-4a35-9451-40a7aaee9bf9"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " generates the desired block(s) of Green's function for central scattering \
+region (CSR)."
+}], "GuideText",
+ CellID->6925321,ExpressionUUID->"421c5b3a-2f3d-4dc0-a690-2e31b460d21c"],
+
+Cell[TextData[{
+ "02. ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["CentralGreen"]], "paclet:TBMethod/ref/CentralGreen", 
+    "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "bfda7c29-7360-4f35-b6eb-8e7d2398ac0b"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " generates the full Green's function for CSR."
+}], "GuideText",
+ CellID->620695221,ExpressionUUID->"942bc613-9df3-4d80-942c-00f6d263c7aa"],
+
+Cell[TextData[{
+ "03. ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["LocalDOSRealSpace"]], "paclet:TBMethod/ref/LocalDOSRealSpace", 
+    "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "5bfdb8d1-6d09-48da-b990-c3891ef19132"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " calculates real-space local density of states."
+}], "GuideText",
+ CellID->283254338,ExpressionUUID->"5051497f-4572-46b5-9eb5-d88817aa1ea7"],
+
+Cell[TextData[{
+ "04. ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["LocalDOSReciprocalSpace"]], 
+    "paclet:TBMethod/ref/LocalDOSReciprocalSpace", "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "1e507739-45a3-4a04-a56f-cf48547fc9f4"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " calculates reciprocal-space local density of states."
+}], "GuideText",
+ CellID->193815052,ExpressionUUID->"8e9301d5-9d93-4838-a05e-2f9876880af0"],
+
+Cell[TextData[{
+ "05. ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Sigma"]], "paclet:TBMethod/ref/Sigma", 
+    "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "6d57e3ed-5040-4524-8414-1db0ecf43d22"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " generates self-energy from a lead, in the right dimension to be readily \
+added to the CSR Hamiltonian, by both iterative and non-iterative methods."
+}], "GuideText",
+ CellID->712518277,ExpressionUUID->"868e9c4a-12e8-4910-b995-8752a0a9968c"],
+
+Cell[TextData[{
+ "06. ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SurfaceGreen"]], "paclet:TBMethod/ref/SurfaceGreen", 
+    "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "476b3794-13d8-4139-82dd-fc207c0c2d70"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " generates surface Green's function of a semi-infinite lead, by both \
+iterative and non-iterative methods. Also can be used for calculating the \
+momentum-space LDOS to show edge states."
+}], "GuideText",
+ CellID->122533408,ExpressionUUID->"0795ccbb-7145-4f89-9332-7198ef93ea9e"],
+
+Cell[TextData[{
+ "07. ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Transmission"]], "paclet:TBMethod/ref/Transmission", 
+    "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "ba8b13e1-7a45-4de4-b6ea-ff89dc048266"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " calculates transmission between an arbitrary pair of leads."
+}], "GuideText",
+ CellID->33851533,ExpressionUUID->"1516ad7b-4c5f-40a4-a389-0794ac46b196"],
+
+Cell["\t", "GuideDelimiter",
+ CellID->124836151,ExpressionUUID->"cf708070-d03f-46f4-93aa-412dc17e18f0"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["AttachFreeQ"]], "paclet:TBMethod/ref/AttachFreeQ", 
+    "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "be08b169-1153-425d-90b9-541d278355ff"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["BerryCurvature"]], "paclet:TBMethod/ref/BerryCurvature", 
+    "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "d7db46ed-0a56-48f4-907a-3d6aa7e95db7"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["CoordinatesGroupByRegions"]], 
+    "paclet:TBMethod/ref/CoordinatesGroupByRegions", 
+    "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "df41260f-5028-419f-9ab6-597c0fd4102a"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["DisjointedShellDivisionRegions"]], 
+    "paclet:TBMethod/ref/DisjointedShellDivisionRegions", 
+    "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "f9640394-52c3-4105-a202-afa7008b88ad"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["HBloch"]], "paclet:TBMethod/ref/HBloch", 
+    "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "7ad46d32-d545-4a1e-ba6b-34e13b86b1b1"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["HCSRDiagOffDiagBlocks"]], 
+    "paclet:TBMethod/ref/HCSRDiagOffDiagBlocks", "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "10ce1c84-78f7-44e9-90f9-9d71ee1014cb"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["HLeadBlocks"]], "paclet:TBMethod/ref/HLeadBlocks", 
+    "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "f063a9fd-e4a1-49a7-b617-c07db645c12d"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["HMatrixFromHoppings"]], 
+    "paclet:TBMethod/ref/HMatrixFromHoppings", "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "7ee922e6-ec5d-442b-a678-5dd573a489fc"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["PathSample"]], "paclet:TBMethod/ref/PathSample", 
+    "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "b76ca5b7-c3f7-4bfc-8d28-603a666d07dd"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["CentralBlockGreens"]], 
+    "paclet:TBMethod/ref/CentralBlockGreens", "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "31d78079-7ca9-4287-a776-1386574a71b9"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["CentralGreen"]], "paclet:TBMethod/ref/CentralGreen", 
+    "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "72e52c94-9a53-4dcd-a2aa-44cef3d1359c"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["LocalDOSRealSpace"]], "paclet:TBMethod/ref/LocalDOSRealSpace", 
+    "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "ec53d210-7214-4b18-820d-f1c2f240a760"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["LocalDOSReciprocalSpace"]], 
+    "paclet:TBMethod/ref/LocalDOSReciprocalSpace", "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "44f5520c-8c4d-42c0-b7f7-42fdf290073f"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Sigma"]], "paclet:TBMethod/ref/Sigma", 
+    "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "937bba06-c6eb-44e2-b3a4-1ba4c9e00faa"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SurfaceGreen"]], "paclet:TBMethod/ref/SurfaceGreen", 
+    "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "fa49717f-7225-4ace-9233-ecd7c7154bc6"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Transmission"]], "paclet:TBMethod/ref/Transmission", 
+    "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "cad3e37a-f2ec-4d32-b908-13ebaf7a9617"]
+}], "InlineGuideFunctionListing",
+ CellID->123152187,ExpressionUUID->"43ef486e-6d60-4b30-86ba-94390aae857b"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"1585273f-c930-4c96-8ded-59e3109ac956"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{900, 676},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"TBMethod",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
+  "ExampleCounter" -> 1, 
+  "Openers" -> {
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}}, 
+  "NewStyles" -> True, "CitationPopupData" -> {"", ""}, "ShowCitation" -> 
+  False, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2022, 3, 30, 20, 0, 38.7681179}", 
+    "history" -> {"??", "", "", ""}, "context" -> "TBMethod`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "T B Method Guide", "language" -> "en", "paclet" -> "TBMethod", "status" -> 
+    "None", "summary" -> 
+    "Context \"TBMethod`\" (Tight-Binding Method) is trying to provide a \
+facilitation of fast construction of tight-binding models and related quantum \
+transport calculation. So far it contains two subpackages, \
+\"TBMethod`MDConstruct`\" (Model Construction) for tight-binding model \
+construction and \"TBMethod`LGFF`\" (lattice Green's function formalism) for \
+quantum transport. It can be loaded by Needs[\"TBMethod`\"]; if parallel \
+computation is intended, it can be tailed with ParallelNeeds[\"TBMethod`\"].",
+     "synonyms" -> {}, "tabletags" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$13455, "title" -> 
+    "TBMethod", "titlemodifier" -> "", "windowtitle" -> "TBMethod", "type" -> 
+    "Guide", "uri" -> "TBMethod/guide/TBMethod", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> ""},
+CacheGraphics->False,
+FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (February 4, 2022)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"4a5422f9-eab1-4736-9f68-7044373e1419"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[580, 21, 5951, 133, 70, "AnchorBarGrid",ExpressionUUID->"cb172e21-05c8-4ccb-9839-5c551f104817",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[6556, 158, 104, 1, 70, "GuideTitle",ExpressionUUID->"9223e687-b07c-4988-9af6-4eb05ebc69df",
+ CellID->22888259],
+Cell[6663, 161, 1195, 29, 70, "GuideAbstract",ExpressionUUID->"3886dc47-08c8-4470-9583-0a23115e5d7a",
+ CellID->663849441],
+Cell[7861, 192, 93, 0, 70, "GuideDelimiterSubsection",ExpressionUUID->"51a8e270-dde9-4fac-af25-90f88006668a"],
+Cell[CellGroupData[{
+Cell[7979, 196, 129, 1, 70, "GuideFunctionsSubsection",ExpressionUUID->"64661832-ed33-433e-9353-ba97d9800105",
+ CellID->251962891],
+Cell[8111, 199, 502, 14, 70, "GuideText",ExpressionUUID->"97808ae8-0956-43cc-8c2d-142e4b23ad25",
+ CellID->654270987],
+Cell[8616, 215, 545, 15, 70, "GuideText",ExpressionUUID->"7ade6f4a-200d-433d-8a01-862bf1ec9ce8",
+ CellID->82560336],
+Cell[9164, 232, 540, 15, 70, "GuideText",ExpressionUUID->"fbc8f7e4-09c7-4988-85b7-8716af310170",
+ CellID->48652837],
+Cell[9707, 249, 1213, 36, 70, "GuideText",ExpressionUUID->"826dc793-0983-4037-aa74-424fbea186e7",
+ CellID->279369656],
+Cell[10923, 287, 518, 15, 70, "GuideText",ExpressionUUID->"73f394a3-0352-43af-bd56-3977d9bc1d92",
+ CellID->229047313],
+Cell[11444, 304, 1158, 34, 70, "GuideText",ExpressionUUID->"3e180a0a-aea8-4a37-a63a-81d6d3e1448f",
+ CellID->346535429],
+Cell[12605, 340, 619, 16, 70, "GuideText",ExpressionUUID->"4cb3320b-b10f-4f2d-a980-c8e2e1407d7a",
+ CellID->325438966],
+Cell[13227, 358, 501, 14, 70, "GuideText",ExpressionUUID->"19293b17-a620-43ad-9117-5d4e8f006864",
+ CellID->35668300],
+Cell[13731, 374, 605, 16, 70, "GuideText",ExpressionUUID->"725e038e-52ed-4542-9058-c276c48cbf5c",
+ CellID->178701211]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14373, 395, 145, 1, 70, "GuideFunctionsSubsection",ExpressionUUID->"f1db6b28-7042-4e1c-977f-cc7b553b1908",
+ CellID->595598371],
+Cell[14521, 398, 546, 15, 70, "GuideText",ExpressionUUID->"421c5b3a-2f3d-4dc0-a690-2e31b460d21c",
+ CellID->6925321],
+Cell[15070, 415, 491, 14, 70, "GuideText",ExpressionUUID->"942bc613-9df3-4d80-942c-00f6d263c7aa",
+ CellID->620695221],
+Cell[15564, 431, 503, 14, 70, "GuideText",ExpressionUUID->"5051497f-4572-46b5-9eb5-d88817aa1ea7",
+ CellID->283254338],
+Cell[16070, 447, 521, 14, 70, "GuideText",ExpressionUUID->"8e9301d5-9d93-4838-a05e-2f9876880af0",
+ CellID->193815052],
+Cell[16594, 463, 581, 15, 70, "GuideText",ExpressionUUID->"868e9c4a-12e8-4910-b995-8752a0a9968c",
+ CellID->712518277],
+Cell[17178, 480, 633, 16, 70, "GuideText",ExpressionUUID->"0795ccbb-7145-4f89-9332-7198ef93ea9e",
+ CellID->122533408],
+Cell[17814, 498, 505, 14, 70, "GuideText",ExpressionUUID->"1516ad7b-4c5f-40a4-a389-0794ac46b196",
+ CellID->33851533],
+Cell[18322, 514, 103, 1, 70, "GuideDelimiter",ExpressionUUID->"cf708070-d03f-46f4-93aa-412dc17e18f0",
+ CellID->124836151],
+Cell[18428, 517, 6025, 177, 70, "InlineGuideFunctionListing",ExpressionUUID->"43ef486e-6d60-4b30-86ba-94390aae857b",
+ CellID->123152187]
+}, Open  ]]
+}, Open  ]],
+Cell[24480, 698, 78, 0, 70, "FooterCell",ExpressionUUID->"1585273f-c930-4c96-8ded-59e3109ac956"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
