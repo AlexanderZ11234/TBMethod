@@ -23,6 +23,8 @@ BerryCurvature::usage = "Calculates Berry curvature for an arbitrary matrix mode
 FirstBrillouinZoneRegion::usage = "Generate the first Brillouin zone as a region.";
 FirstBrillouinZonePlot::usage = "Shows the first Brillouin zone with reciprocal lattice vectors.";
 
+LabelPathSamplings::usage = "Labels some specific sampled lattice momentum values, esp. the high-symmetric points.";
+
 Begin["`Private`"]
 (* Implementation of the package *)
 (*SetOptions[{ParallelSum}, Method -> "ItemsPerEvaluation" -> 100 $KernelCount];*)
@@ -81,6 +83,14 @@ Module[{intcoeffs, fbz, reciprocalvectors, len = Length[vbs], \[CapitalGamma], c
 	reciprocalvectors = MapThread[{#, Arrow[{\[CapitalGamma], #2}]} &, {colors, vbs}];
 	Show[{HighlightMesh[fbz, {Style[1, Black, Thick], Style[2, Gray, Opacity[0.1]]}],
 	If[len == 2, Graphics, Graphics3D][{Thick, reciprocalvectors}]}, opts]
+];
+
+LabelPathSamplings[pathsamplings_, labels:{__String}] :=
+Module[{func, lbllen = Length[labels], numberlen, ptsall, numbers, numbersfinal},
+	func = MapAt[lis |-> Callout[lis, #2[[1]], Automatic, Automatic, Appearance -> "CurvedLeader"], #2[[2]]][#] &;
+	{ptsall, numbers} = pathsamplings; numberlen = Length[numbers];
+	numbersfinal = If[lbllen == numberlen-1, Most @ numbers, MapAt[#-1 &, -1] @ numbers];
+	Fold[func, ptsall, {labels, numbersfinal}\[Transpose]]
 ];
 
 
