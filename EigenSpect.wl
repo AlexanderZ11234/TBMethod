@@ -19,7 +19,9 @@ PathSample::usage = "Samples evenly points on a path consisting of a sequence of
 
 BerryCurvature::usage = "Calculates Berry curvature for an arbitrary matrix model.";
 
-FirstBrillouinZone::usage = "Shows the first Brillouin zone with reciprocal lattice vectors";
+(*FirstBrillouinZone::usage = "Shows the first Brillouin zone with reciprocal lattice vectors.";*)
+FirstBrillouinZoneRegion::usage = "Generate the first Brillouin zone as a region.";
+FirstBrillouinZonePlot::usage = "Shows the first Brillouin zone with reciprocal lattice vectors.";
 
 Begin["`Private`"]
 (* Implementation of the package *)
@@ -55,12 +57,27 @@ Module[{ns, normalizeddist, xgridlines, samplings},
 	{samplings, xgridlines}
 ];
 
-FirstBrillouinZone[vbs_ /; Dimensions[vbs] == {2, 2} || Dimensions[vbs] == {3, 3} , n_:2, opts:OptionsPattern[Show]] :=
+(*FirstBrillouinZone[vbs_ /; Dimensions[vbs] == {2, 2} || Dimensions[vbs] == {3, 3} , n_:2, opts:OptionsPattern[Show]] :=
 Module[{intcoeffs, fbz, reciprocalvectors, len = Length[vbs], \[CapitalGamma], colors},
 	intcoeffs = Tuples[Range[-n, n], len];
 	\[CapitalGamma] = ConstantArray[0, len];
 	colors = Take[{Red, Green, Blue}, len];
-	fbz=MinimalBy[Norm @* RegionCentroid][MeshPrimitives[VoronoiMesh[intcoeffs . vbs], len]] // First;
+	fbz = MinimalBy[Norm @* RegionCentroid][MeshPrimitives[VoronoiMesh[intcoeffs . vbs], len]] // First;
+	reciprocalvectors = MapThread[{#, Arrow[{\[CapitalGamma], #2}]} &, {colors, vbs}];
+	Show[{HighlightMesh[fbz, {Style[1, Black, Thick], Style[2, Gray, Opacity[0.1]]}],
+	If[len == 2, Graphics, Graphics3D][{Thick, reciprocalvectors}]}, opts]
+];*)
+
+FirstBrillouinZoneRegion[vbs_ /; Dimensions[vbs] == {2, 2} || Dimensions[vbs] == {3, 3} , n_:2] :=
+Module[{intcoeffs, reciprocalvectors, len = Length[vbs]},
+	intcoeffs = Tuples[Range[-n, n], len];
+	MinimalBy[Norm @* RegionCentroid][MeshPrimitives[VoronoiMesh[intcoeffs . vbs], len]] // First
+];
+
+FirstBrillouinZonePlot[vbs_ /; Dimensions[vbs] == {2, 2} || Dimensions[vbs] == {3, 3} , n_:2, opts:OptionsPattern[Show]] :=
+Module[{intcoeffs, fbz, reciprocalvectors, len = Length[vbs], \[CapitalGamma], colors},
+	intcoeffs = Tuples[Range[-n, n], len]; \[CapitalGamma] = ConstantArray[0, len];
+	colors = Take[{Red, Green, Blue}, len]; fbz = FirstBrillouinZoneRegion[vbs, n];
 	reciprocalvectors = MapThread[{#, Arrow[{\[CapitalGamma], #2}]} &, {colors, vbs}];
 	Show[{HighlightMesh[fbz, {Style[1, Black, Thick], Style[2, Gray, Opacity[0.1]]}],
 	If[len == 2, Graphics, Graphics3D][{Thick, reciprocalvectors}]}, opts]
