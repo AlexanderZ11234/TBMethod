@@ -24,7 +24,7 @@ $DistributedContexts = {"Global`", "TBMethod`"}; (*Otherwise, dim in HMatrixFrom
 (*BandPlot[banddata_, hisymmptname: {_String..}, ptsnumbers: {_Integer..}, s:OptionsPattern[ListLinePlot]] :=*)
 BandPlot[banddata_, hisymmptname: {_String...}: {""}, ptsnumbers: {_?NumericQ...}: {}, s:OptionsPattern[ListLinePlot]] :=
 Module[{plottheme, frameticks, gridlines, dticks},
-	plottheme = {"Scientific", "SansLabels", "LargeLabels"};
+	(*plottheme = {"Scientific", "SansLabels", "LargeLabels"};*)
 	dticks = {ptsnumbers, hisymmptname}\[Transpose];
 	frameticks = {{Automatic, None}, {dticks, None}};
 	ListLinePlot[banddata, s, 
