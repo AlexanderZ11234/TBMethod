@@ -25,6 +25,10 @@ FirstBrillouinZonePlot::usage = "Shows the first Brillouin zone with reciprocal 
 
 LabelPathSamplings::usage = "Labels some specific sampled lattice momentum values, esp. the high-symmetric points.";
 
+PlaquetteChern::usage = "Calculates the Chern number contributed by a small region, usually dubbed as a plaquette; summed over the first Brillouin zone cover, the full Chern number is obtained.";
+PlaquetteRegionPartition::usage = "Partitions a region, e.g. the first Brillouin zone, with a triangularization cover.";
+
+
 Begin["`Private`"]
 (* Implementation of the package *)
 (*SetOptions[{ParallelSum}, Method -> "ItemsPerEvaluation" -> 100 $KernelCount];*)
@@ -108,7 +112,24 @@ Module[{vx, vy, eigensyst, \[CapitalOmega]nl, \[Delta]k = 1.*^-7, Hveck = H[veck
 
 (*WannerChargeCenter[] :=.*)
 
+PlaquetteChern[vks:{{__?NumericQ}..}, heff_, nF_Integer, opts:OptionsPattern[Eigensystem]] :=
+Module[{occupiedstates, matFs, stateloop, func},
+	occupiedstates = Take[Sort[Eigensystem[heff[#], opts, Method -> "Direct"]\[Transpose]], nF][[;;, 2]] & /@ vks;
+	func = {vecs1, vecs2} |-> Outer[#\[Conjugate] . #2 &, vecs1, vecs2, 1];
+	stateloop = Partition[occupiedstates, 2, 1, {1, 1}];
+	matFs = Dot @@ func @@@ stateloop;
+	(*-1/(2\[Pi]) Arg[Eigenvalues[matFs]] // Sort*)
+	-(1/(2\[Pi])) Arg @ Det[matFs]
+];
 
+PlaquetteRegionPartition[region_, opts:OptionsPattern[TriangulateMesh]] :=
+Module[{regiondiscrized, meshcoordinates, plaquettevertexindex},
+	regiondiscrized = TriangulateMesh[region, opts];
+	meshcoordinates = MeshCoordinates[regiondiscrized];
+	Echo[MeshRegion[regiondiscrized, PlotTheme -> "Lines", PlotLabel -> StringTemplate["Vertex number: ``"][Length[meshcoordinates]]]];
+	plaquettevertexindex = MeshCells[regiondiscrized, 2][[;;, 1]];
+	Extract[meshcoordinates, {#}\[Transpose]] & /@ plaquettevertexindex
+];
 
 
 End[] (* End `Private` *)
