@@ -112,7 +112,7 @@ Module[{vx, vy, eigensyst, \[CapitalOmega]nl, \[Delta]k = 1.*^-7, Hveck = H[veck
 
 (*WannerChargeCenter[] :=.*)
 
-PlaquetteChern[vks:{{__?NumericQ}..}, heff_, nF_Integer, opts:OptionsPattern[Eigensystem]] :=
+PlaquetteChern[vks:{{__?NumericQ}..}, heff_, nF_?(# \[Element] PositiveIntegers &), opts:OptionsPattern[Eigensystem]] :=
 Module[{occupiedstates, matFs, stateloop, func},
 	occupiedstates = Take[Sort[Eigensystem[heff[#], opts, Method -> "Direct"]\[Transpose]], nF][[;;, 2]] & /@ vks;
 	func = {vecs1, vecs2} |-> Outer[#\[Conjugate] . #2 &, vecs1, vecs2, 1];
