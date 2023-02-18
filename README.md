@@ -1,4 +1,4 @@
-# TBMethod_paclet
+# TBMethod
 
 ## Installation
 
