@@ -10,12 +10,12 @@
 ```
 Needs["TBMethod`"]
 ```
-3. For parallel computation, load it by
+2. For parallel computation, load it by
 ```
 Needs["TBMethod`"]
 ParallelNeeds["TBMethod`"]
 ```	
-4. Check the installation by
+3. Check the installation by
 ```
 Scan[Echo @* Information] @ {"TBMethod`MDConstruct`*", "TBMethod`EigenSpect`*", "TBMethod`LGFF`*", "TBMethod`DataVisualization`*"}
 ```
