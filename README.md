@@ -15,7 +15,7 @@ Needs["TBMethod`"]
 Needs["TBMethod`"]
 ParallelNeeds["TBMethod`"]
 ```	
-4. Check by running
+4. Check the installation by
 ```
 Scan[Echo @* Information] @ {"TBMethod`MDConstruct`*", "TBMethod`EigenSpect`*", "TBMethod`LGFF`*", "TBMethod`DataVisualization`*"}
 ```
