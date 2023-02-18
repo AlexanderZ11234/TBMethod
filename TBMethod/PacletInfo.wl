@@ -14,8 +14,7 @@ PacletObject[
                 },
                 {
                     "Kernel",
-                    (*"Root" -> ".",*)
-                    "Root" -> "Kernel",
+                    "Root" -> ".",
                     "Context" -> "TBMethod`"
                 }
             },

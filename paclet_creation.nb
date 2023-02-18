@@ -10,16 +10,21 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     28012,        548]
-NotebookOptionsPosition[     26428,        511]
-NotebookOutlinePosition[     26841,        527]
-CellTagsIndexPosition[     26798,        524]
+NotebookDataLength[     28549,        560]
+NotebookOptionsPosition[     26873,        522]
+NotebookOutlinePosition[     27286,        538]
+CellTagsIndexPosition[     27243,        535]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+Cell[BoxData[
+ RowBox[{"SystemOpen", "[", 
+  RowBox[{"$UserBaseDirectory", "<>", "\"\</Applications\>\""}], 
+  "]"}]], "Input",ExpressionUUID->"c7865b79-eedd-4fe3-ac2c-1af5e7d1d6e4"],
 
 Cell[CellGroupData[{
+
 Cell[BoxData[
  RowBox[{"PacletInstall", "[", 
   "\"\<https://github.com/AlexanderZ11234/TBMethod\>\"", "]"}]], "Input",
@@ -57,13 +62,13 @@ Cell[BoxData[
     "}"}], "]"}], "]"}]], "Input",
  CellChangeTimes->{{3.884574265407531*^9, 3.8845743025422044`*^9}, {
   3.884574433293262*^9, 3.8845745117182407`*^9}},
- CellLabel->"In[27]:=",ExpressionUUID->"10897d2c-ad05-40ce-b411-c09069baea5f"],
+ CellLabel->"In[4]:=",ExpressionUUID->"10897d2c-ad05-40ce-b411-c09069baea5f"],
 
 Cell[BoxData["\<\"C:\\\\Users\\\\z\\\\Documents\\\\GitHub\\\\TBMethod_paclet\\\
 \\TBMethod-1.0.0.paclet\"\>"], "Output",
  CellChangeTimes->{3.884574293923051*^9, 3.884574463707343*^9, 
-  3.8845778016140537`*^9},
- CellLabel->"Out[27]=",ExpressionUUID->"af8abbf9-aca7-41b2-9753-68b1654589dd"]
+  3.8845778016140537`*^9, 3.8856975728331566`*^9, 3.8856977513285685`*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"7caa8256-c9cf-4b7f-a08c-534df0ad320b"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -90,11 +95,12 @@ Cell[BoxData[
   "\"\<https://github.com/AlexanderZ11234/TBMethod_paclet/TBMethod-1.0.0.\
 paclet\>\"", "]"}]], "Input",
  CellChangeTimes->{{3.8845778923098717`*^9, 3.88457792792213*^9}},
- CellLabel->"In[29]:=",ExpressionUUID->"63512617-8d2c-4476-8300-d42668513b0d"],
+ CellLabel->"In[2]:=",ExpressionUUID->"63512617-8d2c-4476-8300-d42668513b0d"],
 
 Cell[BoxData["$Failed"], "Output",
- CellChangeTimes->{3.884577901543843*^9, 3.88457793615552*^9},
- CellLabel->"Out[29]=",ExpressionUUID->"36cc9474-e850-46ce-8c0d-09e02d16ce15"]
+ CellChangeTimes->{3.884577901543843*^9, 3.88457793615552*^9, 
+  3.885697699443116*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"19b364d7-6eb3-4ca6-90ac-aa13ae8fb767"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -102,10 +108,13 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"PacletInstall", "[", 
   RowBox[{
-   RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
-   "\"\<TBMethod-1.0.0.paclet\>\""}], "]"}]], "Input",
- CellChangeTimes->{{3.884577951233986*^9, 3.8845779604386497`*^9}},
- CellLabel->"In[30]:=",ExpressionUUID->"be42ce7f-2fd3-486f-8002-29af2e826875"],
+   RowBox[{
+    RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+    "\"\<TBMethod-1.0.0.paclet\>\""}], ",", 
+   RowBox[{"ForceVersionInstall", "->", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.884577951233986*^9, 3.8845779604386497`*^9}, {
+  3.8856977788341026`*^9, 3.885697783898055*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"be42ce7f-2fd3-486f-8002-29af2e826875"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -496,7 +505,7 @@ Paclets\\\\Repository\\\\TBMethod-1.0.0\"", "SummaryItem"]}]}, {
    "Name" -> "TBMethod", "Version" -> "1.0.0", "WolframVersion" -> "12.0.0+", 
     "Extensions" -> {{
       "Documentation", "MainPage" -> "Guides/TBMethod", "Language" -> 
-       "English"}, {"Kernel", "Root" -> "Kernel", "Context" -> "TBMethod`"}}, 
+       "English"}, {"Kernel", "Root" -> ".", "Context" -> "TBMethod`"}}, 
     "Creator" -> "Alexander Junjie Zeng", "Description" -> 
     "Facilitate creation of tight-binding models and related quantum \
 transport calculation.", "Location" -> 
@@ -505,13 +514,15 @@ TBMethod-1.0.0"|>],
   Editable->False,
   SelectWithContents->True,
   Selectable->False]], "Output",
- CellChangeTimes->{3.88457796156917*^9},
- CellLabel->"Out[30]=",ExpressionUUID->"60647884-14c1-40e5-8777-1a9669dc847b"]
+ CellChangeTimes->{
+  3.88457796156917*^9, 3.885697705031473*^9, {3.885697756462101*^9, 
+   3.885697785511706*^9}},
+ CellLabel->"Out[6]=",ExpressionUUID->"0c9f0c87-4a66-445a-993e-f9227050fb50"]
 }, Open  ]]
 },
 WindowSize->{569.25, 609.75},
-WindowMargins->{{Automatic, 619.5}, {55.5, Automatic}},
-FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (November 18, 2022)",
+WindowMargins->{{310.5, Automatic}, {68.25, Automatic}},
+FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 30, 2023)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"0ec904e9-767e-4a8a-bdb5-0877d887faf1"
 ]
@@ -526,29 +537,30 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
+Cell[558, 20, 182, 3, 43, "Input",ExpressionUUID->"c7865b79-eedd-4fe3-ac2c-1af5e7d1d6e4"],
 Cell[CellGroupData[{
-Cell[580, 22, 267, 4, 43, "Input",ExpressionUUID->"05bf84d8-370c-4cbd-aec0-6515ceb1f21f"],
-Cell[850, 28, 154, 2, 32, "Output",ExpressionUUID->"99b611a6-388c-40f4-843c-5193c375e6ae"]
+Cell[765, 27, 267, 4, 43, "Input",ExpressionUUID->"05bf84d8-370c-4cbd-aec0-6515ceb1f21f"],
+Cell[1035, 33, 154, 2, 32, "Output",ExpressionUUID->"99b611a6-388c-40f4-843c-5193c375e6ae"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1041, 35, 280, 5, 64, "Input",ExpressionUUID->"91bbdce4-b905-4be6-970f-ed1cad02c91b"],
-Cell[1324, 42, 245, 3, 32, "Output",ExpressionUUID->"e8da1b9a-b9cb-4644-92fa-c6df99198c16"]
+Cell[1226, 40, 280, 5, 64, "Input",ExpressionUUID->"91bbdce4-b905-4be6-970f-ed1cad02c91b"],
+Cell[1509, 47, 245, 3, 32, "Output",ExpressionUUID->"e8da1b9a-b9cb-4644-92fa-c6df99198c16"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1606, 50, 420, 9, 78, "Input",ExpressionUUID->"10897d2c-ad05-40ce-b411-c09069baea5f"],
-Cell[2029, 61, 290, 4, 52, "Output",ExpressionUUID->"af8abbf9-aca7-41b2-9753-68b1654589dd"]
+Cell[1791, 55, 419, 9, 78, "Input",ExpressionUUID->"10897d2c-ad05-40ce-b411-c09069baea5f"],
+Cell[2213, 66, 337, 4, 52, "Output",ExpressionUUID->"7caa8256-c9cf-4b7f-a08c-534df0ad320b"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2356, 70, 376, 8, 62, "Input",ExpressionUUID->"63f3e3bc-58d3-40a6-b0cc-52b369d6f3d6"],
-Cell[2735, 80, 178, 2, 32, "Output",ExpressionUUID->"e665ba75-c8a2-4d6d-ae7e-c115b3ec918c"]
+Cell[2587, 75, 376, 8, 62, "Input",ExpressionUUID->"63f3e3bc-58d3-40a6-b0cc-52b369d6f3d6"],
+Cell[2966, 85, 178, 2, 32, "Output",ExpressionUUID->"e665ba75-c8a2-4d6d-ae7e-c115b3ec918c"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2950, 87, 296, 5, 83, "Input",ExpressionUUID->"63512617-8d2c-4476-8300-d42668513b0d"],
-Cell[3249, 94, 176, 2, 32, "Output",ExpressionUUID->"36cc9474-e850-46ce-8c0d-09e02d16ce15"]
+Cell[3181, 92, 295, 5, 83, "Input",ExpressionUUID->"63512617-8d2c-4476-8300-d42668513b0d"],
+Cell[3479, 99, 200, 3, 32, "Output",ExpressionUUID->"19b364d7-6eb3-4ca6-90ac-aa13ae8fb767"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3462, 101, 309, 6, 43, "Input",ExpressionUUID->"be42ce7f-2fd3-486f-8002-29af2e826875"],
-Cell[3774, 109, 22638, 399, 66, "Output",ExpressionUUID->"60647884-14c1-40e5-8777-1a9669dc847b"]
+Cell[3716, 107, 431, 9, 78, "Input",ExpressionUUID->"be42ce7f-2fd3-486f-8002-29af2e826875"],
+Cell[4150, 118, 22707, 401, 66, "Output",ExpressionUUID->"0c9f0c87-4a66-445a-993e-f9227050fb50"]
 }, Open  ]]
 }
 ]

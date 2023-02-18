@@ -1,0 +1,236 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8874,        226]
+NotebookOptionsPosition[      6588,        174]
+NotebookOutlinePosition[      8347,        219]
+CellTagsIndexPosition[      8304,        216]
+WindowTitle->HLeadBlocks
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {GridBox[{
+      {
+       ItemBox[Cell[BoxData[
+         RowBox[{
+          TemplateBox[{12},
+           "Spacer1"], Cell["T B METHOD SYMBOL", "PacletNameCell",
+           TextAlignment->Center,ExpressionUUID->
+           "6bac1372-4851-417e-b0e4-6bdb082a0e7e"], 
+          TemplateBox[{8},
+           "Spacer1"]}]],
+         TextAlignment->Center,ExpressionUUID->
+         "66dcd70e-451b-4403-acde-78e539949b3a"],
+        Background->RGBColor[0.490196, 0.576471, 0.690196],
+        ItemSize->Full], ""}
+     },
+     GridBoxAlignment->{"Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {Full, 
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[{
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "Related Guides",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "931c8f75-034b-4fb6-ac57-0f6d6f829fa8"]
+         }],ExpressionUUID->"b03b8554-eff7-4ff8-af70-79472eff4e19"],
+         StripOnInput->False], {"\<\"TBMethod\"\>":>Documentation`HelpLookup[
+        "paclet:TBMethod/guide/TBMethod"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"MoreAbout"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "eff553d9-61a3-438f-a595-5f32e40014d1"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "URL",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "90235589-3de6-4bda-b240-b3cceead1742"]
+         }],ExpressionUUID->"1d81be5b-7dfb-4475-b6f8-f6a3a0b9d286"],
+         StripOnInput->False], {"\<\"TBMethod/ref/HLeadBlocks\"\>":>
+        None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+        Module[{DocumentationSearch`Private`nb$}, 
+         DocumentationSearch`Private`nb$ = NotebookPut[
+            Notebook[{
+              Cell["TBMethod/ref/HLeadBlocks"]}, Visible -> False]]; 
+         SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+         FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+         NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+        Delimiter, "\<\"Copy web URL\"\>":>
+        Module[{DocumentationSearch`Private`nb$}, 
+         DocumentationSearch`Private`nb$ = NotebookPut[
+            Notebook[{
+              Cell[
+               BoxData[
+                MakeBoxes[
+                 Hyperlink[
+                 "http://reference.wolfram.com/language/TBMethod/ref/\
+HLeadBlocks.html"], StandardForm]], "Input", TextClipboardType -> 
+               "PlainText"]}, Visible -> False]]; 
+         SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+         FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+         NotebookClose[DocumentationSearch`Private`nb$]; 
+         Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+          NotebookLocate[{
+            URL[If[
+               TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$16320], 
+               "http://reference.wolfram.com/system-modeler/", 
+               "http://reference.wolfram.com/language/"] <> 
+             "TBMethod/ref/HLeadBlocks" <> ".html"], None}]}]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"URLMenu"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "8794bb45-5681-4b7a-aa05-05bcc670e657"]
+    }], "AnchorBar",
+     CacheGraphics->False,ExpressionUUID->
+     "24998ccc-13a1-4d36-bdbe-8b942261e632"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"bb926f49-e11f-4f79-a93c-f6144ec6e68f"],
+
+Cell["TBMethod`MDConstruct`", "ContextNameCell",ExpressionUUID->"6a00a717-ae5d-4aae-950b-38536d070b3e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {Cell[TextData[{
+     Cell[
+     "HLeadBlocks", "ObjectName",ExpressionUUID->
+      "4a7f81fb-64b8-4045-a344-93026f131fb7"],
+     Cell[BoxData[
+      TemplateBox[{8},
+       "Spacer1"]],ExpressionUUID->"c62676b3-e559-4eaf-a9e7-9f1b91590dfb"],
+     Cell[BoxData[
+     ""], "ObjectNameTranslation",ExpressionUUID->
+      "e9e44a1d-f343-40cd-bc5f-9eb37d881beb"]
+    }],ExpressionUUID->"ba79338f-e9ae-4480-9421-22bbdd0a1ffb"], 
+    "\[SpanFromLeft]"}
+  }]], "ObjectNameGrid",ExpressionUUID->"02de5a6b-5e84-4466-82b4-\
+6e5255cae7a5"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell["xxx",ExpressionUUID->"2e0512e2-1719-4521-942e-74eb4aabc719"]}
+  }]], "Usage",
+ CellID->544786962,ExpressionUUID->"5c09e6fb-d629-4bc4-80f7-376c93491887"]
+}, Open  ]],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, "RelatedGuide.png"]],
+     ImageSizeCache->{50., {27., 33.}}], GridBox[{
+      {
+       StyleBox[
+        RowBox[{"Related", " ", "Guides"}], "MoreAboutSection"]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["TBMethod"]], "paclet:TBMethod/guide/TBMethod"},
+          "RefLinkPlain",
+          BaseStyle->{"MoreAbout"}]], "MoreAbout",ExpressionUUID->
+         "9fffd1bf-a536-40cf-a2bc-3c5983e38641"]}]}
+     }]}
+  }]], "MoreAboutSection",ExpressionUUID->"32cdd2db-e427-4641-b6b4-\
+1ce722d92b82"],
+
+Cell[" ", "FooterCell",ExpressionUUID->"c853eb76-86f4-4965-aacd-2ddf45d6c8f1"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{900., 830.25},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"HLeadBlocks",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
+  "HasOptions" -> True, "ExampleCounter" -> 1, 
+  "Openers" -> {
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}}, 
+  "NewStyles" -> True, "CitationPopupData" -> $Failed, "ShowCitation" -> 
+  False, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2023, 2, 18, 16, 21, 41.1374968}", 
+    "history" -> {"XX", "", "", ""}, "context" -> "TBMethod`MDConstruct`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "T B Method Symbol", "language" -> "en", "paclet" -> "TBMethod", "status" -> 
+    "None", "summary" -> "xxx", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "HLeadBlocks", "titlemodifier" -> "", "windowtitle" -> "HLeadBlocks", 
+    "type" -> "Symbol", "uri" -> "TBMethod/ref/HLeadBlocks"}},
+CellContext->"Global`",
+FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 30, 2023)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "13.2 for Microsoft Windows (64-bit) (January 30, 2023)",
+   StyleDefinitions -> "Default.nb"],
+ExpressionUUID->"c09da83d-9c40-49c1-8f3a-c891f72f0a73"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[583, 21, 4328, 103, 70, "AnchorBarGrid",ExpressionUUID->"bb926f49-e11f-4f79-a93c-f6144ec6e68f",
+ CellID->1],
+Cell[4914, 126, 103, 0, 70, "ContextNameCell",ExpressionUUID->"6a00a717-ae5d-4aae-950b-38536d070b3e"],
+Cell[CellGroupData[{
+Cell[5042, 130, 554, 14, 70, "ObjectNameGrid",ExpressionUUID->"02de5a6b-5e84-4466-82b4-6e5255cae7a5"],
+Cell[5599, 146, 189, 3, 70, "Usage",ExpressionUUID->"5c09e6fb-d629-4bc4-80f7-376c93491887",
+ CellID->544786962]
+}, Open  ]],
+Cell[5803, 152, 700, 18, 70, "MoreAboutSection",ExpressionUUID->"32cdd2db-e427-4641-b6b4-1ce722d92b82"],
+Cell[6506, 172, 78, 0, 70, "FooterCell",ExpressionUUID->"c853eb76-86f4-4965-aacd-2ddf45d6c8f1"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

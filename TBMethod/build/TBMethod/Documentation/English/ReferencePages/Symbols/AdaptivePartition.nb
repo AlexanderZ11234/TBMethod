@@ -1,0 +1,231 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8917,        221]
+NotebookOptionsPosition[      6378,        164]
+NotebookOutlinePosition[      8495,        215]
+CellTagsIndexPosition[      8452,        212]
+WindowTitle->AdaptivePartition
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {GridBox[{
+      {
+       ItemBox[Cell[BoxData[
+         RowBox[{
+          TemplateBox[{12},
+           "Spacer1"], Cell["T B METHOD SYMBOL", "PacletNameCell",
+           TextAlignment->Center,ExpressionUUID->
+           "16ed5819-2ab7-4294-b99a-280f1a982f2b"], 
+          TemplateBox[{8},
+           "Spacer1"]}]],
+         TextAlignment->Center,ExpressionUUID->
+         "d60003c8-2b34-46bc-97bf-bfaf62eb15cf"],
+        Background->RGBColor[0.490196, 0.576471, 0.690196],
+        ItemSize->Full], ""}
+     },
+     GridBoxAlignment->{"Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {Full, 
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[Cell[BoxData[
+     TagBox[
+      ActionMenuBox[
+       FrameBox[Cell[TextData[{
+         "URL",
+         " ",
+         Cell[BoxData[
+          GraphicsBox[
+           {GrayLevel[0.66667], Thickness[0.13], 
+            LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+           AspectRatio->1,
+           ImageSize->20,
+           PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+          "e87722e1-301d-49d2-a112-4f44e38fe12c"]
+        }],ExpressionUUID->"68bac3a5-4f12-4952-9a91-62eeef5f1e7c"],
+        StripOnInput->False], {"\<\"TBMethod/ref/AdaptivePartition\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["TBMethod/ref/AdaptivePartition"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/TBMethod/ref/\
+AdaptivePartition.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$12321], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"] <> 
+            "TBMethod/ref/AdaptivePartition" <> ".html"], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"],
+      MouseAppearanceTag["LinkHand"]]],
+     LineSpacing->{1.4, 0},ExpressionUUID->
+     "e65c03e6-3d2f-4238-b20e-311a656d2e0f"]], "AnchorBar",
+     CacheGraphics->False,ExpressionUUID->
+     "492c1542-c66d-4078-8ac5-2c9a3d078fcd"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"a5dadf33-598e-4626-8df9-1c91c5ca2cd4"],
+
+Cell["TBMethod`MDConstruct`", "ContextNameCell",ExpressionUUID->"e6f8dd20-b455-4539-9d64-a35346ac6e5a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {Cell[TextData[{
+     Cell[
+     "AdaptivePartition", "ObjectName",ExpressionUUID->
+      "f6033260-45ca-4345-85a7-8918bde5d23a"],
+     Cell[BoxData[
+      TemplateBox[{8},
+       "Spacer1"]],ExpressionUUID->"8b1ba1d1-358e-43c7-9424-e56b1f4a24d5"],
+     Cell[BoxData[
+     ""], "ObjectNameTranslation",ExpressionUUID->
+      "5bcb0084-4a58-4af0-a2a8-d229af944d64"]
+    }],ExpressionUUID->"1ea04aa4-812c-477a-90a3-3cafc6fceaba"], 
+    "\[SpanFromLeft]"}
+  }]], "ObjectNameGrid",ExpressionUUID->"50592da0-1962-43ce-a5ed-\
+b9104306fb90"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{" ", 
+       RowBox[{
+        TemplateBox[{
+          Cell[
+           TextData["AdaptivePartition"]], 
+          "paclet:TBMethod/ref/AdaptivePartition", "TBMethod Package Symbol"},
+         "PackageLink",
+         BaseStyle->"InlineFormula"], "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           StyleBox["ptsleads", "TI"], ",", " ", 
+           StyleBox["ptscsr", "TI"]}], "}"}], ",", " ", 
+         SubscriptBox[
+          StyleBox["d", "TI"], "up"]}], "]"}]}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "144a1d2c-f403-4427-8cd7-ac5c5313b124"],
+     " partitions the CSR in an adaptive way to achieve an optimal slicing \
+status, according to the given leads' configuration, where ",
+     Cell[BoxData[
+      StyleBox["ptsleads", "TI"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "d8d6c582-a3fb-4ca4-870b-5505b3a0fbda"],
+     " are the points in all the 1st cells of every lead, ",
+     Cell[BoxData[
+      StyleBox["ptscsr", "TI"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "412586f7-e839-4ee8-b7ae-98ee98048f16"],
+     " are the points in CSR, and ",
+     Cell[BoxData[
+      SubscriptBox[
+       StyleBox["d", "TI"], "up"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "f25be20a-ec86-423a-9023-580ab50c3baa"],
+     " is the upper limit of distance under consideration."
+    }],ExpressionUUID->"c377aa95-3219-42c6-b8ac-411e319cffa6"]}
+  }]], "Usage",
+ CellID->477852663,ExpressionUUID->"7aaf0d9d-39c1-44b3-999d-fc4e84c160fd"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"ed418f1e-5619-4072-87ab-a42a9ddcefcd"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{900., 830.25},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"AdaptivePartition",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
+  "HasOptions" -> True, "ExampleCounter" -> 1, 
+  "Openers" -> {
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}}, 
+  "NewStyles" -> True, "CitationPopupData" -> $Failed, "ShowCitation" -> 
+  False, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2023, 2, 18, 16, 21, 34.3886989}", 
+    "history" -> {"XX", "", "", ""}, "context" -> "TBMethod`MDConstruct`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "T B Method Symbol", "language" -> "en", "paclet" -> "TBMethod", "status" -> 
+    "None", "summary" -> 
+    "AdaptivePartition[{ptsleads, ptscsr}, dup] partitions the CSR in an \
+adaptive way to achieve an optimal slicing status, according to the given \
+leads' configuration, where ptsleads are the points in all the 1st cells of \
+every lead, ptscsr are the points in CSR, and dup is the upper limit of \
+distance under consideration.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "AdaptivePartition", "titlemodifier" -> "", "windowtitle" -> 
+    "AdaptivePartition", "type" -> "Symbol", "uri" -> 
+    "TBMethod/ref/AdaptivePartition"}},
+CellContext->"Global`",
+FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 30, 2023)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "13.2 for Microsoft Windows (64-bit) (January 30, 2023)",
+   StyleDefinitions -> "Default.nb"],
+ExpressionUUID->"203b86e5-b0fb-4666-a268-d100a9bcfafb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[589, 21, 3328, 76, 70, "AnchorBarGrid",ExpressionUUID->"a5dadf33-598e-4626-8df9-1c91c5ca2cd4",
+ CellID->1],
+Cell[3920, 99, 103, 0, 70, "ContextNameCell",ExpressionUUID->"e6f8dd20-b455-4539-9d64-a35346ac6e5a"],
+Cell[CellGroupData[{
+Cell[4048, 103, 560, 14, 70, "ObjectNameGrid",ExpressionUUID->"50592da0-1962-43ce-a5ed-b9104306fb90"],
+Cell[4611, 119, 1670, 40, 70, "Usage",ExpressionUUID->"7aaf0d9d-39c1-44b3-999d-fc4e84c160fd",
+ CellID->477852663]
+}, Open  ]],
+Cell[6296, 162, 78, 0, 70, "FooterCell",ExpressionUUID->"ed418f1e-5619-4072-87ab-a42a9ddcefcd"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

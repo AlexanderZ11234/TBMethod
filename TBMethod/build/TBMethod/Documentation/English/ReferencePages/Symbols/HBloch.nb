@@ -1,0 +1,610 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     21871,        600]
+NotebookOptionsPosition[     17669,        512]
+NotebookOutlinePosition[     19811,        567]
+CellTagsIndexPosition[     19726,        562]
+WindowTitle->HBloch
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {GridBox[{
+      {
+       ItemBox[Cell[BoxData[
+         RowBox[{
+          TemplateBox[{12},
+           "Spacer1"], Cell["T B METHOD SYMBOL", "PacletNameCell",
+           TextAlignment->Center,ExpressionUUID->
+           "4fabb835-0a1f-4ddf-b646-a47b3ed34c2e"], 
+          TemplateBox[{8},
+           "Spacer1"]}]],
+         TextAlignment->Center,ExpressionUUID->
+         "8d6ba3c7-38e6-43f1-a785-adee3a88b4ec"],
+        Background->RGBColor[0.490196, 0.576471, 0.690196],
+        ItemSize->Full], ""}
+     },
+     GridBoxAlignment->{"Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {Full, 
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[{
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "Related Guides",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "ad1833a1-5ea8-4810-9bc0-dcf75ce216bf"]
+         }],ExpressionUUID->"6d406804-9610-4512-9ae8-5bce07c40551"],
+         StripOnInput->False], {"\<\"TBMethod\"\>":>Documentation`HelpLookup[
+        "paclet:TBMethod/guide/TBMethod"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"MoreAbout"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "d84caa35-48da-401b-b1c5-b77803e7eefc"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "URL",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "b969f2b0-f271-42ea-b3df-0fafd1f68e6d"]
+         }],ExpressionUUID->"da4ff4c9-d733-445b-b047-8ef2ff1133d7"],
+         StripOnInput->False], {"\<\"TBMethod/ref/HBloch\"\>":>
+        None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+        Module[{DocumentationSearch`Private`nb$}, 
+         DocumentationSearch`Private`nb$ = NotebookPut[
+            Notebook[{
+              Cell["TBMethod/ref/HBloch"]}, Visible -> False]]; 
+         SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+         FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+         NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+        Delimiter, "\<\"Copy web URL\"\>":>
+        Module[{DocumentationSearch`Private`nb$}, 
+         DocumentationSearch`Private`nb$ = NotebookPut[
+            Notebook[{
+              Cell[
+               BoxData[
+                MakeBoxes[
+                 Hyperlink[
+                 "http://reference.wolfram.com/language/TBMethod/ref/HBloch.\
+html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
+             False]]; SelectionMove[
+          DocumentationSearch`Private`nb$, All, Notebook]; 
+         FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+         NotebookClose[DocumentationSearch`Private`nb$]; 
+         Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+          NotebookLocate[{
+            URL[If[
+               TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$15480], 
+               "http://reference.wolfram.com/system-modeler/", 
+               "http://reference.wolfram.com/language/"] <> 
+             "TBMethod/ref/HBloch" <> ".html"], None}]}]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"URLMenu"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "b6eda31f-f86d-4fdb-9323-562a228e0b89"]
+    }], "AnchorBar",
+     CacheGraphics->False,ExpressionUUID->
+     "8b7b9319-0d8a-4800-867f-63a323476dce"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"0418f624-eae2-4eef-9a30-0ff02d5d8b7c"],
+
+Cell["TBMethod`MDConstruct`", "ContextNameCell",ExpressionUUID->"f8689f50-7e57-44a4-8e70-e137b575bfd2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {Cell[TextData[{
+     Cell[
+     "HBloch", "ObjectName",ExpressionUUID->
+      "64b1a402-3c48-4c68-b059-123d46b7fc8d"],
+     Cell[BoxData[
+      TemplateBox[{8},
+       "Spacer1"]],ExpressionUUID->"f79dc0f0-32d5-47f8-a70a-ad7c82189a9a"],
+     Cell[BoxData[
+     ""], "ObjectNameTranslation",ExpressionUUID->
+      "1d471ccd-fa3e-459e-ae9f-68f0ba08a176"]
+    }],ExpressionUUID->"69539408-22d6-45f7-ac3f-516e80467295"], 
+    "\[SpanFromLeft]"}
+  }]], "ObjectNameGrid",ExpressionUUID->"5e262d45-d1de-4fdd-993a-\
+27c81e73442c"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"HBloch", "[", 
+       RowBox[{
+        StyleBox["k",
+         FontWeight->"Bold",
+         FontSlant->"Italic"], ",", " ", 
+        RowBox[{"\[LeftAssociation]", 
+         RowBox[{
+          RowBox[{
+           SubscriptBox[
+            StyleBox["a",
+             FontWeight->"Bold",
+             FontSlant->"Italic"], "0"], "\[Rule]", 
+           SubscriptBox[
+            StyleBox["h",
+             FontSlant->"Italic"], "00"]}], ",", 
+          RowBox[{
+           SubscriptBox[
+            StyleBox["a",
+             FontWeight->"Bold",
+             FontSlant->"Italic"], "1"], "\[Rule]", 
+           SubscriptBox[
+            StyleBox["h",
+             FontSlant->"Italic"], "10"]}], ",", "...", ",", 
+          RowBox[{
+           SubscriptBox[
+            StyleBox["a",
+             FontWeight->"Bold",
+             FontSlant->"Italic"], 
+            StyleBox["i",
+             FontSlant->"Italic"]], "\[Rule]", 
+           SubscriptBox[
+            StyleBox["h",
+             FontSlant->"Italic"], 
+            StyleBox[
+             RowBox[{
+              StyleBox["i",
+               FontSlant->"Italic"], "0"}]]]}], ",", "..."}], 
+         "\[RightAssociation]"}]}], "]"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "244f8092-e026-4012-b41d-7f290f0c4a7f"],
+     " constructs the reciprocal-space Bloch Hamiltonian matrix."
+    }],ExpressionUUID->"e69f4037-1661-47b5-8d15-a467b238859b"]}
+  }]], "Usage",
+ CellID->153566697,ExpressionUUID->"257bba06-eb02-4d4d-b245-ae95dddb37eb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    DynamicBox[ToBoxes[
+      If[
+       MatchQ[
+        CurrentValue[
+         EvaluationNotebook[], {TaggingRules, "Openers", "NotesSection"}, 
+         Closed], 
+        Alternatives[Open, True]], 
+       Style[
+        Graphics[{
+          Thickness[0.18], 
+          RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+          Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+         PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+        0.68 Inherited], 
+       Rotate[
+        Style[
+         Graphics[{
+           Thickness[0.18], 
+           RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+           Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+          PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+         0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+     ImageSizeCache->{
+      13.600000000000001`, {0.5800000000000001, 13.020000000000001`}}]],
+    ExpressionUUID->"b8ab3542-4264-458e-a9c8-099780e7d44b"],
+   Cell[BoxData[
+    TemplateBox[{1},
+     "Spacer1"]],ExpressionUUID->"401e9a57-ffe4-4fa8-ab42-76f8daf97a05"],
+   "Details and Options"
+  }], "NotesFrameText",ExpressionUUID->"0c8b6c7a-7fc2-4ddd-9f6c-a103b4037f73"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->
+   "Preemptive"]],ExpressionUUID->"a0feac2b-b968-45ce-8c94-d7840f51220e"]], \
+"NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CacheGraphics->False,
+ CellID->652512490,ExpressionUUID->"6cd1c5a7-e7c6-441b-a90f-92c2e5b3132a"],
+
+Cell[TextData[{
+ "Vector ",
+ Cell[BoxData[
+  StyleBox["k",
+   FontWeight->"Bold",
+   FontSlant->"Italic"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "736d0795-aecb-454a-87b0-dbdd034376ad"],
+ " has the same dimension as those of lattice vectors ",
+ Cell[BoxData[
+  SubscriptBox[
+   StyleBox["a",
+    FontWeight->"Bold",
+    FontSlant->"Italic"], "i"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "465f55f6-fc0f-4121-b7bd-ba757ed20461"],
+ "s."
+}], "Notes",
+ CellID->80053754,ExpressionUUID->"7018c9af-1bad-48fd-8e83-222bd9347eae"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  RowBox[{
+   SubscriptBox[
+    StyleBox["a",
+     FontWeight->"Bold",
+     FontSlant->"Italic"], "0"], "=", 
+   StyleBox["0",
+    FontWeight->"Bold"]}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "4e43c169-201c-4f16-9706-02c27e6d79a8"],
+ " is the zero vector, and ",
+ Cell[BoxData[
+  SubscriptBox[
+   StyleBox["h",
+    FontSlant->"Italic"], "00"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "8a8b7f91-f8a2-4cd4-a924-b6ffbbfe14be"],
+ " is the Hermitian intra-primitive-cell hopping matrix."
+}], "Notes",
+ CellID->35926267,ExpressionUUID->"18c317ee-329b-431a-bb0b-be3bf85b8267"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  RowBox[{
+   SubscriptBox[
+    StyleBox["a",
+     FontWeight->"Bold",
+     FontSlant->"Italic"], 
+    StyleBox["i",
+     FontSlant->"Italic"]], 
+   RowBox[{"(", 
+    RowBox[{
+     StyleBox["i",
+      FontSlant->"Italic"], "\[NotEqual]", "0"}], ")"}]}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "8ddaca5d-adfd-4e2d-aa44-3f752fd1d9c4"],
+ "s are the corresponding lattice vectors for neighbor cells, and the \
+inter-cell hopping matrices ",
+ Cell[BoxData[
+  SubscriptBox[
+   StyleBox["h",
+    FontSlant->"Italic"], 
+   StyleBox[
+    RowBox[{
+     StyleBox["i",
+      FontSlant->"Italic"], "0"}]]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "6d6a2e22-745c-4046-8aca-754ac8882818"],
+ "s are usually non-Hermitian."
+}], "Notes",
+ CellID->71249355,ExpressionUUID->"e8eafef3-934b-455a-97a2-389b498d1b39"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  RowBox[{
+   SubscriptBox[
+    StyleBox["a",
+     FontWeight->"Bold",
+     FontSlant->"Italic"], 
+    StyleBox["i",
+     FontSlant->"Italic"]], 
+   RowBox[{"(", 
+    RowBox[{
+     StyleBox["i",
+      FontSlant->"Italic"], "\[NotEqual]", "0"}], ")"}]}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "3c4f7c45-2a4b-4239-8bb4-28100f51d011"],
+ "s can be divide into two groups so that for any ",
+ Cell[BoxData[
+  SubscriptBox[
+   StyleBox["a",
+    FontWeight->"Bold",
+    FontSlant->"Italic"], 
+   StyleBox["i",
+    FontSlant->"Italic"]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "aab82405-091f-4845-b651-3448fca4d599"],
+ " in one group, its addition inverse ",
+ Cell[BoxData[
+  RowBox[{
+   SubscriptBox[
+    StyleBox["a",
+     FontWeight->"Bold",
+     FontSlant->"Italic"], 
+    RowBox[{
+     StyleBox["i",
+      FontSlant->"Italic"], "'"}]], "=", 
+   RowBox[{"-", 
+    SubscriptBox[
+     StyleBox["a",
+      FontWeight->"Bold",
+      FontSlant->"Italic"], 
+     StyleBox["i",
+      FontSlant->"Italic"]]}]}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "0fbe8f88-d503-4fd5-ab5f-6c4ccceea731"],
+ " is in the other group. And for ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["HBloch"]], "paclet:TBMethod/ref/HBloch", 
+    "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "9f9e5b2e-6cd7-4f6c-90f2-74d3e4491311"],
+ " only one of those two groups of ",
+ Cell[BoxData[
+  SubscriptBox[
+   StyleBox["a",
+    FontWeight->"Bold",
+    FontSlant->"Italic"], 
+   StyleBox["i",
+    FontSlant->"Italic"]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "89a6a5af-be07-41b7-bf4d-2f70d98aafc0"],
+ "s should be included, because the constituents for the inverse vectors are \
+to be automatically taken care of by ",
+ ButtonBox["ConjugateTranspose",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/ConjugateTranspose"],
+ "."
+}], "Notes",
+ CellID->64487330,ExpressionUUID->"f51fcf75-2f48-4649-8126-1fbb4eb1a6fa"]
+}, Dynamic[CurrentValue[
+ EvaluationNotebook[], {TaggingRules, "Openers", "NotesSection"}, Closed]]]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[
+     MatchQ[
+      CurrentValue[
+       EvaluationNotebook[], {
+       TaggingRules, "Openers", "PrimaryExamplesSection"}, Open], 
+      Alternatives[True, Open]], 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+   ImageSizeCache->{13.600000000000001`, {5., 8.600000000000001}}]],
+  ExpressionUUID->"23b03aae-eb8a-4e32-ab60-895dff01070a"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"2c1f815c-23f9-491c-b01e-c24c8c7548b5"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "499d346b-afc9-4bde-ad75-2413dfb96be3"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellTags->"PrimaryExamplesSection",
+ CellID->44444842,ExpressionUUID->"1b011ce6-75b9-4885-80bb-20fcc81b28eb"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[
+     MatchQ[
+      CurrentValue[
+       EvaluationNotebook[], {TaggingRules, "Openers", "ExampleSection", "0"},
+        Closed], 
+      Alternatives[Open, True]], 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+   ImageSizeCache->{13.600000000000001`, {5., 8.600000000000001}}]],
+  ExpressionUUID->"72515765-7c10-47d0-bf2f-5c851c81c3f5"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"80b95bb1-8f29-43d1-8894-b7ab730e0d12"],
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "89d1e966-2428-46c7-b8ba-9e7abfc55dd0"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellID->184669683,ExpressionUUID->"64dc7cfc-2e64-42f9-80ac-401bf7632d3b"],
+
+Cell["Load the package", "ExampleText",
+ CellID->11904999,ExpressionUUID->"e0d61f5e-c0cb-4586-bd96-1231536a8d4a"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<TBMethod`\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->226833854,ExpressionUUID->"cb3bdbb9-f9d5-4434-b813-52083d96d602"]
+}, Dynamic[CurrentValue[
+ EvaluationNotebook[], {TaggingRules, "Openers", "ExampleSection", "0"}, 
+  Closed]]]]
+}, Dynamic[CurrentValue[
+ EvaluationNotebook[], {TaggingRules, "Openers", "PrimaryExamplesSection"}, 
+  Closed]]]],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, "RelatedGuide.png"]],
+     ImageSizeCache->{50., {27., 33.}}], GridBox[{
+      {
+       StyleBox[
+        RowBox[{"Related", " ", "Guides"}], "MoreAboutSection"]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["TBMethod"]], "paclet:TBMethod/guide/TBMethod"},
+          "RefLinkPlain",
+          BaseStyle->{"MoreAbout"}]], "MoreAbout",ExpressionUUID->
+         "c26dc291-c363-4140-9335-9a01f6863014"]}]}
+     }]}
+  }]], "MoreAboutSection",ExpressionUUID->"2a39da57-0381-46ba-8294-\
+241cee177e93"],
+
+Cell[" ", "FooterCell",ExpressionUUID->"9f20b074-0b32-448c-a7df-59d10fc60634"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{900., 830.25},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"HBloch",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
+  "HasOptions" -> True, "ExampleCounter" -> 1, 
+  "Openers" -> {
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}, 
+    "NotesSection" -> Closed}, "NewStyles" -> True, 
+  "CitationPopupData" -> $Failed, "ShowCitation" -> False, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2023, 2, 18, 16, 21, 40.5938541}", 
+    "history" -> {"XX", "", "", ""}, "context" -> "TBMethod`MDConstruct`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "T B Method Symbol", "language" -> "en", "paclet" -> "TBMethod", "status" -> 
+    "None", "summary" -> 
+    "HBloch[k, <|a 0 -> h00, a 1 -> h10, ..., a i -> h i0, ...|>] constructs \
+the reciprocal-space Bloch Hamiltonian matrix.", "synonyms" -> {}, 
+    "tabletags" -> {}, "title" -> "HBloch", "titlemodifier" -> "", 
+    "windowtitle" -> "HBloch", "type" -> "Symbol", "uri" -> 
+    "TBMethod/ref/HBloch"}},
+CellContext->"Global`",
+FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 30, 2023)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "13.2 for Microsoft Windows (64-bit) (January 30, 2023)",
+   StyleDefinitions -> "Default.nb"],
+ExpressionUUID->"47e9dfd7-7a50-4d4a-b667-639a1cf615d9"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[13521, 397, 1419, 37, 70, "PrimaryExamplesSection",ExpressionUUID->"1b011ce6-75b9-4885-80bb-20fcc81b28eb",
+   CellTags->"PrimaryExamplesSection",
+   CellID->44444842]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 19527, 555}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[578, 21, 4307, 103, 70, "AnchorBarGrid",ExpressionUUID->"0418f624-eae2-4eef-9a30-0ff02d5d8b7c",
+ CellID->1],
+Cell[4888, 126, 103, 0, 70, "ContextNameCell",ExpressionUUID->"f8689f50-7e57-44a4-8e70-e137b575bfd2"],
+Cell[CellGroupData[{
+Cell[5016, 130, 549, 14, 70, "ObjectNameGrid",ExpressionUUID->"5e262d45-d1de-4fdd-993a-27c81e73442c"],
+Cell[5568, 146, 1604, 46, 70, "Usage",ExpressionUUID->"257bba06-eb02-4d4d-b245-ae95dddb37eb",
+ CellID->153566697]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7209, 197, 1919, 48, 70, "NotesSection",ExpressionUUID->"6cd1c5a7-e7c6-441b-a90f-92c2e5b3132a",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->652512490],
+Cell[9131, 247, 580, 18, 70, "Notes",ExpressionUUID->"7018c9af-1bad-48fd-8e83-222bd9347eae",
+ CellID->80053754],
+Cell[9714, 267, 660, 20, 70, "Notes",ExpressionUUID->"18c317ee-329b-431a-bb0b-be3bf85b8267",
+ CellID->35926267],
+Cell[10377, 289, 883, 29, 70, "Notes",ExpressionUUID->"e8eafef3-934b-455a-97a2-389b498d1b39",
+ CellID->71249355],
+Cell[11263, 320, 2131, 71, 70, "Notes",ExpressionUUID->"f51fcf75-2f48-4649-8126-1fbb4eb1a6fa",
+ CellID->64487330]
+}, Dynamic[CurrentValue[EvaluationNotebook[], {TaggingRules, "Openers", "NotesSection"}, Closed]]]],
+Cell[CellGroupData[{
+Cell[13521, 397, 1419, 37, 70, "PrimaryExamplesSection",ExpressionUUID->"1b011ce6-75b9-4885-80bb-20fcc81b28eb",
+ CellTags->"PrimaryExamplesSection",
+ CellID->44444842],
+Cell[CellGroupData[{
+Cell[14965, 438, 1398, 36, 70, "ExampleSection",ExpressionUUID->"64dc7cfc-2e64-42f9-80ac-401bf7632d3b",
+ CellID->184669683],
+Cell[16366, 476, 113, 1, 70, "ExampleText",ExpressionUUID->"e0d61f5e-c0cb-4586-bd96-1231536a8d4a",
+ CellID->11904999],
+Cell[16482, 479, 172, 3, 70, "Input",ExpressionUUID->"cb3bdbb9-f9d5-4434-b813-52083d96d602",
+ CellID->226833854]
+}, Dynamic[CurrentValue[EvaluationNotebook[], {TaggingRules, "Openers", "ExampleSection", "0"}, Closed]]]]
+}, Dynamic[CurrentValue[EvaluationNotebook[], {TaggingRules, "Openers", "PrimaryExamplesSection"}, Closed]]]],
+Cell[16884, 490, 700, 18, 70, "MoreAboutSection",ExpressionUUID->"2a39da57-0381-46ba-8294-241cee177e93"],
+Cell[17587, 510, 78, 0, 70, "FooterCell",ExpressionUUID->"9f20b074-0b32-448c-a7df-59d10fc60634"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
