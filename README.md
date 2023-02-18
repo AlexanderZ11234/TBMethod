@@ -2,4 +2,8 @@
 
 ## Installation
 
-Download the latest "*.paclet" file to local machine, and then run "PacletInstall[".../*.paclet"]" in an MMA notebook
+Download the latest "TBMethod-<\*version #\*>.paclet" file to local machine, and then run 
+```
+PacletInstall["<*path-to-download*>/TBMethod-<*version #*>.paclet"]
+```
+in an MMA notebook
