@@ -5,7 +5,7 @@
 1. **Download** the latest `"TBMethod-<\*version #\*>.paclet"` file to local machine;
 2. **Run** `PacletInstall["<*path-to-download*>/TBMethod-<*version #*>.paclet"]`.
 
-### Installation Test
+### Installation Test (1 &rarr; 3 or 2 &rarr; 3)
 1. For single kernel, load the package by 
 ```
 Needs["TBMethod`"]
@@ -15,8 +15,6 @@ Needs["TBMethod`"]
 Needs["TBMethod`"]
 ParallelNeeds["TBMethod`"]
 ```	
-
-_Choose one between Step 1 and Step 2_
 
 3. Check the installation by
 ```
