@@ -232,6 +232,16 @@ Module[{neighborindex, nf, indexgrouped, iterate, ptsleadnobool, ptscsrnobool, i
 	indexlayered = Reverse @ Rest @ NestWhile[iterate, initial, Last[#] != {} &, 1, \[Infinity], -1];
 	<|MapIndexed[#2[[1]] -> ptscsr[[#]] &, indexlayered]|>
 ];
+(*AdaptivePartition[ptsleadcsr:{ptslead1stcell:coordspattern, ptscsr:coordspattern}, dup_, opts: OptionsPattern[Nearest]] :=
+Module[{neighborindex, nf, indexgrouped, iterate, ptsleadnobool, ptscsrnobool, indexlayered, initial},
+	{ptsleadnobool, ptscsrnobool} = If[FreeQ[#, Rule[_, _]], #, Values[#]] & /@ ptsleadcsr;
+	nf = Nearest[ptscsrnobool -> Automatic, opts, WorkingPrecision -> MachinePrecision, Method -> "KDTree"];
+	neighborindex[x_] := DeleteDuplicates @* Join @@ nf[x, {All, dup}];
+	iterate = Append[#, Complement[neighborindex[ptscsrnobool[[Last[#]]]], #[[-1]], #[[-2]]]] &;
+	initial = {{}, neighborindex[ptsleadnobool]};
+	indexlayered = Reverse @ Rest @ NestWhile[iterate, initial, Last[#] != {} &, 1, \[Infinity], -1];
+	<|MapIndexed[#2[[1]] -> ptscsr[[#]] &, indexlayered]|>
+];*)
 
 HBlochsForSpecFunc[vk_, ptscellsvas_, tfunc_, dup_] :=
 Module[{HLeadIntraInterReal, HCSRIntraLeadInterReal, fillfunc, keys = Keys[ptscellsvas], len = Length[ptscellsvas]},
