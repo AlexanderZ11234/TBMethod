@@ -13,6 +13,7 @@ CentralBlockGreens::usage = "The blocks of the full Green's function in the last
 LocalDOSRealSpace::usage = "Real-space local density of states from the Layered method.";
 LocalDOSReciprocalSpace::usage = "Reciprocal-space local density of states.";
 LocalCDV::usage = "Local current density vector field from the Layered method.";
+TransportCoefficient::usage = "Calculates transmission or reflection coefficent by scattering matrix with Green's function method.";
 
 Begin["`Private`"]
 (* Implementation of the package *)
@@ -137,11 +138,24 @@ Module[{inv, diagblocks, iteratefunc, arguments},
 	]
 ];
 
-Transmission[GCSR_, sigmas_] :=
-Module[{gammap, gammaq},
-	{gammap, gammaq} = I (# - ConjugateTranspose[#]) & /@ sigmas;
-	(*{gammap, gammaq} = -2 Im /@ sigmas;*)(*This is very wrong!*)
-	Tr[ gammap . GCSR . gammaq . ConjugateTranspose[GCSR] ]
+Transmission[GCSR_, \[CapitalSigma]s_] :=
+Module[{\[CapitalGamma]p, \[CapitalGamma]q},
+	{\[CapitalGamma]p, \[CapitalGamma]q} = I (# - #\[ConjugateTranspose]) & /@ \[CapitalSigma]s;
+	(*{\[CapitalGamma]p, \[CapitalGamma]q} = -2 Im /@ \[CapitalSigma]s;*)(*This is very wrong!*)
+	Tr[ \[CapitalGamma]p . GCSR . \[CapitalGamma]q . GCSR\[ConjugateTranspose] ]
+];
+
+scatteringMatrix[GCSR_, \[CapitalSigma]s_] :=
+Module[{\[CapitalGamma]s, \[CapitalGamma]sqrts, len = Length[GCSR]},
+	\[CapitalGamma]s = I (# - #\[ConjugateTranspose]) & /@ \[CapitalSigma]s;
+	\[CapitalGamma]sqrts = MatrixPower[#, 1/2] & /@ \[CapitalGamma]s;
+	-IdentityMatrix[len] + I # . GCSR . #2 & @@ \[CapitalGamma]sqrts
+];
+
+TransportCoefficient[GCSR_, \[CapitalSigma]s_] :=
+Module[{matSq = #\[ConjugateTranspose] . # &, smat},
+	smat = scatteringMatrix[GCSR, \[CapitalSigma]s];
+	Tr[matSq[smat]]
 ];
 
 LocalDOSRealSpace[Gs_, sigmas_, layeredpts_Association, innerdof_:1] :=
