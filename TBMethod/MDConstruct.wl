@@ -190,7 +190,8 @@ Module[{hdfill, hofill, hdblocks, hoblocks, attachcheck, checkresults, csrpts = 
 	]
 ];
 
-HLeadBlocks[CSRptsgrouped_Association, tFunc_, dup_, leadpts_] := Table[HMatrixFromHoppings[fipts, tFunc, dup], {fipts, {{#[[1]], #[[1]]}, #, {Values[CSRptsgrouped][[-1]], #[[1]]}} & [leadpts]}];
+(*HLeadBlocks[CSRptsgrouped_Association, tFunc_, dup_, leadpts_] := Table[HMatrixFromHoppings[fipts, tFunc, dup], {fipts, {{#[[1]], #[[1]]}, #, {Values[CSRptsgrouped][[-1]], #[[1]]}} & [leadpts]}];*)
+HLeadBlocks[CSRptsgrouped_Association, tFunc_, dup_, leadpts_] := Table[HMatrixFromHoppings[fipts, tFunc, dup], {fipts, {{#[[1]], #[[1]]}, #, {CSRptsgrouped[[-1]], #[[1]]}} & [leadpts]}];
 
 (*HLeadBlocks[CSRptsgrouped_Association, tFunc_, dup_, leadpts_, leadname_String] :=
 Module[{attachcheck, checkresults, csrtwoouters = Values[CSRptsgrouped][[{-2, -1}]]},
