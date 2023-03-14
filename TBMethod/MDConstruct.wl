@@ -20,8 +20,10 @@ CoordinatesGroupByRegions::usage = "xxx.";
 AttachFreeQ::usage = "Checks if two devices are out of contact.";
 
 HCSRDiagOffDiagBlocks::usage = "xxx.";
+HCSRDiagOffDiagBlocksVerbose::usage = "Verbose version of HCSRDiagOffDiagBlocks.";
 
 HLeadBlocks::usage = "xxx.";
+HLeadBlocksVerbose::usage = "Verbose version of HLeadBlocks.";
 
 AdaptivePartition::usage = "Partitions the CSR in an adaptive way to achieve an optimal slicing status, according to the given leads' configuration."
 
@@ -190,10 +192,27 @@ Module[{hdfill, hofill, hdblocks, hoblocks, attachcheck, checkresults, csrpts = 
 	]
 ];
 
+HCSRDiagOffDiagBlocksVerbose[CSRptsgrouped_Association, tFunc_, dup_] :=
+Module[{hdfill, hofill, hdblocks, hoblocks, attachcheck, checkresults, csrpts = Values[CSRptsgrouped], len = Length[CSRptsgrouped]},
+	If[len == 1, HMatrixFromHoppings[Join[csrpts, csrpts], tFunc, dup],
+		(attachcheck = ({p1, p2, p3} |-> AttachFreeQ[{p1, p3}, dup]) @@ # &;
+		checkresults = And @@ BlockMap[attachcheck, csrpts, 3, 1];
+		Echo[StringTemplate["Attach check passed: ``."][checkresults]];
+		If[checkresults,
+			hdfill = p |-> HMatrixFromHoppings[{p, p}, tFunc, dup];
+			hofill = p |-> HMatrixFromHoppings[Reverse @ p, tFunc, dup];
+			hdblocks = hdfill /@ csrpts;
+			hoblocks = BlockMap[hofill, csrpts, 2, 1];
+			{hdblocks, hoblocks},
+			Echo["Reduce the division number of CSR."]
+		])
+	]
+];
+
 (*HLeadBlocks[CSRptsgrouped_Association, tFunc_, dup_, leadpts_] := Table[HMatrixFromHoppings[fipts, tFunc, dup], {fipts, {{#[[1]], #[[1]]}, #, {Values[CSRptsgrouped][[-1]], #[[1]]}} & [leadpts]}];*)
 HLeadBlocks[CSRptsgrouped_Association, tFunc_, dup_, leadpts_] := Table[HMatrixFromHoppings[fipts, tFunc, dup], {fipts, {{#[[1]], #[[1]]}, #, {CSRptsgrouped[[-1]], #[[1]]}} & [leadpts]}];
 
-(*HLeadBlocks[CSRptsgrouped_Association, tFunc_, dup_, leadpts_, leadname_String] :=
+HLeadBlocksVerbose[CSRptsgrouped_Association, tFunc_, dup_, leadpts_, leadname_String] :=
 Module[{attachcheck, checkresults, csrtwoouters = Values[CSRptsgrouped][[{-2, -1}]]},
 	attachcheck = p |-> AttachFreeQ[p, dup];
 	checkresults = attachcheck /@ ({csrtwoouters, leadpts}\[Transpose]);
@@ -203,7 +222,7 @@ Module[{attachcheck, checkresults, csrtwoouters = Values[CSRptsgrouped][[{-2, -1
 		Table[HMatrixFromHoppings[fipts, tFunc, dup], {fipts, {{#[[1]], #[[1]]}, #, {csrtwoouters[[-1]], #[[1]]}} & [leadpts]}],
 		Echo[StringTemplate["Enlarge the cell of Lead `` and/or reduce the division number of CSR."][leadname]]
 	]
-];*)
+];
 
 (*adaptive partition of CSR*)
 (*Points in CSR without labels*)
