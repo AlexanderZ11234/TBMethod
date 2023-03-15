@@ -145,17 +145,21 @@ Module[{\[CapitalGamma]p, \[CapitalGamma]q},
 	Tr[ \[CapitalGamma]p . GCSR . \[CapitalGamma]q . GCSR\[ConjugateTranspose] ]
 ];
 
-scatteringMatrix[GCSR_, \[CapitalSigma]s_] :=
-Module[{\[CapitalGamma]s, \[CapitalGamma]sqrts, len = Length[GCSR]},
-	\[CapitalGamma]s = I (# - #\[ConjugateTranspose]) & /@ \[CapitalSigma]s;
-	\[CapitalGamma]sqrts = MatrixPower[#, 1/2] & /@ \[CapitalGamma]s;
-	-IdentityMatrix[len] + I # . GCSR . #2 & @@ \[CapitalGamma]sqrts
+scatteringMatrix[GCSR_, \[CapitalSigma]s_, zero_ : 1.*^-4] :=
+Module[{\[CapitalGamma], \[CapitalGamma]sqrt, \[CapitalGamma]s, \[CapitalGamma]ssqrt, len = Length[GCSR], linewidth = I (# - #\[ConjugateTranspose]) &, sqrtmat = MatrixPower[#, 1/2] &, Mtot},
+	If[Equal @@ \[CapitalSigma]s,
+		(\[CapitalGamma] = linewidth[\[CapitalSigma]s[[2]]]; \[CapitalGamma]sqrt = sqrtmat[\[CapitalGamma]];
+		Mtot = MatrixRank[\[CapitalGamma]\[ConjugateTranspose] . \[CapitalGamma], Tolerance -> zero, ZeroTest -> (Abs[#]^2 < zero &)];
+		{- IdentityMatrix[len] + I \[CapitalGamma]sqrt . GCSR . \[CapitalGamma]sqrt, - len + Mtot}),
+		(\[CapitalGamma]s =  linewidth /@ \[CapitalSigma]s; \[CapitalGamma]ssqrt = sqrtmat /@ \[CapitalGamma]s;
+		{I # . GCSR . #2 & @@ \[CapitalGamma]ssqrt, 0})
+	]
 ];
 
-TransportCoefficient[GCSR_, \[CapitalSigma]s_] :=
-Module[{matSq = #\[ConjugateTranspose] . # &, smat},
-	smat = scatteringMatrix[GCSR, \[CapitalSigma]s];
-	Tr[matSq[smat]] - Length[GCSR]
+TransportCoefficient[GCSR_, \[CapitalSigma]s_ , zero_ : 1.*^-4] :=
+Module[{matSq = #\[ConjugateTranspose] . # &, smat, Mtot},
+	{smat, Mtot} = scatteringMatrix[GCSR, \[CapitalSigma]s, zero];
+	Tr[matSq[smat]] + Mtot
 ];
 
 LocalDOSRealSpace[Gs_, sigmas_, layeredpts_Association, innerdof_:1] :=
