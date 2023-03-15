@@ -155,7 +155,7 @@ Module[{\[CapitalGamma]s, \[CapitalGamma]sqrts, len = Length[GCSR]},
 TransportCoefficient[GCSR_, \[CapitalSigma]s_] :=
 Module[{matSq = #\[ConjugateTranspose] . # &, smat},
 	smat = scatteringMatrix[GCSR, \[CapitalSigma]s];
-	Tr[matSq[smat]]
+	Tr[matSq[smat]] - Length[GCSR]
 ];
 
 LocalDOSRealSpace[Gs_, sigmas_, layeredpts_Association, innerdof_:1] :=
