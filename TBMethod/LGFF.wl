@@ -72,7 +72,7 @@ Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, g0, t0
 	
 	inv[ g0inverse - h1 . T ]
 ];*)
-(*SurfaceGreen[epsilon_, {h0_, h1_}, mode:(1|2):1] :=
+SurfaceGreen[epsilon_, {h0_, h1_}, mode:(1|2):1] :=
 Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, g0, t0, tttilde, TTtilde, T, M, S1, S2, n},
 	g0inverse = epsilon id - h0;
 	
@@ -99,38 +99,6 @@ Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, g0, t0
 		(*{S1, S2} = Partition[SortBy[Eigensystem[M, Method \[Rule] "Direct"]\[Transpose], Abs@*First]\[LeftDoubleBracket];;n, 2\[RightDoubleBracket]\[Transpose], n];*)
 		{S1, S2} = Partition[Eigenvectors[M, -n, Method -> "Direct"]\[Transpose], n];
 		S1 . inverse[S2])
-	];
-	
-	inv[ g0inverse - h1 . T ]
-];*)
-
-SurfaceGreen[epsilon_, {h0_, h1_}, mode:(1|2):1] :=
-Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, g0, t0, tttilde, TTtilde, T, M, S1, S2, n},
-	g0inverse = epsilon id - h0;
-	
-	T = Which[
-		(*iterative 2^n method*)
-		mode == 1,
-		g0 = SparseArray[ inv[g0inverse] ];
-		t0 = {g0 . h1\[ConjugateTranspose], g0 . h1};
-		(tttilde[{a_, b_}] := Module[{tauinversed},
-			tauinversed = inv[ id - (a . b + b . a) ];
-			{tauinversed . a . a, tauinversed . b . b}
-		];
-		TTtilde[{{t_, tt_}, {T_, Tt_}}] := Module[{newt, newtt},
-			{newt, newtt} = tttilde[{t, tt}];
-			{{newt, newtt}, {T + Tt . newt, Tt . newtt}}
-		];
-		FixedPoint[TTtilde, {t0, t0}, 2000][[2, 1]]
-		),
-		(*transfer matrix method*)
-		mode == 2,
-		((*M = ArrayFlatten[({{#, -# . First[t0]}, {id, 0.}})& [inverse[Last @ t0]]] // SparseArray;*)
-		M = ArrayFlatten[({{# . g0inverse, -# . h1\[ConjugateTranspose]}, {id, 0.}})& [inv[h1]]] // SparseArray;
-		n = Length[id];
-		(*{S1, S2} = Partition[SortBy[Eigensystem[M, Method \[Rule] "Direct"]\[Transpose], Abs@*First]\[LeftDoubleBracket];;n, 2\[RightDoubleBracket]\[Transpose], n];*)
-		{S1, S2} = Partition[Eigenvectors[M, -n, Method -> "Direct"]\[Transpose], n];
-		S1 . inv[S2])
 	];
 	
 	inv[ g0inverse - h1 . T ]
