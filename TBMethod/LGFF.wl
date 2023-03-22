@@ -139,7 +139,7 @@ Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, g0, t0
 ];
 
 
-Sigma[epsilon_, {h0_, h1_, H01_}, mode:(1|2):1] :=
+Sigma[epsilon_, {h0_, h1_, H01_}, mode:(1|2|3):1] :=
 Module[{gsurface},
 	gsurface = SurfaceGreen[epsilon, {h0, h1}, mode];
 	SparseArray[H01 . gsurface . H01\[ConjugateTranspose]]
