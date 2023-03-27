@@ -90,23 +90,24 @@ Module[{n = 3, dim},
 ];
 
 
-pauliMatrixDecomposition[{{a_,b_},{c_,d_}}]:=FullSimplify[{a+d,b+c,I (b-c),a-d}/2]
-gellMannMatrixDecomposition[{{a_,b_,c_},{d_,e_,f_},{g_,h_,i_}}]:=FullSimplify[{2 (a+e+i)/3,b+d,I (b-d),a-e,c+g,I (c-g),f+h,I (f-h),(a+e-2 i)/Sqrt[3]}/2]
-dimfatorpattern=({{2,_Integer}}|{{3,_Integer}}|{{2,_Integer},{3,_Integer}});
-PauliGellMannDecomposition[M_?MatrixQ,dimlist:{(2|3)..}]/;(#==#2>=2&&MatchQ[FactorInteger[#],dimfatorpattern]&@@Dimensions[M]):=
-Module[{decompose,rules},
-decompose[n:(2|3)]:=If[n==2,pauliMatrixDecomposition,gellMannMatrixDecomposition];
-rules=ArrayRules[Fold[BlockMap[decompose[#2],#,{1,1}#2]&][M,Reverse@dimlist][[1,1]]];
-Association[MapAt[#-1&,{;;,1}]@Most[rules]]
-]
+pauliMatrixDecomposition[{{a_, b_}, {c_, d_}}] := FullSimplify[{a + d, b + c, I(b - c), a - d}/2];
+gellMannMatrixDecomposition[{{a_, b_, c_}, {d_, e_, f_}, {g_, h_, i_}}] := FullSimplify[{2(a + e + i)/3, b + d, I (b - d), a - e, c + g, I(c - g), f + h, I(f - h), (a + e - 2i)/Sqrt[3]}/2];
+dimfatorpattern = ({{2, _Integer}} | {{3, _Integer}} | {{2, _Integer}, {3, _Integer}});
+PauliGellMannDecomposition[M_?MatrixQ, dimlist:{(2|3)..}] /; (# == #2 >= 2 && MatchQ[FactorInteger[#], dimfatorpattern] & @@ Dimensions[M]):=
+Module[{decompose, rules},
+	decompose[n:(2|3)] := If[n == 2, pauliMatrixDecomposition, gellMannMatrixDecomposition];
+	rules = ArrayRules[Fold[BlockMap[decompose[#2], #, {1, 1} #2] &][M, Reverse @ dimlist][[1, 1]]];
+	Association[MapAt[# - 1 &, {;;, 1}] @ Most[rules]]
+];
 
-PauliGellMannAbstract[PGMDecomp_Association,dimlist:{(2|3)..}]:=Module[{s,keyfunc},
-s[n:(2|3)]:=If[n==2,\[Sigma],\[Lambda]];
-keyfunc=CircleTimes@@MapThread[Construct,{s/@dimlist,#}]&;
-Total[KeyValueMap[keyfunc[#]#2&][PGMDecomp]]
-]
+PauliGellMannAbstract[PGMDecomp_Association, dimlist:{(2|3)..}] :=
+Module[{s, keyfunc},
+	s[n:(2|3)] := If[n == 2, \[Sigma], \[Lambda]];
+	keyfunc = CircleTimes @@ MapThread[Construct, {s /@ dimlist, #}] &;
+	Total[KeyValueMap[keyfunc[#] #2 &][PGMDecomp]]
+];
 
-PauliGellMannRepresent[epr_]:=FullSimplify[epr/.{\[Sigma]->PauliMatrix,\[Lambda]->GellMannMatrix,CircleTimes->KroneckerProduct}]
+PauliGellMannRepresent[epr_] := FullSimplify[epr /. {\[Sigma] -> PauliMatrix, \[Lambda] -> GellMannMatrix, CircleTimes -> KroneckerProduct}];
 
 
 (*Auxiliary functions*)
