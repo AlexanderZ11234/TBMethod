@@ -57,7 +57,7 @@ ParallelEigenspectralData[hbloch_, ks_, obfunc:(_Function | _Symbol):Identity, s
 ParallelEigenspectralData[hbloch_, ks_, obfunc:(_Function | _Symbol):Identity, n_, s:OptionsPattern[Eigensystem]] := MapAt[obfunc, {All, 2}][Sort[Eigensystem[hbloch[#], n, s, Method -> "Direct"]\[Transpose]]] & ~ParallelMap~ ks
 
 
-PathSample[pts:{{__?NumericQ}..} /; Length[pts] >= 3, nleast_?(# \[Element] PositiveIntegers &)] :=
+PathSample[pts:{{__?NumericQ}..} /; Length[pts] >= 2, nleast_?(# \[Element] PositiveIntegers &)] :=
 Module[{ns, normalizeddist, xgridlines, samplings},
 	normalizeddist = Normalize[BlockMap[EuclideanDistance @@ # &, pts, 2, 1], Min];
 	ns = Floor[normalizeddist nleast];
