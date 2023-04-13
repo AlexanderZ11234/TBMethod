@@ -31,6 +31,9 @@ PlaquetteRegionPartition::usage = "Partitions a region, e.g. the first Brillouin
 ChernNumberByWilsonLoop::usage = "Calculates the Chern number contributed by a single band or a group of bands, usually the valence bands.";
 PlaquetteRegionPartitionComplex::usage = "Partitions a region, e.g. the first Brillouin zone, with a triangularization cover.";
 
+RegionPolarSample::usage = "Samples a 2D region shellwise from its center to its edge.";
+WannierChargeCenterByWilsonLoop::usage = "Calculates the Wannier Charge Center contributed by the occupied bands.";
+
 
 Begin["`Private`"]
 (* Implementation of the package *)
@@ -155,13 +158,24 @@ Module[{stateloop, matD, func},
 	Arg @ Det[matD]
 ];*)
 
-plaquettePhase[occupiedstates_] :=
+innerProductLoopTensor[occupiedstates_] :=
+Module[{stateloop, matD, func},
+	stateloop = {#, RotateLeft[#]} &[occupiedstates];
+	func = {vecs1, vecs2} |-> Outer[#\[Conjugate] . #2 &, vecs1, vecs2, 1];
+	Fold[Dot, MapThread[func][stateloop]] (*Dot @@ has the problem of iteration limit 4096!*)
+];
+
+plaquettePhase[occupiedstates_] := Arg @ Det[innerProductLoopTensor[occupiedstates]];
+plaquetteBandPhase[occupiedstates_] := Arg @ Eigenvalues[innerProductLoopTensor[occupiedstates]] // Sort;
+
+
+(*plaquettePhase[occupiedstates_] :=
 Module[{stateloop, matD, func},
 	stateloop = {#, RotateLeft[#]} &[occupiedstates];
 	func = {vecs1, vecs2} |-> Outer[#\[Conjugate] . #2 &, vecs1, vecs2, 1];
 	matD = Dot @@ MapThread[func][stateloop];
 	Arg @ Det[matD]
-];
+];*)
 
 ChernNumberByWilsonLoop[heff_, fbzcomplex:{vks:{__}, inds:{__}}, nF_?(# \[Element] PositiveIntegers &), opts:OptionsPattern[Eigensystem]] :=
 Module[{occupiedstatesall, occupiedstatesplaquette},
@@ -169,6 +183,21 @@ Module[{occupiedstatesall, occupiedstatesplaquette},
 	occupiedstatesall = TakeSmallestBy[Eigensystem[heff[#], opts, Method -> "Direct"]\[Transpose], First, nF][[;;, 2]] & /@ vks;
 	occupiedstatesplaquette = Extract[occupiedstatesall, inds];
 	-(1/(2\[Pi]))Sum[plaquettePhase[occupiedstates], {occupiedstates, occupiedstatesplaquette}]
+];
+
+RegionPolarSample[fbzreg_?RegionQ, n_Integer, ptsn_ /; ptsn > 0] :=
+Module[{fbzvertices, radialsamplings, azimuthalsample, \[CapitalGamma] = {0., 0.}},
+	fbzvertices = SortBy[Arg[Complex @@ #] &] @ PolygonCoordinates[fbzreg];
+	radialsamplings = PathSample[{\[CapitalGamma], #}, n][[1, 2;;]] & /@ fbzvertices;
+	azimuthalsample = PathSample[# /. {x_, y___, z_} :> {x, y, z, x}, \[LeftCeiling]ptsn #2[[1]]\[RightCeiling]][[1]] &;
+	MapIndexed[azimuthalsample, MapThread[Append, {radialsamplings, fbzvertices}]\[Transpose]]
+];
+
+WannierChargeCenterByWilsonLoop[heff_, vksloop_List, nF_?(# \[Element] PositiveIntegers &), opts:OptionsPattern[Eigensystem]] :=
+Module[{occupiedstates},
+	(*occupiedstates = Take[Sort[Eigensystem[heff[#], opts, Method -> "Direct"]\[Transpose]], nF][[;;, 2]] & /@ vksloop;*)
+	occupiedstates = TakeSmallestBy[Eigensystem[heff[#], opts, Method -> "Direct"]\[Transpose], First, nF][[;;, 2]] & /@ vksloop;
+	-1/\[Pi] plaquetteBandPhase[occupiedstates]
 ];
 
 
