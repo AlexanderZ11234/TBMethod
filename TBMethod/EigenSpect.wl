@@ -160,7 +160,7 @@ Module[{stateloop, matD, func},
 
 innerProductLoopTensor[occupiedstates_] :=
 Module[{stateloop, matD, func},
-	stateloop = {#, RotateLeft[#]} &[occupiedstates];
+	stateloop = {#, RotateLeft[#]} & [occupiedstates];
 	func = {vecs1, vecs2} |-> Outer[#\[Conjugate] . #2 &, vecs1, vecs2, 1];
 	Fold[Dot, MapThread[func][stateloop]] (*Dot @@ has the problem of iteration limit 4096!*)
 ];
@@ -179,8 +179,8 @@ Module[{stateloop, matD, func},
 
 ChernNumberByWilsonLoop[heff_, fbzcomplex:{vks:{__}, inds:{__}}, nF_?(# \[Element] PositiveIntegers &), opts:OptionsPattern[Eigensystem]] :=
 Module[{occupiedstatesall, occupiedstatesplaquette},
-	(*occupiedstatesall = Take[Sort[Eigensystem[heff[#], opts, Method -> "Direct"]\[Transpose]], nF][[;;, 2]] & /@ vks;*)
-	occupiedstatesall = TakeSmallestBy[Eigensystem[heff[#], opts, Method -> "Direct"]\[Transpose], First, nF][[;;, 2]] & /@ vks;
+	occupiedstatesall = Take[Sort[Eigensystem[heff[#], opts, Method -> "Direct"]\[Transpose]], nF][[;;, 2]] & /@ vks;
+	(*occupiedstatesall = TakeSmallestBy[Eigensystem[heff[#], opts, Method -> "Direct"]\[Transpose], First, nF][[;;, 2]] & /@ vks;*)
 	occupiedstatesplaquette = Extract[occupiedstatesall, inds];
 	-(1/(2\[Pi]))Sum[plaquettePhase[occupiedstates], {occupiedstates, occupiedstatesplaquette}]
 ];
