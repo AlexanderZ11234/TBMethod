@@ -189,7 +189,7 @@ RegionPolarSample[fbzreg_?RegionQ, n_Integer, ptsn_ /; ptsn > 0] :=
 Module[{fbzvertices, radialsamplings, azimuthalsample, \[CapitalGamma] = {0., 0.}},
 	fbzvertices = SortBy[Arg[Complex @@ #] &] @ PolygonCoordinates[fbzreg];
 	radialsamplings = PathSample[{\[CapitalGamma], #}, n][[1, 2;;]] & /@ fbzvertices;
-	azimuthalsample = PathSample[# /. {x_, y___, z_} :> {x, y, z, x}, \[LeftCeiling]ptsn #2[[1]]\[RightCeiling]][[1]] &;
+	azimuthalsample = PathSample[# /. {x_, y___, z_} :> {x, y, z, x}, 1+\[LeftCeiling]ptsn #2[[1]]\[RightCeiling]][[1]] &;
 	MapIndexed[azimuthalsample, MapThread[Append, {radialsamplings, fbzvertices}]\[Transpose]]
 ];
 
