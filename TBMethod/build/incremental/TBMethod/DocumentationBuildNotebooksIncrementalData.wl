@@ -73,4 +73,8 @@
  "English\\ReferencePages\\Symbols\\LocalCDV.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
      <|"Time" -> Quantity[0.2382049, "Seconds"]|>], 
-   "FileHash" -> "0mqJEkMghAJ4UYe/7F23/FFOErwbgpeGaRYyrG6LJuY="|>|>
+   "FileHash" -> "0mqJEkMghAJ4UYe/7F23/FFOErwbgpeGaRYyrG6LJuY="|>, 
+ "English\\ReferencePages\\Symbols\\RegionPolarSample.nb" -> 
+  <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
+      "Time" -> Quantity[1.393654, "Seconds"]|>], 
+   "FileHash" -> "VR4uYqdwk3hZ9wOdZh7VUZP7SiyA+6UVL+dZNMAq4Ws="|>|>

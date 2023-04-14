@@ -1,0 +1,464 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     18225,        454]
+NotebookOptionsPosition[     14658,        381]
+NotebookOutlinePosition[     16665,        429]
+CellTagsIndexPosition[     16580,        424]
+WindowTitle->RegionPolarSample
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {GridBox[{
+      {
+       ItemBox[Cell[BoxData[
+         RowBox[{
+          TemplateBox[{12},
+           "Spacer1"], Cell["BUILT-IN SYMBOL", "PacletNameCell",
+           TextAlignment->Center,ExpressionUUID->
+           "762ead5f-a6e6-42c6-af82-d916aca08f07"], 
+          TemplateBox[{8},
+           "Spacer1"]}]],
+         TextAlignment->Center,ExpressionUUID->
+         "17de3d1e-78eb-4b5b-9495-2bdf41f48cfb"],
+        Background->RGBColor[0.490196, 0.576471, 0.690196],
+        ItemSize->Full], ""}
+     },
+     GridBoxAlignment->{"Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {Full, 
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[Cell[BoxData[
+     TagBox[
+      ActionMenuBox[
+       FrameBox[Cell[TextData[{
+         "URL",
+         " ",
+         Cell[BoxData[
+          GraphicsBox[
+           {GrayLevel[0.66667], Thickness[0.13], 
+            LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+           AspectRatio->1,
+           ImageSize->20,
+           PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+          "f61f5499-3bd6-4a3d-b5d0-4bfef6b6ebe5"]
+        }],ExpressionUUID->"0aaf5550-961e-4a15-87a0-1a7a7c5c5051"],
+        StripOnInput->False], {"\<\"ref/RegionPolarSample\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["ref/RegionPolarSample"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/ref/RegionPolarSample.\
+html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$43787], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"] <> 
+            "ref/RegionPolarSample" <> ".html"], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"],
+      MouseAppearanceTag["LinkHand"]]],
+     LineSpacing->{1.4, 0},ExpressionUUID->
+     "566e4caf-c08b-40fd-bbe0-7a280d87c4ba"]], "AnchorBar",
+     CacheGraphics->False,ExpressionUUID->
+     "fefa8b2b-2252-44c8-9570-a7c661eff6b2"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"b43ab305-e5f2-490a-a604-9794132d411b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {Cell[TextData[{
+     Cell[
+     "RegionPolarSample", "ObjectName",ExpressionUUID->
+      "89ce701d-4219-451d-ba2a-5b6ca932f742"],
+     Cell[BoxData[
+      TemplateBox[{8},
+       "Spacer1"]],ExpressionUUID->"99cb50e7-d913-45c6-a358-aa67d43cb49c"],
+     Cell[BoxData[
+      StyleBox[
+       DynamicModuleBox[{DocumentationBuild`Make`Private`result$$ = $Failed, 
+        DocumentationBuild`Make`Private`translationlang$$ = 
+        FrontEnd`CurrentValue[
+         FrontEndObject[
+          LinkObject["3z3qq_shm", 98, 3]], "Language", "English"]}, 
+        DynamicBox[ToBoxes[
+         DocumentationBuild`Make`Private`translationlang$$ = 
+           FrontEnd`CurrentValue[$FrontEnd, "Language", "English"]; 
+          With[{DocumentationBuild`Make`Private`translationlang$ = 
+             DocumentationBuild`Make`Private`translationlang$$}, 
+            FE`Evaluate[
+             FEPrivate`If[
+              FEPrivate`SameQ[
+               FEPrivate`Set[DocumentationBuild`Make`Private`result$$, 
+                FEPrivate`TranslateKeyword[
+                "RegionPolarSample", 
+                 DocumentationBuild`Make`Private`translationlang$]], $Failed],
+               "", "(" <> DocumentationBuild`Make`Private`result$$ <> ")"]]], 
+          StandardForm],
+         ImageSizeCache->{0., {0., 14.}}],
+        DynamicModuleValues:>{}], "ObjectNameTranslation",
+       StripOnInput->False]], "ObjectNameTranslation",ExpressionUUID->
+      "2f485cb6-8923-4386-8a8b-cd483b337260"]
+    }],ExpressionUUID->"b710c6d7-af91-40ce-bd48-a660dd6804dd"], 
+    "\[SpanFromLeft]"}
+  }]], "ObjectNameGrid",ExpressionUUID->"28b382ba-2683-4ae1-b244-\
+6e68a7de02a5"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"RegionPolarSample", "[", 
+       RowBox[{Cell["reg",
+         FontSlant->"Italic",ExpressionUUID->
+         "1d888f2a-364b-492a-a877-4c52052386f1"], ",", " ", Cell[TextData[
+        StyleBox["\[Rho]num",
+         FontSlant->"Italic"]],ExpressionUUID->
+         "457cf893-1116-4c0d-9583-fd833e035539"], ",", " ", Cell[TextData[
+        StyleBox["\[Phi]rat",
+         FontSlant->"Italic"]],ExpressionUUID->
+         "a359ac55-7998-4ae6-ba5d-024a8cfc93af"]}], "]"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "8b851c82-0231-4913-89c8-a67527bdb264"],
+     " \[LineSeparator]samples a 2D region ",
+     Cell[BoxData[Cell["reg",
+       FontSlant->"Italic",ExpressionUUID->
+       "4d3d4463-a776-4ced-ab78-48df55fa50df"]],ExpressionUUID->
+      "efc817dd-c7b5-4410-b6c4-a1182995cdf7"],
+     ", usually the first Brillouin zone, in the polar coordinate style from \
+its center, where ",
+     Cell[BoxData[Cell[TextData[StyleBox["\[Rho]num",
+       FontSlant->"Italic"]],ExpressionUUID->
+       "2286c231-6e05-4296-8e11-c64680a4fcea"]],ExpressionUUID->
+      "66a637f7-235a-48a5-b9a7-bc13039276f2"],
+     " is the sampling number in the radial direction and ",
+     Cell[BoxData[Cell[TextData[StyleBox["\[Phi]rat",
+       FontSlant->"Italic"]],ExpressionUUID->
+       "c7812686-03da-4a1a-b492-fe8f1130985b"]],ExpressionUUID->
+      "d72e8adf-9728-4b9a-b45d-333f4d97a908"],
+     " is the ratio of samplings in the azimuthal direction to the base \
+number two."
+    }],ExpressionUUID->"eb711541-9cff-46f5-ba5c-a0636023bacf"]}
+  }]], "Usage",
+ CellID->5662790,ExpressionUUID->"eab03c92-1b70-41db-abb5-5c0be6e04cc9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[
+     MatchQ[
+      CurrentValue[
+       EvaluationNotebook[], {
+       TaggingRules, "Openers", "PrimaryExamplesSection"}, Open], 
+      Alternatives[True, Open]], 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+   ImageSizeCache->{13.600000000000001`, {5., 8.600000000000001}}]],
+  ExpressionUUID->"4bc087be-66fb-42d3-b8ed-23e053d71598"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"ba743cf1-c667-41a2-9039-c471d670526a"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "6c27ebbc-bda4-40a0-af68-36ac82e8f4fb"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellTags->"PrimaryExamplesSection",
+ CellID->187771118,ExpressionUUID->"ebf5219b-0682-4c18-92e7-43ebd8475588"],
+
+Cell[BoxData[
+ RowBox[{"<<", "TBMethod`"}]], "Input", "ExampleInitialization",
+ CellLabel->"In[1]:=",
+ CellID->424501257,ExpressionUUID->"b4319d06-529e-4d25-8e46-474addf0c00a"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[
+     MatchQ[
+      CurrentValue[
+       EvaluationNotebook[], {TaggingRules, "Openers", "ExampleSection", "0"},
+        Closed], 
+      Alternatives[Open, True]], 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+   ImageSizeCache->{13.600000000000001`, {5., 8.600000000000001}}]],
+  ExpressionUUID->"7aebae62-62fd-4994-918c-74a504a0ea34"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"adc93df2-5c71-432a-a7e2-a224c615f64c"],
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "e133fd57-7d7c-407b-8392-355812e4ab63"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellID->917866966,ExpressionUUID->"1d6bb26b-5578-4b67-8734-c395ff638e1f"],
+
+Cell["\<\
+Set up the first Brillouin zone of a triangular lattice as the region to be \
+sampled\
+\>", "ExampleText",
+ CellID->879794411,ExpressionUUID->"2a1c2f7e-3145-4319-8d0e-ef27577f48df"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a", "=", 
+   RowBox[{"1", "//", "N"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"vasbasis", "=", 
+   RowBox[{"a", 
+    SqrtBox["3"], 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", 
+         RowBox[{"-", 
+          SqrtBox["3"]}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", 
+         SqrtBox["3"]}], "}"}]}], "}"}], "/", "2"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"vbsbasis", "=", 
+  RowBox[{
+  "ReciprocalVectors", "[", "vasbasis", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"fbzfig", "=", 
+  RowBox[{
+  "FirstBrillouinZonePlot", "[", "vbsbasis", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"fbzreg", "=", 
+  RowBox[{
+  "FirstBrillouinZoneRegion", "[", "vbsbasis", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Region", "[", "fbzreg", "]"}]}], "Input",
+ CellProlog:>Get["TBMethod`"],
+ CellLabel->"In[1]:=",
+ CellID->579833665,ExpressionUUID->"0d4ab989-2573-45d3-a90b-ba45c841ee2f"],
+
+Cell["Sample the region and visualize the result", "ExampleText",
+ CellID->237712749,ExpressionUUID->"ad693a73-fa96-4b7c-ba53-91a99c5388e6"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"fbzsamplingsforWCC", "=", 
+     RowBox[{"RegionPolarSample", "[", 
+      RowBox[{"fbzreg", ",", "100", ",", 
+       RowBox[{"1", "/", "100"}]}], "]"}]}], ";"}], ")"}], "//", 
+  "AbsoluteTiming"}], "\[IndentingNewLine]", 
+ RowBox[{"Show", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"ListPlot", "[", 
+      RowBox[{"fbzsamplingsforWCC", ",", 
+       RowBox[{"AspectRatio", "->", "Automatic"}], ",", 
+       RowBox[{"PlotRange", "->", "All"}], ",", 
+       RowBox[{"PlotMarkers", "->", 
+        RowBox[{"{", 
+         RowBox[{"\"\<\[EmptyCircle]\>\"", ",", "5"}], "}"}]}]}], "]"}], ",", 
+     "fbzfig"}], "}"}], ",", 
+   RowBox[{"PlotRange", "->", "All"}], ",", 
+   RowBox[{"Frame", "->", "False"}]}], "]"}]}], "Input",
+ CellProlog:>Get["TBMethod`"],
+ CellLabel->"In[2]:=",
+ CellID->15628094,ExpressionUUID->"9cf6b4a2-7739-4b2c-b11f-d69fe7e7ade6"]
+}, Dynamic[CurrentValue[
+ EvaluationNotebook[], {TaggingRules, "Openers", "ExampleSection", "0"}, 
+  Closed]]]]
+}, Dynamic[CurrentValue[
+ EvaluationNotebook[], {TaggingRules, "Openers", "PrimaryExamplesSection"}, 
+  Closed]]]],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, 
+       "RelatedFunction.png"]],
+     ImageSizeCache->{50., {27., 33.}}], 
+    DynamicModuleBox[{$CellContext`wfrgrid$$ = 
+     WFRCrosslinks`SymbolCrosslinkData["ref/RegionPolarSample"]}, 
+     DynamicBox[
+      Quiet[$CellContext`wfrgrid$$ = 
+        WFRCrosslinks`SymbolCrosslinkData["ref/RegionPolarSample"]]; If[
+        TrueQ[
+         ListQ[$CellContext`wfrgrid$$]], 
+        With[{DocumentationBuild`Make`Private`grid$ = CurrentValue[
+            EvaluationCell[], {TaggingRules, "SeeAlsoGrid"}, ""]}, 
+         If[
+          MatchQ[DocumentationBuild`Make`Private`grid$, 
+           Blank[GridBox]], 
+          Insert[DocumentationBuild`Make`Private`grid$, 
+           
+           WFRCrosslinks`MakeWFRCrosslinkSeeAlsos[$CellContext`wfrgrid$$, 
+            "Function Repository"], {1, -1}]]], 
+        CurrentValue[
+         EvaluationCell[], {TaggingRules, "SeeAlsoGrid"}, ""]],
+      ImageSizeCache->{80., {19.072656144876962`, 26.127343855123033`}},
+      TrackedSymbols:>{WFRCrosslinks`SymbolCrosslinkData}],
+     Initialization:>Quiet[
+       Needs["WFRCrosslinks`"]]]}
+  }]], "SeeAlsoSection",
+ TaggingRules->{"SeeAlsoGrid" -> GridBox[{{
+       StyleBox["See Also", "SeeAlsoSection"]}, {
+       Cell[
+        TextData[{
+          Cell[
+           BoxData["PathSample"], "InlineFormula", ExpressionUUID -> 
+           "173f832b-6fbe-4216-ab90-2e4477ce4d32", FontFamily -> 
+           "Source Sans Pro"]}], "SeeAlso", CellID -> 821917382, 
+        ExpressionUUID -> 
+        "bc21ca23-1857-40cc-86e2-1ddca3126427"]}}]},ExpressionUUID->"a77d67ef-\
+9259-473c-88ed-4bc558283092"],
+
+Cell[" ", "FooterCell",ExpressionUUID->"794e2404-1cd7-4eff-ad0a-a33bbe20c797"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{900., 830.25},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"RegionPolarSample",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
+  "ExampleCounter" -> 1, 
+  "Openers" -> {
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}}, 
+  "NewStyles" -> True, "CitationPopupData" -> $Failed, "ShowCitation" -> 
+  False, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2023, 4, 14, 12, 32, 16.3084605}", 
+    "history" -> {"XX", "", "", ""}, "context" -> "System`", "keywords" -> {},
+     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> 
+    True, "label" -> "Built-in Symbol", "language" -> "en", "paclet" -> "", 
+    "status" -> "None", "summary" -> 
+    "RegionPolarSample[reg, \\[Rho]num, \\[Phi]rat] samples a 2D region reg, \
+usually the first Brillouin zone, in the polar coordinate style from its \
+center, where \\[Rho]num is the sampling number in the radial direction and \
+\\[Phi]rat is the ratio of samplings in the azimuthal direction to the base \
+number two.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "RegionPolarSample", "titlemodifier" -> "", "metadescription" -> "", 
+    "windowtitle" -> "RegionPolarSample", "type" -> "Symbol", "uri" -> 
+    "ref/RegionPolarSample"}},
+FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 30, 2023)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"b5b3dafb-5308-4c80-93d2-232a6e41b1fd"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[7337, 179, 1420, 37, 70, "PrimaryExamplesSection",ExpressionUUID->"ebf5219b-0682-4c18-92e7-43ebd8475588",
+   CellTags->"PrimaryExamplesSection",
+   CellID->187771118]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 16381, 417}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[589, 21, 3289, 76, 70, "AnchorBarGrid",ExpressionUUID->"b43ab305-e5f2-490a-a604-9794132d411b",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[3903, 101, 1675, 36, 70, "ObjectNameGrid",ExpressionUUID->"28b382ba-2683-4ae1-b244-6e68a7de02a5"],
+Cell[5581, 139, 1719, 35, 70, "Usage",ExpressionUUID->"eab03c92-1b70-41db-abb5-5c0be6e04cc9",
+ CellID->5662790]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7337, 179, 1420, 37, 70, "PrimaryExamplesSection",ExpressionUUID->"ebf5219b-0682-4c18-92e7-43ebd8475588",
+ CellTags->"PrimaryExamplesSection",
+ CellID->187771118],
+Cell[8760, 218, 176, 3, 70, "Input",ExpressionUUID->"b4319d06-529e-4d25-8e46-474addf0c00a",
+ CellID->424501257],
+Cell[CellGroupData[{
+Cell[8961, 225, 1398, 36, 70, "ExampleSection",ExpressionUUID->"1d6bb26b-5578-4b67-8734-c395ff638e1f",
+ CellID->917866966],
+Cell[10362, 263, 191, 4, 70, "ExampleText",ExpressionUUID->"2a1c2f7e-3145-4319-8d0e-ef27577f48df",
+ CellID->879794411],
+Cell[10556, 269, 1001, 31, 70, "Input",ExpressionUUID->"0d4ab989-2573-45d3-a90b-ba45c841ee2f",
+ CellID->579833665],
+Cell[11560, 302, 140, 1, 70, "ExampleText",ExpressionUUID->"ad693a73-fa96-4b7c-ba53-91a99c5388e6",
+ CellID->237712749],
+Cell[11703, 305, 927, 25, 70, "Input",ExpressionUUID->"9cf6b4a2-7739-4b2c-b11f-d69fe7e7ade6",
+ CellID->15628094]
+}, Dynamic[CurrentValue[EvaluationNotebook[], {TaggingRules, "Openers", "ExampleSection", "0"}, Closed]]]]
+}, Dynamic[CurrentValue[EvaluationNotebook[], {TaggingRules, "Openers", "PrimaryExamplesSection"}, Closed]]]],
+Cell[12860, 338, 1713, 39, 70, "SeeAlsoSection",ExpressionUUID->"a77d67ef-9259-473c-88ed-4bc558283092"],
+Cell[14576, 379, 78, 0, 70, "FooterCell",ExpressionUUID->"794e2404-1cd7-4eff-ad0a-a33bbe20c797"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
