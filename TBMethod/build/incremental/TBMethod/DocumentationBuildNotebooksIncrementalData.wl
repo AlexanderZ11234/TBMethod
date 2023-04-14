@@ -76,5 +76,5 @@
    "FileHash" -> "0mqJEkMghAJ4UYe/7F23/FFOErwbgpeGaRYyrG6LJuY="|>, 
  "English\\ReferencePages\\Symbols\\RegionPolarSample.nb" -> 
   <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
-      "Time" -> Quantity[1.393654, "Seconds"]|>], 
-   "FileHash" -> "VR4uYqdwk3hZ9wOdZh7VUZP7SiyA+6UVL+dZNMAq4Ws="|>|>
+      "Time" -> Quantity[1.1149411, "Seconds"]|>], 
+   "FileHash" -> "YCV/pFA4167vAIZh651dUo3zAgMAOP18SQE5Hsx0/ok="|>|>
