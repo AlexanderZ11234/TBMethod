@@ -7,9 +7,9 @@
      <|"Time" -> Quantity[0.5933798, "Seconds"]|>], 
    "FileHash" -> "f8s+yjRga5GrADK78WEopb44bpxz+/5/CjrbUXKY+AI="|>, 
  "English\\ReferencePages\\Symbols\\BerryCurvature.nb" -> 
-  <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[3.1825801, "Seconds"]|>], 
-   "FileHash" -> "lNl8U+lS79U3+wTOmdMe+HQwVGDXsHsgmZrXE5guFs4="|>, 
+  <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
+      "Time" -> Quantity[3.7727912, "Seconds"]|>], 
+   "FileHash" -> "sTAizwaItE+lEnwMpQ2SQUN+QKvhzQvHUzThZXcYBsw="|>, 
  "English\\ReferencePages\\Symbols\\CentralBlockGreens.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
      <|"Time" -> Quantity[0.2556417, "Seconds"]|>], 
@@ -76,5 +76,5 @@
    "FileHash" -> "0mqJEkMghAJ4UYe/7F23/FFOErwbgpeGaRYyrG6LJuY="|>, 
  "English\\ReferencePages\\Symbols\\RegionPolarSample.nb" -> 
   <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
-      "Time" -> Quantity[1.1149411, "Seconds"]|>], 
-   "FileHash" -> "YCV/pFA4167vAIZh651dUo3zAgMAOP18SQE5Hsx0/ok="|>|>
+      "Time" -> Quantity[0.5229396, "Seconds"]|>], 
+   "FileHash" -> "UVtpT1u3TZaWo/xXwUhatOn9e8CGcfgEZvUN0uo/98I="|>|>
