@@ -32,6 +32,7 @@ ChernNumberByWilsonLoop::usage = "Calculates the Chern number contributed by a s
 PlaquetteRegionPartitionComplex::usage = "Partitions a region, e.g. the first Brillouin zone, with a triangularization cover.";
 
 RegionPolarSample::usage = "Samples a 2D region shellwise from its center to its edge.";
+ParallelogramCartesianSample::usage = "Samples cartesian-like a paralleogram, which is specificed by its two side vectors.";
 WannierChargeCenterByWilsonLoop::usage = "Calculates the Wannier Charge Center contributed by the occupied bands.";
 
 
@@ -191,6 +192,12 @@ Module[{fbzvertices, radialsamplings, azimuthalsample, \[CapitalGamma] = {0., 0.
 	radialsamplings = Rest[Subdivide[\[CapitalGamma], #, n]] & /@ fbzvertices;
 	azimuthalsample = PathSample[# /. {x_, y___, z_} :> {x, y, z, x}, 1+\[LeftCeiling]ptsn #2[[1]]\[RightCeiling]][[1]] &;
 	MapIndexed[azimuthalsample, MapThread[Append, {radialsamplings, fbzvertices}]\[Transpose]]
+];
+
+ParallelogramCartesianSample[vbs_List, {m_Integer, n_Integer}] :=
+Module[{pts},
+	pts=Table[{i, j} . vbs, {i, 0., 1., 1./m}, {j, 0., 1., 1./n}];
+	Join[pts, pts[[;;, {1}]], 2]
 ];
 
 WannierChargeCenterByWilsonLoop[heff_, vksloop_List, nF_?(# \[Element] PositiveIntegers &), opts:OptionsPattern[Eigensystem]] :=
