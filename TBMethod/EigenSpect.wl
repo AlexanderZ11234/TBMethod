@@ -202,8 +202,8 @@ Module[{pts},
 
 WannierChargeCenterByWilsonLoop[heff_, vksloop_List, nF_?(# \[Element] PositiveIntegers &), opts:OptionsPattern[Eigensystem]] :=
 Module[{occupiedstates},
-	(*occupiedstates = Take[Sort[Eigensystem[heff[#], opts, Method -> "Direct"]\[Transpose]], nF][[;;, 2]] & /@ vksloop;*)
-	occupiedstates = TakeSmallestBy[Eigensystem[heff[#], opts, Method -> "Direct"]\[Transpose], First, nF][[;;, 2]] & /@ vksloop;
+	occupiedstates = Take[Sort[Eigensystem[heff[#], opts, Method -> "Direct"]\[Transpose]], nF][[;;, 2]] & /@ vksloop;
+	(*occupiedstates = TakeSmallestBy[Eigensystem[heff[#], opts, Method -> "Direct"]\[Transpose], Re @* First, nF][[;;, 2]] & /@ vksloop;*)
 	-1/\[Pi] plaquetteBandPhase[occupiedstates]
 ];
 
