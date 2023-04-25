@@ -3,7 +3,7 @@
 PacletObject[
     <|
         "Name" -> "TBMethod",
-        "Version" -> "0.2.1",
+        "Version" -> "0.2.2",
         "WolframVersion" -> "12.0.0+",
         "Extensions" ->
             {
