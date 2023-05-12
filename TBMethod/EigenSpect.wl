@@ -15,6 +15,10 @@ EigenspectralData::usage = "Calculates eigensystem data of a model over a list o
 
 ParallelEigenspectralData::usage = "Calculates eigensystem data of a model over a list of parameter samplings in parallel manner.";
 
+BandDataWithWeight::usage = "Calculates band data with the weight information (e.g., IPR) of a model over a list of parameter samplings.";
+
+ParallelBandDataWithWeight::usage = "Calculates band data with the weight information (e.g., IPR) of a model over a list of parameter samplings in parallel manner.";
+
 PathSample::usage = "Samples evenly points on a path consisting of a sequence of node points, with the the number of points sampled on the shortest segment specified.";
 
 BerryCurvature::usage = "Calculates Berry curvature for an arbitrary matrix model.";
@@ -59,6 +63,21 @@ EigenspectralData[hbloch_, ks_, obfunc:(_Function | _Symbol):Identity, s:Options
 EigenspectralData[hbloch_, ks_, obfunc:(_Function | _Symbol):Identity, n_, s:OptionsPattern[Eigensystem]] := MapAt[obfunc, {All, 2}][Sort[Eigensystem[hbloch[#], n, s, Method -> "Direct"]\[Transpose]]] & ~Map~ ks
 ParallelEigenspectralData[hbloch_, ks_, obfunc:(_Function | _Symbol):Identity, s:OptionsPattern[Eigensystem]] := MapAt[obfunc, {All, 2}][Sort[Eigensystem[hbloch[#], s, Method -> "Direct"]\[Transpose]]] & ~ParallelMap~ ks
 ParallelEigenspectralData[hbloch_, ks_, obfunc:(_Function | _Symbol):Identity, n_, s:OptionsPattern[Eigensystem]] := MapAt[obfunc, {All, 2}][Sort[Eigensystem[hbloch[#], n, s, Method -> "Direct"]\[Transpose]]] & ~ParallelMap~ ks
+
+Options[ParallelBandDataWithWeight] = Join[Options[Eigensystem], {"StateFunction" -> (Total[Abs[#]^4] &)}];
+ParallelBandDataWithWeight[h_, kgrid_, n_Integer, ps:OptionsPattern[]] :=
+Module[{ps2},
+	ps2 = Sequence @@ FilterRules[{ps}, Options[Eigensystem]];
+	MapAt[OptionValue["StateFunction"], Eigensystem[h[#], n, ps2, Method -> {"Arnoldi", "MaxIterations" -> \[Infinity]}]\[Transpose] // Sort, {All, 2}] & ~ParallelMap~ kgrid
+];
+(*parallelBandDataWithState[h_,kgrid_,n_Integer,infoextracfunc_:(Total[Abs[#]^4]^(1/4)&),ps:OptionsPattern[Eigensystem]]:=MapAt[infoextracfunc,Eigensystem[h[#],n,ps,Method->{"Arnoldi","MaxIterations"->\[Infinity]}(*Method\[Rule]"Banded"*)]\[Transpose]//Sort,{All,2}]&~ParallelMap~kgrid;*)
+
+Options[BandDataWithWeight] = Join[Options[Eigensystem], {"StateFunction" -> (Total[Abs[#]^4] &)}];
+BandDataWithWeight[h_, kgrid_, n_Integer, ps:OptionsPattern[]]:=
+Module[{ps2},
+	ps2 = Sequence @@ FilterRules[{ps}, Options[Eigensystem]];
+	MapAt[OptionValue["StateFunction"], Eigensystem[h[#], n, ps2, Method -> {"Arnoldi", "MaxIterations" -> \[Infinity]}]\[Transpose] // Sort, {All, 2}] & ~Map~ kgrid
+];
 
 
 PathSample[pts:{{__?NumericQ}..} /; Length[pts] >= 3, nleast_?(# \[Element] PositiveIntegers &)] :=

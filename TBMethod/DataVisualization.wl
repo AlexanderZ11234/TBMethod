@@ -13,7 +13,9 @@ Stream2DPlot::usage = "Visualizes a 2D vector field with local magnitudes and an
 
 LocalDOSPlot::usage = "Visualizes local density of states in either real or reciprocal space.";
 
-LocalDOSTidy::usage = "Tidies up local density of states for a better effect of visualization."
+LocalDOSTidy::usage = "Tidies up local density of states for a better effect of visualization.";
+
+BandPlotWithWeight::usage = "Plots band structures with high symmetry points annotated and with extra weight information obtainable from the corresponding eigenvectors, for example, IPR.";
 
 Begin["`Private`"]
 (* Implementation of the package *)
@@ -59,6 +61,24 @@ Module[{maxquant, clipped, min = Min[data]},
 	maxquant = Quantile[data // Flatten, quantile];
 	clipped = Clip[data, {min, maxquant}];
 	GaussianFilter[clipped, 2]
+];
+
+Options[BandPlotWithWeight] = Join[Options[Graphics], Options[BarLegend], {Joined -> True, ColorFunction -> (Hue[2(1 - #)/3] &)}];
+(*bandPlotWithWeight[banddatawithstate_,cfunc_,cname_String,joined_:(True|False),ps:OptionsPattern[Graphics]]:=*)
+BandPlotWithWeight[banddatawithweight_, hisymmptname: {_String...}: {""}, ptsnumbers: {_?NumericQ...}: {}, ps:OptionsPattern[]] :=
+Module[{kbdat, colors, m, n, lines, bfig, legend, fontfamily = (*"Helvetica"*)(*"Times New Roman"*)"Arial", style,
+		style2, bdat, cdat, cfunc = OptionValue[ColorFunction], dticks, frameticks, ps1, ps2},
+	{bdat, cdat} = Transpose[banddatawithweight, {3, 2, 1}]; {m, n} = Dimensions[bdat];
+	dticks = {ptsnumbers, hisymmptname}\[Transpose]; frameticks = {{Automatic, None}, {dticks, None}};
+	style = {FontSize -> 17, FontFamily -> fontfamily}; style2 = Directive[(*Black*)Gray(*,Thick*)];
+	kbdat = Transpose[{ConstantArray[(*kdat*)Range[n], m], bdat}, {3, 1, 2}];
+	colors = Map[cfunc, Rescale @ cdat, {2}];
+	lines = MapThread[If[OptionValue[Joined], Line, Point][#, VertexColors -> #2] &, {kbdat, colors}];
+	ps1 = Sequence @@ FilterRules[{ps}, Options[Graphics]]; ps2 = Sequence @@ FilterRules[{ps}, Options[BarLegend]];
+	bfig = Graphics[{Thick, lines}, ps1, GridLines -> {ptsnumbers, Automatic}, PlotRangeClipping -> True,AspectRatio -> GoldenRatio, FrameTicks -> frameticks, 
+					 Frame -> True, FrameLabel -> {None, "\!\(\*SubscriptBox[\(E\), \(\[VeryThinSpace]\)]\)"}, FrameTicksStyle -> style2, FrameStyle -> style2, LabelStyle -> style2, BaseStyle -> style];
+	legend = BarLegend[{cfunc, {0, 1}},(*4,*)ps2, (*Ticks->Transpose[{{0,1},MinMax[cdat]}],*) "Ticks" -> {0, 1}, "TickLabels" -> {"Min", "Max"}, TicksStyle -> style2, FrameStyle -> style2, LabelStyle -> style];
+	Legended[bfig, legend]
 ];
 
 
