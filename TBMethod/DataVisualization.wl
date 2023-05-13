@@ -29,8 +29,8 @@ Module[{(*plottheme, *)frameticks, gridlines, dticks},
 	(*plottheme = {"Scientific", "SansLabels", "LargeLabels"};*)
 	dticks = {ptsnumbers, hisymmptname}\[Transpose];
 	frameticks = {{Automatic, None}, {dticks, None}};
-	ListLinePlot[banddata, s, 
-		PlotStyle -> Blue, AspectRatio -> 1.5, (*PlotTheme -> plottheme,*)
+	ListLinePlot[banddata, s, FrameStyle -> Black,
+		PlotStyle -> Blue, AspectRatio -> GoldenRatio, (*PlotTheme -> plottheme,*)
 		FrameTicks -> frameticks, GridLines -> {ptsnumbers, Automatic}
 	]
 ];
@@ -70,12 +70,12 @@ Module[{kbdat, colors, m, n, lines, bfig, legend, fontfamily = (*"Helvetica"*)(*
 		style2, bdat, cdat, cfunc = OptionValue[ColorFunction], dticks, frameticks, ps1, ps2},
 	{bdat, cdat} = Transpose[banddatawithweight, {3, 2, 1}]; {m, n} = Dimensions[bdat];
 	dticks = {ptsnumbers, hisymmptname}\[Transpose]; frameticks = {{Automatic, None}, {dticks, None}};
-	style = {FontSize -> 17, FontFamily -> fontfamily}; style2 = Directive[(*Black*)Gray(*,Thick*)];
+	style = {FontSize -> 17, FontFamily -> fontfamily}; style2 = Directive[Black(*,Thick*)];
 	kbdat = Transpose[{ConstantArray[(*kdat*)Range[n], m], bdat}, {3, 1, 2}];
 	colors = Map[cfunc, Rescale @ cdat, {2}];
 	lines = MapThread[If[OptionValue[Joined], Line, Point][#, VertexColors -> #2] &, {kbdat, colors}];
 	ps1 = Sequence @@ FilterRules[{ps}, Options[Graphics]]; ps2 = Sequence @@ FilterRules[{ps}, Options[BarLegend]];
-	bfig = Graphics[{Thick, lines}, ps1, GridLines -> {ptsnumbers, Automatic}, PlotRangeClipping -> True,AspectRatio -> GoldenRatio, FrameTicks -> frameticks, 
+	bfig = Graphics[{Thick, lines}, ps1, GridLines -> {ptsnumbers, Automatic}, PlotRangeClipping -> True, AspectRatio -> GoldenRatio, FrameTicks -> frameticks, 
 					 Frame -> True, FrameLabel -> {None, "\!\(\*SubscriptBox[\(E\), \(\[VeryThinSpace]\)]\)"}, FrameTicksStyle -> style2, FrameStyle -> style2, LabelStyle -> style2, BaseStyle -> style];
 	legend = BarLegend[{cfunc, {0, 1}},(*4,*)ps2, (*Ticks->Transpose[{{0,1},MinMax[cdat]}],*) "Ticks" -> {0, 1}, "TickLabels" -> {"Min", "Max"}, TicksStyle -> style2, FrameStyle -> style2, LabelStyle -> style];
 	Legended[bfig, legend]
