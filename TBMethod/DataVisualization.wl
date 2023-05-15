@@ -11,7 +11,9 @@ Vector2DPlot::usage = "Visualizes a 2D vector field with local magnitudes and an
 
 Stream2DPlot::usage = "Visualizes a 2D vector field with local magnitudes and an emphasis on nonlocal tendencies of local directions.";
 
-LocalDOSPlot::usage = "Visualizes local density of states in either real or reciprocal space.";
+RealSpaceLocalDOSPlot::usage = "Visualizes local density of states in the real space in the buble style.";
+
+LocalDOSPlot::usage = "Visualizes local density of states in either the real or the reciprocal space continuously by interpolation.";
 
 LocalDOSTidy::usage = "Tidies up local density of states for a better effect of visualization.";
 
@@ -49,10 +51,20 @@ ListStreamDensityPlot[
 	InterpolationOrder -> 1
 ];
 
+RealSpaceLocalDOSPlot[evalandevec_List, ptsdisk:{{_, _, _}..}|{{_, _}..}, region_?RegionQ, innerdof_Integer:1, ops:OptionsPattern[Graphics]] :=
+Module[{op, largestcomps, \[Eta] = 1.*^-4, len = Length[ptsdisk], ratio = 2},
+	op = If[MatchQ[ptsdisk, {{_, _, _}..}], KeyValueMap[Append] @* (data |-> GroupBy[data, (#[[;;2]] &) -> Last, Total]), Identity];
+	largestcomps = Select[Last[#] > \[Eta] &] @ Join[ptsdisk, {BlockMap[Total, Abs[evalandevec[[2]]]^2, innerdof]}\[Transpose], 2];
+	Graphics[
+	{{Opacity[.1], Green, region},
+	 {Opacity[.4], Red, Disk[{#, #2}, Sqrt[len]ratio #3] & @@@ op[largestcomps]}},
+	ops, PlotLabel -> StringTemplate["\!\(\*SubscriptBox[\(E\), \(\[VeryThinSpace]\)]\) = ``"][evalandevec[[1]]]]
+] /; (Length[Partition[evalandevec[[2]], innerdof]] == Length[ptsdisk]);
+
 LocalDOSPlot[data_, ops:OptionsPattern[ListDensityPlot]] :=
 ListDensityPlot[
-	data, ops, AspectRatio -> 1.5, PlotRange -> All,
-	ColorFunction -> (ColorData["SunsetColors"][#^(1/2)]&)
+	data, ops, AspectRatio -> GoldenRatio, PlotRange -> All,
+	ColorFunction -> (ColorData["SunsetColors"][#^(1/2)] &)
 ];
 
 
