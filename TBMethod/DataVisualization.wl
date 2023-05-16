@@ -19,6 +19,8 @@ LocalDOSTidy::usage = "Tidies up local density of states for a better effect of 
 
 BandPlotWithWeight::usage = "Plots band structures with high symmetry points annotated and with extra weight information obtainable from the corresponding eigenvectors, for example, IPR.";
 
+AtomPerLayerPlot::usage = "Plots the atom (site) number per layer after the adaptive partitioning of the central scattering region.";
+
 Begin["`Private`"]
 (* Implementation of the package *)
 (*SetOptions[{ParallelSum}, Method -> "ItemsPerEvaluation" -> 100 $KernelCount];*)
@@ -91,6 +93,16 @@ Module[{kbdat, colors, m, n, lines, bfig, legend, fontfamily = (*"Helvetica"*)(*
 					 Frame -> True, FrameLabel -> {None, "\!\(\*SubscriptBox[\(E\), \(\[VeryThinSpace]\)]\)"}, FrameTicksStyle -> style2, FrameStyle -> style2, LabelStyle -> style2, BaseStyle -> style];
 	legend = BarLegend[{cfunc, {0, 1}},(*4,*)ps2, (*Ticks->Transpose[{{0,1},MinMax[cdat]}],*) "Ticks" -> {0, 1}, "TickLabels" -> {"Min", "Max"}, TicksStyle -> style2, FrameStyle -> style2, LabelStyle -> style];
 	Legended[bfig, legend]
+];
+
+AtomPerLayerPlot[ptscsr_, ptscsraped_Association, ops:OptionsPattern[ListPlot]] :=
+Module[{atomnumberperlayer = Length /@ ptscsraped, atomnumbermaintained},
+	atomnumbermaintained = Length[ptscsr] == Total[atomnumberperlayer];
+	ListPlot[atomnumberperlayer, ops,
+		PlotMarkers -> {"\[FilledCircle]", 10}, Filling -> 0, GridLines -> Automatic, PlotRangePadding -> {Scaled[.05], Scaled[.06]},
+		PlotLabel -> StringTemplate["Total Atom #: `` (``)"][Length[ptscsr], atomnumbermaintained],
+		PlotRange -> {0, Automatic}, FrameLabel -> {"Layer #", "Atom #"}
+	]
 ];
 
 
