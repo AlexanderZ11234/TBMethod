@@ -100,7 +100,7 @@ Module[{atomnumberperlayer = Length /@ ptscsraped, atomnumbermaintained},
 	atomnumbermaintained = Length[ptscsr] == Total[atomnumberperlayer];
 	ListPlot[atomnumberperlayer, ops,
 		PlotMarkers -> {"\[FilledCircle]", 10}, Filling -> 0, GridLines -> Automatic, PlotRangePadding -> {Scaled[.05], Scaled[.06]},
-		PlotLabel -> StringTemplate["Total Atom #: `` (``)"][Length[ptscsr], atomnumbermaintained],
+		PlotLabel -> StringTemplate["Total Atom #: `` (``)\n\!\(\*OverscriptBox[\(N\), \(_\)]\) = ``, \[Sigma] = ``"][Length[ptscsr], atomnumbermaintained, Mean[atomnumberperlayer]//N, StandardDeviation[atomnumberperlayer]//N],
 		PlotRange -> {0, Automatic}, FrameLabel -> {"Layer #", "Atom #"}
 	]
 ];
