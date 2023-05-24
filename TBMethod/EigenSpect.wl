@@ -105,13 +105,13 @@ Module[{intcoeffs, reciprocalvectors, len = Length[vbs]},
 	intcoeffs = Tuples[Range[-n, n], len];
 	MinimalBy[Norm @* RegionCentroid][MeshPrimitives[VoronoiMesh[intcoeffs . vbs], len]] // First
 ];(*suffers RAM limit suddenly*)*)
-FirstBrillouinZoneRegion[vbs_ /; Dimensions[vbs] == {2, 2} || Dimensions[vbs] == {3, 3} , n_:2] :=
+FirstBrillouinZoneRegion[vbs_List, n_:2] :=
 Module[{intcoeffs, reciprocalvectors, len = Length[vbs], longest = Max[Norm /@ vbs], voronoimesh, zero = 1.*^-5},
 	intcoeffs = Tuples[Range[-n, n], len];
-	voronoimesh=VoronoiMesh[intcoeffs . vbs, ConstantArray[{-1,1}longest,len]];
+	voronoimesh=VoronoiMesh[intcoeffs . vbs, ConstantArray[{-1, 1} longest, len]];
 	(*MinimalBy[Norm @* RegionCentroid][MeshPrimitives[voronoimesh, len]] // First*)
 	SelectFirst[MeshPrimitives[voronoimesh, len], Norm @ RegionCentroid[#] < zero &]
-];
+] /; ((Dimensions[vbs] == {2, 2} || Dimensions[vbs] == {3, 3}) && Precision[vbs] == \[Infinity]);
 
 FirstBrillouinZonePlot[vbs_ /; Dimensions[vbs] == {2, 2} || Dimensions[vbs] == {3, 3} , n_:2, opts:OptionsPattern[Show]] :=
 Module[{intcoeffs, fbz, reciprocalvectors, len = Length[vbs], \[CapitalGamma], colors},
