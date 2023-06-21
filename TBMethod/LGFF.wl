@@ -212,9 +212,16 @@ Module[{zero = 1.*^-4, \[CapitalSigma]},
 	\[CapitalSigma] = Sigma[Complex[\[Epsilon], zero], {h00, h01, h01}];
 	-Im @ Tr @ CentralGreen[Complex[\[Epsilon], zero], H00, {\[CapitalSigma]}]
 ];*)
-LocalDOSReciprocalSpace[\[Epsilon]_, {HLeadBloch_, HLead12_}, mode:(1|2|3):1] := LocalDOSReciprocalSpace[\[Epsilon], {HLeadBloch, HLead12}, {HLeadBloch, HLead12}, mode];
+(*LocalDOSReciprocalSpace[\[Epsilon]_, {HLeadBloch_, HLead12_}, mode:(1|2|3):1] := LocalDOSReciprocalSpace[\[Epsilon], {HLeadBloch, HLead12}, {HLeadBloch, HLead12}, mode];
 LocalDOSReciprocalSpace[\[Epsilon]_, {HLeadBloch_, HLead12_}, HCSRBloch_, mode:(1|2|3):1] := LocalDOSReciprocalSpace[\[Epsilon], {HLeadBloch, HLead12}, {HCSRBloch, HLead12}, mode];
 LocalDOSReciprocalSpace[\[Epsilon]_, {HLeadBloch_, HLead12_}, {HCSRBloch_, HCSRLead1_}, mode:(1|2|3):1] :=
+Module[{zero = 1.*^-4, \[CapitalSigma]},
+	\[CapitalSigma] = Sigma[Complex[\[Epsilon], zero], {HLeadBloch, HLead12, HCSRLead1}, mode];
+	-Im @ Tr @ CentralGreen[Complex[\[Epsilon], zero], HCSRBloch, {\[CapitalSigma]}]
+];*)
+LocalDOSReciprocalSpace[\[Epsilon]_, {HLeadBloch_, HLead12_}, mode:(1|2|3):3] := LocalDOSReciprocalSpace[\[Epsilon], {{HLeadBloch, HLead12}, {HLeadBloch, HLead12}}, mode];
+LocalDOSReciprocalSpace[\[Epsilon]_, {HLeadBloch_, HLead12_}, HCSRBloch_, mode:(1|2|3):3] := LocalDOSReciprocalSpace[\[Epsilon], {{HLeadBloch, HLead12}, {HCSRBloch, HLead12}}, mode];
+LocalDOSReciprocalSpace[\[Epsilon]_, {{HLeadBloch_, HLead12_}, {HCSRBloch_, HCSRLead1_}}, mode:(1|2|3):3] :=
 Module[{zero = 1.*^-4, \[CapitalSigma]},
 	\[CapitalSigma] = Sigma[Complex[\[Epsilon], zero], {HLeadBloch, HLead12, HCSRLead1}, mode];
 	-Im @ Tr @ CentralGreen[Complex[\[Epsilon], zero], HCSRBloch, {\[CapitalSigma]}]
