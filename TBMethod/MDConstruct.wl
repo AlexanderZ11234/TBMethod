@@ -315,7 +315,7 @@ Module[{neighborindex, nf, indexgrouped, iterate, ptsleadnobool, ptscsrnobool, i
 	<|MapIndexed[#2[[1]] -> ptscsr[[#]] &, indexlayered]|>
 ];*)
 
-HBlochsForSpecFunc[vk_, ptscellsvas_, tfunc_, dup_] :=
+(*HBlochsForSpecFunc[vk_, ptscellsvas_, tfunc_, dup_] :=
 Module[{HLeadIntraInterReal, HCSRIntraLeadInterReal, fillfunc, keys = Keys[ptscellsvas], len = Length[ptscellsvas]},
 	fillfunc[indfs_, indi_] := HMatrixFromHoppings[{#, ptscellsvas[[indi]]}, tfunc, dup] & /@ KeyMap[# - keys[[indi]] &][ptscellsvas[[indfs]]];
 	(*fillfunc[indfs_, indi_] := HMatrixFromHoppings[{#, ptscellsvas[[indi]]}, tfunc, dup] & /@ ptscellsvas[[indfs]];*)
@@ -327,7 +327,30 @@ Module[{HLeadIntraInterReal, HCSRIntraLeadInterReal, fillfunc, keys = Keys[ptsce
 		Map[HBlochFull[vk, #]&, {HLeadIntraInterReal, HCSRIntraLeadInterReal}, {2}]),
 		True, 0
 	]
-]
+];*)
+
+hBlochsForSpecFunc[vk:({_, _}|{_, _, _}), bdrdirec:({_, _}|{_, _, _}), ptscellsvasraw_, tfunc_, dup_] :=
+Module[{HLeadIntraInterReal, HCSRIntraLeadInterReal, fillfunc, keys, len = Length[ptscellsvasraw], ptscellsvas},
+	ptscellsvas = Association /@ SortBy[N @* Norm @* Keys] /@ GatherBy[Normal[ptscellsvasraw], Norm[Keys[#] . bdrdirec] &];
+	(*KeyMap only works on Association, rather than List.*)
+	keys = Keys[ptscellsvas];
+	fillfunc[indfs_, indi_] := HMatrixFromHoppings[{#, Extract[indi] @ ptscellsvas}, tfunc, dup] & /@ (KeyMap[# - Extract[indi][keys] &] @ ptscellsvas[[indfs]]);
+	HLeadIntraInterReal = fillfunc @@@ {{2, {2,1}}, {2, {1,1}}};
+	Which[
+		MemberQ[{4,8,10},len],
+		HBlochFull[vk, #] & /@ HLeadIntraInterReal,
+		MemberQ[{7,15,19},len],
+		(HCSRIntraLeadInterReal = fillfunc @@@ {{3, {3,1}}, {3, {2, 1}}};
+		Map[HBlochFull[vk, #] &, {HLeadIntraInterReal, HCSRIntraLeadInterReal}, {2}]),
+		True, 0
+	]
+] /; MemberQ[{4, 7, 8, 10, 15, 19}, Length[ptscellsvasraw]];
+(*
+necessary number of celle to consider: 2D: 1->3(->3); 3D: 1->9(->9) or 1->7(->7).
+The basic idea is to add self-energy to the CSR in a single terminal setup.
+The point here is that each part has lattice momenta as parameter, to conceptually accommondate the infiniteness of the device in one or two dimensions.
+*)
+
 
 (*HBlochsForSpecFunc[vk_, ptscellsvas_, tfunc_, dup_] :=
 Module[{HLeadIntraInterReal, HCSRIntraLeadInterReal, fillfunc, keys = Keys[ptscellsvas], len = Length[ptscellsvas]},
