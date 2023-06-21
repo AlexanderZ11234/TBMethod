@@ -329,7 +329,7 @@ Module[{HLeadIntraInterReal, HCSRIntraLeadInterReal, fillfunc, keys = Keys[ptsce
 	]
 ];*)
 
-hBlochsForSpecFunc[vk:({_, _}|{_, _, _}), bdrdirec:({_, _}|{_, _, _}), ptscellsvasraw_, tfunc_, dup_] :=
+HBlochsForSpecFunc[vk:({_, _}|{_, _, _}), bdrdirec:({_, _}|{_, _, _}), ptscellsvasraw_, tfunc_, dup_] :=
 Module[{HLeadIntraInterReal, HCSRIntraLeadInterReal, fillfunc, keys, len = Length[ptscellsvasraw], ptscellsvas},
 	ptscellsvas = Association /@ SortBy[N @* Norm @* Keys] /@ GatherBy[Normal[ptscellsvasraw], Norm[Keys[#] . bdrdirec] &];
 	(*KeyMap only works on Association, rather than List.*)
