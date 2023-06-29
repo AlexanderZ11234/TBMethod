@@ -79,7 +79,7 @@ Module[{maxquant, clipped, min = Min[data]},
 
 Options[BandPlotWithWeight] = Join[Options[Graphics], Options[BarLegend], {Joined -> True, ColorFunction -> (Hue[2(1 - #)/3] &)}];
 (*bandPlotWithWeight[banddatawithstate_,cfunc_,cname_String,joined_:(True|False),ps:OptionsPattern[Graphics]]:=*)
-BandPlotWithWeight[banddatawithweight_, hisymmptname: {_String...}: {""}, ptsnumbers: {_?NumericQ...}: {}, ps:OptionsPattern[]] :=
+BandPlotWithWeight[banddatawithweight_, hisymmptname: {(_String|OverBar[_String])...}: {""}, ptsnumbers: {_?NumericQ...}: {}, ps:OptionsPattern[]] :=
 Module[{kbdat, colors, m, n, lines, bfig, legend, fontfamily = (*"Helvetica"*)(*"Times New Roman"*)"Arial", style,
 		style2, bdat, cdat, cfunc = OptionValue[ColorFunction], dticks, frameticks, ps1, ps2},
 	{bdat, cdat} = Transpose[banddatawithweight, {3, 2, 1}]; {m, n} = Dimensions[bdat];
