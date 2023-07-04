@@ -335,12 +335,12 @@ Module[{HLeadIntraInterReal, HCSRIntraLeadInterReal, fillfunc, keys, len = Lengt
 	(*KeyMap only works on Association, rather than List.*)
 	keys = Keys[ptscellsvas];
 	fillfunc[indfs_, indi_] := HMatrixFromHoppings[{#, Extract[indi] @ ptscellsvas}, tfunc, dup] & /@ (KeyMap[# - Extract[indi][keys] &] @ ptscellsvas[[indfs]]);
-	HLeadIntraInterReal = fillfunc @@@ {{2, {2,1}}, {2, {1,1}}};
+	HLeadIntraInterReal = fillfunc @@@ {{2, {2, 1}}, {2, {1, 1}}};
 	Which[
-		MemberQ[{4,8,10},len],
+		MemberQ[{4, 8, 10}, len],
 		HBlochFull[vk, #] & /@ HLeadIntraInterReal,
-		MemberQ[{7,15,19},len],
-		(HCSRIntraLeadInterReal = fillfunc @@@ {{3, {3,1}}, {3, {2, 1}}};
+		MemberQ[{7, 15, 19}, len],
+		(HCSRIntraLeadInterReal = fillfunc @@@ {{3, {3, 1}}, {3, {2, 1}}};
 		Map[HBlochFull[vk, #] &, {HLeadIntraInterReal, HCSRIntraLeadInterReal}, {2}]),
 		True, 0
 	]
