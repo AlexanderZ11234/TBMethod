@@ -200,7 +200,7 @@ LocalDOSRealSpace[Gs_, sigmas_, layeredpts_Association, innerdof_:1] :=
 Module[{gamma, innerdofldos, ldos},
 	gamma = I (# - ConjugateTranspose[#]) & @ Total[sigmas];
 	(*gamma = Im @ Total[sigmas];*)
-	innerdofldos = -1/\[Pi] Diagonal[ # . gamma . ConjugateTranspose[#] ] & /@ Gs;
+	innerdofldos = (*-*)1/\[Pi] Diagonal[ # . gamma . ConjugateTranspose[#] ] & /@ Gs;
 	(*innerdofldos = -1/\[Pi] Diagonal[ Im[#] ] & /@ Gs;*) (*WRONG!*)
 	ldos = BlockMap[Total, #, innerdof] & /@ innerdofldos;
 	MapThread[Append, Join @@@ {Values[layeredpts], Reverse[ldos]}]
