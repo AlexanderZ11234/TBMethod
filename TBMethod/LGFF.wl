@@ -9,11 +9,12 @@ SurfaceGreen::usage = "surface Green function";
 Sigma::usage = "Selfenergy from the one certain lead, source or drain.";
 CentralGreen::usage = "Green's function for the central scattering area.";
 Transmission::usage = "Transmission from Landauer-B\[UDoubleDot]ttiker formula.";
-CentralBlockGreens::usage = "The blocks of the full Green's function in the last block column, as a result from the Layered method.";
+CentralBlockGreens::usage = "The blocks of the full Green's function in the last block column, for the (adaptively) partitioned central scattering region.";
 LocalDOSRealSpace::usage = "Real-space local density of states from the Layered method.";
 LocalDOSReciprocalSpace::usage = "Reciprocal-space local density of states.";
 LocalCDV::usage = "Local current density vector field from the Layered method.";
 TransportCoefficient::usage = "Calculates transmission or reflection coefficent by scattering matrix with Green's function method.";
+CentralDiagonalBlockGreens::usage = "The diagonal blocks of the Green's function in the full form, corresponding to each layer from the (adaptively) partitioned central scattering region.";
 
 Begin["`Private`"]
 (* Implementation of the package *)
@@ -158,18 +159,35 @@ Module[{inv, diagblocks, iteratefunc, arguments},
 	inv = inverse[#, Method -> "Multifrontal"] &;
 	diagblocks = epsilon iden[#] - # & /@ MapAt[Total[sigmas] + # &, ds, -1];
 	arguments = Sequence[iteratefunc, inv[First[diagblocks]], Transpose[{-os, Rest @ diagblocks}] ];
-	iteratefunc = inv[ Last[#2] - First[#2] . # . ConjugateTranspose[First[#2]] ] &;
+	iteratefunc = inv[ Last[#2] - First[#2] . # . First[#2]\[ConjugateTranspose] ] &;
 	Which[
 		mode == "T", Fold[arguments],
 		mode == "LDOS" || mode == "LCDV",
 		Module[{Fi, Fioidag, iteratefunc2},
 			Fi = FoldList[arguments];
-			Fioidag = MapThread[Dot, {Most[Fi], -ConjugateTranspose /@ os}];
+			(*Fioidag = MapThread[Dot, {Most[Fi], -ConjugateTranspose /@ os}];*)
+			Fioidag = MapThread[Dot, {Most[Fi], -ConjugateTranspose[os, 2 <-> 3]}];
 			iteratefunc2 = -#2 . # &;
 			FoldList[iteratefunc2, Last[Fi], Reverse[Fioidag]]
 		],
 		True, 0
 	]
+];
+
+(*The diagonal blocks of the Green's functions*)
+CentralDiagonalBlockGreens[\[Epsilon]_, blockHs:{ds_, os_}, sigmas_] /; And[Length[ds] >= 2, Subtract @@ (Length /@ blockHs) == 1] :=
+Module[{inv, diagblocks, blockGinvs, blockGinvsrev, iteratefunc, Fisinner, Fisouter, foldlist},
+	inv = inverse[#1, Method -> "Multifrontal"] &;
+	foldlist = FoldList[Last[#2] - First[#2] . inv[#] . First[#2]\[ConjugateTranspose] &];
+	diagblocks = \[Epsilon] iden[#] - # & /@ MapAt[Total[sigmas] + # &, ds, -1];
+	
+	blockGinvs = {diagblocks, -os};
+	Fisinner = foldlist[blockGinvs[[1, 1]], {blockGinvs[[2]], Rest @ blockGinvs[[1]]}\[Transpose]];
+	
+	blockGinvsrev = Reverse[{diagblocks, -ConjugateTranspose[os, 2 <-> 3]}, 2];
+	Fisouter = foldlist[blockGinvsrev[[1, 1]], {blockGinvsrev[[2]], Rest @ blockGinvsrev[[1]]}\[Transpose]] // Reverse;
+	
+	MapThread[inv[# - #2] &][{Fisinner + Fisouter, diagblocks}]
 ];
 
 Transmission[GCSR_, \[CapitalSigma]s_] :=
