@@ -165,8 +165,7 @@ Module[{inv, diagblocks, iteratefunc, arguments},
 		mode == "LDOS" || mode == "LCDV",
 		Module[{Fi, Fioidag, iteratefunc2},
 			Fi = FoldList[arguments];
-			(*Fioidag = MapThread[Dot, {Most[Fi], -ConjugateTranspose /@ os}];*)
-			Fioidag = MapThread[Dot, {Most[Fi], -ConjugateTranspose[os, 2 <-> 3]}];
+			Fioidag = MapThread[Dot, {Most[Fi], -ConjugateTranspose /@ os}];
 			iteratefunc2 = -#2 . # &;
 			FoldList[iteratefunc2, Last[Fi], Reverse[Fioidag]]
 		],
@@ -184,7 +183,7 @@ Module[{inv, diagblocks, blockGinvs, blockGinvsrev, iteratefunc, Fisinner, Fisou
 	blockGinvs = {diagblocks, -os};
 	Fisinner = foldlist[blockGinvs[[1, 1]], {blockGinvs[[2]], Rest @ blockGinvs[[1]]}\[Transpose]];
 	
-	blockGinvsrev = Reverse[{diagblocks, -ConjugateTranspose[os, 2 <-> 3]}, 2];
+	blockGinvsrev = Reverse[{diagblocks, -ConjugateTranspose /@ os(*ConjugateTranspose[os, 2 <-> 3]*)}, 2];
 	Fisouter = foldlist[blockGinvsrev[[1, 1]], {blockGinvsrev[[2]], Rest @ blockGinvsrev[[1]]}\[Transpose]] // Reverse;
 	
 	MapThread[inv[# - #2] &][{Fisinner + Fisouter, diagblocks}]
