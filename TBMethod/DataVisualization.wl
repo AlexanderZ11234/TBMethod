@@ -34,7 +34,7 @@ Module[{(*plottheme, *)frameticks, gridlines, dticks},
 	dticks = {ptsnumbers, hisymmptname}\[Transpose];
 	frameticks = {{Automatic, None}, {dticks, None}};
 	ListLinePlot[banddata, s, FrameStyle -> Black,
-		PlotStyle -> Blue, AspectRatio -> GoldenRatio, (*PlotTheme -> plottheme,*)
+		PlotStyle -> Blue, (*AspectRatio -> GoldenRatio,*) (*PlotTheme -> plottheme,*)
 		FrameTicks -> frameticks, GridLines -> {ptsnumbers, Automatic}
 	]
 ];
