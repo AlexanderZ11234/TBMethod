@@ -143,6 +143,16 @@ Module[{vx, vy, eigensyst, \[CapitalOmega]nl, \[Delta]k = 1.*^-7, Hveck = H[veck
 	-2Total[\[CapitalOmega]nl@@@Join@@@Tuples[TakeDrop[eigensyst,nF]]//Im]*)
 ];
 
+BerryCurvature[veck_, H_, \[Epsilon]F_?(# \[Element] Reals &), opts:OptionsPattern[Eigensystem]] :=
+Module[{vx, vy, eigensyst, \[CapitalOmega]nl, \[Delta]k = 1.*^-7, Hveck = H[veck], group},
+	{vx, vy} = (Hveck - H[veck - \[Delta]k #])/(*\[HBar]*)\[Delta]k & /@ PauliMatrix[0];
+	eigensyst = Sort[Eigensystem[Hveck, opts, Method -> "Direct"]\[Transpose]];
+	(*\[CapitalOmega]nl=(#\[LeftDoubleBracket]2\[RightDoubleBracket]\[Conjugate].vx.#2\[LeftDoubleBracket]2\[RightDoubleBracket] #2\[LeftDoubleBracket]2\[RightDoubleBracket]\[Conjugate].vy.#\[LeftDoubleBracket]2\[RightDoubleBracket])/(*\[HBar]^-2*)((#2\[LeftDoubleBracket]1\[RightDoubleBracket]-#\[LeftDoubleBracket]1\[RightDoubleBracket])^2)&;*)(*here in \[LeftDoubleBracket]...\[RightDoubleBracket], "2" for eigenvectors & "1" for eigenvalues*)
+	\[CapitalOmega]nl = (#2[[2]]\[Conjugate] . vx . #[[2]] #[[2]]\[Conjugate] . vy . #2[[2]])/(*\[HBar]^-2*)((#2[[1]]-#[[1]])^2)&;(*this \[CapitalOmega]nl has accounted the minus sign automatically*)
+	group = GatherBy[eigensyst, First[#] <= \[Epsilon]F &];
+	If[Length[group] == 2, 2 Im @ Total[\[CapitalOmega]nl @@@ Tuples[group]], 0.]
+];
+
 (*WannerChargeCenter[] :=.*)
 
 (*PlaquetteChern[vks:{{__?NumericQ}..}, heff_, nF_?(# \[Element] PositiveIntegers &), opts:OptionsPattern[Eigensystem]] :=
