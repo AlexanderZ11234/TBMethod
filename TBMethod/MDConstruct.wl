@@ -214,10 +214,10 @@ Module[{indexesraw, indexes, intersectionindexes, ptsdata},
 ];
 
 HCSRDiagOffDiagBlocks[CSRptsgrouped_Association, tFunc_, dup_] :=
-Module[{hdfill, hofill, hdblocks, hoblocks, attachcheck, checkresults, csrpts = Values[CSRptsgrouped], len = Length[CSRptsgrouped]},
+Module[{hdfill, hofill, hdblocks, hoblocks, (*attachcheck, checkresults,*) csrpts = Values[CSRptsgrouped], len = Length[CSRptsgrouped]},
 	If[len == 1, HMatrixFromHoppings[Join[csrpts, csrpts], tFunc, dup],
-		(attachcheck = ({p1, p2, p3} |-> AttachFreeQ[{p1, p3}, dup]) @@ # &;
-		checkresults = And @@ BlockMap[attachcheck, csrpts, 3, 1];
+		((*attachcheck = ({p1, p2, p3} |-> AttachFreeQ[{p1, p3}, dup]) @@ # &;
+		checkresults = And @@ BlockMap[attachcheck, csrpts, 3, 1];*)
 		(*Echo[StringTemplate["Attach check passed: ``."][checkresults]];
 		If[checkresults,
 			hdfill = p |-> HMatrixFromHoppings[{p, p}, tFunc, dup];
