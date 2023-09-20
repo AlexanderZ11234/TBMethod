@@ -244,7 +244,7 @@ Module[{hdfill, hofill, hdblocks, hoblocks, csrpts = Values[CSRptsgrouped], len 
 		hofill = p |-> HMatrixFromHoppings[p, tFunc, dup];
 		hdblocks = hdfill ~ParallelMap~ csrpts;
 		(*hoblocks = hofill ~ParallelMap~ Transpose[{Rest[csrpts], Most[csrpts]}];*)
-		hoblocks = Parallelize[MapThread[hofill, {Rest[csrpts], Most[csrpts]}]];
+		hoblocks = Parallelize[MapThread[hofill @* List, {Rest[csrpts], Most[csrpts]}]];
 		{hdblocks, hoblocks})
 	]
 ];
