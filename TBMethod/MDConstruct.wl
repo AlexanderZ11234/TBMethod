@@ -237,7 +237,7 @@ Module[{hdfill, hofill, hdblocks, hoblocks, (*attachcheck, checkresults,*) csrpt
 	]
 ];
 
-ParallelHCSRDiagOffDiagBlocks[CSRptsgrouped_Association, tFunc_, dup_] :=
+(*ParallelHCSRDiagOffDiagBlocks[CSRptsgrouped_Association, tFunc_, dup_] :=
 Module[{hdfill, hofill, hdblocks, hoblocks, csrpts = Values[CSRptsgrouped], len = Length[CSRptsgrouped]},
 	If[len == 1, HMatrixFromHoppings[Join[csrpts, csrpts], tFunc, dup],
 		(hdfill = p |-> HMatrixFromHoppings[{p, p}, tFunc, dup];
@@ -245,6 +245,16 @@ Module[{hdfill, hofill, hdblocks, hoblocks, csrpts = Values[CSRptsgrouped], len 
 		hdblocks = hdfill ~ParallelMap~ csrpts;
 		hoblocks = hofill ~ParallelMap~ Transpose[{Rest[csrpts], Most[csrpts]}];
 		(*hoblocks = Parallelize[MapThread[hofill @* List, {Rest[csrpts], Most[csrpts]}]];*)
+		{hdblocks, hoblocks})
+	]
+];*)
+ParallelHCSRDiagOffDiagBlocks[CSRptsgrouped_Association, tFunc_, dup_] :=
+Module[{hdfill, hofill, hdblocks, hoblocks, csrpts = Values[CSRptsgrouped], len = Length[CSRptsgrouped]},
+	If[len == 1, HMatrixFromHoppings[Join[csrpts, csrpts], tFunc, dup],
+		(hdfill = p |-> ParallelHMatrixFromHoppings[{p, p}, tFunc, dup];
+		hofill = p |-> ParallelHMatrixFromHoppings[Reverse @ p, tFunc, dup];
+		hdblocks = hdfill ~Map~ csrpts;
+		hoblocks = BlockMap[hofill, csrpts, 2, 1];
 		{hdblocks, hoblocks})
 	]
 ];
