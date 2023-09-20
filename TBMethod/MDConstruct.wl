@@ -19,10 +19,12 @@ CoordinatesGroupByRegions::usage = "xxx.";
 
 AttachFreeQ::usage = "Checks if two devices are out of contact.";
 
-HCSRDiagOffDiagBlocks::usage = "xxx.";
+HCSRDiagOffDiagBlocks::usage = "Generates the n diagonal and the (n-1) first off-diagonal matrix blocks of the tight-binding Hamiltonian, where n is the layer number of the CSR partitioned.";
+ParallelHCSRDiagOffDiagBlocks::usage = "Parallel version of HCSRDiagOffDiagBlocks.";
 HCSRDiagOffDiagBlocksVerbose::usage = "Verbose version of HCSRDiagOffDiagBlocks.";
 
-HLeadBlocks::usage = "xxx.";
+HLeadBlocks::usage = "Generates the three Hamiltonian blocks (\!\(\*SubscriptBox[\(h\), \(00\)]\), \!\(\*SubscriptBox[\(h\), \(10\)]\), and \!\(\*SubscriptBox[\(H\), \(10\)]\)) for each lead.";
+ParallelHLeadBlocks::usage = "Parallel version of HLeadBlocks.";
 HLeadBlocksVerbose::usage = "Verbose version of HLeadBlocks.";
 
 AdaptivePartition::usage = "Partitions the CSR in an adaptive way to achieve an optimal slicing status, according to the given leads' configuration."
@@ -235,6 +237,18 @@ Module[{hdfill, hofill, hdblocks, hoblocks, (*attachcheck, checkresults,*) csrpt
 	]
 ];
 
+ParallelHCSRDiagOffDiagBlocks[CSRptsgrouped_Association, tFunc_, dup_] :=
+Module[{hdfill, hofill, hdblocks, hoblocks, csrpts = Values[CSRptsgrouped], len = Length[CSRptsgrouped]},
+	If[len == 1, HMatrixFromHoppings[Join[csrpts, csrpts], tFunc, dup],
+		(hdfill = p |-> HMatrixFromHoppings[{p, p}, tFunc, dup];
+		hofill = p |-> HMatrixFromHoppings[p, tFunc, dup];
+		hdblocks = hdfill ~ParallelMap~ csrpts;
+		(*hoblocks = hofill ~ParallelMap~ Transpose[{Rest[csrpts], Most[csrpts]}];*)
+		hoblocks = Parallelize[MapThread[hofill, {Rest[csrpts], Most[csrpts]}]];
+		{hdblocks, hoblocks})
+	]
+];
+
 HCSRDiagOffDiagBlocksVerbose[CSRptsgrouped_Association, tFunc_, dup_] :=
 Module[{hdfill, hofill, hdblocks, hoblocks, attachcheck, checkresults, csrpts = Values[CSRptsgrouped], len = Length[CSRptsgrouped]},
 	If[len == 1, HMatrixFromHoppings[Join[csrpts, csrpts], tFunc, dup],
@@ -254,6 +268,7 @@ Module[{hdfill, hofill, hdblocks, hoblocks, attachcheck, checkresults, csrpts = 
 
 (*HLeadBlocks[CSRptsgrouped_Association, tFunc_, dup_, leadpts_] := Table[HMatrixFromHoppings[fipts, tFunc, dup], {fipts, {{#[[1]], #[[1]]}, #, {Values[CSRptsgrouped][[-1]], #[[1]]}} & [leadpts]}];*)
 HLeadBlocks[CSRptsgrouped_Association, tFunc_, dup_, leadpts_] := Table[HMatrixFromHoppings[fipts, tFunc, dup], {fipts, {{#[[1]], #[[1]]}, #, {CSRptsgrouped[[-1]], #[[1]]}} & [leadpts]}];
+ParallelHLeadBlocks[CSRptsgrouped_Association, tFunc_, dup_, leadpts_] := Table[ParallelHMatrixFromHoppings[fipts, tFunc, dup], {fipts, {{#[[1]], #[[1]]}, #, {CSRptsgrouped[[-1]], #[[1]]}} & [leadpts]}];
 
 HLeadBlocksVerbose[CSRptsgrouped_Association, tFunc_, dup_, leadpts_, leadname_String] :=
 Module[{attachcheck, checkresults, csrtwoouters = Values[CSRptsgrouped][[{-2, -1}]]},
