@@ -131,8 +131,8 @@ Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, g0, t0
 			SparseArray @ ArrayFlatten[({{# . g0inverse, -# . h1\[ConjugateTranspose]}, {id, 0.}}) & [inv[h1]]],
 			SparseArray @* ArrayFlatten /@ {{{g0inverse, -h1\[ConjugateTranspose]}, {id, 0.}}, {{h1, 0.}, {0., id}}}
 		];
-		(*{S1, S2} = Partition[SortBy[Eigensystem[MH, Method \[Rule] "Direct"]\[Transpose], Abs@*First]\[LeftDoubleBracket];;n, 2\[RightDoubleBracket]\[Transpose], n];*)
-		{S1, S2} = Partition[Eigenvectors[MH, -n, Method -> "Direct"]\[Transpose], n];
+		{S1, S2} = Partition[SortBy[Eigensystem[MH, Method -> "Direct"]\[Transpose], Abs @* First][[;;n, 2]]\[Transpose], n];
+		(*{S1, S2} = Partition[Eigenvectors[MH, -n, Method -> "Direct"]\[Transpose], n];*)
 		S1 . inv[S2])
 	];
 	
