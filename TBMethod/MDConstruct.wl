@@ -375,23 +375,6 @@ necessary number of celle to consider: 2D: 1->3(->3); 3D: 1->9(->9) or 1->7(->7)
 The basic idea is to add self-energy to the CSR in a single terminal setup.
 The point here is that each part has lattice momenta as parameter, to conceptually accommondate the infiniteness of the device in one or two dimensions.
 *)
-HBlochsForSpecFunc[vk:({_, _}|{_, _, _}), ptscellsvasraw_, tfunc_, dup_] :=
-Module[{HLeadIntraInterReal, HCSRIntraLeadInterReal, fillfunc, keys, len = Length[ptscellsvasraw], ptscellsvas, bdrdirec},
-	bdrdirec = RotationTransform[\[Pi]/2., PadRight[IdentityMatrix[2], {2, Length[#]}]][#] & [vk];
-	ptscellsvas = Association /@ SortBy[N @* Norm @* Keys] /@ GatherBy[Normal[ptscellsvasraw], Norm[Keys[#] . bdrdirec] &];
-	(*KeyMap only works on Association, rather than List.*)
-	keys = Keys[ptscellsvas];
-	fillfunc[indfs_, indi_] := HMatrixFromHoppings[{#, Extract[indi] @ ptscellsvas}, tfunc, dup] & /@ (KeyMap[# - Extract[indi][keys] &] @ ptscellsvas[[indfs]]);
-	HLeadIntraInterReal = fillfunc @@@ {{2, {2, 1}}, {2, {1, 1}}};
-	Which[
-		MemberQ[{4, 8, 10}, len],
-		HBlochFull[vk, #] & /@ HLeadIntraInterReal,
-		MemberQ[{7, 15, 19}, len],
-		(HCSRIntraLeadInterReal = fillfunc @@@ {{3, {3, 1}}, {3, {2, 1}}};
-		Map[HBlochFull[vk, #] &, {HLeadIntraInterReal, HCSRIntraLeadInterReal}, {2}]),
-		True, 0
-	]
-] /; MemberQ[{4, 7, 8, 10, 15, 19}, Length[ptscellsvasraw]];
 
 
 (*HBlochsForSpecFunc[vk_, ptscellsvas_, tfunc_, dup_] :=
