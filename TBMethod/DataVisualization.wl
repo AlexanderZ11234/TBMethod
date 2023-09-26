@@ -65,7 +65,7 @@ Module[{op, largestcomps, \[Eta] = 1.*^-4, len = Length[ptsdisk], ratio = 2},
 
 LocalDOSPlot[data_, ops:OptionsPattern[ListDensityPlot]] :=
 ListDensityPlot[
-	data, ops, AspectRatio -> GoldenRatio, PlotRange -> All,
+	data, ops, PlotRange -> All,
 	ColorFunction -> (ColorData["SunsetColors"][#^(1/2)] &)
 ];
 
