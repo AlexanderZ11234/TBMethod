@@ -65,8 +65,19 @@ Module[{op, largestcomps, \[Eta] = 1.*^-4, len = Length[ptsdisk], ratio = 2},
 
 LocalDOSPlot[data_, ops:OptionsPattern[ListDensityPlot]] :=
 ListDensityPlot[
-	data, ops, PlotRange -> All,
+	data, ops, PlotRange -> All, FrameStyle -> Black,
 	ColorFunction -> (ColorData["SunsetColors"][#^(1/2)] &)
+];
+
+LocalDOSPlot[data_, hisymmptname: {(_String|OverBar[_String])...}: {""}, ptsnumbers: {_?NumericQ...}: {}, ops:OptionsPattern[ListDensityPlot]] :=
+Module[{frameticks, gridlines, dticks},
+	dticks = {ptsnumbers, hisymmptname}\[Transpose];
+	frameticks = {{Automatic, None}, {dticks, None}};
+	ListDensityPlot[
+		data, ops, PlotRange -> All, FrameStyle -> Black,
+		FrameTicks -> frameticks, GridLines -> {ptsnumbers, Automatic},
+		ColorFunction -> (ColorData["SunsetColors"][#^(1/2)] &)
+	]
 ];
 
 
