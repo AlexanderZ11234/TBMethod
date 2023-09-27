@@ -56,4 +56,4 @@ and four lists of functions should be indexed out.
 
 ## Documentation
 
-MMA-style documentation under construction
+[MMA-style](http://example.com/your-url#magic-button "Onsite testable") documentation under construction
