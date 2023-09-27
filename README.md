@@ -20,20 +20,20 @@
 
 ### Installation Test (1 → 3 or 2 → 3)
 
-1.  For single kernel, load the package by
+1. For single kernel, load the package by
 
 <!---->
 
     Needs["TBMethod`"]
 
-1.  For parallel computation, load it by
+2. For parallel computation, load it by
 
 <!---->
 
     Needs["TBMethod`"]
     ParallelNeeds["TBMethod`"]
 
-1.  Check the installation by
+3. Check the installation by
 
 <!---->
 
