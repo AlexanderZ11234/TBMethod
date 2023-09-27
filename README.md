@@ -56,4 +56,4 @@ and four lists of functions should be indexed out.
 
 ## Documentation
 
-Under construction
+MMA-style documentation under construction
