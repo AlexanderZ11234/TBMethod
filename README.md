@@ -50,9 +50,9 @@ and four lists of functions should be indexed out.
 -
 
 - Highlights: fully employment of the nearest neighbor searching algorithm, so that the total computation complex tends to O(n) in
- - Generation of Hamiltonian matrices,
- - Adaptive partition of central scattering region, and
- - Calculation of transport related quantities.
+    - Generation of Hamiltonian matrices,
+    - Adaptive partition of central scattering region, and
+    - Calculation of transport related quantities.
 
 ## Documentation
 
