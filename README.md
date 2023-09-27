@@ -49,7 +49,7 @@ and four lists of functions should be indexed out.
 
 -
 
-- Highlights: fully employment of the [NNS (nearest neighbor search)](https://en.wikipedia.org/wiki/Nearest_neighbor_search) algorithm, so that the total computation complex tends to O(n) in
+- Highlights: fully employment of the [NNS (nearest neighbor search)](https://en.wikipedia.org/wiki/Nearest_neighbor_search) algorithm, so that the total computation complex tends to O($n$) in
     - Generation of Hamiltonian matrices,
     - Adaptive partition of central scattering region, and
     - Calculation of transport related quantities.
