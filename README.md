@@ -56,4 +56,4 @@ and four lists of functions should be indexed out.
 
 ## Documentation
 
-<a href="#" class="magic-button" title="Onsite testable">MMA-style</a> documentation under construction
+<a href="#" class="magic-button" title="Onsite testable"> _MMA-style_ </a> documentation under construction
