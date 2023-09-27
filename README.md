@@ -12,7 +12,11 @@
 
 #### Online
 
-- Outstanding [comment]: <> (**Run** `PacletInstall["https://github.com/AlexanderZ11234/TBMethod/releases/download/0.2.1/TBMethod-0.2.1.paclet"])`
+- Outstanding
+
+<!--
+**Run** `PacletInstall["https://github.com/AlexanderZ11234/TBMethod/releases/download/0.2.1/TBMethod-0.2.1.paclet"]`
+-->
 
 ### Installation Test (1 → 3 or 2 → 3)
 
