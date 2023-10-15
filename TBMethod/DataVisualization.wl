@@ -15,7 +15,7 @@ RealSpaceLocalDOSPlot::usage = "Visualizes local density of states in the real s
 
 LocalDOSPlot::usage = "Visualizes local density of states in either the real or the reciprocal space continuously by interpolation.";
 
-LocalDOSTidy::usage = "Tidies up local density of states for a better effect of visualization.";
+LocalDOSTidy::usage = "Tidies up local density of states for a better effect of visualization, by smoothing the data via Gaussian filter.";
 
 BandPlotWithWeight::usage = "Plots band structures with high symmetry points annotated and with extra weight information obtainable from the corresponding eigenvectors, for example, IPR.";
 
@@ -100,7 +100,7 @@ Module[{kbdat, colors, m, n, lines, bfig, legend, fontfamily = (*"Helvetica"*)(*
 	colors = Map[cfunc, Rescale @ cdat, {2}];
 	lines = MapThread[If[OptionValue[Joined], Line, Point][#, VertexColors -> #2] &, {kbdat, colors}];
 	ps1 = Sequence @@ FilterRules[{ps}, Options[Graphics]]; ps2 = Sequence @@ FilterRules[{ps}, Options[BarLegend]];
-	bfig = Graphics[{Thick, lines}, ps1, GridLines -> {ptsnumbers, Automatic}, PlotRangeClipping -> True, AspectRatio -> GoldenRatio, FrameTicks -> frameticks, 
+	bfig = Graphics[{Thick, lines}, ps1, GridLines -> {ptsnumbers, Automatic}, PlotRangeClipping -> True, (*AspectRatio -> GoldenRatio,*) FrameTicks -> frameticks, 
 					 Frame -> True, FrameLabel -> {None, "\!\(\*SubscriptBox[\(E\), \(\[VeryThinSpace]\)]\)"}, FrameTicksStyle -> style2, FrameStyle -> style2, LabelStyle -> style2, BaseStyle -> style];
 	legend = BarLegend[{cfunc, {0, 1}},(*4,*)ps2, (*Ticks->Transpose[{{0,1},MinMax[cdat]}],*) "Ticks" -> {0, 1}, "TickLabels" -> {"Min", "Max"}, TicksStyle -> style2, FrameStyle -> style2, LabelStyle -> style];
 	Legended[bfig, legend]
