@@ -109,7 +109,7 @@ PauliGellMannAbstract[PGMDecomp_Association, dimlist:{(2|3)..}] :=
 Module[{s, keyfunc},
 	s[n:(2|3)] := If[n == 2, "\[Sigma]", "\[Lambda]"];
 	keyfunc = CircleTimes @@ MapThread[Construct, {s /@ dimlist, #}] &;
-	Total[KeyValueMap[keyfunc[#] #2 &][PGMDecomp]]
+	Total[KeyValueMap[keyfunc[#] #2 &][PGMDecomp]] /. CircleTimes[x_] :> x
 ];
 
 PauliGellMannRepresent[epr_] := FullSimplify[epr /. {"\[Sigma]" -> PauliMatrix, "\[Lambda]" -> GellMannMatrix, CircleTimes -> KroneckerProduct}];
