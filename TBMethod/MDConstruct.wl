@@ -69,7 +69,10 @@ Module[{innerdof = Dimensions[fs[[1, 1]]]},
 	] // ReleaseHold
 ];
 
-\[CapitalGamma]Matrix[is__] := KroneckerProduct @@ PauliMatrix[{is}];
+(*\[CapitalGamma]Matrix[is__] := KroneckerProduct @@ PauliMatrix[{is}];*)
+\[CapitalGamma]Matrix[is__] := If[Length[{is}] == 1, PauliMatrix[is],
+					KroneckerProduct @@ PauliMatrix[{is}]
+					];
 
 (*Phys. Rev. B 40, 8169 (1989)*)
 PhaseFactor2DAB[B_, \[Phi]A_][ptf_, pti_] :=
