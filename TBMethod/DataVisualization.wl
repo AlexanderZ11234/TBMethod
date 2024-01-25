@@ -21,6 +21,8 @@ BandPlotWithWeight::usage = "Plots band structures with high symmetry points ann
 
 AtomPerLayerPlot::usage = "Plots the atom (site) number per layer after the adaptive partitioning of the central scattering region.";
 
+ExportAdaptivePartitionAnimation::usage = "Export the animation, e.g. a *.gif file, to demonostrate the process of adaptive partition of the CSR.";
+
 Begin["`Private`"]
 (* Implementation of the package *)
 (*SetOptions[{ParallelSum}, Method -> "ItemsPerEvaluation" -> 100 $KernelCount];*)
@@ -114,6 +116,19 @@ Module[{atomnumberperlayer = Length /@ ptscsraped, atomnumbermaintained},
 		PlotLabel -> StringTemplate["Total Atom #: `` (``)\n\!\(\*OverscriptBox[\(N\), \(_\)]\) = ``, \[Sigma] = ``"][Length[ptscsr], atomnumbermaintained, Mean[atomnumberperlayer]//N, StandardDeviation[atomnumberperlayer]//N],
 		PlotRange -> {0, Automatic}, FrameLabel -> {"Layer #", "Atom #"}
 	]
+];
+
+Options[ExportAdaptivePartitionAnimation] = Join[{"DisplayDurations" -> 0.5, "PointSize" -> 0.008}, Options[Graphics]];
+ExportAdaptivePartitionAnimation[ptscsr_, ptscsraped_, destpath_String, opts:OptionsPattern[]] :=
+Module[{bdrange = (List @@ BoundingRegion[ptscsr])\[Transpose], len = Length[ptscsraped], plot, reversedfigs, figframes, optsgraphics},
+	optsgraphics = Sequence @@ FilterRules[{opts}, Options[Graphics]];
+	(*plot[pts_]:=ListPlot[pts,opts,PlotMarkers->{{"\[FilledCircle]",7}},PlotStyle->RandomColor[],PlotRange->bdrange,PlotRangePadding->Scaled[.05],ImageSize->Large,AspectRatio->Automatic];*)
+	plot[pts_] := Graphics[
+		{PointSize[OptionValue["PointSize"]], RandomColor[], Point[pts]}, optsgraphics,
+		AspectRatio -> Automatic, PlotRange -> bdrange, PlotRangePadding -> Scaled[.05], ImageSize -> Large];
+	reversedfigs = plot /@ Reverse[Values[ptscsraped]];
+	figframes = Table[Show[reversedfigs[[ ;; i]]], {i, Range[len]}];
+	Export[destpath, figframes, "DisplayDurations" -> OptionValue["DisplayDurations"]]
 ];
 
 
