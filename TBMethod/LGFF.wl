@@ -15,6 +15,8 @@ LocalDOSReciprocalSpace::usage = "Reciprocal-space local density of states.";
 LocalCDV::usage = "Local current density vector field from the Layered method.";
 TransportCoefficient::usage = "Calculates transmission or reflection coefficent by scattering matrix with Green's function method.";
 CentralDiagonalBlockGreens::usage = "The diagonal blocks of the Green's function in the full form, corresponding to each layer from the (adaptively) partitioned central scattering region.";
+HallAndLongitudinalConductances::usage = "Calculate the transverse Hall and longitudinal conductances simultaneously.";
+
 
 Begin["`Private`"]
 (* Implementation of the package *)
@@ -302,6 +304,32 @@ Module[{ptscsr = Join @@ layeredpts, innersummed, js, currenttensorblocks, jtens
 	js = jvecfield[ptscsr, jtensorfull];
 	(*KeyValueMap[List] @ (Total /@ GroupBy[js, First -> Last])*)
 	KeyValueMap[List] @* Merge[Total] @ js
+];
+
+(*For five and six T cases; The numbering of leads follows the order of from left to right and from up to down.
+And the source and drain should be numbered at the beginning and the ending.*)
+(*
+   2   4
+1 ------- 5
+   3
+
+   2   4
+1 ------- 6
+   3   5
+*)
+HallAndLongitudinalConductances[\[Epsilon]_, hcsrdod_, leadshs_] :=
+Module[{\[ScriptCapitalT], comat, \[ScriptCapitalT]func, Rfunc, RH, RL, inverse, cnup = 1.*^7, ter = Length[leadshs], transmissions},
+	\[ScriptCapitalT]func = # - DiagonalMatrix[Total[#, {2}]] &;
+	Rfunc = # - {#2, #3} & @@ Rest[LinearSolve[#][UnitVector[ter - 1, 1]]] &;
+	transmissions = Module[{\[CapitalSigma]s, blockG},
+		\[CapitalSigma]s=Sigma[\[Epsilon], #, 3] & /@ leadshs;
+		blockG=CentralBlockGreens[\[Epsilon], hcsrdod, \[CapitalSigma]s, "T"];
+		Table[If[p == q || p == ter, 0., Transmission[blockG, \[CapitalSigma]s[[{p, q}]]]], {p, ter}, {q, ter}]
+	];
+	\[ScriptCapitalT] = Drop[\[ScriptCapitalT]func[-transmissions],-1,-1];
+	If[LinearAlgebra`Private`MatrixConditionNumber[\[ScriptCapitalT]] > cnup, {"NaN", "NaN"},
+		{RH,RL}=Rfunc[\[ScriptCapitalT]];{RH,RL}/(RH^2+RL^2)
+	]
 ];
 
 
