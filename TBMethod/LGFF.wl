@@ -322,13 +322,13 @@ Module[{\[ScriptCapitalT], comat, \[ScriptCapitalT]func, Rfunc, RH, RL, inverse,
 	\[ScriptCapitalT]func = # - DiagonalMatrix[Total[#, {2}]] &;
 	Rfunc = # - {#2, #3} & @@ Rest[LinearSolve[#][UnitVector[ter - 1, 1]]] &;
 	transmissions = Module[{\[CapitalSigma]s, blockG},
-		\[CapitalSigma]s=Sigma[\[Epsilon], #, 3] & /@ leadshs;
-		blockG=CentralBlockGreens[\[Epsilon], hcsrdod, \[CapitalSigma]s, "T"];
+		\[CapitalSigma]s = Sigma[\[Epsilon], #, 3] & /@ leadshs;
+		blockG = CentralBlockGreens[\[Epsilon], hcsrdod, \[CapitalSigma]s, "T"];
 		Table[If[p == q || p == ter, 0., Transmission[blockG, \[CapitalSigma]s[[{p, q}]]]], {p, ter}, {q, ter}]
 	];
-	\[ScriptCapitalT] = Drop[\[ScriptCapitalT]func[-transmissions],-1,-1];
+	\[ScriptCapitalT] = Drop[\[ScriptCapitalT]func[-transmissions], -1, -1];
 	If[LinearAlgebra`Private`MatrixConditionNumber[\[ScriptCapitalT]] > cnup, {"NaN", "NaN"},
-		{RH,RL}=Rfunc[\[ScriptCapitalT]];{RH,RL}/(RH^2+RL^2)
+		{RH, RL} = Rfunc[\[ScriptCapitalT]]; {RH, RL}/(RH^2 + RL^2)
 	]
 ];
 
