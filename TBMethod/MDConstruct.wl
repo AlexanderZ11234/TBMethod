@@ -46,6 +46,8 @@ PauliGellMannRepresent::usage = "Transforms the result of PauliGellMannAbstract 
 PhotonBlocks::usage = "Generates the Floquet dressing coefficient for a certain hopping amplitude due to light driven field via Peierls's substitution.";
 PhotonDress::usage = "Generates the photon-dressed hopping amplitude.";
 
+CompiledSuccessfulQ::usage = "Check if a function compilation process succeeds.";
+
 
 Begin["`Private`"]
 (* Implementation of the package *)
@@ -414,6 +416,9 @@ Module[{n = Length[t], s},
 	(*t~KroneckerProduct~a+IdentityMatrix[n,SparseArray]~KroneckerProduct~b*)
 	MapThread[KroneckerProduct, {{t, s}, photonblocks}] // Total
 ];
+
+
+CompiledSuccessfulQ[cfunc_] := Echo[StringTemplate["Function compilation successful: ``"][StringFreeQ["MainEvaluate"][CompiledFunctionTools`CompilePrint[cfunc]]]];
 
 
 End[] (* End `Private` *)
