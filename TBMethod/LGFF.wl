@@ -15,6 +15,7 @@ LocalDOSReciprocalSpace::usage = "Reciprocal-space local density of states.";
 LocalCDV::usage = "Local current density vector field from the Layered method.";
 TransportCoefficient::usage = "Calculates transmission or reflection coefficent by scattering matrix with Green's function method.";
 CentralDiagonalBlockGreens::usage = "The diagonal blocks of the Green's function in the full form, corresponding to each layer from the (adaptively) partitioned central scattering region.";
+HallAndLongitudinalResistances::usage = "Calculate the transverse Hall and longitudinal resistances simultaneously.";
 HallAndLongitudinalConductances::usage = "Calculate the transverse Hall and longitudinal conductances simultaneously.";
 
 
@@ -317,7 +318,28 @@ And the source and drain should be numbered at the beginning and the ending.*)
 1 ------- 6
    3   5
 *)
+HallAndLongitudinalResistances[\[Epsilon]_, hcsrdod_, leadshs_] :=
+Module[{\[ScriptCapitalT], \[ScriptCapitalT]func, Rfunc, cnup = 1.*^7, ter = Length[leadshs], transmissions},
+	\[ScriptCapitalT]func = # - DiagonalMatrix[Total[#, {2}]] &;
+	Rfunc = # - {#2, #3} & @@ Rest[LinearSolve[#][UnitVector[ter - 1, 1]]] &;
+	transmissions = Module[{\[CapitalSigma]s, blockG},
+		\[CapitalSigma]s = Sigma[\[Epsilon], #, 3] & /@ leadshs;
+		blockG = CentralBlockGreens[\[Epsilon], hcsrdod, \[CapitalSigma]s, "T"];
+		Table[If[p == q || p == ter, 0., Transmission[blockG, \[CapitalSigma]s[[{p, q}]]]], {p, ter}, {q, ter}]
+	];
+	\[ScriptCapitalT] = Drop[\[ScriptCapitalT]func[-transmissions], -1, -1];
+	If[LinearAlgebra`Private`MatrixConditionNumber[\[ScriptCapitalT]] > cnup, {"NaN", "NaN"},
+		Rfunc[\[ScriptCapitalT]]
+	]
+];
+
 HallAndLongitudinalConductances[\[Epsilon]_, hcsrdod_, leadshs_] :=
+Module[{RH, RL},
+	{RH, RL} = HallAndLongitudinalResistances[\[Epsilon], hcsrdod, leadshs];
+	{RH, RL}/(RH^2 + RL^2)
+];
+
+(*HallAndLongitudinalConductances[\[Epsilon]_, hcsrdod_, leadshs_] :=
 Module[{\[ScriptCapitalT], comat, \[ScriptCapitalT]func, Rfunc, RH, RL, inverse, cnup = 1.*^7, ter = Length[leadshs], transmissions},
 	\[ScriptCapitalT]func = # - DiagonalMatrix[Total[#, {2}]] &;
 	Rfunc = # - {#2, #3} & @@ Rest[LinearSolve[#][UnitVector[ter - 1, 1]]] &;
@@ -330,7 +352,7 @@ Module[{\[ScriptCapitalT], comat, \[ScriptCapitalT]func, Rfunc, RH, RL, inverse,
 	If[LinearAlgebra`Private`MatrixConditionNumber[\[ScriptCapitalT]] > cnup, {"NaN", "NaN"},
 		{RH, RL} = Rfunc[\[ScriptCapitalT]]; {RH, RL}/(RH^2 + RL^2)
 	]
-];
+];*)
 
 
 End[] (* End `Private` *)
