@@ -109,11 +109,13 @@ Module[{kbdat, colors, m, n, lines, bfig, legend, fontfamily = (*"Helvetica"*)(*
 ];
 
 AtomPerLayerPlot[ptscsr_, ptscsraped_Association, ops:OptionsPattern[ListPlot]] :=
-Module[{atomnumberperlayer = Length /@ ptscsraped, atomnumbermaintained},
+Module[{atomnumberperlayer = Length /@ ptscsraped, atomnumbermaintained, totalnum = Length[ptscsr], meannum, stddev, meanweight},
 	atomnumbermaintained = Length[ptscsr] == Total[atomnumberperlayer];
+	meannum = Mean[atomnumberperlayer] // N; stddev = StandardDeviation[atomnumberperlayer] // N;
+	meanweight = ToString[Mean[atomnumberperlayer^3 // N] // ScientificForm, TraditionalForm];
 	ListPlot[atomnumberperlayer, ops,
 		PlotMarkers -> {"\[FilledCircle]", 10}, Filling -> 0, GridLines -> Automatic, PlotRangePadding -> {Scaled[.05], Scaled[.06]},
-		PlotLabel -> StringTemplate["Total Atom #: `` (``)\n\!\(\*OverscriptBox[\(N\), \(_\)]\) = ``, \[Sigma] = ``"][Length[ptscsr], atomnumbermaintained, Mean[atomnumberperlayer]//N, StandardDeviation[atomnumberperlayer]//N],
+		PlotLabel -> StringTemplate["Total Atom #: `` (``)\n\!\(\*OverscriptBox[\(N\), \(_\)]\) = ``, \[Sigma] = ``, \!\(\*OverscriptBox[\(w\), \(_\)]\) = ``"][totalnum, atomnumbermaintained, meannum, stddev, meanweight],
 		PlotRange -> {0, Automatic}, FrameLabel -> {"Layer #", "Atom #"}
 	]
 ];
