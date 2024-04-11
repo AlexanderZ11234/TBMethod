@@ -90,9 +90,16 @@ Module[{maxquant, clipped, min = Min[data]},
 	GaussianFilter[clipped, 2]
 ];
 
+optionsselect[options:Sequence[___Rule]][func_Symbol] := optionsselect[options, func];
+optionsselect[options:Sequence[___Rule], func_Symbol] := Sequence @@ FilterRules[{options}, Options[func]];
+
 Options[BandPlotWithWeight] = Join[Options[Graphics], Options[BarLegend], {Joined -> True, ColorFunction -> (Hue[2(1 - #)/3] &)}];
 (*bandPlotWithWeight[banddatawithstate_,cfunc_,cname_String,joined_:(True|False),ps:OptionsPattern[Graphics]]:=*)
-BandPlotWithWeight[banddatawithweight_, hisymmptname: {(_String|OverBar[_String])...}: {""}, ptsnumbers: {_?NumericQ...}: {}, ps:OptionsPattern[]] :=
+BandPlotWithWeight[banddatawithweight_,
+				   hisymmptname : {(_String|OverBar[_String])..} : {""},
+				   ptsnumbers : {_?NumericQ..} : {1},
+				   yticks :{{_, _}..} : Automatic,
+				   ps:OptionsPattern[]] :=
 Module[{kbdat, colors, m, n, lines, bfig, legend, fontfamily = (*"Helvetica"*)(*"Times New Roman"*)"Arial", style,
 		style2, bdat, cdat, cfunc = OptionValue[ColorFunction], dticks, frameticks, ps1, ps2},
 	{bdat, cdat} = Transpose[banddatawithweight, {3, 2, 1}]; {m, n} = Dimensions[bdat];
@@ -101,10 +108,12 @@ Module[{kbdat, colors, m, n, lines, bfig, legend, fontfamily = (*"Helvetica"*)(*
 	kbdat = Transpose[{ConstantArray[(*kdat*)Range[n], m], bdat}, {3, 1, 2}];
 	colors = Map[cfunc, Rescale @ cdat, {2}];
 	lines = MapThread[If[OptionValue[Joined], Line, Point][#, VertexColors -> #2] &, {kbdat, colors}];
-	ps1 = Sequence @@ FilterRules[{ps}, Options[Graphics]]; ps2 = Sequence @@ FilterRules[{ps}, Options[BarLegend]];
+	(*ps1 = Sequence @@ FilterRules[{ps}, Options[Graphics]]; ps2 = Sequence @@ FilterRules[{ps}, Options[BarLegend]];*)
+	ps1 = optionsselect[ps, Graphics];
+	ps2 = optionsselect[ps, BarLegend];
 	bfig = Graphics[{Thick, lines}, ps1, GridLines -> {ptsnumbers, Automatic}, PlotRangeClipping -> True, (*AspectRatio -> GoldenRatio,*) FrameTicks -> frameticks, 
 					 Frame -> True, FrameLabel -> {None, "\!\(\*SubscriptBox[\(E\), \(\[VeryThinSpace]\)]\)"}, FrameTicksStyle -> style2, FrameStyle -> style2, LabelStyle -> style2, BaseStyle -> style];
-	legend = BarLegend[{cfunc, {0, 1}},(*4,*)ps2, (*Ticks->Transpose[{{0,1},MinMax[cdat]}],*) "Ticks" -> {0, 1}, "TickLabels" -> {"Min", "Max"}, TicksStyle -> style2, FrameStyle -> style2, LabelStyle -> style];
+	legend = BarLegend[{cfunc, {0, 1}}, ps2, Ticks -> Transpose[{{0, 1}, NumberForm[#, {3, 4}] & /@ MinMax[cdat]}], (*"Ticks" -> {0, 1}, "TickLabels" -> {"Min", "Max"},*) TicksStyle -> style2, FrameStyle -> style2, LabelStyle -> style];
 	Legended[bfig, legend]
 ];
 

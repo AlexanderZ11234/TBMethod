@@ -64,7 +64,7 @@ EigenspectralData[hbloch_, ks_, obfunc:(_Function | _Symbol):Identity, n_, s:Opt
 ParallelEigenspectralData[hbloch_, ks_, obfunc:(_Function | _Symbol):Identity, s:OptionsPattern[Eigensystem]] := MapAt[obfunc, {All, 2}][Sort[Eigensystem[hbloch[#], s, Method -> "Direct"]\[Transpose]]] & ~ParallelMap~ ks
 ParallelEigenspectralData[hbloch_, ks_, obfunc:(_Function | _Symbol):Identity, n_, s:OptionsPattern[Eigensystem]] := MapAt[obfunc, {All, 2}][Sort[Eigensystem[hbloch[#], n, s, Method -> "Direct"]\[Transpose]]] & ~ParallelMap~ ks
 
-Options[ParallelBandDataWithWeight] = Join[Options[Eigensystem], {"StateFunction" -> (Total[Abs[#]^4] &)}];
+(*Options[ParallelBandDataWithWeight] = Join[Options[Eigensystem], {"StateFunction" -> (Total[Abs[#]^4] &)}];
 ParallelBandDataWithWeight[h_, kgrid_, n_Integer, ps:OptionsPattern[]] :=
 Module[{ps2},
 	ps2 = Sequence @@ FilterRules[{ps}, Options[Eigensystem]];
@@ -77,6 +77,35 @@ BandDataWithWeight[h_, kgrid_, n_Integer, ps:OptionsPattern[]]:=
 Module[{ps2},
 	ps2 = Sequence @@ FilterRules[{ps}, Options[Eigensystem]];
 	MapAt[OptionValue["StateFunction"], Eigensystem[h[#], n, ps2, Method -> {"Arnoldi", "MaxIterations" -> \[Infinity]}]\[Transpose] // Sort, {All, 2}] & ~Map~ kgrid
+];*)
+
+
+ParallelBandDataWithWeight::weightfunc = BandDataWithWeight::weightfunc="The state function `1` should be an anonymous function or a list of anonymous functions.";
+
+Options[ParallelBandDataWithWeight] = Join[Options[Eigensystem], {"StateFunction" -> (Total[Abs[#]^4] &)}];
+ParallelBandDataWithWeight[h_, kgrid_, n_Integer, ps:OptionsPattern[]] :=
+Module[{ps1val, ps2, eigensyst},
+	ps1val = OptionValue["StateFunction"];
+	ps2 = optionsselect[ps, Eigensystem];
+	eigensyst := Sort[Eigensystem[h[#], n, ps2, Method -> {"Arnoldi", "MaxIterations" -> \[Infinity]}]\[Transpose]] & ~ParallelMap~ kgrid;
+	Which[
+		MatchQ[ps1val, _Function], MapAt[ps1val, {All, All, 2}][eigensyst],
+		MatchQ[ps1val, {__Function}], Transpose[Map[Thread, MapAt[Through @* ps1val, {All, All, 2}][eigensyst], {2}], {2, 3, 1}],
+		True, Message[parallelBandDataWithWeight::weightfunc, ps1val]
+	]
+];
+
+Options[BandDataWithWeight] = Join[Options[Eigensystem], {"StateFunction" -> (Total[Abs[#]^4] &)}];
+BandDataWithWeight[h_, kgrid_, n_Integer, ps:OptionsPattern[]]:=
+Module[{ps1val, ps2, eigensyst},
+	ps1val = OptionValue["StateFunction"];
+	ps2 = optionsselect[ps, Eigensystem];
+	eigensyst := Sort[Eigensystem[h[#], n, ps2, Method -> {"Arnoldi", "MaxIterations" -> \[Infinity]}]\[Transpose]] & ~Map~ kgrid;
+	Which[
+		MatchQ[ps1val, _Function], MapAt[ps1val, {All, All, 2}][eigensyst],
+		MatchQ[ps1val, {__Function}], Transpose[Map[Thread, MapAt[Through @* ps1val, {All, All, 2}][eigensyst], {2}], {2, 3, 1}],
+		True, Message[parallelBandDataWithWeight::weightfunc, ps1val]
+	]
 ];
 
 
