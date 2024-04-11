@@ -103,7 +103,7 @@ BandPlotWithWeight[banddatawithweight_,
 Module[{kbdat, colors, m, n, lines, bfig, legend, fontfamily = (*"Helvetica"*)(*"Times New Roman"*)"Arial", style,
 		style2, bdat, cdat, cfunc = OptionValue[ColorFunction], dticks, frameticks, ps1, ps2},
 	{bdat, cdat} = Transpose[banddatawithweight, {3, 2, 1}]; {m, n} = Dimensions[bdat];
-	dticks = {ptsnumbers, hisymmptname}\[Transpose]; frameticks = {{Automatic, None}, {dticks, None}};
+	dticks = {ptsnumbers, hisymmptname}\[Transpose]; frameticks = {{(*Automatic*)yticks, None}, {dticks, None}};
 	style = {FontSize -> 17, FontFamily -> fontfamily}; style2 = Directive[Black(*,Thick*)];
 	kbdat = Transpose[{ConstantArray[(*kdat*)Range[n], m], bdat}, {3, 1, 2}];
 	colors = Map[cfunc, Rescale @ cdat, {2}];
