@@ -80,7 +80,7 @@ Module[{ps2},
 ];*)
 
 
-ParallelBandDataWithWeight::weightfunc = BandDataWithWeight::weightfunc="The state function `1` should be an anonymous function or a list of anonymous functions.";
+ParallelBandDataWithWeight::weightfunc = BandDataWithWeight::weightfunc = "The state function `1` should be an anonymous function or a list of anonymous functions.";
 
 Options[ParallelBandDataWithWeight] = Join[Options[Eigensystem], {"StateFunction" -> (Total[Abs[#]^4] &)}];
 ParallelBandDataWithWeight[h_, kgrid_, n_Integer, ps:OptionsPattern[]] :=
