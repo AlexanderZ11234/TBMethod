@@ -86,7 +86,7 @@ Options[ParallelBandDataWithWeight] = Join[Options[Eigensystem], {"StateFunction
 ParallelBandDataWithWeight[h_, kgrid_, n_Integer, ps:OptionsPattern[]] :=
 Module[{ps1val, ps2, eigensyst},
 	ps1val = OptionValue["StateFunction"];
-	ps2 = optionsselect[ps, Eigensystem];
+	ps2 = TBMethod`DataVisualization`Private`optionsselect[ps, Eigensystem];
 	eigensyst := Sort[Eigensystem[h[#], n, ps2, Method -> {"Arnoldi", "MaxIterations" -> \[Infinity]}]\[Transpose]] & ~ParallelMap~ kgrid;
 	Which[
 		MatchQ[ps1val, _Function], MapAt[ps1val, {All, All, 2}][eigensyst],
