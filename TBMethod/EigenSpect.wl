@@ -91,7 +91,7 @@ Module[{ps1val, ps2, eigensyst},
 	Which[
 		MatchQ[ps1val, _Function], MapAt[ps1val, {All, All, 2}][eigensyst],
 		MatchQ[ps1val, {__Function}], Transpose[Map[Thread, MapAt[Through @* ps1val, {All, All, 2}][eigensyst], {2}], {2, 3, 1}],
-		True, Message[parallelBandDataWithWeight::weightfunc, ps1val]
+		True, Message[ParallelBandDataWithWeight::weightfunc, ps1val]
 	]
 ];
 
@@ -99,12 +99,12 @@ Options[BandDataWithWeight] = Join[Options[Eigensystem], {"StateFunction" -> (To
 BandDataWithWeight[h_, kgrid_, n_Integer, ps:OptionsPattern[]]:=
 Module[{ps1val, ps2, eigensyst},
 	ps1val = OptionValue["StateFunction"];
-	ps2 = optionsselect[ps, Eigensystem];
+	ps2 = TBMethod`DataVisualization`Private`optionsselect[ps, Eigensystem];
 	eigensyst := Sort[Eigensystem[h[#], n, ps2, Method -> {"Arnoldi", "MaxIterations" -> \[Infinity]}]\[Transpose]] & ~Map~ kgrid;
 	Which[
 		MatchQ[ps1val, _Function], MapAt[ps1val, {All, All, 2}][eigensyst],
 		MatchQ[ps1val, {__Function}], Transpose[Map[Thread, MapAt[Through @* ps1val, {All, All, 2}][eigensyst], {2}], {2, 3, 1}],
-		True, Message[parallelBandDataWithWeight::weightfunc, ps1val]
+		True, Message[BandDataWithWeight::weightfunc, ps1val]
 	]
 ];
 
