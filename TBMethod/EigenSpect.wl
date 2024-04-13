@@ -95,16 +95,15 @@ Module[{ps1val, ps2, eigensyst},
 	]
 ];*)
 ParallelBandDataWithWeight[h_, kgrid_, n_Integer, ps:OptionsPattern[]] :=
-Module[{ps1val, ps2, ps3, eigensystfunc, funcsingle, funcmultiple},
+Module[{ps1val, ps2, eigensystfunc, funcsingle, funcmultiple},
 	ps1val = OptionValue["StateFunction"];
-	ps2 = TBMethod`DataVisualization`Private`optionsselect[ps, Eigensystem]; 
-	ps3 = TBMethod`DataVisualization`Private`optionsselect[ps, ParallelMap];
+	ps2 = TBMethod`DataVisualization`Private`optionsselect[ps, Eigensystem];
 	eigensystfunc = k |-> Sort[Eigensystem[h[k], n, ps2, Method -> {"Arnoldi", "MaxIterations" -> \[Infinity]}]\[Transpose]];
 	funcsingle = MapAt[ps1val, {All, 2}][eigensystfunc[#]] &;
 	funcmultiple = Thread /@ MapAt[Through @* ps1val, {All, 2}][eigensystfunc[#]] &;
 	Which[
-		MatchQ[ps1val, _Function], ParallelMap[funcsingle, kgrid, ps3],
-		MatchQ[ps1val, {__Function}], Transpose[ParallelMap[funcmultiple, kgrid, ps3], {2, 3, 1}],
+		MatchQ[ps1val, _Function], ParallelMap[funcsingle, kgrid],
+		MatchQ[ps1val, {__Function}], Transpose[ParallelMap[funcmultiple, kgrid], {2, 3, 1}],
 		True, Message[ParallelBandDataWithWeight::weightfunc, ps1val]
 	]
 ];
