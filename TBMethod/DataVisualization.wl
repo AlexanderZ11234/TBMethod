@@ -121,7 +121,7 @@ Module[{kbdat, colors, m, n, lines, bfig, legend, fontfamily = (*"Helvetica"*)(*
 	Legended[bfig, legend]
 ];*)
 
-Options[BandPlotWithWeight] = Join[Options[Graphics], Options[BarLegend], {Joined -> True, ColorFunction -> (Hue[2(1 - #)/3] &), PlotStyle -> Sequence[Thick, PointSize[.1]], LegendTickDigits -> {3, 4}}];
+Options[BandPlotWithWeight] = Join[Options[Graphics], Options[BarLegend], {Joined -> True, ColorFunction -> (Hue[2(1 - #)/3] &), PlotStyle -> Sequence[Thick, PointSize[.02]], "LegendTickDigits" -> {3, 4}}];
 (*bandPlotWithWeight[banddatawithstate_,cfunc_,cname_String,joined_:(True|False),ps:OptionsPattern[Graphics]]:=*)
 BandPlotWithWeight[banddatawithweight_,
 				   hisymmptname : {(_String|OverBar[_String])..} : {""},
@@ -141,7 +141,7 @@ Module[{kbdat, colors, m, n, lines, bfig, legend, fontfamily = (*"Helvetica"*)(*
 	ps2 = optionsselect[ps, BarLegend];
 	bfig = Graphics[{OptionValue[PlotStyle], lines}, ps1, GridLines -> {ptsnumbers, Automatic}, PlotRangeClipping -> True, (*AspectRatio -> GoldenRatio,*) FrameTicks -> frameticks, 
 					 Frame -> True, FrameLabel -> {None, "\!\(\*SubscriptBox[\(E\), \(\[VeryThinSpace]\)]\)"}, FrameTicksStyle -> style2, FrameStyle -> style2, LabelStyle -> style2, BaseStyle -> style];
-	legend = BarLegend[{cfunc, {0, 1}}, ps2, Ticks -> Transpose[{{0, 1}, NumberForm[#, OptionValue[LegendTickDigits]] & /@ MinMax[cdat]}], (*"Ticks" -> {0, 1}, "TickLabels" -> {"Min", "Max"},*) TicksStyle -> style2, FrameStyle -> style2, LabelStyle -> style];
+	legend = BarLegend[{cfunc, {0, 1}}, ps2, Ticks -> Transpose[{{0, 1}, NumberForm[#, OptionValue["LegendTickDigits"]] & /@ MinMax[cdat]}], (*"Ticks" -> {0, 1}, "TickLabels" -> {"Min", "Max"},*) TicksStyle -> style2, FrameStyle -> style2, LabelStyle -> style];
 	Legended[bfig, legend]
 ];
 
