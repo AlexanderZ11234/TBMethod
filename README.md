@@ -48,11 +48,11 @@ and four lists of functions should be indexed out.
 ## Functionalities
 
 - Highlights: fully employment of the [NNS (nearest neighbor search)](https://en.wikipedia.org/wiki/Nearest_neighbor_search) algorithm, so that the total computation complexity tends to be fine as:
-    - linear in system's size $ \text{O}(n) $ in
+    - Model construction linear in system's size $ \text{O}(n) $:
         - Generation of Hamiltonian matrices,
-        - Adaptive partition of central scattering region, and
+        - Adaptive partition of central scattering region
 
-    - Calculation of transport related quantities
+    - Calculation of transport related quantities:
         - 5-terminal Hall calculation in $ \text{O}(n^{1.7}) $
 
 ## Documentation
