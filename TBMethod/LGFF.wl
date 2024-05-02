@@ -143,10 +143,18 @@ Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, g0, t0
 ];
 
 
-Sigma[epsilon_, {h0_, h1_, H01_}, mode:(1|2|3):1] :=
+(*Sigma[epsilon_, {h0_, h1_, H01_}, mode:(1|2|3):1] :=
 Module[{gsurface},
 	gsurface = SurfaceGreen[epsilon, {h0, h1}, mode];
 	SparseArray[H01 . gsurface . H01\[ConjugateTranspose]]
+];*)
+
+Sigma[\[Epsilon]_, {h0_, h1_, H01_}, mode:(1|2|3):1] :=
+Module[{gsurface, len = Length[H01], \[Eta] = Im[\[Epsilon]]},
+	If[Norm[H01, "Frobenius"] >= \[Eta], 
+		gsurface = SurfaceGreen[\[Epsilon], {h0, h1}, mode]; SparseArray[H01 . gsurface . H01\[ConjugateTranspose]],
+		SparseArray[{}, {1, 1} len]
+	]
 ];
 
 (*Green's function of the central region*)
