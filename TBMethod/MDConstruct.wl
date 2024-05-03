@@ -149,7 +149,7 @@ Block[{dim = Length /@ fipts, neighbourinfos = neighbourInfos[fipts, dist], len,
 	len = Length[neighbourinfos];
 	summand[ij_] := KroneckerProduct[SparseArray[ij -> 1, dim], tFunc[fpts[[#]], ipts[[#2]]] & @@ ij];
 	Which[
-		len == 0, KroneckerProduct[SparseArray[{}, dim], tFunc[fpts[[1]], ipts[[1]]]],
+		len == 0, KroneckerProduct[SparseArray[{}, dim], tFunc[(*fpts*)ipts[[1]], ipts[[1]]]],
 		len > 0 , Sum[summand[ij], {ij, neighbourinfos}]
 	]
 ];
@@ -159,7 +159,7 @@ Block[{dim = Length /@ fipts, neighbourinfos = neighbourInfos[fipts, dist], len,
 	len = Length[neighbourinfos];
 	summand[ij_] := KroneckerProduct[SparseArray[ij -> 1, dim], tFunc[fpts[[#]], ipts[[#2]]] & @@ ij];
 	Which[
-		len == 0, KroneckerProduct[SparseArray[{}, dim], tFunc[fpts[[1]], ipts[[1]]]],
+		len == 0, KroneckerProduct[SparseArray[{}, dim], tFunc[(*fpts*)ipts[[1]], ipts[[1]]]],
 		len > 0 , ParallelSum[summand[ij], {ij, neighbourinfos}, ops]
 	]
 ];
