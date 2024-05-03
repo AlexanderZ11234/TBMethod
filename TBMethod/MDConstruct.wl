@@ -46,7 +46,9 @@ PauliGellMannRepresent::usage = "Transforms the result of PauliGellMannAbstract 
 PhotonBlocks::usage = "Generates the Floquet dressing coefficient for a certain hopping amplitude due to light driven field via Peierls's substitution.";
 PhotonDress::usage = "Generates the photon-dressed hopping amplitude.";
 
-CompiledSuccessfulQ::usage = "Check if a function compilation process succeeds.";
+CompiledSuccessfulQ::usage = "Checks if a function compilation process succeeds.";
+
+CrystalStructure::usage = "Generates the crystal structure by the composition of lattice and basis.";
 
 
 Begin["`Private`"]
@@ -124,7 +126,7 @@ PauliGellMannRepresent[epr_] := FullSimplify[epr /. {"\[Sigma]" -> PauliMatrix, 
 (*coordspattern = {{__?NumericQ}..|{{__?NumericQ}, True|False}..|(_ -> {__?NumericQ})..};*)
 (*coordspattern = {{__?NumericQ}..|(_ -> {__?NumericQ})..};*)
 (*coordspattern={{__?NumericQ}..}|{Rule[_, {__?NumericQ}]..};*)
-coordspattern={__List}|{Rule[_ , _List]..};
+coordspattern = {__List} | {Rule[_ , _List]..};
 (*Extra information is typically of the "onsite energy like", and can be: (1) atom on bdr or not; (2) atom mass*)
 (*the one containing booleans should be removed*)
 
@@ -419,6 +421,16 @@ Module[{n = Length[t], s},
 
 
 CompiledSuccessfulQ[cfunc_] := Echo[StringTemplate["Function compilation successful: ``"][StringFreeQ["MainEvaluate"][CompiledFunctionTools`CompilePrint[cfunc]]]];
+
+
+CrystalStructure[vasbasis_, atombasis:coordspattern(*{__List}|{Rule[_,_List]..}*), vRs:{{__Integer}..}] :=
+Module[{latticepoints},
+	latticepoints = vRs . vasbasis;
+	Which[
+		MatchQ[atombasis, {__List}], <|# -> TranslationTransform[#][atombasis] & /@ latticepoints|>,
+		MatchQ[atombasis, {Rule[_, _List]..}], <|# -> MapAt[TranslationTransform[#], {All, 2}][atombasis] & /@ latticepoints|>
+	]
+];
 
 
 End[] (* End `Private` *)
