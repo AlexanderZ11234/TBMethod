@@ -166,7 +166,7 @@ Module[{intcoeffs, reciprocalvectors, len = Length[vbs], longest = Max[Norm /@ v
 	voronoimesh=VoronoiMesh[intcoeffs . vbs, ConstantArray[{-1, 1} longest, len]];
 	(*MinimalBy[Norm @* RegionCentroid][MeshPrimitives[voronoimesh, len]] // First*)
 	SelectFirst[MeshPrimitives[voronoimesh, len], Norm @ RegionCentroid[#] < zero &]
-] /; ((Dimensions[vbs] == {2, 2} || Dimensions[vbs] == {3, 3}) && Precision[vbs] == \[Infinity]);
+] /; ((Dimensions[vbs] == {2, 2} || Dimensions[vbs] == {3, 3})(* && Precision[vbs] == \[Infinity]*));
 
 FirstBrillouinZonePlot[vbs_ /; Dimensions[vbs] == {2, 2} || Dimensions[vbs] == {3, 3} , n_:2, opts:OptionsPattern[Show]] :=
 Module[{intcoeffs, fbz, reciprocalvectors, len = Length[vbs], \[CapitalGamma], colors},
