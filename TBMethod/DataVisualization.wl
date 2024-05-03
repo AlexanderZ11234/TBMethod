@@ -21,7 +21,9 @@ BandPlotWithWeight::usage = "Plots band structures with high symmetry points ann
 
 AtomPerLayerPlot::usage = "Plots the atom (site) number per layer after the adaptive partitioning of the central scattering region.";
 
-ExportAdaptivePartitionAnimation::usage = "Export the animation, e.g. a *.gif file, to demonostrate the process of adaptive partition of the CSR.";
+ExportAdaptivePartitionAnimation::usage = "Exports the animation, e.g. a *.gif file, to demonostrate the process of adaptive partition of the CSR.";
+
+CrystalStructurePlot::usage = "Visualizes the crystal structure with Wigner-Seitz primitive cells and lattice vectors.";
 
 Begin["`Private`"]
 (* Implementation of the package *)
@@ -170,6 +172,25 @@ Module[{bdrange = (List @@ BoundingRegion[ptscsr])\[Transpose], len = Length[pts
 	reversedfigs = plot /@ Reverse[Values[ptscsraped]];
 	figframes = Table[Show[reversedfigs[[ ;; i]]], {i, Range[len]}];
 	Export[destpath, figframes, "DisplayDurations" -> OptionValue["DisplayDurations"]]
+];
+
+Options[CrystalStructurePlot] = Join @@ (Options /@ {ListPlot, ListPointPlot3D, Graphics, Graphics3D, Show});
+CrystalStructurePlot[
+	vasbasis_ /; Dimensions[vasbasis] == {2, 2} || Dimensions[vasbasis] == {3, 3},
+	crystalstructure:KeyValuePattern[_List -> {__List}] | KeyValuePattern[_List -> {Rule[_, _List]..}],
+	n:_Integer:2,
+	opts:OptionsPattern[]]:=
+Module[{ptsdelablized, pts, cells, latticevectors, len = Length[vasbasis], opts1, opts2, opts3, myListPlot, myGraphics},
+	myListPlot = If[len == 2, ListPlot, ListPointPlot3D];
+	myGraphics = If[len == 2, Graphics, Graphics3D];
+	ptsdelablized = If[MatchQ[crystalstructure, KeyValuePattern[_List -> {Rule[_, _List]..}]], Values /@ crystalstructure, crystalstructure];
+	opts1 = (*TBMethod`DataVisualization`Private`*)optionsselect[opts, myListPlot];
+	opts2 = (*TBMethod`DataVisualization`Private`*)optionsselect[opts, myGraphics];
+	opts3 = (*TBMethod`DataVisualization`Private`*)optionsselect[opts, Show];
+	pts = myListPlot[KeyMap[LinearSolve[vasbasis\[Transpose]]][ptsdelablized], opts1];
+	cells = VoronoiMesh[Tuples[Range@@(n{-1, 1}), len] . vasbasis, PlotTheme -> "Lines", MeshCellHighlight -> {{2, All} -> Opacity[.1], {1, All} -> Blue}];
+	latticevectors = myGraphics[{Thick, MapThread[{#, Arrow[{ConstantArray[0, len], #2}]} &, {Take[{Red, Green, Blue}, len], vasbasis}]}, opts2];
+	Show[{pts, cells, latticevectors}, opts3, PlotRangeClipping -> True]
 ];
 
 
