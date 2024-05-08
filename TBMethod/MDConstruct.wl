@@ -34,7 +34,8 @@ AdaptivePartition::usage = "Partitions the CSR in an adaptive way to achieve an 
 FillWithDistance::usage = "Constructs the piecewise filling function according to distances."
 FillWithCondition::usage = "Constructs the piecewise filling function according to conditions."
 
-PhaseFactor2DAB::usage = "Calculates the AB phase for a magnetic flux along z-direction.";
+PhaseFactor2DAB::usage = "Calculates the Aharonov-Bohm (AB) phase for a magnetic flux along z-direction according to Peierls' substitution, with an eye on the lattice translational symmetry along one inplane direction.";
+PhaseFactor3DAB::usage = "Calculates the Aharonov-Bohm (AB) phase for a magnetic flux along an arbitrary direction according to Peierls' substitution.";
 
 HBlochsForSpecFunc::usage = "Constructs Bloch Hamiltonian blocks for calculation of spectral function (LDOS in reciprocal space).";
 
@@ -79,11 +80,23 @@ Module[{innerdof = Dimensions[fs[[1, 1]]]},
 					];
 
 (*Phys. Rev. B 40, 8169 (1989)*)
-PhaseFactor2DAB[B_, \[Phi]A_][ptf_, pti_] :=
+(*The azimuthal angle \[Phi]A specifies the direction respecting the lattice translational symmetry,
+	even in the presence of the vector potential.*)
+(*Gauge: vecA = (-B y, 0, 0)*)
+PhaseFactor2DAB[B_, \[Phi]A_][ptf:{_, _}, pti:{_, _}] :=
 Module[{xi, yi, xj, yj, \[CurlyPhi]},
 	{{xi, yi}, {xj, yj}} = {ptf, pti};
 	(*B \[Pi] ( xj yi - xi yj - (xi yi - xj yj) Cos[2\[Phi]A] + (xi^2 - xj^2 - yi^2 + yj^2) Sin[2\[Phi]A]/2)*)
 	\[CurlyPhi] = B \[Pi] (- xj yi + xi yj + (xi yi - xj yj) Cos[2\[Phi]A] + (-xi^2 + xj^2 + yi^2 - yj^2) Sin[2\[Phi]A]/2);
+	Exp[I \[CurlyPhi]]
+];
+
+(* \[CapitalPhi]0 = h/q is the magnetic flux quantum for a particle with the electric charge q.*)
+(*Gauge: vecA = (1/2) vecB \[Cross] vecr*)
+PhaseFactor3DAB[Bz_][ptf:{_, _}, pti:{_, _}] := PhaseFactor3DAB[{0, 0, Bz}][Append[ptf, 0], Append[pti, 0]]
+PhaseFactor3DAB[vecB:{_, _, _}][ptf:{_, _, _}, pti:{_, _, _}] :=
+Module[{\[CurlyPhi]},
+	\[CurlyPhi] = (*2/(2 \[CapitalPhi]0)*)\[Pi] Det[{ptf, vecB, pti}];
 	Exp[I \[CurlyPhi]]
 ];
 
