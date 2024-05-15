@@ -39,6 +39,9 @@ RegionPolarSample::usage = "Samples a 2D region shellwise from its center to its
 ParallelogramCartesianSample::usage = "Samples cartesian-like a paralleogram, which is specificed by its two side vectors.";
 WannierChargeCenterByWilsonLoop::usage = "Calculates the Wannier Charge Center contributed by the occupied bands.";
 
+LocalBandGap::usage = "Finds the local band gap among the lattice momentum samplings.";
+GlobalBandGap::usage = "Finds the global band gap among the lattice momentum samplings."
+
 
 Begin["`Private`"]
 (* Implementation of the package *)
@@ -296,6 +299,33 @@ Module[{occupiedstates},
 	occupiedstates = Take[Sort[Eigensystem[heff[#], opts, Method -> "Direct"]\[Transpose]], nF][[;;, 2]] & /@ vksloop;
 	(*occupiedstates = TakeSmallestBy[Eigensystem[heff[#], opts, Method -> "Direct"]\[Transpose], Re @* First, nF][[;;, 2]] & /@ vksloop;*)
 	-1/\[Pi] plaquetteBandPhase[occupiedstates]
+];
+
+
+LocalBandGap[h_, ksamples:{{__Real}..}, n_Integer] :=
+Module[{cveval},
+	cveval[k_] := Sort[Eigenvalues[h[k], Method -> "Direct"]][[{n + 1, n}]];
+	Min @ Table[Subtract @@ cveval[k], {k, ksamples}]
+];
+
+GlobalBandGap[h_, ksamples:{{__Real}..}, n_Integer] :=
+Module[{cveval, evals},
+	cveval[k_] := Sort[Eigenvalues[h[k], Method -> "Direct"]][[{n + 1, n}]];
+	evals = Table[cveval[k], {k, ksamples}];
+	Min[evals[[1]]] - Max[evals[[2]]]
+];
+
+ParallelLocalBandGap[h_, ksamples:{{__Real}..}, n_Integer] :=
+Module[{cveval},
+	cveval[k_] := Sort[Eigenvalues[h[k], Method -> "Direct"]][[{n + 1, n}]];
+	Min @ ParallelTable[Subtract @@ cveval[k], {k, ksamples}]
+];
+
+ParallelGlobalBandGap[h_, ksamples:{{__Real}..}, n_Integer] :=
+Module[{cveval, evals},
+	cveval[k_] := Sort[Eigenvalues[h[k], Method -> "Direct"]][[{n + 1, n}]];
+	evals = ParallelTable[cveval[k], {k, ksamples}];
+	Min[evals[[1]]] - Max[evals[[2]]]
 ];
 
 
