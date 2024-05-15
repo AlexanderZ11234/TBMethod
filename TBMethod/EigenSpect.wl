@@ -41,6 +41,8 @@ WannierChargeCenterByWilsonLoop::usage = "Calculates the Wannier Charge Center c
 
 LocalBandGap::usage = "Finds the local band gap among the lattice momentum samplings.";
 GlobalBandGap::usage = "Finds the global band gap among the lattice momentum samplings."
+ParallelLocalBandGap::usage = "Finds the local band gap among the lattice momentum samplings in parallel.";
+ParallelGlobalBandGap::usage = "Finds the global band gap among the lattice momentum samplings in parallel."
 
 
 Begin["`Private`"]
