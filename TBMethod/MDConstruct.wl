@@ -392,7 +392,7 @@ Module[{HLeadIntraInterReal, HCSRIntraLeadInterReal, fillfunc, keys, len = Lengt
 	]
 ] /; MemberQ[{4, 7, 8, 10, 15, 19}, Length[ptscellsvasraw]];
 (*
-necessary number of celle to consider: 2D: 1->3(->3); 3D: 1->9(->9) or 1->7(->7).
+necessary number of cells to consider: 2D: 1->3(->3) (for square lattice); 3D: 1->9(->9) (for square lattice) or 1->7(->7) (for triangular lattice).
 The basic idea is to add self-energy to the CSR in a single terminal setup.
 The point here is that each part has lattice momenta as parameter, to conceptually accommondate the infiniteness of the device in one or two dimensions.
 *)
