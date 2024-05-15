@@ -187,7 +187,7 @@ Module[{ptsdelablized, pts, cells, latticevectors, len = Length[vasbasis], opts1
 	opts1 = (*TBMethod`DataVisualization`Private`*)optionsselect[opts, myListPlot];
 	opts2 = (*TBMethod`DataVisualization`Private`*)optionsselect[opts, myGraphics];
 	opts3 = (*TBMethod`DataVisualization`Private`*)optionsselect[opts, Show];
-	pts = myListPlot[FullSimplify @* KeyMap[LinearSolve[vasbasis\[Transpose]]][ptsdelablized], opts1];
+	pts = myListPlot[KeyMap[FullSimplify @* LinearSolve[vasbasis\[Transpose]]][ptsdelablized], opts1];
 	cells = VoronoiMesh[Tuples[Range@@(n{-1, 1}), len] . vasbasis, PlotTheme -> "Lines", MeshCellHighlight -> {{2, All} -> Opacity[.1], {1, All} -> Blue}];
 	latticevectors = myGraphics[{Thick, MapThread[{#, Arrow[{ConstantArray[0, len], #2}]} &, {Take[{Red, Green, Blue}, len], vasbasis}]}, opts2];
 	Show[{pts, cells, latticevectors}, opts3, PlotRangeClipping -> True]
