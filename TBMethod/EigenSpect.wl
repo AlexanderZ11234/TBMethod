@@ -99,6 +99,8 @@ Module[{ps1val, ps2, eigensyst},
 		True, Message[ParallelBandDataWithWeight::weightfunc, ps1val]
 	]
 ];*)
+
+ParallelBandDataWithWeight[h_, kgrid_, ps:OptionsPattern[]] := ParallelBandDataWithWeight[h, kgrid, Length[h[kgrid[[1]]]], ps]
 ParallelBandDataWithWeight[h_, kgrid_, n_Integer, ps:OptionsPattern[]] :=
 Module[{ps1val, ps2, eigensystfunc, funcsingle, funcmultiple},
 	ps1val = OptionValue["StateFunction"];
@@ -125,6 +127,7 @@ Module[{ps1val, ps2, eigensyst},
 		True, Message[BandDataWithWeight::weightfunc, ps1val]
 	]
 ];*)
+BandDataWithWeight[h_, kgrid_, ps:OptionsPattern[]] := BandDataWithWeight[h, kgrid, Length[h[kgrid[[1]]]], ps]
 BandDataWithWeight[h_, kgrid_, n_Integer, ps:OptionsPattern[]] :=
 Module[{ps1val, ps2, eigensystfunc, funcsingle, funcmultiple},
 	ps1val = OptionValue["StateFunction"];
