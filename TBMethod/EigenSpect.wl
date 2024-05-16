@@ -313,7 +313,7 @@ Module[{cveval},
 GlobalBandGap[h_, ksamples:{{__Real}..}, n_Integer] :=
 Module[{cveval, evals},
 	cveval[k_] := Sort[Eigenvalues[h[k], Method -> "Direct"]][[{n + 1, n}]];
-	evals = Table[cveval[k], {k, ksamples}];
+	evals = Table[cveval[k], {k, ksamples}]\[Transpose];
 	Min[evals[[1]]] - Max[evals[[2]]]
 ];
 
@@ -326,7 +326,7 @@ Module[{cveval},
 ParallelGlobalBandGap[h_, ksamples:{{__Real}..}, n_Integer] :=
 Module[{cveval, evals},
 	cveval[k_] := Sort[Eigenvalues[h[k], Method -> "Direct"]][[{n + 1, n}]];
-	evals = ParallelTable[cveval[k], {k, ksamples}];
+	evals = ParallelTable[cveval[k], {k, ksamples}]\[Transpose];
 	Min[evals[[1]]] - Max[evals[[2]]]
 ];
 
