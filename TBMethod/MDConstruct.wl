@@ -51,6 +51,8 @@ CompiledSuccessfulQ::usage = "Checks if a function compilation process succeeds.
 
 CrystalStructure::usage = "Generates the crystal structure by the composition of lattice and basis.";
 
+HEffectiveMatrix::usage = "Lower-energy effective Hamiltonian matrix via Taylor expasion, in terms of linear combination of Pauli and/or GellMann matrices.";
+
 
 Begin["`Private`"]
 (* Implementation of the package *)
@@ -443,6 +445,13 @@ Module[{latticepoints},
 		MatchQ[atombasis, {__List}], <|# -> TranslationTransform[#][atombasis] & /@ latticepoints|>,
 		MatchQ[atombasis, {Rule[_, _List]..}], <|# -> MapAt[TranslationTransform[#], {All, 2}][atombasis] & /@ latticepoints|>
 	]
+];
+
+HEffectiveMatrix[hbloch_, vk_, vk0_, dims: {__}] :=
+Module[{hvk, s, expansion},
+	hvk = ComplexExpand[Normal[hbloch[s vk - vk0]]];
+	expansion = Normal[Series[hvk, {s, 0, 1}]] /. s -> 1;
+	PauliGellMannDecomposition[expansion, dims] // FullSimplify
 ];
 
 
