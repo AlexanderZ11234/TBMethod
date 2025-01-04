@@ -98,6 +98,7 @@ Module[{maxquant, clipped, min = Min[data]},
 
 optionsselect[options:Sequence[___Rule]][func_Symbol] := optionsselect[options, func];
 optionsselect[options:Sequence[___Rule], func_Symbol] := Sequence @@ FilterRules[{options}, Options[func]];
+optionsselect[options:Sequence[___Rule], func_Symbol, optionnamestoadd:{__}] := Sequence @@ FilterRules[{options}, {Options[func], optionnamestoadd}];
 
 (*Options[BandPlotWithWeight] = Join[Options[Graphics], Options[BarLegend], {Joined -> True, ColorFunction -> (Hue[2(1 - #)/3] &)}];
 (*bandPlotWithWeight[banddatawithstate_,cfunc_,cname_String,joined_:(True|False),ps:OptionsPattern[Graphics]]:=*)
@@ -141,11 +142,12 @@ Module[{kbdat, colors, m, n, lines, bfig, legend, fontfamily = (*"Helvetica"*)(*
 	lines = MapThread[If[OptionValue[Joined], Line, Point][#, VertexColors -> #2] &, {kbdat, colors}];
 	(*ps1 = Sequence @@ FilterRules[{ps}, Options[Graphics]]; ps2 = Sequence @@ FilterRules[{ps}, Options[BarLegend]];*)
 	ps1 = optionsselect[ps, Graphics];
-	ps2 = optionsselect[ps, BarLegend];
+	ps2 = optionsselect[ps, BarLegend, {"TickLabels"}];
 	bfig = Graphics[{OptionValue[PlotStyle], lines}, ps1, GridLines -> {ptsnumbers, Automatic}, PlotRangeClipping -> True, (*AspectRatio -> GoldenRatio,*) FrameTicks -> frameticks, 
 					 Frame -> True, FrameLabel -> {None, "\!\(\*SubscriptBox[\(E\), \(\[VeryThinSpace]\)]\)"}, FrameTicksStyle -> style2, FrameStyle -> style2, LabelStyle -> style2, BaseStyle -> style];
-	legend = BarLegend[{cfunc, {0, 1}}, ps2, Ticks -> Transpose[{{0, 1}, NumberForm[#, OptionValue["LegendTickDigits"]] & /@ MinMax[cdat]}],
-					   (*"Ticks" -> {0, 1}, "TickLabels" -> {"Min", "Max"},*) TicksStyle -> style2, FrameStyle -> style2, LabelStyle -> style];
+	legend = BarLegend[{cfunc, {0, 1}}, ps2, (*Ticks -> Transpose[{{0, 1}, NumberForm[#, OptionValue["LegendTickDigits"]] & /@ MinMax[cdat]}],*)
+					   "Ticks" -> {0, 1}, "TickLabels" -> (NumberForm[#, OptionValue["LegendTickDigits"]] & /@ MinMax[cdat])(*"TickLabels" -> {"Min", "Max"}*), 
+					   TicksStyle -> style2, FrameStyle -> style2, LabelStyle -> style];
 	Legended[bfig, Placed[legend, OptionValue["LegendPosition"]]]
 ];
 
