@@ -125,7 +125,7 @@ Module[{kbdat, colors, m, n, lines, bfig, legend, fontfamily = (*"Helvetica"*)(*
 ];*)
 
 Options[BandPlotWithWeight] = Join[Options[Graphics], Options[BarLegend],
-	{Joined -> True, ColorFunction -> (Hue[2(1 - #)/3] &), PlotStyle -> Sequence[Thick, PointSize[.02]], "LegendTickDigits" -> {3, 4}, "LegendPosition" -> Right}];
+	{Joined -> True, ColorFunction -> (Hue[2(1 - #)/3] &), PlotStyle -> Sequence[Thick, PointSize[.02]], "LegendTickDigits" -> {3, 4}, "LegendPosition" -> Right, "TickLabels" -> None}];
 (*bandPlotWithWeight[banddatawithstate_,cfunc_,cname_String,joined_:(True|False),ps:OptionsPattern[Graphics]]:=*)
 BandPlotWithWeight[banddatawithweight_,
 				   hisymmptname : {(_String|OverBar[_String])..} : {""},
