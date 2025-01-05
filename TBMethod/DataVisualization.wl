@@ -25,6 +25,8 @@ ExportAdaptivePartitionAnimation::usage = "Exports the animation, e.g. a *.gif f
 
 CrystalStructurePlot::usage = "Visualizes the crystal structure with Wigner-Seitz primitive cells and lattice vectors.";
 
+RibbonBulkBoundaryOperator::usage = "Constructs a matrix operator whose expectation value quantitatively depicts how a state is distributed in the aspect of bulk and boundary in a ribbon system.";
+
 Begin["`Private`"]
 (* Implementation of the package *)
 (*SetOptions[{ParallelSum}, Method -> "ItemsPerEvaluation" -> 100 $KernelCount];*)
@@ -193,6 +195,21 @@ Module[{ptsdelablized, pts, cells, latticevectors, len = Length[vasbasis], opts1
 	cells = VoronoiMesh[Tuples[Range@@(n{-1, 1}), len] . vasbasis, PlotTheme -> "Lines", MeshCellHighlight -> {{2, All} -> Opacity[.1], {1, All} -> Blue}];
 	latticevectors = myGraphics[{Thick, MapThread[{#, Arrow[{ConstantArray[0, len], #2}]} &, {Take[{Red, Green, Blue}, len], vasbasis}]}, opts2];
 	Show[{pts, cells, latticevectors}, opts3, PlotRangeClipping -> True]
+];
+
+RibbonBulkBoundaryOperator[
+	ribbonprimitivecell0:{{__}..}|{Rule[_, {__}]..},
+	vecnorm:{_, _}|{_, _, _},
+	innerdof_Integer:2,
+	n_:3 /; n >= 1]:=
+Module[{nd = Normalize[vecnorm], coordstrans, innerid, diaglis, diagmat, pts, signedpower},
+	signedpower = Sign[#] Abs[#]^n &;
+	pts = If[FreeQ[Rule][#], #, Values[#]] & [ribbonprimitivecell0];
+	coordstrans = pts . nd;
+	diaglis = signedpower[Rescale[coordstrans, MinMax[coordstrans], {-1., 1.}]];
+	diagmat = DiagonalMatrix[diaglis, TargetStructure -> "Sparse"];
+	innerid = IdentityMatrix[innerdof, SparseArray];
+	KroneckerProduct[diagmat, innerid]
 ];
 
 
