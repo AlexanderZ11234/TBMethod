@@ -201,7 +201,7 @@ RibbonBulkBoundaryOperator[
 	ribbonprimitivecell0:{{__}..}|{Rule[_, {__}]..},
 	vecnorm:{_, _}|{_, _, _},
 	innerdof_Integer:2,
-	n_:3 /; n >= 1]:=
+	n_:3]:=
 Module[{nd = Normalize[vecnorm], coordstrans, innerid, diaglis, diagmat, pts, signedpower},
 	signedpower = Sign[#] Abs[#]^n &;
 	pts = If[FreeQ[Rule][#], #, Values[#]] & [ribbonprimitivecell0];
