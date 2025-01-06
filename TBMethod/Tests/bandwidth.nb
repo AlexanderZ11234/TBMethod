@@ -1,0 +1,2532 @@
+(* Content-type: application/vnd.wolfram.cdf.text *)
+
+(*** Wolfram CDF File ***)
+(* http://www.wolfram.com/cdf *)
+
+(* CreatedBy='Wolfram 14.1' *)
+
+(*************************************************************************)
+(*                                                                       *)
+(*                                                                       *)
+(*  This file was created under the Wolfram Enterprise licensing terms.  *)
+(*                                                                       *)
+(*       For additional information concerning CDF licensing see:        *)
+(*                                                                       *)
+(*        www.wolfram.com/cdf/adopting-cdf/licensing-options.html        *)
+(*                                                                       *)
+(*                                                                       *)
+(*                                                                       *)
+(*************************************************************************)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[      1060,         20]
+NotebookDataLength[    109597,       2509]
+NotebookOptionsPosition[    107162,       2457]
+NotebookOutlinePosition[    107837,       2479]
+CellTagsIndexPosition[    107731,       2474]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"?", "SparseArray`MinimumBandwidthOrdering"}]], "Input",
+ CellChangeTimes->{{3.945127986510744*^9, 3.9451279965946465`*^9}, {
+  3.9451358510564117`*^9, 3.9451358542168407`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"c35757f2-6291-f54b-bb74-f53a098788b3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   FrameBox[
+    DynamicModuleBox[{System`InformationDump`open$$ = True, 
+     System`InformationDump`mouseOver$$ = False}, 
+     PaneSelectorBox[{True->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox[
+             TagBox[
+              TooltipBox[
+               StyleBox["\<\" Symbol\"\>", "InformationRowLabel",
+                StripOnInput->False],
+               "\"Symbol\"",
+               TooltipStyle->"TextStyling"],
+              Annotation[#, "Symbol", "Tooltip"]& ], "InformationTitleText",
+             StripOnInput->False,
+             BaseStyle -> None],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"SparseArray`MinimumBandwidthOrdering\"\>", 
+             "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          PaneBox[GridBox[{
+             {
+              
+              DynamicModuleBox[{System`InformationDump`open$$ = {
+               False, False, False, False, False, False}}, 
+               StyleBox[GridBox[{
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Options\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Options\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Options", "Tooltip"]& ], 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"Method", "\[Rule]", "Automatic"}], ",", 
+                    RowBox[{"\<\"RecursionMethod\"\>", "\[Rule]", "None"}], 
+                    ",", 
+                    
+                    RowBox[{"\<\"RefinementMethod\"\>", "\[Rule]", 
+                    "Automatic"}]}], "}"}]},
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Attributes\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Attributes\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Attributes", "Tooltip"]& ], 
+                   RowBox[{"{", "Protected", "}"}]},
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"FullName\"",
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "FullName", 
+                    "Tooltip"]& ], \
+"\<\"SparseArray`MinimumBandwidthOrdering\"\>"}
+                 },
+                 AutoDelete->False,
+                 GridBoxAlignment->{"Columns" -> {Right, Left}},
+                 GridBoxDividers->None,
+                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.5599999999999999]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.8]}, 
+                    Offset[0.2]}}], "DialogStyle",
+                StripOnInput->False],
+               DynamicModuleValues:>{}]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.5599999999999999]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[3.6]}, 
+                Offset[0.2]}}],
+           FrameMargins->{{6, 6}, {6, 3}}], ""},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpener"],
+               ImageSizeCache->{10., {2.67529296875, 7.32470703125}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpenerHot"],
+               ImageSizeCache->{10., {2.67529296875, 7.32470703125}}]}, 
+              Dynamic[System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, False],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], False->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox[
+             TagBox[
+              TooltipBox[
+               StyleBox["\<\" Symbol\"\>", "InformationRowLabel",
+                StripOnInput->False],
+               "\"Symbol\"",
+               TooltipStyle->"TextStyling"],
+              Annotation[#, "Symbol", "Tooltip"]& ], "InformationTitleText",
+             StripOnInput->False],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"SparseArray`MinimumBandwidthOrdering\"\>", 
+             "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"]], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpenerHot"]]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, True],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]}, Dynamic[System`InformationDump`open$$],
+      BaselinePosition->Baseline,
+      FrameMargins->0,
+      ImageSize->Automatic],
+     DynamicModuleValues:>{}],
+    BaseStyle->"InformationGridFrame",
+    StripOnInput->False], "InformationGridPlain",
+   StripOnInput->False],
+  InformationData[<|
+   "ObjectType" -> "Symbol", "Usage" -> 
+    "SparseArray`MinimumBandwidthOrdering", "Documentation" -> None, 
+    "OwnValues" -> None, "UpValues" -> None, "DownValues" -> None, 
+    "SubValues" -> None, "DefaultValues" -> None, "NValues" -> None, 
+    "FormatValues" -> None, 
+    "Options" -> {
+     Method -> Automatic, "RecursionMethod" -> None, "RefinementMethod" -> 
+      Automatic}, "Attributes" -> {Protected}, "FullName" -> 
+    "SparseArray`MinimumBandwidthOrdering"|>, False]]], "Output",
+ CellChangeTimes->{3.945135855243311*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"b27dea23-85a4-0545-b1ec-300c6b01f218"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "SparseArray`*Bandwidth*"}]], "Input",
+ CellChangeTimes->{{3.945135884637371*^9, 3.9451358882812824`*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"90e9e2ab-27a3-434f-b75b-bec024ebd097"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   FrameBox[
+    DynamicModuleBox[{System`InformationDump`open$$ = True, 
+     System`InformationDump`mouseOver$$ = False}, 
+     PaneSelectorBox[{True->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox[
+             TagBox[
+              TooltipBox[
+               StyleBox["\<\" Symbol\"\>", "InformationRowLabel",
+                StripOnInput->False],
+               "\"Symbol\"",
+               TooltipStyle->"TextStyling"],
+              Annotation[#, "Symbol", "Tooltip"]& ], "InformationTitleText",
+             StripOnInput->False,
+             BaseStyle -> None],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"SparseArray`MinimumBandwidthOrdering\"\>", 
+             "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          PaneBox[GridBox[{
+             {
+              
+              DynamicModuleBox[{System`InformationDump`open$$ = {
+               False, False, False, False, False, False}}, 
+               StyleBox[GridBox[{
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Options\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Options\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Options", "Tooltip"]& ], 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"Method", "\[Rule]", "Automatic"}], ",", 
+                    RowBox[{"\<\"RecursionMethod\"\>", "\[Rule]", "None"}], 
+                    ",", 
+                    
+                    RowBox[{"\<\"RefinementMethod\"\>", "\[Rule]", 
+                    "Automatic"}]}], "}"}]},
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Attributes\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Attributes\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Attributes", "Tooltip"]& ], 
+                   RowBox[{"{", "Protected", "}"}]},
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"FullName\"",
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "FullName", 
+                    "Tooltip"]& ], \
+"\<\"SparseArray`MinimumBandwidthOrdering\"\>"}
+                 },
+                 AutoDelete->False,
+                 GridBoxAlignment->{"Columns" -> {Right, Left}},
+                 GridBoxDividers->None,
+                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.5599999999999999]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.8]}, 
+                    Offset[0.2]}}], "DialogStyle",
+                StripOnInput->False],
+               DynamicModuleValues:>{}]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.5599999999999999]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[3.6]}, 
+                Offset[0.2]}}],
+           FrameMargins->{{6, 6}, {6, 3}}], ""},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpener"],
+               ImageSizeCache->{10., {2.67529296875, 7.32470703125}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpenerHot"],
+               ImageSizeCache->{10., {2.67529296875, 7.32470703125}}]}, 
+              Dynamic[System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, False],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], False->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox[
+             TagBox[
+              TooltipBox[
+               StyleBox["\<\" Symbol\"\>", "InformationRowLabel",
+                StripOnInput->False],
+               "\"Symbol\"",
+               TooltipStyle->"TextStyling"],
+              Annotation[#, "Symbol", "Tooltip"]& ], "InformationTitleText",
+             StripOnInput->False],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"SparseArray`MinimumBandwidthOrdering\"\>", 
+             "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"]], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpenerHot"]]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, True],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]}, Dynamic[System`InformationDump`open$$],
+      BaselinePosition->Baseline,
+      FrameMargins->0,
+      ImageSize->Automatic],
+     DynamicModuleValues:>{}],
+    BaseStyle->"InformationGridFrame",
+    StripOnInput->False], "InformationGridPlain",
+   StripOnInput->False],
+  InformationData[<|
+   "ObjectType" -> "Symbol", "Usage" -> 
+    "SparseArray`MinimumBandwidthOrdering", "Documentation" -> None, 
+    "OwnValues" -> None, "UpValues" -> None, "DownValues" -> None, 
+    "SubValues" -> None, "DefaultValues" -> None, "NValues" -> None, 
+    "FormatValues" -> None, 
+    "Options" -> {
+     Method -> Automatic, "RecursionMethod" -> None, "RefinementMethod" -> 
+      Automatic}, "Attributes" -> {Protected}, "FullName" -> 
+    "SparseArray`MinimumBandwidthOrdering"|>, False]]], "Output",
+ CellChangeTimes->{3.9451358893202076`*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"fec54818-45ba-124e-980a-c214e646614d"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<GraphUtilities`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.9451363324035263`*^9, 3.945136348894182*^9}},
+ CellLabel->"In[38]:=",ExpressionUUID->"820ab5df-b185-db48-bd25-4f70181f7f96"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"mat", "=", 
+   RowBox[{"SparseArray", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Band", "[", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", "2"}], "}"}], "]"}], "->", "1"}], ",", 
+       RowBox[{
+        RowBox[{"Band", "[", 
+         RowBox[{"{", 
+          RowBox[{"2", ",", "1"}], "}"}], "]"}], "->", "1"}], ",", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"1", ",", 
+          RowBox[{"-", "1"}]}], "}"}], "->", "1"}], ",", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "1"}], ",", "1"}], "}"}], "->", "1"}]}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"1", ",", "1"}], "}"}], "6"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"mat", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"r1", ",", "r2"}], "}"}], "=", 
+  RowBox[{"SparseArray`MinimumBandwidthOrdering", "[", 
+   RowBox[{"mat", ",", 
+    RowBox[{"Method", "->"}]}], 
+   RowBox[{"(*", "\"\<Sloan\>\"", "*)"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"MinimumBandwidthOrdering", "[", 
+  RowBox[{"mat", "//", "Normal"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.9451359533451767`*^9, 3.9451360758193016`*^9}, {
+   3.9451361594221497`*^9, 3.9451361938021984`*^9}, {3.945136240160881*^9, 
+   3.9451362602309933`*^9}, 3.9451363535987663`*^9, {3.945136427052353*^9, 
+   3.945136489583687*^9}},ExpressionUUID->"45c71360-9c11-564f-a3e1-\
+96298e52bf35"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0", "1", "0", "0", "0", "1"},
+     {"1", "0", "1", "0", "0", "0"},
+     {"0", "1", "0", "1", "0", "0"},
+     {"0", "0", "1", "0", "1", "0"},
+     {"0", "0", "0", "1", "0", "1"},
+     {"1", "0", "0", "0", "1", "0"}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[
+   SparseArray[
+    Automatic, {6, 6}, 0, {
+     1, {{0, 2, 4, 6, 8, 10, 12}, {{6}, {2}, {1}, {3}, {4}, {2}, {3}, {5}, {
+       4}, {6}, {5}, {1}}}, {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+      1}}]]]]], "Output",
+ CellChangeTimes->{{3.94513598653529*^9, 3.9451360172508373`*^9}, {
+   3.9451360484666557`*^9, 3.945136076046686*^9}, {3.9451361733972282`*^9, 
+   3.9451361944314747`*^9}, {3.945136243747814*^9, 3.9451362611636086`*^9}, 
+   3.945136354658432*^9, {3.945136436131687*^9, 3.945136464990635*^9}},
+ CellLabel->
+  "Out[51]//MatrixForm=",ExpressionUUID->"39d808de-03c9-a64a-b6ce-\
+117c05978276"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"2", ",", "9"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"4", ",", "3", ",", "5", ",", "2", ",", "6", ",", "1"}], "}"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "3", ",", "5", ",", "2", ",", "6", ",", "1"}], 
+      "}"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.94513598653529*^9, 3.9451360172508373`*^9}, {
+   3.9451360484666557`*^9, 3.945136076046686*^9}, {3.9451361733972282`*^9, 
+   3.9451361944314747`*^9}, {3.945136243747814*^9, 3.9451362611636086`*^9}, 
+   3.945136354658432*^9, {3.945136436131687*^9, 3.945136464992634*^9}},
+ CellLabel->"Out[52]=",ExpressionUUID->"55685386-9c1f-b94c-b5e2-6b1423613505"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"4", ",", "5", ",", "3", ",", "6", ",", "2", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "5", ",", "3", ",", "6", ",", "2", ",", "1"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.94513598653529*^9, 3.9451360172508373`*^9}, {
+   3.9451360484666557`*^9, 3.945136076046686*^9}, {3.9451361733972282`*^9, 
+   3.9451361944314747`*^9}, {3.945136243747814*^9, 3.9451362611636086`*^9}, 
+   3.945136354658432*^9, {3.945136436131687*^9, 3.9451364649946327`*^9}},
+ CellLabel->"Out[53]=",ExpressionUUID->"a1005fd2-0637-1041-aedc-6a3cf9f3cacd"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"mat", "[", 
+     RowBox[{"[", "#", "]"}], "]"}], "&"}], "@@", "r2"}], "//", 
+  "MatrixPlot"}]], "Input",
+ CellChangeTimes->{{3.9451363684131393`*^9, 3.945136397658861*^9}, {
+  3.945136473636593*^9, 3.945136476117817*^9}},
+ CellLabel->"In[55]:=",ExpressionUUID->"fa211ad2-f26e-7a45-b917-f2f2bc44e60e"],
+
+Cell[BoxData[
+ GraphicsBox[RasterBox[CompressedData["
+1:eJxTTMoPSmVmYGBgg2IWBhj4YI+dZmAQtKy1jd98yV40JOSv1/Or9vciAiSm
+ZD7GoR5TP6XyhOwf7O4b7PoHu/xAh89A66e1/ED7DwBiuefN
+   "], {{0, 0}, {6, 6}}, {0, 1}],
+  Axes->False,
+  Frame->True,
+  FrameLabel->{None, None},
+  FrameStyle->Automatic,
+  FrameTicks->{{{{5.5, 
+       FormBox["1", TraditionalForm]}, {4.5, 
+       FormBox["2", TraditionalForm]}, {3.5, 
+       FormBox["3", TraditionalForm]}, {2.5, 
+       FormBox["4", TraditionalForm]}, {1.5, 
+       FormBox["5", TraditionalForm]}, {0.5, 
+       FormBox["6", TraditionalForm]}}, {{5.5, 
+       FormBox["1", TraditionalForm]}, {4.5, 
+       FormBox["2", TraditionalForm]}, {3.5, 
+       FormBox["3", TraditionalForm]}, {2.5, 
+       FormBox["4", TraditionalForm]}, {1.5, 
+       FormBox["5", TraditionalForm]}, {0.5, 
+       FormBox["6", TraditionalForm]}}}, {{{0.5, 
+       FormBox["1", TraditionalForm]}, {1.5, 
+       FormBox["2", TraditionalForm]}, {2.5, 
+       FormBox["3", TraditionalForm]}, {3.5, 
+       FormBox["4", TraditionalForm]}, {4.5, 
+       FormBox["5", TraditionalForm]}, {5.5, 
+       FormBox["6", TraditionalForm]}}, {{0.5, 
+       FormBox["1", TraditionalForm]}, {1.5, 
+       FormBox["2", TraditionalForm]}, {2.5, 
+       FormBox["3", TraditionalForm]}, {3.5, 
+       FormBox["4", TraditionalForm]}, {4.5, 
+       FormBox["5", TraditionalForm]}, {5.5, 
+       FormBox["6", TraditionalForm]}}}},
+  GridLines->None,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  LabelStyle->{FontFamily -> "Helvetica", FontSize -> 14},
+  Method->{
+   "GridLinesInFront" -> True, "AxisPadding" -> Scaled[0.02], 
+    "DefaultBoundaryStyle" -> Automatic, 
+    "DefaultGraphicsInteraction" -> {
+     "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+      "Effects" -> {
+       "Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> {"ratio" -> 2}, 
+        "Droplines" -> {
+         "freeformCursorMode" -> True, 
+          "placement" -> {"x" -> "All", "y" -> "None"}}}}, "DefaultPlotStyle" -> 
+    Automatic, "DomainPadding" -> Scaled[0.02], "RangePadding" -> 
+    Scaled[0.05]}]], "Output",
+ CellChangeTimes->{{3.945136391073145*^9, 3.945136398162527*^9}, {
+  3.9451364576899376`*^9, 3.945136476345398*^9}},
+ CellLabel->"Out[55]=",ExpressionUUID->"36c5dfdb-52e4-fd4d-8975-85951b9c71c3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"hBloch1DZZ", "[", ".1", "]"}], "[", 
+     RowBox[{"[", "#", "]"}], "]"}], "&"}], "@@", 
+   RowBox[{"(", 
+    RowBox[{"(*", "SparseArray`", "*)"}], 
+    RowBox[{"MinimumBandwidthOrdering", "[", 
+     RowBox[{
+      RowBox[{"hBloch1DZZ", "[", ".1", "]"}], ",", 
+      RowBox[{"Method", "->", "\"\<RCMD\>\""}]}], 
+     RowBox[{"(*", "\"\<Sloan\>\"", "*)"}], "]"}], 
+    RowBox[{"(*", 
+     RowBox[{"[", 
+      RowBox[{"[", "2", "]"}], "]"}], "*)"}], ")"}]}], "//", 
+  "MatrixPlot"}]], "Input",
+ CellChangeTimes->{{3.9451367114001102`*^9, 3.945136798663149*^9}, {
+  3.945136930522234*^9, 3.945136936018852*^9}},
+ CellLabel->
+  "In[182]:=",ExpressionUUID->"2fe5169a-8c9e-de49-a535-00209ca1a410"],
+
+Cell[BoxData[
+ GraphicsBox[RasterBox[CompressedData["
+1:eJzt3VuIVWUYgOFJLUM0RGUqxkNRMYnhYBJCEj/haGipYBnWmDVj5QEzLVLB
+i0RFSkoRKo3MMEGGtJwwEdPxmJGgN55mxjyfJ/ceq1Gh0igid1ebEfwuNvQs
+WOyLZ7H/9a2rBT+L996q10e80rqoqKjq37PN32dmZNm8qX0bU235e8tKe+5P
+xZnHN1f1qU5F/xw/t/B7/eCcc84555z/H/zynD4Llz/clIqbG1/q/eTp9GzZ
+mkeaTxzKXXe15t2Bo3dk0tjnl/eraVWXju699Na+pavy/F/hzcc555xzzjmP
+828eWDCm44yLadXgquYTAzPpw/Y/dC2+63zuumHHvv1y67imdKlH24plS86k
+tZ+c6zZg9NGcby7fc2r1fdk0f1u3qw1P/ZiqSl4bPHfw9pz3GLXi6cttLqa+
+V2prDpzLpMUL7y/bv6Axz/0U3vPhnHPOOeec37hfGVi5c/3YplQ7adKOC+Mz
+qeazLe+0n/vf+3/DhS6HGgc3pTEVFS+POHI63bKi+Z6e4w/nvL57dd2Mxkzq
+e3zbrN5v1KfJ03v3Lxm5Ls96hTc/55xzzjnnPM5b2r+o/a7iidvPZlPXzn3G
+VE48mTb8MuGjnkcP5Hx2/dK126Zk0zOTO+2a3eVYGrdy6sDyyt151iu8+Tnn
+nHPOOedx3tL+RUvfX8wcv6iktHUmlWU7FGfGH0y3zjkya9jpL/KsV3jzc845
+55xzzuO8pf2Lhwa0rXv07aZ0x77Px/7R62z6ddKl/ZvOHMv5p9V3dyjtn01b
+S0d2+ODNw+lE7bz100fvzPnV24YM7bzwYmpYXP3xiIOZlPlz3cEL9efz3E/h
+PR/OOeecc875jXtL+xcduw4rf66kKe2ZP+OFdhtOpeqNE4fUVjTkfP3sS0XN
+Rdk0YdBvi84vaUgTN1Xe2WrmxjzrFd78nHPOOeec8zhvaf9i6YPVU2Zfy6Z+
+3+9+dfO1k+nK9mlDV4yry3mnpVuOXxuVTdma1b/3+ulIGrRm8terynflWa/w
+5uecc84555zH+c1+f6F/wTnnnHPOOb8u+hecc84555zzKNe/4JxzzjnnnEe5
+/gXnnHPOOec8yvUvOOecc84551Guf8E555xzzjmPcv0LzjnnnHPOeZTrX3DO
+Oeecc86jXP+Cc84555xzHuX6F5xzzjnnnPMo17/gnHPOOeecR7n+Beecc845
+5zzK9S8455xzzjnnUa5/wTnnnHPOOY9y/QvOOeecc855lOtfcM4555xzzqNc
+/4JzzjnnnHMe5foXnHPOOeec8yjXv+Ccc84555xHuf4F55xzzjnnPMr1Lzjn
+nHPOOedRrn/BOeecc845j3L9C84555xzznmU619wzjnnnHPOo1z/gnPOOeec
+cx7l+hecc84555zzKNe/4JxzzjnnnEe5/gXnnHPOOec8yvUvOOecc84551Gu
+f8E555xzzjmPcv0LzjnnnHPOeZTrX3DOOeecc86jXP+Cc84555xzHuX6F5xz
+zjnnnPMo17/gnHPOOeecR7n+Beecc8455zzK9S8455xzzjnnUa5/wTnnnHPO
+OY9y/QvOOeecc855lOtfcM4555xzzqNc/4JzzjnnnHMe5foXnHPOOeec8yjX
+v+Ccc84555xHuf4F55xzzjnnPMr1LzjnnHPOOedRrn/BOeecc845j3L9C845
+55xzznmU619wzjnnnHPOo1z/gnPOOeeccx7l+hecc84555zzKNe/4Jxzzjnn
+nEe5/gXnnHPOOec8yvUvOOecc84551Guf8E555xzzjmPcv0LzjnnnHPOeZTr
+X3DOOeecc86jXP+Cc84555xzHuX6F5xzzjnnnPMo17/gnHPOOeecR7n+Beec
+c8455zzK9S8455xzzjnnUa5/wTnnnHPOOY9y/QvOOeecc855lOtfcM4555xz
+zqNc/4JzzjnnnHMe5foXnHPOOeec8yjXv+Ccc84555xHuf4F55xzzjnnPMr1
+LzjnnHPOOedRrn/BOeecc845j3L9C84555xzznmU619wzjnnnHPOo1z/gnPO
+Oeeccx7l+hecc84555zzKNe/4JxzzjnnnEe5/gXnnHPOOec8yvUvOOecc845
+51Guf8E555xzzjmPcv0LzjnnnHPOeZTrX3DOOeecc86jXP+Cc84555xzHuX6
+F5xzzjnnnPMo17/gnHPOOeecR7n+Beecc8455zzK9S8455xzzjnnUa5/wTnn
+nHPOOY9y/QvOOeecc855lOtfcM4555xzzqP8Zr+/aFe3Yspj7c6l/seGv794
+8t70Vf2L04Z3X5nzvwAtlKtv
+   "], {{0, 0}, {98, 98}}, {0, 1}],
+  Axes->False,
+  Frame->True,
+  FrameLabel->{None, None},
+  FrameStyle->Automatic,
+  FrameTicks->{{{{78.01844262295081, 
+       FormBox["100", TraditionalForm]}, {57.93647540983606, 
+       FormBox["200", TraditionalForm]}, {37.85450819672131, 
+       FormBox["300", TraditionalForm]}, {17.772540983606557`, 
+       FormBox["400", TraditionalForm]}}, {{78.01844262295081, 
+       FormBox["100", TraditionalForm]}, {57.93647540983606, 
+       FormBox["200", TraditionalForm]}, {37.85450819672131, 
+       FormBox["300", TraditionalForm]}, {17.772540983606557`, 
+       FormBox["400", TraditionalForm]}}}, {{{19.98155737704918, 
+       FormBox["100", TraditionalForm]}, {40.06352459016394, 
+       FormBox["200", TraditionalForm]}, {60.14549180327869, 
+       FormBox["300", TraditionalForm]}, {80.22745901639344, 
+       FormBox["400", TraditionalForm]}}, {{19.98155737704918, 
+       FormBox["100", TraditionalForm]}, {40.06352459016394, 
+       FormBox["200", TraditionalForm]}, {60.14549180327869, 
+       FormBox["300", TraditionalForm]}, {80.22745901639344, 
+       FormBox["400", TraditionalForm]}}}},
+  GridLines->None,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  LabelStyle->{FontFamily -> "Helvetica", FontSize -> 14},
+  Method->{
+   "GridLinesInFront" -> True, "AxisPadding" -> Scaled[0.02], 
+    "DefaultBoundaryStyle" -> Automatic, 
+    "DefaultGraphicsInteraction" -> {
+     "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+      "Effects" -> {
+       "Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> {"ratio" -> 2}, 
+        "Droplines" -> {
+         "freeformCursorMode" -> True, 
+          "placement" -> {"x" -> "All", "y" -> "None"}}}}, "DefaultPlotStyle" -> 
+    Automatic, "DomainPadding" -> Scaled[0.02], "RangePadding" -> 
+    Scaled[0.05]}]], "Output",
+ CellChangeTimes->{{3.945136721190771*^9, 3.9451367273305264`*^9}, {
+  3.945136759941843*^9, 3.9451367992480087`*^9}, {3.9451368808560486`*^9, 
+  3.9451369365830917`*^9}},
+ CellLabel->
+  "Out[182]=",ExpressionUUID->"59bfce38-bf25-8545-b4af-774578d09087"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"hBloch1DZZ", "[", ".1", "]"}], "//", "MatrixPlot"}]], "Input",
+ CellChangeTimes->{{3.9451366892307205`*^9, 3.945136700374834*^9}},
+ CellLabel->
+  "In[180]:=",ExpressionUUID->"05371dd1-3623-5044-a8ce-6faf8d2e63e6"],
+
+Cell[BoxData[
+ GraphicsBox[RasterBox[CompressedData["
+1:eJzt3V1olXUcwPGRpbagF02EQVZriEnZmxfFJn8MhG5EMrQwnKhJXUiNsK1i
+2ZsbKASRVIteHKWHjCgjESLyokKaFENxOU300GqdNs9J0LVFEnXR77kqzgNd
+nBifAw/n4vPnwO/u+fE8h++16x5ZvmFKXV3dur+vC+vicyb98zfnnHPOOed8
+MnnDzoaWlQsrqX7bbyuGVvyQjm0sDm7943h2rv7oO22L6n9KzaeWvfDqw4fT
+B4Nr2pfNKfzL7/3/5uOcc84555zn9yntFzSda/4lbX5y/Nz2r0fSh10dz62+
+Zjg71zN211uFb06nx/ZsLI5eeTSdn7ugZWL2+5lX2y9qPR/nnHPOOec8v5/d
+e+noR8cqqXFW98WH15dS35HH7/+19H12bl5zqbdhxmj65OXupbPeHUgnh6et
+Hj6/O/Nq+0Wt5+Occ84555zn99d2fnZL9yt/7QdvXLLj1v3D6fNDW6bP3FfM
+zpXnLFnTs62cnl84cbzthmKau3nlp61f9Gdebb+o9Xycc84555zz/F7t/v7s
+VzO2t99ZTkPtXXtW9Z9ID80f799y94HMq+0XtZ6Pc84555xznt+rvR+04KrL
+3ry3fDpdftNTG758ezB93Lj4uhfv25e55wecc84555xPHj9x0aqhTROVNHvT
+6KJS089p5Mbrb98/MpSdW3r1+MG+K0ZS29MvDUz77kiq9HTe9u1U/z/gnHPO
+Oed8MvrrLYXFnR2V1NtRGGv9/cf03qPzymfWn8rOdY4tuXnr7nJa3nfHQKFS
+TI0NTU+k0qHMq+0XtZ6Pc84555xznt+r3d8/u2PmAw+uLadneqfvOnDPydRV
+LE3d1Xow82r7Ra3n45xzzjnnnOf3/9o/8PyAc84555zzyeP6B5xzzjnnnPMQ
+/QPOOeecc855iP4B55xzzjnnPET/gHPOOeeccx6if8A555xzzjkP0T/gnHPO
+Oeech+gfcM4555xzzkP0DzjnnHPOOech+gecc84555zzEP0DzjnnnHPOeYj+
+Aeecc8455zxE/4BzzjnnnHMeon/AOeecc845D9E/4JxzzjnnnIfoH3DOOeec
+c85D9A8455xzzjnnIfoHnHPOOeec8xD9A84555xzznmI/gHnnHPOOec8RP+A
+c84555xzHqJ/wDnnnHPOOQ/RP+Ccc84555yH6B9wzjnnnHPOQ/QPOOecc845
+5yH6B5xzzjnnnPMQ/QPOOeecc855iP4B55xzzjnnPET/gHPOOeeccx6if8A5
+55xzzjkP0T/gnHPOOeech+gfcM4555xzzkP0DzjnnHPOOech+gecc84555zz
+EP0DzjnnnHPOeYj+Aeecc8455zxE/4BzzjnnnHMeon/AOeecc845D9E/4Jxz
+zjnnnIfoH3DOOeecc85D9A8455xzzjnnIfoHnHPOOeec8xD9A84555xzznmI
+/gHnnHPOOec8RP+Ac84555xzHqJ/wDnnnHPOOQ/RP+Ccc84555yH6B9wzjnn
+nHPOQ/QPOOecc8455yH6B5xzzjnnnPMQ/QPOOeecc855iP4B55xzzjnnPET/
+gHPOOeeccx6if8A555xzzjkP0T/gnHPOOeech+gfcM4555xzzkP0DzjnnHPO
+Oech+gecc84555zzEP0DzjnnnHPOeYj+Aeecc8455zxE/4BzzjnnnHMeon/A
+Oeecc845D9E/4JxzzjnnnIfoH3DOOeecc85D9A8455xzzjnnIfoHnHPOOeec
+8xD9A84555xzznmI/gHnnHPOOec8RP+Ac84555xzHqJ/wDnnnHPOOQ/RP+Cc
+c84555yH6B9wzjnnnHPOQ/QPOOecc8455yH6B5xzzjnnnPMQ/QPOOeecc855
+iP4B55xzzjnnPET/gHPOOeeccx6if8A555xzzjkP0T/gnHPOOeech+gfcM45
+55xzzkP0DzjnnHPOOech+gecc84555zzEP0DzjnnnHPOeYj+Aeecc8455zxE
+/4BzzjnnnHMeon/AOeecc845D9E/4JxzzjnnnIfoH3DOOeecc87zuv4B55xz
+zjnnPK//Ce71BnE=
+   "], {{0, 0}, {98, 98}}, {0, 1}],
+  Axes->False,
+  Frame->True,
+  FrameLabel->{None, None},
+  FrameStyle->Automatic,
+  FrameTicks->{{{{78.01844262295081, 
+       FormBox["100", TraditionalForm]}, {57.93647540983606, 
+       FormBox["200", TraditionalForm]}, {37.85450819672131, 
+       FormBox["300", TraditionalForm]}, {17.772540983606557`, 
+       FormBox["400", TraditionalForm]}}, {{78.01844262295081, 
+       FormBox["100", TraditionalForm]}, {57.93647540983606, 
+       FormBox["200", TraditionalForm]}, {37.85450819672131, 
+       FormBox["300", TraditionalForm]}, {17.772540983606557`, 
+       FormBox["400", TraditionalForm]}}}, {{{19.98155737704918, 
+       FormBox["100", TraditionalForm]}, {40.06352459016394, 
+       FormBox["200", TraditionalForm]}, {60.14549180327869, 
+       FormBox["300", TraditionalForm]}, {80.22745901639344, 
+       FormBox["400", TraditionalForm]}}, {{19.98155737704918, 
+       FormBox["100", TraditionalForm]}, {40.06352459016394, 
+       FormBox["200", TraditionalForm]}, {60.14549180327869, 
+       FormBox["300", TraditionalForm]}, {80.22745901639344, 
+       FormBox["400", TraditionalForm]}}}},
+  GridLines->None,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  LabelStyle->{FontFamily -> "Helvetica", FontSize -> 14},
+  Method->{
+   "GridLinesInFront" -> True, "AxisPadding" -> Scaled[0.02], 
+    "DefaultBoundaryStyle" -> Automatic, 
+    "DefaultGraphicsInteraction" -> {
+     "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+      "Effects" -> {
+       "Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> {"ratio" -> 2}, 
+        "Droplines" -> {
+         "freeformCursorMode" -> True, 
+          "placement" -> {"x" -> "All", "y" -> "None"}}}}, "DefaultPlotStyle" -> 
+    Automatic, "DomainPadding" -> Scaled[0.02], "RangePadding" -> 
+    Scaled[0.05]}]], "Output",
+ CellChangeTimes->{{3.9451366905541306`*^9, 3.9451367006440926`*^9}, {
+  3.945136877963936*^9, 3.9451369219027443`*^9}},
+ CellLabel->
+  "Out[180]=",ExpressionUUID->"1f148703-b2e9-7e4b-a8c5-1cd941118e66"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"hBloch1DAC", "[", ".1", "]"}], "//", "MatrixPlot"}]], "Input",
+ CellChangeTimes->{{3.945136972647276*^9, 3.945136972850046*^9}},
+ CellLabel->
+  "In[217]:=",ExpressionUUID->"5f7db66b-4bb5-7b49-bc6c-7767b2f523c8"],
+
+Cell[BoxData[
+ GraphicsBox[RasterBox[CompressedData["
+1:eJzt3V9sltUdwPEywEwGDJFkSDoJCwnbiH+YzEIZPUqAFusGK0IBIwpJ52rM
+BLZ2S9jizMAwdToBrcm2yNhEwAZmxzaMm86AKYWqDJRSWAFh/Cv9Q0KqQUV3
+s/P0ZuZ9brY2PJ83efNefM7Fk9/Vc3LOm++oxQ+UVfTNy8tb/J9vv7z4OR/+
++y/nnHPOOee8N/nt44pK+q7sDAeePVT0lZq2MH/Y0nPPrDiTrCvO+9pn/tTY
+EQ6FBz4uHXomvJ8/uH7kj48nvrdmx4Ej158JYXrltLp5+8OIUaWzv1HwfOID
+mn63ZPKA02HS0Zm/qPnevrDl4N3VM6/d8CnP0/vmwznnnHPOOe/2G5oXLdv2
+s46w+vjyCUNLToV9hWsfXTj8WLJu9Qu7Ct/q0xm2lddO/M3dZ0PL8tFbr534
+r8TvrD1y/3uNbeG2gyUfFw9sCp9fUlX5h5dfSHz30omz7609EyY9Xl818m/7
+w5bNX1rw6tbnP+V5et98OOecc845v5x8fV3zX76a3xmeuDjp5hEftIXWK3Z9
+Z9EvzybravdO7xp6dWeovlA588M9Z8Pm+w/v3tPQ/f4/5fZrFkyeci6MX1K8
+vObNd8LA9lXX5Y/dnPjDz5XNuTjnbJjw7aof1k99Owz58NWuVWUbE8+1v8h1
+ftHT8+Occ8455zxLXvXFxs8NXtsRmss3bqvbciqMe2nFpkW/7T4/KH1o9I5Z
+n7SHv8/4cvmwK0+EWTcMqj+9sinx6ZtvWXPL1o7wgyGj1lfOPx1ufahuVunK
+dxPPtb/IdX6R635UT8+Pc84555zzy8lPTqt45OKyjjCi+bULg4+eDPsqHsmb
+N/xosu7pP15z42Nt7aH/s+PXTV9zPOwe27L2ztIDie9YM+jRTc+0hu9uavps
+x/R3wovjKptmrdqUeK79Ra7zi56eD+ecc84551ny+jeeHFZ8c2e476ZpxRc2
+toahY6o6G8+fTNbVPFf75/KB7WH4nK6C82MOhbI3Rl73j+pXEp976WDdkW3t
+Ye73Pwp7vv5uGD5v4YPjN+xLPNf+Itf5Ra77UT09P84555xzzi8nzz+37IOG
+qzpC0U9nDLjyJydC2dr1F1e8fDBZ93rXzq1zR3eGgifGVMyf0Bqq71p96kcL
+uvcPBYV15Z/Maw9FO2vvKmptCdu/9auGf05tSDzX/iLX+UVPz4dzzjnnnPMs
+ea7380tvt02pz28PP39w50tT3zsUChqe3nnH4tcS72h8rM+G5nPhlSWT+2wv
+PhC+cMeJe6v/2v3/glz7i1znFz09H84555xzzi8n79d33RXlT3WGIXt2Xfz9
+pbbw4uHH379vUPf9nFzv50/261h608PtYf3kj/YfHnIsXHWhsOLqG99KvLDr
+1oVlszvC6zNK5t8z/GS4/vA31zX1b0k81/4i1/lFT8+Pc84555zzLPn/un8w
+evaIlu1PtYd7asuWlyw7Frr6D3tz7K/3Ju5+Eeecc8455/8/7+39A/eLOOec
+c8457z3e2/sHue5H9fT8OOecc845v5xc/4BzzjnnnHMeRf+Ac84555xzHkX/
+gHPOOeeccx5F/4BzzjnnnPPsuP4B55xzzjnnPK3rH3DOOeecc54d1z/gnHPO
+Oeecp3X9A84555xzznkU/QPOOeecc855FP0DzjnnnHPOeRT9A84555xzznkU
+/QPOOeecc86z4/oHnHPOOeec87Suf8A555xzznl2XP+Ac84555xzntb1Dzjn
+nHPOOedR9A8455xzzjnnUfQPOOecc84551H0DzjnnHPOOedR9A8455xzzjnP
+jusfcM4555xzztO6/gHnnHPOOefZcf0DzjnnnHPOeVrXP+Ccc84555xH0T/g
+nHPOOeecR9E/4JxzzjnnnEfRP+Ccc84555xH0T/gnHPOOec8O65/wDnnnHPO
+OU/r+gecc84555xnx/UPOOecc84552ld/4BzzjnnnHMeRf+Ac84555xzHkX/
+gHPOOeeccx5F/4BzzjnnnHMeRf+Ac84555zz7Lj+Aeecc8455zyt6x9wzjnn
+nHOeHdc/4JxzzjnnnKd1/QPOOeecc855FP0DzjnnnHPOeRT9A84555xzznkU
+/QPOOeecc855FP0DzjnnnHPOs+P6B5xzzjnnnPO0rn/AOeecc855dlz/gHPO
+Oeecc57W9Q8455xzzjnnUfQPOOecc84551H0DzjnnHPOOedR9A8455xzzjnn
+UfQPOOecc845z47rH3DOOeecc87Tuv4B55xzzjnn2XH9A84555xzznla1z/g
+nHPOOeecR9E/4JxzzjnnnEfRP+Ccc84555xH0T/gnHPOOeecR9E/4Jxzzjnn
+PDuuf8A555xzzjlP6/oHnHPOOeecZ8f1DzjnnHPOOedpXf+Ac84555xzHkX/
+gHPOOeeccx5F/4BzzjnnnHMeRf+Ac84555xzHkX/gHPOOeec8+y4/gHnnHPO
+Oec8resfcM4555xznh3XP+Ccc84555yndf0DzjnnnHPOeRT9A84555xzznkU
+/QPOOeecc855FP0DzjnnnHPOeRT9A84555xzzrPj+gecc84555zztK5/wDnn
+nHPOeXZc/4BzzjnnnHOe1vUPOOecc84551H0DzjnnHPOOedR9A8455xzzjnn
+UfQPOOecc84551H0DzjnnHPOOedpXf+Ac84555xzntb1DzjnnHPOOedp/d+B
+AqFZ
+   "], {{0, 0}, {98, 98}}, {0, 1}],
+  Axes->False,
+  Frame->True,
+  FrameLabel->{None, None},
+  FrameStyle->Automatic,
+  FrameTicks->{{{{78.01844262295081, 
+       FormBox["100", TraditionalForm]}, {57.93647540983606, 
+       FormBox["200", TraditionalForm]}, {37.85450819672131, 
+       FormBox["300", TraditionalForm]}, {17.772540983606557`, 
+       FormBox["400", TraditionalForm]}}, {{78.01844262295081, 
+       FormBox["100", TraditionalForm]}, {57.93647540983606, 
+       FormBox["200", TraditionalForm]}, {37.85450819672131, 
+       FormBox["300", TraditionalForm]}, {17.772540983606557`, 
+       FormBox["400", TraditionalForm]}}}, {{{19.98155737704918, 
+       FormBox["100", TraditionalForm]}, {40.06352459016394, 
+       FormBox["200", TraditionalForm]}, {60.14549180327869, 
+       FormBox["300", TraditionalForm]}, {80.22745901639344, 
+       FormBox["400", TraditionalForm]}}, {{19.98155737704918, 
+       FormBox["100", TraditionalForm]}, {40.06352459016394, 
+       FormBox["200", TraditionalForm]}, {60.14549180327869, 
+       FormBox["300", TraditionalForm]}, {80.22745901639344, 
+       FormBox["400", TraditionalForm]}}}},
+  GridLines->None,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  LabelStyle->{FontFamily -> "Helvetica", FontSize -> 14},
+  Method->{
+   "GridLinesInFront" -> True, "AxisPadding" -> Scaled[0.02], 
+    "DefaultBoundaryStyle" -> Automatic, 
+    "DefaultGraphicsInteraction" -> {
+     "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+      "Effects" -> {
+       "Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> {"ratio" -> 2}, 
+        "Droplines" -> {
+         "freeformCursorMode" -> True, 
+          "placement" -> {"x" -> "All", "y" -> "None"}}}}, "DefaultPlotStyle" -> 
+    Automatic, "DomainPadding" -> Scaled[0.02], "RangePadding" -> 
+    Scaled[0.05]}]], "Output",
+ CellChangeTimes->{3.9451369734465294`*^9, 3.9451370183004494`*^9},
+ CellLabel->
+  "Out[217]=",ExpressionUUID->"246cd3a2-940c-4a44-9161-2737776956f2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"hBloch1DAC", "[", ".1", "]"}], "[", 
+     RowBox[{"[", "#", "]"}], "]"}], "&"}], "@@", 
+   RowBox[{"(", 
+    RowBox[{"(*", "SparseArray`", "*)"}], 
+    RowBox[{"MinimumBandwidthOrdering", "[", 
+     RowBox[{
+      RowBox[{"hBloch1DAC", "[", ".1", "]"}], ",", 
+      RowBox[{"Method", "->", "\"\<RCMD\>\""}]}], 
+     RowBox[{"(*", "\"\<Sloan\>\"", "*)"}], "]"}], 
+    RowBox[{"(*", 
+     RowBox[{"[", 
+      RowBox[{"[", "2", "]"}], "]"}], "*)"}], ")"}]}], "//", 
+  "MatrixPlot"}]], "Input",
+ CellChangeTimes->{{3.94513698201486*^9, 3.945136985961113*^9}},
+ CellLabel->
+  "In[218]:=",ExpressionUUID->"57306473-787c-4c43-b04a-ee2db7722751"],
+
+Cell[BoxData[
+ GraphicsBox[RasterBox[CompressedData["
+1:eJzt3VtwVPUdwPGgQS1FlKIlaOOtqKWjWAopVoF/tdARhwqkIlG5BIpWAUEH
+m5aiVEEGFVSKEYQaQQTE1AtgESxaSLkqFCuFEFCBECCQsBsvtMqg2D50Dy/N
+zHlxJsP57MzOPnx+s/M/v7cze2a/Fw4emX/byVlZWYP/987Oyrw+Cv//k3PO
+Oeecc34i+YgvB9/VLnUgFAwZ1/fwR/8MQ3/7zEmfpF6I5rYM+ry03YqaUPTg
+k33Kbtsayhotuv2Gl1+s5/sa3vVxzjnnnHPOj3vNrW2vveCRdGj+5IN9Ww3d
+H0bN3XvTxm67o7murYu+cU/HdOhdsDav8M69YdodhS9M/eH7kW+sHX7/aWW1
+YeQjb71zSofycEFF90+3zC2NPP+bN2R/+emhUFz82i/b/7siXLRs5OTcby+r
+5zwNbz+cc84555yfSN6lacnogkvqwu/aPz3ok641oc3lPx5+/bB90VyX2x9f
+8uDTdaHbFa8+PKF5KjT6Mvfew5cejHxO1qaTV1SlwqFDN7x1ar894fED3WdV
+LN0aeafp8/s9kZUKrzY7a1Hj4u1h44L5rWsKl0c+rmzqjvH56VA+eujZvVrs
+C6+/2PI3+Z9/EPmigsUHb22cDlfOL33m5CuqQqtVb+1sV7utnutpePvlnHPO
+Oef8RPLsSfk/H1hQF0Yc/aLTv8bWhsKyUY3GN6uO5nLPaFy6MDcdSge3WvLm
+uqrQ75YpFx4dtz3yFQsXvt/98lRo2//8AQ+veT/cc3BY0YpJqyKf0ujZn83u
+XRNCo5zNrZptDT02feeL87p6/ohzzjnnnPOG6GtfmjF3wcx0WFl88cBLKvaH
+ny45af2yiuPPFxU+2f+97Op0GHRWty2jlh4Ih3beN7GkoCryJtuev7tzk+pw
+9a6ej00fsTm8UjGwqOd58yOfXdozZ1pdKky+fcaom+fvCYvH33hV97Hlka9p
+9/rpw9rXhQM9j43Mml4TenzVYVp5xb56ztvw9sc555xzznmSvHjA0y0nL0uF
+ommPXLu7R2W4afBP2pRXbY7muo66c86xM1Kh+awBR9f32RHuXnVz9bxhKyLP
++d681T+6LhXmLSrvPLnlh6Hig6H3XvetdZFPL5ux829d6sKcpWff2H5nTZiw
++oLhezvur+c8DW8/nHPOOeecn0h+ZExe55fuS4fippMfTZ+7P7QsyX278i+7
+orlHz18we/PKdHgu5+OC19ZVh6/ymq99OGdP5Pnvrux58djqcG+Y2bT3hs1h
+5b4Jvy5+7PjvB+dVnj10+QupcFmHB/rcWLU75G5It81+5716ztPw9sM555xz
+znmSvO24kuxZ89Nh6NSXH+r03eqwtKi4z2edKqO5nCbNfvHKhlT4axi948jq
+yhA2VZz+UOstkRdk33HVxB/UhhYlb7QdvnJr2HtRt2HnnnP8/4tOKXyi/zWn
+1IW2d41rM2HMwfDU7roOhQP2Rj6t73NDnlqcDmdNySvNH1EdLrvykqq85yrr
+OW/D2x/nnHPOOedJ8lkz/7648x9S4eMxfXdeetPukFtXfFfz3v+I5lYOalE3
+bmQqNP7w9GaV2bvCe9m3dJ7YcWPkTd8c+/2L2xwKz7+9Id1rYnmYMunwQ+tO
++1Pkni/inHPOOee84fjX3T+Y9PLU2tfOTIdzqrv8uWNRVVg68I8rer1YEflX
+00q6vHF9XeixpGR09za14bMJi49c9Iz7A84555xzzr8Ob+j9g+m/WjBnxsb/
++vJjl81ufiC8dPjqIVeN2VPP9TS8/XLOOeecc34iuf4B55xzzjnnPCP6B5xz
+zjnnnPO4rn/AOeecc855clz/gHPOOeecc54R/QPOOeecc855XNc/4Jxzzjnn
+PDmuf8A555xzznlyXP+Ac84555xzHtf1DzjnnHPOOecZ0T/gnHPOOeecx3X9
+A84555xzzpPj+gecc84555zzjOgfcM4555xzzuO6/gHnnHPOOefJcf0Dzjnn
+nHPOk+P6B5xzzjnnnPO4rn/AOeecc845z4j+Aeecc8455zyu6x9wzjnnnHOe
+HNc/4JxzzjnnnGdE/4BzzjnnnHMe1/UPOOecc845T47rH3DOOeecc54c1z/g
+nHPOOeecx3X9A84555xzznlG9A8455xzzjnncV3/gHPOOeec8+S4/gHnnHPO
+Oec8I/oHnHPOOeec87iuf8A555xzznlyXP+Ac84555zz5Lj+Aeecc8455zyu
+6x9wzjnnnHPOM6J/wDnnnHPOOY/r+gecc84555wnx/UPOOecc8455xnRP+Cc
+c84555zHdf0DzjnnnHPOk+P6B5xzzjnnnCfH9Q8455xzzjnncV3/gHPOOeec
+c54R/QPOOeecc855XNc/4JxzzjnnPDmuf8A555xzzjnPiP4B55xzzjnnPK7r
+H3DOOeecc54c1z/gnHPOOec8Oa5/wDnnnHPOOY/r+gecc84555zzjOgfcM45
+55xzzuO6/gHnnHPOOefJcf0DzjnnnHPOeUb0DzjnnHPOOedxXf+Ac84555zz
+5Lj+Aeecc84558lx/QPOOeecc855XNc/4JxzzjnnnGdE/4BzzjnnnHMe1/UP
+OOecc845T47rH3DOOeecc84zon/AOeecc845j+v6B5xzzjnnnCfH9Q8455xz
+zjlPjusfcM4555xzzuO6/gHnnHPOOec8I/oHnHPOOeec87iuf8A555xzznly
+XP+Ac84555xznhH9A84555xzznlc1z/gnHPOOec8Oa5/wDnnnHPOeXJc/4Bz
+zjnnnHMe1/UPOOecc8455xnRP+Ccc84555zHdf0DzjnnnHPOk+P6B5xzzjnn
+nPOM6B9wzjnnnHPO47r+Aeecc84558lx/QPOOeecc86T4/oHnHPOOeec87iu
+f8A555xzzjnPiP4B55xzzjnnPK7rH3DOOeecc54c1z/gnHPOOeecZ0T/gHPO
+Oeeccx7X9Q8455xzzjnncX3Ns0fvP1hxKNya91jZ9XO2hbxTe21PH1sYzb3b
+onZgzu9TYe2OMx8Yv35XKBk9cvzeazZFrn/AOeecc855cvw/l5UI0A==
+   "], {{0, 0}, {98, 98}}, {0, 1}],
+  Axes->False,
+  Frame->True,
+  FrameLabel->{None, None},
+  FrameStyle->Automatic,
+  FrameTicks->{{{{78.01844262295081, 
+       FormBox["100", TraditionalForm]}, {57.93647540983606, 
+       FormBox["200", TraditionalForm]}, {37.85450819672131, 
+       FormBox["300", TraditionalForm]}, {17.772540983606557`, 
+       FormBox["400", TraditionalForm]}}, {{78.01844262295081, 
+       FormBox["100", TraditionalForm]}, {57.93647540983606, 
+       FormBox["200", TraditionalForm]}, {37.85450819672131, 
+       FormBox["300", TraditionalForm]}, {17.772540983606557`, 
+       FormBox["400", TraditionalForm]}}}, {{{19.98155737704918, 
+       FormBox["100", TraditionalForm]}, {40.06352459016394, 
+       FormBox["200", TraditionalForm]}, {60.14549180327869, 
+       FormBox["300", TraditionalForm]}, {80.22745901639344, 
+       FormBox["400", TraditionalForm]}}, {{19.98155737704918, 
+       FormBox["100", TraditionalForm]}, {40.06352459016394, 
+       FormBox["200", TraditionalForm]}, {60.14549180327869, 
+       FormBox["300", TraditionalForm]}, {80.22745901639344, 
+       FormBox["400", TraditionalForm]}}}},
+  GridLines->None,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  LabelStyle->{FontFamily -> "Helvetica", FontSize -> 14},
+  Method->{
+   "GridLinesInFront" -> True, "AxisPadding" -> Scaled[0.02], 
+    "DefaultBoundaryStyle" -> Automatic, 
+    "DefaultGraphicsInteraction" -> {
+     "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+      "Effects" -> {
+       "Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> {"ratio" -> 2}, 
+        "Droplines" -> {
+         "freeformCursorMode" -> True, 
+          "placement" -> {"x" -> "All", "y" -> "None"}}}}, "DefaultPlotStyle" -> 
+    Automatic, "DomainPadding" -> Scaled[0.02], "RangePadding" -> 
+    Scaled[0.05]}]], "Output",
+ CellChangeTimes->{3.945136986513584*^9, 3.9451370196522408`*^9},
+ CellLabel->
+  "Out[218]=",ExpressionUUID->"33d5373d-ff60-d648-ac7a-8b01dc9c6d2e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "SparseArray`*"}]], "Input",
+ CellChangeTimes->{{3.9451370637965927`*^9, 3.945137071309065*^9}},
+ CellLabel->
+  "In[219]:=",ExpressionUUID->"ace4e34d-95c6-7f4e-89f4-7b1553bfef62"],
+
+Cell[BoxData[
+ StyleBox[
+  FrameBox[GridBox[{
+     {
+      DynamicModuleBox[{Typeset`open$$ = True}, 
+       PaneSelectorBox[{False->
+        ButtonBox[
+         RowBox[{
+          
+          DynamicBox[FEPrivate`FrontEndResource[
+           "FEBitmaps", "RightPointerOpener"]], " ", 
+          StyleBox["SparseArray`", "InformationGridGroupHeader"]}],
+         Appearance->None,
+         BaseStyle->"InformationGridLink",
+         ButtonFunction:>FEPrivate`Set[Typeset`open$$, True],
+         Evaluator->Automatic,
+         Method->"Preemptive"], True->
+        PaneBox[GridBox[{
+           {
+            ButtonBox[
+             RowBox[{
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"],
+               
+               ImageSizeCache->{
+                10., {2.1340330980019644`, 7.865966901998036}}], " ", 
+              StyleBox["SparseArray`", "InformationGridGroupHeader"]}],
+             Appearance->None,
+             BaseStyle->"InformationGridLink",
+             ButtonFunction:>FEPrivate`Set[Typeset`open$$, False],
+             Evaluator->Automatic,
+             Method->"Preemptive"]},
+           {
+            PaneBox[GridBox[{
+               {
+                ButtonBox[
+                 StyleBox["AddInto", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "AddInto", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["FindHamiltonianCycle", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "FindHamiltonianCycle", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["MaximalMatching", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "MaximalMatching", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SparseArrayExpandRank", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "SparseArrayExpandRank", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SparseMatrixILU", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "SparseMatrixILU", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["AllPairsShortestPath", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "AllPairsShortestPath", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["GraphDistance", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "GraphDistance", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["MinCut", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "MinCut", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SparseArrayFlatten", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "SparseArrayFlatten", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SparseRuleForm", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "SparseRuleForm", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["ApproximateMinimumDegree", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "ApproximateMinimumDegree", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["GraphDistanceMatrix", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "GraphDistanceMatrix", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["MinimumBandwidthOrdering", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "MinimumBandwidthOrdering", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SparseArrayJoin", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "SparseArrayJoin", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 
+                 StyleBox["SpringElectricalEmbedding", 
+                  "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "SpringElectricalEmbedding", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["Arnoldi", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "Arnoldi", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["GraphPlacement", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "GraphPlacement", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["Multilevel", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "Multilevel", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SparseArrayOp", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "SparseArrayOp", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SpringElectricalModel", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "SpringElectricalModel", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["ArnoldiSVD", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "ArnoldiSVD", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["GraphPlacement3D", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "GraphPlacement3D", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["NestedDissection", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "NestedDissection", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SparseArrayQ", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "SparseArrayQ", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SpringEmbedding", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "SpringEmbedding", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["BiconnectedComponents", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "BiconnectedComponents", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["GraphToSparseMatrix", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "GraphToSparseMatrix", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["NestedGridPacking", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "NestedGridPacking", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 
+                 StyleBox["SparseArrayRemoveDiagonal", 
+                  "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "SparseArrayRemoveDiagonal", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SpringEnergy", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "SpringEnergy", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["BlockTriangularOrdering", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "BlockTriangularOrdering", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["HamiltonianCycle", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "HamiltonianCycle", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["PageRank", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "PageRank", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 
+                 StyleBox["SparseArrayScalingFactors", 
+                  "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "SparseArrayScalingFactors", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SpringModel", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "SpringModel", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["BoxableSparseArrayQ", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "BoxableSparseArrayQ", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["HeldSparseArrayQ", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "HeldSparseArrayQ", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["PermutationQ", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "PermutationQ", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SparseArraySort", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "SparseArraySort", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["StableMarriage", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "StableMarriage", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["BreadthFirstSearch", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "BreadthFirstSearch", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["HermitianQ", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "HermitianQ", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["PermutationTolerance", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "PermutationTolerance", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SparseArraySortedQ", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "SparseArraySortedQ", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 
+                 StyleBox["StronglyConnectedComponents", 
+                  "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "StronglyConnectedComponents", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["Centrality", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "Centrality", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["HighDimensionalEmbedding", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "HighDimensionalEmbedding", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["PositiveDefiniteQ", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "PositiveDefiniteQ", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SparseArrayTensorRank", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "SparseArrayTensorRank", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SymmetricQ", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "SymmetricQ", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["ClosestPacking", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "ClosestPacking", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["KrylovLinearSolve", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "KrylovLinearSolve", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["PseudoDiameter", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "PseudoDiameter", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SparseArrayTranspose", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "SparseArrayTranspose", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 
+                 StyleBox["TAUCSCholeskyDecomposition", 
+                  "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "TAUCSCholeskyDecomposition", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["CommunityModularity", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "CommunityModularity", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["LayeredDigraphDrawing", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "LayeredDigraphDrawing", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["RadialDrawing", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "RadialDrawing", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SparseBlockMatrix", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "SparseBlockMatrix", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["ToTriangular", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "ToTriangular", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 
+                 StyleBox["CommunityStructureAssignment", 
+                  "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "CommunityStructureAssignment", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["LayeredDrawing", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "LayeredDrawing", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["RandomEmbedding", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "RandomEmbedding", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SparseBoundaryPattern", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "SparseBoundaryPattern", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["TreeQ", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "TreeQ", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 
+                 StyleBox["CommunityStructurePartition", 
+                  "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "CommunityStructurePartition", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["LayeredPacking", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "LayeredPacking", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["RecursionMethod", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "RecursionMethod", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SparseErrorHandler", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "SparseErrorHandler", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["Unsparsify", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "Unsparsify", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["Equal", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "Equal", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["LinkRank", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "LinkRank", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["ShortestPath", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "ShortestPath", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SparseIdentityArray", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "SparseIdentityArray", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 
+                 StyleBox["VectorToDiagonalSparseArray", 
+                  "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "VectorToDiagonalSparseArray", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["ExpressionToTree", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "ExpressionToTree", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["MaximalBipartiteMatching", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "MaximalBipartiteMatching", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SpanningTree", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "SpanningTree", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SparseLUDecomposition", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "SparseLUDecomposition", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["$SparseArrayNormalLimit", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "$SparseArrayNormalLimit", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["FillIn", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "FillIn", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 
+                 StyleBox["MaximalIndependentVertexSet", 
+                  "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "MaximalIndependentVertexSet", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SparseArrayDimensions", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "SparseArrayDimensions", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SparseMatrixApplyILU", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", {
+                   "SparseMatrixApplyILU", "SparseArray`"}, False},
+                 ButtonNote->"SparseArray`",
+                 Evaluator->Automatic], ""}
+              },
+              DefaultBaseStyle->"Text",
+              
+              GridBoxAlignment->{
+               "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+              GridBoxItemSize->{"Columns" -> {{
+                   Scaled[0.19]}}}],
+             ImageMargins->{{10, 0}, {0, 2}}]}
+          },
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}],
+         FrameMargins->{{0, 0}, {8, 0}}]}, Dynamic[Typeset`open$$],
+        ImageSize->Automatic]]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+    GridBoxDividers->{"ColumnsIndexed" -> {{False}}, "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.8]}, 
+        Offset[0.2]}}],
+   BaseStyle->"InformationTitleFrame"], "InformationGridPlain"]], "Output",
+ CellChangeTimes->{3.94513707178244*^9},
+ CellLabel->
+  "Out[219]=",ExpressionUUID->"1c5e5f50-4fb1-bf49-91b6-f27b52279f46"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   FrameBox[
+    DynamicModuleBox[{System`InformationDump`open$$ = True, 
+     System`InformationDump`mouseOver$$ = False}, 
+     PaneSelectorBox[{True->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox[
+             TagBox[
+              TooltipBox[
+               StyleBox["\<\" Symbol\"\>", "InformationRowLabel",
+                StripOnInput->False],
+               "\"Symbol\"",
+               TooltipStyle->"TextStyling"],
+              Annotation[#, "Symbol", "Tooltip"]& ], "InformationTitleText",
+             StripOnInput->False,
+             BaseStyle -> None],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"SparseArray`NestedDissection\"\>", 
+             "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          PaneBox[GridBox[{
+             {
+              
+              DynamicModuleBox[{System`InformationDump`open$$ = {
+               False, False, False, False, False, False}}, 
+               StyleBox[GridBox[{
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Attributes\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Attributes\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Attributes", "Tooltip"]& ], 
+                   RowBox[{"{", "Protected", "}"}]},
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"FullName\"",
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "FullName", 
+                    "Tooltip"]& ], "\<\"SparseArray`NestedDissection\"\>"}
+                 },
+                 AutoDelete->False,
+                 GridBoxAlignment->{"Columns" -> {Right, Left}},
+                 GridBoxDividers->None,
+                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.5599999999999999]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.8]}, 
+                    Offset[0.2]}}], "DialogStyle",
+                StripOnInput->False],
+               DynamicModuleValues:>{}]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.5599999999999999]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[3.6]}, 
+                Offset[0.2]}}],
+           FrameMargins->{{6, 6}, {6, 3}}], ""},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpener"],
+               ImageSizeCache->{10., {2.67529296875, 7.32470703125}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpenerHot"],
+               ImageSizeCache->{10., {2.67529296875, 7.32470703125}}]}, 
+              Dynamic[System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, False],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], False->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox[
+             TagBox[
+              TooltipBox[
+               StyleBox["\<\" Symbol\"\>", "InformationRowLabel",
+                StripOnInput->False],
+               "\"Symbol\"",
+               TooltipStyle->"TextStyling"],
+              Annotation[#, "Symbol", "Tooltip"]& ], "InformationTitleText",
+             StripOnInput->False],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"SparseArray`NestedDissection\"\>", 
+             "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"]], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpenerHot"]]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, True],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]}, Dynamic[System`InformationDump`open$$],
+      BaselinePosition->Baseline,
+      FrameMargins->0,
+      ImageSize->Automatic],
+     DynamicModuleValues:>{}],
+    BaseStyle->"InformationGridFrame",
+    StripOnInput->False], "InformationGridPlain",
+   StripOnInput->False],
+  InformationData[<|
+   "ObjectType" -> "Symbol", "Usage" -> "SparseArray`NestedDissection", 
+    "Documentation" -> None, "OwnValues" -> None, "UpValues" -> None, 
+    "DownValues" -> None, "SubValues" -> None, "DefaultValues" -> None, 
+    "NValues" -> None, "FormatValues" -> None, "Options" -> None, 
+    "Attributes" -> {Protected}, "FullName" -> 
+    "SparseArray`NestedDissection"|>, False]]], "Print",
+ CellTags->
+  "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4",ExpressionUUID->"d4a6bedd-a29d-\
+e646-a729-3a66c951c16f"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.945137090674757*^9, 
+  3.945137094431263*^9}},ExpressionUUID->"54533f89-de12-814e-aef0-\
+4e28c1bf8171"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"SparseArray`NestedDissection", "[", 
+  RowBox[{"hBloch1DAC", "[", ".1", "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"hBloch1DAC", "[", ".1", "]"}], "[", 
+       RowBox[{"[", "#", "]"}], "]"}], "&"}], "@@", "%"}], "//", 
+    "MatrixPlot"}], "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.945137096339035*^9, 3.945137151994972*^9}, {
+  3.945137185886818*^9, 3.945137296308054*^9}},
+ CellLabel->
+  "In[232]:=",ExpressionUUID->"6eb9b2ec-a97a-394b-bb3f-258a583a45dd"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "240", ",", "239", ",", "128", ",", "127", ",", "236", ",", "235", ",", 
+   "132", ",", "131", ",", "230", ",", "229", ",", "220", ",", "219", ",", 
+   "214", ",", "213", ",", "204", ",", "203", ",", "198", ",", "197", ",", 
+   "188", ",", "187", ",", "182", ",", "181", ",", "172", ",", "171", ",", 
+   "166", ",", "165", ",", "156", ",", "155", ",", "150", ",", "149", ",", 
+   "234", ",", "233", ",", "122", ",", "121", ",", "133", ",", "129", ",", 
+   "134", ",", "130", ",", "135", ",", "139", ",", "136", ",", "140", ",", 
+   "142", ",", "138", ",", "237", ",", "225", ",", "141", ",", "137", ",", 
+   "143", ",", "144", ",", "232", ",", "226", ",", "231", ",", "238", ",", 
+   "151", ",", "147", ",", "223", ",", "227", ",", "145", ",", "146", ",", 
+   "148", ",", "152", ",", "218", ",", "217", ",", "224", ",", "228", ",", 
+   "153", ",", "157", ",", "209", ",", "221", ",", "160", ",", "154", ",", 
+   "158", ",", "159", ",", "216", ",", "210", ",", "215", ",", "222", ",", 
+   "167", ",", "163", ",", "207", ",", "211", ",", "162", ",", "161", ",", 
+   "164", ",", "168", ",", "202", ",", "201", ",", "208", ",", "212", ",", 
+   "169", ",", "173", ",", "193", ",", "205", ",", "176", ",", "170", ",", 
+   "174", ",", "175", ",", "200", ",", "194", ",", "199", ",", "206", ",", 
+   "183", ",", "179", ",", "192", ",", "196", ",", "178", ",", "177", ",", 
+   "180", ",", "184", ",", "185", ",", "186", ",", "189", ",", "190", ",", 
+   "191", ",", "195", ",", "118", ",", "117", ",", "6", ",", "5", ",", "106", 
+   ",", "105", ",", "2", ",", "1", ",", "104", ",", "103", ",", "94", ",", 
+   "93", ",", "84", ",", "83", ",", "78", ",", "77", ",", "68", ",", "67", 
+   ",", "62", ",", "61", ",", "52", ",", "51", ",", "46", ",", "45", ",", 
+   "36", ",", "35", ",", "30", ",", "29", ",", "20", ",", "19", ",", "116", 
+   ",", "115", ",", "4", ",", "3", ",", "7", ",", "8", ",", "13", ",", "14", 
+   ",", "11", ",", "15", ",", "111", ",", "107", ",", "10", ",", "9", ",", 
+   "12", ",", "16", ",", "110", ",", "108", ",", "109", ",", "112", ",", "97",
+    ",", "98", ",", "99", ",", "100", ",", "101", ",", "89", ",", "17", ",", 
+   "21", ",", "96", ",", "90", ",", "95", ",", "102", ",", "24", ",", "18", 
+   ",", "22", ",", "23", ",", "87", ",", "91", ",", "31", ",", "27", ",", 
+   "82", ",", "81", ",", "88", ",", "92", ",", "26", ",", "25", ",", "28", 
+   ",", "32", ",", "73", ",", "85", ",", "33", ",", "37", ",", "80", ",", 
+   "74", ",", "79", ",", "86", ",", "40", ",", "34", ",", "38", ",", "39", 
+   ",", "71", ",", "75", ",", "47", ",", "43", ",", "66", ",", "65", ",", 
+   "72", ",", "76", ",", "42", ",", "41", ",", "44", ",", "48", ",", "57", 
+   ",", "69", ",", "50", ",", "54", ",", "64", ",", "49", ",", "53", ",", 
+   "55", ",", "56", ",", "58", ",", "59", ",", "60", ",", "63", ",", "70", 
+   ",", "120", ",", "124", ",", "114", ",", "113", ",", "126", ",", "125", 
+   ",", "119", ",", "123", ",", "366", ",", "365", ",", "254", ",", "253", 
+   ",", "354", ",", "353", ",", "250", ",", "249", ",", "352", ",", "351", 
+   ",", "342", ",", "341", ",", "332", ",", "331", ",", "326", ",", "325", 
+   ",", "316", ",", "315", ",", "310", ",", "309", ",", "300", ",", "299", 
+   ",", "294", ",", "293", ",", "284", ",", "283", ",", "278", ",", "277", 
+   ",", "268", ",", "267", ",", "364", ",", "363", ",", "252", ",", "251", 
+   ",", "255", ",", "256", ",", "261", ",", "262", ",", "259", ",", "263", 
+   ",", "359", ",", "355", ",", "258", ",", "257", ",", "260", ",", "264", 
+   ",", "358", ",", "356", ",", "357", ",", "360", ",", "345", ",", "346", 
+   ",", "347", ",", "348", ",", "349", ",", "337", ",", "265", ",", "269", 
+   ",", "344", ",", "338", ",", "343", ",", "350", ",", "272", ",", "266", 
+   ",", "270", ",", "271", ",", "335", ",", "339", ",", "279", ",", "275", 
+   ",", "330", ",", "329", ",", "336", ",", "340", ",", "274", ",", "273", 
+   ",", "276", ",", "280", ",", "321", ",", "333", ",", "281", ",", "285", 
+   ",", "328", ",", "322", ",", "327", ",", "334", ",", "288", ",", "282", 
+   ",", "286", ",", "287", ",", "319", ",", "323", ",", "295", ",", "291", 
+   ",", "314", ",", "313", ",", "320", ",", "324", ",", "290", ",", "289", 
+   ",", "292", ",", "296", ",", "305", ",", "317", ",", "298", ",", "302", 
+   ",", "312", ",", "297", ",", "301", ",", "303", ",", "304", ",", "306", 
+   ",", "307", ",", "308", ",", "311", ",", "318", ",", "488", ",", "487", 
+   ",", "376", ",", "375", ",", "484", ",", "483", ",", "380", ",", "379", 
+   ",", "478", ",", "477", ",", "468", ",", "467", ",", "462", ",", "461", 
+   ",", "452", ",", "451", ",", "446", ",", "445", ",", "436", ",", "435", 
+   ",", "430", ",", "429", ",", "420", ",", "419", ",", "414", ",", "413", 
+   ",", "404", ",", "403", ",", "398", ",", "397", ",", "482", ",", "481", 
+   ",", "370", ",", "369", ",", "381", ",", "377", ",", "382", ",", "378", 
+   ",", "383", ",", "387", ",", "384", ",", "388", ",", "390", ",", "386", 
+   ",", "485", ",", "473", ",", "389", ",", "385", ",", "391", ",", "392", 
+   ",", "480", ",", "474", ",", "479", ",", "486", ",", "399", ",", "395", 
+   ",", "471", ",", "475", ",", "393", ",", "394", ",", "396", ",", "400", 
+   ",", "466", ",", "465", ",", "472", ",", "476", ",", "401", ",", "405", 
+   ",", "457", ",", "469", ",", "408", ",", "402", ",", "406", ",", "407", 
+   ",", "464", ",", "458", ",", "463", ",", "470", ",", "415", ",", "411", 
+   ",", "455", ",", "459", ",", "410", ",", "409", ",", "412", ",", "416", 
+   ",", "450", ",", "449", ",", "456", ",", "460", ",", "417", ",", "421", 
+   ",", "441", ",", "453", ",", "424", ",", "418", ",", "422", ",", "423", 
+   ",", "448", ",", "442", ",", "447", ",", "454", ",", "431", ",", "427", 
+   ",", "440", ",", "444", ",", "426", ",", "425", ",", "428", ",", "432", 
+   ",", "433", ",", "434", ",", "437", ",", "438", ",", "439", ",", "443", 
+   ",", "368", ",", "372", ",", "367", ",", "362", ",", "373", ",", "361", 
+   ",", "374", ",", "371", ",", "244", ",", "242", ",", "245", ",", "248", 
+   ",", "243", ",", "247", ",", "246", ",", "241"}], "}"}]], "Output",
+ CellChangeTimes->{{3.945137116750639*^9, 3.94513715255962*^9}, {
+  3.94513719768684*^9, 3.945137296822338*^9}},
+ CellLabel->
+  "Out[232]=",ExpressionUUID->"4e203fd8-3297-034f-8b34-ca8968b0e2dc"]
+}, Open  ]]
+},
+WindowSize->{1920, 1011.75},
+WindowMargins->{{-6, Automatic}, {Automatic, -6}},
+FrontEndVersion->"14.1 for Microsoft Windows (64-bit) (July 16, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"da5a7070-54df-c546-a50c-a939babb85f8"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4"->{
+  Cell[90879, 2108, 9183, 233, 115, "Print",ExpressionUUID->"d4a6bedd-a29d-e646-a729-3a66c951c16f",
+   CellTags->"Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4", 107548, 2468}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[1482, 35, 278, 4, 28, "Input",ExpressionUUID->"c35757f2-6291-f54b-bb74-f53a098788b3"],
+Cell[1763, 41, 10033, 252, 143, "Output",ExpressionUUID->"b27dea23-85a4-0545-b1ec-300c6b01f218"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11833, 298, 212, 3, 28, "Input",ExpressionUUID->"90e9e2ab-27a3-434f-b75b-bec024ebd097"],
+Cell[12048, 303, 10035, 252, 143, "Output",ExpressionUUID->"fec54818-45ba-124e-980a-c214e646614d"]
+}, Open  ]],
+Cell[22098, 558, 227, 3, 42, "Input",ExpressionUUID->"820ab5df-b185-db48-bd25-4f70181f7f96"],
+Cell[CellGroupData[{
+Cell[22350, 565, 1504, 41, 148, "Input",ExpressionUUID->"45c71360-9c11-564f-a3e1-96298e52bf35"],
+Cell[23857, 608, 1244, 31, 126, "Output",ExpressionUUID->"39d808de-03c9-a64a-b6ce-117c05978276"],
+Cell[25104, 641, 742, 17, 32, "Output",ExpressionUUID->"55685386-9c1f-b94c-b5e2-6b1423613505"],
+Cell[25849, 660, 632, 13, 32, "Output",ExpressionUUID->"a1005fd2-0637-1041-aedc-6a3cf9f3cacd"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26518, 678, 360, 9, 42, "Input",ExpressionUUID->"fa211ad2-f26e-7a45-b917-f2f2bc44e60e"],
+Cell[26881, 689, 2302, 52, 392, "Output",ExpressionUUID->"36c5dfdb-52e4-fd4d-8975-85951b9c71c3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29220, 746, 764, 21, 42, "Input",ExpressionUUID->"2fe5169a-8c9e-de49-a535-00209ca1a410"],
+Cell[29987, 769, 4488, 83, 361, "Output",ExpressionUUID->"59bfce38-bf25-8545-b4af-774578d09087"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34512, 857, 248, 5, 42, "Input",ExpressionUUID->"05371dd1-3623-5044-a8ce-6faf8d2e63e6"],
+Cell[34763, 864, 4185, 78, 361, "Output",ExpressionUUID->"1f148703-b2e9-7e4b-a8c5-1cd941118e66"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38985, 947, 246, 5, 42, "Input",ExpressionUUID->"5f7db66b-4bb5-7b49-bc6c-7767b2f523c8"],
+Cell[39234, 954, 4791, 88, 361, "Output",ExpressionUUID->"246cd3a2-940c-4a44-9161-2737776956f2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[44062, 1047, 712, 20, 42, "Input",ExpressionUUID->"57306473-787c-4c43-b04a-ee2db7722751"],
+Cell[44777, 1069, 5146, 93, 361, "Output",ExpressionUUID->"33d5373d-ff60-d648-ac7a-8b01dc9c6d2e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[49960, 1167, 207, 4, 28, "Input",ExpressionUUID->"ace4e34d-95c6-7f4e-89f4-7b1553bfef62"],
+Cell[50170, 1173, 40706, 933, 421, "Output",ExpressionUUID->"1c5e5f50-4fb1-bf49-91b6-f27b52279f46"],
+Cell[90879, 2108, 9183, 233, 115, "Print",ExpressionUUID->"d4a6bedd-a29d-e646-a729-3a66c951c16f",
+ CellTags->"Info-e3a8af1d-2037-4d64-a057-4c249c6be4a4"]
+}, Open  ]],
+Cell[100077, 2344, 152, 3, 28, "Input",ExpressionUUID->"54533f89-de12-814e-aef0-4e28c1bf8171"],
+Cell[CellGroupData[{
+Cell[100254, 2351, 573, 15, 47, "Input",ExpressionUUID->"6eb9b2ec-a97a-394b-bb3f-258a583a45dd"],
+Cell[100830, 2368, 6316, 86, 203, "Output",ExpressionUUID->"4e203fd8-3297-034f-8b34-ca8968b0e2dc"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
