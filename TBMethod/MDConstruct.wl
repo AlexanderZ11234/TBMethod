@@ -53,6 +53,8 @@ CrystalStructure::usage = "Generates the crystal structure by the composition of
 
 HEffectiveMatrix::usage = "Lower-energy effective Hamiltonian matrix via Taylor expasion, in terms of linear combination of Pauli and/or GellMann matrices.";
 
+LatticePointsCentralize::usage = "Align the centroid of a primitive cell with lattice points to the origin.";
+
 
 Begin["`Private`"]
 (* Implementation of the package *)
@@ -452,6 +454,13 @@ Module[{hvk, s, expansion},
 	hvk = ComplexExpand[Normal[hbloch[s vk - vk0]]];
 	expansion = Normal[Series[hvk, {s, 0, 1}]] /. s -> 1;
 	PauliGellMannDecomposition[expansion, dims] // FullSimplify
+];
+
+
+LatticePointsCentralize[data_] :=
+If[FreeQ[Rule][data],
+	TranslationTransform[-Mean[#]][#] & [data],
+	MapAt[TranslationTransform[-Mean[Values[#]]], {All, 2}][#] & [data]
 ];
 
 
