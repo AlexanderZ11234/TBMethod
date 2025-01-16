@@ -43,7 +43,7 @@ and four lists of functions should be indexed out.
 
 ### Uninstallation
 
-- **Run** `PacletUninstall["TBMethod"]` for uninstallation or reinstallation
+- **Run** `PacletUninstall["TBMethod"]` for uninstallation or reinstallation.
 
 ## Functionalities
 
