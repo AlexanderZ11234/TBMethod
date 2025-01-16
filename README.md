@@ -6,7 +6,7 @@
 
 #### Offline
 
-1.  **Download** the latest `"TBMethod-<\*version #\*>.paclet"` file to local machine;
+1.  **Download** the latest `"TBMethod-<\*version #\*>.paclet"` file to one's local machine;
 
 2.  **Run** `PacletInstall["<*path-to-download*>/TBMethod-<*version #*>.paclet"]`.
 
@@ -43,7 +43,7 @@ and four lists of functions should be indexed out.
 
 ### Uninstallation
 
-- **Run** `PacletUninstall["TBMethod"]`
+- **Run** `PacletUninstall["TBMethod"]` for uninstallation or reinstallation
 
 ## Functionalities
 
