@@ -47,7 +47,7 @@ and four lists of functions should be indexed out.
 
 ## Functionalities
 
-- Highlights: fully employment of the [NNS (nearest neighbor search)](https://en.wikipedia.org/wiki/Nearest_neighbor_search) algorithm, so that the total computation complexity tends to be fine as:
+- Highlights: sufficient employment of the [NNS (nearest neighbor search)](https://en.wikipedia.org/wiki/Nearest_neighbor_search) algorithm, so that the total computation complexity tends to be fine as:
     - Model construction linear in system's size $ \text{O}(n) $:
         - Generation of Hamiltonian matrices,
         - Adaptive partition of central scattering region
