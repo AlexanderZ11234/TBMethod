@@ -66,7 +66,7 @@ and four lists of functions should be indexed out.
 1. PRL 61, 2015 (1988).
 1. PRL 95, 146802 (2005).
 1. PRL 95, 226801 (2025).
-1. PRB(R) 82, 161414 (2010).
+1. PRB 82, 161414(R) (2010).
 1. PRL 124, 136403 (2020).
 1. PRL 124, 166804 (2020).
 
