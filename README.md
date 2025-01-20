@@ -63,16 +63,16 @@ and four lists of functions should be indexed out.
 
 - Topological Models:
     1. PRL 61, 2015 (2988).
-    2. PRL 95, 146802 (2005).
-    3. PRL 95, 226801 (2025).
-    4. PRB(R) 82, 161414 (2010).
-    5. PRL 124, 136403 (2020).
-    6. PRL 124, 166804 (2020).
+    1. PRL 95, 146802 (2005).
+    1. PRL 95, 226801 (2025).
+    1. PRB(R) 82, 161414 (2010).
+    1. PRL 124, 136403 (2020).
+    1. PRL 124, 166804 (2020).
 
 - Green's function:
     1. Datta, _Electronic Transport in Mesoscopic Systems_.
-    2. Datta, _Quantum Transport: Atom to Transistor_.
-    3. PRL 97, 066603 (2006).
-    4. Nanotechnology 18, 435402 (2007).
-    5. PRB 91, 125408 (2015).
-    6. PRB 97, 165405 (2018).
+    1. Datta, _Quantum Transport: Atom to Transistor_.
+    1. PRL 97, 066603 (2006).
+    1. Nanotechnology 18, 435402 (2007).
+    1. PRB 91, 125408 (2015).
+    1. PRB 97, 165405 (2018).
