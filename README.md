@@ -61,7 +61,7 @@ and four lists of functions should be indexed out.
 
 ## Incomplete References
 
-# Topological Models:
+### Topological Models:
 
 1. PRL 61, 2015 (1988).
 1. PRL 95, 146802 (2005).
@@ -70,7 +70,7 @@ and four lists of functions should be indexed out.
 1. PRL 124, 136403 (2020).
 1. PRL 124, 166804 (2020).
 
-# Green's function:
+### Green's function:
 1. Datta, _Electronic Transport in Mesoscopic Systems_.
 1. Datta, _Quantum Transport: Atom to Transistor_.
 1. PRL 97, 066603 (2006).
