@@ -412,7 +412,7 @@ Module[{HLeadIntraInterReal, HCSRIntraLeadInterReal, fillfunc, keys = Keys[ptsce
 ]*)
 
 PhotonBlocks[{A0_, Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer][ptf_, pti_] :=
-Module[{vd = ptf - pti, zero = 1.*^-5, d, ele, dim = (2 mnup + 1){1, 1}, photondress, sparseconst, sparsediag},
+Module[{vd = ptf - pti, zero = 1.*^-5, d, ele, dim = (2 mnup + 1){1, 1}, photondress, sparsezero, sparseid, sparsediag},
 	(*A0 -> q A0/\[HBar], \[Omega] -> \[HBar] \[Omega]*)
 	d = Norm[vd];
 	ele[m_, n_] := 1/(2\[Pi]) NIntegrate[Exp[I (A0 vd . Avecn[\[CurlyPhi]] + (m - n) \[CurlyPhi])], {\[CurlyPhi], -\[Pi], \[Pi]}, Method -> "LocalAdaptive"] // Chop;
@@ -421,11 +421,13 @@ Module[{vd = ptf - pti, zero = 1.*^-5, d, ele, dim = (2 mnup + 1){1, 1}, photond
 	Exp[-\[ImaginaryI](m-n) \[CurlyPhi]]BesselJ[m-n,A0 d]//N
 	];*)
 	photondress := Array[ele, dim, -mnup] // Chop;
-	sparseconst[i_] := ConstantArray[i, dim, SparseArray];
+	(*sparseconst[i_] := ConstantArray[i, dim, SparseArray];(*\:4f4e\:7ea7\:9519\:8bef\:ff01\:ff01\:ff01*)*)
+	sparsezero = ConstantArray[0, dim, SparseArray];
+	sparseid = IdentityMatrix[dim, SparseArray];
 	sparsediag := SparseArray[Band[{1, 1}]-> -\[Omega] Range[-mnup, mnup]];
 	If[d > zero,
-		{photondress, sparseconst[0]},
-		{sparseconst[1], sparsediag}
+		{photondress, sparsezero},
+		{sparseid, sparsediag}
 	]
 ];
 
