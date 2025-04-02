@@ -447,12 +447,12 @@ arXiv: 2412.04352 (2024).
 Constructive discussions from Zhen Qin, Ziming Wang, Fangyang Zhan, and Zhen Ning
 *)
 comm[a_, b_] := a . b - b . a;
-flqReprAlt[flqinnerdim:{_, _}][mat_] := SparseArray[Transpose[Partition[mat, flqinnerdim], {3, 4, 1, 2}]]
+flqReprAlt[flqinnerdim_Integer][mat_] := SparseArray[Transpose[Partition[mat, flqinnerdim {1, 1}], {3, 4, 1, 2}]]
 
 HFloquetEffectiveBlochMatrixFromExtended[\[Omega]_, mnup_Integer][hmatrixfromhopping_] :=
 Module[{dim = 2mnup + 1, Hs, H0},
 	(*Hs = Transpose[Partition[hmatrixfromhopping, dim{1, 1}], {3, 4, 1, 2}] // SparseArray;*)
-	Hs = flqReprAlt[dim{1, 1}][hmatrixfromhopping];
+	Hs = flqReprAlt[dim][hmatrixfromhopping];
 	H0 = Hs[[mnup + 1, mnup + 1]];
 	H0 + 1/\[Omega] Sum[comm[Hs[[1, i]], Hs[[i, 1]]]/(i - 1), {i, 2, dim}]
 ];
@@ -461,7 +461,7 @@ HFloquetEffectiveHoppingMatricesFromExtended[\[Omega]_, mnup_Integer][h0isvas_As
 Module[{dim = 2mnup + 1, hsvas, hefffunc, H0, h0s0i, h0isvasrepralt, h0isvasalleffective, zero = 1.*^-5},
 	hefffunc[{va1_ -> h1_, va2_ -> h2_}] := (va1 + va2) -> 1/\[Omega] Sum[comm[h1[[1, i]], h2[[i, 1]]]/(i - 1), {i, 2, dim}];
 	(*h0isvasrepralt = SparseArray[Transpose[Partition[#, dim{1, 1}], {3, 4, 1, 2}]] & /@ h0isvas;*)
-	h0isvasrepralt = flqReprAlt[dim{1, 1}] /@ h0isvas;
+	h0isvasrepralt = flqReprAlt[dim] /@ h0isvas;
 	h0s0i = Normal[h0isvasrepralt[[;;, mnup + 1, mnup + 1]]];
 	hsvas = Normal[h0isvasrepralt];
 	h0isvasalleffective = Join[h0s0i, hefffunc /@ Tuples[hsvas, 2]];
@@ -481,10 +481,10 @@ Module[{latticepoints},
 	]
 ];
 
-HEffectiveMatrix[hbloch_, vk_, vk0_, dims: {__}] :=
+HEffectiveMatrix[hbloch_, vk_, vk0_, dims: {__}, orderup_Integer:1] :=
 Module[{hvk, s, expansion},
 	hvk = ComplexExpand[Normal[hbloch[s vk - vk0]]];
-	expansion = Normal[Series[hvk, {s, 0, 1}]] /. s -> 1;
+	expansion = Normal[Series[hvk, {s, 0, orderup}]] /. s -> 1;
 	PauliGellMannDecomposition[expansion, dims] // FullSimplify
 ];
 
