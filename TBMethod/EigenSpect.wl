@@ -185,11 +185,18 @@ Module[{intcoeffs, fbz, reciprocalvectors, len = Length[vbs], \[CapitalGamma], c
 	If[len == 2, Graphics, Graphics3D][{Thick, reciprocalvectors}]}, opts]
 ];
 
-LabelPathSamplings[pathsamplings_, labels:{__String}] :=
+(*LabelPathSamplings[pathsamplings_, labels:{__String}] :=
 Module[{func, lbllen = Length[labels], numberlen, ptsall, numbers, numbersfinal},
 	func = MapAt[lis |-> Callout[lis, #2[[1]], Automatic, Automatic, Appearance -> "CurvedLeader"], #2[[2]]][#] &;
 	{ptsall, numbers} = pathsamplings; numberlen = Length[numbers];
 	numbersfinal = If[lbllen == numberlen-1, Most @ numbers, MapAt[#-1 &, -1] @ numbers];
+	Fold[func, ptsall, {labels, numbersfinal}\[Transpose]]
+];*)
+LabelPathSamplings[pathsamplings_, labels:{(_String|_OverBar)..}, calloutseqs___, opts:OptionsPattern[Callout]] :=
+Module[{func, lbllen = Length[labels], numberlen, ptsall, numbers, numbersfinal},
+	func = MapAt[lis |-> Callout[lis, #2[[1]], calloutseqs, opts, Appearance -> "CurvedLeader"], #2[[2]]][#] &;
+	{ptsall, numbers} = pathsamplings; numberlen = Length[numbers];
+	numbersfinal = If[lbllen == numberlen - 1, Most @ numbers, MapAt[# - 1 &, -1] @ numbers];
 	Fold[func, ptsall, {labels, numbersfinal}\[Transpose]]
 ];
 
