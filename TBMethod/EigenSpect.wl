@@ -237,12 +237,25 @@ Module[{regiondiscrized, meshcoordinates, plaquettevertexindex},
 	Extract[meshcoordinates, {#}\[Transpose]] & /@ plaquettevertexindex
 ];*)
 
-PlaquetteRegionPartitionComplex[region_, opts:OptionsPattern[TriangulateMesh]] :=
+(*PlaquetteRegionPartitionComplex[region_, opts:OptionsPattern[TriangulateMesh]] :=
 Module[{regiondiscrized, meshcoordinates, plaquettevertexindex},
 	regiondiscrized = TriangulateMesh[region, opts, 
 		MaxCellMeasure -> {"Area" -> (Area[region].01)}, Method -> "ConstrainedQuality"];
 	meshcoordinates = MeshCoordinates[regiondiscrized];
 	plaquettevertexindex = List @@@ MeshCells[regiondiscrized, 2];
+	Echo[
+		MeshRegion[regiondiscrized, PlotTheme -> "Lines", 
+		PlotLabel -> StringTemplate["Vertex #: ``, Plaquette #: ``."][Length[meshcoordinates], Length[plaquettevertexindex]]]
+	];
+	{meshcoordinates, plaquettevertexindex}
+];*)
+
+PlaquetteRegionPartitionComplex[region_, opts:OptionsPattern[TriangulateMesh]] :=
+Module[{regiondiscrized, meshcoordinates, plaquettevertexindex, regdim = RegionDimension[region]},
+	regiondiscrized = TriangulateMesh[region, opts, 
+		MaxCellMeasure -> {regdim -> (RegionMeasure[region].1^regdim)}, Method -> "ConstrainedQuality"];
+	meshcoordinates = MeshCoordinates[regiondiscrized];
+	plaquettevertexindex = List @@@ MeshCells[regiondiscrized, regdim];
 	Echo[
 		MeshRegion[regiondiscrized, PlotTheme -> "Lines", 
 		PlotLabel -> StringTemplate["Vertex #: ``, Plaquette #: ``."][Length[meshcoordinates], Length[plaquettevertexindex]]]
