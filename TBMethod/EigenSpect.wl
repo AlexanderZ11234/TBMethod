@@ -255,7 +255,8 @@ Module[{regiondiscrized, meshcoordinates, plaquettevertexindex, regdim = RegionD
 	regiondiscrized = TriangulateMesh[region, opts, 
 		MaxCellMeasure -> {regdim -> (RegionMeasure[region].1^regdim)}, Method -> "ConstrainedQuality"];
 	meshcoordinates = MeshCoordinates[regiondiscrized];
-	plaquettevertexindex = List @@@ MeshCells[regiondiscrized, regdim];
+	(*plaquettevertexindex = List @@@ MeshCells[regiondiscrized, regdim];*)
+	plaquettevertexindex = If[regdim == 1, {{DeleteDuplicates @ Flatten[#]}}, #] & [List @@@ MeshCells[regiondiscrized, regdim]];
 	Echo[
 		MeshRegion[regiondiscrized, PlotTheme -> "Lines", 
 		PlotLabel -> StringTemplate["Vertex #: ``, Plaquette #: ``."][Length[meshcoordinates], Length[plaquettevertexindex]]]
