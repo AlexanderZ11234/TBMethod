@@ -328,28 +328,28 @@ Module[{occupiedstates},
 ];
 
 
-LocalBandGap[h_, ksamples:{{__Real}..}, n_Integer] :=
+LocalBandGap[h_, ksamples:{({__Real}|_Real)..}, n_Integer, opts:OptionsPattern[Eigenvalues]] :=
 Module[{cveval},
-	cveval[k_] := Sort[Eigenvalues[h[k], Method -> "Direct"]][[{n + 1, n}]];
+	cveval[k_] := Sort[Eigenvalues[h[k], opts, Method -> "Direct"]][[{n + 1, n}]];
 	Min @ Chop @ Table[Subtract @@ cveval[k], {k, ksamples}]
 ];
 
-GlobalBandGap[h_, ksamples:{{__Real}..}, n_Integer] :=
+GlobalBandGap[h_, ksamples:{({__Real}|_Real)..}, n_Integer, opts:OptionsPattern[Eigenvalues]] :=
 Module[{cveval, evals},
-	cveval[k_] := Sort[Eigenvalues[h[k], Method -> "Direct"]][[{n + 1, n}]];
+	cveval[k_] := Sort[Eigenvalues[h[k], opts, Method -> "Direct"]][[{n + 1, n}]];
 	evals = Chop @ Table[cveval[k], {k, ksamples}]\[Transpose];
 	Min[evals[[1]]] - Max[evals[[2]]]
 ];
 
-ParallelLocalBandGap[h_, ksamples:{{__Real}..}, n_Integer] :=
+ParallelLocalBandGap[h_, ksamples:{({__Real}|_Real)..}, n_Integer, opts:OptionsPattern[Eigenvalues]] :=
 Module[{cveval},
-	cveval[k_] := Sort[Eigenvalues[h[k], Method -> "Direct"]][[{n + 1, n}]];
+	cveval[k_] := Sort[Eigenvalues[h[k], opts, Method -> "Direct"]][[{n + 1, n}]];
 	Min @ Chop @ ParallelTable[Subtract @@ cveval[k], {k, ksamples}]
 ];
 
-ParallelGlobalBandGap[h_, ksamples:{{__Real}..}, n_Integer] :=
+ParallelGlobalBandGap[h_, ksamples:{({__Real}|_Real)..}, n_Integer, opts:OptionsPattern[Eigenvalues]] :=
 Module[{cveval, evals},
-	cveval[k_] := Sort[Eigenvalues[h[k], Method -> "Direct"]][[{n + 1, n}]];
+	cveval[k_] := Sort[Eigenvalues[h[k], opts, Method -> "Direct"]][[{n + 1, n}]];
 	evals = Chop @ ParallelTable[cveval[k], {k, ksamples}]\[Transpose];
 	Min[evals[[1]]] - Max[evals[[2]]]
 ];
