@@ -59,15 +59,23 @@ ReciprocalVectors[vas_ /; Dimensions[vas] == {3, 3}] := 2\[Pi] Inverse[vas\[Tran
 
 (*BandData[hbloch_, ks_, map_: Map, s:OptionsPattern[Eigenvalues]] :=
 (Sort @ Eigenvalues[hbloch[#], s, Method -> "Direct"] & ~map~ ks)\[Transpose];*)
-BandData[hbloch_, ks_, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[hbloch[#], s, Method -> "Direct"] & ~Map~ ks)\[Transpose];
-BandData[hbloch_, ks_, n_, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[hbloch[#], n, s, Method -> "Direct"] & ~Map~ ks)\[Transpose];
-ParallelBandData[hbloch_, ks_, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[hbloch[#], s, Method -> "Direct"] & ~ParallelMap~ ks)\[Transpose];
-ParallelBandData[hbloch_, ks_, n_, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[hbloch[#], n, s, Method -> "Direct"] & ~ParallelMap~ ks)\[Transpose];
+funcpattern = (_Function | _Symbol);
 
-EigenspectralData[hbloch_, ks_, obfunc:(_Function | _Symbol):Identity, s:OptionsPattern[Eigensystem]] := MapAt[obfunc, {All, 2}][Sort[Eigensystem[hbloch[#], s, Method -> "Direct"]\[Transpose]]] & ~Map~ ks
-EigenspectralData[hbloch_, ks_, obfunc:(_Function | _Symbol):Identity, n_, s:OptionsPattern[Eigensystem]] := MapAt[obfunc, {All, 2}][Sort[Eigensystem[hbloch[#], n, s, Method -> "Direct"]\[Transpose]]] & ~Map~ ks
-ParallelEigenspectralData[hbloch_, ks_, obfunc:(_Function | _Symbol):Identity, s:OptionsPattern[Eigensystem]] := MapAt[obfunc, {All, 2}][Sort[Eigensystem[hbloch[#], s, Method -> "Direct"]\[Transpose]]] & ~ParallelMap~ ks
-ParallelEigenspectralData[hbloch_, ks_, obfunc:(_Function | _Symbol):Identity, n_, s:OptionsPattern[Eigensystem]] := MapAt[obfunc, {All, 2}][Sort[Eigensystem[hbloch[#], n, s, Method -> "Direct"]\[Transpose]]] & ~ParallelMap~ ks
+BandData[hbloch:funcpattern, ks_, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[hbloch[#], s, Method -> "Direct"] & ~Map~ ks)\[Transpose];
+BandData[hbloch:funcpattern, ks_, n_, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[hbloch[#], n, s, Method -> "Direct"] & ~Map~ ks)\[Transpose];
+ParallelBandData[hbloch:funcpattern, ks_, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[hbloch[#], s, Method -> "Direct"] & ~ParallelMap~ ks)\[Transpose];
+ParallelBandData[hbloch:funcpattern, ks_, n_, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[hbloch[#], n, s, Method -> "Direct"] & ~ParallelMap~ ks)\[Transpose];
+(*Version for nonidentity overlapping matrix*)
+BandData[{hbloch:funcpattern, sbloch:funcpattern}, ks_, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[Through[{hbloch, sbloch}[#]], s, Method -> "Direct"] & ~Map~ ks)\[Transpose];
+BandData[{hbloch:funcpattern, sbloch:funcpattern}, ks_, n_, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[Through[{hbloch, sbloch}[#]], n, s, Method -> "Direct"] & ~Map~ ks)\[Transpose];
+ParallelBandData[{hbloch:funcpattern, sbloch:funcpattern}, ks_, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[Through[{hbloch, sbloch}[#]], s, Method -> "Direct"] & ~ParallelMap~ ks)\[Transpose];
+ParallelBandData[{hbloch:funcpattern, sbloch:funcpattern}, ks_, n_, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[Through[{hbloch, sbloch}[#]], n, s, Method -> "Direct"] & ~ParallelMap~ ks)\[Transpose];
+
+
+EigenspectralData[hbloch_, ks_, obfunc:funcpattern:Identity, s:OptionsPattern[Eigensystem]] := MapAt[obfunc, {All, 2}][Sort[Eigensystem[hbloch[#], s, Method -> "Direct"]\[Transpose]]] & ~Map~ ks
+EigenspectralData[hbloch_, ks_, obfunc:funcpattern:Identity, n_, s:OptionsPattern[Eigensystem]] := MapAt[obfunc, {All, 2}][Sort[Eigensystem[hbloch[#], n, s, Method -> "Direct"]\[Transpose]]] & ~Map~ ks
+ParallelEigenspectralData[hbloch_, ks_, obfunc:funcpattern:Identity, s:OptionsPattern[Eigensystem]] := MapAt[obfunc, {All, 2}][Sort[Eigensystem[hbloch[#], s, Method -> "Direct"]\[Transpose]]] & ~ParallelMap~ ks
+ParallelEigenspectralData[hbloch_, ks_, obfunc:funcpattern:Identity, n_, s:OptionsPattern[Eigensystem]] := MapAt[obfunc, {All, 2}][Sort[Eigensystem[hbloch[#], n, s, Method -> "Direct"]\[Transpose]]] & ~ParallelMap~ ks
 
 (*Options[ParallelBandDataWithWeight] = Join[Options[Eigensystem], {"StateFunction" -> (Total[Abs[#]^4] &)}];
 ParallelBandDataWithWeight[h_, kgrid_, n_Integer, ps:OptionsPattern[]] :=
