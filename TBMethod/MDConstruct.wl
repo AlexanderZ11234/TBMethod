@@ -58,6 +58,8 @@ LatticePointsCentralize::usage = "Align the centroid of a primitive cell with la
 HFloquetEffectiveBlochMatrixFromExtended::usage = "Construct the effective Floquet-Bloch Hamiltonian matrix from the extended Floquet-Bloch Hamiltonian matrix under the high-frequencey approximation.";
 HFloquetEffectiveHoppingMatricesFromExtended::usage = "Construct the effective real-space hopping matrices from the extended real-space hopping matrices under the high-frequencey approximation.";
 
+AdatomLabel::usage = "Add labels to an atom depending on whether it is influenced by an adatom.";
+
 
 Begin["`Private`"]
 (* Implementation of the package *)
@@ -493,6 +495,36 @@ LatticePointsCentralize[data_] :=
 If[FreeQ[Rule][data],
 	TranslationTransform[-Mean[#]][#] & [data],
 	MapAt[TranslationTransform[-Mean[Values[#]]], {All, 2}][#] & [data]
+];
+
+
+AdatomLabel[
+	vasbasis_,
+	dup_Real,
+	binlbl:{_, _}:{1, 0},
+	bdrcond:("PBC" | "OBC"):"PBC"
+	][
+	ptscell0:{({__} | Rule[_, {__}]..)..},
+	adatomposres:{{__}..},
+	adatominds:(_Integer | {__Integer})] :=
+Module[{nfuncref, nfuncpts, distfuncref,
+	adatomposes, ptswithadatomsinds, zero = 1.*^-4,
+	ptscell0coords = If[FreeQ[#, Rule], #, Values[#]] & [ptscell0],
+	len = Length[ptscell0], adatomlbls, func},
+	distfuncref = Which[
+		bdrcond == "PBC", Norm@Mod[LinearSolve[vasbasis\[Transpose]][# - #2], 1] &,
+		bdrcond == "OBC", EuclideanDistance
+		];
+	nfuncref = Nearest[adatomposres -> "Element", DistanceFunction -> distfuncref];
+	adatomposes = nfuncref[adatomposres[[adatominds]], {All, zero}];
+	nfuncpts = Nearest[ptscell0coords -> "Index"];
+	ptswithadatomsinds = Union[Flatten[nfuncpts[#, {All, dup}] & /@ adatomposes]];
+	adatomlbls = SparseArray[Thread[ptswithadatomsinds -> #], len, #2] & @@ binlbl;
+	func = If[FreeQ[ptscell0, Rule],
+		Rule,
+		{newlbl, oript} |-> MapAt[Flatten[{#, newlbl}] &, 1][oript]
+		];
+	MapThread[func][{adatomlbls, ptscell0}]
 ];
 
 
