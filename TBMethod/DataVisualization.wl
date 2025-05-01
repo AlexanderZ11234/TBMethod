@@ -178,13 +178,20 @@ Module[{bdrange = (List @@ BoundingRegion[ptscsr])\[Transpose], len = Length[pts
 	Export[destpath, figframes, "DisplayDurations" -> OptionValue["DisplayDurations"]]
 ];
 
+unitmesh[lattice:{{__}..}, vasbasis_] :=
+Module[{mdiag = Total[vasbasis], cells, dim = Length[vasbasis]},
+	cells = Parallelepiped[# - mdiag/2, vasbasis] & /@ lattice;
+	If[dim==2, Graphics, Graphics3D][{FaceForm[Opacity[.05]], EdgeForm[Blue], cells}]
+];
+
 Options[CrystalStructurePlot] = Join @@ (Options /@ {ListPlot, ListPointPlot3D, Graphics, Graphics3D, Show});
 CrystalStructurePlot[
 	vasbasis_ /; Dimensions[vasbasis] == {2, 2} || Dimensions[vasbasis] == {3, 3},
 	crystalstructure:KeyValuePattern[_List -> {__List}] | KeyValuePattern[_List -> {Rule[_, _List]..}],
 	n:_Integer:2,
+	celltype:("Voronoi"|"Unit"):"Voronoi",
 	opts:OptionsPattern[]]:=
-Module[{ptsdelablized, pts, cells, latticevectors, len = Length[vasbasis], opts1, opts2, opts3, myListPlot, myGraphics},
+Module[{ptsdelablized, pts, cells, latticevectors, len = Length[vasbasis], opts1, opts2, opts3, myListPlot, myGraphics, lattice},
 	myListPlot = If[len == 2, ListPlot, ListPointPlot3D];
 	myGraphics = If[len == 2, Graphics, Graphics3D];
 	ptsdelablized = If[MatchQ[crystalstructure, KeyValuePattern[_List -> {Rule[_, _List]..}]], Values /@ crystalstructure, crystalstructure];
@@ -192,7 +199,11 @@ Module[{ptsdelablized, pts, cells, latticevectors, len = Length[vasbasis], opts1
 	opts2 = (*TBMethod`DataVisualization`Private`*)optionsselect[opts, myGraphics];
 	opts3 = (*TBMethod`DataVisualization`Private`*)optionsselect[opts, Show];
 	pts = myListPlot[KeyMap[FullSimplify @* LinearSolve[vasbasis\[Transpose]]][ptsdelablized], opts1];
-	cells = VoronoiMesh[Tuples[Range@@(n{-1, 1}), len] . vasbasis, PlotTheme -> "Lines", MeshCellHighlight -> {{2, All} -> Opacity[.1], {1, All} -> Blue}];
+	lattice = Tuples[Range@@(n{-1, 1}), len] . vasbasis;
+	cells = Which[
+		celltype == "Voronoi", VoronoiMesh[lattice, PlotTheme -> "Lines", MeshCellHighlight -> {{2, All} -> Opacity[.1], {1, All} -> Blue}],
+		celltype == "Unit", unitmesh[lattice, vasbasis]
+	];
 	latticevectors = myGraphics[{Thick, MapThread[{#, Arrow[{ConstantArray[0, len], #2}]} &, {Take[{Red, Green, Blue}, len], vasbasis}]}, opts2];
 	Show[{pts, cells, latticevectors}, opts3, PlotRangeClipping -> True]
 ];
