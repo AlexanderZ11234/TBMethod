@@ -44,6 +44,8 @@ GlobalBandGap::usage = "Finds the global band gap among the lattice momentum sam
 ParallelLocalBandGap::usage = "Finds the local band gap among the lattice momentum samplings in parallel.";
 ParallelGlobalBandGap::usage = "Finds the global band gap among the lattice momentum samplings in parallel."
 
+BottIndex::usage = "Calculates the Bott index(es)."
+
 
 Begin["`Private`"]
 (* Implementation of the package *)
@@ -360,6 +362,26 @@ Module[{cveval, evals},
 	cveval[k_] := Sort[Eigenvalues[h[k], opts, Method -> "Direct"]][[{n + 1, n}]];
 	evals = Chop @ ParallelTable[cveval[k], {k, ksamples}]\[Transpose];
 	Min[evals[[1]]] - Max[evals[[2]]]
+];
+
+
+BottIndex[unitvasbasis_, pts_, chiralop_, fwithinnerdof:((_Function| _Symbol) | {(_Function|_Symbol)..})][h00_] :=
+Module[{uC, H, len = Length[pts], h, q, m, ms, coords = LinearSolve[unitvasbasis\[Transpose], #] & /@ pts, bott},
+	uC = Sort[Eigensystem[chiralop, Method -> "Direct"]\[Transpose]][[;;, 2]]; (*eigensystem of the chiral operator*)
+	H = SparseArray[uC . h00 . (uC\[ConjugateTranspose])] // Chop;
+	h = Partition[H, {1, 1} (2len)][[1, 2]];
+	q = # . (#3\[ConjugateTranspose]) & @@ SingularValueDecomposition[h(*,MatrixRank[h],TargetStructure->"Structured"*)](*"compact" SVD of h*);
+	bott[m_, q_] := 1/(2\[Pi] I) Tr[MatrixLog[m . q . m\[ConjugateTranspose] . q\[ConjugateTranspose], Method -> "Schur"]];
+	(*bott[m_,q_]:=1/(2\[Pi] \[ImaginaryI])Total[Log[Eigenvalues[m.q.m\[ConjugateTranspose].q\[ConjugateTranspose],Method->"Direct"]]];*)
+	(*m=KroneckerProduct[DiagonalMatrix[Exp[2\[Pi] \[ImaginaryI] f/@coords]],PauliMatrix[0+3]];*)(*This is wrong!*)
+	If[
+		Head[fwithinnerdof] === List,
+		ms = Table[BlockDiagonalMatrix[ParallelTable[MatrixExp[2\[Pi] I f[coord]], {coord, coords}]], {f, fwithinnerdof}];
+		(*ms=BlockDiagonalMatrix/@ParallelTable[MatrixExp[2\[Pi] \[ImaginaryI] f[coord]],{f,fwithinnerdof},{coord,coords}];*)
+		bott[#, q] & /@ ms,
+		m = BlockDiagonalMatrix[Table[MatrixExp[2\[Pi] I fwithinnerdof[coord]], {coord, coords}]];
+		bott[m, q]
+	]
 ];
 
 
