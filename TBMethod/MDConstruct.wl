@@ -474,7 +474,7 @@ Module[{dim = 2mnup + 1, hsvas, hefffunc, H0, h0s0i, h0isvasrepralt, h0isvasalle
 CompiledSuccessfulQ[cfunc_] := Echo[StringTemplate["Function compilation successful: ``"][StringFreeQ["MainEvaluate"][CompiledFunctionTools`CompilePrint[cfunc]]]];
 
 
-CrystalStructure[vasbasis_, atombasis:coordspattern(*{__List}|{Rule[_,_List]..}*), vRs:{{__Integer|__Rational}..}] :=
+CrystalStructure[vasbasis_, atombasis:coordspattern(*{__List}|{Rule[_,_List]..}*), vRs:{{(_Integer|_Rational)..}..}] :=
 Module[{latticepoints},
 	latticepoints = vRs . vasbasis;
 	Which[
