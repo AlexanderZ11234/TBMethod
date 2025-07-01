@@ -224,13 +224,21 @@ Module[{matSq = #\[ConjugateTranspose] . # &, smat, Mtot},
 	Tr[matSq[smat]] + Mtot
 ];
 
-LocalDOSRealSpace[Gs_, sigmas_, layeredpts_Association, innerdof_:1] :=
+(*LocalDOSRealSpace[Gs_, sigmas_, layeredpts_Association, innerdof_:1] :=
 Module[{gamma, innerdofldos, ldos},
 	gamma = I (# - ConjugateTranspose[#]) & @ Total[sigmas];
 	(*gamma = Im @ Total[sigmas];*)
 	innerdofldos = (*-*)1/\[Pi] Diagonal[ # . gamma . ConjugateTranspose[#] ] & /@ Gs;
 	(*innerdofldos = -1/\[Pi] Diagonal[ Im[#] ] & /@ Gs;*) (*WRONG!*)
 	ldos = BlockMap[Total, #, innerdof] & /@ innerdofldos;
+	MapThread[Append, Join @@@ {Values[layeredpts], Reverse[ldos]}]
+];*)
+LocalDOSRealSpace[innerproj_, layeredpts_Association][Gs_, sigmas_] :=
+Module[{gamma, innerdofldos, ldos, \[Rho]s, innerdof = Dimensions[innerproj]},
+	gamma = I (# - #\[ConjugateTranspose]) & @ Total[sigmas];
+	(*gamma = Im @ Total[sigmas];*) (* WRONG!*)
+	innerdofldos = 1/(2\[Pi]) Diagonal[Partition[# . gamma . #\[ConjugateTranspose], innerdof]] & /@ Gs;
+	ldos = Map[Tr[innerproj . #] &, innerdofldos, {2}];
 	MapThread[Append, Join @@@ {Values[layeredpts], Reverse[ldos]}]
 ];
 
@@ -265,7 +273,8 @@ Module[{gamma, blockGns, Gsre = Reverse[Gs], jblock0, jblock0innersummed},
 	(*jblock0 = -Im[MapAt[ConjugateTranspose, {2, All}][blockHs] blockGns];*)
 	(*jblock0 = Im[MapAt[Transpose, {2, All}][blockHs] blockGns];*)
 	jblock0 = Im[Map[Transpose, blockHs, {2}] blockGns];(*!!!*)
-	jblock0innersummed = Table[BlockMap[Total[#, 2] &, #, {1, 1}innerdof] & /@ x, {x, jblock0}];(*How to sum the internal degree of freedom?*)
+	jblock0innersummed = Table[BlockMap[Total[#, 2] &, #, {1, 1}innerdof] & /@ x, {x, jblock0}];
+	(*How to sum the internal degree of freedom?*)
 	Append[jblock0innersummed, -Transpose /@ jblock0innersummed[[2]]]
 ];(*bond current in layered block form*)
 
