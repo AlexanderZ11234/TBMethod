@@ -60,6 +60,8 @@ HFloquetEffectiveHoppingMatricesFromExtended::usage = "Construct the effective r
 
 AdatomLabel::usage = "Add labels to an atom depending on whether it is influenced by an adatom.";
 
+HCSRBlocksAndersonDisordered::usage = "Generate CSR ensembles with Anderson disorders from the nondisordered CSR Hamiltonian blocks."
+
 
 Begin["`Private`"]
 (* Implementation of the package *)
@@ -525,6 +527,14 @@ Module[{nfuncref, nfuncpts, distfuncref,
 		{newlbl, oript} |-> MapAt[Flatten[{#, newlbl}] &, 1][oript]
 		];
 	MapThread[func][{adatomlbls, ptscell0}]
+];
+
+HCSRBlocksAndersonDisordered[W_, nensemble_Integer:1, innerdofmat_][hdods:{{__}, {__}}] :=
+Module[{hds, hods, hdsdisordered, hdsensemble, innerdof = Length[innerdofmat], disorderblock},
+	{hds, hods} = hdods;
+	disorderblock = DiagonalMatrix[RandomReal[{-1, 1} W/2, Length[#]/innerdof], TargetStructure -> "Sparse"] &;
+	hdsdisordered := # + KroneckerProduct[disorderblock[#], innerdofmat] & /@ hds;
+	Table[{hdsdisordered, hods}, nensemble]
 ];
 
 
