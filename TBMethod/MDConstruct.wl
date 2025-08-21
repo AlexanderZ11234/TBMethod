@@ -62,6 +62,8 @@ AdatomLabel::usage = "Add labels to an atom depending on whether it is influence
 
 HCSRBlocksAndersonDisordered::usage = "Generate CSR ensembles with Anderson disorders from the nondisordered CSR Hamiltonian blocks."
 
+SlaterKosterHoppingBlock::usage = "Construct the hopping matrix block via Slater-Koster integrals."
+
 
 Begin["`Private`"]
 (* Implementation of the package *)
@@ -536,6 +538,116 @@ Module[{hds, hods, hdsdisordered, hdsensemble, innerdof = Length[innerdofmat], d
 	hdsdisordered := # + KroneckerProduct[disorderblock[#], innerdofmat] & /@ hds;
 	Table[{hdsdisordered, hods}, nensemble]
 ];
+
+
+tSKBlock["ss"][vecV:{Vss\[Sigma]_}][ptf_, pti_] :=
+Module[{},
+	{{Vss\[Sigma]}}
+];(*1 by 1*)
+
+tSKBlock["sp"][vecV:{Vsp\[Sigma]_}][ptf_, pti_] :=
+Module[{vd = ptf - pti, d, l, m, n, coeffmat},
+	d = Norm[vd]; {l, m, n} = Normalize[vd];
+	coeffmat = {{{l}, {m}, {n}}};
+	coeffmat . vecV
+];(*1 by 3*)
+
+tSKBlock["sd"][vecV:{Vsd\[Sigma]_}][ptf_, pti_] :=
+Module[{vd = ptf - pti, d, l, m, n, coeffmat},
+	d = Norm[vd]; {l, m, n} = Normalize[vd];
+	coeffmat = {{{Sqrt[3]l m}, {Sqrt[3]m n}, {Sqrt[3]n l}, {Sqrt[3](l^2-m^2)/2}, {n^2-(l^2+m^2)/2}}};
+	coeffmat . vecV
+];(*1 by 5*)
+
+tSKBlock["pp"][vecV:{Vpp\[Sigma]_, Vpp\[Pi]_}][ptf_, pti_] :=
+Module[{vd = ptf - pti, d, l, m, n, coeffmat},
+	d = Norm[vd]; {l, m, n} = Normalize[vd];
+	coeffmat =
+	{{{l^2, 1-l^2}, l m {1, -1}, l n {1, -1}},
+	{m l {1, -1}, {m^2, 1-m^2}, m n {1, -1}},
+	{n l {1, -1}, n m {1, -1}, {n^2, 1-n^2}}};
+	coeffmat . vecV
+];(*3 by 3*)
+
+tSKBlock["pd"][vecV:{Vpd\[Sigma]_, Vpd\[Pi]_}][ptf_, pti_] :=
+Module[{vd = ptf - pti, d, l, m, n, coeffmat},
+	d = Norm[vd]; {l, m, n} = Normalize[vd];
+	coeffmat =
+	{{m{Sqrt[3] l^2, 1-2l^2}, l m n{Sqrt[3], -2}, n {Sqrt[3] l^2, 1-2l^2}, l{Sqrt[3](l^2-m^2)/2, 1-(l^2-m^2)}, l{(3n^2-1)/2, -Sqrt[3] n^2}},
+	{l{Sqrt[3] m^2, 1-2m^2}, n{Sqrt[3] m^2, 1-2m^2}, m n l{Sqrt[3], -2}, m{Sqrt[3](l^2-m^2)/2, -1-(l^2-m^2)}, m{(3n^2-1)/2, -Sqrt[3] n^2}},
+	{n l m{Sqrt[3], -2}, m{Sqrt[3] n^2, 1-2n^2}, l{Sqrt[3] n^2, 1-2n^2}, n{Sqrt[3](l^2-m^2)/2, -(l^2-m^2)}, n{(3n^2-1)/2, Sqrt[3](1-n^2)}}};
+	coeffmat . vecV
+];(*3 by 5*)
+
+tSKBlock["dd"][vecV:{Vdd\[Sigma]_, Vdd\[Pi]_, Vdd\[Delta]_}][ptf_, pti_] :=
+Module[{vd = ptf - pti, d, l, m, n, coeffmat(*,\[Eta],\[Xi]*)},
+	d = Norm[vd]; {l, m, n} = Normalize[vd];(*\[Eta]=l^2-m^2;\[Xi]=1-n^2;*)
+	(*coeffmat={{{3l^2m^2,l^2+m^2-4l^2m^2,n^2+l^2m^2},n l{3m^2,1-4m^2,m^2-1},m n{3l^2,1-4l^2,l^2-1},l m \[Eta]{3,-4,1}/2,Sqrt[3]l m{3n^2-1,-4n^2,1+n^2}/2},
+	{n l{3m^2,1-4m^2,m^2-1},{3m^2n^2,m^2+n^2-4m^2n^2,l^2+m^2n^2},l m{3n^2,1-4n^2,n^2-1},m n (\[Eta]{3,-4,1}/2+{0,-1,1}),Sqrt[3]m n({3n^2-1,-4n^2,-1+n^2}/2+{0,1,0})},
+	{m n{3l^2,1-4l^2,l^2-1},l m{3n^2,1-4n^2,n^2-1},{3n^2l^2,n^2+l^2-4n^2l^2,m^2+n^2l^2},n l (\[Eta]{3,-4,1}/2+{0,1,-1}),Sqrt[3]n l({3n^2-1,-4n^2,-1+n^2}/2+{0,1,0})},
+	{{},{},{},{3\[Eta]^2/4,\[Xi]-\[Eta],n^2+\[Eta]/4},Sqrt[3]\[Eta]/4{3\[Xi]-4,-4n^2,1+n^2}},
+	{{},{},n l{3\[Eta]/2,-2\[Eta]+1,\[Eta]/2-1},Sqrt[3]\[Eta]/4{3\[Xi]-4,-4n^2,1+n^2},{(3\[Xi]-4)^2/4,3n^2\[Xi],3\[Xi]^2/4}}};*)
+	coeffmat=
+	{{{3l^2 m^2, m^2+l^2 (1-4m^2), l^2 m^2+n^2}, {3l m^2 n, l(1-4m^2)n, l(-1+m^2)n}, {3l^2 m n, (1-4l^2)m n, (-1+l^2)m n}, {3/2 l m(l^2-m^2), 2l m(-l^2+m^2), 1/2 l m(l^2-m^2)}, {-(1/2) Sqrt[3]l m(l^2+m^2-2n^2), -2 Sqrt[3]l m n^2, 1/2 Sqrt[3]l m(1+n^2)}},
+	{{3l m^2 n, l(1-4m^2)n, l(-1+m^2)n}, {3m^2 n^2, n^2+m^2 (1-4n^2), l^2+m^2 n^2}, {3l m n^2, l m(1-4n^2), l m(-1+n^2)}, {3/2 m(l^2-m^2)n, m(-1-2l^2+2m^2)n, -(1/2)m(-2-l^2+m^2)n}, {-(1/2) Sqrt[3]m n(l^2+m^2-2n^2), Sqrt[3]m n(l^2+m^2-n^2), -(1/2) Sqrt[3]m(l^2+m^2)n}},
+	{{3l^2 m n, (1-4l^2)m n, (-1+l^2)m n}, {3l m n^2, l m(1-4 n^2), l m(-1+n^2)}, {3l^2 n^2, n^2+l^2 (1-4n^2), m^2+l^2 n^2}, {3/2 l(l^2-m^2)n, l(1-2l^2+2m^2)n, 1/2 l(-2+l^2-m^2)n}, {-(1/2) Sqrt[3]l n(l^2+m^2-2n^2), Sqrt[3]l n(l^2+m^2-n^2), -(1/2) Sqrt[3]l(l^2+m^2)n}},
+	{{3/2 l m(l^2-m^2), 2l m(-l^2+m^2), 1/2 l m(l^2-m^2)}, {3/2 m(l^2-m^2)n, m(-1-2l^2+2m^2)n, -(1/2)m(-2-l^2+m^2)n}, {3/2 l(l^2-m^2)n, l(1-2l^2+2m^2)n, 1/2 l(-2+l^2-m^2)n}, {3/4 (l^2-m^2)^2, l^2+m^2-(l^2-m^2)^2, 1/4 (l^2-m^2)^2+n^2}, {-(1/4) Sqrt[3](l^2-m^2)(l^2+m^2-2n^2), Sqrt[3](-l^2+m^2)n^2, 1/4 Sqrt[3](l^2-m^2)(1+n^2)}},
+	{{-(1/2) Sqrt[3]l m(l^2+m^2-2n^2), -2 Sqrt[3]l m n^2, 1/2 Sqrt[3]l m(1+n^2)}, {-(1/2) Sqrt[3]m n(l^2+m^2-2n^2), Sqrt[3]m n(l^2+m^2-n^2),-(1/2) Sqrt[3]m(l^2+m^2)n}, {-(1/2) Sqrt[3]l n(l^2+m^2-2n^2), Sqrt[3]l n(l^2+m^2-n^2), -(1/2) Sqrt[3]l(l^2+m^2)n}, {-(1/4) Sqrt[3](l^2-m^2)(l^2+m^2-2n^2), Sqrt[3](-l^2+m^2)n^2, 1/4 Sqrt[3](l^2-m^2)(1+n^2)}, {1/4 (l^2+m^2-2n^2)^2, 3(l^2+m^2)n^2, 3/4 (l^2+m^2)^2}}};
+	coeffmat . vecV
+];(*5 by 5*)
+
+
+SlaterKosterHoppingBlock["sp"][Vvec:{Vss\[Sigma]_, Vsp\[Sigma]_, Vpp\[Sigma]_, Vpp\[Pi]_}][ptf_, pti_] := SlaterKosterHoppingBlock["sp"][{Vss\[Sigma], Vsp\[Sigma], Vsp\[Sigma], Vpp\[Sigma], Vpp\[Pi]}][ptf, pti] /; Length[Vvec] == 4;
+SlaterKosterHoppingBlock["sp"][Vvec:{Vss\[Sigma]_, Vsp\[Sigma]_, Vps\[Sigma]_, Vpp\[Sigma]_, Vpp\[Pi]_}][ptf_, pti_] :=
+Module[{ss, pp, sp, ps},
+	ss = tSKBlock["ss"][{Vss\[Sigma]}][ptf, pti];
+	sp = tSKBlock["sp"][{Vsp\[Sigma]}][ptf, pti];
+	pp = tSKBlock["pp"][{Vpp\[Sigma], Vpp\[Pi]}][ptf, pti];
+	ps = -tSKBlock["sp"][{Vps\[Sigma]}][ptf, pti]\[Transpose];
+	
+	ArrayFlatten[({
+ {ss, sp},
+ {ps, pp}
+})]
+] /; Length[Vvec] == 5;
+
+SlaterKosterHoppingBlock["spd"][Vvec:
+	{Vss\[Sigma]_, Vsp\[Sigma]_, Vsd\[Sigma]_,
+	 Vpp\[Sigma]_, Vpp\[Pi]_, Vpd\[Sigma]_, Vpd\[Pi]_,
+	 Vdd\[Sigma]_, Vdd\[Pi]_, Vdd\[Delta]_}][ptf_, pti_] :=
+SlaterKosterHoppingBlock["spd"][
+	{Vss\[Sigma], Vsp\[Sigma], Vsd\[Sigma],
+	 Vsp\[Sigma], Vpp\[Sigma], Vpp\[Pi], Vpd\[Sigma], Vpd\[Pi],
+	 Vsd\[Sigma], Vpd\[Sigma], Vpd\[Pi], Vdd\[Sigma], Vdd\[Pi], Vdd\[Delta]}][ptf, pti] /; Length[Vvec] == 10;
+	
+SlaterKosterHoppingBlock["spd"][Vvec:
+	{Vss\[Sigma]_, Vsp\[Sigma]_, Vsd\[Sigma]_,
+	 Vps\[Sigma]_, Vpp\[Sigma]_, Vpp\[Pi]_, Vpd\[Sigma]_, Vpd\[Pi]_,
+	 Vds\[Sigma]_, Vdp\[Sigma]_, Vdp\[Pi]_, Vdd\[Sigma]_, Vdd\[Pi]_, Vdd\[Delta]_}][ptf_, pti_] :=
+Module[{ss, sp, sd, pp, pd, dd, ps, dp, ds},
+	(*
+	11 13 15;
+	31 33 35;
+	51 53 55;
+	*)
+	ss = tSKBlock["ss"][{Vss\[Sigma]}][ptf, pti];
+	pp = tSKBlock["pp"][{Vpp\[Sigma], Vpp\[Pi]}][ptf, pti];
+	dd = tSKBlock["dd"][{Vdd\[Sigma], Vdd\[Pi], Vdd\[Delta]}][ptf, pti];
+	
+	sp = tSKBlock["sp"][{Vsp\[Sigma]}][ptf, pti];
+	sd = tSKBlock["sd"][{Vsd\[Sigma]}][ptf, pti];
+	pd = tSKBlock["pd"][{Vpd\[Sigma], Vpd\[Pi]}][ptf, pti];
+	
+	ps = -tSKBlock["sp"][{Vps\[Sigma]}][ptf, pti]\[Transpose]; (*transposition or conjugate transposition, hidden flaw point*)
+	dp = -tSKBlock["pd"][{Vdp\[Sigma], Vdp\[Pi]}][ptf, pti]\[Transpose];
+	ds = tSKBlock["sd"][{Vds\[Sigma]}][ptf, pti]\[Transpose];
+	
+	ArrayFlatten[({
+ {ss, sp, sd},
+ {ps, pp, pd},
+ {ds, dp, dd}
+})]
+] /; Length[Vvec] == 14;
 
 
 End[] (* End `Private` *)
