@@ -62,7 +62,8 @@ AdatomLabel::usage = "Add labels to an atom depending on whether it is influence
 
 HCSRBlocksAndersonDisordered::usage = "Generate CSR ensembles with Anderson disorders from the nondisordered CSR Hamiltonian blocks."
 
-SlaterKosterHoppingBlock::usage = "Construct the hopping matrix block via Slater-Koster integrals."
+SlaterKosterOnsiteBlock::usage = "Construct the onsite matrix block in the Slater-Koster formalism."
+SlaterKosterHoppingBlock::usage = "Construct the hopping matrix block in the Slater-Koster formalism."
 
 
 Begin["`Private`"]
@@ -537,6 +538,26 @@ Module[{hds, hods, hdsdisordered, hdsensemble, innerdof = Length[innerdofmat], d
 	disorderblock = DiagonalMatrix[RandomReal[{-1, 1} W/2, Length[#]/innerdof], TargetStructure -> "Sparse"] &;
 	hdsdisordered := # + KroneckerProduct[disorderblock[#], innerdofmat] & /@ hds;
 	Table[{hdsdisordered, hods}, nensemble]
+];
+
+
+tSKOnsiteBlock["ss"][Vs_] := {{Vs}};
+tSKOnsiteBlock["pp"][Vp_] := DiagonalMatrix[ConstantArray[Vp, 3], TargetStructure -> "Sparse"];
+tSKOnsiteBlock["dd"][Vd_] := DiagonalMatrix[ConstantArray[Vd, 5], TargetStructure -> "Sparse"];
+
+SlaterKosterOnsiteBlock["sp"][{Vs_, Vp_}] :=
+Module[{ss, pp},
+	ss = tSKOnsiteBlock["ss"][Vs];
+	pp = tSKOnsiteBlock["pp"][Vp];
+	BlockDiagonalMatrix[{ss, pp}]
+];
+
+SlaterKosterOnsiteBlock["spd"][{Vs_, Vp_, Vd_}] :=
+Module[{ss, pp, dd},
+	ss = tSKOnsiteBlock["ss"][Vs];
+	pp = tSKOnsiteBlock["pp"][Vp];
+	dd = tSKOnsiteBlock["dd"][Vd];
+	BlockDiagonalMatrix[{ss, pp, dd}]
 ];
 
 
