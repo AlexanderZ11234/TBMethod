@@ -6,11 +6,12 @@ BeginPackage["TBMethod`MDConstruct`"]
 
 (* Exported symbols added here with SymbolName::usage *) 
 HMatrixFromHoppings::usage = "Constructs the real-space tight-binding Hamiltonian matrix from two sets of points from a given hopping function, depending on the coordinates of one pair of points, within the space distance upper limit.";
+ParallelHMatrixFromHoppings::usage = "Parallel version of HMatrixFromHoppings."
 
-ParallelHMatrixFromHoppings::usage = "Parallel version of ParallelHMatrixFromHoppings."
+HMatricesRealSpace::usage = "Generates all the real-space hopping matrices intended to consider."
+ParallelHMatricesRealSpace = "Parallel version of HMatricesRealSpace."
 
 HBloch::usage = "Constructs the reciprocal space Bloch Hamiltonian matrix, with automatic consideration of opposite hoppings.";
-
 HBlochFull::usage = "Constructs the reciprocal space Bloch Hamiltonian matrix, without consideration of opposite hoppings.";
 
 DisjointedShellDivisionRegions::usage = "xxx.";
@@ -29,7 +30,7 @@ HLeadBlocksVerbose::usage = "Verbose version of HLeadBlocks.";
 
 AdaptivePartition::usage = "Partitions the CSR in an adaptive way to achieve an optimal slicing status, according to the given leads' configuration."
 
-\[CapitalGamma]Matrix::usage = "Matrix from Kronecker product of Pauli matrixes, used in construction of Dirac model.";
+\[CapitalGamma]Matrix::usage = "Generates matrices from Kronecker product of Pauli matrices, used in construction of Dirac model.";
 
 FillWithDistance::usage = "Constructs the piecewise filling function according to distances."
 FillWithCondition::usage = "Constructs the piecewise filling function according to conditions."
@@ -51,19 +52,19 @@ CompiledSuccessfulQ::usage = "Checks if a function compilation process succeeds.
 
 CrystalStructure::usage = "Generates the crystal structure by the composition of lattice and basis.";
 
-HEffectiveMatrix::usage = "Lower-energy effective Hamiltonian matrix via Taylor expasion, in terms of linear combination of Pauli and/or GellMann matrices.";
+HEffectiveMatrix::usage = "Generates lower-energy effective Hamiltonian matrix via Taylor expasion, in terms of linear combination of Pauli and/or GellMann matrices.";
 
-LatticePointsCentralize::usage = "Align the centroid of a primitive cell with lattice points to the origin.";
+LatticePointsCentralize::usage = "Aligns the centroid of a primitive cell with lattice points to the origin.";
 
-HFloquetEffectiveBlochMatrixFromExtended::usage = "Construct the effective Floquet-Bloch Hamiltonian matrix from the extended Floquet-Bloch Hamiltonian matrix under the high-frequencey approximation.";
-HFloquetEffectiveHoppingMatricesFromExtended::usage = "Construct the effective real-space hopping matrices from the extended real-space hopping matrices under the high-frequencey approximation.";
+HFloquetEffectiveBlochMatrixFromExtended::usage = "Constructs the effective Floquet-Bloch Hamiltonian matrix from the extended Floquet-Bloch Hamiltonian matrix under the high-frequencey approximation.";
+HFloquetEffectiveHoppingMatricesFromExtended::usage = "Constructs the effective real-space hopping matrices from the extended real-space hopping matrices under the high-frequencey approximation.";
 
-AdatomLabel::usage = "Add labels to an atom depending on whether it is influenced by an adatom.";
+AdatomLabel::usage = "Adds labels to an atom depending on whether it is influenced by an adatom.";
 
-HCSRBlocksAndersonDisordered::usage = "Generate CSR ensembles with Anderson disorders from the nondisordered CSR Hamiltonian blocks."
+HCSRBlocksAndersonDisordered::usage = "Generates CSR ensembles with Anderson disorders from the nondisordered CSR Hamiltonian blocks."
 
-SlaterKosterOnsiteBlock::usage = "Construct the onsite matrix block in the Slater-Koster formalism."
-SlaterKosterHoppingBlock::usage = "Construct the hopping matrix block in the Slater-Koster formalism."
+SlaterKosterOnsiteBlock::usage = "Constructs the onsite matrix block in the Slater-Koster formalism."
+SlaterKosterHoppingBlock::usage = "Constructs the hopping matrix block in the Slater-Koster formalism."
 
 
 Begin["`Private`"]
@@ -222,6 +223,10 @@ Module[{dim = Length /@ fipts, fptsnobool, iptsnobool, nfunc, neighbourinfos, fi
 		{ij, neighbourinfos}
 	]
 ];*)
+
+HMatricesRealSpace[crystalstructure_Association, tfunc_, dup_Real] := (pts |-> HMatrixFromHoppings[{pts, crystalstructure[[1]]}, tfunc, dup]) /@ crystalstructure;
+ParallelHMatricesRealSpace[crystalstructure_Association, tfunc_, dup_Real] := (pts |-> ParallelHMatrixFromHoppings[{pts, crystalstructure[[1]]}, tfunc, dup]) /@ crystalstructure;
+
 
 HBloch[vk_, h0010s:<|({__?NumericQ} -> _SparseArray)..|>] :=
 Module[{hermitize = # + #\[HermitianConjugate] &},
