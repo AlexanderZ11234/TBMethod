@@ -9,7 +9,7 @@ HMatrixFromHoppings::usage = "Constructs the real-space tight-binding Hamiltonia
 ParallelHMatrixFromHoppings::usage = "Parallel version of HMatrixFromHoppings."
 
 HMatricesRealSpace::usage = "Generates all the real-space hopping matrices intended to consider."
-ParallelHMatricesRealSpace = "Parallel version of HMatricesRealSpace."
+ParallelHMatricesRealSpace::usage = "Parallel version of HMatricesRealSpace."
 
 HBloch::usage = "Constructs the reciprocal space Bloch Hamiltonian matrix, with automatic consideration of opposite hoppings.";
 HBlochFull::usage = "Constructs the reciprocal space Bloch Hamiltonian matrix, without consideration of opposite hoppings.";
