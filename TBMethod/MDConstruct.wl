@@ -66,6 +66,8 @@ HCSRBlocksAndersonDisordered::usage = "Generates CSR ensembles with Anderson dis
 SlaterKosterOnsiteBlock::usage = "Constructs the onsite matrix block in the Slater-Koster formalism."
 SlaterKosterHoppingBlock::usage = "Constructs the hopping matrix block in the Slater-Koster formalism."
 
+SlaterKosterSOCOnsiteBlock::usage = "Constructs the onsite SOC matrix block in the Slater-Koster formalism."
+
 
 Begin["`Private`"]
 (* Implementation of the package *)
@@ -674,6 +676,56 @@ Module[{ss, sp, sd, pp, pd, dd, ps, dp, ds},
  {ds, dp, dd}
 })]
 ] /; Length[Vvec] == 14;
+
+
+\[Lambda]SKOnsiteBlock["ss"][\[Lambda]_] := ConstantArray[0, {1, 1}2, SparseArray];
+\[Lambda]SKOnsiteBlock["sp"][\[Lambda]_] := ConstantArray[0, {1, 3}2, SparseArray];
+\[Lambda]SKOnsiteBlock["sd"][\[Lambda]_] := ConstantArray[0, {1, 5}2, SparseArray];
+\[Lambda]SKOnsiteBlock["pd"][\[Lambda]_] := ConstantArray[0, {3, 5}2, SparseArray];
+\[Lambda]SKOnsiteBlock["pp"][\[Lambda]_] := I \[Lambda] SparseArray[ArrayFlatten[({
+ {0, -PauliMatrix[3], PauliMatrix[2]},
+ {PauliMatrix[3], 0, -PauliMatrix[1]},
+ {-PauliMatrix[2], PauliMatrix[1], 0}
+})]];
+\[Lambda]SKOnsiteBlock["dd"][\[Lambda]_] := I \[Lambda] SparseArray[ArrayFlatten[({
+ {0, PauliMatrix[2], -PauliMatrix[1], 2PauliMatrix[3], 0},
+ {-PauliMatrix[2], 0, PauliMatrix[3], -PauliMatrix[1], -Sqrt[3]PauliMatrix[1]},
+ {PauliMatrix[1], -PauliMatrix[3], 0, -PauliMatrix[2], Sqrt[3]PauliMatrix[2]},
+ {-2PauliMatrix[3], PauliMatrix[1], PauliMatrix[2], 0, 0},
+ {0, Sqrt[3]PauliMatrix[1], -Sqrt[3]PauliMatrix[2], 0, 0}
+})]];
+
+SlaterKosterSOCOnsiteBlock["sp"][\[Lambda]_] :=
+Module[{ss, sp, ps, pp},
+	ss = \[Lambda]SKOnsiteBlock["ss"][\[Lambda]];
+	sp = \[Lambda]SKOnsiteBlock["sp"][\[Lambda]];
+	ps = sp\[Transpose];
+	pp= \[Lambda]SKOnsiteBlock["pp"][\[Lambda]];
+	
+	ArrayFlatten[({
+ {ss, sp},
+ {ps, pp}
+})]
+];
+
+SlaterKosterSOCOnsiteBlock["spd"][\[Lambda]_] :=
+Module[{ss, sp, sd, ps, pp, pd, ds, dp, dd},
+	ss = \[Lambda]SKOnsiteBlock["ss"][\[Lambda]];
+	sp = \[Lambda]SKOnsiteBlock["sp"][\[Lambda]];
+	sd = \[Lambda]SKOnsiteBlock["sd"][\[Lambda]];
+	ps = sp\[Transpose];
+	pp = \[Lambda]SKOnsiteBlock["pp"][\[Lambda]];
+	pd = \[Lambda]SKOnsiteBlock["pd"][\[Lambda]];
+	ds = sd\[Transpose];
+	dp = pd\[Transpose];
+	dd = \[Lambda]SKOnsiteBlock["dd"][\[Lambda]];
+	
+	ArrayFlatten[({
+ {ss, sp, sd},
+ {ps, pp, pd},
+ {ds, dp, dd}
+})]
+];
 
 
 End[] (* End `Private` *)
