@@ -633,10 +633,10 @@ Module[{ss, pp, sp, ps},
 	pp = tSKBlock["pp"][{Vpp\[Sigma], Vpp\[Pi]}][ptf, pti];
 	ps = -tSKBlock["sp"][{Vps\[Sigma]}][ptf, pti]\[Transpose];
 	
-	ArrayFlatten[({
- {ss, sp},
- {ps, pp}
-})]
+	ArrayFlatten[{
+		{ss, sp}, 
+		{ps, pp}
+	}]
 ] /; Length[Vvec] == 5;
 
 SlaterKosterHoppingBlock["spd"][Vvec:
@@ -670,61 +670,65 @@ Module[{ss, sp, sd, pp, pd, dd, ps, dp, ds},
 	dp = -tSKBlock["pd"][{Vdp\[Sigma], Vdp\[Pi]}][ptf, pti]\[Transpose];
 	ds = tSKBlock["sd"][{Vds\[Sigma]}][ptf, pti]\[Transpose];
 	
-	ArrayFlatten[({
- {ss, sp, sd},
- {ps, pp, pd},
- {ds, dp, dd}
-})]
+	ArrayFlatten[{
+		{ss, sp, sd},
+		{ps, pp, pd},
+		{ds, dp, dd}
+	}]
 ] /; Length[Vvec] == 14;
 
 
-\[Lambda]SKOnsiteBlock["ss"][\[Lambda]_] := ConstantArray[0, {1, 1}2, SparseArray];
-\[Lambda]SKOnsiteBlock["sp"][\[Lambda]_] := ConstantArray[0, {1, 3}2, SparseArray];
+\[Lambda]SKOnsiteBlock["ss"](*[\[Lambda]_]*) := ConstantArray[0, {1, 1}2, SparseArray];
+(*\[Lambda]SKOnsiteBlock["sp"][\[Lambda]_] := ConstantArray[0, {1, 3}2, SparseArray];
 \[Lambda]SKOnsiteBlock["sd"][\[Lambda]_] := ConstantArray[0, {1, 5}2, SparseArray];
-\[Lambda]SKOnsiteBlock["pd"][\[Lambda]_] := ConstantArray[0, {3, 5}2, SparseArray];
-\[Lambda]SKOnsiteBlock["pp"][\[Lambda]_] := I \[Lambda] SparseArray[ArrayFlatten[({
- {0, -PauliMatrix[3], PauliMatrix[2]},
- {PauliMatrix[3], 0, -PauliMatrix[1]},
- {-PauliMatrix[2], PauliMatrix[1], 0}
-})]];
-\[Lambda]SKOnsiteBlock["dd"][\[Lambda]_] := I \[Lambda] SparseArray[ArrayFlatten[({
- {0, PauliMatrix[2], -PauliMatrix[1], 2PauliMatrix[3], 0},
- {-PauliMatrix[2], 0, PauliMatrix[3], -PauliMatrix[1], -Sqrt[3]PauliMatrix[1]},
- {PauliMatrix[1], -PauliMatrix[3], 0, -PauliMatrix[2], Sqrt[3]PauliMatrix[2]},
- {-2PauliMatrix[3], PauliMatrix[1], PauliMatrix[2], 0, 0},
- {0, Sqrt[3]PauliMatrix[1], -Sqrt[3]PauliMatrix[2], 0, 0}
-})]];
-
-SlaterKosterSOCOnsiteBlock["sp"][\[Lambda]_] :=
-Module[{ss, sp, ps, pp},
-	ss = \[Lambda]SKOnsiteBlock["ss"][\[Lambda]];
-	sp = \[Lambda]SKOnsiteBlock["sp"][\[Lambda]];
-	ps = sp\[Transpose];
-	pp= \[Lambda]SKOnsiteBlock["pp"][\[Lambda]];
-	
-	ArrayFlatten[({
- {ss, sp},
- {ps, pp}
-})]
+\[Lambda]SKOnsiteBlock["pd"][\[Lambda]_] := ConstantArray[0, {3, 5}2, SparseArray];*)
+\[Lambda]SKOnsiteBlock["pp"][\[Lambda]_] := I \[Lambda] SparseArray[
+	ArrayFlatten[{
+	 {0, -PauliMatrix[3], PauliMatrix[2]},
+	 {PauliMatrix[3], 0, -PauliMatrix[1]},
+	 {-PauliMatrix[2], PauliMatrix[1], 0}
+	}]
+];
+\[Lambda]SKOnsiteBlock["dd"][\[Lambda]_] := I \[Lambda] SparseArray[
+	ArrayFlatten[{
+		{0, PauliMatrix[2], -PauliMatrix[1], 2PauliMatrix[3], 0},
+		{-PauliMatrix[2], 0, PauliMatrix[3], -PauliMatrix[1], -Sqrt[3]PauliMatrix[1]},
+		{PauliMatrix[1], -PauliMatrix[3], 0, -PauliMatrix[2], Sqrt[3]PauliMatrix[2]},
+		{-2PauliMatrix[3], PauliMatrix[1], PauliMatrix[2], 0, 0},
+		{0, Sqrt[3]PauliMatrix[1], -Sqrt[3]PauliMatrix[2], 0, 0}
+	}]
 ];
 
-SlaterKosterSOCOnsiteBlock["spd"][\[Lambda]_] :=
-Module[{ss, sp, sd, ps, pp, pd, ds, dp, dd},
-	ss = \[Lambda]SKOnsiteBlock["ss"][\[Lambda]];
-	sp = \[Lambda]SKOnsiteBlock["sp"][\[Lambda]];
-	sd = \[Lambda]SKOnsiteBlock["sd"][\[Lambda]];
-	ps = sp\[Transpose];
-	pp = \[Lambda]SKOnsiteBlock["pp"][\[Lambda]];
-	pd = \[Lambda]SKOnsiteBlock["pd"][\[Lambda]];
-	ds = sd\[Transpose];
-	dp = pd\[Transpose];
-	dd = \[Lambda]SKOnsiteBlock["dd"][\[Lambda]];
+SlaterKosterSOCOnsiteBlock["sp"][{\[Lambda]p_}] :=
+Module[{ss, pp},
+	ss = \[Lambda]SKOnsiteBlock["ss"](*[\[Lambda]]*);
+	(*sp = \[Lambda]SKOnsiteBlock["sp"][\[Lambda]];
+	ps = sp\[Transpose];*)
+	pp= \[Lambda]SKOnsiteBlock["pp"][\[Lambda]p];
 	
-	ArrayFlatten[({
- {ss, sp, sd},
- {ps, pp, pd},
- {ds, dp, dd}
-})]
+	ArrayFlatten[{
+		{ss, 0},
+		{0, pp}
+	}]
+];
+
+SlaterKosterSOCOnsiteBlock["spd"][{\[Lambda]p_, \[Lambda]d_}] :=
+Module[{ss, (*sp, sd, ps, *)pp, (*pd, ds, dp, *)dd},
+	ss = \[Lambda]SKOnsiteBlock["ss"](*[\[Lambda]]*);
+	(*sp = \[Lambda]SKOnsiteBlock["sp"][\[Lambda]];
+	sd = \[Lambda]SKOnsiteBlock["sd"][\[Lambda]];
+	ps = sp\[Transpose];*)
+	pp = \[Lambda]SKOnsiteBlock["pp"][\[Lambda]p];
+	(*pd = \[Lambda]SKOnsiteBlock["pd"][\[Lambda]];
+	ds = sd\[Transpose];
+	dp = pd\[Transpose];*)
+	dd = \[Lambda]SKOnsiteBlock["dd"][\[Lambda]d];
+	
+	ArrayFlatten[{
+		{ss, 0, 0},
+		{0, pp, 0},
+		{0, 0, dd}
+	}]
 ];
 
 
