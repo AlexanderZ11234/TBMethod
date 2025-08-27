@@ -55,6 +55,8 @@ and four lists of functions should be indexed out.
     - Calculation of transport related quantities:
         - 5-terminal Hall calculation in $ \text{O}(n^{1.7}) $
 
+- Workflow coordinated with [DeePTB](https://github.com/deepmodeling/DeePTB) on Slater-Koster model construction
+
 ## Documentation
 
 <a href="#" class="magic-button" title="Onsite testable"> _MMA-style_ </a> documentation under construction
