@@ -86,7 +86,7 @@ and four lists of functions should be indexed out.
 1. Shun-Qing Shen, _Topological Insulators_, Springer/WPC, 2006.
 1. Phys. Rev. Lett. 61, 2015 (1988).
 1. Phys. Rev. Lett. 95, 146802 (2005).
-1. Phys. Rev. Lett. 95, 226801 (2025).
+1. Phys. Rev. Lett. 95, 226801 (2005).
 1. Phys. Rev. B 82, 161414(R) (2010).
 1. Phys. Rev. Lett. 124, 136403 (2020).
 1. Phys. Rev. Lett. 124, 166804 (2020).
