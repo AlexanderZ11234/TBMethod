@@ -100,8 +100,8 @@ and four lists of functions should be indexed out.
 1. Datta, [_Electronic Transport in Mesoscopic Systems_](https://www.cambridge.org/core/books/electronic-transport-in-mesoscopic-systems/1E55DEF5978AA7B843FF70337C220D8B), CUP, 1995.
 1. Datta, [_Quantum Transport: Atom to Transistor_](https://www.cambridge.org/core/books/quantum-transport/E96BE74AACD59A03A7D6A7F7DACDFB71), CUP, 2005.
 1. Wimmer, [_Quantum transport in nanostructures: From computational concepts to spintronics in graphene and magnetic tunnel junctions_](https://epub.uni-regensburg.de/12142/), Ph.D. Dissertation, Universität Regensburg, 2008.
-1. Papior, [_Computational Tools and Studies of Graphene Nanostructures_](https://orbit.dtu.dk/en/publications/computational-tools-and-studies-of-graphene-nanostructures), Ph.D. Dissertation, TUD, 2016.
 1. Qiao, [_Charge and Spin Transport in Two-Dimensional Mesoscopic Systems_](https://hub.hku.hk/handle/10722/55540), Ph.D. Dissertation, HKU, 2009.
+1. Papior, [_Computational Tools and Studies of Graphene Nanostructures_](https://orbit.dtu.dk/en/publications/computational-tools-and-studies-of-graphene-nanostructures), Ph.D. Dissertation, TUD, 2016.
 1. [Phys. Rev. Lett. 97, 066603 (2006)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.97.066603).
 1. [Nanotechnology 18, 435402 (2007)](https://iopscience.iop.org/article/10.1088/0957-4484/18/43/435402).
 1. [Phys. Rev. B 91, 125408 (2015)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.91.125408).
