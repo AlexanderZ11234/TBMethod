@@ -91,7 +91,7 @@ and four lists of functions should be indexed out.
 1. Phys. Rev. Lett. 124, 136403 (2020).
 1. Phys. Rev. Lett. 124, 166804 (2020).
 
-### Green's function formalism:
+### Lattice Green's Function Formalism:
 1. Datta, _Electronic Transport in Mesoscopic Systems_, Cambridge/WPC, 2004.
 1. Datta, _Quantum Transport: Atom to Transistor_, Cambridge/WPC, 2011.
 1. Phys. Rev. Lett. 97, 066603 (2006).
