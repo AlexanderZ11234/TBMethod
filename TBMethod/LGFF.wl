@@ -39,6 +39,16 @@ Module[{q, r},
 	inverse[2][r] . q
 ];
 
+(*transport_with_overlapping.nb*)
+(*CSR as a whole*)
+nonOrthoToOrthoTransf[e_][{HC_, SC_}] := HC + e(iden[HC] - SC);
+(*surface Green's function of a lead*)
+nonOrthoToOrthoTransf[e_][{{h0_, h1_}, {s0_, s1_}}] := {h0 + e(iden[h0] - s0), h1 - e s1};
+(*self energy of a lead*)
+nonOrthoToOrthoTransf[e_][{{h0_, h1_, V_}, {s0_, s1_, S_}}] := {h0 + e(iden[h0] - s0), h1 - e s1, V - e S};
+(*CSR partitioned*)
+nonOrthoToOrthoTransf[e_][{{ds_, os_}, {s0s_, s1s_}}] /; Length[ds] >= 2 := {ds + e(iden /@ ds - s0s), os - e s1s};
+
 (* Surface Green function and selfenergy *)
 (*SurfaceGreen[epsilon_, {h0_, h1_}] :=
 Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, g0, t0, tttilde, tlist},
@@ -108,9 +118,11 @@ Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, g0, t0
 	inv[ g0inverse - h1 . T ]
 ];*)
 
-SurfaceGreen[epsilon_, {h0_, h1_}, mode:(1|2|3):1] :=
+
+SurfaceGreen[e_, {{h0_, h1_}, {s0_, s1_}}, mode:(1|2|3):1] := SurfaceGreen[e, nonOrthoToOrthoTransf[e][{{h0, h1}, {s0, s1}}], mode];
+SurfaceGreen[e_, {h0_, h1_}, mode:(1|2|3):1] :=
 Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, g0, t0, tttilde, TTtilde, T, MH, S1, S2, n},
-	g0inverse = epsilon id - h0;
+	g0inverse = e id - h0;
 	
 	T = Which[
 		(*iterative 2^n method*)
@@ -149,26 +161,29 @@ Module[{gsurface},
 	SparseArray[H01 . gsurface . H01\[ConjugateTranspose]]
 ];*)
 
-Sigma[\[Epsilon]_, {h0_, h1_, H01_}, mode:(1|2|3):1] :=
-Module[{gsurface, len = Length[H01], \[Eta] = Im[\[Epsilon]]},
+Sigma[e_, {{h0_, h1_, H01_}, {s0_, s1_, S01_}}, mode:(1|2|3):1] := Sigma[e, nonOrthoToOrthoTransf[e][{{h0, h1,H01}, {s0, s1,S01}}], mode];
+Sigma[e_, {h0_, h1_, H01_}, mode:(1|2|3):1] :=
+Module[{gsurface, len = Length[H01], \[Eta] = Im[e]},
 	If[Norm[H01, "Frobenius"] >= \[Eta], 
-		gsurface = SurfaceGreen[\[Epsilon], {h0, h1}, mode]; SparseArray[H01 . gsurface . H01\[ConjugateTranspose]],
+		gsurface = SurfaceGreen[e, {h0, h1}, mode]; SparseArray[H01 . gsurface . H01\[ConjugateTranspose]],
 		SparseArray[{}, {1, 1} len]
 	]
 ];
 
 (*Green's function of the central region*)
-CentralGreen[epsilon_, HC_, Sigmas_List, method_:1] :=
+CentralGreen[e_,  {HC_, SC_}, Sigmas_List, method_:1] := CentralGreen[e, nonOrthoToOrthoTransf[e][{HC,SC}], Sigmas, method];
+CentralGreen[e_, HC_, Sigmas_List, method_:1] :=
 Module[{id = iden[HC], GCinverse, inv = inverse[#, Method -> "Multifrontal"] &},
-	GCinverse = epsilon id - HC;
+	GCinverse = e id - HC;
 	(*SparseArray[ #[GCinverse - Total @ Sigmas] ] & @ Which[method == 1, inverse[#, Method -> "Multifrontal"]&, method == 2, invbyQR]*)
 	Which[method == 1, inv, method == 2, invbyQR][GCinverse - Total @ Sigmas]
 ];
-	
-CentralBlockGreens[epsilon_, blockHs:{ds_, os_}, sigmas_, mode:("T"|"LDOS"|"LCDV"):"T"] /; (Subtract @@ (Length /@ blockHs) == 1) := 
+
+CentralBlockGreens[e_, {blockHs:{ds_, os_}, blockSs:{s0s_, s1s_}}, sigmas_, mode:("T"|"LDOS"|"LCDV"):"T"] := CentralBlockGreens[e, nonOrthoToOrthoTransf[e][{blockHs, blockSs}], sigmas, mode];	
+CentralBlockGreens[e_, blockHs:{ds_, os_}, sigmas_, mode:("T"|"LDOS"|"LCDV"):"T"] /; (Subtract @@ (Length /@ blockHs) == 1) := 
 Module[{inv, diagblocks, iteratefunc, arguments},
 	inv = inverse[#, Method -> "Multifrontal"] &;
-	diagblocks = epsilon iden[#] - # & /@ MapAt[Total[sigmas] + # &, ds, -1];
+	diagblocks = e iden[#] - # & /@ MapAt[Total[sigmas] + # &, ds, -1];
 	arguments = Sequence[iteratefunc, inv[First[diagblocks]], Transpose[{-os, Rest @ diagblocks}] ];
 	iteratefunc = inv[ Last[#2] - First[#2] . # . First[#2]\[ConjugateTranspose] ] &;
 	Which[
@@ -185,11 +200,12 @@ Module[{inv, diagblocks, iteratefunc, arguments},
 ];
 
 (*The diagonal blocks of the Green's functions*)
-CentralDiagonalBlockGreens[\[Epsilon]_, blockHs:{ds_, os_}, sigmas_] /; And[Length[ds] >= 2, Subtract @@ (Length /@ blockHs) == 1] :=
+CentralDiagonalBlockGreens[e_, {blockHs:{ds_, os_}, blockSs:{s0s_, s1s_}}, sigmas_] := CentralDiagonalBlockGreens[e, nonOrthoToOrthoTransf[e][{blockHs, blockSs}], sigmas];
+CentralDiagonalBlockGreens[e_, blockHs:{ds_, os_}, sigmas_] /; And[Length[ds] >= 2, Subtract @@ (Length /@ blockHs) == 1] :=
 Module[{inv, diagblocks, blockGinvs, blockGinvsrev, iteratefunc, Fisinner, Fisouter, foldlist},
 	inv = inverse[#1, Method -> "Multifrontal"] &;
 	foldlist = FoldList[Last[#2] - First[#2] . inv[#] . First[#2]\[ConjugateTranspose] &];
-	diagblocks = \[Epsilon] iden[#] - # & /@ MapAt[Total[sigmas] + # &, ds, -1];
+	diagblocks = e iden[#] - # & /@ MapAt[Total[sigmas] + # &, ds, -1];
 	
 	blockGinvs = {diagblocks, -os};
 	Fisinner = foldlist[blockGinvs[[1, 1]], {blockGinvs[[2]], Rest @ blockGinvs[[1]]}\[Transpose]];
