@@ -72,11 +72,11 @@ and four lists of functions should be indexed out.
 1. Phys. Rev. B 107, 075303 (2023).
 1. Phys. Rev. B (Letter) 106, L161413 (2022).
 1. Front. Phys. 17, 63503 (2022).
-1. Phys. Rev. B 100, 205408 (2019).
-1. Phys. Rev. B 95, 045424 (2017).
 1. Appl. Phys. Lett. 120, 084002 (2022).
 1. Chin. Phys. Lett. 39, 017302 (2022).
 1. Phys. Rev. B 101, 235432 (2020).
+1. Phys. Rev. B 100, 205408 (2019).
+1. Phys. Rev. B 95, 045424 (2017).
 
 
 
