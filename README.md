@@ -83,24 +83,26 @@ and four lists of functions should be indexed out.
 ## Incomplete References
 
 ### Topological Models:
-1. Shun-Qing Shen, _Topological Insulators_, Springer/WPC, 2006.
-1. Phys. Rev. Lett. 61, 2015 (1988).
-1. Phys. Rev. Lett. 95, 146802 (2005).
-1. Phys. Rev. Lett. 95, 226801 (2005).
-1. Phys. Rev. B 82, 161414(R) (2010).
-1. Phys. Rev. Lett. 124, 136403 (2020).
-1. Phys. Rev. Lett. 124, 166804 (2020).
+1. Shun-Qing Shen, [_Topological Insulators_](https://link.springer.com/book/10.1007/978-981-10-4606-3), Springer, 2017.
+1. Bernevig, [_Topological Insulators and Topological Superconductors_](https://press.princeton.edu/books/hardcover/9780691151755/topological-insulators-and-topological-superconductors?srsltid=AfmBOop9JnAo53v7Hn3ErPpR2uf3vW0JLPykFSNWSK_QoP1xjsDuKoMG), PUP, 2013.
+1. [Phys. Rev. Lett. 61, 2015 (1988)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.61.2015).
+1. [Phys. Rev. Lett. 95, 146802 (2005)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.95.146802).
+1. [Phys. Rev. Lett. 95, 226801 (2005)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.95.226801).
+1. [Phys. Rev. B 82, 161414(R) (2010)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.82.161414).
+1. [Phys. Rev. B 84, 075119 (2011)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.84.075119).
+1. [Phys. Rev. Lett. 124, 136403 (2020)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.124.136403).
+1. [Phys. Rev. Lett. 124, 166804 (2020)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.124.166804).
 
 ### Lattice Green's Function Formalism:
-1. Datta, _Electronic Transport in Mesoscopic Systems_, Cambridge/WPC, 2004.
-1. Datta, _Quantum Transport: Atom to Transistor_, Cambridge/WPC, 2011.
+1. Datta, _Electronic Transport in Mesoscopic Systems_, Cambridge, 2004.
+1. Datta, _Quantum Transport: Atom to Transistor_, Cambridge, 2011.
 1. Phys. Rev. Lett. 97, 066603 (2006).
 1. Nanotechnology 18, 435402 (2007).
 1. Phys. Rev. B 91, 125408 (2015).
 1. Phys. Rev. B 97, 165405 (2018).
 
 ### Slater-Koster Method:
-1. Saito and Dresselhauses, _Physical Properties of Carbon Nanotubes_, ICP/WPC, 2003.
+1. Saito and Dresselhauses, _Physical Properties of Carbon Nanotubes_, ICP, 2003.
 1. Phys. Rev. 94, 1498 (1954).
 1. Nat. Commun. 15, 6772 (2024).
 1. Phys. Rev. B 74, 165310 (2006).
