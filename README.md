@@ -67,6 +67,7 @@ and four lists of functions should be indexed out.
 
 1. [npj Quant. Mater. 10, 48 (2025)](https://www.nature.com/articles/s41535-025-00768-1).
 1. [Phys. Rev. B 111, 085137 (2025)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.111.085137).
+1. [Phys. Rev. B 111, 155303 (2025)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.111.155303).
 1. [Phys. Rev. Lett. 133, 246606 (2024)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.246606).
 1. [Phys. Rev. Lett. 131, 086601 (2023)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.131.086601).
 1. [Phys. Rev. B 107, 075303 (2023)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.107.075303).
