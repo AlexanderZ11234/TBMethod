@@ -62,7 +62,6 @@ and four lists of functions should be indexed out.
 ## Incomplete References
 
 ### Topological Models:
-
 1. PRL 61, 2015 (1988).
 1. PRL 95, 146802 (2005).
 1. PRL 95, 226801 (2025).
@@ -71,9 +70,18 @@ and four lists of functions should be indexed out.
 1. PRL 124, 166804 (2020).
 
 ### Green's function:
-1. Datta, _Electronic Transport in Mesoscopic Systems_.
-1. Datta, _Quantum Transport: Atom to Transistor_.
+1. Datta, _Electronic Transport in Mesoscopic Systems_, WPC, 2004.
+1. Datta, _Quantum Transport: Atom to Transistor_, WPC, 2011.
 1. PRL 97, 066603 (2006).
 1. Nanotechnology 18, 435402 (2007).
 1. PRB 91, 125408 (2015).
 1. PRB 97, 165405 (2018).
+
+### Slater-Koster Method:
+1. Saito and Dresselhauses, _Physical Properties of Carbon Nanotubes_, ICP, 2003.
+1. PR 94, 1498 (1954).
+1. Nat. Commun. 15, 6772 (2024).
+1. PRB 74, 165310 (2006).
+1. PRB 82, 245412 (2010).
+1. PRB 110, 235130 (2024). 
+
