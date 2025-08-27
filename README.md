@@ -83,7 +83,7 @@ and four lists of functions should be indexed out.
 ## Incomplete References
 
 ### Topological Models:
-1. Shun-Qing Shen, [_Topological Insulators: Dirac Equation in Condensed Matters_](https://link.springer.com/book/10.1007/978-981-10-4606-3), Springer, 2017.
+1. Shen, [_Topological Insulators: Dirac Equation in Condensed Matters_](https://link.springer.com/book/10.1007/978-981-10-4606-3), Springer, 2017.
 1. Bernevig, [_Topological Insulators and Topological Superconductors_](https://press.princeton.edu/books/hardcover/9780691151755/topological-insulators-and-topological-superconductors?srsltid=AfmBOop9JnAo53v7Hn3ErPpR2uf3vW0JLPykFSNWSK_QoP1xjsDuKoMG), PUP, 2013.
 1. [Phys. Rev. Lett. 61, 2015 (1988)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.61.2015).
 1. [Phys. Rev. Lett. 95, 146802 (2005)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.95.146802).
@@ -108,7 +108,7 @@ and four lists of functions should be indexed out.
 1. [Phys. Rev. B 97, 165405 (2018)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.97.165405).
 
 ### Slater-Koster Method:
-1. Saito and Dresselhauses, [_Physical Properties of Carbon Nanotubes_](https://www.worldscientific.com/worldscibooks/10.1142/p080?srsltid=AfmBOoosI-cgWaXJxEbpkiw1QPAPb82G87WuKIr6LAeeVNM8vWX1tifB#t=aboutBook), ICP, 1998.
+1. Saito, [_Physical Properties of Carbon Nanotubes_](https://www.worldscientific.com/worldscibooks/10.1142/p080?srsltid=AfmBOoosI-cgWaXJxEbpkiw1QPAPb82G87WuKIr6LAeeVNM8vWX1tifB#t=aboutBook), ICP, 1998.
 1. [Phys. Rev. 94, 1498 (1954)](https://journals.aps.org/pr/abstract/10.1103/PhysRev.94.1498).
 1. [Phys. Rev. B 74, 165310 (2006)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.74.165310).
 1. [Phys. Rev. B 82, 245412 (2010)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.82.245412).
