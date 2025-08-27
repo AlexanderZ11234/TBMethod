@@ -65,18 +65,18 @@ and four lists of functions should be indexed out.
 
 ## Related Publications
 
-1. npj Quant. Mater. 10, 48 (2025).
-1. Phys. Rev. B 111, 085137 (2025).
-1. Phys. Rev. Lett. 133, 246606 (2024).
-1. Phys. Rev. Lett. 131, 086601 (2023).
-1. Phys. Rev. B 107, 075303 (2023).
-1. Phys. Rev. B (Letter) 106, L161413 (2022).
-1. Front. Phys. 17, 63503 (2022).
-1. Appl. Phys. Lett. 120, 084002 (2022).
-1. Chin. Phys. Lett. 39, 017302 (2022).
-1. Phys. Rev. B 101, 235432 (2020).
-1. Phys. Rev. B 100, 205408 (2019).
-1. Phys. Rev. B 95, 045424 (2017).
+1. [npj Quant. Mater. 10, 48 (2025)](https://www.nature.com/articles/s41535-025-00768-1).
+1. [Phys. Rev. B 111, 085137 (2025)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.111.085137).
+1. [Phys. Rev. Lett. 133, 246606 (2024)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.246606).
+1. [Phys. Rev. Lett. 131, 086601 (2023)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.131.086601).
+1. [Phys. Rev. B 107, 075303 (2023)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.107.075303).
+1. [Phys. Rev. B (Letter) 106, L201407 (2022)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.106.L201407).
+1. [Front. Phys. 17, 63503 (2022)](https://link.springer.com/article/10.1007/s11467-022-1185-y).
+1. [Appl. Phys. Lett. 120, 084002 (2022)](https://pubs.aip.org/aip/apl/article-abstract/120/8/084002/2833231/In-plane-magnetization-and-electronic-structures?redirectedFrom=fulltext).
+1. [Chin. Phys. Lett. 39, 017302 (2022)](https://cpl.iphy.ac.cn/article/doi/10.1088/0256-307X/39/1/017302).
+1. [Phys. Rev. B 101, 235432 (2020)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.101.235432).
+1. [Phys. Rev. B 100, 205408 (2019)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.100.205408).
+1. [Phys. Rev. B 95, 045424 (2017)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.95.045424).
 
 
 
