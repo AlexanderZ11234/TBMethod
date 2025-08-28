@@ -8,7 +8,6 @@ This package consists of four subpackages responsible, respectively, for differe
 		- Using [NNS (nearest neighbor search)](https://en.wikipedia.org/wiki/Nearest_neighbor_search) algorithm for matrix generation and adaptive partiton of the central scattering region
 		- Supporting Slater-Koster method, both user-defined parameters and results from [DeePTB](https://github.com/deepmodeling/DeePTB)
 
-
 - EigenSpect
 	- Etymology: short for "Eigen Spectrum"
 	- Major capability: evaluation of the characteristic information for the given Hamiltonian matrices, e.g., bandstructures, energy spectrum, topological invariants (Chern number, WCC, Bott index, etc.), and so on
