@@ -4,8 +4,8 @@ This package consists of four subpackages responsible, respectively, for differe
 
 - MDConstruct
 	- Etymology: short for "MoDel Construction"
-	- Major capability: generation of matrix representation of the Hamiltonian for a lattice system in any dimension, any configuration (connection position and number) of terminals
-		- Using [NNS (nearest neighbor search)](https://en.wikipedia.org/wiki/Nearest_neighbor_search) algorithm for matrix fast generation and adaptive partiton of the central scattering region
+	- Major capability: generation of matrix representation of the Hamiltonian for a lattice system in any dimension, any configuration (connection position and number) of terminals, fast manipulation of the external degree of freedom
+		- Using [NNS (nearest neighbor search)](https://en.wikipedia.org/wiki/Nearest_neighbor_search) algorithm for matrix generation and adaptive partiton of the central scattering region
 		- Supporting Slater-Koster method, both user-defined parameters and results from [DeePTB](https://github.com/deepmodeling/DeePTB)
 
 
