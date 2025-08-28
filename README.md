@@ -47,7 +47,7 @@ and four lists of functions should be indexed out.
 
 ## Functionality Highlights:
 
-- External degree of freedom (real-space coordinates): sufficient employment of the [NNS (nearest neighbor search)](https://en.wikipedia.org/wiki/Nearest_neighbor_search) algorithm, so that the total computation complexity tends to be fine as:
+- External degree of freedom (real-space coordinate): sufficient employment of the [NNS (nearest neighbor search)](https://en.wikipedia.org/wiki/Nearest_neighbor_search) algorithm, so that the total computation complexity tends to be fine as:
     - Model construction linear in system's size $ \text{O}(n) $:
         - Generation of Hamiltonian matrices,
         - Adaptive partition of central scattering region
@@ -55,7 +55,7 @@ and four lists of functions should be indexed out.
     - Calculation of transport related quantities:
         - 5-terminal Hall calculation in $ \text{O}(n^{1.7}) $
 
-- Internal degree of freedom: spin, atomic orbital, (BdG) particle-hole, (Floquet) photon block, and lattice vibration polarization
+- Internal degree of freedoms: spin, atomic orbital, (BdG) particle-hole, (Floquet) photon block, and lattice vibration polarization
 
 - Workflow coordinated with [DeePTB](https://github.com/deepmodeling/DeePTB) on Slater-Koster model construction and transport calculation with nonidentity overlapping matrices
 
