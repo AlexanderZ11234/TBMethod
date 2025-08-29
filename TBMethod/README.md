@@ -1,6 +1,6 @@
 # TBMethod
  
-This package consists of four subpackages responsible, respectively, for different group of functionalities.
+This package consists of four subpackages responsible, respectively, for functionalities of different categories.
 
 - MDConstruct
 	- Etymology: short for "MoDel Construction"
