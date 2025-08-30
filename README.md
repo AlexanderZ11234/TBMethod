@@ -45,7 +45,7 @@ and four lists of functions should be indexed out.
 
 - **Run** `PacletUninstall["TBMethod"]` for uninstallation or reinstallation.
 
-## Functionality Highlights:
+## Functionality Highlights
 
 - External degree of freedom (real-space coordinate): sufficient employment of the [NNS (nearest neighbor search)](https://en.wikipedia.org/wiki/Nearest_neighbor_search) algorithm, so that the total computation complexity tends to be fine as:
     - Model construction linear in system's size $ \text{O}(n) $:
