@@ -77,7 +77,7 @@ $DistributedContexts = {"Global`", "TBMethod`"}; (*Otherwise, dim in HMatrixFrom
 
 
 FillWithDistance[fs_, ds_, d_, zero_:1.*^-5] :=
-Module[{innerdof = Dimensions[fs[[1, 1]]]},
+Module[{innerdof = Dimensions[fs[[1, 1]]]}, (*[[1,1]] for extracting from Hold*)
 	Piecewise[
 	MapThread[{#, Abs[d - #2] < zero} &, {fs, ds}],
 	ConstantArray[0, innerdof]
