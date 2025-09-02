@@ -10,7 +10,7 @@ This package consists of four subpackages responsible, respectively, for functio
 
 - EigenSpect
 	- Etymology: short for "Eigen Spectrum"
-	- Major capability: evaluation of the characteristic information for the given Hamiltonian matrices, e.g., bandstructures, energy spectrum, topological invariants (Chern number, WCC, Bott index, etc.), and so on
+	- Major capability: evaluation of the characteristic information for the given Hamiltonian matrices, e.g., bandstructures, energy spectra, topological invariants (Chern number, WCC, Bott index, etc.), and so on
 
 - LGFF
 	- Etymology: short for "Lattice Green's Function Formalism"
