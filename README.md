@@ -142,17 +142,14 @@ and four lists of functions should be indexed out.
 1. [Phys. Rev. B **82**, 245412 (2010)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.82.245412).
 1. [Nat. Commun. **15**, 6772 (2024)](https://www.nature.com/articles/s41467-024-51006-4).
 1. [Phys. Rev. B **110**, 235130 (2024)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.110.235130). 
-
 </details>
 <details>
 <summary>
 
 ### Other Theoretical Consideration
-
 </summary>
 
 1. [Z. Phys. **64**, 629 (1930)](https://link.springer.com/article/10.1007/BF01397213).
 1. [Z. Phys. **80**, 763 (1933)](https://link.springer.com/article/10.1007/BF01342591).
 1. [Phys. Rev. B **40**, 8169 (1989)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.40.8169).
-
 </details>
