@@ -84,6 +84,7 @@ and four lists of functions should be indexed out.
 ## Incomplete References
 
 ### Topological Models & Characterization
+<details>
 1. Bernevig, [_Topological Insulators and Topological Superconductors_](https://press.princeton.edu/books/hardcover/9780691151755/topological-insulators-and-topological-superconductors?srsltid=AfmBOop9JnAo53v7Hn3ErPpR2uf3vW0JLPykFSNWSK_QoP1xjsDuKoMG), PUP, 2013.
 1. Shen, [_Topological Insulators: Dirac Equation in Condensed Matters_](https://link.springer.com/book/10.1007/978-981-10-4606-3), Springer, 2017.
 1. [Phys. Rev. Lett. **61**, 2015 (1988)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.61.2015).
@@ -96,6 +97,7 @@ and four lists of functions should be indexed out.
 1. [Phys. Rev. B **95**, 245433 (2017)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.95.245433).
 1. [Phys. Rev. Lett. **124**, 136403 (2020)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.124.136403).
 1. [Phys. Rev. Lett. **124**, 166804 (2020)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.124.166804).
+</details>
 
 ### Lattice Green's Function Formalism
 1. Datta, [_Electronic Transport in Mesoscopic Systems_](https://www.cambridge.org/core/books/electronic-transport-in-mesoscopic-systems/1E55DEF5978AA7B843FF70337C220D8B), CUP, 1995.
