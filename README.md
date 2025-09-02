@@ -105,7 +105,14 @@ and four lists of functions should be indexed out.
 
 </details>
 
+
+<details>
+<summary>
+
 ### Lattice Green's Function Formalism
+
+</summary>
+
 1. Datta, [_Electronic Transport in Mesoscopic Systems_](https://www.cambridge.org/core/books/electronic-transport-in-mesoscopic-systems/1E55DEF5978AA7B843FF70337C220D8B), CUP, 1995.
 1. Datta, [_Quantum Transport: Atom to Transistor_](https://www.cambridge.org/core/books/quantum-transport/E96BE74AACD59A03A7D6A7F7DACDFB71), CUP, 2005.
 1. Wimmer, [_Quantum transport in nanostructures: From computational concepts to spintronics in graphene and magnetic tunnel junctions_](https://epub.uni-regensburg.de/12142/), Ph.D. Dissertation, Universität Regensburg, 2008.
@@ -119,7 +126,16 @@ and four lists of functions should be indexed out.
 1. [Phys. Rev. B **97**, 165405 (2018)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.97.165405).
 1. [Phys. Rev. B **100**, 195417 (2019)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.100.195417).
 
+</details>
+
+
+<details>
+<summary>
+
 ### Slater-Koster Method
+
+</summary>
+
 1. Saito, [_Physical Properties of Carbon Nanotubes_](https://www.worldscientific.com/worldscibooks/10.1142/p080?srsltid=AfmBOoosI-cgWaXJxEbpkiw1QPAPb82G87WuKIr6LAeeVNM8vWX1tifB#t=aboutBook), ICP, 1998.
 1. [Phys. Rev. **94**, 1498 (1954)](https://journals.aps.org/pr/abstract/10.1103/PhysRev.94.1498).
 1. [Phys. Rev. B **74**, 165310 (2006)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.74.165310).
@@ -127,8 +143,18 @@ and four lists of functions should be indexed out.
 1. [Nat. Commun. **15**, 6772 (2024)](https://www.nature.com/articles/s41467-024-51006-4).
 1. [Phys. Rev. B **110**, 235130 (2024)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.110.235130). 
 
+</details>
+
+
+<details>
+<summary>
+
 ### Other Theoretical Construction
+
+</summary>
+
 1. [Z. Phys. **64**, 629 (1930)](https://link.springer.com/article/10.1007/BF01397213).
 1. [Z. Phys. **80**, 763 (1933)](https://link.springer.com/article/10.1007/BF01342591).
 1. [Phys. Rev. B **40**, 8169 (1989)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.40.8169).
 
+</details>
