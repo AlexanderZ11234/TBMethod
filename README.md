@@ -99,6 +99,8 @@ and four lists of functions should be indexed out.
 1. [Phys. Rev. Lett. **124**, 136403 (2020)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.124.136403).
 1. [Phys. Rev. Lett. **124**, 166804 (2020)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.124.166804).
 
+</details>
+
 ### Lattice Green's Function Formalism
 1. Datta, [_Electronic Transport in Mesoscopic Systems_](https://www.cambridge.org/core/books/electronic-transport-in-mesoscopic-systems/1E55DEF5978AA7B843FF70337C220D8B), CUP, 1995.
 1. Datta, [_Quantum Transport: Atom to Transistor_](https://www.cambridge.org/core/books/quantum-transport/E96BE74AACD59A03A7D6A7F7DACDFB71), CUP, 2005.
@@ -126,4 +128,3 @@ and four lists of functions should be indexed out.
 1. [Z. Phys. **80**, 763 (1933)](https://link.springer.com/article/10.1007/BF01342591).
 1. [Phys. Rev. B **40**, 8169 (1989)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.40.8169).
 
-</details>
