@@ -84,7 +84,11 @@ and four lists of functions should be indexed out.
 ## Incomplete References
 
 <details>
-<summary> ### Topological Models & Characterization </summary>
+<summary>
+
+### Topological Models & Characterization
+
+</summary>
 
 1. Bernevig, [_Topological Insulators and Topological Superconductors_](https://press.princeton.edu/books/hardcover/9780691151755/topological-insulators-and-topological-superconductors?srsltid=AfmBOop9JnAo53v7Hn3ErPpR2uf3vW0JLPykFSNWSK_QoP1xjsDuKoMG), PUP, 2013.
 1. Shen, [_Topological Insulators: Dirac Equation in Condensed Matters_](https://link.springer.com/book/10.1007/978-981-10-4606-3), Springer, 2017.
