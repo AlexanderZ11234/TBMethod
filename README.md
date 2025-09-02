@@ -63,7 +63,11 @@ and four lists of functions should be indexed out.
 
 <a href="#" class="magic-button" title="Onsite testable"> _MMA-style_ </a> documentation under construction
 
+<details open>
+<summary>
+
 ## Related Publications
+</summary>
 
 1. [npj Quant. Mater. **10**, 48 (2025)](https://www.nature.com/articles/s41535-025-00768-1).
 1. [Phys. Rev. B **111**, 085137 (2025)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.111.085137).
@@ -78,7 +82,7 @@ and four lists of functions should be indexed out.
 1. [Phys. Rev. B **101**, 235432 (2020)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.101.235432).
 1. [Phys. Rev. B **100**, 205408 (2019)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.100.205408).
 1. [Phys. Rev. B **95**, 045424 (2017)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.95.045424).
-
+</details>
 
 
 ## Incomplete References
@@ -105,7 +109,6 @@ and four lists of functions should be indexed out.
 
 </details>
 
-
 <details>
 <summary>
 
@@ -128,7 +131,6 @@ and four lists of functions should be indexed out.
 
 </details>
 
-
 <details>
 <summary>
 
@@ -143,10 +145,11 @@ and four lists of functions should be indexed out.
 1. [Nat. Commun. **15**, 6772 (2024)](https://www.nature.com/articles/s41467-024-51006-4).
 1. [Phys. Rev. B **110**, 235130 (2024)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.110.235130). 
 </details>
+
 <details>
 <summary>
 
-### Other Theoretical Consideration
+### Other Theoretical Considerations
 </summary>
 
 1. [Z. Phys. **64**, 629 (1930)](https://link.springer.com/article/10.1007/BF01397213).
