@@ -83,22 +83,21 @@ and four lists of functions should be indexed out.
 
 ## Incomplete References
 
-### Topological Models & Characterization
 <details>
-    <summary> Topological Models & Characterization </summary>
-    1. Bernevig, [_Topological Insulators and Topological Superconductors_](https://press.princeton.edu/books/hardcover/9780691151755/topological-insulators-and-topological-superconductors?srsltid=AfmBOop9JnAo53v7Hn3ErPpR2uf3vW0JLPykFSNWSK_QoP1xjsDuKoMG), PUP, 2013.
-    1. Shen, [_Topological Insulators: Dirac Equation in Condensed Matters_](https://link.springer.com/book/10.1007/978-981-10-4606-3), Springer, 2017.
-    1. [Phys. Rev. Lett. **61**, 2015 (1988)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.61.2015).
-    1. [Phys. Rev. Lett. **95**, 146802 (2005)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.95.146802).
-    1. [Phys. Rev. Lett. **95**, 226801 (2005)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.95.226801).
-    1. [Phys. Rev. B **82**, 161414(R) (2010)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.82.161414).
-    1. [Phys. Rev. B **84**, 075119 (2011)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.84.075119).
-    1. [Phys. Rev. Lett. **112**, 037001 (2014)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.112.037001).
-    1. [Phys. Rev. B **95**, 195102 (2017)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.95.195102).
-    1. [Phys. Rev. B **95**, 245433 (2017)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.95.245433).
-    1. [Phys. Rev. Lett. **124**, 136403 (2020)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.124.136403).
-    1. [Phys. Rev. Lett. **124**, 166804 (2020)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.124.166804).
-</details>
+
+### Topological Models & Characterization
+1. Bernevig, [_Topological Insulators and Topological Superconductors_](https://press.princeton.edu/books/hardcover/9780691151755/topological-insulators-and-topological-superconductors?srsltid=AfmBOop9JnAo53v7Hn3ErPpR2uf3vW0JLPykFSNWSK_QoP1xjsDuKoMG), PUP, 2013.
+1. Shen, [_Topological Insulators: Dirac Equation in Condensed Matters_](https://link.springer.com/book/10.1007/978-981-10-4606-3), Springer, 2017.
+1. [Phys. Rev. Lett. **61**, 2015 (1988)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.61.2015).
+1. [Phys. Rev. Lett. **95**, 146802 (2005)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.95.146802).
+1. [Phys. Rev. Lett. **95**, 226801 (2005)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.95.226801).
+1. [Phys. Rev. B **82**, 161414(R) (2010)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.82.161414).
+1. [Phys. Rev. B **84**, 075119 (2011)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.84.075119).
+1. [Phys. Rev. Lett. **112**, 037001 (2014)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.112.037001).
+1. [Phys. Rev. B **95**, 195102 (2017)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.95.195102).
+1. [Phys. Rev. B **95**, 245433 (2017)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.95.245433).
+1. [Phys. Rev. Lett. **124**, 136403 (2020)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.124.136403).
+1. [Phys. Rev. Lett. **124**, 166804 (2020)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.124.166804).
 
 ### Lattice Green's Function Formalism
 1. Datta, [_Electronic Transport in Mesoscopic Systems_](https://www.cambridge.org/core/books/electronic-transport-in-mesoscopic-systems/1E55DEF5978AA7B843FF70337C220D8B), CUP, 1995.
@@ -127,3 +126,4 @@ and four lists of functions should be indexed out.
 1. [Z. Phys. **80**, 763 (1933)](https://link.springer.com/article/10.1007/BF01342591).
 1. [Phys. Rev. B **40**, 8169 (1989)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.40.8169).
 
+</details>
