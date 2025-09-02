@@ -144,12 +144,10 @@ and four lists of functions should be indexed out.
 1. [Phys. Rev. B **110**, 235130 (2024)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.110.235130). 
 
 </details>
-
-
 <details>
 <summary>
 
-### Other Theoretical Construction
+### Other Theoretical Consideration
 
 </summary>
 
