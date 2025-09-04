@@ -155,4 +155,6 @@ and four lists of functions should be indexed out.
 1. [Z. Phys. **64**, 629 (1930)](https://link.springer.com/article/10.1007/BF01397213).
 1. [Z. Phys. **80**, 763 (1933)](https://link.springer.com/article/10.1007/BF01342591).
 1. [Phys. Rev. B **40**, 8169 (1989)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.40.8169).
+1. [Phys. Rev. B **79**, 081406(R) (2009)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.79.081406).
+1. [Phys. Rev. Lett. **114**, 056801 (2015)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.114.056801).
 </details>
