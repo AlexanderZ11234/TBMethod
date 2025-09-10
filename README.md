@@ -125,6 +125,7 @@ and four lists of functions should be indexed out.
 1. [J. Phys. F: Met. Phys. **15**, 851 (1985)](https://iopscience.iop.org/article/10.1088/0305-4608/15/4/009).
 1. [Phys. Rev. Lett. **97**, 066603 (2006)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.97.066603).
 1. [Nanotechnology **18**, 435402 (2007)](https://iopscience.iop.org/article/10.1088/0957-4484/18/43/435402).
+1. [Phys. Rev. B **83**, 085412 (2011)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.83.085412).
 1. [Phys. Rev. B **91**, 125408 (2015)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.91.125408).
 1. [Phys. Rev. B **97**, 165405 (2018)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.97.165405).
 1. [Phys. Rev. B **100**, 195417 (2019)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.100.195417).
