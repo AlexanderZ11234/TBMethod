@@ -20,6 +20,8 @@
 
 ### Installation Test (1 → 3 or 2 → 3)
 
+Programming environment version: the latest the best
+
 1. For single kernel, load the package by
 
 <!---->
