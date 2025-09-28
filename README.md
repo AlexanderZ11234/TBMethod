@@ -4,6 +4,8 @@
 
 ### Installation
 
+Programming environment version: the latest the best
+
 #### Offline
 
 1.  **Download** the latest `"TBMethod-<\*version #\*>.paclet"` file to one's local machine;
@@ -19,8 +21,6 @@
 -->
 
 ### Installation Test (1 → 3 or 2 → 3)
-
-Programming environment version: the latest the best
 
 1. For single kernel, load the package by
 
@@ -64,6 +64,9 @@ and four lists of functions should be indexed out.
 ## Documentation
 
 <a href="#" class="magic-button" title="Onsite testable"> _MMA-style_ </a> documentation under construction
+
+Coorperation is highly welcome.
+
 
 <details open>
 <summary>
