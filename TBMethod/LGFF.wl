@@ -343,6 +343,10 @@ Module[{ptscsr = Join @@ layeredpts, innersummed, js, currenttensorblocks, jtens
 (*For five and six T cases; The numbering of leads follows the order of from left to right and from up to down.
 And the source and drain should be numbered at the beginning and the ending.*)
 (*
+     2   
+1 ------- 4
+     3
+
    2   4
 1 ------- 5
    3
