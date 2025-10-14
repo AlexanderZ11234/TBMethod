@@ -67,6 +67,8 @@ and four lists of functions should be indexed out.
 
 Coorperation is highly welcome.
 
+A tutorial in [Zhuhu Column](https://www.zhihu.com/column/c_1954932040861450487) is also under compilation.
+
 
 <details open>
 <summary>
