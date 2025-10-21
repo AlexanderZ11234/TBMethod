@@ -230,12 +230,19 @@ HMatricesRealSpace[crystalstructure_Association, tfunc_, dup_Real] := (pts |-> H
 ParallelHMatricesRealSpace[crystalstructure_Association, tfunc_, dup_Real] := (pts |-> ParallelHMatrixFromHoppings[{pts, crystalstructure[[1]]}, tfunc, dup]) /@ crystalstructure;
 
 
-HBloch[vk_, h0010s:<|({__?NumericQ} -> _SparseArray)..|>] :=
+(*HBloch[vk_, h0010s:<|({__?NumericQ} -> _SparseArray)..|>] :=
 Module[{hermitize = # + #\[HermitianConjugate] &},
 	First[h0010s] + hermitize[KeyValueMap[Exp[I # . vk] #2 &, Rest[h0010s]] // Total]
 ];
 
-HBlochFull[vk_, vecaHa_Association] := Total[KeyValueMap[Exp[I # . vk] #2 &, vecaHa]];
+HBlochFull[vk_, vecaHa_Association] := Total[KeyValueMap[Exp[I # . vk] #2 &, vecaHa]];*)
+
+HBloch[vk_, h0010s:<|({__?NumericQ} -> _SparseArray)..|>] :=
+Module[{hermitize = # + #\[HermitianConjugate] &},
+	First[h0010s] + hermitize[KeyValueMap[Exp[-I # . vk] #2 &, Rest[h0010s]] // Total]
+];
+
+HBlochFull[vk_, vecaHa_Association] := Total[KeyValueMap[Exp[-I # . vk] #2 &, vecaHa]];
 
 (*Division of a large central scattering region in a disjointed covering manner, suitable for 2D & 3D*)
 DisjointedShellDivisionRegions[region_?BoundaryMeshRegionQ, nregions_?(# \[Element] PositiveIntegers &)] :=
