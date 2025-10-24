@@ -119,8 +119,8 @@ Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, g0, t0
 ];*)
 
 
-SurfaceGreen[e_, {{h0_, h1_}, {s0_, s1_}}, mode:(1|2|3):1] := SurfaceGreen[e, nonOrthoToOrthoTransf[e][{{h0, h1}, {s0, s1}}], mode];
-SurfaceGreen[e_, {h0_, h1_}, mode:(1|2|3):1] :=
+SurfaceGreen[e_, {{h0_?MatrixQ, h1_?MatrixQ}, {s0_?MatrixQ, s1_?MatrixQ}}, mode:(1|2|3):1] := SurfaceGreen[e, nonOrthoToOrthoTransf[e][{{h0, h1}, {s0, s1}}], mode];
+SurfaceGreen[e_, {h0_?MatrixQ, h1_?MatrixQ}, mode:(1|2|3):1] :=
 Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, g0, t0, tttilde, TTtilde, T, MH, S1, S2, n},
 	g0inverse = e id - h0;
 	
@@ -161,8 +161,8 @@ Module[{gsurface},
 	SparseArray[H01 . gsurface . H01\[ConjugateTranspose]]
 ];*)
 
-Sigma[e_, {{h0_, h1_, H01_}, {s0_, s1_, S01_}}, mode:(1|2|3):1] := Sigma[e, nonOrthoToOrthoTransf[e][{{h0, h1,H01}, {s0, s1,S01}}], mode];
-Sigma[e_, {h0_, h1_, H01_}, mode:(1|2|3):1] :=
+Sigma[e_, {{h0_?MatrixQ, h1_?MatrixQ, H01_?MatrixQ}, {s0_?MatrixQ, s1_?MatrixQ, S01_?MatrixQ}}, mode:(1|2|3):1] := Sigma[e, nonOrthoToOrthoTransf[e][{{h0, h1,H01}, {s0, s1, S01}}], mode];
+Sigma[e_, {h0_?MatrixQ, h1_?MatrixQ, H01_?MatrixQ}, mode:(1|2|3):1] :=
 Module[{gsurface, len = Length[H01], \[Eta] = Im[e]},
 	If[Norm[H01, "Frobenius"] >= \[Eta], 
 		gsurface = SurfaceGreen[e, {h0, h1}, mode]; SparseArray[H01 . gsurface . H01\[ConjugateTranspose]],
@@ -171,16 +171,16 @@ Module[{gsurface, len = Length[H01], \[Eta] = Im[e]},
 ];
 
 (*Green's function of the central region*)
-CentralGreen[e_,  {HC_, SC_}, Sigmas_List, method_:1] := CentralGreen[e, nonOrthoToOrthoTransf[e][{HC,SC}], Sigmas, method];
-CentralGreen[e_, HC_, Sigmas_List, method_:1] :=
+CentralGreen[e_,  {HC_?MatrixQ, SC_?MatrixQ}, Sigmas_List, method_:1] := CentralGreen[e, nonOrthoToOrthoTransf[e][{HC, SC}], Sigmas, method];
+CentralGreen[e_, HC_?MatrixQ, Sigmas_List, method_:1] :=
 Module[{id = iden[HC], GCinverse, inv = inverse[#, Method -> "Multifrontal"] &},
 	GCinverse = e id - HC;
 	(*SparseArray[ #[GCinverse - Total @ Sigmas] ] & @ Which[method == 1, inverse[#, Method -> "Multifrontal"]&, method == 2, invbyQR]*)
 	Which[method == 1, inv, method == 2, invbyQR][GCinverse - Total @ Sigmas]
 ];
 
-CentralBlockGreens[e_, {blockHs:{ds_, os_}, blockSs:{s0s_, s1s_}}, sigmas_, mode:("T"|"LDOS"|"LCDV"):"T"] := CentralBlockGreens[e, nonOrthoToOrthoTransf[e][{blockHs, blockSs}], sigmas, mode];	
-CentralBlockGreens[e_, blockHs:{ds_, os_}, sigmas_, mode:("T"|"LDOS"|"LCDV"):"T"] /; (Subtract @@ (Length /@ blockHs) == 1) := 
+CentralBlockGreens[e_, {blockHs:{ds_?MatrixQ, os_?MatrixQ}, blockSs:{s0s_?MatrixQ, s1s_?MatrixQ}}, sigmas_, mode:("T"|"LDOS"|"LCDV"):"T"] := CentralBlockGreens[e, nonOrthoToOrthoTransf[e][{blockHs, blockSs}], sigmas, mode];	
+CentralBlockGreens[e_, blockHs:{ds_?MatrixQ, os_?MatrixQ}, sigmas_, mode:("T"|"LDOS"|"LCDV"):"T"] /; (Subtract @@ (Length /@ blockHs) == 1) := 
 Module[{inv, diagblocks, iteratefunc, arguments},
 	inv = inverse[#, Method -> "Multifrontal"] &;
 	diagblocks = e iden[#] - # & /@ MapAt[Total[sigmas] + # &, ds, -1];
@@ -200,8 +200,8 @@ Module[{inv, diagblocks, iteratefunc, arguments},
 ];
 
 (*The diagonal blocks of the Green's functions*)
-CentralDiagonalBlockGreens[e_, {blockHs:{ds_, os_}, blockSs:{s0s_, s1s_}}, sigmas_] := CentralDiagonalBlockGreens[e, nonOrthoToOrthoTransf[e][{blockHs, blockSs}], sigmas];
-CentralDiagonalBlockGreens[e_, blockHs:{ds_, os_}, sigmas_] /; And[Length[ds] >= 2, Subtract @@ (Length /@ blockHs) == 1] :=
+CentralDiagonalBlockGreens[e_, {blockHs:{ds_?MatrixQ, os_?MatrixQ}, blockSs:{s0s_?MatrixQ, s1s_?MatrixQ}}, sigmas_] := CentralDiagonalBlockGreens[e, nonOrthoToOrthoTransf[e][{blockHs, blockSs}], sigmas];
+CentralDiagonalBlockGreens[e_, blockHs:{ds_?MatrixQ, os_?MatrixQ}, sigmas_] /; And[Length[ds] >= 2, Subtract @@ (Length /@ blockHs) == 1] :=
 Module[{inv, diagblocks, blockGinvs, blockGinvsrev, iteratefunc, Fisinner, Fisouter, foldlist},
 	inv = inverse[#1, Method -> "Multifrontal"] &;
 	foldlist = FoldList[Last[#2] - First[#2] . inv[#] . First[#2]\[ConjugateTranspose] &];
