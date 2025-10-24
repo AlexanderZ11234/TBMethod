@@ -14,9 +14,8 @@ ParallelHMatricesRealSpace::usage = "Parallel version of HMatricesRealSpace."
 HBloch::usage = "Constructs the reciprocal space Bloch Hamiltonian matrix, with automatic consideration of opposite hoppings.";
 HBlochFull::usage = "Constructs the reciprocal space Bloch Hamiltonian matrix, without consideration of opposite hoppings.";
 
-DisjointedShellDivisionRegions::usage = "xxx.";
-
-CoordinatesGroupByRegions::usage = "xxx.";
+(*DisjointedShellDivisionRegions::usage = "xxx.";*)
+(*CoordinatesGroupByRegions::usage = "xxx.";*)
 
 AttachFreeQ::usage = "Checks if two devices are out of contact.";
 
@@ -97,14 +96,14 @@ Module[{innerdof = Dimensions[fs[[1, 1]]]},
 					];
 
 (*Phys. Rev. B 40, 8169 (1989)*)
-(*The azimuthal angle \[Phi]A specifies the direction respecting the lattice translational symmetry,
-	even in the presence of the vector potential.*)
+(*The azimuthal angle \[Phi]A specifies the direction respecting the lattice translational symmetry, even in the presence of the vector potential.*)
 (*Gauge: vecA = (-B y, 0, 0)*)
 PhaseFactor2DAB[B_, \[Phi]A_][ptf:{_, _}, pti:{_, _}] :=
 Module[{xi, yi, xj, yj, \[CurlyPhi]},
 	{{xi, yi}, {xj, yj}} = {ptf, pti};
 	(*B \[Pi] ( xj yi - xi yj - (xi yi - xj yj) Cos[2\[Phi]A] + (xi^2 - xj^2 - yi^2 + yj^2) Sin[2\[Phi]A]/2)*)
-	\[CurlyPhi] = B \[Pi] (- xj yi + xi yj + (xi yi - xj yj) Cos[2\[Phi]A] + (-xi^2 + xj^2 + yi^2 - yj^2) Sin[2\[Phi]A]/2);
+	(*electron has a negative charge -e*)
+	\[CurlyPhi] = - B \[Pi] (- xj yi + xi yj + (xi yi - xj yj) Cos[2\[Phi]A] + (-xi^2 + xj^2 + yi^2 - yj^2) Sin[2\[Phi]A]/2);
 	Exp[I \[CurlyPhi]]
 ];
 
@@ -113,7 +112,7 @@ Module[{xi, yi, xj, yj, \[CurlyPhi]},
 PhaseFactor3DAB[Bz_][ptf:{_, _}, pti:{_, _}] := PhaseFactor3DAB[{0, 0, Bz}][Append[ptf, 0], Append[pti, 0]]
 PhaseFactor3DAB[vecB:{_, _, _}][ptf:{_, _, _}, pti:{_, _, _}] :=
 Module[{\[CurlyPhi]},
-	\[CurlyPhi] = (*2/(2 \[CapitalPhi]0)*)\[Pi] Det[{ptf, vecB, pti}];
+	\[CurlyPhi] = -(*2/(2 \[CapitalPhi]0)*)\[Pi] Det[{ptf, vecB, pti}];
 	Exp[I \[CurlyPhi]]
 ];
 
@@ -230,19 +229,19 @@ HMatricesRealSpace[crystalstructure_Association, tfunc_, dup_Real] := (pts |-> H
 ParallelHMatricesRealSpace[crystalstructure_Association, tfunc_, dup_Real] := (pts |-> ParallelHMatrixFromHoppings[{pts, crystalstructure[[1]]}, tfunc, dup]) /@ crystalstructure;
 
 
-HBloch[vk_, h0010s:<|({__?NumericQ} -> _SparseArray)..|>] :=
+(*HBloch[vk_, h0010s:<|({__?NumericQ} -> _SparseArray)..|>] :=
 Module[{hermitize = # + #\[HermitianConjugate] &},
 	First[h0010s] + hermitize[KeyValueMap[Exp[I # . vk] #2 &, Rest[h0010s]] // Total]
 ];
 
-HBlochFull[vk_, vecaHa_Association] := Total[KeyValueMap[Exp[I # . vk] #2 &, vecaHa]];
+HBlochFull[vk_, vecaHa_Association] := Total[KeyValueMap[Exp[I # . vk] #2 &, vecaHa]];*)
 
-(*HBloch[vk_, h0010s:<|({__?NumericQ} -> _SparseArray)..|>] :=
+HBloch[vk_, h0010s:<|({__?NumericQ} -> _SparseArray)..|>] :=
 Module[{hermitize = # + #\[HermitianConjugate] &},
 	First[h0010s] + hermitize[KeyValueMap[Exp[-I # . vk] #2 &, Rest[h0010s]] // Total]
 ];
 
-HBlochFull[vk_, vecaHa_Association] := Total[KeyValueMap[Exp[-I # . vk] #2 &, vecaHa]];*)
+HBlochFull[vk_, vecaHa_Association] := Total[KeyValueMap[Exp[-I # . vk] #2 &, vecaHa]];
 
 (*Division of a large central scattering region in a disjointed covering manner, suitable for 2D & 3D*)
 DisjointedShellDivisionRegions[region_?BoundaryMeshRegionQ, nregions_?(# \[Element] PositiveIntegers &)] :=
