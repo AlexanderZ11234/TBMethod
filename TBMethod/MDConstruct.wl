@@ -103,7 +103,7 @@ Module[{xi, yi, xj, yj, \[CurlyPhi]},
 	{{xi, yi}, {xj, yj}} = {ptf, pti};
 	(*B \[Pi] ( xj yi - xi yj - (xi yi - xj yj) Cos[2\[Phi]A] + (xi^2 - xj^2 - yi^2 + yj^2) Sin[2\[Phi]A]/2)*)
 	(*electron has a negative charge -e*)
-	\[CurlyPhi] = - B \[Pi] (- xj yi + xi yj + (xi yi - xj yj) Cos[2\[Phi]A] + (-xi^2 + xj^2 + yi^2 - yj^2) Sin[2\[Phi]A]/2);
+	\[CurlyPhi] = B \[Pi] (- xj yi + xi yj + (xi yi - xj yj) Cos[2\[Phi]A] + (-xi^2 + xj^2 + yi^2 - yj^2) Sin[2\[Phi]A]/2);
 	Exp[I \[CurlyPhi]]
 ];
 
@@ -112,7 +112,7 @@ Module[{xi, yi, xj, yj, \[CurlyPhi]},
 PhaseFactor3DAB[Bz_][ptf:{_, _}, pti:{_, _}] := PhaseFactor3DAB[{0, 0, Bz}][Append[ptf, 0], Append[pti, 0]]
 PhaseFactor3DAB[vecB:{_, _, _}][ptf:{_, _, _}, pti:{_, _, _}] :=
 Module[{\[CurlyPhi]},
-	\[CurlyPhi] = -(*2/(2 \[CapitalPhi]0)*)\[Pi] Det[{ptf, vecB, pti}];
+	\[CurlyPhi] = (*2/(2 \[CapitalPhi]0)*)\[Pi] Det[{ptf, vecB, pti}];
 	Exp[I \[CurlyPhi]]
 ];
 
