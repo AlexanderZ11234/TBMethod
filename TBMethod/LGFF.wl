@@ -119,8 +119,9 @@ Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, g0, t0
 ];*)
 
 
-SurfaceGreenOverlap[e_, {{h0_, h1_}, {s0_, s1_}}, mode:(1|2|3):1] := SurfaceGreen[e, nonOrthoToOrthoTransf[e][{{h0, h1}, {s0, s1}}], mode];
-SurfaceGreen[e_, {h0_, h1_}, mode:(1|2|3):1] :=
+(*SurfaceGreenOverlap[e_, {{h0_, h1_}, {s0_, s1_}}, mode:(1|2|3):1] := SurfaceGreen[e, nonOrthoToOrthoTransf[e][{{h0, h1}, {s0, s1}}], mode];*)
+SurfaceGreen[e_, {h0_, h1_}, {s0_, s1_}, mode:(1|2|3):3] := SurfaceGreen[e, nonOrthoToOrthoTransf[e][{{h0, h1}, {s0, s1}}], mode];
+SurfaceGreen[e_, {h0_, h1_}, mode:(1|2|3):3] :=
 Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, g0, t0, tttilde, TTtilde, T, MH, S1, S2, n},
 	g0inverse = e id - h0;
 	
@@ -161,8 +162,9 @@ Module[{gsurface},
 	SparseArray[H01 . gsurface . H01\[ConjugateTranspose]]
 ];*)
 
-SigmaOverlap[e_, {{h0_, h1_, H01_}, {s0_, s1_, S01_}}, mode:(1|2|3):1] := Sigma[e, nonOrthoToOrthoTransf[e][{{h0, h1, H01}, {s0, s1, S01}}], mode];
-Sigma[e_, {h0_, h1_, H01_}, mode:(1|2|3):1] :=
+(*SigmaOverlap[e_, {{h0_, h1_, H01_}, {s0_, s1_, S01_}}, mode:(1|2|3):1] := Sigma[e, nonOrthoToOrthoTransf[e][{{h0, h1, H01}, {s0, s1, S01}}], mode];*)
+Sigma[e_, {h0_, h1_, H01_}, {s0_, s1_, S01_}, mode:(1|2|3):3] := Sigma[e, nonOrthoToOrthoTransf[e][{{h0, h1, H01}, {s0, s1, S01}}], mode];
+Sigma[e_, {h0_, h1_, H01_}, mode:(1|2|3):3] :=
 Module[{gsurface, len = Length[H01], \[Eta] = Im[e]},
 	If[Norm[H01, "Frobenius"] >= \[Eta], 
 		gsurface = SurfaceGreen[e, {h0, h1}, mode]; SparseArray[H01 . gsurface . H01\[ConjugateTranspose]],
@@ -171,7 +173,8 @@ Module[{gsurface, len = Length[H01], \[Eta] = Im[e]},
 ];
 
 (*Green's function of the central region*)
-CentralGreenOverlap[e_,  {HC_, SC_}, Sigmas_List, method_:1] := CentralGreen[e, nonOrthoToOrthoTransf[e][{HC, SC}], Sigmas, method];
+(*CentralGreenOverlap[e_,  {HC_, SC_}, Sigmas_List, method_:1] := CentralGreen[e, nonOrthoToOrthoTransf[e][{HC, SC}], Sigmas, method];*)
+CentralGreen[e_,  HC_, SC_, Sigmas_List, method_:1] := CentralGreen[e, nonOrthoToOrthoTransf[e][{HC, SC}], Sigmas, method];
 CentralGreen[e_, HC_, Sigmas_List, method_:1] :=
 Module[{id = iden[HC], GCinverse, inv = inverse[#, Method -> "Multifrontal"] &},
 	GCinverse = e id - HC;
@@ -179,7 +182,8 @@ Module[{id = iden[HC], GCinverse, inv = inverse[#, Method -> "Multifrontal"] &},
 	Which[method == 1, inv, method == 2, invbyQR][GCinverse - Total @ Sigmas]
 ];
 
-CentralBlockGreensOverlap[e_, {blockHs:{ds_, os_}, blockSs:{s0s_, s1s_}}, sigmas_, mode:("T"|"LDOS"|"LCDV"):"T"] := CentralBlockGreens[e, nonOrthoToOrthoTransf[e][{blockHs, blockSs}], sigmas, mode];	
+(*CentralBlockGreensOverlap[e_, {blockHs:{ds_, os_}, blockSs:{s0s_, s1s_}}, sigmas_, mode:("T"|"LDOS"|"LCDV"):"T"] := CentralBlockGreens[e, nonOrthoToOrthoTransf[e][{blockHs, blockSs}], sigmas, mode];*)
+CentralBlockGreens[e_, blockHs:{ds_, os_}, blockSs:{s0s_, s1s_}, sigmas_, mode:("T"|"LDOS"|"LCDV"):"T"] := CentralBlockGreens[e, nonOrthoToOrthoTransf[e][{blockHs, blockSs}], sigmas, mode];	
 CentralBlockGreens[e_, blockHs:{ds_, os_}, sigmas_, mode:("T"|"LDOS"|"LCDV"):"T"] /; (Subtract @@ (Length /@ blockHs) == 1) := 
 Module[{inv, diagblocks, iteratefunc, arguments},
 	inv = inverse[#, Method -> "Multifrontal"] &;
@@ -200,7 +204,8 @@ Module[{inv, diagblocks, iteratefunc, arguments},
 ];
 
 (*The diagonal blocks of the Green's functions*)
-CentralDiagonalBlockGreensOverlap[e_, {blockHs:{ds_, os_}, blockSs:{s0s_, s1s_}}, sigmas_] := CentralDiagonalBlockGreens[e, nonOrthoToOrthoTransf[e][{blockHs, blockSs}], sigmas];
+(*CentralDiagonalBlockGreensOverlap[e_, {blockHs:{ds_, os_}, blockSs:{s0s_, s1s_}}, sigmas_] := CentralDiagonalBlockGreens[e, nonOrthoToOrthoTransf[e][{blockHs, blockSs}], sigmas];*)
+CentralDiagonalBlockGreens[e_, blockHs:{ds_, os_}, blockSs:{s0s_, s1s_}, sigmas_] := CentralDiagonalBlockGreens[e, nonOrthoToOrthoTransf[e][{blockHs, blockSs}], sigmas];
 CentralDiagonalBlockGreens[e_, blockHs:{ds_, os_}, sigmas_] /; And[Length[ds] >= 2, Subtract @@ (Length /@ blockHs) == 1] :=
 Module[{inv, diagblocks, blockGinvs, blockGinvsrev, iteratefunc, Fisinner, Fisouter, foldlist},
 	inv = inverse[#1, Method -> "Multifrontal"] &;
@@ -215,6 +220,8 @@ Module[{inv, diagblocks, blockGinvs, blockGinvsrev, iteratefunc, Fisinner, Fisou
 	
 	MapThread[inv[# - #2] &][{Fisinner + Fisouter, diagblocks}]
 ];
+
+
 
 Transmission[GCSR_, \[CapitalSigma]s_] :=
 Module[{\[CapitalGamma]p, \[CapitalGamma]q},
@@ -298,7 +305,8 @@ jvecfield[ptsCSR_, jmat_] := jvecfield[{ptsCSR, ptsCSR}, jmat];
 jvecfield[{ptsf_, ptsi_}, jmat_] := Module[{jvec, groupfunc, zero = 1.*^-3},
 	jvec[find_, iindslengths_] := Module[{ptf = ptsf[[find]], vec},
 		(*vec = Sum[Normalize[ptf - ptsi[[Keys[il]]]]Values[il], {il, iindslengths}]; (*Normalize[] might be unnecessary.*)*)
-		vec = Sum[(*Normalize@*)(ptf - ptsi[[Keys[il]]]) Values[il], {il, iindslengths}];
+		(*vec = Sum[(*Normalize@*)(ptf - ptsi[[Keys[il]]]) Values[il], {il, iindslengths}];*)
+		vec = Sum[(*Normalize@*)(ptsi[[Keys[il]]] - ptf) Values[il], {il, iindslengths}];
 		(*If[Norm[vec] < zero, Nothing, {ptf, vec}]*)
 		(*If[Norm[vec] < zero, Nothing, ptf -> vec]*)
 		ptf -> vec
