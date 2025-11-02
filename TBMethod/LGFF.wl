@@ -5,16 +5,26 @@ BeginPackage["TBMethod`LGFF`"]
 (* Declare your package's public symbols here. *)
 
 (* Exported symbols added here with SymbolName::usage *)
-SurfaceGreen::usage = "surface Green function";
-Sigma::usage = "Selfenergy from the one certain lead, source or drain.";
-CentralGreen::usage = "Green's function for the central scattering area.";
+SurfaceGreen::usage = "Surface Green's function of a lead.";
+SurfaceGreenOverlap::usage = "Overlap version of SurfaceGreen.";
+Sigma::usage = "Selfenergy from one lead.";
+SigmaOverlap::usage = "Overlap version of Sigma.";
+CentralGreen::usage = "Green's function for the central scattering region (CSR).";
+CentralGreenOverlap::usage = "Overlap version of CentralGreen.";
+
 Transmission::usage = "Transmission from Landauer-B\[UDoubleDot]ttiker formula.";
+
 CentralBlockGreens::usage = "The blocks of the full Green's function in the last block column, for the (adaptively) partitioned central scattering region.";
+CentralBlockGreensOverlap::usage = "Overlap version of CentralBlockGreens."
+
 LocalDOSRealSpace::usage = "Real-space local density of states from the Layered method.";
 LocalDOSReciprocalSpace::usage = "Reciprocal-space local density of states.";
 LocalCDV::usage = "Local current density vector field from the Layered method.";
 TransportCoefficient::usage = "Calculates transmission or reflection coefficent by scattering matrix with Green's function method.";
+
 CentralDiagonalBlockGreens::usage = "The diagonal blocks of the Green's function in the full form, corresponding to each layer from the (adaptively) partitioned central scattering region.";
+CentralDiagonalBlockGreensOverlap::usage = "Overlap version of CentralDiagonalBlockGreens.";
+
 HallAndLongitudinalResistances::usage = "Calculate the transverse Hall and longitudinal resistances simultaneously.";
 HallAndLongitudinalConductances::usage = "Calculate the transverse Hall and longitudinal conductances simultaneously.";
 
@@ -119,8 +129,7 @@ Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, g0, t0
 ];*)
 
 
-(*SurfaceGreenOverlap[e_, {{h0_, h1_}, {s0_, s1_}}, mode:(1|2|3):1] := SurfaceGreen[e, nonOrthoToOrthoTransf[e][{{h0, h1}, {s0, s1}}], mode];*)
-SurfaceGreen[e_, {h0_, h1_}, {s0_, s1_}, mode:(1|2|3):3] := SurfaceGreen[e, nonOrthoToOrthoTransf[e][{{h0, h1}, {s0, s1}}], mode];
+SurfaceGreenOverlap[e_, {{h0_, h1_}, {s0_, s1_}}, mode:(1|2|3):3] := SurfaceGreen[e, nonOrthoToOrthoTransf[e][{{h0, h1}, {s0, s1}}], mode];
 SurfaceGreen[e_, {h0_, h1_}, mode:(1|2|3):3] :=
 Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, g0, t0, tttilde, TTtilde, T, MH, S1, S2, n},
 	g0inverse = e id - h0;
@@ -162,8 +171,7 @@ Module[{gsurface},
 	SparseArray[H01 . gsurface . H01\[ConjugateTranspose]]
 ];*)
 
-(*SigmaOverlap[e_, {{h0_, h1_, H01_}, {s0_, s1_, S01_}}, mode:(1|2|3):1] := Sigma[e, nonOrthoToOrthoTransf[e][{{h0, h1, H01}, {s0, s1, S01}}], mode];*)
-Sigma[e_, {h0_, h1_, H01_}, {s0_, s1_, S01_}, mode:(1|2|3):3] := Sigma[e, nonOrthoToOrthoTransf[e][{{h0, h1, H01}, {s0, s1, S01}}], mode];
+SigmaOverlap[e_, {{h0_, h1_, H01_}, {s0_, s1_, S01_}}, mode:(1|2|3):1] := Sigma[e, nonOrthoToOrthoTransf[e][{{h0, h1, H01}, {s0, s1, S01}}], mode];
 Sigma[e_, {h0_, h1_, H01_}, mode:(1|2|3):3] :=
 Module[{gsurface, len = Length[H01], \[Eta] = Im[e]},
 	If[Norm[H01, "Frobenius"] >= \[Eta], 
@@ -173,8 +181,7 @@ Module[{gsurface, len = Length[H01], \[Eta] = Im[e]},
 ];
 
 (*Green's function of the central region*)
-(*CentralGreenOverlap[e_,  {HC_, SC_}, Sigmas_List, method_:1] := CentralGreen[e, nonOrthoToOrthoTransf[e][{HC, SC}], Sigmas, method];*)
-CentralGreen[e_,  HC_, SC_, Sigmas_List, method_:1] := CentralGreen[e, nonOrthoToOrthoTransf[e][{HC, SC}], Sigmas, method];
+CentralGreenOverlap[e_,  {HC_, SC_}, Sigmas_List, method_:1] := CentralGreen[e, nonOrthoToOrthoTransf[e][{HC, SC}], Sigmas, method];
 CentralGreen[e_, HC_, Sigmas_List, method_:1] :=
 Module[{id = iden[HC], GCinverse, inv = inverse[#, Method -> "Multifrontal"] &},
 	GCinverse = e id - HC;
@@ -182,8 +189,7 @@ Module[{id = iden[HC], GCinverse, inv = inverse[#, Method -> "Multifrontal"] &},
 	Which[method == 1, inv, method == 2, invbyQR][GCinverse - Total @ Sigmas]
 ];
 
-(*CentralBlockGreensOverlap[e_, {blockHs:{ds_, os_}, blockSs:{s0s_, s1s_}}, sigmas_, mode:("T"|"LDOS"|"LCDV"):"T"] := CentralBlockGreens[e, nonOrthoToOrthoTransf[e][{blockHs, blockSs}], sigmas, mode];*)
-CentralBlockGreens[e_, blockHs:{ds_, os_}, blockSs:{s0s_, s1s_}, sigmas_, mode:("T"|"LDOS"|"LCDV"):"T"] := CentralBlockGreens[e, nonOrthoToOrthoTransf[e][{blockHs, blockSs}], sigmas, mode];	
+CentralBlockGreensOverlap[e_, {blockHs:{ds_, os_}, blockSs:{s0s_, s1s_}}, sigmas_, mode:("T"|"LDOS"|"LCDV"):"T"] := CentralBlockGreens[e, nonOrthoToOrthoTransf[e][{blockHs, blockSs}], sigmas, mode];
 CentralBlockGreens[e_, blockHs:{ds_, os_}, sigmas_, mode:("T"|"LDOS"|"LCDV"):"T"] /; (Subtract @@ (Length /@ blockHs) == 1) := 
 Module[{inv, diagblocks, iteratefunc, arguments},
 	inv = inverse[#, Method -> "Multifrontal"] &;
@@ -204,8 +210,7 @@ Module[{inv, diagblocks, iteratefunc, arguments},
 ];
 
 (*The diagonal blocks of the Green's functions*)
-(*CentralDiagonalBlockGreensOverlap[e_, {blockHs:{ds_, os_}, blockSs:{s0s_, s1s_}}, sigmas_] := CentralDiagonalBlockGreens[e, nonOrthoToOrthoTransf[e][{blockHs, blockSs}], sigmas];*)
-CentralDiagonalBlockGreens[e_, blockHs:{ds_, os_}, blockSs:{s0s_, s1s_}, sigmas_] := CentralDiagonalBlockGreens[e, nonOrthoToOrthoTransf[e][{blockHs, blockSs}], sigmas];
+CentralDiagonalBlockGreensOverlap[e_, {blockHs:{ds_, os_}, blockSs:{s0s_, s1s_}}, sigmas_] := CentralDiagonalBlockGreens[e, nonOrthoToOrthoTransf[e][{blockHs, blockSs}], sigmas];
 CentralDiagonalBlockGreens[e_, blockHs:{ds_, os_}, sigmas_] /; And[Length[ds] >= 2, Subtract @@ (Length /@ blockHs) == 1] :=
 Module[{inv, diagblocks, blockGinvs, blockGinvsrev, iteratefunc, Fisinner, Fisouter, foldlist},
 	inv = inverse[#1, Method -> "Multifrontal"] &;
