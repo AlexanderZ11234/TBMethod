@@ -378,7 +378,10 @@ Module[{\[ScriptCapitalT], \[ScriptCapitalT]func, Rfunc, cnup = 1.*^7, ter = Len
 		Table[If[p == q || p == ter, 0., Transmission[blockG, \[CapitalSigma]s[[{p, q}]]]], {p, ter}, {q, ter}]
 	];
 	\[ScriptCapitalT] = Drop[\[ScriptCapitalT]func[-transmissions], -1, -1];
-	If[LinearAlgebra`Private`MatrixConditionNumber[\[ScriptCapitalT]] > cnup, {"NaN", "NaN"},
+	(*If[LinearAlgebra`Private`MatrixConditionNumber[\[ScriptCapitalT]] > cnup, {"NaN", "NaN"},
+		Rfunc[\[ScriptCapitalT]]
+	]*)
+	If[LUDecomposition[\[ScriptCapitalT]][[3]] > cnup, {"NaN", "NaN"}, (*condition number from LU*)
 		Rfunc[\[ScriptCapitalT]]
 	]
 ];

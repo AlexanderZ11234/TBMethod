@@ -545,7 +545,20 @@ Module[{nfuncref, nfuncpts, distfuncref,
 	MapThread[func][{adatomlbls, ptscell0}]
 ];
 
-HCSRBlocksAndersonDisordered[W_, nensemble_Integer:1, innerdofmat_][hdods:{{__}, {__}}] :=
+(*HCSRBlocksAndersonDisordered[W_, nensemble_Integer:1, innerdofmat_][hdods:{{__}, {__}}] :=
+Module[{hds, hods, hdsdisordered, hdsensemble, innerdof = Length[innerdofmat], disorderblock},
+	{hds, hods} = hdods;
+	disorderblock = DiagonalMatrix[RandomReal[{-1, 1} W/2, Length[#]/innerdof], TargetStructure -> "Sparse"] &;
+	hdsdisordered := # + KroneckerProduct[disorderblock[#], innerdofmat] & /@ hds;
+	Table[{hdsdisordered, hods}, nensemble]
+];*)
+
+HCSRBlocksAndersonDisordered[nensemble_Integer:1][Wsdofs:{Ws:{__}, innerdofmats:{__}}][hdods:{{__}, {__}}] :=
+Module[{iterate},
+	iterate = hCSRBlocksAndersonDisordered[nensemble][#2][#] &;
+	Fold[iterate, hdods, Wsdofs\[Transpose]]
+] /; Length[Ws] == Length[innerdofmats];
+HCSRBlocksAndersonDisordered[nensemble_Integer:1][{W_, innerdofmat_}][hdods:{{__}, {__}}] :=
 Module[{hds, hods, hdsdisordered, hdsensemble, innerdof = Length[innerdofmat], disorderblock},
 	{hds, hods} = hdods;
 	disorderblock = DiagonalMatrix[RandomReal[{-1, 1} W/2, Length[#]/innerdof], TargetStructure -> "Sparse"] &;
