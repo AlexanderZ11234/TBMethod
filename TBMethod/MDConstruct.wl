@@ -555,7 +555,7 @@ Module[{hds, hods, hdsdisordered, hdsensemble, innerdof = Length[innerdofmat], d
 
 HCSRBlocksAndersonDisordered[nensemble_Integer:1][Wsdofs:{Ws:{__}, innerdofmats:{__}}][hdods:{{__}, {__}}] :=
 Module[{iterate},
-	iterate = hCSRBlocksAndersonDisordered[nensemble][#2][#] &;
+	iterate = HCSRBlocksAndersonDisordered[nensemble][#2][#] &;
 	Fold[iterate, hdods, Wsdofs\[Transpose]]
 ] /; Length[Ws] == Length[innerdofmats];
 HCSRBlocksAndersonDisordered[nensemble_Integer:1][{W_, innerdofmat_}][hdods:{{__}, {__}}] :=
