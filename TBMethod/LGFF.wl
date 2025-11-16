@@ -294,7 +294,7 @@ Module[{zero = 1.*^-4, \[CapitalSigma]},
 
 (*Local current density vector*)
 (*two auxilliary functions*)
-currentTensorBlocks[Gs_, sigmas_, blockHs: {ds_, os_}, innerdof_:1] :=
+(*currentTensorBlocks[Gs_, sigmas_, blockHs: {ds_, os_}, innerdof_:1] :=
 Module[{gamma, blockGns, Gsre = Reverse[Gs], jblock0, jblock0innersummed},
 	gamma = I (# - #\[ConjugateTranspose]) & [Total[sigmas]];
 	blockGns = {# . gamma . #\[ConjugateTranspose] & /@ Gsre, # . gamma . #2\[ConjugateTranspose] & @@@ Partition[Gsre, 2, 1]};
@@ -304,7 +304,19 @@ Module[{gamma, blockGns, Gsre = Reverse[Gs], jblock0, jblock0innersummed},
 	jblock0innersummed = Table[BlockMap[Total[#, 2] &, #, {1, 1}innerdof] & /@ x, {x, jblock0}];
 	(*How to sum the internal degree of freedom?*)
 	Append[jblock0innersummed, -Transpose /@ jblock0innersummed[[2]]]
+];(*bond current in layered block form*)*)
+currentTensorBlocks[innerproj_][Gs_, sigmas_, blockHs: {ds_, os_}] :=
+Module[{gamma, blockGns, Gsre = Reverse[Gs], jblock0, jblock0innersummed, innerdof = Dimensions[innerproj]},
+	gamma = I (# - #\[ConjugateTranspose]) & [Total[sigmas]];
+	blockGns = {# . gamma . #\[ConjugateTranspose] & /@ Gsre, # . gamma . #2\[ConjugateTranspose] & @@@ Partition[Gsre, 2, 1]};
+	(*jblock0 = -Im[MapAt[ConjugateTranspose, {2, All}][blockHs] blockGns];*)
+	(*jblock0 = Im[MapAt[Transpose, {2, All}][blockHs] blockGns];*)
+	jblock0 = Im[Map[Transpose, blockHs, {2}] blockGns];(*!!!*)
+	jblock0innersummed = Table[BlockMap[Total[innerproj . # . innerproj, 2] &, #, {1, 1}innerdof] & /@ x, {x, jblock0}];
+	(*How to sum the internal degree of freedom?*)
+	Append[jblock0innersummed, -Transpose /@ jblock0innersummed[[2]]]
 ];(*bond current in layered block form*)
+
 
 jvecfield[ptsCSR_, jmat_] := jvecfield[{ptsCSR, ptsCSR}, jmat];
 jvecfield[{ptsf_, ptsi_}, jmat_] := Module[{jvec, groupfunc, zero = 1.*^-3},
@@ -344,14 +356,24 @@ Module[{ptscsr = Values[layeredpts], innersummed, ptspairs, ptspairsfinal, js, c
 	KeyValueMap[List] @ (Total /@ GroupBy[js, First -> Last])
 ];*)
 
-LocalCDV[Gs_, sigmas_, blockHs: {ds_, os_}, layeredpts_Association, innerdof_:1] :=
+(*LocalCDV[Gs_, sigmas_, blockHs: {ds_, os_}, layeredpts_Association, innerdof_:1] :=
 Module[{ptscsr = Join @@ layeredpts, innersummed, js, currenttensorblocks, jtensorfull},
 	currenttensorblocks = currentTensorBlocks[Gs, sigmas, blockHs, innerdof];
 	jtensorfull = jtensorFromBlocks[currenttensorblocks];
 	js = jvecfield[ptscsr, jtensorfull];
 	(*KeyValueMap[List] @ (Total /@ GroupBy[js, First -> Last])*)
 	KeyValueMap[List] @* Merge[Total] @ js
+];*)
+(*innerproj for projection into the internal degrees of freedom, e.g., spin, up: {{1, 0}, {0, 0}}, up: {{0, 0}, {0, 1}}*)
+LocalCDV[innerproj_, layeredpts_Association][Gs_, sigmas_, blockHs: {ds_, os_}] :=
+Module[{ptscsr = Join @@ layeredpts, innersummed, js, currenttensorblocks, jtensorfull},
+	currenttensorblocks = currentTensorBlocks[innerproj][Gs, sigmas, blockHs];
+	jtensorfull = jtensorFromBlocks[currenttensorblocks];
+	js = jvecfield[ptscsr, jtensorfull];
+	(*KeyValueMap[List] @ (Total /@ GroupBy[js, First -> Last])*)
+	KeyValueMap[List] @* Merge[Total] @ js
 ];
+
 
 (*For five and six T cases; The numbering of leads follows the order of from left to right and from up to down.
 And the source and drain should be numbered at the beginning and the ending.*)
