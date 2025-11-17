@@ -305,7 +305,7 @@ Module[{gamma, blockGns, Gsre = Reverse[Gs], jblock0, jblock0innersummed},
 	(*How to sum the internal degree of freedom?*)
 	Append[jblock0innersummed, -Transpose /@ jblock0innersummed[[2]]]
 ];(*bond current in layered block form*)*)
-currentTensorBlocks[innerproj_][Gs_, sigmas_, blockHs: {ds_, os_}] :=
+(*currentTensorBlocks[innerproj_][Gs_, sigmas_, blockHs: {ds_, os_}] :=
 Module[{gamma, blockGns, Gsre = Reverse[Gs], jblock0, jblock0innersummed, innerdof = Dimensions[innerproj]},
 	gamma = I (# - #\[ConjugateTranspose]) & [Total[sigmas]];
 	blockGns = {# . gamma . #\[ConjugateTranspose] & /@ Gsre, # . gamma . #2\[ConjugateTranspose] & @@@ Partition[Gsre, 2, 1]};
@@ -313,6 +313,17 @@ Module[{gamma, blockGns, Gsre = Reverse[Gs], jblock0, jblock0innersummed, innerd
 	(*jblock0 = Im[MapAt[Transpose, {2, All}][blockHs] blockGns];*)
 	jblock0 = Im[Map[Transpose, blockHs, {2}] blockGns];(*!!!*)
 	jblock0innersummed = Table[BlockMap[Total[innerproj . # . innerproj, 2] &, #, {1, 1}innerdof] & /@ x, {x, jblock0}];
+	(*How to sum the internal degree of freedom?*)
+	Append[jblock0innersummed, -Transpose /@ jblock0innersummed[[2]]]
+];(*bond current in layered block form*)*)
+currentTensorBlocks[proj_][Gs_, sigmas_, blockHs: {ds_, os_}] :=
+Module[{gamma, blockGns, Gsre = Reverse[Gs], jblock0, jblock0innersummed, innerdof = Dimensions[proj],blockGnspartial,blockHspartial},
+	gamma = I (# - #\[ConjugateTranspose]) & [Total[sigmas]];
+	blockGns = {# . gamma . #\[ConjugateTranspose] & /@ Gsre, # . gamma . #2\[ConjugateTranspose] & @@@ Partition[Gsre, 2, 1]};
+	blockGnspartial=Table[ArrayFlatten[BlockMap[proj . # &, #, innerdof]] & /@ x, {x, blockGns}];
+	blockHspartial = Map[Transpose, blockHs, {2}];
+	jblock0 = Im[blockHspartial blockGnspartial];
+	jblock0innersummed = Table[BlockMap[Total[#, 2] &, #, innerdof] & /@ x, {x, jblock0}];
 	(*How to sum the internal degree of freedom?*)
 	Append[jblock0innersummed, -Transpose /@ jblock0innersummed[[2]]]
 ];(*bond current in layered block form*)
