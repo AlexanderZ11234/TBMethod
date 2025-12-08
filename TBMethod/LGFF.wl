@@ -129,8 +129,8 @@ Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, g0, t0
 ];*)
 
 
-SurfaceGreenOverlap[e_, {{h0_, h1_}, {s0_, s1_}}, mode:(1|2|3):3] := SurfaceGreen[e, nonOrthoToOrthoTransf[e][{{h0, h1}, {s0, s1}}], mode];
-SurfaceGreen[e_, {h0_, h1_}, mode:(1|2|3):3] :=
+SurfaceGreenOverlap[e_, {{h0_, h1_}, {s0_, s1_}}, mode:(1|2|3|4|5):3, ps:OptionsPattern[SurfaceGreen]] := SurfaceGreen[e, nonOrthoToOrthoTransf[e][{{h0, h1}, {s0, s1}}], mode, ps];
+(*SurfaceGreen[e_, {h0_, h1_}, mode:(1|2|3):3] :=
 Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, g0, t0, tttilde, TTtilde, T, MH, S1, S2, n},
 	g0inverse = e id - h0;
 	
@@ -162,6 +162,65 @@ Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, g0, t0
 	];
 	
 	inv[ g0inverse - h1 . T ]
+];*)
+
+
+Options[SurfaceGreen] = {"\[Delta]SVD" -> 1.*^-7};
+(*Sancho method*)
+SurfaceGreen[e_, {h0_, h1_}, mode:1, ps: OptionsPattern[]] :=
+Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, g0, t0, tttilde, TTtilde, T, MH, S1, S2, n},
+	g0inverse = e id - h0; n = Length[id];
+	
+	(*iterative 2^n method*)
+	g0 = SparseArray[ inv[g0inverse] ];
+	t0 = {g0 . h1\[ConjugateTranspose], g0 . h1};
+	tttilde[{a_, b_}] :=
+	Module[{tauinversed},
+		tauinversed = inv[ id - (a . b + b . a) ];
+		{tauinversed . a . a, tauinversed . b . b}
+	];
+	TTtilde[{{t_, tt_}, {T_, Tt_}}] :=
+	Module[{newt, newtt},
+		{newt, newtt} = tttilde[{t, tt}];
+		{{newt, newtt}, {T + Tt . newt, Tt . newtt}}
+	];
+	T = FixedPoint[TTtilde, {t0, t0}, 2000][[2, 1]];
+	inv[ g0inverse - h1 . T ]
+];
+
+(*transfer matrix method*)
+SurfaceGreen[e_, {h0_, h1_}, mode:(2|3), ps: OptionsPattern[]] :=
+Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, T, MH, S1, S2, n},
+	g0inverse = e id - h0; n = Length[id];
+	MH = Which[
+ 		mode == 2,
+ 		SparseArray @ ArrayFlatten[({{# . g0inverse, -# . h1\[ConjugateTranspose]}, {id, 0.}}) & [inv[h1]]],
+ 		mode == 3,
+ 		SparseArray @* ArrayFlatten /@ {{{g0inverse, -h1\[ConjugateTranspose]}, {id, 0.}}, {{h1, 0.}, {0., id}}}
+	];
+	{S1, S2} = Partition[SortBy[Eigensystem[MH, Method -> "Direct"]\[Transpose], Abs @* First][[;;n, 2]]\[Transpose], n];
+	(*{S1, S2} = Partition[Eigenvectors[MH, -n, Method -> "Direct"]\[Transpose], n];*)
+	T = S1 . inv[S2];
+	inv[ g0inverse - h1 . T ]
+];
+
+(*SVD based transfer matrix*)
+SurfaceGreen[e_, {h0_, h1_}, mode:(4|5), ps: OptionsPattern[]] :=
+Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, T, MH, S1, S2, n, u, d, dmax, v, deff, h1eff},
+	g0inverse = e id - h0; n = Length[id];
+	{u, d, v} = SingularValueDecomposition[h1, TargetStructure -> "Structured"];
+	dmax = d[[1, 1]];
+	deff = DiagonalMatrix[Max[#, OptionValue["\[Delta]SVD"] dmax] & /@ Diagonal[d], TargetStructure -> "Structured"];
+	h1eff = SparseArray[u . deff . (v\[ConjugateTranspose])];
+	MH = Which[
+ 		mode == 4,
+ 		SparseArray @ ArrayFlatten[({{# . g0inverse, -# . h1eff\[ConjugateTranspose]}, {id, 0.}}) & [inv[h1eff]]],
+ 		mode == 5,
+ 		SparseArray @* ArrayFlatten /@ {{{g0inverse, -h1eff\[ConjugateTranspose]}, {id, 0.}}, {{h1eff, 0.}, {0., id}}}
+	];
+	{S1, S2} = Partition[SortBy[Eigensystem[MH, Method -> "Direct"]\[Transpose], Abs @* First][[;;n, 2]]\[Transpose], n];
+	T = S1 . inv[S2];
+	inv[ g0inverse - h1 . T ]
 ];
 
 
@@ -171,11 +230,11 @@ Module[{gsurface},
 	SparseArray[H01 . gsurface . H01\[ConjugateTranspose]]
 ];*)
 
-SigmaOverlap[e_, {{h0_, h1_, H01_}, {s0_, s1_, S01_}}, mode:(1|2|3):1] := Sigma[e, nonOrthoToOrthoTransf[e][{{h0, h1, H01}, {s0, s1, S01}}], mode];
-Sigma[e_, {h0_, h1_, H01_}, mode:(1|2|3):3] :=
+SigmaOverlap[e_, {{h0_, h1_, H01_}, {s0_, s1_, S01_}}, mode:(1|2|3|4|5):1, ps:OptionsPattern[]] := Sigma[e, nonOrthoToOrthoTransf[e][{{h0, h1, H01}, {s0, s1, S01}}], mode, ps];
+Sigma[e_, {h0_, h1_, H01_}, mode:(1|2|3|4|5):3, ps:OptionsPattern[SurfaceGreen]] :=
 Module[{gsurface, len = Length[H01], \[Eta] = Im[e]},
 	If[Norm[H01, "Frobenius"] >= \[Eta], 
-		gsurface = SurfaceGreen[e, {h0, h1}, mode]; SparseArray[H01 . gsurface . H01\[ConjugateTranspose]],
+		gsurface = SurfaceGreen[e, {h0, h1}, mode, ps]; SparseArray[H01 . gsurface . H01\[ConjugateTranspose]],
 		SparseArray[{}, {1, 1} len]
 	]
 ];
