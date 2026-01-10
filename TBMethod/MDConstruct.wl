@@ -36,6 +36,7 @@ FillWithCondition::usage = "Constructs the piecewise filling function according 
 
 PhaseFactor2DAB::usage = "Calculates the Aharonov-Bohm (AB) phase for a magnetic flux along z-direction according to Peierls' substitution, with an eye on the lattice translational symmetry along one inplane direction.";
 PhaseFactor3DAB::usage = "Calculates the Aharonov-Bohm (AB) phase for a magnetic flux along an arbitrary direction according to Peierls' substitution.";
+UGaugeTransformMatrix::usage = "Gauge transform matrix for the selfenergy matrix in a magnatic field."
 
 HBlochsForSpecFunc::usage = "Constructs Bloch Hamiltonian blocks for calculation of spectral function (LDOS in reciprocal space).";
 
@@ -115,6 +116,14 @@ Module[{\[CurlyPhi]},
 	\[CurlyPhi] = (*2/(2 \[CapitalPhi]0)*)\[Pi] Det[{ptf, vecB, pti}];
 	Exp[I \[CurlyPhi]]
 ];
+UGaugeTransformMatrix[innerdof_Integer][{B_, \[Phi]A_}][pts: {__List | __Rule}] :=
+Module[{\[Chi], U0, inner},
+	\[Chi] = -2\[Pi](*e/h*)B(-# #2 Sin[\[Phi]A]^2 + 1/4 (#2^2 - #^2) Sin[2\[Phi]A]) &;
+	U0 = DiagonalMatrix[Exp[I \[Chi] @@@ pts], TargetStructure -> "Structured"];
+	inner = IdentityMatrix[innerdof, SparseArray];
+	KroneckerProduct[U0, inner]
+];
+
 
 SetAttributes[GellMannMatrix, Listable]
 GellMannMatrix[i : Alternatives @@ Range[0, 8]] :=
