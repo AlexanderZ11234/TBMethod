@@ -512,7 +512,7 @@ Module[{latticepoints},
 
 HEffectiveMatrix[hbloch_, vk_, vk0_, dims: {__}, orderup_Integer:1] :=
 Module[{hvk, s, expansion},
-	hvk = ComplexExpand[Normal[hbloch[s vk - vk0]]];
+	hvk = ComplexExpand[Normal[hbloch[s vk + vk0]]];
 	expansion = Normal[Series[hvk, {s, 0, orderup}]] /. s -> 1;
 	PauliGellMannDecomposition[expansion, dims] // FullSimplify
 ];
