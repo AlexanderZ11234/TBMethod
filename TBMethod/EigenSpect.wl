@@ -61,7 +61,7 @@ ReciprocalVectors[vas_ /; Dimensions[vas] == {3, 3}] := 2\[Pi] Inverse[vas\[Tran
 
 (*BandData[hbloch_, ks_, map_: Map, s:OptionsPattern[Eigenvalues]] :=
 (Sort @ Eigenvalues[hbloch[#], s, Method -> "Direct"] & ~map~ ks)\[Transpose];*)
-funcpattern = (_Function | _Symbol);
+funcpattern = (_Function | _Symbol | _[__]);
 
 BandData[hbloch:funcpattern, ks_, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[hbloch[#], s, Method -> "Direct"] & ~Map~ ks)\[Transpose];
 BandData[hbloch:funcpattern, ks_, n_, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[hbloch[#], n, s, Method -> "Direct"] & ~Map~ ks)\[Transpose];
