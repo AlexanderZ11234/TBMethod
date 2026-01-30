@@ -68,14 +68,14 @@ BandData[hbloch:funcpattern, ks_, n_, s:OptionsPattern[Eigenvalues]] := (Sort @ 
 ParallelBandData[hbloch:funcpattern, ks_, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[hbloch[#], s, Method -> "Direct"] & ~ParallelMap~ ks)\[Transpose];
 ParallelBandData[hbloch:funcpattern, ks_, n_, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[hbloch[#], n, s, Method -> "Direct"] & ~ParallelMap~ ks)\[Transpose];
 (*Version for nonidentity overlapping matrix*)
-(*BandData[{hbloch:funcpattern, sbloch:funcpattern}, ks_, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[Through[{hbloch, sbloch}[#]], s, Method -> "Direct"] & ~Map~ ks)\[Transpose];
+BandData[{hbloch:funcpattern, sbloch:funcpattern}, ks_, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[Through[{hbloch, sbloch}[#]], s, Method -> "Direct"] & ~Map~ ks)\[Transpose];
 BandData[{hbloch:funcpattern, sbloch:funcpattern}, ks_, n_, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[Through[{hbloch, sbloch}[#]], n, s, Method -> "Direct"] & ~Map~ ks)\[Transpose];
 ParallelBandData[{hbloch:funcpattern, sbloch:funcpattern}, ks_, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[Through[{hbloch, sbloch}[#]], s, Method -> "Direct"] & ~ParallelMap~ ks)\[Transpose];
-ParallelBandData[{hbloch:funcpattern, sbloch:funcpattern}, ks_, n_, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[Through[{hbloch, sbloch}[#]], n, s, Method -> "Direct"] & ~ParallelMap~ ks)\[Transpose];*)
-BandData[{hbloch:funcpattern, sbloch:funcpattern}, ks_, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[{hbloch[#], sbloch[#]}, s, Method -> "Direct"] & ~Map~ ks)\[Transpose];
-BandData[{hbloch:funcpattern, sbloch:funcpattern}, ks_, n_, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[{hbloch[#], sbloch[#]}, n, s, Method -> "Direct"] & ~Map~ ks)\[Transpose];
+ParallelBandData[{hbloch:funcpattern, sbloch:funcpattern}, ks_, n_, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[Through[{hbloch, sbloch}[#]], n, s, Method -> "Direct"] & ~ParallelMap~ ks)\[Transpose];
+(*BandData[{hbloch:funcpattern, sbloch:funcpattern}, ks_, s:OptionsPattern[Eigenvalues]] := Table[Sort @ Eigenvalues[{hbloch[k], sbloch[k]}, s, Method -> "Direct"], {k, ks}]\[Transpose];
+BandData[{hbloch:funcpattern, sbloch:funcpattern}, ks_, n_Integer, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[{hbloch[#], sbloch[#]}, n, s, Method -> "Direct"] & ~Map~ ks)\[Transpose];
 ParallelBandData[{hbloch:funcpattern, sbloch:funcpattern}, ks_, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[{hbloch[#], sbloch[#]}, s, Method -> "Direct"] & ~ParallelMap~ ks)\[Transpose];
-ParallelBandData[{hbloch:funcpattern, sbloch:funcpattern}, ks_, n_, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[{hbloch[#], sbloch[#]}, n, s, Method -> "Direct"] & ~ParallelMap~ ks)\[Transpose];
+ParallelBandData[{hbloch:funcpattern, sbloch:funcpattern}, ks_, n_Integer, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[{hbloch[#], sbloch[#]}, n, s, Method -> "Direct"] & ~ParallelMap~ ks)\[Transpose];*)
 
 
 EigenspectralData[hbloch_, ks_, obfunc:funcpattern:Identity, s:OptionsPattern[Eigensystem]] := MapAt[obfunc, {All, 2}][Sort[Eigensystem[hbloch[#], s, Method -> "Direct"]\[Transpose]]] & ~Map~ ks
