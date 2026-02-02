@@ -460,7 +460,35 @@ And the source and drain should be numbered at the beginning and the ending.*)
 1 ------- 6
    3   5
 *)
-HallAndLongitudinalResistances[\[Epsilon]_, hcsrdod_, leadshs_] :=
+
+Options[HallAndLongitudinalResistances] = {"SigmaMode" -> 3};
+HallAndLongitudinalResistances[\[Epsilon]_, hcsrdod_, leadshs_, gUs_, opts:OptionsPattern[]] :=
+Module[{\[ScriptCapitalT], \[ScriptCapitalT]func, Rfunc, cnup = 1.*^7, ter = Length[leadshs], transmissions},
+	\[ScriptCapitalT]func = # - DiagonalMatrix[Total[#, {2}]] &;
+	Rfunc = # - {#2, #3} & @@ Rest[LinearSolve[#][UnitVector[ter - 1, 1]]] &;
+	transmissions = Module[{\[CapitalSigma]s, blockG, \[CapitalSigma]s0},
+		\[CapitalSigma]s0 = Sigma[\[Epsilon], #, OptionValue["SigmaMode"]] & /@ leadshs;
+		\[CapitalSigma]s = MapThread[# . #2 . (#\[ConjugateTranspose]) &,{gUs, \[CapitalSigma]s0}];
+		blockG = CentralBlockGreens[\[Epsilon], hcsrdod, \[CapitalSigma]s, "T"];
+		Table[If[p == q || p == ter, 0., Transmission[blockG, \[CapitalSigma]s[[{p, q}]]]], {p, ter}, {q, ter}]
+	];
+	\[ScriptCapitalT] = Drop[\[ScriptCapitalT]func[-transmissions], -1, -1];
+	(*If[LinearAlgebra`Private`MatrixConditionNumber[\[ScriptCapitalT]] > cnup, {"NaN", "NaN"},
+		Rfunc[\[ScriptCapitalT]]
+	]*)
+	If[LUDecomposition[\[ScriptCapitalT]][[3]] > cnup, {"NaN", "NaN"}, (*condition number from LU*)
+		Rfunc[\[ScriptCapitalT]]
+	]
+];
+
+Options[HallAndLongitudinalConductances] = Options[HallAndLongitudinalResistances];
+HallAndLongitudinalConductances[\[Epsilon]_, hcsrdod_, leadshs_, gUs_, opts:OptionsPattern[]] :=
+Module[{RH, RL},
+	{RH, RL} = HallAndLongitudinalResistances[\[Epsilon], hcsrdod, leadshs, gUs, opts];
+	{RH, RL}/(RH^2 + RL^2)
+];
+
+(*HallAndLongitudinalResistances[\[Epsilon]_, hcsrdod_, leadshs_] :=
 Module[{\[ScriptCapitalT], \[ScriptCapitalT]func, Rfunc, cnup = 1.*^7, ter = Length[leadshs], transmissions},
 	\[ScriptCapitalT]func = # - DiagonalMatrix[Total[#, {2}]] &;
 	Rfunc = # - {#2, #3} & @@ Rest[LinearSolve[#][UnitVector[ter - 1, 1]]] &;
@@ -482,7 +510,7 @@ HallAndLongitudinalConductances[\[Epsilon]_, hcsrdod_, leadshs_] :=
 Module[{RH, RL},
 	{RH, RL} = HallAndLongitudinalResistances[\[Epsilon], hcsrdod, leadshs];
 	{RH, RL}/(RH^2 + RL^2)
-];
+];*)
 
 (*HallAndLongitudinalConductances[\[Epsilon]_, hcsrdod_, leadshs_] :=
 Module[{\[ScriptCapitalT], comat, \[ScriptCapitalT]func, Rfunc, RH, RL, inverse, cnup = 1.*^7, ter = Length[leadshs], transmissions},
