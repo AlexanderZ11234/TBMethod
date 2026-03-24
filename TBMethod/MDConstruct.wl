@@ -173,7 +173,8 @@ neighbourInfos[fipts:{fpts:coordspattern, ipts:coordspattern}, dist_Real] := nei
 Module[{fptsnobool, iptsnobool, nfunc, a0 = 1},
 	{fptsnobool, iptsnobool} = If[FreeQ[#, (*True|False*)Rule[_, _]], #, Values[#]]& /@ fipts;
 	(*{fptsnobool, iptsnobool} = If[Head[#] === List, #, Values[#]]& /@ fipts;*)
-	nfunc = Nearest[iptsnobool -> Automatic, WorkingPrecision -> MachinePrecision, Method -> "KDTree"];
+	(*nfunc = Nearest[iptsnobool -> Automatic, WorkingPrecision -> MachinePrecision, Method -> "KDTree"];*)
+	nfunc = Nearest[iptsnobool -> Automatic, WorkingPrecision -> MachinePrecision, Method -> "KDtree", DistanceFunction -> EuclideanDistance];
 	Flatten[MapIndexed[Thread[{#2[[1]], #}]&, nfunc[fptsnobool, {All, dist a0}]], 1]
 ];
 
