@@ -65,7 +65,7 @@ and four lists of functions should be indexed out.
 
 <a href="#" class="magic-button" title="Onsite testable"> _MMA-style_ </a> documentation under construction
 
-Coorperation is highly welcome.
+Cooperation is highly welcome.
 
 A tutorial in [Zhihu Column](https://www.zhihu.com/column/c_1954932040861450487) is also under compilation.
 
