@@ -27,6 +27,8 @@ CrystalStructurePlot::usage = "Visualizes the crystal structure with Wigner-Seit
 
 RibbonBulkBoundaryOperator::usage = "Constructs a matrix operator whose expectation value quantitatively depicts how a state is distributed in the aspect of bulk and boundary in a ribbon system.";
 
+MultiterminalCentralScatteringRegionPlot::usage = "Visualizes the lattice structure of the transport device with multiterminals.";
+
 Begin["`Private`"]
 (* Implementation of the package *)
 (*SetOptions[{ParallelSum}, Method -> "ItemsPerEvaluation" -> 100 $KernelCount];*)
@@ -234,6 +236,18 @@ Module[{nd = Normalize[vecnorm], coordstrans, innerid, diaglis, diagmat, pts, si
 	diagmat = DiagonalMatrix[diaglis, TargetStructure -> "Sparse"];
 	innerid = IdentityMatrix[innerdof, SparseArray];
 	KroneckerProduct[diagmat, innerid]
+];
+
+Options[MultiterminalCentralScatteringRegionPlot] = Join @@ (Options /@ {ListPlot, ListPointPlot3D});
+MultiterminalCentralScatteringRegionPlot[crystcsr_, crystleads:{__}, opts:OptionsPattern[]] :=
+Module[{leadnum = Length[crystleads], lighter = Lighter[#, 1/2] &, colorlist,
+		purepts = If[FreeQ[#, Rule], #, Values[#]] &, ptscsr, ptsleads, plot,
+		colors = {Red, Green, Blue, Orange, Magenta, Brown}, datatovis},
+	colorlist = Prepend[Riffle[#, lighter /@ #] & [Join[colors, RandomColor[leadnum]]], Black];
+	ptscsr = purepts[crystcsr]; ptsleads = purepts[crystleads];
+	plot = If[Length[ptscsr[[1]]] ==2, ListPlot, ListPointPlot3D];
+	datatovis = Join[{ptscsr}, Sequence @@@ ptsleads];
+	plot[datatovis, opts, PlotStyle -> colorlist, PlotRange -> All, PlotRangePadding -> Scaled[.02]]
 ];
 
 
