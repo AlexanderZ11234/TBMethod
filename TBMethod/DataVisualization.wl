@@ -106,10 +106,16 @@ Module[{frameticks, gridlines, dticks},
 ];
 
 
-LocalDOSTidy[data_, quantile_] :=
+(*LocalDOSTidy[data_, quantile_] :=
 Module[{maxquant, clipped, min = Min[data]},
 	maxquant = Quantile[data // Flatten, quantile];
 	clipped = Clip[data, {min, maxquant}];
+	GaussianFilter[clipped, 2]
+];*)
+LocalDOSTidy[data_, quantile_] :=
+Module[{maxquant, clipped},
+	maxquant = Quantile[data // Flatten, quantile];
+	clipped = Clip[data, {-1, 1} maxquant];
 	GaussianFilter[clipped, 2]
 ];
 

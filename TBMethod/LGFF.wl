@@ -342,12 +342,21 @@ Module[{zero = 1.*^-4, \[CapitalSigma]},
 	\[CapitalSigma] = Sigma[Complex[\[Epsilon], zero], {HLeadBloch, HLead12, HCSRLead1}, mode];
 	-Im @ Tr @ CentralGreen[Complex[\[Epsilon], zero], HCSRBloch, {\[CapitalSigma]}]
 ];*)
-LocalDOSReciprocalSpace[\[Epsilon]_, {HLeadBloch_?MatrixQ, HLead12_?MatrixQ}, mode:(1|2|3):3] := LocalDOSReciprocalSpace[\[Epsilon], {{HLeadBloch, HLead12}, {HLeadBloch, HLead12}}, mode];
+(*LocalDOSReciprocalSpace[\[Epsilon]_, {HLeadBloch_?MatrixQ, HLead12_?MatrixQ}, mode:(1|2|3):3] := LocalDOSReciprocalSpace[\[Epsilon], {{HLeadBloch, HLead12}, {HLeadBloch, HLead12}}, mode];
 LocalDOSReciprocalSpace[\[Epsilon]_, {HLeadBloch_?MatrixQ, HLead12_?MatrixQ}, HCSRBloch_?MatrixQ, mode:(1|2|3):3] := LocalDOSReciprocalSpace[\[Epsilon], {{HLeadBloch, HLead12}, {HCSRBloch, HLead12}}, mode];
 LocalDOSReciprocalSpace[\[Epsilon]_, {{HLeadBloch_?MatrixQ, HLead12_?MatrixQ}, {HCSRBloch_?MatrixQ, HCSRLead1_?MatrixQ}}, mode:(1|2|3):3] :=
 Module[{zero = 1.*^-4, \[CapitalSigma]},
 	\[CapitalSigma] = Sigma[Complex[\[Epsilon], zero], {HLeadBloch, HLead12, HCSRLead1}, mode];
 	-Im @ Tr @ CentralGreen[Complex[\[Epsilon], zero], HCSRBloch, {\[CapitalSigma]}]
+];*)
+
+LocalDOSReciprocalSpace[innerproj_][\[Epsilon]_, {HLeadBloch_?MatrixQ, HLead12_?MatrixQ}, mode:(1|2|3):3] := LocalDOSReciprocalSpace[innerproj][\[Epsilon], {{HLeadBloch, HLead12}, {HLeadBloch, HLead12}}, mode];
+LocalDOSReciprocalSpace[innerproj_][\[Epsilon]_, {HLeadBloch_?MatrixQ, HLead12_?MatrixQ}, HCSRBloch_?MatrixQ, mode:(1|2|3):3] := LocalDOSReciprocalSpace[innerproj][\[Epsilon], {{HLeadBloch, HLead12}, {HCSRBloch, HLead12}}, mode];
+LocalDOSReciprocalSpace[innerproj_][\[Epsilon]_, {{HLeadBloch_?MatrixQ, HLead12_?MatrixQ}, {HCSRBloch_?MatrixQ, HCSRLead1_?MatrixQ}}, mode:(1|2|3):3] :=
+Module[{zero = 1.*^-4, \[CapitalSigma], innerdof = Dimensions[innerproj], GCSR},
+	\[CapitalSigma] = Sigma[Complex[\[Epsilon], zero], {HLeadBloch, HLead12, HCSRLead1}, mode];
+	GCSR=CentralGreen[Complex[\[Epsilon], zero], HCSRBloch, {\[CapitalSigma]}];
+	-Im @ Total[Tr[innerproj . #]&/@Diagonal[Partition[GCSR, innerdof]]]
 ];
 
 
