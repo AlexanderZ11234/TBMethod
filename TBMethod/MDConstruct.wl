@@ -468,11 +468,13 @@ Module[{vd = ptf - pti, zero = 1.*^-5, d, ele, dim = (2 mnup + 1){1, 1}, photond
 
 Options[NPhotonBlocks] = Options[NIntegrate];
 NPhotonBlocks[functime: (_Function|_Symbol), \[Omega]_, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] :=
-Module[{vd = ptf - pti, zero = 1.*^-5, d, ele, dim = (2 mnup + 1){1, 1}, photondress, sparsezero, sparsediag},
+Module[{vd = ptf - pti, zero = 1.*^-5, d, coef, ele, dim = (2 mnup + 1){1, 1}, photondress, sparsezero, sparsediag},
 	(*A0 -> q A0/\[HBar], \[Omega] -> \[HBar] \[Omega]*)
 	d = Norm[vd];
-	ele[m_, n_] := 1/(2\[Pi]) NIntegrate[functime[\[CurlyPhi]] Exp[I (m - n) \[CurlyPhi]], {\[CurlyPhi], -\[Pi], \[Pi]}, opts, AccuracyGoal -> 10, Method -> "LocalAdaptive"] // Chop;
-	photondress := Array[ele, dim, -mnup] // Chop;
+	(*ele[m_, n_] := 1/(2\[Pi]) NIntegrate[functime[\[CurlyPhi]] Exp[I (m - n) \[CurlyPhi]], {\[CurlyPhi], -\[Pi], \[Pi]}, opts, AccuracyGoal -> 10, Method -> "LocalAdaptive"] // Chop;*)
+	coef[l_Integer] := coef[l] = 1/(2\[Pi]) NIntegrate[functime[\[CurlyPhi]] Exp[-I l \[CurlyPhi]], {\[CurlyPhi], -\[Pi], \[Pi]}, opts, AccuracyGoal -> 10, Method -> "LocalAdaptive"] // Chop;
+	ele[m_, n_] := coef[n - m];
+	photondress = Array[ele, dim, -mnup] // Chop;
 	sparsezero = ConstantArray[0, dim, SparseArray];
 	sparsediag := SparseArray[Band[{1, 1}]-> -\[Omega] Range[-mnup, mnup]];
 	If[d > zero,
@@ -486,12 +488,14 @@ NPhotonBlocks[{Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer, opts:Options
 (*Options[PhotonBlocks] = Options[Integrate];*)
 Options[PhotonBlocks] = Options[FourierCoefficient];
 PhotonBlocks[functime: (_Function|_Symbol), \[Omega]_, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] :=
-Module[{vd = ptf - pti, zero = 1.*^-5, d, ele, dim = (2 mnup + 1){1, 1}, photondress, sparsezero, sparsediag},
+Module[{vd = ptf - pti, zero = 1.*^-5, d, coef, ele, dim = (2 mnup + 1){1, 1}, photondress, sparsezero, sparsediag},
 	(*A0 -> q A0/\[HBar], \[Omega] -> \[HBar] \[Omega]*)
 	d = Norm[vd];
 	(*ele[m_, n_] := 1/(2\[Pi]) Integrate[functime[\[CurlyPhi]] Exp[I (m - n) \[CurlyPhi]], {\[CurlyPhi], -\[Pi], \[Pi]}, opts];*)
-	ele[m_, n_] := FourierCoefficient[functime[\[CurlyPhi]], \[CurlyPhi], n - m, opts] // FullSimplify;
-	photondress := Array[ele, dim, -mnup];
+	(*ele[m_, n_] := FourierCoefficient[functime[\[CurlyPhi]], \[CurlyPhi], n - m, opts] // FullSimplify;*)
+	coef[l_Integer] := coef[l] = FourierCoefficient[functime[\[CurlyPhi]], \[CurlyPhi], l, opts] // FullSimplify;
+	ele[m_, n_] := coef[n - m];
+	photondress = Array[ele, dim, -mnup];
 	sparsezero = ConstantArray[0, dim, SparseArray];
 	sparsediag := SparseArray[Band[{1, 1}]-> -\[Omega] Range[-mnup, mnup]];
 	If[d > zero,
