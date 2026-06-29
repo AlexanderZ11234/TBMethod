@@ -480,8 +480,8 @@ Module[{vd = ptf - pti, zero = 1.*^-5, d, ele, dim = (2 mnup + 1){1, 1}, photond
 		{photondress, sparsediag}
 	]
 ];
-NPhotonBlocks[{A0_, Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer][ptf_, pti_] := NPhotonBlocks[Exp[I A0 (ptf - pti) . Avecn[#]] &, \[Omega], mnup][ptf, pti];
-NPhotonBlocks[{Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer][ptf_, pti_] := NPhotonBlocks[Exp[I (ptf - pti) . Avecn[#]] &, \[Omega], mnup][ptf, pti];
+NPhotonBlocks[{A0_, Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] := NPhotonBlocks[Exp[I A0 (ptf - pti) . Avecn[#]] &, \[Omega], mnup, opts][ptf, pti];
+NPhotonBlocks[{Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] := NPhotonBlocks[Exp[I (ptf - pti) . Avecn[#]] &, \[Omega], mnup, opts][ptf, pti];
 
 PhotonBlocks[functime: (_Function|_Symbol), \[Omega]_, mnup_Integer][ptf_, pti_] :=
 Module[{vd = ptf - pti, zero = 1.*^-5, d, ele, dim = (2 mnup + 1){1, 1}, photondress, sparsezero, sparsediag},
