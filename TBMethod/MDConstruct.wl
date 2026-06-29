@@ -483,11 +483,12 @@ Module[{vd = ptf - pti, zero = 1.*^-5, d, ele, dim = (2 mnup + 1){1, 1}, photond
 NPhotonBlocks[{A0_, Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] := NPhotonBlocks[Exp[I A0 (ptf - pti) . Avecn[#]] &, \[Omega], mnup, opts][ptf, pti];
 NPhotonBlocks[{Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] := NPhotonBlocks[Exp[I (ptf - pti) . Avecn[#]] &, \[Omega], mnup, opts][ptf, pti];
 
-PhotonBlocks[functime: (_Function|_Symbol), \[Omega]_, mnup_Integer][ptf_, pti_] :=
+Options[PhotonBlocks] = Options[Integrate];
+PhotonBlocks[functime: (_Function|_Symbol), \[Omega]_, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] :=
 Module[{vd = ptf - pti, zero = 1.*^-5, d, ele, dim = (2 mnup + 1){1, 1}, photondress, sparsezero, sparsediag},
 	(*A0 -> q A0/\[HBar], \[Omega] -> \[HBar] \[Omega]*)
 	d = Norm[vd];
-	ele[m_, n_] := 1/(2\[Pi]) Integrate[functime[\[CurlyPhi]] Exp[I (m - n) \[CurlyPhi]], {\[CurlyPhi], -\[Pi], \[Pi]}];
+	ele[m_, n_] := 1/(2\[Pi]) Integrate[functime[\[CurlyPhi]] Exp[I (m - n) \[CurlyPhi]], {\[CurlyPhi], -\[Pi], \[Pi]}, opts];
 	photondress := Array[ele, dim, -mnup];
 	sparsezero = ConstantArray[0, dim, SparseArray];
 	sparsediag := SparseArray[Band[{1, 1}]-> -\[Omega] Range[-mnup, mnup]];
@@ -496,9 +497,8 @@ Module[{vd = ptf - pti, zero = 1.*^-5, d, ele, dim = (2 mnup + 1){1, 1}, photond
 		{photondress, sparsediag}
 	]
 ];
-PhotonBlocks[{A0_, Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer][ptf_, pti_] := PhotonBlocks[Exp[I A0 (ptf - pti) . Avecn[#]] &, \[Omega], mnup][ptf, pti];
-PhotonBlocks[{Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer][ptf_, pti_] := PhotonBlocks[Exp[I (ptf - pti) . Avecn[#]] &, \[Omega], mnup][ptf, pti];
-
+PhotonBlocks[{A0_, Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] := PhotonBlocks[Exp[I A0 (ptf - pti) . Avecn[#]] &, \[Omega], mnup, opts][ptf, pti];
+PhotonBlocks[{Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] := PhotonBlocks[Exp[I (ptf - pti) . Avecn[#]] &, \[Omega], mnup, opts][ptf, pti];
 
 
 PhotonDress[t_, photonblocks_] :=
