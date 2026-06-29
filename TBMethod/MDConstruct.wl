@@ -465,11 +465,13 @@ Module[{vd = ptf - pti, zero = 1.*^-5, d, ele, dim = (2 mnup + 1){1, 1}, photond
 	]
 ];*)
 
-NPhotonBlocks[functime: (_Function|_Symbol), \[Omega]_, mnup_Integer][ptf_, pti_] :=
+
+Options[NPhotonBlocks] = Options[NIntegrate];
+NPhotonBlocks[functime: (_Function|_Symbol), \[Omega]_, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] :=
 Module[{vd = ptf - pti, zero = 1.*^-5, d, ele, dim = (2 mnup + 1){1, 1}, photondress, sparsezero, sparsediag},
 	(*A0 -> q A0/\[HBar], \[Omega] -> \[HBar] \[Omega]*)
 	d = Norm[vd];
-	ele[m_, n_] := 1/(2\[Pi]) NIntegrate[functime[\[CurlyPhi]] Exp[I (m - n) \[CurlyPhi]], {\[CurlyPhi], -\[Pi], \[Pi]}, Method -> "LocalAdaptive"] // Chop;
+	ele[m_, n_] := 1/(2\[Pi]) NIntegrate[functime[\[CurlyPhi]] Exp[I (m - n) \[CurlyPhi]], {\[CurlyPhi], -\[Pi], \[Pi]}, opts, AccuracyGoal -> 10, Method -> "LocalAdaptive"] // Chop;
 	photondress := Array[ele, dim, -mnup] // Chop;
 	sparsezero = ConstantArray[0, dim, SparseArray];
 	sparsediag := SparseArray[Band[{1, 1}]-> -\[Omega] Range[-mnup, mnup]];
