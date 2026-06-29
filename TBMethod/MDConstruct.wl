@@ -505,6 +505,11 @@ Module[{vd = ptf - pti, zero = 1.*^-5, d, coef, ele, dim = (2 mnup + 1){1, 1}, p
 ];
 PhotonBlocks[{A0_, Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] := PhotonBlocks[Exp[I A0 (ptf - pti) . Avecn[#]] &, \[Omega], mnup, opts][ptf, pti];
 PhotonBlocks[{Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] := PhotonBlocks[Exp[I (ptf - pti) . Avecn[#]] &, \[Omega], mnup, opts][ptf, pti];
+(* Convention:
+   H(t) = Sum_l H^(l) Exp[-I l phi]
+   HF[[m,n]] = H^(m-n) - m omega delta_mn
+   FourierCoefficient uses Exp[-I l phi], hence l = n - m.
+*)
 
 
 PhotonDress[t_, photonblocks_] :=
