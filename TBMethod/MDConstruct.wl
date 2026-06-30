@@ -49,6 +49,10 @@ PhotonBlocks::usage = "Generates the Floquet dressing coefficient for a certain 
 NPhotonBlocks::usage = "Numerical versin of PhotonBlocks.";
 PhotonDress::usage = "Generates the photon-dressed hopping amplitude.";
 
+PhotonBlocksTensor::usage = "The version of PhotonBlocks with internal degrees of freedom.";
+NPhotonBlocksTensor::usage = "Numerical version of PhotonBlocksTensor.";
+PhotonDressTensor::usage = "Numerical version of PhotonDress.";
+
 CompiledSuccessfulQ::usage = "Checks if a function compilation process succeeds.";
 
 CrystalStructure::usage = "Generates the crystal structure by the composition of lattice and basis.";
@@ -520,14 +524,51 @@ PhotonBlocks[{Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer, opts:OptionsP
    HF[[m,n]] = H^(m-n) - m omega delta_mn
    FourierCoefficient uses Exp[-I l phi], hence l = n - m.
 *)
-
-
 PhotonDress[t_, photonblocks_] :=
 Module[{n = Length[t], s},
 	s = IdentityMatrix[n, SparseArray];
 	(*t~KroneckerProduct~a+IdentityMatrix[n,SparseArray]~KroneckerProduct~b*)
 	MapThread[KroneckerProduct, {{t, s}, photonblocks}] // Total
 ];
+
+
+Options[PhotonBlocksTensor] = Options[FourierCoefficient];
+PhotonBlocksTensor[functime: (_Function|_Symbol), \[Omega]_, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] :=
+Module[{vd = ptf - pti, zero = 1.*^-5, d, coef, ele, dim = (2 mnup + 1){1, 1}, innerdof = Dimensions[functime[0.123]], photondress, sparseid, sparsezero, sparsediag, innerid},
+	d = Norm[vd]; innerid = IdentityMatrix[innerdof, SparseArray];
+	coef[l_Integer] := coef[l] = FourierCoefficient[functime[\[CurlyPhi]], \[CurlyPhi], l, opts] // FullSimplify;
+	ele[m_, n_] := coef[n - m];
+	photondress = Array[ele, dim, -mnup];
+	sparsezero := ConstantArray[0, dim ~Join~ innerdof, SparseArray];
+	sparseid := TensorProduct[IdentityMatrix[dim, SparseArray], innerid];
+	sparsediag :=TensorProduct[SparseArray[Band[{1, 1}]-> -\[Omega] Range[-mnup, mnup]], innerid];
+	If[d > zero,
+		{photondress, sparsezero},
+		{sparseid, photondress + sparsediag}]
+];
+
+Options[NPhotonBlocksTensor] = Options[NIntegrate];
+NPhotonBlocksTensor[functime: (_Function|_Symbol), \[Omega]_, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] :=
+Module[{vd = ptf - pti, zero = 1.*^-5, d, coef, ele, dim = (2 mnup + 1){1, 1}, innerdof = Dimensions[functime[0.123]], photondress, sparseid, sparsezero, sparsediag, innerid},
+	d = Norm[vd]; innerid = IdentityMatrix[innerdof, SparseArray];
+	coef[l_Integer] := coef[l] = 1/(2\[Pi]) NIntegrate[functime[\[CurlyPhi]] Exp[-I l \[CurlyPhi]], {\[CurlyPhi], -\[Pi], \[Pi]}, opts, AccuracyGoal -> 10, Method -> "LocalAdaptive"] // Chop;
+	ele[m_, n_] := coef[n - m];
+	photondress = Array[ele, dim, -mnup] // Chop;
+	sparsezero := ConstantArray[0, dim ~Join~ innerdof, SparseArray];
+	sparseid := TensorProduct[IdentityMatrix[dim, SparseArray], innerid];
+	sparsediag :=TensorProduct[SparseArray[Band[{1, 1}]-> -\[Omega] Range[-mnup, mnup]], innerid];
+	If[d > zero,
+		{photondress, sparsezero},
+		{sparseid, photondress + sparsediag}]
+];
+
+PhotonDressTensor[t_, photonblocks_] :=
+Module[{n = Length[t], s, combine},
+	s = IdentityMatrix[n, SparseArray];
+	combine = TensorContract[TensorProduct[#2, #1], {{3, 6}}] &;
+	ArrayFlatten[MapThread[combine, {{t, s}, photonblocks}] // Total]
+];
+
 
 (*
 PRA 105, 053717 (2022),
