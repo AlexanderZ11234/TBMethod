@@ -468,27 +468,32 @@ Module[{vd = ptf - pti, zero = 1.*^-5, d, ele, dim = (2 mnup + 1){1, 1}, photond
 
 Options[NPhotonBlocks] = Options[NIntegrate];
 NPhotonBlocks[functime: (_Function|_Symbol), \[Omega]_, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] :=
-Module[{vd = ptf - pti, zero = 1.*^-5, d, coef, ele, dim = (2 mnup + 1){1, 1}, photondress, sparsezero, sparsediag},
+Module[{vd = ptf - pti, zero = 1.*^-5, d, coef, ele, dim = (2 mnup + 1){1, 1}, photondress, sparseid, sparsezero, sparsediag},
 	(*A0 -> q A0/\[HBar], \[Omega] -> \[HBar] \[Omega]*)
 	d = Norm[vd];
 	(*ele[m_, n_] := 1/(2\[Pi]) NIntegrate[functime[\[CurlyPhi]] Exp[I (m - n) \[CurlyPhi]], {\[CurlyPhi], -\[Pi], \[Pi]}, opts, AccuracyGoal -> 10, Method -> "LocalAdaptive"] // Chop;*)
 	coef[l_Integer] := coef[l] = 1/(2\[Pi]) NIntegrate[functime[\[CurlyPhi]] Exp[-I l \[CurlyPhi]], {\[CurlyPhi], -\[Pi], \[Pi]}, opts, AccuracyGoal -> 10, Method -> "LocalAdaptive"] // Chop;
 	ele[m_, n_] := coef[n - m];
 	photondress = Array[ele, dim, -mnup] // Chop;
-	sparsezero = ConstantArray[0, dim, SparseArray];
+	sparsezero := ConstantArray[0, dim, SparseArray];
+	sparseid := IdentityMatrix[dim, SparseArray];
 	sparsediag := SparseArray[Band[{1, 1}]-> -\[Omega] Range[-mnup, mnup]];
 	If[d > zero,
 		{photondress, sparsezero},
-		{photondress, sparsediag}
-	]
+		{sparseid, photondress + sparsediag}]
 ];
-NPhotonBlocks[{A0_, Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] := NPhotonBlocks[Exp[I A0 (ptf - pti) . Avecn[#]] &, \[Omega], mnup, opts][ptf, pti];
-NPhotonBlocks[{Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] := NPhotonBlocks[Exp[I (ptf - pti) . Avecn[#]] &, \[Omega], mnup, opts][ptf, pti];
+NPhotonBlocks[{A0_, Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] :=
+Module[{vd = ptf - pti, d, zero = 1.*^-5},
+	d = Norm[vd];
+	If[d < zero, NPhotonBlocks[0 &, \[Omega], mnup, opts][ptf, pti],
+		NPhotonBlocks[Exp[I A0 vd . Avecn[#]] &, \[Omega], mnup, opts][ptf, pti]]
+];
+NPhotonBlocks[{Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] := NPhotonBlocks[{1, Avecn, \[Omega]}, mnup, opts][ptf, pti];
 
 (*Options[PhotonBlocks] = Options[Integrate];*)
 Options[PhotonBlocks] = Options[FourierCoefficient];
 PhotonBlocks[functime: (_Function|_Symbol), \[Omega]_, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] :=
-Module[{vd = ptf - pti, zero = 1.*^-5, d, coef, ele, dim = (2 mnup + 1){1, 1}, photondress, sparsezero, sparsediag},
+Module[{vd = ptf - pti, zero = 1.*^-5, d, coef, ele, dim = (2 mnup + 1){1, 1}, photondress, sparseid, sparsezero, sparsediag},
 	(*A0 -> q A0/\[HBar], \[Omega] -> \[HBar] \[Omega]*)
 	d = Norm[vd];
 	(*ele[m_, n_] := 1/(2\[Pi]) Integrate[functime[\[CurlyPhi]] Exp[I (m - n) \[CurlyPhi]], {\[CurlyPhi], -\[Pi], \[Pi]}, opts];*)
@@ -496,15 +501,20 @@ Module[{vd = ptf - pti, zero = 1.*^-5, d, coef, ele, dim = (2 mnup + 1){1, 1}, p
 	coef[l_Integer] := coef[l] = FourierCoefficient[functime[\[CurlyPhi]], \[CurlyPhi], l, opts] // FullSimplify;
 	ele[m_, n_] := coef[n - m];
 	photondress = Array[ele, dim, -mnup];
-	sparsezero = ConstantArray[0, dim, SparseArray];
+	sparsezero := ConstantArray[0, dim, SparseArray];
+	sparseid := IdentityMatrix[dim, SparseArray];
 	sparsediag := SparseArray[Band[{1, 1}]-> -\[Omega] Range[-mnup, mnup]];
 	If[d > zero,
 		{photondress, sparsezero},
-		{photondress, sparsediag}
-	]
+		{sparseid, photondress + sparsediag}]
 ];
-PhotonBlocks[{A0_, Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] := PhotonBlocks[Exp[I A0 (ptf - pti) . Avecn[#]] &, \[Omega], mnup, opts][ptf, pti];
-PhotonBlocks[{Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] := PhotonBlocks[Exp[I (ptf - pti) . Avecn[#]] &, \[Omega], mnup, opts][ptf, pti];
+PhotonBlocks[{A0_, Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] :=
+Module[{vd = ptf - pti, d, zero = 1.*^-5},
+	d = Norm[vd];
+	If[d < zero, PhotonBlocks[0 &, \[Omega], mnup, opts][ptf, pti],
+		PhotonBlocks[Exp[I A0 vd . Avecn[#]] &, \[Omega], mnup, opts][ptf, pti]]
+];
+PhotonBlocks[{Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] := PhotonBlocks[{1, Avecn, \[Omega]}, mnup, opts][ptf, pti];
 (* Convention:
    H(t) = Sum_l H^(l) Exp[-I l phi]
    HF[[m,n]] = H^(m-n) - m omega delta_mn
