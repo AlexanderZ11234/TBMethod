@@ -616,7 +616,7 @@ Module[{numberOfLayers = Length[diagonalBlocks], hoppinginput, partitionDimensio
 ];
 normalizeHoppingInput[_, _Integer] := $Failed;
 
-HFloquetEffectiveHoppingMatricesFromExtended :: fartherblocks = "The effective Hamiltonian contains nonzero couplings between nonadjacent partitions `1`; therefore, the result cannot be returned in the original two-list CSR form.";
+HFloquetEffectiveHoppingMatricesFromExtended::fartherblocks = "The effective Hamiltonian contains nonzero couplings between nonadjacent partitions `1`; therefore, the result cannot be returned in the original two-list CSR form.";
 restoreHoppingOutput[assoc_Association,"DisplacementAddition",_]:=assoc;
 restoreHoppingOutput[assoc_Association,"PartitionContraction",partitionDimensions_List]:=
 Module[{numberOfLayers = Length[partitionDimensions], fartherKeys, zeroBlock, lookupBlock},
