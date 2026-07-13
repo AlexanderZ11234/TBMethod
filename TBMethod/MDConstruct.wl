@@ -578,15 +578,150 @@ Constructive discussions from Zhen Qin, Ziming Wang, Fangyang Zhan, and Zhen Nin
 comm[a_, b_] := a . b - b . a;
 flqReprAlt[flqinnerdim_Integer][mat_] := SparseArray[Transpose[Partition[mat, flqinnerdim {1, 1}], {3, 4, 1, 2}]]
 
-HFloquetEffectiveBlochMatrixFromExtended[\[Omega]_, mnup_Integer][hmatrixfromhopping_] :=
+(* ::Section::*)(*Zero-block identification and cleaning*)
+numericalZeroQ[mat_, zero_] := Norm[mat, "Frobenius"] <= zero;
+symbolicZeroQ[mat_] := AllTrue[Flatten[mat], TrueQ[PossibleZeroQ[#]] &];
+zeroMatrixQ[s_, zero_] := If[MatrixQ[s, NumericQ], numericalZeroQ[s, zero], symbolicZeroQ[Normal[s]]];
+clean[expr_, zero_] := DeleteCases[s_ /; zeroMatrixQ[s, zero]][expr];
+
+(* ::Section::*)(*Floquet harmonic extraction*)
+floquetHarmonicBlock[hrepr_, l_Integer, mnup_Integer] :=
+Module[{lmax = 2 mnup},
+	Which[l == 0, hrepr[[mnup + 1, mnup + 1]],
+	1 <= l <= lmax, hrepr[[l + 1, 1]],
+	-lmax <= l <= -1, hrepr[[1, 1 - l]],
+	True, SparseArray[{}, Take[Dimensions[hrepr], -2]]]
+];
+floquetHarmonicsFromExtended[mat_, mnup_Integer] :=
+Module[{dim = 2 mnup + 1, lmax = 2 mnup, hrepr},
+	hrepr = flqReprAlt[dim][mat];
+	AssociationMap[floquetHarmonicBlock[hrepr, #, mnup] &, Range[-lmax, lmax]]
+];
+floquetHarmonicAssociationsFromExtended[h0isvas_Association, mnup_Integer, zero_] :=
+Module[{dim = 2 mnup + 1, lmax = 2 mnup, h0isvasrepralt, harmonicAssociation},
+	h0isvasrepralt = flqReprAlt[dim] /@ h0isvas;
+	harmonicAssociation[l_] := clean[floquetHarmonicBlock[#, l, mnup] & /@ h0isvasrepralt, zero];
+	AssociationMap[harmonicAssociation, Range[-lmax, lmax]]
+];
+
+(* ::Section::*)(*Input normalization*)
+normalizeHoppingInput[input_Association, _Integer] := {"DisplacementAddition", input, None};
+normalizeHoppingInput[{diagonalBlocks_List, lowerBlocks_List}, dim_Integer] /; Length[diagonalBlocks] == Length[lowerBlocks] + 1 :=
+Module[{numberOfLayers = Length[diagonalBlocks], hoppinginput, partitionDimensions},
+	partitionDimensions = Quotient[First[Dimensions[#]], dim] & /@ diagonalBlocks;
+	hoppinginput = {Table[{i, i}, {i, numberOfLayers}] -> diagonalBlocks,
+					Table[{i + 1, i}, {i, numberOfLayers - 1}] -> lowerBlocks,
+					Table[{i, i + 1}, {i, numberOfLayers - 1}] -> (ConjugateTranspose /@ lowerBlocks)};
+	{"PartitionContraction", Join @@ (AssociationThread /@ hoppinginput), partitionDimensions}
+];
+normalizeHoppingInput[_, _Integer] := $Failed;
+
+HFloquetEffectiveHoppingMatricesFromExtended :: fartherblocks = "The effective Hamiltonian contains nonzero couplings between nonadjacent partitions `1`; therefore, the result cannot be returned in the original two-list CSR form.";
+restoreHoppingOutput[assoc_Association,"DisplacementAddition",_]:=assoc;
+restoreHoppingOutput[assoc_Association,"PartitionContraction",partitionDimensions_List]:=
+Module[{numberOfLayers = Length[partitionDimensions], fartherKeys, zeroBlock, lookupBlock},
+	fartherKeys = Select[Keys[assoc], Abs[#[[1]] - #[[2]]] > 1 &];
+	If[fartherKeys =!= {}, Message[HFloquetEffectiveHoppingMatricesFromExtended::fartherblocks, fartherKeys]; Return[$Failed]];
+	zeroBlock[i_, j_] := SparseArray[{}, partitionDimensions[[{i, j}]]];
+	(*lookupBlock[key:{i_,j_}]:=If[KeyExistsQ[assoc,key],assoc[[Key[key]]],zeroBlock[i,j]];*)
+	lookupBlock[key:{i_, j_}] := Replace[assoc[key], _Missing :> zeroBlock[i, j]];
+	{Table[lookupBlock[{i, i}], {i, numberOfLayers}], Table[lookupBlock[{i + 1, i}], {i, numberOfLayers - 1}]}
+];
+
+(* ::Section::*)(*Blockwise operation*)
+(*blockTotal[list_List,zero_]:=clean[Merge[list,Chop[Total[#],zero]&],zero];*)
+(* ::Section::*)(*Blockwise summation*)
+blockFinalize[assoc_Association, zero_] := clean[Chop[#, zero] & /@ assoc, zero];
+blockAdd[sum_Association, addend_Association] := Merge[{sum, addend}, Total];
+blockSum[term_, indices_List] := Fold[Function[{sum, index}, blockAdd[sum, term[index]]], <||>, indices];
+blockSum[term_, indices1_List, indices2_List, condition_:Function[True]] := Fold[Function[{sum1, index1}, Fold[Function[{sum2, index2}, If[TrueQ[condition[index1, index2]], blockAdd[sum2, term[index1, index2]], sum2]], sum1, indices2]], <||>, indices1];
+blockDot[assoc1_Association, assoc2_Association, "DisplacementAddition"] := Merge[KeyValueMap[Function[{label1, matrix1}, KeyMap[label1 + # &, (matrix1 . # & /@ assoc2)]], assoc1], Total];
+blockDot[assoc1_Association, assoc2_Association, "PartitionContraction"] :=
+Module[{leftByMiddle, rightByMiddle, middleIndices, leftIndexedBlock, rightIndexedBlock, contractedBlock, middleContribution},
+	leftIndexedBlock[{i_, k_}, matrix_] := k -> (i -> matrix);
+	rightIndexedBlock[{k_, j_}, matrix_] := k -> (j -> matrix);
+	leftByMiddle = GroupBy[KeyValueMap[leftIndexedBlock, assoc1], First -> Last];
+	rightByMiddle = GroupBy[KeyValueMap[rightIndexedBlock, assoc2], First -> Last];
+	middleIndices = Select[Keys[leftByMiddle], KeyExistsQ[rightByMiddle, #] &];
+	contractedBlock[(i_ -> leftMatrix_), (j_ -> rightMatrix_)] := {i, j} -> leftMatrix . rightMatrix;
+	middleContribution[middle_] := Association @ Catenate @ Outer[contractedBlock, leftByMiddle[middle], rightByMiddle[middle], 1];
+	Merge[middleContribution /@ middleIndices, Total]
+];
+blockComm[assoc1_Association, assoc2_Association, mode_String] := blockAdd[blockDot[assoc1, assoc2, mode], -blockDot[assoc2, assoc1, mode]];
+
+
+(*Floquet effective main functions*)
+Options[HFloquetEffectiveBlochMatrixFromExtended] = {"ExpansionOrder" -> 1, "ReturnComponents" -> False};
+HFloquetEffectiveBlochMatrixFromExtended::order = "The expansion order `1` is unsupported. Use 1 or 2.";
+HFloquetEffectiveBlochMatrixFromExtended[\[Omega]_, mnup_Integer?NonNegative, opts:OptionsPattern[]][hmatrixfromhopping_] :=
+Module[{lmax = 2 mnup, mnrange, harmonics, zeroBlock, h, H0, H1, H2pure, H2mixed, components, order = OptionValue["ExpansionOrder"]},
+	If[!MemberQ[{1, 2}, order], Message[HFloquetEffectiveBlochMatrixFromExtended::order, order]; Return[$Failed]];
+	harmonics = floquetHarmonicsFromExtended[hmatrixfromhopping, mnup];
+	H0 = Lookup[harmonics, 0];
+	zeroBlock = SparseArray[{}, Dimensions[H0]];
+	h[l_Integer] := Lookup[harmonics, l, zeroBlock];
+	mnrange := mnrange = DeleteCases[Range[-lmax, lmax],0];
+	H1 = 1/\[Omega] Sum[comm[h[-l], h[l]]/l, {l, 1, lmax}];
+	H2pure := 1/\[Omega]^2 Sum[comm[h[-m], comm[H0, h[m]]]/(2 m^2), {m, mnrange}];
+	H2mixed := 1/\[Omega]^2 Sum[comm[h[-n], comm[h[n - m], h[m]]]/(3 m n), {m, mnrange}, {n, DeleteCases[mnrange, m]}];
+	components = Which[
+		order == 1, <|"Order0" -> H0, "Order1" -> H1|>,
+		order == 2, <|"Order0" -> H0, "Order1" -> H1, "Order2Pure" -> H2pure, "Order2Mixed" -> H2mixed|>
+	];
+	If[OptionValue["ReturnComponents"], components, Chop[Total[components]]]
+];
+
+Options[HFloquetEffectiveHoppingMatricesFromExtended] = Options[HFloquetEffectiveBlochMatrixFromExtended];
+HFloquetEffectiveHoppingMatricesFromExtended::order = HFloquetEffectiveBlochMatrixFromExtended::order;
+HFloquetEffectiveHoppingMatricesFromExtended[\[Omega]_, mnup_Integer?NonNegative, opts:OptionsPattern[]][input_] :=
+Module[{dim = 2 mnup + 1, lmax = 2 mnup, mnrange, normalizedInput, mode, h0isvas, partitionDimensions, harmonics, h, restore,
+		H0, H1, H2pure, H2mixed, components, order = OptionValue["ExpansionOrder"], zero=1.*^-5},
+	If[!MemberQ[{1, 2}, order], Message[HFloquetEffectiveHoppingMatricesFromExtended::order, order]; Return[$Failed]];
+	normalizedInput = normalizeHoppingInput[input, dim];
+	If[normalizedInput === $Failed, Return[$Failed]];
+	{mode, h0isvas, partitionDimensions} = normalizedInput;
+	harmonics = floquetHarmonicAssociationsFromExtended[h0isvas, mnup, 0];
+	h[l_Integer] := Lookup[harmonics, l, <||>];
+	restore[assoc_Association] := restoreHoppingOutput[blockFinalize[assoc, zero], mode, partitionDimensions];
+	mnrange := mnrange = DeleteCases[Range[-lmax, lmax], 0];
+	H0 = h[0];
+	H1 = 1/\[Omega] blockSum[blockComm[h[-#], h[#], mode]/# &, Range[lmax]];
+	H2pure := 1/(2\[Omega]^2) blockSum[blockComm[h[-#], blockComm[H0, h[#], mode], mode]/#^2 &, mnrange];
+	H2mixed := 1/(3\[Omega]^2) blockSum[blockComm[h[-#2], blockComm[h[#2 - #],h[#], mode], mode]/(# #2) &, mnrange, mnrange, Unequal];
+	components = Which[
+		order == 1, <|"Order0" -> H0, "Order1" -> H1|>,
+		order == 2, <|"Order0" -> H0, "Order1" -> H1, "Order2Pure" -> H2pure, "Order2Mixed" -> H2mixed|>
+	];
+	If[OptionValue["ReturnComponents"], restore /@ components, restore[blockSum[components, Keys[components]]]]
+];
+
+(*HFloquetEffectiveBlochMatrixFromExtended[\[Omega]_, mnup_Integer][hmatrixfromhopping_] :=
 Module[{dim = 2mnup + 1, Hs, H0},
 	(*Hs = Transpose[Partition[hmatrixfromhopping, dim{1, 1}], {3, 4, 1, 2}] // SparseArray;*)
 	Hs = flqReprAlt[dim][hmatrixfromhopping];
 	H0 = Hs[[mnup + 1, mnup + 1]];
 	H0 + 1/\[Omega] Sum[comm[Hs[[1, i]], Hs[[i, 1]]]/(i - 1), {i, 2, dim}]
-];
+];*)
+(*Options[HFloquetEffectiveBlochMatrixFromExtended] = {"ExpansionOrder" -> 1, "ReturnComponents" -> False};
+HFloquetEffectiveBlochMatrixFromExtended[\[Omega]_, mnup_Integer, opts:OptionsPattern[]][hmatrixfromhopping_] :=
+Module[{dim = 2mnup + 1, lmax = 2mnup, mnrange, Hs, H, H1, H2pure, H2mixed, components, order = OptionValue["ExpansionOrder"]},
+	mnrange = DeleteCases[Range[-lmax, lmax], 0];
+	Hs = flqReprAlt[dim][hmatrixfromhopping];
+	H[0] = Hs[[mnup + 1, mnup + 1]];
+	Do[{H[-(i-1)], H[i-1]} = {Hs[[1, i]], Hs[[i, 1]]}, {i, 2, dim}];
+	H[l_Integer /; Abs[l] > lmax] := 0 H[0];
+	
+	H1 = Sum[comm[H[-l], H[l]]/l, {l, lmax}];
+	H2pure := Sum[comm[H[-m], comm[H[0], H[m]]]/(2 m^2), {m, mnrange}];
+	H2mixed := Sum[comm[H[-n], comm[H[n - m], H[m]]]/(3 m n), {m, mnrange}, {n, DeleteCases[mnrange, m]}];
+	components = Which[
+		order == 1, <|"Order0" -> H[0], "Order1" -> H1/\[Omega]|>,
+		order == 2, <|"Order0" -> H[0], "Order1" -> H1/\[Omega], "Order2Pure" -> H2pure/\[Omega]^2, "Order2Mixed" -> H2mixed/\[Omega]^2|>
+		];
+	If[OptionValue["ReturnComponents"], components, Chop[Total[components]]]
+];*)
 
-HFloquetEffectiveHoppingMatricesFromExtended[\[Omega]_, mnup_Integer][h0isvas_Association] :=
+(*HFloquetEffectiveHoppingMatricesFromExtended[\[Omega]_, mnup_Integer][h0isvas_Association] :=
 Module[{dim = 2mnup + 1, hsvas, hefffunc, H0, h0s0i, h0isvasrepralt, h0isvasalleffective, zero = 1.*^-5},
 	hefffunc[{va1_ -> h1_, va2_ -> h2_}] := (va1 + va2) -> 1/\[Omega] Sum[comm[h1[[1, i]], h2[[i, 1]]]/(i - 1), {i, 2, dim}];
 	(*h0isvasrepralt = SparseArray[Transpose[Partition[#, dim{1, 1}], {3, 4, 1, 2}]] & /@ h0isvas;*)
@@ -595,7 +730,38 @@ Module[{dim = 2mnup + 1, hsvas, hefffunc, H0, h0s0i, h0isvasrepralt, h0isvasalle
 	hsvas = Normal[h0isvasrepralt];
 	h0isvasalleffective = Join[h0s0i, hefffunc /@ Tuples[hsvas, 2]];
 	DeleteCases[s_ /; s["Density"] < zero][GroupBy[h0isvasalleffective, Keys -> Values, Chop @* Total]]
-];
+];*)
+(*Options[HFloquetEffectiveHoppingMatricesFromExtended] = {"ExpansionOrder" -> 1, "ReturnComponents" -> False};
+HFloquetEffectiveHoppingMatricesFromExtended[\[Omega]_, mnup_Integer, opts : OptionsPattern[]][h0isvas_Association] :=
+Module[{dim = 2 mnup + 1, lmax = 2 mnup, mnrange, h0isvasrepralt, hsvas, h0s0i, h, resultant, pairgroups, triplegroups, hefffunc1, hefffunc2pure,
+		hefffunc2mixed, H0, H1, H2pure, H2mixed, components, order = OptionValue["ExpansionOrder"], zero = 1.*^-5, clean},
+    h0isvasrepralt = flqReprAlt[dim] /@ h0isvas;
+    hsvas = Normal[h0isvasrepralt];
+    h0s0i = Normal[h0isvasrepralt[[;;, mnup + 1, mnup + 1]]];
+    h[hmat_, l_Integer] := Which[l == 0, hmat[[mnup + 1, mnup + 1]],
+            1 <= l <= lmax, hmat[[l + 1, 1]],
+	        -lmax <= l <= -1, hmat[[1, 1 - l]],
+			True, 0 hmat[[mnup + 1, mnup + 1]]];
+    resultant[tuple_List] := Total[First /@ tuple];
+    clean[assoc_(*Association*)] := DeleteCases[s_ /; s["Density"] < zero][assoc];
+    mnrange = DeleteCases[Range[-lmax, lmax], 0];
+    hefffunc1[{_ -> h1_, _ -> h2_}] := 1/\[Omega] Sum[comm[h[h1, -l], h[h2, l]]/l, {l, 1, lmax}];
+    hefffunc2pure[{_ -> h1_, _ -> h2_, _ -> h3_}] := 1/\[Omega]^2 Sum[comm[h[h1, -m], comm[h[h2, 0], h[h3, m]]]/(2 m^2), {m, mnrange}];
+    hefffunc2mixed[{_ -> h1_, _ -> h2_, _ -> h3_}] := 1/\[Omega]^2 Sum[comm[h[h1, -n], comm[h[h2, n - m], h[h3, m]]]/(3 m n), {m, mnrange}, {n, DeleteCases[mnrange, m]}];
+    H0 = clean[h0s0i];
+    pairgroups = GroupBy[Tuples[hsvas, 2], resultant];
+    H1 = clean[Chop[Total[hefffunc1 /@ #]] & /@ pairgroups];
+    If[order == 2, triplegroups = GroupBy[Tuples[hsvas, 3], resultant];
+        H2pure = clean[Chop[Total[hefffunc2pure /@ #]] & /@ triplegroups];
+        H2mixed = clean[Chop[Total[hefffunc2mixed /@ #]] & /@ triplegroups];
+    ];
+    components = Which[
+        order == 1, <|"Order0" -> H0, "Order1" -> H1|>,
+        order == 2, <|"Order0" -> H0, "Order1" -> H1, "Order2Pure" -> H2pure, "Order2Mixed" -> H2mixed|>
+    ];
+    If[OptionValue["ReturnComponents"], components,
+        clean[Merge[Values[components], Chop @* Total]]]
+];*)
 
 
 CompiledSuccessfulQ[cfunc_] := Echo[StringTemplate["Function compilation successful: ``"][StringFreeQ["MainEvaluate"][CompiledFunctionTools`CompilePrint[cfunc]]]];
