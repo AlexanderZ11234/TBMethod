@@ -516,7 +516,7 @@ PhotonBlocks[{A0_, Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer, opts:Opt
 Module[{vd = ptf - pti, d, zero = 1.*^-5},
 	d = Norm[vd];
 	If[d < zero, PhotonBlocks[0 &, \[Omega], mnup, opts][ptf, pti],
-		PhotonBlocks[Exp[I A0 vd . Avecn[#]] &, \[Omega], mnup, opts][ptf, pti]]
+		PhotonBlocks[Exp[I A0 TrigFactor[vd . Avecn[#]]] &, \[Omega], mnup, opts][ptf, pti]]
 ];
 PhotonBlocks[{Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] := PhotonBlocks[{1, Avecn, \[Omega]}, mnup, opts][ptf, pti];
 (* Convention:
