@@ -541,7 +541,7 @@ Module[{vd = ptf - pti, zero = 1.*^-5, d, coef, ele, dim = (2 mnup + 1){1, 1}, i
 	photondress = Array[ele, dim, -mnup];
 	sparsezero := ConstantArray[0, dim ~Join~ innerdof, SparseArray];
 	sparseid := TensorProduct[IdentityMatrix[dim, SparseArray], innerid];
-	sparsediag :=TensorProduct[SparseArray[Band[{1, 1}]-> -\[Omega] Range[-mnup, mnup]], innerid];
+	sparsediag := TensorProduct[SparseArray[Band[{1, 1}]-> -\[Omega] Range[-mnup, mnup]], innerid];
 	If[d > zero,
 		{photondress, sparsezero},
 		{sparseid, photondress + sparsediag}]
@@ -556,7 +556,7 @@ Module[{vd = ptf - pti, zero = 1.*^-5, d, coef, ele, dim = (2 mnup + 1){1, 1}, i
 	photondress = Array[ele, dim, -mnup] // Chop;
 	sparsezero := ConstantArray[0, dim ~Join~ innerdof, SparseArray];
 	sparseid := TensorProduct[IdentityMatrix[dim, SparseArray], innerid];
-	sparsediag :=TensorProduct[SparseArray[Band[{1, 1}]-> -\[Omega] Range[-mnup, mnup]], innerid];
+	sparsediag := TensorProduct[SparseArray[Band[{1, 1}]-> -\[Omega] Range[-mnup, mnup]], innerid];
 	If[d > zero,
 		{photondress, sparsezero},
 		{sparseid, photondress + sparsediag}]
