@@ -499,12 +499,12 @@ NPhotonBlocks[{Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer, opts:Options
 (*
 As the problem of FourierCoefficient shown here (https://mathematica.stackexchange.com/questions/319722/fouriercoefficient-can-handle-a-generic-function-but-fails-with-its-special-case), I have to use some walking-around method.
 *)
-myFourierCoefficient[expr : Exp[-I a_. (trig : (Sin | Cos))[arg_]], var_Symbol, n_ ] :=
+myFourierCoefficient[expr : Exp[(q : (I | -I)) a_ (trig : (Sin | Cos))[arg_]], var_Symbol, n_] :=
 Module[{u = Expand[arg], s, phase},
 	s = Coefficient[u, var];
 	phase = u - s var;
-	If[MemberQ[{-1, 1}, s] && FreeQ[{a, phase}, var], 
-		Exp[I s n (phase + If[trig === Cos, Pi/2, 0])] BesselJ[-s n, a],
+	If[MemberQ[{-1, 1}, s] && FreeQ[{a, phase}, var],
+		Exp[I s n (phase + If[trig === Cos, Pi/2, 0])] BesselJ[(q/I) s n, a],
 		FourierCoefficient[expr, var, n]
 	]
 ];
