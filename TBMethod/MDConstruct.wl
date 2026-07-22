@@ -495,6 +495,16 @@ Module[{vd = ptf - pti, d, zero = 1.*^-5},
 NPhotonBlocks[{Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] := NPhotonBlocks[{1, Avecn, \[Omega]}, mnup, opts][ptf, pti];
 
 (*Options[PhotonBlocks] = Options[Integrate];*)
+
+(*
+As the problem of FourierCoefficient shown here (https://mathematica.stackexchange.com/questions/319722/fouriercoefficient-can-handle-a-generic-function-but-fails-with-its-special-case), I have to use some walking-around method.
+*)
+myFourierCoefficient[Exp[-I a_. (trig:(Sin|Cos))[arg_]], var_Symbol, n_Integer] /; FreeQ[{a, Expand[arg - var]}, var] :=
+With[{phase = Expand[arg - var] + If[trig === Cos, Pi/2, 0]},
+	Exp[I n phase] BesselJ[-n, a]
+];
+myFourierCoefficient[expr_, var_, n_] := FourierCoefficient[expr, var, n];
+
 Options[PhotonBlocks] = Options[FourierCoefficient];
 PhotonBlocks[functime: (_Function|_Symbol), \[Omega]_, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] :=
 Module[{vd = ptf - pti, zero = 1.*^-5, d, coef, ele, dim = (2 mnup + 1){1, 1}, photondress, sparseid, sparsezero, sparsediag},
@@ -502,7 +512,8 @@ Module[{vd = ptf - pti, zero = 1.*^-5, d, coef, ele, dim = (2 mnup + 1){1, 1}, p
 	d = Norm[vd];
 	(*ele[m_, n_] := 1/(2\[Pi]) Integrate[functime[\[CurlyPhi]] Exp[I (m - n) \[CurlyPhi]], {\[CurlyPhi], -\[Pi], \[Pi]}, opts];*)
 	(*ele[m_, n_] := FourierCoefficient[functime[\[CurlyPhi]], \[CurlyPhi], n - m, opts] // FullSimplify;*)
-	coef[l_Integer] := coef[l] = FourierCoefficient[functime[\[CurlyPhi]], \[CurlyPhi], l, opts] // FullSimplify;
+	(*coef[l_Integer] := coef[l] = FourierCoefficient[functime[\[CurlyPhi]], \[CurlyPhi], l, opts] // FullSimplify;*)
+	coef[l_Integer] := coef[l] = myFourierCoefficient[functime[\[CurlyPhi]], \[CurlyPhi], l, opts](* // FullSimplify*);
 	ele[m_, n_] := coef[n - m];
 	photondress = Array[ele, dim, -mnup];
 	sparsezero := ConstantArray[0, dim, SparseArray];
@@ -518,6 +529,7 @@ Module[{vd = ptf - pti, d, zero = 1.*^-5},
 	If[d < zero, PhotonBlocks[0 &, \[Omega], mnup, opts][ptf, pti],
 		PhotonBlocks[Exp[I A0 TrigFactor[vd . Avecn[#]]] &, \[Omega], mnup, opts][ptf, pti]]
 ];
+
 PhotonBlocks[{Avecn:(_Function|_Symbol), \[Omega]_}, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] := PhotonBlocks[{1, Avecn, \[Omega]}, mnup, opts][ptf, pti];
 (* Convention:
    H(t) = Sum_l H^(l) Exp[-I l phi]
