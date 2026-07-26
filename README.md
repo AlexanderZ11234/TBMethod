@@ -35,6 +35,9 @@ Programming environment version: the latest the best
     Needs["TBMethod`"]
     ParallelNeeds["TBMethod`"]
 
+This can be initialized automatically by putting the `init.m` file to the directory `SystemOpen[$UserBaseDirectory <> "/Kernel"]`. The first line of `init.m` sets the number of parallel cores. I usually use the logical cores available for me.
+
+
 3. Check the installation by
 
 <!---->
