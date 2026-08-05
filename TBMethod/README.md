@@ -14,7 +14,7 @@ This package consists of four subpackages responsible, respectively, for functio
 
 - LGFF
 	- Etymology: short for "Lattice Green's Function Formalism"
-	- Major capability: manipulation of stuff related to nonequilibrium Green's function (NEGF), e.g., surface Green's function / self energy of a lead, Green's function of the central scattering region (CSR), transport coefficients (transmission and reflection), local density of states (LDOS) in either the direct space or the reciprical space, Fermi surface, local current density vector (LCDV) field, etc.
+	- Major capability: manipulation of stuff related to nonequilibrium Green's function (NEGF), e.g., surface Green's function / self-energy of a lead, Green's function(s) of the central scattering region (CSR), transport coefficients (transmission and reflection), local density of states (LDOS) in either the direct space or the reciprocal space, Fermi surface, local current density vector (LCDV) field, etc.
 
 - DataVisualization
 	- Etymology: self-evident
