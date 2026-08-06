@@ -14,6 +14,9 @@ ParallelHMatricesRealSpace::usage = "Parallel version of HMatricesRealSpace."
 HBloch::usage = "Constructs the reciprocal space Bloch Hamiltonian matrix, with automatic consideration of opposite hoppings.";
 HBlochFull::usage = "Constructs the reciprocal space Bloch Hamiltonian matrix, without consideration of opposite hoppings.";
 
+HVBloch::usage = "Constructs the reciprocal space Bloch Hamiltonian matrix and the velocity matrix-vectors, with automatic consideration of opposite hoppings.";
+HVBlochFull::usage = "Full version of HVBloch.";
+
 (*DisjointedShellDivisionRegions::usage = "xxx.";*)
 (*CoordinatesGroupByRegions::usage = "xxx.";*)
 
@@ -255,8 +258,21 @@ HBloch[vk_, h0010s:<|({__?NumericQ} -> _SparseArray)..|>] :=
 Module[{hermitize = # + #\[HermitianConjugate] &},
 	First[h0010s] + hermitize[KeyValueMap[Exp[-I # . vk] #2 &, Rest[h0010s]] // Total]
 ];
-
 HBlochFull[vk_, vecaHa_Association] := Total[KeyValueMap[Exp[-I # . vk] #2 &, vecaHa]];
+
+HVBloch[vk_, h0010s:<|({__?NumericQ} -> _SparseArray)..|>] :=
+Module[{hermitize = # + #\[HermitianConjugate] &, hvfunc, hvblochrest, hbloch, vbloch},
+	hvfunc = Function[{vec, ha}, Exp[-I vec . vk] {ha, -I # ha & /@ vec}];
+	hvblochrest = KeyValueMap[hvfunc, Rest[h0010s]] // Total;
+	hbloch = First[h0010s] + hermitize[hvblochrest[[1]]];
+	vbloch = hermitize /@ hvblochrest[[2]];
+	{hbloch, vbloch}
+];
+HVBlochFull[vk_, vecaHa_Association] :=
+Module[{hvfunc},
+	hvfunc = Function[{vec, ha}, Exp[-I vec . vk] {ha, -I # ha & /@ vec}];
+	KeyValueMap[hvfunc, vecaHa] // Total
+];
 
 (*Division of a large central scattering region in a disjointed covering manner, suitable for 2D & 3D*)
 DisjointedShellDivisionRegions[region_?BoundaryMeshRegionQ, nregions_?(# \[Element] PositiveIntegers &)] :=

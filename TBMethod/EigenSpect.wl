@@ -235,6 +235,38 @@ Module[{vx, vy, eigensyst, \[CapitalOmega]nl, \[Delta]k = 1.*^-7, Hveck = H[veck
 	If[Length[group] == 2, 2 Im @ Total[\[CapitalOmega]nl @@@ Tuples[group]], 0.]
 ];
 
+berryCurvatureCore[
+	{Hveck_?MatrixQ, Vveck : {__?MatrixQ}}, Q_, nF_?(# \[Element] PositiveIntegers &),
+	dirs : {\[Alpha]_Integer, \[Beta]_Integer}, opts:OptionsPattern[Eigensystem]
+] /; 1 <= \[Alpha] <= Length[Vveck] && 1 <= \[Beta] <= Length[Vveck] && (*\[Alpha] != \[Beta] && *)nF < Length[Hveck] :=
+Module[{q, v\[Alpha], v\[Beta], j\[Alpha], eigensyst, \[CapitalOmega]nl},
+	q =If[MatrixQ[Q], Q, Q IdentityMatrix[Length[Hveck], SparseArray]];
+	{v\[Alpha], v\[Beta]} = Vveck[[dirs]]; j\[Alpha] = (q . v\[Alpha] + v\[Alpha] . q)/2;
+	eigensyst = Sort[Eigensystem[Hveck, opts, Method -> "Direct"]\[Transpose]];
+	\[CapitalOmega]nl = (#2[[2]]\[Conjugate] . j\[Alpha] . #[[2]]	#[[2]]\[Conjugate] . v\[Beta] . #2[[2]])/(#2[[1]] - #[[1]])^2 &;
+	2 Im @ Total[\[CapitalOmega]nl @@@ Tuples[TakeDrop[eigensyst, nF]]]
+];
+BerryCurvature[
+	{H_, V_}, Q_, nF_?(# \[Element] PositiveIntegers &), 
+	dirs : {_Integer, _Integer} : {1, 2},
+	opts:OptionsPattern[Eigensystem]
+][veck_List] := berryCurvatureCore[{H[veck], V[veck]}, Q, nF, dirs, opts];
+BerryCurvature[
+	{H_, V_}, nF_?(# \[Element] PositiveIntegers &),
+	dirs : {_Integer, _Integer} : {1, 2},
+	opts : OptionsPattern[Eigensystem]
+][veck_List] := berryCurvatureCore[{H[veck], V[veck]}, 1, nF, dirs, opts];
+BerryCurvature[
+	HV_, Q_, nF_?(# \[Element] PositiveIntegers &), 
+	dirs : {_Integer, _Integer} : {1, 2},
+	opts:OptionsPattern[Eigensystem]
+][veck_List] := berryCurvatureCore[HV[veck], Q, nF, dirs, opts];
+BerryCurvature[
+	HV_, nF_?(# \[Element] PositiveIntegers &),
+	dirs : {_Integer, _Integer} : {1, 2},
+	opts : OptionsPattern[Eigensystem]
+][veck_List] := berryCurvatureCore[HV[veck], 1, nF, dirs, opts];
+
 (*WannerChargeCenter[] :=.*)
 
 (*PlaquetteChern[vks:{{__?NumericQ}..}, heff_, nF_?(# \[Element] PositiveIntegers &), opts:OptionsPattern[Eigensystem]] :=
