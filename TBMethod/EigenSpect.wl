@@ -181,10 +181,10 @@ Module[{intcoeffs, reciprocalvectors, len = Length[vbs]},
 	intcoeffs = Tuples[Range[-n, n], len];
 	MinimalBy[Norm @* RegionCentroid][MeshPrimitives[VoronoiMesh[intcoeffs . vbs], len]] // First
 ];(*suffers RAM limit suddenly*)*)
-FirstBrillouinZoneRegion[vbs_List, n_:2] :=
+FirstBrillouinZoneRegion[vbs_, n_:2] :=
 Module[{intcoeffs, reciprocalvectors, len = Length[vbs], longest = Max[Norm /@ vbs], voronoimesh, zero = 1.*^-5},
 	intcoeffs = Tuples[Range[-n, n], len];
-	voronoimesh=VoronoiMesh[intcoeffs . vbs, ConstantArray[{-1, 1} longest, len]];
+	voronoimesh = VoronoiMesh[intcoeffs . vbs, ConstantArray[{-1, 1} longest, len]];
 	(*MinimalBy[Norm @* RegionCentroid][MeshPrimitives[voronoimesh, len]] // First*)
 	SelectFirst[MeshPrimitives[voronoimesh, len], Norm @ RegionCentroid[#] < zero &]
 ] /; ((Dimensions[vbs] == {2, 2} || Dimensions[vbs] == {3, 3}) && Precision[vbs] == \[Infinity]);
@@ -273,7 +273,7 @@ quantumGeometricCore[
 	nF_?(# \[Element] PositiveIntegers &),
 	dirs : {\[Alpha]_Integer, \[Beta]_Integer},
 	opts : OptionsPattern[Eigensystem]
-] /; 1 <= \[Alpha] <= Length[Vveck] && 1 <= \[Beta] <= Length[Vveck] && (*\[Alpha] != \[Beta] && *)nF < Length[Hveck] :=
+] /; 1 <= \[Alpha] <= Length[Vveck] && 1 <= \[Beta] <= Length[Vveck] && (*\[Alpha] != \[Beta] && *)nF < Length[Hveck] && (NumericQ[Q] || (MatrixQ[Q] && Dimensions[Q] === Dimensions[Hveck])) :=
 Module[{q, v\[Alpha], v\[Beta], j\[Alpha], eigensyst, \[Chi]nl},
 	q = If[MatrixQ[Q], Q, Q IdentityMatrix[Length[Hveck], SparseArray]];
 	{v\[Alpha], v\[Beta]} = Vveck[[dirs]];
@@ -318,6 +318,18 @@ QuantumMetric[
 	dirs : {_Integer, _Integer} : {1, 1},
 	opts : OptionsPattern[Eigensystem]
 ][veck_List] := Re @ quantumGeometricCore[HV[veck], Q, nF, dirs, opts];
+BerryCurvature[
+	HV_,
+	nF_?(# \[Element] PositiveIntegers &),
+	dirs : {_Integer, _Integer} : {1, 2},
+	opts : OptionsPattern[Eigensystem]
+][veck_List] := 2 Im @ quantumGeometricCore[HV[veck], 1, nF, dirs, opts];
+QuantumMetric[
+	HV_,
+	nF_?(# \[Element] PositiveIntegers &),
+	dirs : {_Integer, _Integer} : {1, 1},
+	opts : OptionsPattern[Eigensystem]
+][veck_List] := Re @ quantumGeometricCore[HV[veck], 1, nF, dirs, opts];
 
 
 (*WannerChargeCenter[] :=.*)
