@@ -21,7 +21,8 @@ ParallelBandDataWithWeight::usage = "Calculates band data with the weight inform
 
 PathSample::usage = "Samples evenly points on a path consisting of a sequence of node points, with the the number of points sampled on the shortest segment specified.";
 
-BerryCurvature::usage = "Calculates Berry curvature for an arbitrary matrix model.";
+BerryCurvature::usage = "Calculates Berry curvature via Kubo formula for an arbitrary matrix model.";
+QuantumMetric::usage = "Calculates quantum metric via Kubo formula for an arbitrary matrix model.";
 
 (*FirstBrillouinZone::usage = "Shows the first Brillouin zone with reciprocal lattice vectors.";*)
 FirstBrillouinZoneRegion::usage = "Generate the first Brillouin zone as a region.";
@@ -235,7 +236,7 @@ Module[{vx, vy, eigensyst, \[CapitalOmega]nl, \[Delta]k = 1.*^-7, Hveck = H[veck
 	If[Length[group] == 2, 2 Im @ Total[\[CapitalOmega]nl @@@ Tuples[group]], 0.]
 ];
 
-berryCurvatureCore[
+(*berryCurvatureCore[
 	{Hveck_?MatrixQ, Vveck : {__?MatrixQ}}, Q_, nF_?(# \[Element] PositiveIntegers &),
 	dirs : {\[Alpha]_Integer, \[Beta]_Integer}, opts:OptionsPattern[Eigensystem]
 ] /; 1 <= \[Alpha] <= Length[Vveck] && 1 <= \[Beta] <= Length[Vveck] && (*\[Alpha] != \[Beta] && *)nF < Length[Hveck] :=
@@ -265,7 +266,59 @@ BerryCurvature[
 	HV_, nF_?(# \[Element] PositiveIntegers &),
 	dirs : {_Integer, _Integer} : {1, 2},
 	opts : OptionsPattern[Eigensystem]
-][veck_List] := berryCurvatureCore[HV[veck], 1, nF, dirs, opts];
+][veck_List] := berryCurvatureCore[HV[veck], 1, nF, dirs, opts];*)
+
+quantumGeometricCore[
+	{Hveck_?MatrixQ, Vveck : {__?MatrixQ}}, Q_,
+	nF_?(# \[Element] PositiveIntegers &),
+	dirs : {\[Alpha]_Integer, \[Beta]_Integer},
+	opts : OptionsPattern[Eigensystem]
+] /; 1 <= \[Alpha] <= Length[Vveck] && 1 <= \[Beta] <= Length[Vveck] && (*\[Alpha] != \[Beta] && *)nF < Length[Hveck] :=
+Module[{q, v\[Alpha], v\[Beta], j\[Alpha], eigensyst, \[Chi]nl},
+	q = If[MatrixQ[Q], Q, Q IdentityMatrix[Length[Hveck], SparseArray]];
+	{v\[Alpha], v\[Beta]} = Vveck[[dirs]];
+	j\[Alpha] = (q . v\[Alpha] + v\[Alpha] . q)/2;
+	eigensyst = Sort[Eigensystem[Hveck, opts, Method -> "Direct"]\[Transpose]];
+	\[Chi]nl = (#2[[2]]\[Conjugate] . j\[Alpha] . #[[2]] #[[2]]\[Conjugate] . v\[Beta] . #2[[2]]) / (#2[[1]] - #[[1]])^2 &;
+	Total[\[Chi]nl @@@ Tuples[TakeDrop[eigensyst, nF]]]
+];
+BerryCurvature[
+	{H_, V_}, Q_,
+	nF_?(# \[Element] PositiveIntegers &),
+	dirs : {_Integer, _Integer} : {1, 2},
+	opts : OptionsPattern[Eigensystem]
+][veck_List] := 2 Im @ quantumGeometricCore[{H[veck], V[veck]}, Q, nF, dirs, opts];
+BerryCurvature[
+	{H_, V_},
+	nF_?(# \[Element] PositiveIntegers &),
+	dirs : {_Integer, _Integer} : {1, 2},
+	opts : OptionsPattern[Eigensystem]
+][veck_List] := 2 Im @ quantumGeometricCore[{H[veck], V[veck]}, 1, nF, dirs, opts];
+QuantumMetric[
+	{H_, V_}, Q_,
+	nF_?(# \[Element] PositiveIntegers &),
+	dirs : {_Integer, _Integer} : {1, 1},
+	opts : OptionsPattern[Eigensystem]
+][veck_List] := Re @ quantumGeometricCore[{H[veck], V[veck]}, Q, nF, dirs, opts];
+QuantumMetric[
+	{H_, V_},
+	nF_?(# \[Element] PositiveIntegers &),
+	dirs : {_Integer, _Integer} : {1, 1},
+	opts : OptionsPattern[Eigensystem]
+][veck_List] := Re @ quantumGeometricCore[{H[veck], V[veck]}, 1, nF, dirs, opts];
+BerryCurvature[
+	HV_, Q_,
+	nF_?(# \[Element] PositiveIntegers &),
+	dirs : {_Integer, _Integer} : {1, 2},
+	opts : OptionsPattern[Eigensystem]
+][veck_List] := 2 Im @ quantumGeometricCore[HV[veck], Q, nF, dirs, opts];
+QuantumMetric[
+	HV_, Q_,
+	nF_?(# \[Element] PositiveIntegers &),
+	dirs : {_Integer, _Integer} : {1, 1},
+	opts : OptionsPattern[Eigensystem]
+][veck_List] := Re @ quantumGeometricCore[HV[veck], Q, nF, dirs, opts];
+
 
 (*WannerChargeCenter[] :=.*)
 
@@ -332,7 +385,6 @@ Module[{stateloop, matD, func},
 
 plaquettePhase[occupiedstates_] := Arg @ Det[innerProductLoopTensor[occupiedstates]];
 plaquetteBandPhase[occupiedstates_] := Arg @ Eigenvalues[innerProductLoopTensor[occupiedstates]] // Sort;
-
 
 (*plaquettePhase[occupiedstates_] :=
 Module[{stateloop, matD, func},
