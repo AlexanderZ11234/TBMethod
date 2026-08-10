@@ -14,8 +14,11 @@ ParallelHMatricesRealSpace::usage = "Parallel version of HMatricesRealSpace."
 HBloch::usage = "Constructs the reciprocal space Bloch Hamiltonian matrix, with automatic consideration of opposite hoppings.";
 HBlochFull::usage = "Constructs the reciprocal space Bloch Hamiltonian matrix, without consideration of opposite hoppings.";
 
-HVBloch::usage = "Constructs the reciprocal space Bloch Hamiltonian matrix and the velocity matrix-vectors, with automatic consideration of opposite hoppings.";
+HVBloch::usage = "Constructs the reciprocal space Bloch Hamiltonian matrix and the velocity matrix-vector, with automatic consideration of opposite hoppings.";
 HVBlochFull::usage = "Full version of HVBloch.";
+
+HVWBloch::usage = "Constructs the reciprocal space Bloch Hamiltonian matrix, the velocity matrix-vector, and the Hessian matrix-tensor, with automatic consideration of opposite hoppings.";
+HVWBlochFull::usage = "Full version of HVWBloch.";
 
 (*DisjointedShellDivisionRegions::usage = "xxx.";*)
 (*CoordinatesGroupByRegions::usage = "xxx.";*)
@@ -272,6 +275,21 @@ HVBlochFull[vk_, vecaHa_Association] :=
 Module[{hvfunc},
 	hvfunc = Function[{vec, ha}, Exp[-I vec . vk] {ha, -I # ha & /@ vec}];
 	KeyValueMap[hvfunc, vecaHa] // Total
+];
+
+HVWBloch[vk_, h0010s : <|({__?NumericQ} -> _SparseArray) ..|>] :=
+Module[{hermitize = # + #\[HermitianConjugate] &, hvwfunc, hvwblochrest, hbloch, vbloch, wbloch},
+	hvwfunc = Function[{vec, ha}, Exp[-I vec . vk] {ha, -I # ha & /@ vec, -Outer[#1 #2 ha &, vec, vec]}];
+	hvwblochrest = KeyValueMap[hvwfunc, Rest[h0010s]] // Total;
+	hbloch = First[h0010s] + hermitize[hvwblochrest[[1]]];
+	vbloch = hermitize /@ hvwblochrest[[2]];
+	wbloch = Map[hermitize, hvwblochrest[[3]], {2}];
+	{hbloch, vbloch, wbloch}
+];
+HVWBlochFull[vk_, vecaHa_Association] :=
+Module[{hvwfunc},
+	hvwfunc = Function[{vec, ha}, Exp[-I vec . vk] {ha, -I # ha & /@ vec, -Outer[#1 #2 ha &, vec, vec]}];
+	KeyValueMap[hvwfunc, vecaHa] // Total
 ];
 
 (*Division of a large central scattering region in a disjointed covering manner, suitable for 2D & 3D*)
