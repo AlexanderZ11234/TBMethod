@@ -193,7 +193,7 @@ FirstBrillouinZonePlot[vbs_ /; Dimensions[vbs] == {2, 2} || Dimensions[vbs] == {
 Module[{intcoeffs, fbz, reciprocalvectors, len = Length[vbs], \[CapitalGamma], colors},
 	intcoeffs = Tuples[Range[-n, n], len]; \[CapitalGamma] = ConstantArray[0, len];
 	colors = Take[{Red, Green, Blue}, len]; fbz = FirstBrillouinZoneRegion[vbs, n];
-	reciprocalvectors = MapThread[{#, Arrow[{\[CapitalGamma], #2}]} &, {colors, vbs}];
+	reciprocalvectors = MapThread[{#, Arrow[{\[CapitalGamma], #2}]} &, {colors, Normal @ vbs}];
 	Show[{HighlightMesh[fbz, {Style[1, Black, Thick], Style[2, Gray, Opacity[0.1]]}],
 	If[len == 2, Graphics, Graphics3D][{Thick, reciprocalvectors}]}, opts]
 ];
@@ -304,52 +304,52 @@ Module[{q, v\[Alpha], v\[Beta], j\[Alpha], eigensyst, \[Chi]nl},
 ];*)
 BerryCurvature[
 	{H_, V_}, Q_,
-	nF_?(# \[Element] PositiveIntegers &),
+	filling : (_Integer | _Real),
 	dirs : {_Integer, _Integer} : {1, 2},
 	opts : OptionsPattern[Eigensystem]
-][veck_List] := 2 Im @ quantumGeometricCore[{H[veck], V[veck]}, Q, nF, dirs, opts];
+][veck_List] := 2 Im @ quantumGeometricCore[{H[veck], V[veck]}, Q, filling, dirs, opts];
 BerryCurvature[
 	{H_, V_},
-	nF_?(# \[Element] PositiveIntegers &),
+	filling : (_Integer | _Real),
 	dirs : {_Integer, _Integer} : {1, 2},
 	opts : OptionsPattern[Eigensystem]
-][veck_List] := 2 Im @ quantumGeometricCore[{H[veck], V[veck]}, 1, nF, dirs, opts];
+][veck_List] := 2 Im @ quantumGeometricCore[{H[veck], V[veck]}, 1, filling, dirs, opts];
 QuantumMetric[
 	{H_, V_}, Q_,
-	nF_?(# \[Element] PositiveIntegers &),
+	filling : (_Integer | _Real),
 	dirs : {_Integer, _Integer} : {1, 1},
 	opts : OptionsPattern[Eigensystem]
-][veck_List] := Re @ quantumGeometricCore[{H[veck], V[veck]}, Q, nF, dirs, opts];
+][veck_List] := Re @ quantumGeometricCore[{H[veck], V[veck]}, Q, filling, dirs, opts];
 QuantumMetric[
 	{H_, V_},
-	nF_?(# \[Element] PositiveIntegers &),
+	filling : (_Integer | _Real),
 	dirs : {_Integer, _Integer} : {1, 1},
 	opts : OptionsPattern[Eigensystem]
-][veck_List] := Re @ quantumGeometricCore[{H[veck], V[veck]}, 1, nF, dirs, opts];
+][veck_List] := Re @ quantumGeometricCore[{H[veck], V[veck]}, 1, filling, dirs, opts];
 BerryCurvature[
 	HV_, Q_,
-	nF_?(# \[Element] PositiveIntegers &),
+	filling : (_Integer | _Real),
 	dirs : {_Integer, _Integer} : {1, 2},
 	opts : OptionsPattern[Eigensystem]
-][veck_List] := 2 Im @ quantumGeometricCore[HV[veck], Q, nF, dirs, opts];
+][veck_List] := 2 Im @ quantumGeometricCore[HV[veck], Q, filling, dirs, opts];
 QuantumMetric[
 	HV_, Q_,
-	nF_?(# \[Element] PositiveIntegers &),
+	filling : (_Integer | _Real),
 	dirs : {_Integer, _Integer} : {1, 1},
 	opts : OptionsPattern[Eigensystem]
-][veck_List] := Re @ quantumGeometricCore[HV[veck], Q, nF, dirs, opts];
+][veck_List] := Re @ quantumGeometricCore[HV[veck], Q, filling, dirs, opts];
 BerryCurvature[
 	HV_,
-	nF_?(# \[Element] PositiveIntegers &),
+	filling : (_Integer | _Real),
 	dirs : {_Integer, _Integer} : {1, 2},
 	opts : OptionsPattern[Eigensystem]
-][veck_List] := 2 Im @ quantumGeometricCore[HV[veck], 1, nF, dirs, opts];
+][veck_List] := 2 Im @ quantumGeometricCore[HV[veck], 1, filling, dirs, opts];
 QuantumMetric[
 	HV_,
-	nF_?(# \[Element] PositiveIntegers &),
+	filling : (_Integer | _Real),
 	dirs : {_Integer, _Integer} : {1, 1},
 	opts : OptionsPattern[Eigensystem]
-][veck_List] := Re @ quantumGeometricCore[HV[veck], 1, nF, dirs, opts];
+][veck_List] := Re @ quantumGeometricCore[HV[veck], 1, filling, dirs, opts];
 
 
 (*WannerChargeCenter[] :=.*)
