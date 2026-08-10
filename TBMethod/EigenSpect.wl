@@ -268,7 +268,27 @@ BerryCurvature[
 	opts : OptionsPattern[Eigensystem]
 ][veck_List] := berryCurvatureCore[HV[veck], 1, nF, dirs, opts];*)
 
+occupiedNumber[eigensyst_, nF_Integer?Positive] := nF;
+occupiedNumber[eigensyst_, \[Epsilon]F_Real] := Count[eigensyst, _?(First[#] <= \[Epsilon]F &)];
 quantumGeometricCore[
+	{Hveck_?MatrixQ, Vveck : {__?MatrixQ}}, Q_,
+	filling : (_Integer | _Real),
+	dirs : {\[Alpha]_Integer, \[Beta]_Integer},
+	opts : OptionsPattern[Eigensystem]
+] /; 1 <= \[Alpha] <= Length[Vveck] && 1 <= \[Beta] <= Length[Vveck] :=
+Module[{q, v\[Alpha], v\[Beta], j\[Alpha], eigensyst, \[Chi]nl, nOcc},
+	q = If[MatrixQ[Q], Q, Q IdentityMatrix[Length[Hveck], SparseArray]];
+	{v\[Alpha], v\[Beta]} = Vveck[[dirs]]; j\[Alpha] = (q . v\[Alpha] + v\[Alpha] . q)/2;
+	eigensyst = Sort[Eigensystem[Hveck, opts, Method -> "Direct"]\[Transpose]];
+	nOcc = occupiedNumber[eigensyst, filling];
+	If[0 < nOcc < Length[eigensyst],
+		\[Chi]nl = (#2[[2]]\[Conjugate] . j\[Alpha] . #[[2]] #[[2]]\[Conjugate] . v\[Beta] . #2[[2]]) / (#2[[1]] - #[[1]])^2 &;
+		Total[\[Chi]nl @@@ Tuples[TakeDrop[eigensyst, nOcc]]],
+		0.
+	]
+];
+
+(*quantumGeometricCore[
 	{Hveck_?MatrixQ, Vveck : {__?MatrixQ}}, Q_,
 	nF_?(# \[Element] PositiveIntegers &),
 	dirs : {\[Alpha]_Integer, \[Beta]_Integer},
@@ -281,7 +301,7 @@ Module[{q, v\[Alpha], v\[Beta], j\[Alpha], eigensyst, \[Chi]nl},
 	eigensyst = Sort[Eigensystem[Hveck, opts, Method -> "Direct"]\[Transpose]];
 	\[Chi]nl = (#2[[2]]\[Conjugate] . j\[Alpha] . #[[2]] #[[2]]\[Conjugate] . v\[Beta] . #2[[2]]) / (#2[[1]] - #[[1]])^2 &;
 	Total[\[Chi]nl @@@ Tuples[TakeDrop[eigensyst, nF]]]
-];
+];*)
 BerryCurvature[
 	{H_, V_}, Q_,
 	nF_?(# \[Element] PositiveIntegers &),
