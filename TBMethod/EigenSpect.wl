@@ -276,9 +276,9 @@ quantumGeometricCore[
 	dirs : {\[Alpha]_Integer, \[Beta]_Integer},
 	opts : OptionsPattern[Eigensystem]
 ] /; 1 <= \[Alpha] <= Length[Vveck] && 1 <= \[Beta] <= Length[Vveck] :=
-Module[{q, v\[Alpha], v\[Beta], j\[Alpha], eigensyst, \[Chi]nl, nOcc},
-	q = If[MatrixQ[Q], Q, Q IdentityMatrix[Length[Hveck], SparseArray]];
-	{v\[Alpha], v\[Beta]} = Vveck[[dirs]]; j\[Alpha] = (q . v\[Alpha] + v\[Alpha] . q)/2;
+Module[{v\[Alpha], v\[Beta], j\[Alpha], eigensyst, \[Chi]nl, nOcc},
+	{v\[Alpha], v\[Beta]} = Vveck[[dirs]];
+	j\[Alpha] = If[Q === 1, v\[Alpha], (Q . v\[Alpha] + v\[Alpha] . Q)/2];
 	eigensyst = Sort[Eigensystem[Hveck, opts, Method -> "Direct"]\[Transpose]];
 	nOcc = occupiedNumber[eigensyst, filling];
 	If[0 < nOcc < Length[eigensyst],
