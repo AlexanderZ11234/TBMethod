@@ -355,8 +355,8 @@ LocalDOSReciprocalSpace[innerproj_][\[Epsilon]_, {HLeadBloch_?MatrixQ, HLead12_?
 LocalDOSReciprocalSpace[innerproj_][\[Epsilon]_, {{HLeadBloch_?MatrixQ, HLead12_?MatrixQ}, {HCSRBloch_?MatrixQ, HCSRLead1_?MatrixQ}}, mode:(1|2|3):3] :=
 Module[{zero = 1.*^-4, \[CapitalSigma], innerdof = Dimensions[innerproj], GCSR},
 	\[CapitalSigma] = Sigma[Complex[\[Epsilon], zero], {HLeadBloch, HLead12, HCSRLead1}, mode];
-	GCSR=CentralGreen[Complex[\[Epsilon], zero], HCSRBloch, {\[CapitalSigma]}];
-	-Im @ Total[Tr[innerproj . #]&/@Diagonal[Partition[GCSR, innerdof]]]
+	GCSR = CentralGreen[Complex[\[Epsilon], zero], HCSRBloch, {\[CapitalSigma]}];
+	-(1/\[Pi]) Im @ Total[Tr[innerproj . #]&/@Diagonal[Partition[GCSR, innerdof]]]
 ];
 
 
