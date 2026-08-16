@@ -20,6 +20,9 @@ HVBlochFull::usage = "Full version of HVBloch.";
 HVWBloch::usage = "Constructs the reciprocal space Bloch Hamiltonian matrix, the velocity matrix-vector, and the Hessian matrix-tensor, with automatic consideration of opposite hoppings.";
 HVWBlochFull::usage = "Full version of HVWBloch.";
 
+HPDTensorsBloch::usage = ".";
+HPDTensorsBlochFull::usage = ".";
+
 (*DisjointedShellDivisionRegions::usage = "xxx.";*)
 (*CoordinatesGroupByRegions::usage = "xxx.";*)
 
@@ -291,6 +294,18 @@ Module[{hvwfunc},
 	hvwfunc = Function[{vec, ha}, Exp[-I vec . vk] {ha, -I # ha & /@ vec, -Outer[#1 #2 ha &, vec, vec]}];
 	KeyValueMap[hvwfunc, vecaHa] // Total
 ];
+
+HPDTensorsBloch[n_Integer?NonNegative:0][vk_, h0010s : <|({__?NumericQ} -> _SparseArray) ..|>] :=
+Module[{fullassoc},
+	fullassoc = Join[h0010s, Association @ KeyValueMap[(-#1 -> #2\[HermitianConjugate]) &, Rest[h0010s]]];
+	HPDTensorsBlochFull[n][vk, fullassoc]
+];
+HPDTensorsBlochFull[n_Integer?NonNegative:0][vk_, vecaHa_Association] :=
+Module[{hpdtfunc},
+	hpdtfunc = Function[{vec, ha}, Exp[-I vec . vk] NestList[Function[ten, -I # ten & /@ vec], ha, n]];
+	KeyValueMap[hpdtfunc, vecaHa] // Total
+];
+
 
 (*Division of a large central scattering region in a disjointed covering manner, suitable for 2D & 3D*)
 DisjointedShellDivisionRegions[region_?BoundaryMeshRegionQ, nregions_?(# \[Element] PositiveIntegers &)] :=
