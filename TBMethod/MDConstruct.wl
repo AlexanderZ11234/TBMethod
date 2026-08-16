@@ -295,12 +295,12 @@ Module[{hvwfunc},
 	KeyValueMap[hvwfunc, vecaHa] // Total
 ];
 
-HPDTensorsBloch[n_Integer?NonNegative:0][vk_, h0010s : <|({__?NumericQ} -> _SparseArray) ..|>] :=
+HPDTensorsBloch[n_Integer?NonNegative][vk_, h0010s : <|({__?NumericQ} -> _SparseArray) ..|>] :=
 Module[{fullassoc},
 	fullassoc = Join[h0010s, Association @ KeyValueMap[(-#1 -> #2\[HermitianConjugate]) &, Rest[h0010s]]];
 	HPDTensorsBlochFull[n][vk, fullassoc]
 ];
-HPDTensorsBlochFull[n_Integer?NonNegative:0][vk_, vecaHa_Association] :=
+HPDTensorsBlochFull[n_Integer?NonNegative][vk_, vecaHa_Association] :=
 Module[{hpdtfunc},
 	hpdtfunc = Function[{vec, ha}, Exp[-I vec . vk] NestList[Function[ten, -I # ten & /@ vec], ha, n]];
 	KeyValueMap[hpdtfunc, vecaHa] // Total
