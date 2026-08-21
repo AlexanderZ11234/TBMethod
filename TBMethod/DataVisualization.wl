@@ -74,7 +74,7 @@ Module[{op, largestcomps, \[Eta] = 1.*^-4, len = Length[ptsdisk], ratio = 2},
 	 {Opacity[.4], Red, Disk[{#, #2}, Sqrt[len]ratio #3] & @@@ op[largestcomps]}},
 	ops, PlotLabel -> StringTemplate["\!\(\*SubscriptBox[\(E\), \(\[VeryThinSpace]\)]\) = ``"][evalandevec[[1]]]]
 ] /; (Length[Partition[evalandevec[[2]], innerdof]] == Length[ptsdisk]);*)
-RealSpaceLocalDOSPlot[evalandevec_List, ptsdisk:{{_, _, _}..}|{{_, _}..}, region_?RegionQ, innerdof_Integer:1, ratio_:2, ops:OptionsPattern[Graphics]] :=
+(*RealSpaceLocalDOSPlot[evalandevec_List, ptsdisk:{{_, _, _}..}|{{_, _}..}, region_?RegionQ, innerdof_Integer:1, ratio_:2, ops:OptionsPattern[Graphics]] :=
 Module[{op, largestcomps, \[Eta] = 1.*^-4, len = Length[ptsdisk], (*ratio = 2,*) evaldisp},
 	op = If[MatchQ[ptsdisk, {{_, _, _}..}], KeyValueMap[Append] @* (data |-> GroupBy[data, (#[[;;2]] &) -> Last, Total]), Identity];
 	largestcomps = Select[Last[#] > \[Eta] &] @ Join[ptsdisk, {BlockMap[Total, Abs[evalandevec[[2]]]^2, innerdof]}\[Transpose], 2];
@@ -86,7 +86,22 @@ Module[{op, largestcomps, \[Eta] = 1.*^-4, len = Length[ptsdisk], (*ratio = 2,*)
 		},
 		ops
 	]
-] /; (Length[Partition[evalandevec[[2]], innerdof]] == Length[ptsdisk]);
+] /; (Length[Partition[evalandevec[[2]], innerdof]] == Length[ptsdisk]);*)
+RealSpaceLocalDOSPlot[evalandevec_List, ptsdiskraw:{{__}..} | {(_ -> {__})..}, innerdof_Integer:1, ratio_:2, ops:OptionsPattern[Graphics]] :=
+Module[{op, largestcomps, \[Eta] = 1.*^-4, len = Length[ptsdiskraw], ptsdisk, evaldisp, region},
+	ptsdisk = If[FreeQ[#, Rule], #, Values[#]] & [ptsdiskraw];
+	op = If[MatchQ[ptsdisk, {{_, _, _}..}], KeyValueMap[Append] @* (data |-> GroupBy[data, (#[[;;2]] &) -> Last, Total]), Identity];
+	largestcomps = Select[Last[#] > \[Eta] &] @ Join[ptsdisk, {BlockMap[Total, Abs[evalandevec[[2]]]^2, innerdof]}\[Transpose], 2];
+	evaldisp = ToString[ScientificForm[Re @ evalandevec[[1]], 4], StandardForm];
+	region = ConvexHullMesh[ptsdisk];
+	Graphics[{
+		{FaceForm[{Opacity[.2], Green}], EdgeForm[Black], region},
+		{Opacity[.4], Red, Disk[{#, #2}, Sqrt[len]ratio #3] & @@@ op[largestcomps]},
+		{Text[StringTemplate["\!\(\*SubscriptBox[\(E\), \(\[VeryThinSpace]\)]\) = ``"][evaldisp]]}
+		},
+		ops
+	]
+] /; (Length[Partition[evalandevec[[2]], innerdof]] == Length[ptsdiskraw]);
 
 LocalDOSPlot[data_, ops:OptionsPattern[ListDensityPlot]] :=
 ListDensityPlot[
