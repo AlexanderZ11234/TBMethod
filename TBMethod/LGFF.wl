@@ -404,7 +404,7 @@ Module[{gamma, blockGns0, blockGns, Gsre = Reverse[Gs], jblock0, innerdof = Dime
 	blockGnspartial = Table[ArrayFlatten[BlockMap[proj . # &, #, innerdof]] & /@ x, {x, blockGns}];
 	(* 2. Add matching reverse hopping factors. *)
 	blockHspartial = Append[Map[Transpose, blockHs, {2}], Conjugate /@ os];
-	jblock0 = 2(*/\[HBar]*) Im[blockHspartial blockGnspartial];
+	jblock0 = (*2/\[HBar] 1/(2\[Pi])*) Im[blockHspartial blockGnspartial] / \[Pi];
 	Table[BlockMap[Total[#, 2] &, #, innerdof] & /@ x, {x, jblock0}]
 ];(*bond current in layered block form*)
 
