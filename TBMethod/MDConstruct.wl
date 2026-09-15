@@ -113,12 +113,21 @@ Module[{innerdof = Dimensions[fs[[1, 1]]]},
 (*Phys. Rev. B 40, 8169 (1989)*)
 (*The azimuthal angle \[Phi]A specifies the direction respecting the lattice translational symmetry, even in the presence of the vector potential.*)
 (*Gauge: vecA = (-B y, 0, 0)*)
+(*PhaseFactor2DAB[B_, \[Phi]A_][ptf:{_, _, _}, pti:{_, _, _}] := PhaseFactor2DAB[B, \[Phi]A][Most @ ptf, Most @ pti]
 PhaseFactor2DAB[B_, \[Phi]A_][ptf:{_, _}, pti:{_, _}] :=
 Module[{xi, yi, xj, yj, \[CurlyPhi]},
 	{{xi, yi}, {xj, yj}} = {ptf, pti};
 	(*B \[Pi] ( xj yi - xi yj - (xi yi - xj yj) Cos[2\[Phi]A] + (xi^2 - xj^2 - yi^2 + yj^2) Sin[2\[Phi]A]/2)*)
 	(*electron has a negative charge -e*)
 	\[CurlyPhi] = B \[Pi] (- xj yi + xi yj + (xi yi - xj yj) Cos[2\[Phi]A] + (-xi^2 + xj^2 + yi^2 - yj^2) Sin[2\[Phi]A]/2);
+	Exp[I \[CurlyPhi]]
+];*)
+PhaseFactor2DAB[Bz_, \[Phi]A_][ptf : ({_, _} | {_, _, _}), pti : ({_, _} | {_, _, _})] :=
+Module[{rf, ri, dm, dp, Bvec, n, \[CurlyPhi]},
+	{rf, ri} = PadRight[#, 3] & /@ {ptf, pti};
+	{dm, dp} = {{1, -1}, {1, 1}} . {rf, ri};
+	Bvec = {0, 0, Bz}; n = PadRight[AngleVector[\[Phi]A], 3];
+	\[CurlyPhi] = \[Pi] (dm . n) (Cross[dp, Bvec] . n);
 	Exp[I \[CurlyPhi]]
 ];
 
