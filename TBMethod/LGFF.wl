@@ -506,7 +506,7 @@ Options[HallAndLongitudinalConductances] = Options[HallAndLongitudinalResistance
 HallAndLongitudinalConductances[\[Epsilon]_, hcsrdod_, leadshs_, gUs_, opts:OptionsPattern[]] :=
 Module[{RH, RL},
 	{RH, RL} = HallAndLongitudinalResistances[\[Epsilon], hcsrdod, leadshs, gUs, opts];
-	{RH, RL}/(RH^2 + RL^2)
+	{-RH, RL}/(RH^2 + RL^2)
 ];
 
 (*HallAndLongitudinalResistances[\[Epsilon]_, hcsrdod_, leadshs_] :=
