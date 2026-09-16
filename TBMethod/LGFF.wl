@@ -489,7 +489,7 @@ Module[{\[ScriptCapitalT], \[ScriptCapitalT]func, Rfunc, cnup = 1.*^7, ter = Len
 	Rfunc = # - {#2, #3} & @@ Rest[LinearSolve[#][UnitVector[ter - 1, 1]]] &;
 	transmissions = Module[{\[CapitalSigma]s, blockG, \[CapitalSigma]s0},
 		\[CapitalSigma]s0 = Sigma[\[Epsilon], #, OptionValue["SigmaMode"]] & /@ leadshs;
-		\[CapitalSigma]s = MapThread[# . #2 . (#\[ConjugateTranspose]) &,{gUs, \[CapitalSigma]s0}];
+		\[CapitalSigma]s = MapThread[# . #2 . (#\[ConjugateTranspose]) &, {gUs, \[CapitalSigma]s0}];
 		blockG = CentralBlockGreens[\[Epsilon], hcsrdod, \[CapitalSigma]s, "T"];
 		Table[If[p == q || p == ter, 0., Transmission[blockG, \[CapitalSigma]s[[{p, q}]]]], {p, ter}, {q, ter}]
 	];
@@ -497,7 +497,7 @@ Module[{\[ScriptCapitalT], \[ScriptCapitalT]func, Rfunc, cnup = 1.*^7, ter = Len
 	(*If[LinearAlgebra`Private`MatrixConditionNumber[\[ScriptCapitalT]] > cnup, {"NaN", "NaN"},
 		Rfunc[\[ScriptCapitalT]]
 	]*)
-	If[LUDecomposition[\[ScriptCapitalT]][[3]] > cnup, {"NaN", "NaN"}, (*condition number from LU*)
+	If[LUDecomposition[\[ScriptCapitalT]][[(*3*)4]] > cnup, {"NaN", "NaN"}, (*condition number from LU*)
 		Rfunc[\[ScriptCapitalT]]
 	]
 ];
