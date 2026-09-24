@@ -482,7 +482,32 @@ And the source and drain should be numbered at the beginning and the ending.*)
    3   5
 *)
 
-Options[HallAndLongitudinalResistances] = {"SigmaMode" -> 3};
+Options[transmissionsfunc] = {"SigmaMode" -> 3};
+(*truncated transmission matrix for a grounded last terminal*)
+transmissionsfunc[\[Epsilon]_, hcsrdod_, leadshs_, gUs_, opts:OptionsPattern[]]:=
+Module[{\[CapitalSigma]s, blockG, \[CapitalSigma]s0,ter = Length[leadshs]},
+	\[CapitalSigma]s0 = Sigma[\[Epsilon], #, OptionValue["SigmaMode"]] & /@ leadshs;
+	\[CapitalSigma]s = MapThread[# . #2 . (#\[ConjugateTranspose]) &, {gUs, \[CapitalSigma]s0}];
+	blockG = CentralBlockGreens[\[Epsilon], hcsrdod, \[CapitalSigma]s, "T"];
+	(*Table[If[p == q || q == ter, 0., Transmission[blockG, \[CapitalSigma]s[[{p, q}]]]], {p, ter}, {q, ter}]*)
+	Table[If[p == q, 0., Transmission[blockG, \[CapitalSigma]s[[{p, q}]]]], {p, ter}, {q, ter - 1}]
+];
+
+Options[HallAndLongitudinalResistances] = Options[transmissionsfunc];
+HallAndLongitudinalResistances[\[Epsilon]_, hcsrdod_, leadshs_, gUs_, opts:OptionsPattern[]] :=
+Module[{\[ScriptCapitalT], \[ScriptCapitalT]func, Rfunc, cnup = 1.*^7, ter = Length[leadshs], transmissions},
+	(*\[ScriptCapitalT]func = DiagonalMatrix[Total[#]] - # &;*)
+	\[ScriptCapitalT]func = DiagonalMatrix[Total[#]] - Most[#] &;
+	Rfunc = # - {#2, #3} & @@ Rest[LinearSolve[#][UnitVector[ter - 1, 1]]] &;
+	transmissions = transmissionsfunc[\[Epsilon], hcsrdod, leadshs, gUs, opts];
+	(*\[ScriptCapitalT] = Drop[\[ScriptCapitalT]func[transmissions], -1, -1];*)
+	\[ScriptCapitalT] = \[ScriptCapitalT]func[transmissions];
+	If[LUDecomposition[\[ScriptCapitalT]][[4]] > cnup, {"NaN", "NaN"}, (*condition number from LU*)
+		Rfunc[\[ScriptCapitalT]]
+	]
+];
+
+(*Options[HallAndLongitudinalResistances] = {"SigmaMode" -> 3};
 HallAndLongitudinalResistances[\[Epsilon]_, hcsrdod_, leadshs_, gUs_, opts:OptionsPattern[]] :=
 Module[{\[ScriptCapitalT], \[ScriptCapitalT]func, Rfunc, cnup = 1.*^7, ter = Length[leadshs], transmissions},
 	(*\[ScriptCapitalT]func = # - DiagonalMatrix[Total[#, {2}]] &;*)
@@ -503,7 +528,7 @@ Module[{\[ScriptCapitalT], \[ScriptCapitalT]func, Rfunc, cnup = 1.*^7, ter = Len
 	If[LUDecomposition[\[ScriptCapitalT]][[(*3*)4]] > cnup, {"NaN", "NaN"}, (*condition number from LU*)
 		Rfunc[\[ScriptCapitalT]]
 	]
-];
+];*)
 
 Options[HallAndLongitudinalConductances] = Options[HallAndLongitudinalResistances];
 HallAndLongitudinalConductances[\[Epsilon]_, hcsrdod_, leadshs_, gUs_, opts:OptionsPattern[]] :=
