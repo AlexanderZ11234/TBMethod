@@ -485,15 +485,18 @@ And the source and drain should be numbered at the beginning and the ending.*)
 Options[HallAndLongitudinalResistances] = {"SigmaMode" -> 3};
 HallAndLongitudinalResistances[\[Epsilon]_, hcsrdod_, leadshs_, gUs_, opts:OptionsPattern[]] :=
 Module[{\[ScriptCapitalT], \[ScriptCapitalT]func, Rfunc, cnup = 1.*^7, ter = Length[leadshs], transmissions},
-	\[ScriptCapitalT]func = # - DiagonalMatrix[Total[#, {2}]] &;
+	(*\[ScriptCapitalT]func = # - DiagonalMatrix[Total[#, {2}]] &;*)
+	\[ScriptCapitalT]func = DiagonalMatrix[Total[#]] - # &;
 	Rfunc = # - {#2, #3} & @@ Rest[LinearSolve[#][UnitVector[ter - 1, 1]]] &;
 	transmissions = Module[{\[CapitalSigma]s, blockG, \[CapitalSigma]s0},
 		\[CapitalSigma]s0 = Sigma[\[Epsilon], #, OptionValue["SigmaMode"]] & /@ leadshs;
 		\[CapitalSigma]s = MapThread[# . #2 . (#\[ConjugateTranspose]) &, {gUs, \[CapitalSigma]s0}];
 		blockG = CentralBlockGreens[\[Epsilon], hcsrdod, \[CapitalSigma]s, "T"];
-		Table[If[p == q || p == ter, 0., Transmission[blockG, \[CapitalSigma]s[[{p, q}]]]], {p, ter}, {q, ter}]
+		(*Table[If[p == q || p == ter, 0., Transmission[blockG, \[CapitalSigma]s[[{p, q}]]]], {p, ter}, {q, ter}]*)
+		Table[If[p == q || q == ter, 0., Transmission[blockG, \[CapitalSigma]s[[{p, q}]]]], {p, ter}, {q, ter}]
 	];
-	\[ScriptCapitalT] = Drop[\[ScriptCapitalT]func[-transmissions], -1, -1];
+	(*\[ScriptCapitalT] = Drop[\[ScriptCapitalT]func[-transmissions], -1, -1];*)
+	\[ScriptCapitalT] = Drop[\[ScriptCapitalT]func[transmissions], -1, -1];
 	(*If[LinearAlgebra`Private`MatrixConditionNumber[\[ScriptCapitalT]] > cnup, {"NaN", "NaN"},
 		Rfunc[\[ScriptCapitalT]]
 	]*)
