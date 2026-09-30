@@ -482,10 +482,44 @@ And the source and drain should be numbered at the beginning and the ending.*)
    3   5
 *)
 
-Options[transmissionsfunc] = {"SigmaMode" -> 3};
+Options[transmissionsfunc] = {"SigmaMode" -> 3, "LeadGaugeTransforms" -> None};
+transmissionsfunc::glen = "\"LeadGaugeTransforms\" contains `1` transformations, but `2` leads are present.";
+transmissionsfunc[\[Epsilon]_, hcsrdod_, leadshs_, opts : OptionsPattern[]] :=
+Module[{\[CapitalSigma]s, \[CapitalSigma]s0, blockG, ter = Length[leadshs], gUs = OptionValue["LeadGaugeTransforms"]},
+	If[gUs =!= None && (!ListQ[gUs] || Length[gUs] =!= ter),
+		Message[transmissionsfunc::glen, If[ListQ[gUs], Length[gUs], "non-list"], ter];
+        Return[$Failed]
+    ];
+	
+	\[CapitalSigma]s0 = Sigma[\[Epsilon], #, OptionValue["SigmaMode"]] & /@ leadshs;
+	\[CapitalSigma]s = If[gUs === None, \[CapitalSigma]s0, MapThread[# . #2 . (#)\[ConjugateTranspose] &, {gUs, \[CapitalSigma]s0}]];
+    blockG = CentralBlockGreens[\[Epsilon], hcsrdod, \[CapitalSigma]s, "T"];
+    Table[If[p == q, 0., Transmission[blockG, \[CapitalSigma]s[[{p, q}]]]], {p, ter}, {q, ter - 1}]
+];
+
+Options[HallAndLongitudinalResistances] = Options[transmissionsfunc];
+HallAndLongitudinalResistances[\[Epsilon]_, hcsrdod_, leadshs_, opts : OptionsPattern[]] :=
+Module[{\[ScriptCapitalT], \[ScriptCapitalT]func, Rfunc, cnup = 1.*^7, ter = Length[leadshs], transmissions},
+	\[ScriptCapitalT]func = DiagonalMatrix[Total[#]] - Most[#] &;
+	Rfunc = # - {#2, #3} & @@ Rest[LinearSolve[#][UnitVector[ter - 1, 1]]] &;
+	transmissions = transmissionsfunc[\[Epsilon], hcsrdod, leadshs, opts];
+	\[ScriptCapitalT] = \[ScriptCapitalT]func[transmissions];
+    If[LUDecomposition[\[ScriptCapitalT]][[4]] > cnup, {"NaN", "NaN"}, Rfunc[\[ScriptCapitalT]]]
+];
+
+Options[HallAndLongitudinalConductances] = Options[HallAndLongitudinalResistances];
+HallAndLongitudinalConductances[\[Epsilon]_, hcsrdod_, leadshs_, opts:OptionsPattern[]] :=
+Module[{RH, RL},
+	{RH, RL} = HallAndLongitudinalResistances[\[Epsilon], hcsrdod, leadshs, opts];
+	{-RH, RL}/(RH^2 + RL^2)
+];
+
+
+
+(*Options[transmissionsfunc] = {"SigmaMode" -> 3};
 (*truncated transmission matrix for a grounded last terminal*)
 transmissionsfunc[\[Epsilon]_, hcsrdod_, leadshs_, gUs_, opts:OptionsPattern[]]:=
-Module[{\[CapitalSigma]s, blockG, \[CapitalSigma]s0,ter = Length[leadshs]},
+Module[{\[CapitalSigma]s, blockG, \[CapitalSigma]s0, ter = Length[leadshs]},
 	\[CapitalSigma]s0 = Sigma[\[Epsilon], #, OptionValue["SigmaMode"]] & /@ leadshs;
 	\[CapitalSigma]s = MapThread[# . #2 . (#\[ConjugateTranspose]) &, {gUs, \[CapitalSigma]s0}];
 	blockG = CentralBlockGreens[\[Epsilon], hcsrdod, \[CapitalSigma]s, "T"];
@@ -505,7 +539,7 @@ Module[{\[ScriptCapitalT], \[ScriptCapitalT]func, Rfunc, cnup = 1.*^7, ter = Len
 	If[LUDecomposition[\[ScriptCapitalT]][[4]] > cnup, {"NaN", "NaN"}, (*condition number from LU*)
 		Rfunc[\[ScriptCapitalT]]
 	]
-];
+];*)
 
 (*Options[HallAndLongitudinalResistances] = {"SigmaMode" -> 3};
 HallAndLongitudinalResistances[\[Epsilon]_, hcsrdod_, leadshs_, gUs_, opts:OptionsPattern[]] :=
@@ -530,12 +564,12 @@ Module[{\[ScriptCapitalT], \[ScriptCapitalT]func, Rfunc, cnup = 1.*^7, ter = Len
 	]
 ];*)
 
-Options[HallAndLongitudinalConductances] = Options[HallAndLongitudinalResistances];
+(*Options[HallAndLongitudinalConductances] = Options[HallAndLongitudinalResistances];
 HallAndLongitudinalConductances[\[Epsilon]_, hcsrdod_, leadshs_, gUs_, opts:OptionsPattern[]] :=
 Module[{RH, RL},
 	{RH, RL} = HallAndLongitudinalResistances[\[Epsilon], hcsrdod, leadshs, gUs, opts];
 	{-RH, RL}/(RH^2 + RL^2)
-];
+];*)
 
 (*HallAndLongitudinalResistances[\[Epsilon]_, hcsrdod_, leadshs_] :=
 Module[{\[ScriptCapitalT], \[ScriptCapitalT]func, Rfunc, cnup = 1.*^7, ter = Length[leadshs], transmissions},
