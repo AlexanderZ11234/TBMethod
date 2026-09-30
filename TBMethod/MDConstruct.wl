@@ -140,10 +140,11 @@ Module[{\[CurlyPhi]},
 	Exp[I \[CurlyPhi]]
 ];
 UGaugeTransformMatrix[innerdof_Integer][{B_, \[Phi]A_}][pts: {__List | __Rule}] :=
-Module[{\[Chi], U0, inner},
+Module[{\[Chi], U0, inner, ptscoords},
+	ptscoords = If[FreeQ[Rule][#], #, Values[#]] & [pts];
 	(*\[Chi] = -2\[Pi](*e/h*)B(-# #2 Sin[\[Phi]A]^2 + 1/4 (#2^2 - #^2) Sin[2\[Phi]A]) &;*)
 	\[Chi] = 2\[Pi](*e/h*)B(# #2 Sin[\[Phi]A]^2 + 1/4 (#^2 - #2^2) Sin[2\[Phi]A]) &;
-	U0 = DiagonalMatrix[Exp[I \[Chi] @@@ pts], TargetStructure -> "Structured"];
+	U0 = DiagonalMatrix[Exp[I \[Chi] @@@ ptscoords], TargetStructure -> "Structured"];
 	inner = IdentityMatrix[innerdof, SparseArray];
 	KroneckerProduct[U0, inner]
 ];
