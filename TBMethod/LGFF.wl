@@ -27,6 +27,7 @@ CentralDiagonalBlockGreensOverlap::usage = "Overlap version of CentralDiagonalBl
 
 HallAndLongitudinalResistances::usage = "Calculate the transverse Hall and longitudinal resistances simultaneously.";
 HallAndLongitudinalConductances::usage = "Calculate the transverse Hall and longitudinal conductances simultaneously.";
+SigmaGaugeTransform::usage = "A commonly used form of transformation on lead self-energies, in order to unify the magnetic gauges.";
 
 
 Begin["`Private`"]
@@ -481,19 +482,17 @@ And the source and drain should be numbered at the beginning and the ending.*)
 1 ------- 6
    3   5
 *)
+SigmaGaugeTransform[gUs_List][sigmas_List] := MapThread[# . #2 . (#\[ConjugateTranspose]) &, {gUs, sigmas}];
 
-Options[transmissionsfunc] = {"SigmaMode" -> 3, "LeadGaugeTransforms" -> None};
-transmissionsfunc::glen = "\"LeadGaugeTransforms\" contains `1` transformations, but `2` leads are present.";
+Options[transmissionsfunc] = {"SigmaMode" -> 3, "SigmaTransform" -> Identity, "GreenTransform" -> Identity};
 transmissionsfunc[\[Epsilon]_, hcsrdod_, leadshs_, opts : OptionsPattern[]] :=
-Module[{\[CapitalSigma]s, \[CapitalSigma]s0, blockG, ter = Length[leadshs], gUs = OptionValue["LeadGaugeTransforms"]},
-	If[gUs =!= None && (!ListQ[gUs] || Length[gUs] =!= ter),
-		Message[transmissionsfunc::glen, If[ListQ[gUs], Length[gUs], "non-list"], ter];
-        Return[$Failed]
-    ];
-	
+Module[{\[CapitalSigma]s0, \[CapitalSigma]s, blockG0, blockG, ter = Length[leadshs], \[CapitalSigma]transffunc, Greentransffunc},
+	\[CapitalSigma]transffunc = OptionValue["SigmaTransform"];
+	Greentransffunc = OptionValue["GreenTransform"];
 	\[CapitalSigma]s0 = Sigma[\[Epsilon], #, OptionValue["SigmaMode"]] & /@ leadshs;
-	\[CapitalSigma]s = If[gUs === None, \[CapitalSigma]s0, MapThread[# . #2 . (#)\[ConjugateTranspose] &, {gUs, \[CapitalSigma]s0}]];
-    blockG = CentralBlockGreens[\[Epsilon], hcsrdod, \[CapitalSigma]s, "T"];
+	\[CapitalSigma]s = \[CapitalSigma]transffunc[\[CapitalSigma]s0];
+    blockG0 = CentralBlockGreens[\[Epsilon], hcsrdod, \[CapitalSigma]s, "T"];
+    blockG = Greentransffunc[blockG0];
     Table[If[p == q, 0., Transmission[blockG, \[CapitalSigma]s[[{p, q}]]]], {p, ter}, {q, ter - 1}]
 ];
 
@@ -515,6 +514,20 @@ Module[{RH, RL},
 ];
 
 
+(*Options[transmissionsfunc] = {"SigmaMode" -> 3, "LeadGaugeTransforms" -> None};
+transmissionsfunc::glen = "\"LeadGaugeTransforms\" contains `1` transformations, but `2` leads are present.";
+transmissionsfunc[\[Epsilon]_, hcsrdod_, leadshs_, opts : OptionsPattern[]] :=
+Module[{\[CapitalSigma]s, \[CapitalSigma]s0, blockG, ter = Length[leadshs], gUs = OptionValue["LeadGaugeTransforms"]},
+	If[gUs =!= None && (!ListQ[gUs] || Length[gUs] =!= ter),
+		Message[transmissionsfunc::glen, If[ListQ[gUs], Length[gUs], "non-list"], ter];
+        Return[$Failed]
+    ];
+	
+	\[CapitalSigma]s0 = Sigma[\[Epsilon], #, OptionValue["SigmaMode"]] & /@ leadshs;
+	\[CapitalSigma]s = If[gUs === None, \[CapitalSigma]s0, MapThread[# . #2 . (#)\[ConjugateTranspose] &, {gUs, \[CapitalSigma]s0}]];
+    blockG = CentralBlockGreens[\[Epsilon], hcsrdod, \[CapitalSigma]s, "T"];
+    Table[If[p == q, 0., Transmission[blockG, \[CapitalSigma]s[[{p, q}]]]], {p, ter}, {q, ter - 1}]
+];
 
 (*Options[transmissionsfunc] = {"SigmaMode" -> 3};
 (*truncated transmission matrix for a grounded last terminal*)
