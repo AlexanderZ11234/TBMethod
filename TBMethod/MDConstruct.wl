@@ -61,6 +61,7 @@ PhotonDress::usage = "Generates the photon-dressed hopping amplitude.";
 PhotonBlocksTensor::usage = "The version of PhotonBlocks with internal degrees of freedom.";
 NPhotonBlocksTensor::usage = "Numerical version of PhotonBlocksTensor.";
 PhotonDressTensor::usage = "Numerical version of PhotonDress.";
+PhotonBlockProjectionMatrix::usage = "Projection matrix of a specific photon block for Floquet-Sambe model.";
 
 CompiledSuccessfulQ::usage = "Checks if a function compilation process succeeds.";
 
@@ -144,7 +145,7 @@ Module[{\[Chi], U0, inner, ptscoords},
 	ptscoords = If[FreeQ[Rule][#], #, Values[#]] & [pts];
 	(*\[Chi] = -2\[Pi](*e/h*)B(-# #2 Sin[\[Phi]A]^2 + 1/4 (#2^2 - #^2) Sin[2\[Phi]A]) &;*)
 	\[Chi] = 2\[Pi](*e/h*)B(# #2 Sin[\[Phi]A]^2 + 1/4 (#^2 - #2^2) Sin[2\[Phi]A]) &;
-	U0 = DiagonalMatrix[Exp[I \[Chi] @@@ ptscoords], TargetStructure -> "Structured"];
+	U0 = DiagonalMatrix[Exp[I \[Chi] @@@ ptscoords], TargetStructure -> "Sparse"];
 	inner = IdentityMatrix[innerdof, SparseArray];
 	KroneckerProduct[U0, inner]
 ];
@@ -845,6 +846,13 @@ Module[{dim = 2 mnup + 1, lmax = 2 mnup, mnrange, h0isvasrepralt, hsvas, h0s0i, 
     If[OptionValue["ReturnComponents"], components,
         clean[Merge[Values[components], Chop @* Total]]]
 ];*)
+
+PhotonBlockProjectionMatrix[pts_, lup_Integer?NonNegative][m_Integer] /; (-lup <= m <= lup) :=
+Module[{iden, photonprojector},
+	iden = IdentityMatrix[Length[pts], SparseArray];
+	photonprojector = SparseArray[{lup + 1 + {m, m} -> 1}, {1, 1}(2lup + 1)];
+	KroneckerProduct[iden, photonprojector]
+];
 
 
 CompiledSuccessfulQ[cfunc_] := Echo[StringTemplate["Function compilation successful: ``"][StringFreeQ["MainEvaluate"][CompiledFunctionTools`CompilePrint[cfunc]]]];
