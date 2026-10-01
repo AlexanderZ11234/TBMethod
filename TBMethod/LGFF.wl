@@ -527,7 +527,7 @@ Module[{\[CapitalSigma]s, \[CapitalSigma]s0, blockG, ter = Length[leadshs], gUs 
 	\[CapitalSigma]s = If[gUs === None, \[CapitalSigma]s0, MapThread[# . #2 . (#)\[ConjugateTranspose] &, {gUs, \[CapitalSigma]s0}]];
     blockG = CentralBlockGreens[\[Epsilon], hcsrdod, \[CapitalSigma]s, "T"];
     Table[If[p == q, 0., Transmission[blockG, \[CapitalSigma]s[[{p, q}]]]], {p, ter}, {q, ter - 1}]
-];
+];*)
 
 (*Options[transmissionsfunc] = {"SigmaMode" -> 3};
 (*truncated transmission matrix for a grounded last terminal*)
