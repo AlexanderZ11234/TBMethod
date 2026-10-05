@@ -1,18 +1,18 @@
 # TBMethod
 
-## Installation & Uninstallation
+## 1. Installation & Uninstallation
 
-### Installation
+### 1.1 Installation
 
 Programming environment version: the latest the best
 
-#### Offline
+#### 1.1.1 Offline
 
 1.  **Download** the latest `"TBMethod-<\*version #\*>.paclet"` file to one's local machine;
 
 2.  **Run** `PacletInstall["<*path-to-download*>/TBMethod-<*version #*>.paclet"]`.
 
-#### Online
+#### 1.1.2 Online
 
 - Outstanding
 
@@ -20,7 +20,7 @@ Programming environment version: the latest the best
 **Run** `PacletInstall["https://github.com/AlexanderZ11234/TBMethod/releases/download/0.2.1/TBMethod-0.2.1.paclet"]`
 -->
 
-### Installation Test (1 → 3 or 2 → 3)
+### 1.2 Installation Test (1 → 3 or 2 → 3)
 
 1. For single kernel, load the package by
 
@@ -46,11 +46,11 @@ This can be initialized automatically by putting the `init.m` file to the direct
 
 and four lists of functions should be indexed out.
 
-### Uninstallation
+### 1.3 Uninstallation
 
 - **Run** `PacletUninstall["TBMethod"]` for uninstallation or reinstallation.
 
-## Functionality Highlights
+## 2. Functionality Highlights
 
 - External degree of freedom (real-space coordinate): sufficient employment of the [NNS (nearest neighbor search)](https://en.wikipedia.org/wiki/Nearest_neighbor_search) algorithm, so that the total computation complexity tends to be fine as:
     - Model construction linear in system's size $ \text{O}(n) $:
@@ -64,7 +64,7 @@ and four lists of functions should be indexed out.
 
 - Workflow coordinated with [DeePTB](https://github.com/deepmodeling/DeePTB) on Slater-Koster model construction and transport calculation with nonidentity overlapping matrices
 
-## Documentation
+## 3. Documentation
 
 <a href="#" class="magic-button" title="Onsite testable"> _MMA-style_ </a> documentation under construction
 
@@ -73,16 +73,16 @@ Cooperation is highly welcome.
 A tutorial in [Zhihu Column](https://www.zhihu.com/column/c_1954932040861450487) is also under compilation.
 
 
-## My Two Tips
+## 4. My Two Tips
 
-- The CSR is the smallest union of all physical nonperiodicities; the leads are asymptotic.
-- Do not introduce abruptness or discontinuity unless they are themselves physical.
+1. The CSR is the smallest union of all physical nonperiodicities; the leads are asymptotic.
+1. Do not introduce abruptness or discontinuity unless they are themselves physical.
 
 
 <details open>
 <summary>
 
-## Related Publications
+## 5. Related Publications
 </summary>
 
 1. [arXiv: 2604.01596](https://arxiv.org/abs/2604.01596).
@@ -102,12 +102,12 @@ A tutorial in [Zhihu Column](https://www.zhihu.com/column/c_1954932040861450487)
 </details>
 
 
-## Incomplete References
+## 6. Incomplete References
 
 <details>
 <summary>
 
-### Topological Models & Characterization
+### 6.1 Topological Models & Characterization
 
 </summary>
 
@@ -129,7 +129,7 @@ A tutorial in [Zhihu Column](https://www.zhihu.com/column/c_1954932040861450487)
 <details>
 <summary>
 
-### Lattice Green's Function Formalism
+### 6.2 Lattice Green's Function Formalism
 
 </summary>
 
@@ -152,7 +152,7 @@ A tutorial in [Zhihu Column](https://www.zhihu.com/column/c_1954932040861450487)
 <details>
 <summary>
 
-### Slater-Koster Method
+### 6.3 Slater-Koster Method
 
 </summary>
 
@@ -167,7 +167,7 @@ A tutorial in [Zhihu Column](https://www.zhihu.com/column/c_1954932040861450487)
 <details>
 <summary>
 
-### Other Theoretical Considerations
+### 6.4 Other Theoretical Considerations
 </summary>
 
 1. [Z. Phys. **64**, 629 (1930)](https://link.springer.com/article/10.1007/BF01397213).
