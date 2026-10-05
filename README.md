@@ -73,6 +73,12 @@ Cooperation is highly welcome.
 A tutorial in [Zhihu Column](https://www.zhihu.com/column/c_1954932040861450487) is also under compilation.
 
 
+## My Two Tips
+
+- The CSR is the smallest union of all physical nonperiodicities; the leads are asymptotic.
+- Do not introduce abruptness or discontinuity unless they are themselves physical.
+
+
 <details open>
 <summary>
 
