@@ -73,6 +73,8 @@ LatticePointsCentralize::usage = "Aligns the centroid of a primitive cell with l
 
 HFloquetEffectiveBlochMatrixFromExtended::usage = "Constructs the effective Floquet-Bloch Hamiltonian matrix from the extended Floquet-Bloch Hamiltonian matrix under the high-frequencey approximation.";
 HFloquetEffectiveHoppingMatricesFromExtended::usage = "Constructs the effective real-space hopping matrices from the extended real-space hopping matrices under the high-frequencey approximation.";
+HLeadBlocksFloquetDownfold::usage = "Downfolds the lead Sambe Hamiltonian blocks to photon-0 representation, micromotion corretion included when necessary.";
+
 
 AdatomLabel::usage = "Adds labels to an atom depending on whether it is influenced by an adatom.";
 
@@ -390,8 +392,6 @@ The point here is that each part has lattice momenta as parameter, to conceptual
 
 
 
-
-
 Options[NPhotonBlocks] = Options[NIntegrate];
 NPhotonBlocks[functime: (_Function|_Symbol), \[Omega]_, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] :=
 Module[{vd = ptf - pti, zero = 1.*^-5, d, coef, ele, dim = (2 mnup + 1){1, 1}, photondress, sparseid, sparsezero, sparsediag},
@@ -635,12 +635,36 @@ Module[{dim = 2 mnup + 1, lmax = 2 mnup, mnrange, normalizedInput, mode, h0isvas
 	If[OptionValue["ReturnComponents"], restore /@ components, restore[blockSum[components, Keys[components]]]]
 ];
 
-PhotonBlockProjectionMatrix[pts_, lup_Integer?NonNegative][m_Integer] /; (-lup <= m <= lup) :=
+PhotonBlockProjectionMatrix[pts_, lup_Integer?NonNegative, innerdof_Integer : 1][m_Integer] /; (-lup <= m <= lup) :=
 Module[{iden, photonprojector},
-	iden = IdentityMatrix[Length[pts], SparseArray];
+	iden = IdentityMatrix[Length[pts] innerdof, SparseArray];
 	photonprojector = SparseArray[{lup + 1 + {m, m} -> 1}, {1, 1}(2lup + 1)];
 	KroneckerProduct[iden, photonprojector]
 ];
+
+
+u0FromExtended[{diagonalBlocks_List, lowerBlocks_List}, mnup_Integer, \[Omega]_] :=
+Module[{d, l, ms},
+	d = floquetHarmonicsFromExtended[Last[diagonalBlocks], mnup];
+	l = If[lowerBlocks === {}, None, floquetHarmonicsFromExtended[Last[lowerBlocks], mnup]];
+	ms = DeleteCases[Range[-2 mnup, 2 mnup], 0];
+	Sum[(d[-m] . d[m] + If[l === None, 0, l[-m] . (l[-m]\[ConjugateTranspose])]) / (m^2 \[Omega]^2), {m, ms}]
+];
+
+Options[HLeadBlocksFloquetDownfold] = {"ExpansionOrder" -> 1, "MicromotionCorrection" -> False};
+HLeadBlocksFloquetDownfold[\[Omega]_, mnup_Integer?NonNegative, hcsrblocks_, opts : OptionsPattern[]][{h0_, h1_, v_}] :=
+Module[{nph = 2 mnup + 1, r0, rl, rc, rld, triple, u0},
+	r0[dim_] := KroneckerProduct[IdentityMatrix[dim / nph, SparseArray], SparseArray[{{1, mnup + 1} -> 1}, {1, nph}]];
+	rl = r0[Length[h0]]; rc = r0[Length[v]]; rld = rl\[ConjugateTranspose];
+	triple = Append[rl . # . rld & /@ {h0, h1}, rc . v . rld];
+
+	If[OptionValue["ExpansionOrder"] == 2 && TrueQ[OptionValue["MicromotionCorrection"]],
+		u0 = u0FromExtended[hcsrblocks, mnup, \[Omega]]; triple[[3]] -= (u0\[ConjugateTranspose]/2) . triple[[3]]
+	];
+
+	triple
+];
+
 
 
 CompiledSuccessfulQ[cfunc_] := Echo[StringTemplate["Function compilation successful: ``"][StringFreeQ["MainEvaluate"][CompiledFunctionTools`CompilePrint[cfunc]]]];
