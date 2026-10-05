@@ -24,14 +24,11 @@ PathSample::usage = "Samples evenly points on a path consisting of a sequence of
 BerryCurvature::usage = "Calculates Berry curvature via Kubo formula for an arbitrary matrix model.";
 QuantumMetric::usage = "Calculates quantum metric via Kubo formula for an arbitrary matrix model.";
 
-(*FirstBrillouinZone::usage = "Shows the first Brillouin zone with reciprocal lattice vectors.";*)
 FirstBrillouinZoneRegion::usage = "Generate the first Brillouin zone as a region.";
 FirstBrillouinZonePlot::usage = "Shows the first Brillouin zone with reciprocal lattice vectors.";
 
 LabelPathSamplings::usage = "Labels some specific sampled lattice momentum values, esp. the high-symmetric points.";
 
-(*PlaquetteChern::usage = "Calculates the Chern number contributed by a small region, usually dubbed as a plaquette; summed over the first Brillouin zone cover, the full Chern number is obtained.";
-PlaquetteRegionPartition::usage = "Partitions a region, e.g. the first Brillouin zone, with a triangularization cover.";*)
 
 ChernNumberByWilsonLoop::usage = "Calculates the Chern number contributed by a single band or a group of bands, usually the valence bands.";
 PlaquetteRegionPartitionComplex::usage = "Partitions a region, e.g. the first Brillouin zone, with a triangularization cover.";
@@ -60,10 +57,6 @@ Module[{vas3d = BlockDiagonalMatrix[{vas, {{1}}}]},
 ];
 ReciprocalVectors[vas_ /; Dimensions[vas] == {3, 3}] := 2\[Pi] Inverse[vas\[Transpose]];
 
-(*BandData[hbloch_, ks_, map_: Map, s:OptionsPattern[Eigenvalues]] :=
-(Sort @ Eigenvalues[hbloch[#], s, Method -> "Direct"] & ~map~ ks)\[Transpose];*)
-(*funcpattern = (_Function | _Symbol | _[__]);*)
-(*funcpattern = (_Function | _Symbol);*)
 funcpattern = _;
 
 BandData[hbloch:funcpattern, ks_, s:OptionsPattern[Eigenvalues]] := (Sort @ Eigenvalues[hbloch[#], s, Method -> "Direct"] & ~Map~ ks)\[Transpose];
@@ -82,37 +75,10 @@ EigenspectralData[hbloch_, ks_, obfunc:funcpattern:Identity, n_, s:OptionsPatter
 ParallelEigenspectralData[hbloch_, ks_, obfunc:funcpattern:Identity, s:OptionsPattern[Eigensystem]] := MapAt[obfunc, {All, 2}][Sort[Eigensystem[hbloch[#], s, Method -> "Direct"]\[Transpose]]] & ~ParallelMap~ ks
 ParallelEigenspectralData[hbloch_, ks_, obfunc:funcpattern:Identity, n_, s:OptionsPattern[Eigensystem]] := MapAt[obfunc, {All, 2}][Sort[Eigensystem[hbloch[#], n, s, Method -> "Direct"]\[Transpose]]] & ~ParallelMap~ ks
 
-(*Options[ParallelBandDataWithWeight] = Join[Options[Eigensystem], {"StateFunction" -> (Total[Abs[#]^4] &)}];
-ParallelBandDataWithWeight[h_, kgrid_, n_Integer, ps:OptionsPattern[]] :=
-Module[{ps2},
-	ps2 = Sequence @@ FilterRules[{ps}, Options[Eigensystem]];
-	MapAt[OptionValue["StateFunction"], Eigensystem[h[#], n, ps2, Method -> {"Arnoldi", "MaxIterations" -> \[Infinity]}]\[Transpose] // Sort, {All, 2}] & ~ParallelMap~ kgrid
-];
-(*parallelBandDataWithState[h_,kgrid_,n_Integer,infoextracfunc_:(Total[Abs[#]^4]^(1/4)&),ps:OptionsPattern[Eigensystem]]:=MapAt[infoextracfunc,Eigensystem[h[#],n,ps,Method->{"Arnoldi","MaxIterations"->\[Infinity]}(*Method\[Rule]"Banded"*)]\[Transpose]//Sort,{All,2}]&~ParallelMap~kgrid;*)
-
-Options[BandDataWithWeight] = Join[Options[Eigensystem], {"StateFunction" -> (Total[Abs[#]^4] &)}];
-BandDataWithWeight[h_, kgrid_, n_Integer, ps:OptionsPattern[]]:=
-Module[{ps2},
-	ps2 = Sequence @@ FilterRules[{ps}, Options[Eigensystem]];
-	MapAt[OptionValue["StateFunction"], Eigensystem[h[#], n, ps2, Method -> {"Arnoldi", "MaxIterations" -> \[Infinity]}]\[Transpose] // Sort, {All, 2}] & ~Map~ kgrid
-];*)
-
 
 ParallelBandDataWithWeight::weightfunc = BandDataWithWeight::weightfunc = "The state function `1` should be an anonymous function or a list of anonymous functions.";
 
 Options[ParallelBandDataWithWeight] = Join[Options[Eigensystem], {"StateFunction" -> (Total[Abs[#]^4] &)}];
-(*ParallelBandDataWithWeight[h_, kgrid_, n_Integer, ps:OptionsPattern[]] :=
-Module[{ps1val, ps2, eigensyst},
-	ps1val = OptionValue["StateFunction"];
-	ps2 = TBMethod`DataVisualization`Private`optionsselect[ps, Eigensystem];
-	eigensyst := Sort[Eigensystem[h[#], n, ps2, Method -> {"Arnoldi", "MaxIterations" -> \[Infinity]}]\[Transpose]] & ~ParallelMap~ kgrid;
-	Which[
-		MatchQ[ps1val, _Function], MapAt[ps1val, {All, All, 2}][eigensyst],
-		MatchQ[ps1val, {__Function}], Transpose[Map[Thread, MapAt[Through @* ps1val, {All, All, 2}][eigensyst], {2}], {2, 3, 1}],
-		True, Message[ParallelBandDataWithWeight::weightfunc, ps1val]
-	]
-];*)
-
 ParallelBandDataWithWeight[h_, kgrid_, ps:OptionsPattern[]] := ParallelBandDataWithWeight[h, kgrid, Length[h[kgrid[[1]]]], ps]
 ParallelBandDataWithWeight[h_, kgrid_, n_Integer, ps:OptionsPattern[]] :=
 Module[{ps1val, ps2, eigensystfunc, funcsingle, funcmultiple},
@@ -129,17 +95,6 @@ Module[{ps1val, ps2, eigensystfunc, funcsingle, funcmultiple},
 ];
 
 Options[BandDataWithWeight] = Join[Options[Eigensystem], {"StateFunction" -> (Total[Abs[#]^4] &)}];
-(*BandDataWithWeight[h_, kgrid_, n_Integer, ps:OptionsPattern[]]:=
-Module[{ps1val, ps2, eigensyst},
-	ps1val = OptionValue["StateFunction"];
-	ps2 = TBMethod`DataVisualization`Private`optionsselect[ps, Eigensystem];
-	eigensyst := Sort[Eigensystem[h[#], n, ps2, Method -> {"Arnoldi", "MaxIterations" -> \[Infinity]}]\[Transpose]] & ~Map~ kgrid;
-	Which[
-		MatchQ[ps1val, _Function], MapAt[ps1val, {All, All, 2}][eigensyst],
-		MatchQ[ps1val, {__Function}], Transpose[Map[Thread, MapAt[Through @* ps1val, {All, All, 2}][eigensyst], {2}], {2, 3, 1}],
-		True, Message[BandDataWithWeight::weightfunc, ps1val]
-	]
-];*)
 BandDataWithWeight[h_, kgrid_, ps:OptionsPattern[]] := BandDataWithWeight[h, kgrid, Length[h[kgrid[[1]]]], ps]
 BandDataWithWeight[h_, kgrid_, n_Integer, ps:OptionsPattern[]] :=
 Module[{ps1val, ps2, eigensystfunc, funcsingle, funcmultiple},
@@ -165,22 +120,6 @@ Module[{ns, normalizeddist, xgridlines, samplings},
 	{samplings, xgridlines}
 ];
 
-(*FirstBrillouinZone[vbs_ /; Dimensions[vbs] == {2, 2} || Dimensions[vbs] == {3, 3} , n_:2, opts:OptionsPattern[Show]] :=
-Module[{intcoeffs, fbz, reciprocalvectors, len = Length[vbs], \[CapitalGamma], colors},
-	intcoeffs = Tuples[Range[-n, n], len];
-	\[CapitalGamma] = ConstantArray[0, len];
-	colors = Take[{Red, Green, Blue}, len];
-	fbz = MinimalBy[Norm @* RegionCentroid][MeshPrimitives[VoronoiMesh[intcoeffs . vbs], len]] // First;
-	reciprocalvectors = MapThread[{#, Arrow[{\[CapitalGamma], #2}]} &, {colors, vbs}];
-	Show[{HighlightMesh[fbz, {Style[1, Black, Thick], Style[2, Gray, Opacity[0.1]]}],
-	If[len == 2, Graphics, Graphics3D][{Thick, reciprocalvectors}]}, opts]
-];*)
-
-(*FirstBrillouinZoneRegion[vbs_ /; Dimensions[vbs] == {2, 2} || Dimensions[vbs] == {3, 3} , n_:2] :=
-Module[{intcoeffs, reciprocalvectors, len = Length[vbs]},
-	intcoeffs = Tuples[Range[-n, n], len];
-	MinimalBy[Norm @* RegionCentroid][MeshPrimitives[VoronoiMesh[intcoeffs . vbs], len]] // First
-];(*suffers RAM limit suddenly*)*)
 FirstBrillouinZoneRegion[vbs_, n_:2] :=
 Module[{intcoeffs, reciprocalvectors, len = Length[vbs], longest = Max[Norm /@ vbs], voronoimesh, zero = 1.*^-5},
 	intcoeffs = Tuples[Range[-n, n], len];
@@ -198,13 +137,6 @@ Module[{intcoeffs, fbz, reciprocalvectors, len = Length[vbs], \[CapitalGamma], c
 	If[len == 2, Graphics, Graphics3D][{Thick, reciprocalvectors}]}, opts]
 ];
 
-(*LabelPathSamplings[pathsamplings_, labels:{__String}] :=
-Module[{func, lbllen = Length[labels], numberlen, ptsall, numbers, numbersfinal},
-	func = MapAt[lis |-> Callout[lis, #2[[1]], Automatic, Automatic, Appearance -> "CurvedLeader"], #2[[2]]][#] &;
-	{ptsall, numbers} = pathsamplings; numberlen = Length[numbers];
-	numbersfinal = If[lbllen == numberlen-1, Most @ numbers, MapAt[#-1 &, -1] @ numbers];
-	Fold[func, ptsall, {labels, numbersfinal}\[Transpose]]
-];*)
 LabelPathSamplings[pathsamplings_, labels:{(_String|_OverBar)..}, calloutseqs___, opts:OptionsPattern[Callout]] :=
 Module[{func, lbllen = Length[labels], numberlen, ptsall, numbers, numbersfinal},
 	func = MapAt[lis |-> Callout[lis, #2[[1]], calloutseqs, opts, Appearance -> "CurvedLeader"], #2[[2]]][#] &;
@@ -236,38 +168,6 @@ Module[{vx, vy, eigensyst, \[CapitalOmega]nl, \[Delta]k = 1.*^-7, Hveck = H[veck
 	If[Length[group] == 2, 2 Im @ Total[\[CapitalOmega]nl @@@ Tuples[group]], 0.]
 ];
 
-(*berryCurvatureCore[
-	{Hveck_?MatrixQ, Vveck : {__?MatrixQ}}, Q_, nF_?(# \[Element] PositiveIntegers &),
-	dirs : {\[Alpha]_Integer, \[Beta]_Integer}, opts:OptionsPattern[Eigensystem]
-] /; 1 <= \[Alpha] <= Length[Vveck] && 1 <= \[Beta] <= Length[Vveck] && (*\[Alpha] != \[Beta] && *)nF < Length[Hveck] :=
-Module[{q, v\[Alpha], v\[Beta], j\[Alpha], eigensyst, \[CapitalOmega]nl},
-	q =If[MatrixQ[Q], Q, Q IdentityMatrix[Length[Hveck], SparseArray]];
-	{v\[Alpha], v\[Beta]} = Vveck[[dirs]]; j\[Alpha] = (q . v\[Alpha] + v\[Alpha] . q)/2;
-	eigensyst = Sort[Eigensystem[Hveck, opts, Method -> "Direct"]\[Transpose]];
-	\[CapitalOmega]nl = (#2[[2]]\[Conjugate] . j\[Alpha] . #[[2]]	#[[2]]\[Conjugate] . v\[Beta] . #2[[2]])/(#2[[1]] - #[[1]])^2 &;
-	2 Im @ Total[\[CapitalOmega]nl @@@ Tuples[TakeDrop[eigensyst, nF]]]
-];
-BerryCurvature[
-	{H_, V_}, Q_, nF_?(# \[Element] PositiveIntegers &), 
-	dirs : {_Integer, _Integer} : {1, 2},
-	opts:OptionsPattern[Eigensystem]
-][veck_List] := berryCurvatureCore[{H[veck], V[veck]}, Q, nF, dirs, opts];
-BerryCurvature[
-	{H_, V_}, nF_?(# \[Element] PositiveIntegers &),
-	dirs : {_Integer, _Integer} : {1, 2},
-	opts : OptionsPattern[Eigensystem]
-][veck_List] := berryCurvatureCore[{H[veck], V[veck]}, 1, nF, dirs, opts];
-BerryCurvature[
-	HV_, Q_, nF_?(# \[Element] PositiveIntegers &), 
-	dirs : {_Integer, _Integer} : {1, 2},
-	opts:OptionsPattern[Eigensystem]
-][veck_List] := berryCurvatureCore[HV[veck], Q, nF, dirs, opts];
-BerryCurvature[
-	HV_, nF_?(# \[Element] PositiveIntegers &),
-	dirs : {_Integer, _Integer} : {1, 2},
-	opts : OptionsPattern[Eigensystem]
-][veck_List] := berryCurvatureCore[HV[veck], 1, nF, dirs, opts];*)
-
 occupiedNumber[eigensyst_, nF_Integer?Positive] := nF;
 occupiedNumber[eigensyst_, \[Epsilon]F_Real] := Count[eigensyst, _?(First[#] <= \[Epsilon]F &)];
 quantumGeometricCore[
@@ -288,20 +188,6 @@ Module[{v\[Alpha], v\[Beta], j\[Alpha], eigensyst, \[Chi]nl, nOcc},
 	]
 ];
 
-(*quantumGeometricCore[
-	{Hveck_?MatrixQ, Vveck : {__?MatrixQ}}, Q_,
-	nF_?(# \[Element] PositiveIntegers &),
-	dirs : {\[Alpha]_Integer, \[Beta]_Integer},
-	opts : OptionsPattern[Eigensystem]
-] /; 1 <= \[Alpha] <= Length[Vveck] && 1 <= \[Beta] <= Length[Vveck] && (*\[Alpha] != \[Beta] && *)nF < Length[Hveck] && (NumericQ[Q] || (MatrixQ[Q] && Dimensions[Q] === Dimensions[Hveck])) :=
-Module[{q, v\[Alpha], v\[Beta], j\[Alpha], eigensyst, \[Chi]nl},
-	q = If[MatrixQ[Q], Q, Q IdentityMatrix[Length[Hveck], SparseArray]];
-	{v\[Alpha], v\[Beta]} = Vveck[[dirs]];
-	j\[Alpha] = (q . v\[Alpha] + v\[Alpha] . q)/2;
-	eigensyst = Sort[Eigensystem[Hveck, opts, Method -> "Direct"]\[Transpose]];
-	\[Chi]nl = (#2[[2]]\[Conjugate] . j\[Alpha] . #[[2]] #[[2]]\[Conjugate] . v\[Beta] . #2[[2]]) / (#2[[1]] - #[[1]])^2 &;
-	Total[\[Chi]nl @@@ Tuples[TakeDrop[eigensyst, nF]]]
-];*)
 BerryCurvature[
 	{H_, V_}, Q_,
 	filling : (_Integer | _Real),
@@ -352,40 +238,6 @@ QuantumMetric[
 ][veck_List] := Re @ quantumGeometricCore[HV[veck], 1, filling, dirs, opts];
 
 
-(*WannerChargeCenter[] :=.*)
-
-(*PlaquetteChern[vks:{{__?NumericQ}..}, heff_, nF_?(# \[Element] PositiveIntegers &), opts:OptionsPattern[Eigensystem]] :=
-Module[{occupiedstates, matFs, stateloop, func},
-	occupiedstates = Take[Sort[Eigensystem[heff[#], opts, Method -> "Direct"]\[Transpose]], nF][[;;, 2]] & /@ vks;
-	func = {vecs1, vecs2} |-> Outer[#\[Conjugate] . #2 &, vecs1, vecs2, 1];
-	stateloop = Partition[occupiedstates, 2, 1, {1, 1}];
-	matFs = Dot @@ func @@@ stateloop;
-	(*-1/(2\[Pi]) Arg[Eigenvalues[matFs]] // Sort*)
-	-(1/(2\[Pi])) Arg @ Det[matFs]
-];
-
-PlaquetteRegionPartition[region_, opts:OptionsPattern[TriangulateMesh]] :=
-Module[{regiondiscrized, meshcoordinates, plaquettevertexindex},
-	regiondiscrized = TriangulateMesh[region, opts];
-	meshcoordinates = MeshCoordinates[regiondiscrized];
-	Echo[MeshRegion[regiondiscrized, PlotTheme -> "Lines", PlotLabel -> StringTemplate["Vertex number: ``"][Length[meshcoordinates]]]];
-	plaquettevertexindex = MeshCells[regiondiscrized, 2][[;;, 1]];
-	Extract[meshcoordinates, {#}\[Transpose]] & /@ plaquettevertexindex
-];*)
-
-(*PlaquetteRegionPartitionComplex[region_, opts:OptionsPattern[TriangulateMesh]] :=
-Module[{regiondiscrized, meshcoordinates, plaquettevertexindex},
-	regiondiscrized = TriangulateMesh[region, opts, 
-		MaxCellMeasure -> {"Area" -> (Area[region].01)}, Method -> "ConstrainedQuality"];
-	meshcoordinates = MeshCoordinates[regiondiscrized];
-	plaquettevertexindex = List @@@ MeshCells[regiondiscrized, 2];
-	Echo[
-		MeshRegion[regiondiscrized, PlotTheme -> "Lines", 
-		PlotLabel -> StringTemplate["Vertex #: ``, Plaquette #: ``."][Length[meshcoordinates], Length[plaquettevertexindex]]]
-	];
-	{meshcoordinates, plaquettevertexindex}
-];*)
-
 PlaquetteRegionPartitionComplex[region_, opts:OptionsPattern[TriangulateMesh]] :=
 Module[{regiondiscrized, meshcoordinates, plaquettevertexindex, regdim = RegionDimension[region]},
 	regiondiscrized = TriangulateMesh[region, opts, 
@@ -400,14 +252,6 @@ Module[{regiondiscrized, meshcoordinates, plaquettevertexindex, regdim = RegionD
 	{meshcoordinates, plaquettevertexindex}
 ];
 
-(*plaquettePhase[occupiedstates_] :=
-Module[{stateloop, matD, func},
-	stateloop = Partition[occupiedstates, 2, 1, {1, 1}];
-	func = {vecs1, vecs2} |-> Outer[#\[Conjugate] . #2 &, vecs1, vecs2, 1];
-	matD = Dot @@ func @@@ stateloop;
-	Arg @ Det[matD]
-];*)
-
 innerProductLoopTensor[occupiedstates_] :=
 Module[{stateloop, matD, func},
 	stateloop = {#, RotateLeft[#]} & [occupiedstates];
@@ -418,13 +262,6 @@ Module[{stateloop, matD, func},
 plaquettePhase[occupiedstates_] := Arg @ Det[innerProductLoopTensor[occupiedstates]];
 plaquetteBandPhase[occupiedstates_] := Arg @ Eigenvalues[innerProductLoopTensor[occupiedstates]] // Sort;
 
-(*plaquettePhase[occupiedstates_] :=
-Module[{stateloop, matD, func},
-	stateloop = {#, RotateLeft[#]} &[occupiedstates];
-	func = {vecs1, vecs2} |-> Outer[#\[Conjugate] . #2 &, vecs1, vecs2, 1];
-	matD = Dot @@ MapThread[func][stateloop];
-	Arg @ Det[matD]
-];*)
 
 ChernNumberByWilsonLoop[heff_, fbzcomplex:{vks:{__}, inds:{__}}, nF_?(# \[Element] PositiveIntegers &), opts:OptionsPattern[Eigensystem]] :=
 Module[{occupiedstatesall, occupiedstatesplaquette},

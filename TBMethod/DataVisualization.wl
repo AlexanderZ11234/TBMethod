@@ -65,28 +65,6 @@ ListStreamDensityPlot[
 	InterpolationOrder -> 1
 ];
 
-(*RealSpaceLocalDOSPlot[evalandevec_List, ptsdisk:{{_, _, _}..}|{{_, _}..}, region_?RegionQ, innerdof_Integer:1, ops:OptionsPattern[Graphics]] :=
-Module[{op, largestcomps, \[Eta] = 1.*^-4, len = Length[ptsdisk], ratio = 2},
-	op = If[MatchQ[ptsdisk, {{_, _, _}..}], KeyValueMap[Append] @* (data |-> GroupBy[data, (#[[;;2]] &) -> Last, Total]), Identity];
-	largestcomps = Select[Last[#] > \[Eta] &] @ Join[ptsdisk, {BlockMap[Total, Abs[evalandevec[[2]]]^2, innerdof]}\[Transpose], 2];
-	Graphics[
-	{{Opacity[.1], Green, region},
-	 {Opacity[.4], Red, Disk[{#, #2}, Sqrt[len]ratio #3] & @@@ op[largestcomps]}},
-	ops, PlotLabel -> StringTemplate["\!\(\*SubscriptBox[\(E\), \(\[VeryThinSpace]\)]\) = ``"][evalandevec[[1]]]]
-] /; (Length[Partition[evalandevec[[2]], innerdof]] == Length[ptsdisk]);*)
-(*RealSpaceLocalDOSPlot[evalandevec_List, ptsdisk:{{_, _, _}..}|{{_, _}..}, region_?RegionQ, innerdof_Integer:1, ratio_:2, ops:OptionsPattern[Graphics]] :=
-Module[{op, largestcomps, \[Eta] = 1.*^-4, len = Length[ptsdisk], (*ratio = 2,*) evaldisp},
-	op = If[MatchQ[ptsdisk, {{_, _, _}..}], KeyValueMap[Append] @* (data |-> GroupBy[data, (#[[;;2]] &) -> Last, Total]), Identity];
-	largestcomps = Select[Last[#] > \[Eta] &] @ Join[ptsdisk, {BlockMap[Total, Abs[evalandevec[[2]]]^2, innerdof]}\[Transpose], 2];
-	evaldisp = ToString[ScientificForm[Re @ evalandevec[[1]], 4], StandardForm];
-	Graphics[{
-		{FaceForm[{Opacity[.2], Green}], EdgeForm[Black], region},
-		{Opacity[.4], Red, Disk[{#, #2}, Sqrt[len]ratio #3] & @@@ op[largestcomps]},
-		{Text[StringTemplate["\!\(\*SubscriptBox[\(E\), \(\[VeryThinSpace]\)]\) = ``"][evaldisp]]}
-		},
-		ops
-	]
-] /; (Length[Partition[evalandevec[[2]], innerdof]] == Length[ptsdisk]);*)
 RealSpaceLocalDOSPlot[evalandevec_List, ptsdiskraw:{{__}..} | {(_ -> {__})..}, innerdof_Integer:1, ratio_:2, ops:OptionsPattern[Graphics]] :=
 Module[{op, largestcomps, \[Eta] = 1.*^-4, len = Length[ptsdiskraw], ptsdisk, evaldisp, region},
 	ptsdisk = If[FreeQ[#, Rule], #, Values[#]] & [ptsdiskraw];
@@ -121,12 +99,6 @@ Module[{frameticks, gridlines, dticks},
 ];
 
 
-(*LocalDOSTidy[data_, quantile_] :=
-Module[{maxquant, clipped, min = Min[data]},
-	maxquant = Quantile[data // Flatten, quantile];
-	clipped = Clip[data, {min, maxquant}];
-	GaussianFilter[clipped, 2]
-];*)
 LocalDOSTidy[data_, quantile_] :=
 Module[{maxquant, clipped},
 	maxquant = Quantile[data // Flatten, quantile];
@@ -137,30 +109,6 @@ Module[{maxquant, clipped},
 optionsselect[options:Sequence[___Rule]][func_Symbol] := optionsselect[options, func];
 optionsselect[options:Sequence[___Rule], func_Symbol] := Sequence @@ FilterRules[{options}, Options[func]];
 optionsselect[options:Sequence[___Rule], func_Symbol, optionnamestoadd:{__}] := Sequence @@ FilterRules[{options}, {Options[func], optionnamestoadd}];
-
-(*Options[BandPlotWithWeight] = Join[Options[Graphics], Options[BarLegend], {Joined -> True, ColorFunction -> (Hue[2(1 - #)/3] &)}];
-(*bandPlotWithWeight[banddatawithstate_,cfunc_,cname_String,joined_:(True|False),ps:OptionsPattern[Graphics]]:=*)
-BandPlotWithWeight[banddatawithweight_,
-				   hisymmptname : {(_String|OverBar[_String])..} : {""},
-				   ptsnumbers : {_?NumericQ..} : {1},
-				   yticks :{{_, _}..} : Automatic,
-				   ps:OptionsPattern[]] :=
-Module[{kbdat, colors, m, n, lines, bfig, legend, fontfamily = (*"Helvetica"*)(*"Times New Roman"*)"Arial", style,
-		style2, bdat, cdat, cfunc = OptionValue[ColorFunction], dticks, frameticks, ps1, ps2},
-	{bdat, cdat} = Transpose[banddatawithweight, {3, 2, 1}]; {m, n} = Dimensions[bdat];
-	dticks = {ptsnumbers, hisymmptname}\[Transpose]; frameticks = {{(*Automatic*)yticks, None}, {dticks, None}};
-	style = {FontSize -> 17, FontFamily -> fontfamily}; style2 = Directive[Black(*,Thick*)];
-	kbdat = Transpose[{ConstantArray[(*kdat*)Range[n], m], bdat}, {3, 1, 2}];
-	colors = Map[cfunc, Rescale @ cdat, {2}];
-	lines = MapThread[If[OptionValue[Joined], Line, Point][#, VertexColors -> #2] &, {kbdat, colors}];
-	(*ps1 = Sequence @@ FilterRules[{ps}, Options[Graphics]]; ps2 = Sequence @@ FilterRules[{ps}, Options[BarLegend]];*)
-	ps1 = optionsselect[ps, Graphics];
-	ps2 = optionsselect[ps, BarLegend];
-	bfig = Graphics[{Thick, lines}, ps1, GridLines -> {ptsnumbers, Automatic}, PlotRangeClipping -> True, (*AspectRatio -> GoldenRatio,*) FrameTicks -> frameticks, 
-					 Frame -> True, FrameLabel -> {None, "\!\(\*SubscriptBox[\(E\), \(\[VeryThinSpace]\)]\)"}, FrameTicksStyle -> style2, FrameStyle -> style2, LabelStyle -> style2, BaseStyle -> style];
-	legend = BarLegend[{cfunc, {0, 1}}, ps2, Ticks -> Transpose[{{0, 1}, NumberForm[#, {3, 4}] & /@ MinMax[cdat]}], (*"Ticks" -> {0, 1}, "TickLabels" -> {"Min", "Max"},*) TicksStyle -> style2, FrameStyle -> style2, LabelStyle -> style];
-	Legended[bfig, legend]
-];*)
 
 Options[BandPlotWithWeight] = Join[Options[Graphics], Options[BarLegend],
 	{Joined -> True, ColorFunction -> (Hue[2(1 - #)/3] &), PlotStyle -> Sequence[Thick, PointSize[.02]], "LegendTickDigits" -> {3, 4}, "LegendPosition" -> Right, "TickLabels" -> None}];
