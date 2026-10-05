@@ -617,6 +617,44 @@ Module[{n = Length[t], s},
 
 
 Options[PhotonBlocksTensor] = Options[FourierCoefficient];
+PhotonBlocksTensor[functime : (_Function | _Symbol), \[Omega]_, mnup_Integer, opts : OptionsPattern[]][ptf_, pti_] :=
+Module[{vd = ptf - pti, zero = 1.*^-5, d, coef, ele, dim = (2 mnup + 1) {1, 1}, innerdof = Dimensions[functime[0.123]], photondress, sparseid, sparsezero, sparsediag, innerid},
+	d = Norm[vd]; innerid = IdentityMatrix[innerdof, SparseArray];
+	coef[l_Integer] := coef[l] = FourierCoefficient[functime[\[CurlyPhi]], \[CurlyPhi], l, opts] // FullSimplify;
+	ele[m_, n_] := coef[n - m];
+	photondress = Transpose[Array[ele, dim, -mnup], {3, 4, 1, 2}];
+	sparsezero := ConstantArray[0, innerdof ~Join~ dim, SparseArray];
+	sparseid := TensorProduct[innerid, IdentityMatrix[dim, SparseArray]];
+	sparsediag := TensorProduct[innerid, SparseArray[Band[{1, 1}] -> -\[Omega] Range[-mnup, mnup]]];
+	If[d > zero,
+		{photondress, sparsezero},
+		{sparseid, photondress + sparsediag}
+	]
+];
+
+Options[NPhotonBlocksTensor] = Options[NIntegrate];
+NPhotonBlocksTensor[functime : (_Function | _Symbol), \[Omega]_, mnup_Integer, opts : OptionsPattern[]][ptf_, pti_] :=
+Module[{vd = ptf - pti, zero = 1.*^-5, d, coef, ele, dim = (2 mnup + 1) {1, 1}, innerdof = Dimensions[functime[0.123]], photondress, sparseid, sparsezero, sparsediag, innerid},
+	d = Norm[vd]; innerid = IdentityMatrix[innerdof, SparseArray];
+	coef[l_Integer] := coef[l] = 1/(2 \[Pi]) NIntegrate[functime[\[CurlyPhi]] Exp[-I l \[CurlyPhi]], {\[CurlyPhi], -\[Pi], \[Pi]}, opts, AccuracyGoal -> 10, Method -> "LocalAdaptive"] // Chop;
+	ele[m_, n_] := coef[n - m];
+	photondress = Transpose[Array[ele, dim, -mnup], {3, 4, 1, 2}] // Chop;
+	sparsezero := ConstantArray[0, innerdof ~Join~ dim, SparseArray];
+	sparseid := TensorProduct[innerid, IdentityMatrix[dim, SparseArray]];
+	sparsediag := TensorProduct[innerid, SparseArray[Band[{1, 1}] -> -\[Omega] Range[-mnup, mnup]]];
+	If[d > zero, 
+		{photondress, sparsezero},
+		{sparseid, photondress + sparsediag}
+	]
+];
+
+PhotonDressTensor[t_, photonblocks_] :=
+Module[{s = IdentityMatrix[Length[t], SparseArray], combine},
+	combine = TensorContract[TensorProduct[#, #2], {{2, 3}}] &;
+	ArrayFlatten[Total @ MapThread[combine, {{t, s}, photonblocks}]]
+];
+
+(*Options[PhotonBlocksTensor] = Options[FourierCoefficient];
 PhotonBlocksTensor[functime: (_Function|_Symbol), \[Omega]_, mnup_Integer, opts:OptionsPattern[]][ptf_, pti_] :=
 Module[{vd = ptf - pti, zero = 1.*^-5, d, coef, ele, dim = (2 mnup + 1){1, 1}, innerdof = Dimensions[functime[0.123]], photondress, sparseid, sparsezero, sparsediag, innerid},
 	d = Norm[vd]; innerid = IdentityMatrix[innerdof, SparseArray];
@@ -649,9 +687,9 @@ Module[{vd = ptf - pti, zero = 1.*^-5, d, coef, ele, dim = (2 mnup + 1){1, 1}, i
 PhotonDressTensor[t_, photonblocks_] :=
 Module[{n = Length[t], s, combine},
 	s = IdentityMatrix[n, SparseArray];
-	combine = TensorContract[TensorProduct[#2, #1], {{3, 6}}] &;
+	combine = TensorContract[TensorProduct[#2, #], {{3, 6}}] &;
 	ArrayFlatten[MapThread[combine, {{t, s}, photonblocks}] // Total]
-];
+];*)
 
 
 (*
