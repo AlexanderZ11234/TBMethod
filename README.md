@@ -84,7 +84,7 @@ A tutorial in [Zhihu Column](https://www.zhihu.com/column/c_1954932040861450487)
 
 </details>
 
-<details open>
+<details>
 <summary>
 
 ## 5. Related Publications
