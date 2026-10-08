@@ -74,6 +74,7 @@ LatticePointsCentralize::usage = "Aligns the centroid of a primitive cell with l
 HFloquetEffectiveBlochMatrixFromExtended::usage = "Constructs the effective Floquet-Bloch Hamiltonian matrix from the extended Floquet-Bloch Hamiltonian matrix under the high-frequencey approximation.";
 HFloquetEffectiveHoppingMatricesFromExtended::usage = "Constructs the effective real-space hopping matrices from the extended real-space hopping matrices under the high-frequencey approximation.";
 HLeadBlocksFloquetDownfold::usage = "Downfolds the lead Sambe Hamiltonian blocks to photon-0 representation, micromotion corretion included when necessary.";
+DownfoldedDUp::usage = "Detects the smallest hopping distance upper limit after the van Vleck high-frequency expanion.";
 
 
 AdatomLabel::usage = "Adds labels to an atom depending on whether it is influenced by an adatom.";
@@ -663,6 +664,20 @@ Module[{nph = 2 mnup + 1, r0, rl, rc, rld, triple, u0},
 	];
 
 	triple
+];
+
+DownfoldedDUp[cryststruct_Association, hi0svas_Association, dup0_][hi0svasdfed_Association] :=
+Module[{homepts,nsite,newhops,zeroBlockQ,hopDistances},
+	newhops = KeyDrop[hi0svasdfed, Keys[hi0svas]]; If[newhops === <||>, Return[dup0]];
+	homepts = Replace[First @ Values[cryststruct], Rule[_, pt_] :> pt, {1}]; nsite = Length[homepts];
+	
+	zeroBlockQ[b_] := AllTrue[Flatten[b], TrueQ[PossibleZeroQ[#]] &];
+	hopDistances[r_, h_] := Module[{mat, hblocks, pairs},
+		mat = If[MatrixQ[h], h, {{h}}]; hblocks = Partition[mat, Dimensions[mat] / nsite];
+		pairs = Position[hblocks, b_ /; !zeroBlockQ[b], {2}, Heads -> False];
+		Norm[homepts[[#[[1]]]] + r - homepts[[#[[2]]]]] & /@ pairs
+	];
+	Max @ Catenate @ KeyValueMap[hopDistances, newhops]
 ];
 
 
