@@ -666,8 +666,9 @@ Module[{nph = 2 mnup + 1, r0, rl, rc, rld, triple, u0},
 	triple
 ];
 
-DownfoldedDUp[cryststruct_Association, hi0svas_Association, dup0_][hi0svasdfed_Association] :=
-Module[{hi0svas0, hi0svasdfed0, homepts, nsite, newhops, zeroBlockQ, hopDistances, zero = 1.*^-5},
+Options[DownfoldedDUp] = {"ZeroThreshold" -> 1.*^-5};
+DownfoldedDUp[cryststruct_Association, hi0svas_Association, dup0_, opts : OptionsPattern[]][hi0svasdfed_Association] :=
+Module[{hi0svas0, hi0svasdfed0, homepts, nsite, newhops, zeroBlockQ, hopDistances, zero = OptionValue["ZeroThreshold"]},
 	zeroBlockQ[b_] := If[MatrixQ[b, NumericQ], Max[Abs @ Flatten[b]] <= zero, AllTrue[Flatten[b], PossibleZeroQ]];
 	{hi0svas0, hi0svasdfed0} = Select[Not @* zeroBlockQ] /@ {hi0svas, hi0svasdfed};
 	newhops = KeyDrop[hi0svasdfed0, Keys[hi0svas0]]; If[newhops === <||>, Return[dup0]];
