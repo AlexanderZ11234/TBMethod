@@ -91,6 +91,7 @@ A tutorial in [Zhihu Column](https://www.zhihu.com/column/c_1954932040861450487)
 </summary>
 
 1. [arXiv: 2604.01596](https://arxiv.org/abs/2604.01596).
+1. [Phys. Rev. B **114**, 245408 (2026)](https://journals.aps.org/prb/abstract/10.1103/cnqh-ym84).
 1. [npj Quant. Mater. **10**, 48 (2025)](https://www.nature.com/articles/s41535-025-00768-1).
 1. [Phys. Rev. B **111**, 085137 (2025)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.111.085137).
 1. [Phys. Rev. B **111**, 155303 (2025)](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.111.155303).
