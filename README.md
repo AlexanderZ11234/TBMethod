@@ -35,9 +35,6 @@ Programming environment version: the latest the best
     Needs["TBMethod`"]
     ParallelNeeds["TBMethod`"]
 
-This can be initialized automatically by putting the `init.m` file to the directory `SystemOpen[$UserBaseDirectory <> "/Kernel"]`. The first line of `init.m` sets the number of parallel cores. I usually use the available logical cores.
-
-
 3. Check the installation by
 
 <!---->
@@ -45,6 +42,9 @@ This can be initialized automatically by putting the `init.m` file to the direct
     Scan[Echo @* Information] @ {"TBMethod`MDConstruct`*", "TBMethod`EigenSpect`*", "TBMethod`LGFF`*", "TBMethod`DataVisualization`*"}
 
 and four lists of functions should be indexed out.
+
+This can be initialized automatically by putting the `init.m` file to the directory `SystemOpen[$UserBaseDirectory <> "/Kernel"]`. The first line of `init.m` sets the number of parallel cores. I usually use the available logical cores.
+
 
 ### 1.3 Uninstallation
 
