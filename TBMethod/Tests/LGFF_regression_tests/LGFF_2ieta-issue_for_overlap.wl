@@ -1,0 +1,342 @@
+(* ::Package:: *)
+
+BeginPackage["TBMethod`LGFF`"]
+
+(* Declare your package's public symbols here. *)
+
+(* Exported symbols added here with SymbolName::usage *)
+SurfaceGreen::usage = "Surface Green's function of a lead.";
+SurfaceGreenOverlap::usage = "Overlap version of SurfaceGreen.";
+Sigma::usage = "Selfenergy from one lead.";
+SigmaOverlap::usage = "Overlap version of Sigma.";
+CentralGreen::usage = "Green's function for the central scattering region (CSR).";
+CentralGreenOverlap::usage = "Overlap version of CentralGreen.";
+
+Transmission::usage = "Transmission from Landauer-B\[UDoubleDot]ttiker formula.";
+
+CentralBlockGreens::usage = "The blocks of the full Green's function in the last block column, for the (adaptively) partitioned central scattering region.";
+CentralBlockGreensOverlap::usage = "Overlap version of CentralBlockGreens."
+
+LocalDOSRealSpace::usage = "Real-space local density of states from the Layered method.";
+LocalDOSReciprocalSpace::usage = "Reciprocal-space local density of states.";
+LocalCDV::usage = "Local current density vector field from the Layered method.";
+TransportCoefficient::usage = "Calculates transmission or reflection coefficent by scattering matrix with Green's function method.";
+
+CentralDiagonalBlockGreens::usage = "The diagonal blocks of the Green's function in the full form, corresponding to each layer from the (adaptively) partitioned central scattering region.";
+CentralDiagonalBlockGreensOverlap::usage = "Overlap version of CentralDiagonalBlockGreens.";
+
+HallAndLongitudinalResistances::usage = "Calculate the transverse Hall and longitudinal resistances simultaneously.";
+HallAndLongitudinalConductances::usage = "Calculate the transverse Hall and longitudinal conductances simultaneously.";
+SigmaGaugeTransform::usage = "A commonly used form of transformation on lead self-energies, in order to unify the magnetic gauges.";
+
+
+Begin["`Private`"]
+(* Implementation of the package *)
+(*$DistributedContexts = {"Global`", "LGFF`"};*)
+
+(* Another approach to find the inverse of a matrix instead of using `Inverse` directly *)
+iden = IdentityMatrix[Length[#], SparseArray, WorkingPrecision -> MachinePrecision] &;
+inverse[mat_, opts:OptionsPattern[LinearSolve]] := LinearSolve[mat, iden[mat], opts];
+
+invbyQR[matrix_] :=
+Module[{q, r},
+	{q, r} = QRDecomposition[matrix];
+	inverse[2][r] . q
+];
+
+(*transport_with_overlapping.nb*)
+(*CSR as a whole*)
+nonOrthoToOrthoTransf[e_][{HC_, SC_}] := HC + e(iden[HC] - SC);
+(*surface Green's function of a lead*)
+nonOrthoToOrthoTransf[e_][{{h0_, h1_}, {s0_, s1_}}] := {h0 + e(iden[h0] - s0), h1 - e s1};
+(*self energy of a lead*)
+nonOrthoToOrthoTransf[e_][{{h0_, h1_, V_}, {s0_, s1_, S_}}] := {h0 + e(iden[h0] - s0), h1 - e s1, V - e S};
+(*CSR partitioned*)
+nonOrthoToOrthoTransf[e_][{{ds_, os_}, {s0s_, s1s_}}] /; Length[ds] >= 2 := {ds + e(iden /@ ds - s0s), os - e s1s};
+
+
+
+(* Surface Green function and selfenergy *)
+SurfaceGreenOverlap[e_, {{h0_, h1_}, {s0_, s1_}}, mode:(1|2|3|4|5):3, ps:OptionsPattern[SurfaceGreen]] := SurfaceGreen[e, nonOrthoToOrthoTransf[e][{{h0, h1}, {s0, s1}}], mode, ps];
+
+
+
+Options[SurfaceGreen] = {"\[Delta]SVD" -> 1.*^-7};
+(*Sancho method*)
+SurfaceGreen[e_, {h0_, h1_}, mode:1, ps: OptionsPattern[]] :=
+Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, g0, t0, tttilde, TTtilde, T, MH, S1, S2, n},
+	g0inverse = e id - h0; n = Length[id];
+	
+	(*iterative 2^n method*)
+	g0 = SparseArray[ inv[g0inverse] ];
+	t0 = {g0 . h1\[ConjugateTranspose], g0 . h1};
+	tttilde[{a_, b_}] :=
+	Module[{tauinversed},
+		tauinversed = inv[ id - (a . b + b . a) ];
+		{tauinversed . a . a, tauinversed . b . b}
+	];
+	TTtilde[{{t_, tt_}, {T_, Tt_}}] :=
+	Module[{newt, newtt},
+		{newt, newtt} = tttilde[{t, tt}];
+		{{newt, newtt}, {T + Tt . newt, Tt . newtt}}
+	];
+	T = FixedPoint[TTtilde, {t0, t0}, 2000][[2, 1]];
+	inv[ g0inverse - h1 . T ]
+];
+
+(*transfer matrix method*)
+SurfaceGreen[e_, {h0_, h1_}, mode:(2|3), ps: OptionsPattern[]] :=
+Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, T, MH, S1, S2, n},
+	g0inverse = e id - h0; n = Length[id];
+	MH = Which[
+ 		mode == 2,
+ 		SparseArray @ ArrayFlatten[({{# . g0inverse, -# . h1\[ConjugateTranspose]}, {id, 0.}}) & [inv[h1]]],
+ 		mode == 3,
+ 		SparseArray @* ArrayFlatten /@ {{{g0inverse, -h1\[ConjugateTranspose]}, {id, 0.}}, {{h1, 0.}, {0., id}}}
+	];
+	{S1, S2} = Partition[SortBy[Eigensystem[MH, Method -> "Direct"]\[Transpose], Abs @* First][[;;n, 2]]\[Transpose], n];
+	(*{S1, S2} = Partition[Eigenvectors[MH, -n, Method -> "Direct"]\[Transpose], n];*)
+	T = S1 . inv[S2];
+	inv[ g0inverse - h1 . T ]
+];
+
+(*SVD based transfer matrix*)
+SurfaceGreen[e_, {h0_, h1_}, mode:(4|5), ps: OptionsPattern[]] :=
+Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, T, MH, S1, S2, n, u, d, dmax, v, deff, h1eff},
+	g0inverse = e id - h0; n = Length[id];
+	{u, d, v} = SingularValueDecomposition[h1, TargetStructure -> "Structured"];
+	dmax = d[[1, 1]];
+	deff = DiagonalMatrix[Max[#, OptionValue["\[Delta]SVD"] dmax] & /@ Diagonal[d], TargetStructure -> "Structured"];
+	h1eff = SparseArray[u . deff . (v\[ConjugateTranspose])];
+	MH = Which[
+ 		mode == 4,
+ 		SparseArray @ ArrayFlatten[({{# . g0inverse, -# . h1eff\[ConjugateTranspose]}, {id, 0.}}) & [inv[h1eff]]],
+ 		mode == 5,
+ 		SparseArray @* ArrayFlatten /@ {{{g0inverse, -h1eff\[ConjugateTranspose]}, {id, 0.}}, {{h1eff, 0.}, {0., id}}}
+	];
+	{S1, S2} = Partition[SortBy[Eigensystem[MH, Method -> "Direct"]\[Transpose], Abs @* First][[;;n, 2]]\[Transpose], n];
+	T = S1 . inv[S2];
+	inv[ g0inverse - h1 . T ]
+];
+
+
+SigmaOverlap[e_, {{h0_, h1_, H01_}, {s0_, s1_, S01_}}, mode:(1|2|3|4|5):1, ps:OptionsPattern[]] := Sigma[e, nonOrthoToOrthoTransf[e][{{h0, h1, H01}, {s0, s1, S01}}], mode, ps];
+Sigma[e_, {h0_, h1_, H01_}, mode:(1|2|3|4|5):3, ps:OptionsPattern[SurfaceGreen]] :=
+Module[{gsurface, len = Length[H01], \[Eta] = Im[e]},
+	If[Norm[H01, "Frobenius"] >= \[Eta], 
+		gsurface = SurfaceGreen[e, {h0, h1}, mode, ps]; SparseArray[H01 . gsurface . H01\[ConjugateTranspose]],
+		SparseArray[{}, {1, 1} len]
+	]
+];
+
+(*Green's function of the central region*)
+CentralGreenOverlap[e_,  {HC_, SC_}, Sigmas_List, method_:1] := CentralGreen[e, nonOrthoToOrthoTransf[e][{HC, SC}], Sigmas, method];
+CentralGreen[e_, HC_, Sigmas_List, method_:1] :=
+Module[{id = iden[HC], GCinverse, inv = inverse[#, Method -> "Multifrontal"] &},
+	GCinverse = e id - HC;
+	(*SparseArray[ #[GCinverse - Total @ Sigmas] ] & @ Which[method == 1, inverse[#, Method -> "Multifrontal"]&, method == 2, invbyQR]*)
+	Which[method == 1, inv, method == 2, invbyQR][GCinverse - Total @ Sigmas]
+];
+
+CentralBlockGreensOverlap[e_, {blockHs:{ds_, os_}, blockSs:{s0s_, s1s_}}, sigmas_, mode:("T"|"LDOS"|"LCDV"):"T"] := CentralBlockGreens[e, nonOrthoToOrthoTransf[e][{blockHs, blockSs}], sigmas, mode];
+CentralBlockGreens[e_, blockHs:{ds_, os_}, sigmas_, mode:("T"|"LDOS"|"LCDV"):"T"] /; (Subtract @@ (Length /@ blockHs) == 1) := 
+Module[{inv, diagblocks, iteratefunc, arguments},
+	inv = inverse[#, Method -> "Multifrontal"] &;
+	diagblocks = e iden[#] - # & /@ MapAt[Total[sigmas] + # &, ds, -1];
+	arguments = Sequence[iteratefunc, inv[First[diagblocks]], Transpose[{-os, Rest @ diagblocks}] ];
+	iteratefunc = inv[ Last[#2] - First[#2] . # . First[#2]\[ConjugateTranspose] ] &;
+	Which[
+		mode == "T", Fold[arguments],
+		mode == "LDOS" || mode == "LCDV",
+		Module[{Fi, Fioidag, iteratefunc2},
+			Fi = FoldList[arguments];
+			(*Fioidag = MapThread[Dot, {Most[Fi], -ConjugateTranspose /@ os}];
+			iteratefunc2 = -#2 . # &;*)
+			Fioidag = MapThread[Dot, {Most[Fi], ConjugateTranspose /@ os}];
+			iteratefunc2 = #2 . # &;
+			FoldList[iteratefunc2, Last[Fi], Reverse[Fioidag]]
+		],
+		True, 0
+	]
+];
+
+(*The diagonal blocks of the Green's functions*)
+CentralDiagonalBlockGreensOverlap[e_, {blockHs:{ds_, os_}, blockSs:{s0s_, s1s_}}, sigmas_] := CentralDiagonalBlockGreens[e, nonOrthoToOrthoTransf[e][{blockHs, blockSs}], sigmas];
+CentralDiagonalBlockGreens[e_, blockHs:{ds_, os_}, sigmas_] /; Length[ds] >= 2 && Length[os] == Length[ds] - 1 :=
+Module[{inv, diagblocks, Fis, iteratefunc, iteratefunc2},
+	inv = inverse[#, Method -> "Multifrontal"] &;
+	(* =====1. Construct the diagonal blocks of G^-1=====*)
+	diagblocks = e iden[#] - # & /@ MapAt[Total[sigmas] + # &, ds, -1];
+	(* =====2. Forward recursion:left-connected Greens=====*)
+	(*F_i = (D_i - O_(i-1) F_(i-1) O_(i-1)^\[Dagger])^-1*)
+	iteratefunc = inv[Last[#2] - First[#2] . # . First[#2]\[ConjugateTranspose]] &;
+	Fis = FoldList[iteratefunc, inv[First[diagblocks]], Transpose[{os, Rest[diagblocks]}]];
+	(* =====3. Backward recursion:full diagonal Greens=====*)
+	(*G_ii=F_i+F_i O_i^\[Dagger] G_(i+1,i+1) O_i F_i*)
+	iteratefunc2 = First[#2] + First[#2] . Last[#2]\[ConjugateTranspose] . # . Last[#2] . First[#2] &;
+	Reverse @ FoldList[iteratefunc2, Last[Fis], Reverse @ Transpose[{Most[Fis], os}]]
+];
+(*CentralDiagonalBlockGreens[e_, blockHs:{ds_, os_}, sigmas_] /; And[Length[ds] >= 2, Subtract @@ (Length /@ blockHs) == 1] :=
+Module[{inv, diagblocks, blockGinvs, blockGinvsrev, iteratefunc, Fisinner, Fisouter, foldlist},
+	inv = inverse[#1, Method -> "Multifrontal"] &;
+	foldlist = FoldList[Last[#2] - First[#2] . inv[#] . First[#2]\[ConjugateTranspose] &];
+	diagblocks = e iden[#] - # & /@ MapAt[Total[sigmas] + # &, ds, -1];
+	
+	blockGinvs = {diagblocks, -os};
+	Fisinner = foldlist[blockGinvs[[1, 1]], {blockGinvs[[2]], Rest @ blockGinvs[[1]]}\[Transpose]];
+	
+	blockGinvsrev = Reverse[{diagblocks, -ConjugateTranspose /@ os(*ConjugateTranspose[os, 2 <-> 3]*)}, 2];
+	Fisouter = foldlist[blockGinvsrev[[1, 1]], {blockGinvsrev[[2]], Rest @ blockGinvsrev[[1]]}\[Transpose]] // Reverse;
+	
+	MapThread[inv[# - #2] &][{Fisinner + Fisouter, diagblocks}]
+];*)
+
+
+
+Transmission[GCSR_, \[CapitalSigma]s_] :=
+Module[{\[CapitalGamma]p, \[CapitalGamma]q},
+	{\[CapitalGamma]p, \[CapitalGamma]q} = I (# - #\[ConjugateTranspose]) & /@ \[CapitalSigma]s;
+	(*{\[CapitalGamma]p, \[CapitalGamma]q} = -2 Im /@ \[CapitalSigma]s;*)(*This is very wrong!*)
+	Tr[ \[CapitalGamma]p . GCSR . \[CapitalGamma]q . GCSR\[ConjugateTranspose] ]
+];
+
+scatteringMatrix[GCSR_, \[CapitalSigma]s_, zero_ : 1.*^-4] :=
+Module[{\[CapitalGamma], \[CapitalGamma]sqrt, \[CapitalGamma]s, \[CapitalGamma]ssqrt, len = Length[GCSR], linewidth = I (# - #\[ConjugateTranspose]) &, sqrtmat = MatrixPower[#, 1/2] &, Mtot},
+	If[Equal @@ \[CapitalSigma]s,
+		(\[CapitalGamma] = linewidth[\[CapitalSigma]s[[2]]]; \[CapitalGamma]sqrt = sqrtmat[\[CapitalGamma]];
+		Mtot = MatrixRank[\[CapitalGamma]\[ConjugateTranspose] . \[CapitalGamma], Tolerance -> zero, ZeroTest -> (Abs[#]^2 < zero &)];
+		{- IdentityMatrix[len] + I \[CapitalGamma]sqrt . GCSR . \[CapitalGamma]sqrt, - len + Mtot}),
+		(\[CapitalGamma]s =  linewidth /@ \[CapitalSigma]s; \[CapitalGamma]ssqrt = sqrtmat /@ \[CapitalGamma]s;
+		{I # . GCSR . #2 & @@ \[CapitalGamma]ssqrt, 0})
+	]
+];
+
+TransportCoefficient[GCSR_, \[CapitalSigma]s_ , zero_ : 1.*^-4] :=
+Module[{matSq = #\[ConjugateTranspose] . # &, smat, Mtot},
+	{smat, Mtot} = scatteringMatrix[GCSR, \[CapitalSigma]s, zero];
+	Tr[matSq[smat]] + Mtot
+];
+
+
+LocalDOSRealSpace[innerproj_, layeredpts_Association][Gs_, sigmas_] :=
+Module[{gamma, innerdofldos, ldos, \[Rho]s, innerdof = Dimensions[innerproj]},
+	gamma = I (# - #\[ConjugateTranspose]) & @ Total[sigmas];
+	(*gamma = Im @ Total[sigmas];*) (* WRONG!*)
+	innerdofldos = 1/(2\[Pi]) Diagonal[Partition[# . gamma . #\[ConjugateTranspose], innerdof]] & /@ Gs;
+	ldos = Map[Tr[innerproj . #] &, innerdofldos, {2}];
+	MapThread[Append, Join @@@ {Values[layeredpts], Reverse[ldos]}]
+];
+
+LocalDOSReciprocalSpace[innerproj_][\[Epsilon]_, {HLeadBloch_?MatrixQ, HLead12_?MatrixQ}, mode:(1|2|3):3] := LocalDOSReciprocalSpace[innerproj][\[Epsilon], {{HLeadBloch, HLead12}, {HLeadBloch, HLead12}}, mode];
+LocalDOSReciprocalSpace[innerproj_][\[Epsilon]_, {HLeadBloch_?MatrixQ, HLead12_?MatrixQ}, HCSRBloch_?MatrixQ, mode:(1|2|3):3] := LocalDOSReciprocalSpace[innerproj][\[Epsilon], {{HLeadBloch, HLead12}, {HCSRBloch, HLead12}}, mode];
+LocalDOSReciprocalSpace[innerproj_][\[Epsilon]_, {{HLeadBloch_?MatrixQ, HLead12_?MatrixQ}, {HCSRBloch_?MatrixQ, HCSRLead1_?MatrixQ}}, mode:(1|2|3):3] :=
+Module[{zero = 1.*^-4, \[CapitalSigma], innerdof = Dimensions[innerproj], GCSR},
+	\[CapitalSigma] = Sigma[Complex[\[Epsilon], zero], {HLeadBloch, HLead12, HCSRLead1}, mode];
+	GCSR = CentralGreen[Complex[\[Epsilon], zero], HCSRBloch, {\[CapitalSigma]}];
+	-(1/\[Pi]) Im @ Total[Tr[innerproj . #]&/@Diagonal[Partition[GCSR, innerdof]]]
+];
+
+
+(*Local current density vector*)
+(*two auxilliary functions*)
+
+currentTensorBlocks[proj_][Gs_, sigmas_, blockHs : {ds_, os_}] :=
+Module[{gamma, blockGns0, blockGns, Gsre = Reverse[Gs], jblock0, innerdof = Dimensions[proj], blockGnspartial, blockHspartial},
+	gamma = I (# - #\[ConjugateTranspose]) & [Total[sigmas]];
+	blockGns0 = {# . gamma . #\[ConjugateTranspose] & /@ Gsre, # . gamma . #2\[ConjugateTranspose] & @@@ Partition[Gsre, 2, 1]};
+	(* 1. Add reverse correlations before projection. *)
+	blockGns = Append[blockGns0, ConjugateTranspose /@ blockGns0[[2]]];
+	blockGnspartial = Table[ArrayFlatten[BlockMap[proj . # &, #, innerdof]] & /@ x, {x, blockGns}];
+	(* 2. Add matching reverse hopping factors. *)
+	blockHspartial = Append[Map[Transpose, blockHs, {2}], Conjugate /@ os];
+	jblock0 = (*2/\[HBar] 1/(2\[Pi])*) Im[blockHspartial blockGnspartial] / \[Pi];
+	Table[BlockMap[Total[#, 2] &, #, innerdof] & /@ x, {x, jblock0}]
+];(*bond current in layered block form*)
+
+
+jvecfield[ptsCSR_, jmat_] := jvecfield[{ptsCSR, ptsCSR}, jmat];
+jvecfield[{ptsf_, ptsi_}, jmat_] := Module[{jvec, groupfunc, zero = 1.*^-3},
+	jvec[find_, iindslengths_] := Module[{ptf = ptsf[[find]], vec},
+		(*vec = Sum[Normalize[ptf - ptsi[[Keys[il]]]]Values[il], {il, iindslengths}]; (*Normalize[] might be unnecessary.*)*)
+		(*vec = Sum[(*Normalize@*)(ptf - ptsi[[Keys[il]]]) Values[il], {il, iindslengths}];*)
+		vec = Sum[(*Normalize@*)(ptsi[[Keys[il]]] - ptf) Values[il], {il, iindslengths}];
+		(*If[Norm[vec] < zero, Nothing, {ptf, vec}]*)
+		(*If[Norm[vec] < zero, Nothing, ptf -> vec]*)
+		ptf -> vec
+	];
+	groupfunc = First @* Keys -> (Last @ Keys[#] -> Values[#] &);
+	KeyValueMap[jvec] @ GroupBy[Most @ ArrayRules[jmat], groupfunc]
+];(*from bond current to current field*)
+
+jtensorFromBlocks[jtensorblocks:{a_, _, _}] /; (Equal @@ (Length /@ jtensorblocks - {1, 0, 0})) :=
+Module[{inds, inddiag, indupoffd, n = Length[a], blocks = Join @@ jtensorblocks},
+	inddiag = Table[{i, i}, {i, n}]; indupoffd = Table[{i, i+1}, {i, n-1}];
+	inds = Join[inddiag, indupoffd, Reverse[indupoffd, 2]];
+	SparseArray`SparseBlockMatrix[Thread[inds -> blocks]]
+];(*from layered blocks to a whole block*)
+
+
+(*innerproj for projection into the internal degrees of freedom, e.g., spin, up: {{1, 0}, {0, 0}}, up: {{0, 0}, {0, 1}}*)
+LocalCDV[innerproj_, layeredpts_Association][Gs_, sigmas_, blockHs: {ds_, os_}] :=
+Module[{ptscsr = Join @@ layeredpts, innersummed, js, currenttensorblocks, jtensorfull},
+	currenttensorblocks = currentTensorBlocks[innerproj][Gs, sigmas, blockHs];
+	jtensorfull = jtensorFromBlocks[currenttensorblocks];
+	js = jvecfield[ptscsr, jtensorfull];
+	(*KeyValueMap[List] @ (Total /@ GroupBy[js, First -> Last])*)
+	KeyValueMap[List] @* Merge[Total] @ js
+];
+
+
+(*For five and six T cases; The numbering of leads follows the order of from left to right and from up to down.
+And the source and drain should be numbered at the beginning and the ending.*)
+(*
+     2   
+1 ------- 4
+     3
+
+   2   4
+1 ------- 5
+   3
+
+   2   4
+1 ------- 6
+   3   5
+*)
+SigmaGaugeTransform[gUs_List][sigmas_List] := MapThread[# . #2 . (#\[ConjugateTranspose]) &, {gUs, sigmas}];
+
+Options[transmissionsfunc] = {"SigmaMode" -> 3, "SigmaTransform" -> Identity, "GreenTransform" -> Identity};
+transmissionsfunc[\[Epsilon]_, hcsrdod_, leadshs_, opts : OptionsPattern[]] :=
+Module[{\[CapitalSigma]s0, \[CapitalSigma]s, blockG0, blockG, ter = Length[leadshs], \[CapitalSigma]transffunc, Greentransffunc},
+	\[CapitalSigma]transffunc = OptionValue["SigmaTransform"];
+	Greentransffunc = OptionValue["GreenTransform"];
+	\[CapitalSigma]s0 = Sigma[\[Epsilon], #, OptionValue["SigmaMode"]] & /@ leadshs;
+	\[CapitalSigma]s = \[CapitalSigma]transffunc[\[CapitalSigma]s0];
+    blockG0 = CentralBlockGreens[\[Epsilon], hcsrdod, \[CapitalSigma]s, "T"];
+    blockG = Greentransffunc[blockG0];
+    Table[If[p == q, 0., Transmission[blockG, \[CapitalSigma]s[[{p, q}]]]], {p, ter}, {q, ter - 1}]
+];
+
+Options[HallAndLongitudinalResistances] = Options[transmissionsfunc];
+HallAndLongitudinalResistances[\[Epsilon]_, hcsrdod_, leadshs_, opts : OptionsPattern[]] :=
+Module[{\[ScriptCapitalT], \[ScriptCapitalT]func, Rfunc, cnup = 1.*^7, ter = Length[leadshs], transmissions},
+	\[ScriptCapitalT]func = DiagonalMatrix[Total[#]] - Most[#] &;
+	Rfunc = # - {#2, #3} & @@ Rest[LinearSolve[#][UnitVector[ter - 1, 1]]] &;
+	transmissions = transmissionsfunc[\[Epsilon], hcsrdod, leadshs, opts];
+	\[ScriptCapitalT] = \[ScriptCapitalT]func[transmissions];
+    If[LUDecomposition[\[ScriptCapitalT]][[4]] > cnup, {"NaN", "NaN"}, Rfunc[\[ScriptCapitalT]]]
+];
+
+Options[HallAndLongitudinalConductances] = Options[HallAndLongitudinalResistances];
+HallAndLongitudinalConductances[\[Epsilon]_, hcsrdod_, leadshs_, opts:OptionsPattern[]] :=
+Module[{RH, RL},
+	{RH, RL} = HallAndLongitudinalResistances[\[Epsilon], hcsrdod, leadshs, opts];
+	{-RH, RL}/(RH^2 + RL^2)
+];
+
+
+
+
+
+End[] (* End `Private` *)
+
+EndPackage[]
