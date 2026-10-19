@@ -48,29 +48,32 @@ Module[{q, r},
 (*CSR as a whole*)
 nonOrthoToOrthoTransf[e_][{HC_, SC_}] := HC + e(iden[HC] - SC);
 (*surface Green's function of a lead*)
-nonOrthoToOrthoTransf[e_][{{h0_, h1_}, {s0_, s1_}}] := {h0 + e(iden[h0] - s0), h1 - e s1};
+nonOrthoToOrthoTransf[e_][{{h0_, h1_}, {s0_, s1_}}] := {h0 + e(iden[h0] - s0), h1 - e s1,
+    h1\[ConjugateTranspose] - e s1\[ConjugateTranspose]};
 (*self energy of a lead*)
-nonOrthoToOrthoTransf[e_][{{h0_, h1_, V_}, {s0_, s1_, S_}}] := {h0 + e(iden[h0] - s0), h1 - e s1, V - e S};
+nonOrthoToOrthoTransf[e_][{{h0_, h1_, V_}, {s0_, s1_, S_}}] := {h0 + e(iden[h0] - s0), h1 - e s1, V - e S,
+    h1\[ConjugateTranspose] - e s1\[ConjugateTranspose], V\[ConjugateTranspose] - e S\[ConjugateTranspose]};
 (*CSR partitioned*)
-nonOrthoToOrthoTransf[e_][{{ds_, os_}, {s0s_, s1s_}}] /; Length[ds] >= 2 := {ds + e(iden /@ ds - s0s), os - e s1s};
+nonOrthoToOrthoTransf[e_][{{ds_, os_}, {s0s_, s1s_}}] /; VectorQ[ds, MatrixQ] && VectorQ[os, MatrixQ] := {ds + e(iden /@ ds - s0s), os - e s1s,
+    (ConjugateTranspose /@ os) - e (ConjugateTranspose /@ s1s)};
+
+
 
 (* Surface Green function and selfenergy *)
-
-
-
 SurfaceGreenOverlap[e_, {{h0_, h1_}, {s0_, s1_}}, mode:(1|2|3|4|5):3, ps:OptionsPattern[SurfaceGreen]] := SurfaceGreen[e, nonOrthoToOrthoTransf[e][{{h0, h1}, {s0, s1}}], mode, ps];
 
 
 
 Options[SurfaceGreen] = {"\[Delta]SVD" -> 1.*^-7};
 (*Sancho method*)
-SurfaceGreen[e_, {h0_, h1_}, mode:1, ps: OptionsPattern[]] :=
-Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, g0, t0, tttilde, TTtilde, T, MH, S1, S2, n},
+SurfaceGreen[e_, {h0_, h1_, h1upper_:Automatic}, mode:1, ps: OptionsPattern[]] :=
+Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, g0, t0, tttilde, TTtilde, T, MH, S1, S2, n, upper},
 	g0inverse = e id - h0; n = Length[id];
+	upper = If[h1upper === Automatic, h1\[ConjugateTranspose], h1upper];
 	
 	(*iterative 2^n method*)
 	g0 = SparseArray[ inv[g0inverse] ];
-	t0 = {g0 . h1\[ConjugateTranspose], g0 . h1};
+	t0 = {g0 . upper, g0 . h1};
 	tttilde[{a_, b_}] :=
 	Module[{tauinversed},
 		tauinversed = inv[ id - (a . b + b . a) ];
@@ -86,14 +89,15 @@ Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, g0, t0
 ];
 
 (*transfer matrix method*)
-SurfaceGreen[e_, {h0_, h1_}, mode:(2|3), ps: OptionsPattern[]] :=
-Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, T, MH, S1, S2, n},
+SurfaceGreen[e_, {h0_, h1_, h1upper_:Automatic}, mode:(2|3), ps: OptionsPattern[]] :=
+Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, T, MH, S1, S2, n, upper},
 	g0inverse = e id - h0; n = Length[id];
+	upper = If[h1upper === Automatic, h1\[ConjugateTranspose], h1upper];
 	MH = Which[
  		mode == 2,
- 		SparseArray @ ArrayFlatten[({{# . g0inverse, -# . h1\[ConjugateTranspose]}, {id, 0.}}) & [inv[h1]]],
+ 		SparseArray @ ArrayFlatten[({{# . g0inverse, -# . upper}, {id, 0.}}) & [inv[h1]]],
  		mode == 3,
- 		SparseArray @* ArrayFlatten /@ {{{g0inverse, -h1\[ConjugateTranspose]}, {id, 0.}}, {{h1, 0.}, {0., id}}}
+ 		SparseArray @* ArrayFlatten /@ {{{g0inverse, -upper}, {id, 0.}}, {{h1, 0.}, {0., id}}}
 	];
 	{S1, S2} = Partition[SortBy[Eigensystem[MH, Method -> "Direct"]\[Transpose], Abs @* First][[;;n, 2]]\[Transpose], n];
 	(*{S1, S2} = Partition[Eigenvectors[MH, -n, Method -> "Direct"]\[Transpose], n];*)
@@ -102,18 +106,21 @@ Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, T, MH,
 ];
 
 (*SVD based transfer matrix*)
-SurfaceGreen[e_, {h0_, h1_}, mode:(4|5), ps: OptionsPattern[]] :=
-Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, T, MH, S1, S2, n, u, d, dmax, v, deff, h1eff},
+SurfaceGreen[e_, {h0_, h1_, h1upper_:Automatic}, mode:(4|5), ps: OptionsPattern[]] :=
+Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, T, MH, S1, S2, n, u, d, dmax, v, deff, h1eff, upper, upperEff},
 	g0inverse = e id - h0; n = Length[id];
 	{u, d, v} = SingularValueDecomposition[h1, TargetStructure -> "Structured"];
 	dmax = d[[1, 1]];
 	deff = DiagonalMatrix[Max[#, OptionValue["\[Delta]SVD"] dmax] & /@ Diagonal[d], TargetStructure -> "Structured"];
 	h1eff = SparseArray[u . deff . (v\[ConjugateTranspose])];
+	upper = If[h1upper === Automatic, h1\[ConjugateTranspose], h1upper];
+	(* Preserve the upper/lower asymmetry at complex energy even after SVD regularization. *)
+	upperEff = h1eff\[ConjugateTranspose] + upper - h1\[ConjugateTranspose];
 	MH = Which[
  		mode == 4,
- 		SparseArray @ ArrayFlatten[({{# . g0inverse, -# . h1eff\[ConjugateTranspose]}, {id, 0.}}) & [inv[h1eff]]],
+ 		SparseArray @ ArrayFlatten[({{# . g0inverse, -# . upperEff}, {id, 0.}}) & [inv[h1eff]]],
  		mode == 5,
- 		SparseArray @* ArrayFlatten /@ {{{g0inverse, -h1eff\[ConjugateTranspose]}, {id, 0.}}, {{h1eff, 0.}, {0., id}}}
+ 		SparseArray @* ArrayFlatten /@ {{{g0inverse, -upperEff}, {id, 0.}}, {{h1eff, 0.}, {0., id}}}
 	];
 	{S1, S2} = Partition[SortBy[Eigensystem[MH, Method -> "Direct"]\[Transpose], Abs @* First][[;;n, 2]]\[Transpose], n];
 	T = S1 . inv[S2];
@@ -122,10 +129,12 @@ Module[{id = iden[h0], inv = inverse[#, Method -> "Banded"] &, g0inverse, T, MH,
 
 
 SigmaOverlap[e_, {{h0_, h1_, H01_}, {s0_, s1_, S01_}}, mode:(1|2|3|4|5):1, ps:OptionsPattern[]] := Sigma[e, nonOrthoToOrthoTransf[e][{{h0, h1, H01}, {s0, s1, S01}}], mode, ps];
-Sigma[e_, {h0_, h1_, H01_}, mode:(1|2|3|4|5):3, ps:OptionsPattern[SurfaceGreen]] :=
-Module[{gsurface, len = Length[H01], \[Eta] = Im[e]},
+Sigma[e_, {h0_, h1_, H01_, h1upper_:Automatic, H10_:Automatic}, mode:(1|2|3|4|5):3, ps:OptionsPattern[SurfaceGreen]] :=
+Module[{gsurface, len = Length[H01], \[Eta] = Im[e], upper, rightCoupling},
+	upper = If[h1upper === Automatic, h1\[ConjugateTranspose], h1upper];
+	rightCoupling = If[H10 === Automatic, H01\[ConjugateTranspose], H10];
 	If[Norm[H01, "Frobenius"] >= \[Eta], 
-		gsurface = SurfaceGreen[e, {h0, h1}, mode, ps]; SparseArray[H01 . gsurface . H01\[ConjugateTranspose]],
+		gsurface = SurfaceGreen[e, {h0, h1, upper}, mode, ps]; SparseArray[H01 . gsurface . rightCoupling],
 		SparseArray[{}, {1, 1} len]
 	]
 ];
@@ -140,19 +149,20 @@ Module[{id = iden[HC], GCinverse, inv = inverse[#, Method -> "Multifrontal"] &},
 ];
 
 CentralBlockGreensOverlap[e_, {blockHs:{ds_, os_}, blockSs:{s0s_, s1s_}}, sigmas_, mode:("T"|"LDOS"|"LCDV"):"T"] := CentralBlockGreens[e, nonOrthoToOrthoTransf[e][{blockHs, blockSs}], sigmas, mode];
-CentralBlockGreens[e_, blockHs:{ds_, os_}, sigmas_, mode:("T"|"LDOS"|"LCDV"):"T"] /; (Subtract @@ (Length /@ blockHs) == 1) := 
-Module[{inv, diagblocks, iteratefunc, arguments},
+CentralBlockGreens[e_, blockHs:{ds_, os_, us_:Automatic}, sigmas_, mode:("T"|"LDOS"|"LCDV"):"T"] /; Length[ds] == Length[os] + 1 := 
+Module[{inv, diagblocks, upper, iteratefunc, arguments},
 	inv = inverse[#, Method -> "Multifrontal"] &;
 	diagblocks = e iden[#] - # & /@ MapAt[Total[sigmas] + # &, ds, -1];
-	arguments = Sequence[iteratefunc, inv[First[diagblocks]], Transpose[{-os, Rest @ diagblocks}] ];
-	iteratefunc = inv[ Last[#2] - First[#2] . # . First[#2]\[ConjugateTranspose] ] &;
+	upper = If[us === Automatic, ConjugateTranspose /@ os, us];
+	arguments = Sequence[iteratefunc, inv[First[diagblocks]], Transpose[{os, upper, Rest @ diagblocks}] ];
+	iteratefunc = inv[ Last[#2] - #2[[1]] . # . #2[[2]] ] &;
 	Which[
 		mode == "T", Fold[arguments],
 		mode == "LDOS" || mode == "LCDV",
 		Module[{Fi, Fioidag, iteratefunc2},
 			Fi = FoldList[arguments];
-			Fioidag = MapThread[Dot, {Most[Fi], -ConjugateTranspose /@ os}];
-			iteratefunc2 = -#2 . # &;
+			Fioidag = MapThread[Dot, {Most[Fi], upper}];
+			iteratefunc2 = #2 . # &;
 			FoldList[iteratefunc2, Last[Fi], Reverse[Fioidag]]
 		],
 		True, 0
@@ -161,7 +171,22 @@ Module[{inv, diagblocks, iteratefunc, arguments},
 
 (*The diagonal blocks of the Green's functions*)
 CentralDiagonalBlockGreensOverlap[e_, {blockHs:{ds_, os_}, blockSs:{s0s_, s1s_}}, sigmas_] := CentralDiagonalBlockGreens[e, nonOrthoToOrthoTransf[e][{blockHs, blockSs}], sigmas];
-CentralDiagonalBlockGreens[e_, blockHs:{ds_, os_}, sigmas_] /; And[Length[ds] >= 2, Subtract @@ (Length /@ blockHs) == 1] :=
+CentralDiagonalBlockGreens[e_, blockHs:{ds_, os_, us_:Automatic}, sigmas_] /; Length[ds] >= 2 && Length[os] == Length[ds] - 1 :=
+Module[{inv, diagblocks, upper, Fis, iteratefunc, iteratefunc2},
+	inv = inverse[#, Method -> "Multifrontal"] &;
+	(* =====1. Construct the diagonal blocks of G^-1=====*)
+	diagblocks = e iden[#] - # & /@ MapAt[Total[sigmas] + # &, ds, -1];
+	(* =====2. Forward recursion:left-connected Greens=====*)
+	(*F_i = (D_i - O_lower_(i-1) F_(i-1) O_upper_(i-1))^-1*)
+	upper = If[us === Automatic, ConjugateTranspose /@ os, us];
+	iteratefunc = inv[Last[#2] - #2[[1]] . # . #2[[2]]] &;
+	Fis = FoldList[iteratefunc, inv[First[diagblocks]], Transpose[{os, upper, Rest[diagblocks]}]];
+	(* =====3. Backward recursion:full diagonal Greens=====*)
+	(*G_ii=F_i+F_i O_upper_i G_(i+1,i+1) O_lower_i F_i*)
+	iteratefunc2 = #2[[1]] + #2[[1]] . #2[[3]] . # . #2[[2]] . #2[[1]] &;
+	Reverse @ FoldList[iteratefunc2, Last[Fis], Reverse @ Transpose[{Most[Fis], os, upper}]]
+];
+(*CentralDiagonalBlockGreens[e_, blockHs:{ds_, os_}, sigmas_] /; And[Length[ds] >= 2, Subtract @@ (Length /@ blockHs) == 1] :=
 Module[{inv, diagblocks, blockGinvs, blockGinvsrev, iteratefunc, Fisinner, Fisouter, foldlist},
 	inv = inverse[#1, Method -> "Multifrontal"] &;
 	foldlist = FoldList[Last[#2] - First[#2] . inv[#] . First[#2]\[ConjugateTranspose] &];
@@ -174,7 +199,7 @@ Module[{inv, diagblocks, blockGinvs, blockGinvsrev, iteratefunc, Fisinner, Fisou
 	Fisouter = foldlist[blockGinvsrev[[1, 1]], {blockGinvsrev[[2]], Rest @ blockGinvsrev[[1]]}\[Transpose]] // Reverse;
 	
 	MapThread[inv[# - #2] &][{Fisinner + Fisouter, diagblocks}]
-];
+];*)
 
 
 
