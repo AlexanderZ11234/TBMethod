@@ -23,10 +23,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[      1060,         20]
-NotebookDataLength[     22200,        574]
-NotebookOptionsPosition[     18683,        495]
-NotebookOutlinePosition[     20894,        548]
-CellTagsIndexPosition[     20851,        545]
+NotebookDataLength[     26994,        707]
+NotebookOptionsPosition[     23413,        628]
+NotebookOutlinePosition[     25687,        681]
+CellTagsIndexPosition[     25644,        678]
 WindowTitle->HEffectiveMatrix
 WindowFrame->Normal*)
 
@@ -40,11 +40,11 @@ Cell[BoxData[GridBox[{
           TemplateBox[{12},
            "Spacer1"], Cell["T B METHOD SYMBOL", "PacletNameCell",
            TextAlignment->Center,ExpressionUUID->
-           "91b7237a-ab74-1b4b-958a-b340b73dc56a"], 
+           "ca9a8f52-381c-e342-a051-570000a54cd7"], 
           TemplateBox[{8},
            "Spacer1"]}]],
          TextAlignment->Center,ExpressionUUID->
-         "ea8991b8-bc90-bf46-b006-fa68967bdacb"],
+         "9a25f7a9-9e70-144e-9167-e15b8b98cbaa"],
         Background->LightDarkSwitched[
           RGBColor[0.490196, 0.576471, 0.690196]],
         ItemSize->Full], ""}
@@ -65,25 +65,43 @@ Cell[BoxData[GridBox[{
             AspectRatio->1,
             ImageSize->20,
             PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
-           "3f1d46bd-14fa-e04b-b799-7263689cea1f"]
-         }],ExpressionUUID->"bf2dc106-957c-e345-ab14-1f0780b473d7"],
+           "201ac5fe-baa3-e64f-a3f9-706db54b5d08"]
+         }],ExpressionUUID->"c72bbae7-36f1-5848-a437-2d935c9b143e"],
          StripOnInput->False],{
-        StyleBox[
-          "\"PauliGellMannDecomposition\"", "SeeAlsoRelated", StripOnInput -> 
-           False] :> Documentation`HelpLookup[
+        StyleBox["\"Series\"", "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup["paclet:ref/Series"], Delimiter, 
+         StyleBox[
+          "\"Functions\"", "SeeAlsoSection", FontSize -> 14, FontSlant -> 
+           "Italic", StripOnInput -> False] :> 
+         NotebookFind[EvaluationNotebook[], "SeeAlsoSection", All, CellStyle],
+          StyleBox[
+          StyleBox["\"HBloch\"", "SeeAlsoRelated", StripOnInput -> False], 
+           "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup["paclet:TBMethod/ref/HBloch"], 
+         StyleBox[
+          StyleBox[
+           "\"PauliGellMannDecomposition\"", "SeeAlsoRelated", StripOnInput -> 
+            False], "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup[
           "paclet:TBMethod/ref/PauliGellMannDecomposition"], 
          StyleBox[
-          "\"PauliGellMannAbstract\"", "SeeAlsoRelated", StripOnInput -> 
-           False] :> Documentation`HelpLookup[
+          StyleBox[
+           "\"PauliGellMannAbstract\"", "SeeAlsoRelated", StripOnInput -> 
+            False], "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup[
           "paclet:TBMethod/ref/PauliGellMannAbstract"], 
-         StyleBox["\"HBloch\"", "SeeAlsoRelated", StripOnInput -> False] :> 
-         Documentation`HelpLookup["paclet:TBMethod/ref/HBloch"]},
+         StyleBox[
+          StyleBox[
+           "\"PauliGellMannRepresent\"", "SeeAlsoRelated", StripOnInput -> 
+            False], "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup[
+          "paclet:TBMethod/ref/PauliGellMannRepresent"]},
         Appearance->None,
         MenuAppearance->Automatic,
         MenuStyle->"SeeAlso"],
        MouseAppearanceTag["LinkHand"]]],
       LineSpacing->{1.4, 0},ExpressionUUID->
-      "41ee4745-ac6f-ab4c-b1b9-4facec6f6480"],
+      "1e67a170-93aa-f642-b77f-d3d493448d4a"],
      "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
 \[ThickSpace]",
      Cell[BoxData[
@@ -99,8 +117,8 @@ Cell[BoxData[GridBox[{
             AspectRatio->1,
             ImageSize->20,
             PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
-           "66dc10f3-e8eb-1d44-be0c-b94b62b46122"]
-         }],ExpressionUUID->"999d3a12-1ce0-2d4c-9dd8-b73fad472e2c"],
+           "e24bde95-14fa-be4d-b764-6f008138b644"]
+         }],ExpressionUUID->"5ad55348-b489-7846-a657-bdf5311ca9b0"],
          StripOnInput->False],{
         "\"TBMethod\"" :> 
          Documentation`HelpLookup["paclet:TBMethod/guide/TBMethod"]},
@@ -109,7 +127,7 @@ Cell[BoxData[GridBox[{
         MenuStyle->"MoreAbout"],
        MouseAppearanceTag["LinkHand"]]],
       LineSpacing->{1.4, 0},ExpressionUUID->
-      "bd0aee4e-1973-d947-92bf-38ffb9d026fd"],
+      "d6179a54-17c2-f141-b628-2f46fa70631f"],
      "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
 \[ThickSpace]",
      Cell[BoxData[
@@ -125,8 +143,8 @@ Cell[BoxData[GridBox[{
             AspectRatio->1,
             ImageSize->20,
             PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
-           "7dd18188-478b-8548-aa87-ed50a976a7a3"]
-         }],ExpressionUUID->"062066a2-1cac-ee48-8ad5-d571a6b22e21"],
+           "701d8ec6-c5f8-c14c-9bee-39cb6456fc54"]
+         }],ExpressionUUID->"6758a365-528e-e346-8433-2d403d9dbbe5"],
          StripOnInput->False],{
         "\"Getting Started with TBMethod\"" :> 
          Documentation`HelpLookup["paclet:TBMethod/tutorial/GettingStarted"]},
@@ -136,7 +154,7 @@ Cell[BoxData[GridBox[{
         MenuStyle->"Tutorials"],
        MouseAppearanceTag["LinkHand"]]],
       LineSpacing->{1.4, 0},ExpressionUUID->
-      "a0ec83fc-84ad-714c-babd-86f4f8018445"],
+      "a0e9e181-f9b4-f44d-a6f6-2dc3bc090717"],
      "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
 \[ThickSpace]",
      Cell[BoxData[
@@ -152,8 +170,8 @@ Cell[BoxData[GridBox[{
             AspectRatio->1,
             ImageSize->20,
             PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
-           "debe3c40-0162-a34e-88dd-9a63fa7030b6"]
-         }],ExpressionUUID->"9f57b6f0-6362-8843-8b72-3a7dec131635"],
+           "50a31c00-438e-b040-8ba3-3f40bae2598e"]
+         }],ExpressionUUID->"7557c316-0ed7-8642-ace6-690c0354f5f0"],
          StripOnInput->False],{
         "\"TBMethod/ref/HEffectiveMatrix\"" :> None, 
          "\"Copy Wolfram Documentation Center URL\"" :> 
@@ -184,14 +202,14 @@ HEffectiveMatrix.html"], StandardForm]], "Input", TextClipboardType ->
         MenuStyle->"URLMenu"],
        MouseAppearanceTag["LinkHand"]]],
       LineSpacing->{1.4, 0},ExpressionUUID->
-      "0efb1686-320d-fc4e-8916-01fa6dc3eaba"]
+      "b0148071-595c-1f4e-bcf8-40135bfe662d"]
     }], "AnchorBar",
      CacheGraphics->False,ExpressionUUID->
-     "eddadfce-3202-0b48-b0f8-cb1373fce791"]}
+     "bbd1f1d4-a244-df4d-a033-0a07d2bd3918"]}
   }]], "AnchorBarGrid",
- CellID->1,ExpressionUUID->"f86cc51a-d9dd-0f49-b51d-92f5b6585d8e"],
+ CellID->1,ExpressionUUID->"e75b0a5c-7481-a34a-9b6a-fef40698740f"],
 
-Cell["TBMethod`MDConstruct`", "ContextNameCell",ExpressionUUID->"8d100100-1a56-5b43-9fc8-736f998487eb"],
+Cell["TBMethod`MDConstruct`", "ContextNameCell",ExpressionUUID->"40987a51-2dd4-4b45-8009-2f1528ed71eb"],
 
 Cell[CellGroupData[{
 
@@ -199,40 +217,100 @@ Cell[BoxData[GridBox[{
    {Cell[TextData[{
      Cell[
      "HEffectiveMatrix", "ObjectName",ExpressionUUID->
-      "74a2894b-765a-074c-848b-1e6f0a0baefe"],
+      "fdac49c8-a72a-604d-a626-fcfda44c2959"],
      Cell[BoxData[
       TemplateBox[{8},
-       "Spacer1"]],ExpressionUUID->"87d4dea3-621c-c445-b584-f6d875b2a7da"],
+       "Spacer1"]],ExpressionUUID->"6d082272-d7c8-c14b-9db4-0a75b6d6f521"],
      Cell[BoxData[
      ""], "ObjectNameTranslation",ExpressionUUID->
-      "643f38ca-0d6c-d045-a040-b0d1eca58c36"]
-    }],ExpressionUUID->"6320a60e-198d-744b-8536-73fa8edf4504"], 
+      "a75a7356-787a-c143-b096-b10f3a38bed7"]
+    }],ExpressionUUID->"e15edc62-262b-1643-a657-27e34221cb89"], 
     "\[SpanFromLeft]"}
-  }]], "ObjectNameGrid",ExpressionUUID->"b77678ee-3cdf-a649-9d92-\
-d00793b71d45"],
+  }]], "ObjectNameGrid",ExpressionUUID->"b01411b7-0180-dc4f-b9de-\
+1451abb1fdc8"],
 
 Cell[BoxData[GridBox[{
-   {"", Cell[TextData[Cell[BoxData[
-     RowBox[{"HEffectiveMatrix", "[", 
-      RowBox[{"hamiltonian", ",", "deltaK", ",", "k0", ",", "dimensions"}], 
-      "]"}]], "InlineFormula",
-     FontFamily->"Source Sans Pro",ExpressionUUID->
-     "12460130-1b44-6944-9c7d-0ce904afe9f8"]],ExpressionUUID->
-     "729ea0c9-ddbd-7d4b-b0a3-80ea02f1ad8a"]},
-   {"", Cell[TextData[Cell[BoxData[
-     RowBox[{"HEffectiveMatrix", "[", 
+   {"", Cell[TextData[{
+     Cell[BoxData[
       RowBox[{
-      "hamiltonian", ",", "deltaK", ",", "k0", ",", "dimensions", ",", 
-       "order"}], "]"}]], "InlineFormula",
-     FontFamily->"Source Sans Pro",ExpressionUUID->
-     "b2eb73bc-571f-1e43-b7c6-a9e6136315a3"]],ExpressionUUID->
-     "df1c9a7f-1e6d-a846-9087-049fd60e7d94"]},
-   {"", Cell["\<\
-Expand a Bloch Hamiltonian near a momentum point and return its \
-Pauli/Gell-Mann coefficients.\
-\>",ExpressionUUID->"bb511a95-106e-7847-ac2b-64b9df634994"]}
+       TemplateBox[{
+         Cell[
+          TextData["HEffectiveMatrix"]], 
+         "paclet:TBMethod/ref/HEffectiveMatrix", "TBMethod Package Symbol"},
+        "PackageLink",
+        BaseStyle->"InlineFormula"], "[", 
+       RowBox[{
+        StyleBox["h", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"], ",", 
+        StyleBox["deltaK", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"], ",", 
+        StyleBox["k0", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"], ",", 
+        StyleBox["dimensions", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"]}], "]"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "1d0045ef-3f2e-4241-8a66-21b27237e47e"],
+     " \[LineSeparator]",
+     "returns the first-order Taylor approximation of ",
+     Cell[BoxData[
+      StyleBox["h", "TI",
+       FontFamily->"Times",
+       FontSlant->"Italic"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "8421517b-3b4c-3147-880e-ac617cc4a289"],
+     " about ",
+     Cell[BoxData[
+      StyleBox["k0", "TI",
+       FontFamily->"Times",
+       FontSlant->"Italic"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "ce21155b-64c7-3048-a1d1-b55da2e0bcba"],
+     " as Pauli/Gell-Mann coefficients."
+    }],ExpressionUUID->"58ef397e-24c8-9041-8f1d-161e762bbdc3"]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["HEffectiveMatrix"]], 
+         "paclet:TBMethod/ref/HEffectiveMatrix", "TBMethod Package Symbol"},
+        "PackageLink",
+        BaseStyle->"InlineFormula"], "[", 
+       RowBox[{
+        StyleBox["h", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"], ",", 
+        StyleBox["deltaK", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"], ",", 
+        StyleBox["k0", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"], ",", 
+        StyleBox["dimensions", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"], ",", 
+        StyleBox["order", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"]}], "]"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "e64ebe4e-0f18-9649-b077-dac11c6b412f"],
+     " \[LineSeparator]",
+     "retains terms through the specified Taylor order in the momentum \
+increment ",
+     Cell[BoxData[
+      StyleBox["deltaK", "TI",
+       FontFamily->"Times",
+       FontSlant->"Italic"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "f34fb6ac-9ff3-f946-902a-3cd8b8811b16"],
+     "."
+    }],ExpressionUUID->"93d27057-8153-f94d-b8c1-67f15033ee29"]}
   }]], "Usage",
- CellID->504207535,ExpressionUUID->"57239fb5-a6cb-dd4c-9124-70cc7f0c425b"]
+ CellID->1759054085,ExpressionUUID->"aff84095-5183-fc46-a04f-67430ae3e108"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -259,42 +337,42 @@ Cell[TextData[Cell[BoxData[Cell[TextData[{
         0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
     ImageSizeCache->{
      13.600000000000001`, {-0.16630120645742785`, 13.76630120645743}}]],
-   ExpressionUUID->"87a7cdcc-6d2f-5441-bcf6-07cb571611c3"],
+   ExpressionUUID->"6a898b67-ad03-e244-8c1d-4ef4763e40fc"],
   Cell[BoxData[
    TemplateBox[{1},
-    "Spacer1"]],ExpressionUUID->"6c47187a-6cbc-c74f-bf64-a9f154704133"],
+    "Spacer1"]],ExpressionUUID->"149d2ad9-9e6b-0941-93ea-6876cf46f08a"],
   "Details and Options"
  }], "NotesFrameText",ExpressionUUID->
-  "b0562232-7d4e-5b48-b08b-5f63386b80cf"]],ExpressionUUID->"ececddce-f08d-\
-df49-ac44-e0a58b1c7052"]], "NotesSection",
+  "b6e9a825-f886-c54f-bb29-3133038d59bf"]],ExpressionUUID->"8ccd3122-f880-\
+4742-9377-8cc649b26eda"]], "NotesSection",
  ShowGroupOpener->"Thumbnail",
  WholeCellGroupOpener->True,
  CellGroupingRules->{"SectionGrouping", 50},
  CacheGraphics->False,
- CellID->6288306,ExpressionUUID->"8a2f3987-60fb-b443-a519-34396ff8fb97"],
+ CellID->61049196,ExpressionUUID->"d212e6aa-3377-bc4e-883a-ff955b15f238"],
 
 Cell["\<\
 Expands hamiltonian[s deltaK + k0] in the single scale parameter s through \
 the requested total order, then sets s -> 1. The default order is 1.\
 \>", "Notes",
- CellID->1874704813,ExpressionUUID->"259e405d-39e4-bf44-a6ab-54fd7baf406e"],
+ CellID->2071405873,ExpressionUUID->"526ddc65-26e8-dd4d-bcff-19ad87670c1b"],
 
 Cell["\<\
 dimensions is the ordered list of internal factors, each 2 or 3, required by \
 PauliGellMannDecomposition. Returns a coefficient association rather than the \
 effective matrix itself.\
 \>", "Notes",
- CellID->324690878,ExpressionUUID->"264d143f-80ff-a941-86ad-bcec7e40e540"],
+ CellID->835205400,ExpressionUUID->"59564e75-5efa-8c4a-9158-d6524250e678"],
 
 Cell["\<\
 Applies ComplexExpand, so symbolic momentum components are treated as real. \
 Use PauliGellMannAbstract and PauliGellMannRepresent to recover a matrix \
 expression.\
 \>", "Notes",
- CellID->1042752828,ExpressionUUID->"3423e1c1-503f-2a4b-afe6-e8cfe7ac8973"]
+ CellID->332072674,ExpressionUUID->"cfd22905-5983-5c4a-b8d4-bfd95b3d973d"]
 }, Closed]],
 
-Cell["", "PageDelimiter",ExpressionUUID->"6802a79e-d9cb-274a-ae92-a4de20b3e64b"],
+Cell["", "PageDelimiter",ExpressionUUID->"b1094047-9270-bb49-a575-a460b9fd2189"],
 
 Cell[CellGroupData[{
 
@@ -324,18 +402,18 @@ Cell[TextData[{
        0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
    ImageSizeCache->{
     13.600000000000001`, {4.253698793542572, 9.34630120645743}}]],
-  ExpressionUUID->"c5203302-dda1-ad41-bead-c3926aa3d3fb"],
+  ExpressionUUID->"90df2b42-fd8f-cd44-91f1-3365f7d88d96"],
  Cell[BoxData[
   TemplateBox[{1},
-   "Spacer1"]],ExpressionUUID->"89578532-a962-ed47-b174-11695ac3224d"],
+   "Spacer1"]],ExpressionUUID->"820f3e2d-ff04-ef4e-92c3-87e3ae651144"],
  "Examples",
  "\[NonBreakingSpace]\[NonBreakingSpace]",
  Cell["(1)", "ExampleCount",ExpressionUUID->
-  "e4a2a4bd-a5e2-2948-a6d0-67e638497c03"]
+  "24e66aac-ab76-ac4d-9a0b-aa08a3fdd02a"]
 }], "PrimaryExamplesSection",
  WholeCellGroupOpener->True,
  CacheGraphics->False,
- CellID->484029231,ExpressionUUID->"10d840fb-0d6a-2b4f-bb40-634ae9b7f361"],
+ CellID->497592381,ExpressionUUID->"a22c46ad-6d51-c443-9ac4-a93ee9a7781a"],
 
 Cell[CellGroupData[{
 
@@ -359,30 +437,30 @@ Cell[TextData[{
          Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
         PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
        0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]]]],ExpressionUUID->
-  "bf5c7273-740d-8340-9762-a0890cce1c8c"],
+  "f418bbe4-bcfc-6745-b9ba-8d073a5f5a77"],
  Cell[BoxData[
   TemplateBox[{1},
-   "Spacer1"]],ExpressionUUID->"8ddfe876-8ceb-0448-a4f7-5cb04d5ae1e3"],
+   "Spacer1"]],ExpressionUUID->"87c31e73-efeb-2e4f-a1fb-dfa9335916eb"],
  "Basic Examples",
  "\[NonBreakingSpace]\[NonBreakingSpace]",
  Cell["(1)", "ExampleCount",ExpressionUUID->
-  "4abd378e-8817-1b48-b0d1-1386f638aa0c"]
+  "de7cf2bc-f64a-574f-af0d-97ee82c2dbed"]
 }], "ExampleSection", "ExampleSection",
  WholeCellGroupOpener->True,
  CacheGraphics->False,
- CellID->8502905,ExpressionUUID->"43f51334-df2c-c24d-b2de-983373e1f893"],
+ CellID->58136551,ExpressionUUID->"3a55031e-49f8-4740-8950-be105099264a"],
 
 Cell["Linearize a two-band Hamiltonian around zero momentum.", "ExampleText",
- CellID->1113782017,ExpressionUUID->"4d15d377-0f91-0541-9c18-745fa1920472"],
+ CellID->919386389,ExpressionUUID->"739cdfba-03b8-5444-861b-8ebd0be248e7"],
 
 Cell[BoxData[
  RowBox[{"Needs", "[", "\"\<TBMethod`\>\"", "]"}]], "Input",
  CellLabel->"In[1]:=",
- CellID->203650736,ExpressionUUID->"48fbc6c6-13a1-894e-b06e-f575a906ffc1"],
+ CellID->1163995423,ExpressionUUID->"b8a3f492-782b-3845-b83f-17496d3502b5"],
 
 Cell[CellGroupData[{
 
-Cell[BoxData[
+Cell[BoxData[{
  RowBox[{
   RowBox[{"hamiltonian", "=", 
    RowBox[{"Function", "[", 
@@ -399,15 +477,14 @@ Cell[BoxData[
          RowBox[{"Cos", "[", 
           RowBox[{"q", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}],
            "]"}]}], ")"}], " ", 
-       RowBox[{"PauliMatrix", "[", "3", "]"}]}]}]}], "]"}]}], ";", 
-  RowBox[{"result", "=", 
-   RowBox[{"HEffectiveMatrix", "[", 
-    RowBox[{"hamiltonian", ",", 
-     RowBox[{"{", "kx", "}"}], ",", 
-     RowBox[{"{", "0", "}"}], ",", 
-     RowBox[{"{", "2", "}"}], ",", "1"}], "]"}]}], ";", "result"}]], "Input",
+       RowBox[{"PauliMatrix", "[", "3", "]"}]}]}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"HEffectiveMatrix", "[", 
+  RowBox[{"hamiltonian", ",", 
+   RowBox[{"{", "kx", "}"}], ",", 
+   RowBox[{"{", "0", "}"}], ",", 
+   RowBox[{"{", "2", "}"}], ",", "1"}], "]"}]}], "Input",
  CellLabel->"In[2]:=",
- CellID->1951964941,ExpressionUUID->"afbb6bc7-da03-6e49-9263-ee410d33ee9e"],
+ CellID->193165705,ExpressionUUID->"f1b1fe38-bf1c-8a46-a6d2-63e1f039ee41"],
 
 Cell[BoxData[
  RowBox[{"\[LeftAssociation]", 
@@ -415,7 +492,7 @@ Cell[BoxData[
    RowBox[{"{", "1", "}"}], "\[Rule]", "kx"}], 
   "\[RightAssociation]"}]], "Output",
  CellLabel->"Out[3]=",
- CellID->1721802613,ExpressionUUID->"3a536226-b055-1b4f-9e4d-c59af9093346"]
+ CellID->308538297,ExpressionUUID->"78c0f585-177a-3b44-bf15-233085de6ac8"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
@@ -431,21 +508,77 @@ Cell[BoxData[GridBox[{
        StyleBox[
         RowBox[{"See", " ", "Also"}], "SeeAlsoSection"]},
       {Cell[TextData[{
-        ButtonBox["PauliGellMannDecomposition",
-         BaseStyle->"Link",
-         ButtonData->"paclet:TBMethod/ref/PauliGellMannDecomposition"],
-        " \[FilledVerySmallSquare] ",
-        ButtonBox["PauliGellMannAbstract",
-         BaseStyle->"Link",
-         ButtonData->"paclet:TBMethod/ref/PauliGellMannAbstract"],
-        " \[FilledVerySmallSquare] ",
-        ButtonBox["HBloch",
-         BaseStyle->"Link",
-         ButtonData->"paclet:TBMethod/ref/HBloch"]
-       }], "SeeAlso",ExpressionUUID->"d970567b-332e-0549-820f-b1b3fe832e80"]}
+        Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["HBloch"]], "paclet:TBMethod/ref/HBloch", 
+           "TBMethod Package Symbol"},
+          "PackageLink",
+          BaseStyle->"InlineFormula"]], "InlineFormula",
+         FontFamily->"Source Sans Pro",ExpressionUUID->
+         "7fa88771-4c76-f94e-ae0b-12748571e42b"],
+        "\[NonBreakingSpace]",
+        StyleBox[
+        "\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+         "InlineSeparator"],
+        " ",
+        Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["PauliGellMannDecomposition"]], 
+           "paclet:TBMethod/ref/PauliGellMannDecomposition", 
+           "TBMethod Package Symbol"},
+          "PackageLink",
+          BaseStyle->"InlineFormula"]], "InlineFormula",
+         FontFamily->"Source Sans Pro",ExpressionUUID->
+         "8bd227c7-b543-3543-90bb-d9dc7750235f"],
+        "\[NonBreakingSpace]",
+        StyleBox[
+        "\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+         "InlineSeparator"],
+        " ",
+        Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["PauliGellMannAbstract"]], 
+           "paclet:TBMethod/ref/PauliGellMannAbstract", 
+           "TBMethod Package Symbol"},
+          "PackageLink",
+          BaseStyle->"InlineFormula"]], "InlineFormula",
+         FontFamily->"Source Sans Pro",ExpressionUUID->
+         "89db4f87-d144-be47-9a51-6e423917a071"],
+        "\[NonBreakingSpace]",
+        StyleBox[
+        "\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+         "InlineSeparator"],
+        " ",
+        Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["PauliGellMannRepresent"]], 
+           "paclet:TBMethod/ref/PauliGellMannRepresent", 
+           "TBMethod Package Symbol"},
+          "PackageLink",
+          BaseStyle->"InlineFormula"]], "InlineFormula",
+         FontFamily->"Source Sans Pro",ExpressionUUID->
+         "3bfbcb32-521f-3b4d-82ee-efc760fe7320"],
+        "\[NonBreakingSpace]",
+        StyleBox[
+        "\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+         "InlineSeparator"],
+        " ",
+        Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["Series"]], "paclet:ref/Series"},
+          "RefLink",
+          BaseStyle->{"InlineFormula"}]], "InlineFormula",
+         FontFamily->"Source Sans Pro",ExpressionUUID->
+         "97cedcdd-8530-8b42-8c3b-00aa74413e78"]
+       }], "SeeAlso",ExpressionUUID->"e8f447b5-d9df-ce42-8a6a-4be000b5a00f"]}
      }]}
-  }]], "SeeAlsoSection",ExpressionUUID->"1d557239-70c9-1b48-a545-\
-dbe96875e0d1"],
+  }]], "SeeAlsoSection",ExpressionUUID->"7c68ae54-3cb0-2549-8541-\
+5aed800a857b"],
 
 Cell[BoxData[GridBox[{
    {
@@ -465,10 +598,10 @@ Cell[BoxData[GridBox[{
            "paclet:TBMethod/tutorial/GettingStarted"},
           "RefLinkPlain",
           BaseStyle->{"Tutorials"}]], "Tutorials",ExpressionUUID->
-         "a432cf85-dc5f-8540-b38e-ce2bb7695fa7"]}]}
+         "4a2af0fd-86f0-7646-b119-07c6ce038d8f"]}]}
      }]}
-  }]], "TutorialsSection",ExpressionUUID->"b8a982b9-afec-654c-a716-\
-96a7331cd54d"],
+  }]], "TutorialsSection",ExpressionUUID->"c63e01be-9c9a-2e44-a027-\
+f3993a995e3d"],
 
 Cell[BoxData[GridBox[{
    {
@@ -486,12 +619,12 @@ Cell[BoxData[GridBox[{
             TextData["TBMethod"]], "paclet:TBMethod/guide/TBMethod"},
           "RefLinkPlain",
           BaseStyle->{"MoreAbout"}]], "MoreAbout",ExpressionUUID->
-         "7d2a708f-4641-5e4e-bea4-feb8c82036e2"]}]}
+         "5e63d4b2-aee1-ae48-8678-696113a922b1"]}]}
      }]}
-  }]], "MoreAboutSection",ExpressionUUID->"3044a7d9-9d8a-a74c-9cb0-\
-d67b34b37fd2"],
+  }]], "MoreAboutSection",ExpressionUUID->"4d500efd-430c-c843-9347-\
+cacb08672a1b"],
 
-Cell[" ", "FooterCell",ExpressionUUID->"11cf5926-477f-5a48-be8a-4b10670e1259"]
+Cell[" ", "FooterCell",ExpressionUUID->"52da8983-c7cb-cb42-b2f9-126c498b3844"]
 },
 Saveable->False,
 ScreenStyleEnvironment->"Working",
@@ -508,20 +641,20 @@ TaggingRules->{
   "CitationPopupData" -> $Failed, "ShowCitation" -> False, "HasOptions" -> 
   True, "RootCaptions" -> "", "HeaderCoreAreaLink" -> {}, 
   "Metadata" -> {
-   "built" -> "{2026, 10, 24, 17, 32, 39.8130150}", 
+   "built" -> "{2026, 10, 24, 21, 50, 37.0233770}", 
     "history" -> {"", "", "", ""}, "context" -> "TBMethod`MDConstruct`", 
     "keywords" -> {"HEffectiveMatrix tight binding TBMethod"}, 
     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
      "label" -> "T B Method Symbol", "language" -> "en", "paclet" -> 
     "TBMethod", "status" -> "None", "summary" -> 
-    "HEffectiveMatrix[hamiltonian, deltaK, k0, dimensions] \
-HEffectiveMatrix[hamiltonian, deltaK, k0, dimensions, order] Expand a Bloch \
-Hamiltonian near a momentum point and return its Pauli/Gell-Mann \
-coefficients.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
-    "HEffectiveMatrix", "titlemodifier" -> "", "metadescription" -> "", 
-    "windowtitle" -> "HEffectiveMatrix", "type" -> "Symbol", "uri" -> 
-    "TBMethod/ref/HEffectiveMatrix", "WorkflowDockedCell" -> ""}, 
-  "SearchTextTranslated" -> ""},
+    "HEffectiveMatrix[h, deltaK, k0, dimensions] returns the first-order \
+Taylor approximation of h about k0 as Pauli/Gell-Mann coefficients. \
+HEffectiveMatrix[h, deltaK, k0, dimensions, order] retains terms through the \
+specified Taylor order in the momentum increment deltaK.", "synonyms" -> {}, 
+    "tabletags" -> {}, "title" -> "HEffectiveMatrix", "titlemodifier" -> "", 
+    "metadescription" -> "", "windowtitle" -> "HEffectiveMatrix", "type" -> 
+    "Symbol", "uri" -> "TBMethod/ref/HEffectiveMatrix", "WorkflowDockedCell" -> 
+    ""}, "SearchTextTranslated" -> ""},
 CellContext->"Global`",
 FrontEndVersion->"15.0 for Microsoft Windows (64-bit) (July 2, 2026)",
 StyleDefinitions->Notebook[{
@@ -534,7 +667,7 @@ StyleDefinitions->Notebook[{
     StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
   FrontEndVersion -> "15.0 for Microsoft Windows (64-bit) (July 2, 2026)", 
   StyleDefinitions -> "PrivateStylesheetFormatting.nb"],
-ExpressionUUID->"a5a78792-5a72-264b-8fb1-e0f1d4858e93"
+ExpressionUUID->"31847759-0f0a-f746-b123-6f378ec9ea37"
 ]
 (* End of Notebook Content *)
 
@@ -547,48 +680,48 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[1490, 34, 6414, 157, 70, "AnchorBarGrid",ExpressionUUID->"f86cc51a-d9dd-0f49-b51d-92f5b6585d8e",
+Cell[1490, 34, 7294, 175, 70, "AnchorBarGrid",ExpressionUUID->"e75b0a5c-7481-a34a-9b6a-fef40698740f",
  CellID->1],
-Cell[7750, 193, 103, 0, 70, "ContextNameCell",ExpressionUUID->"8d100100-1a56-5b43-9fc8-736f998487eb"],
+Cell[8612, 211, 103, 0, 70, "ContextNameCell",ExpressionUUID->"40987a51-2dd4-4b45-8009-2f1528ed71eb"],
 Cell[CellGroupData[{
-Cell[7878, 197, 573, 14, 70, "ObjectNameGrid",ExpressionUUID->"b77678ee-3cdf-a649-9d92-d00793b71d45"],
-Cell[8440, 213, 1022, 21, 70, "Usage",ExpressionUUID->"57239fb5-a6cb-dd4c-9124-70cc7f0c425b",
- CellID->504207535]
+Cell[8740, 215, 573, 14, 70, "ObjectNameGrid",ExpressionUUID->"b01411b7-0180-dc4f-b9de-1451abb1fdc8"],
+Cell[9302, 231, 2972, 81, 70, "Usage",ExpressionUUID->"aff84095-5183-fc46-a04f-67430ae3e108",
+ CellID->1759054085]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[9478, 239, 1479, 34, 70, "NotesSection",ExpressionUUID->"8a2f3987-60fb-b443-a519-34396ff8fb97",
+Cell[12230, 317, 1480, 34, 70, "NotesSection",ExpressionUUID->"d212e6aa-3377-bc4e-883a-ff955b15f238",
  CellGroupingRules->{"SectionGrouping", 50},
- CellID->6288306],
-Cell[10926, 275, 250, 4, 70, "Notes",ExpressionUUID->"259e405d-39e4-bf44-a6ab-54fd7baf406e",
- CellID->1874704813],
-Cell[11175, 281, 288, 5, 70, "Notes",ExpressionUUID->"264d143f-80ff-a941-86ad-bcec7e40e540",
- CellID->324690878],
-Cell[11461, 288, 270, 5, 70, "Notes",ExpressionUUID->"3423e1c1-503f-2a4b-afe6-e8cfe7ac8973",
- CellID->1042752828]
+ CellID->61049196],
+Cell[13679, 353, 250, 4, 70, "Notes",ExpressionUUID->"526ddc65-26e8-dd4d-bcff-19ad87670c1b",
+ CellID->2071405873],
+Cell[13928, 359, 288, 5, 70, "Notes",ExpressionUUID->"59564e75-5efa-8c4a-9158-d6524250e678",
+ CellID->835205400],
+Cell[14214, 366, 269, 5, 70, "Notes",ExpressionUUID->"cfd22905-5983-5c4a-b8d4-bfd95b3d973d",
+ CellID->332072674]
 }, Closed]],
-Cell[11741, 296, 80, 0, 70, "PageDelimiter",ExpressionUUID->"6802a79e-d9cb-274a-ae92-a4de20b3e64b"],
+Cell[14493, 374, 80, 0, 70, "PageDelimiter",ExpressionUUID->"b1094047-9270-bb49-a575-a460b9fd2189"],
 Cell[CellGroupData[{
-Cell[11846, 300, 1439, 37, 70, "PrimaryExamplesSection",ExpressionUUID->"10d840fb-0d6a-2b4f-bb40-634ae9b7f361",
- CellID->484029231],
+Cell[14598, 378, 1439, 37, 70, "PrimaryExamplesSection",ExpressionUUID->"a22c46ad-6d51-c443-9ac4-a93ee9a7781a",
+ CellID->497592381],
 Cell[CellGroupData[{
-Cell[13273, 341, 1264, 31, 70, "ExampleSection",ExpressionUUID->"43f51334-df2c-c24d-b2de-983373e1f893",
- CellID->8502905],
-Cell[14509, 374, 154, 1, 70, "ExampleText",ExpressionUUID->"4d15d377-0f91-0541-9c18-745fa1920472",
- CellID->1113782017],
-Cell[14665, 377, 175, 3, 70, "Input",ExpressionUUID->"48fbc6c6-13a1-894e-b06e-f575a906ffc1",
- CellID->203650736],
+Cell[16025, 419, 1265, 31, 70, "ExampleSection",ExpressionUUID->"3a55031e-49f8-4740-8950-be105099264a",
+ CellID->58136551],
+Cell[17262, 452, 153, 1, 70, "ExampleText",ExpressionUUID->"739cdfba-03b8-5444-861b-8ebd0be248e7",
+ CellID->919386389],
+Cell[17417, 455, 176, 3, 70, "Input",ExpressionUUID->"b8a3f492-782b-3845-b83f-17496d3502b5",
+ CellID->1163995423],
 Cell[CellGroupData[{
-Cell[14862, 384, 961, 25, 70, "Input",ExpressionUUID->"afbb6bc7-da03-6e49-9263-ee410d33ee9e",
- CellID->1951964941],
-Cell[15801, 411, 247, 6, 70, "Output",ExpressionUUID->"3a536226-b055-1b4f-9e4d-c59af9093346",
- CellID->1721802613]
+Cell[17615, 462, 931, 24, 70, "Input",ExpressionUUID->"f1b1fe38-bf1c-8a46-a6d2-63e1f039ee41",
+ CellID->193165705],
+Cell[18525, 488, 246, 6, 70, "Output",ExpressionUUID->"78c0f585-177a-3b44-bf15-233085de6ac8",
+ CellID->308538297]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
-Cell[16081, 422, 1013, 25, 70, "SeeAlsoSection",ExpressionUUID->"1d557239-70c9-1b48-a545-dbe96875e0d1"],
-Cell[17072, 449, 807, 21, 70, "TutorialsSection",ExpressionUUID->"b8a982b9-afec-654c-a716-96a7331cd54d"],
-Cell[17861, 472, 756, 19, 70, "MoreAboutSection",ExpressionUUID->"3044a7d9-9d8a-a74c-9cb0-d67b34b37fd2"],
-Cell[18601, 493, 78, 0, 70, "FooterCell",ExpressionUUID->"11cf5926-477f-5a48-be8a-4b10670e1259"]
+Cell[18804, 499, 3076, 81, 70, "SeeAlsoSection",ExpressionUUID->"7c68ae54-3cb0-2549-8541-5aed800a857b"],
+Cell[21802, 582, 807, 21, 70, "TutorialsSection",ExpressionUUID->"c63e01be-9c9a-2e44-a027-f3993a995e3d"],
+Cell[22591, 605, 756, 19, 70, "MoreAboutSection",ExpressionUUID->"4d500efd-430c-c843-9347-cacb08672a1b"],
+Cell[23331, 626, 78, 0, 70, "FooterCell",ExpressionUUID->"52da8983-c7cb-cb42-b2f9-126c498b3844"]
 }
 ]
 *)

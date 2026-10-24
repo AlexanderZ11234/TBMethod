@@ -23,10 +23,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[      1060,         20]
-NotebookDataLength[     23262,        604]
-NotebookOptionsPosition[     19529,        522]
-NotebookOutlinePosition[     21836,        576]
-CellTagsIndexPosition[     21793,        573]
+NotebookDataLength[     28638,        759]
+NotebookOptionsPosition[     24749,        675]
+NotebookOutlinePosition[     27209,        731]
+CellTagsIndexPosition[     27166,        728]
 WindowTitle->ParallelEigenspectralData
 WindowFrame->Normal*)
 
@@ -40,11 +40,11 @@ Cell[BoxData[GridBox[{
           TemplateBox[{12},
            "Spacer1"], Cell["T B METHOD SYMBOL", "PacletNameCell",
            TextAlignment->Center,ExpressionUUID->
-           "3227ca2a-85c7-d74b-9e31-798d891174ae"], 
+           "bc2b2a27-cb78-3541-bf2c-59ecc19973fb"], 
           TemplateBox[{8},
            "Spacer1"]}]],
          TextAlignment->Center,ExpressionUUID->
-         "38ea1540-87df-6e44-896a-c94589d58546"],
+         "b4e5443a-a1f2-0049-ba9b-2be936cf4a63"],
         Background->LightDarkSwitched[
           RGBColor[0.490196, 0.576471, 0.690196]],
         ItemSize->Full], ""}
@@ -65,25 +65,37 @@ Cell[BoxData[GridBox[{
             AspectRatio->1,
             ImageSize->20,
             PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
-           "45747aac-aca8-c548-8a5b-0d8c6b9a3bcd"]
-         }],ExpressionUUID->"a4839e13-55d5-534f-9a51-969918824ca1"],
+           "907a2400-eadb-f04a-a304-cd069538f223"]
+         }],ExpressionUUID->"327d0758-bf15-aa41-8562-39ace3fc252f"],
          StripOnInput->False],{
-        StyleBox[
-          "\"EigenspectralData\"", "SeeAlsoRelated", StripOnInput -> False] :> 
+        StyleBox["\"Eigensystem\"", "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup["paclet:ref/Eigensystem"], Delimiter, 
+         StyleBox[
+          "\"Functions\"", "SeeAlsoSection", FontSize -> 14, FontSlant -> 
+           "Italic", StripOnInput -> False] :> 
+         NotebookFind[EvaluationNotebook[], "SeeAlsoSection", All, CellStyle],
+          StyleBox[
+          StyleBox[
+           "\"EigenspectralData\"", "SeeAlsoRelated", StripOnInput -> False], 
+           "SeeAlsoRelated", StripOnInput -> False] :> 
          Documentation`HelpLookup["paclet:TBMethod/ref/EigenspectralData"], 
          StyleBox[
-          "\"ParallelBandData\"", "SeeAlsoRelated", StripOnInput -> False] :> 
+          StyleBox[
+           "\"ParallelBandData\"", "SeeAlsoRelated", StripOnInput -> False], 
+           "SeeAlsoRelated", StripOnInput -> False] :> 
          Documentation`HelpLookup["paclet:TBMethod/ref/ParallelBandData"], 
          StyleBox[
-          "\"ParallelBandDataWithWeight\"", "SeeAlsoRelated", StripOnInput -> 
-           False] :> Documentation`HelpLookup[
+          StyleBox[
+           "\"ParallelBandDataWithWeight\"", "SeeAlsoRelated", StripOnInput -> 
+            False], "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup[
           "paclet:TBMethod/ref/ParallelBandDataWithWeight"]},
         Appearance->None,
         MenuAppearance->Automatic,
         MenuStyle->"SeeAlso"],
        MouseAppearanceTag["LinkHand"]]],
       LineSpacing->{1.4, 0},ExpressionUUID->
-      "3359fd5e-ee97-c14e-b530-e35d16e74b9f"],
+      "b1555a18-34a7-2f40-a267-23607f2eec9e"],
      "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
 \[ThickSpace]",
      Cell[BoxData[
@@ -99,8 +111,8 @@ Cell[BoxData[GridBox[{
             AspectRatio->1,
             ImageSize->20,
             PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
-           "edff09a5-afcf-ba42-8861-2e2d049e74a8"]
-         }],ExpressionUUID->"fa0a077a-9453-4146-aa52-587d7bd57fdd"],
+           "43772929-4676-af40-aca6-906a40352d0a"]
+         }],ExpressionUUID->"adf52b69-25e3-c748-814a-fb612ec009d6"],
          StripOnInput->False],{
         "\"TBMethod\"" :> 
          Documentation`HelpLookup["paclet:TBMethod/guide/TBMethod"]},
@@ -109,7 +121,7 @@ Cell[BoxData[GridBox[{
         MenuStyle->"MoreAbout"],
        MouseAppearanceTag["LinkHand"]]],
       LineSpacing->{1.4, 0},ExpressionUUID->
-      "e10ebd0e-bede-df47-8c46-79e11aef4856"],
+      "752faf85-d56f-2645-96c9-9b99ae8f17e0"],
      "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
 \[ThickSpace]",
      Cell[BoxData[
@@ -125,8 +137,8 @@ Cell[BoxData[GridBox[{
             AspectRatio->1,
             ImageSize->20,
             PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
-           "5e112fde-a846-634a-af09-f91d045297e3"]
-         }],ExpressionUUID->"4a842391-6efd-0d4e-9c07-4cc73b0c47ea"],
+           "3d841512-2ce6-c94a-a571-fa767b90c61e"]
+         }],ExpressionUUID->"dd2d80c7-0e53-4e4e-a21e-542acad5a8c7"],
          StripOnInput->False],{
         "\"Getting Started with TBMethod\"" :> 
          Documentation`HelpLookup["paclet:TBMethod/tutorial/GettingStarted"]},
@@ -136,7 +148,7 @@ Cell[BoxData[GridBox[{
         MenuStyle->"Tutorials"],
        MouseAppearanceTag["LinkHand"]]],
       LineSpacing->{1.4, 0},ExpressionUUID->
-      "5ac5d95a-b4b3-1a4a-af7e-fa912330cc18"],
+      "ab92fa0c-07ba-d845-8266-cad36f13dbdb"],
      "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
 \[ThickSpace]",
      Cell[BoxData[
@@ -152,8 +164,8 @@ Cell[BoxData[GridBox[{
             AspectRatio->1,
             ImageSize->20,
             PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
-           "a089c1c2-33a9-5848-b799-f565b1963431"]
-         }],ExpressionUUID->"8439e7c6-fc31-304c-a2ca-b6c656b253f3"],
+           "1a7e97e7-b379-714c-93f0-3bfae2a17d08"]
+         }],ExpressionUUID->"d6ded558-1a98-0044-a6c7-7e9a8c787195"],
          StripOnInput->False],{
         "\"TBMethod/ref/ParallelEigenspectralData\"" :> None, 
          "\"Copy Wolfram Documentation Center URL\"" :> 
@@ -184,14 +196,14 @@ ParallelEigenspectralData.html"], StandardForm]], "Input", TextClipboardType ->
         MenuStyle->"URLMenu"],
        MouseAppearanceTag["LinkHand"]]],
       LineSpacing->{1.4, 0},ExpressionUUID->
-      "44e7007a-b1c0-0543-8735-5582f1023589"]
+      "41425257-b5a3-004e-89ba-d676e6696fb7"]
     }], "AnchorBar",
      CacheGraphics->False,ExpressionUUID->
-     "311be6aa-a28a-eb4a-9b17-76b499f14046"]}
+     "ddd6b65d-9567-694b-a48f-90af7623ed20"]}
   }]], "AnchorBarGrid",
- CellID->1,ExpressionUUID->"2087619f-5ceb-3c44-9dea-857b2bcfa5ac"],
+ CellID->1,ExpressionUUID->"216e6e46-9846-b84b-a5d5-4f661047621d"],
 
-Cell["TBMethod`EigenSpect`", "ContextNameCell",ExpressionUUID->"f34a64ce-d75a-b64d-b7f5-74af2c729bcc"],
+Cell["TBMethod`EigenSpect`", "ContextNameCell",ExpressionUUID->"77d2aed5-8665-7045-805b-c0e485f72297"],
 
 Cell[CellGroupData[{
 
@@ -199,46 +211,127 @@ Cell[BoxData[GridBox[{
    {Cell[TextData[{
      Cell[
      "ParallelEigenspectralData", "ObjectName",ExpressionUUID->
-      "40b3e1a0-a74c-3144-a3e1-c587e12dfe7c"],
+      "1dd7ec46-87a0-3240-b15e-0d45af788535"],
      Cell[BoxData[
       TemplateBox[{8},
-       "Spacer1"]],ExpressionUUID->"c761be91-ba57-1243-91c3-46fc91d0e6d3"],
+       "Spacer1"]],ExpressionUUID->"4ee8e6cd-7b70-9342-a7e8-67b22c67e42c"],
      Cell[BoxData[
      ""], "ObjectNameTranslation",ExpressionUUID->
-      "0b4fdefe-8822-3e49-955a-b7e64de165e6"]
-    }],ExpressionUUID->"30c158a1-24bf-724f-bebe-250791044c26"], 
+      "58028cbe-d47a-e744-99a0-6792f34285b0"]
+    }],ExpressionUUID->"57400dbb-0c19-9a48-8922-0cf73e71630b"], 
     "\[SpanFromLeft]"}
-  }]], "ObjectNameGrid",ExpressionUUID->"9b1699e7-b262-1b44-a3ba-\
-f131b661b4f3"],
+  }]], "ObjectNameGrid",ExpressionUUID->"3eafa549-0c61-644c-8ced-\
+20be2e92b418"],
 
 Cell[BoxData[GridBox[{
-   {"", Cell[TextData[Cell[BoxData[
-     RowBox[{"ParallelEigenspectralData", "[", 
-      RowBox[{"h", ",", "samples"}], "]"}]], "InlineFormula",
-     FontFamily->"Source Sans Pro",ExpressionUUID->
-     "4ffd78ce-0ea5-4d48-8dcb-5016c657ca6d"]],ExpressionUUID->
-     "8fa16237-5f0f-e24f-bac1-4aacf7189614"]},
-   {"", Cell[TextData[Cell[BoxData[
-     RowBox[{"ParallelEigenspectralData", "[", 
-      RowBox[{"h", ",", "samples", ",", "stateFunction", ",", "opts"}], 
-      "]"}]], "InlineFormula",
-     FontFamily->"Source Sans Pro",ExpressionUUID->
-     "6a9f521c-fcd6-c642-85ec-783e1774b4cf"]],ExpressionUUID->
-     "63fa4428-6ba8-5540-8ca3-df77254d1eb4"]},
-   {"", Cell[TextData[Cell[BoxData[
-     RowBox[{"ParallelEigenspectralData", "[", 
+   {"", Cell[TextData[{
+     Cell[BoxData[
       RowBox[{
-      "h", ",", "samples", ",", "stateFunction", ",", "n", ",", "opts"}], 
-      "]"}]], "InlineFormula",
-     FontFamily->"Source Sans Pro",ExpressionUUID->
-     "9f0e2138-0e5c-7141-a931-7aa349ebb69f"]],ExpressionUUID->
-     "ba21ff49-c8fa-6948-b5b7-3c22b6c8bdae"]},
-   {"", Cell["\<\
-Evaluates energy-sorted eigensystem data independently at parameter samples \
-on parallel kernels.\
-\>",ExpressionUUID->"15ea0a39-781b-6048-ab13-3ac6edcb5ce1"]}
+       TemplateBox[{
+         Cell[
+          TextData["ParallelEigenspectralData"]], 
+         "paclet:TBMethod/ref/ParallelEigenspectralData", 
+         "TBMethod Package Symbol"},
+        "PackageLink",
+        BaseStyle->"InlineFormula"], "[", 
+       RowBox[{
+        StyleBox["h", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"], ",", 
+        StyleBox["samples", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"]}], "]"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "60ef98be-e8aa-8f4f-8446-193b632b953e"],
+     " \[LineSeparator]",
+     "returns energy-sorted eigenvalue\[Dash]eigenvector pairs at each \
+sample, evaluating samples in parallel."
+    }],ExpressionUUID->"ea99fb3c-1606-224d-9d64-1954f95d9f18"]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["ParallelEigenspectralData"]], 
+         "paclet:TBMethod/ref/ParallelEigenspectralData", 
+         "TBMethod Package Symbol"},
+        "PackageLink",
+        BaseStyle->"InlineFormula"], "[", 
+       RowBox[{
+        StyleBox["h", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"], ",", 
+        StyleBox["samples", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"], ",", 
+        StyleBox["stateFunction", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"]}], "]"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "40b65386-1ea5-e049-9a44-34bc8e460316"],
+     " \[LineSeparator]",
+     "replaces each eigenvector by the value of ",
+     Cell[BoxData[
+      StyleBox["stateFunction", "TI",
+       FontFamily->"Times",
+       FontSlant->"Italic"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "4bb5039d-3534-1a4e-aeab-82c8a9c1e5a3"],
+     " applied to it."
+    }],ExpressionUUID->"f0beb1ac-b390-8e4f-afee-eed41ce869eb"]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["ParallelEigenspectralData"]], 
+         "paclet:TBMethod/ref/ParallelEigenspectralData", 
+         "TBMethod Package Symbol"},
+        "PackageLink",
+        BaseStyle->"InlineFormula"], "[", 
+       RowBox[{
+        StyleBox["h", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"], ",", 
+        StyleBox["samples", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"], ",", 
+        StyleBox["stateFunction", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"], ",", 
+        StyleBox["n", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"]}], "]"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "f720037a-6f0d-b945-a0c4-48e657d0130b"],
+     " \[LineSeparator]",
+     "retains the ",
+     Cell[BoxData[
+      StyleBox["n", "TI",
+       FontFamily->"Times",
+       FontSlant->"Italic"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "525e370c-7fd9-d247-a528-74d45c6d1abf"],
+     " eigenpairs selected by ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Eigensystem"]], "paclet:ref/Eigensystem"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "ca5d61cf-63e7-8548-8bba-e65943afc435"],
+     " before applying ",
+     Cell[BoxData[
+      StyleBox["stateFunction", "TI",
+       FontFamily->"Times",
+       FontSlant->"Italic"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "35c028b1-1ee2-c748-bb0c-1b58bfab51ad"],
+     "."
+    }],ExpressionUUID->"ebe28cd2-1fd1-1d4a-9e0c-a22c41a8a8f9"]}
   }]], "Usage",
- CellID->1121992704,ExpressionUUID->"d3b9123f-fbf2-ae42-93f6-a551b6f6c4f8"]
+ CellID->1782682923,ExpressionUUID->"897f26cf-df50-f046-8720-009bd593cdb5"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -265,46 +358,62 @@ Cell[TextData[Cell[BoxData[Cell[TextData[{
         0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
     ImageSizeCache->{
      13.600000000000001`, {-0.16630120645742785`, 13.76630120645743}}]],
-   ExpressionUUID->"89d1ceb0-4932-f347-80f6-d90a1c4e7798"],
+   ExpressionUUID->"7ca8b865-dd23-cb46-9644-609f7b7e584c"],
   Cell[BoxData[
    TemplateBox[{1},
-    "Spacer1"]],ExpressionUUID->"95d6f259-0647-f24e-bf9a-8f0b05835eee"],
+    "Spacer1"]],ExpressionUUID->"4f18f151-7c30-3d41-b765-dcb91da1ad29"],
   "Details and Options"
  }], "NotesFrameText",ExpressionUUID->
-  "ed525c31-2e7b-cc4c-9c25-7a2b0636d099"]],ExpressionUUID->"0742e80c-7cbf-\
-be4e-8ef3-ef800f8f6400"]], "NotesSection",
+  "d1a014d8-d276-6e41-9f80-805ed2941166"]],ExpressionUUID->"c0a7c62c-f55f-\
+7e42-845a-b7d1fc6b559e"]], "NotesSection",
  ShowGroupOpener->"Thumbnail",
  WholeCellGroupOpener->True,
  CellGroupingRules->{"SectionGrouping", 50},
  CacheGraphics->False,
- CellID->667727318,ExpressionUUID->"7ac3f686-0290-e34b-a3ff-7b6e4c4edfac"],
+ CellID->134880153,ExpressionUUID->"5b50bdc8-e473-df44-b902-9e4953dc87d2"],
 
-Cell["\<\
-Has the same sample-by-sample list of {energy, stateFunction[eigenvector]} \
-pairs as EigenspectralData, using ParallelMap over the samples.\
-\>", "Notes",
- CellID->1732493261,ExpressionUUID->"79afc022-d33d-7c4b-a163-b1b6f8a1b197"],
+Cell[TextData[{
+ "Has the same sample-by-sample list of {energy, stateFunction[eigenvector]} \
+pairs as EigenspectralData, using ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ParallelMap"]], "paclet:ref/ParallelMap"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "b758a42a-daab-9f42-83d0-339fb7e20ce8"],
+ " over the samples."
+}], "Notes",
+ CellID->1116221272,ExpressionUUID->"3601f659-cf0c-124d-a1b6-4387f4e9f824"],
 
 Cell["\<\
 The default stateFunction is Identity. Supply it explicitly before n when \
 selecting a subset of eigenpairs.\
 \>", "Notes",
- CellID->1281670797,ExpressionUUID->"5c58ea60-70e4-e642-b6a2-de1d6a6c6dd0"],
+ CellID->971721287,ExpressionUUID->"d0855b2e-4a1d-2343-a3e5-4a238a054337"],
 
 Cell["\<\
 Load TBMethod on subkernels and distribute user model definitions before \
 evaluating the example.\
 \>", "Notes",
- CellID->1370267372,ExpressionUUID->"ed5e230d-e715-eb4c-a7a0-1eae13777a78"],
+ CellID->1284950013,ExpressionUUID->"5d57abfc-c5f3-6049-be88-4fc21042e265"],
 
-Cell["\<\
-Eigensystem options are accepted and Method -> \"Direct\" is supplied \
-internally.\
-\>", "Notes",
- CellID->1234941892,ExpressionUUID->"46ac7921-2c35-6248-822c-d8d2d96a433b"]
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Eigensystem"]], "paclet:ref/Eigensystem"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "2c978d42-c213-1741-b70d-b2a07c3781a3"],
+ " options are accepted and Method -> \"Direct\" is supplied internally."
+}], "Notes",
+ CellID->637061934,ExpressionUUID->"802ce6d6-0225-eb4e-bf62-d04714d24c82"]
 }, Closed]],
 
-Cell["", "PageDelimiter",ExpressionUUID->"ec699fe7-4db1-f947-aaae-34e5773924b5"],
+Cell["", "PageDelimiter",ExpressionUUID->"c5c7377b-3406-ef4f-b84a-08562b154fcd"],
 
 Cell[CellGroupData[{
 
@@ -334,18 +443,18 @@ Cell[TextData[{
        0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
    ImageSizeCache->{
     13.600000000000001`, {4.253698793542572, 9.34630120645743}}]],
-  ExpressionUUID->"4f260f26-b923-974a-9b9a-ec48fb3266ad"],
+  ExpressionUUID->"119bbd0d-b567-bc4e-ab52-b42ec3e85288"],
  Cell[BoxData[
   TemplateBox[{1},
-   "Spacer1"]],ExpressionUUID->"674d92ee-4bef-bf44-9221-803dc4d5c9e9"],
+   "Spacer1"]],ExpressionUUID->"666a870b-874b-9d47-8f5c-6e4f26841e92"],
  "Examples",
  "\[NonBreakingSpace]\[NonBreakingSpace]",
  Cell["(1)", "ExampleCount",ExpressionUUID->
-  "9ea0d8fc-40c5-094c-9eda-f250cc5b6c38"]
+  "1a239827-7952-4c46-92f8-d633fa2fd658"]
 }], "PrimaryExamplesSection",
  WholeCellGroupOpener->True,
  CacheGraphics->False,
- CellID->892774468,ExpressionUUID->"19ebfe54-5aa9-be4f-bf54-bd8c067ca766"],
+ CellID->235453475,ExpressionUUID->"bd367304-7d63-7148-bad7-c0f30cfbc14f"],
 
 Cell[CellGroupData[{
 
@@ -369,60 +478,63 @@ Cell[TextData[{
          Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
         PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
        0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]]]],ExpressionUUID->
-  "2aee3409-52d2-5147-a2d4-ad671f8c35b8"],
+  "f25b9081-6bc3-5546-affe-9e5511496386"],
  Cell[BoxData[
   TemplateBox[{1},
-   "Spacer1"]],ExpressionUUID->"22342ece-e07a-fc4b-ad2a-8cb06029fd09"],
+   "Spacer1"]],ExpressionUUID->"61d127ed-97ab-d640-80bd-3abc90931f91"],
  "Basic Examples",
  "\[NonBreakingSpace]\[NonBreakingSpace]",
  Cell["(1)", "ExampleCount",ExpressionUUID->
-  "f4b24731-27a7-1645-a5eb-6e2a1eeb8998"]
+  "c8b18641-e9d5-a540-8f9a-3055a632a6e6"]
 }], "ExampleSection", "ExampleSection",
  WholeCellGroupOpener->True,
  CacheGraphics->False,
- CellID->85277192,ExpressionUUID->"9f98cce0-b6c2-064d-afc9-c6ce5af712de"],
+ CellID->75769567,ExpressionUUID->"914bf24a-aa32-ae47-b328-ffa0a1d229d6"],
 
 Cell["\<\
 Calculate energy and state-norm pairs at two samples in parallel.\
 \>", "ExampleText",
- CellID->212362707,ExpressionUUID->"f80ce791-c7ea-3741-a07b-f194976b1f9c"],
+ CellID->562643805,ExpressionUUID->"390f098e-e41b-8241-bcea-258780c1e5ef"],
 
 Cell[BoxData[
  RowBox[{"Needs", "[", "\"\<TBMethod`\>\"", "]"}]], "Input",
  CellLabel->"In[1]:=",
- CellID->336012159,ExpressionUUID->"c0af7b8e-d084-b84c-815c-99babba335ec"],
+ CellID->590727531,ExpressionUUID->"6c494d08-6c3b-0041-8dda-0911d9537b86"],
 
 Cell[CellGroupData[{
 
-Cell[BoxData[
+Cell[BoxData[{
  RowBox[{
   RowBox[{"If", "[", 
    RowBox[{
     RowBox[{"$KernelCount", "\[Equal]", "0"}], ",", 
-    RowBox[{"LaunchKernels", "[", "2", "]"}]}], "]"}], ";", 
-  RowBox[{"ParallelNeeds", "[", "\"\<TBMethod`\>\"", "]"}], ";", 
-  RowBox[{"Clear", "[", "h", "]"}], ";", 
+    RowBox[{"LaunchKernels", "[", "2", "]"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ParallelNeeds", "[", "\"\<TBMethod`\>\"", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Clear", "[", "h", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{
    RowBox[{"h", "[", "k_", "]"}], ":=", 
    RowBox[{"DiagonalMatrix", "[", 
     RowBox[{"{", 
      RowBox[{
       RowBox[{
-       RowBox[{"-", "1.`"}], "-", "k"}], ",", 
-      RowBox[{"1.`", "\[VeryThinSpace]", "+", "k"}]}], "}"}], "]"}]}], ";", 
-  RowBox[{"DistributeDefinitions", "[", "h", "]"}], ";", 
-  RowBox[{"result", "=", 
-   RowBox[{"ParallelEigenspectralData", "[", 
-    RowBox[{"h", ",", 
-     RowBox[{"{", 
-      RowBox[{"0.`", ",", "1.`"}], "}"}], ",", 
-     RowBox[{
-      RowBox[{"Total", "[", 
-       SuperscriptBox[
-        RowBox[{"Abs", "[", "#1", "]"}], "2"], "]"}], "&"}]}], "]"}]}], ";", 
-  "result"}]], "Input",
+       RowBox[{"-", "1."}], "-", "k"}], ",", 
+      RowBox[{"1.", "\[VeryThinSpace]", "+", "k"}]}], "}"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DistributeDefinitions", "[", "h", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ParallelEigenspectralData", "[", 
+  RowBox[{"h", ",", 
+   RowBox[{"{", 
+    RowBox[{"0.", ",", "1."}], "}"}], ",", 
+   RowBox[{
+    RowBox[{"Total", "[", 
+     SuperscriptBox[
+      RowBox[{"Abs", "[", "#1", "]"}], "2"], "]"}], "&"}]}], "]"}]}], "Input",\
+
  CellLabel->"In[2]:=",
- CellID->1266696714,ExpressionUUID->"483844ed-f73e-9b4e-bc65-889c620f5240"],
+ CellID->1849326491,ExpressionUUID->"cdded87f-3ba1-4d42-9c1a-8bacba4c92d7"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -442,7 +554,7 @@ Cell[BoxData[
      RowBox[{"{", 
       RowBox[{"2.`", ",", "1.`"}], "}"}]}], "}"}]}], "}"}]], "Output",
  CellLabel->"Out[3]=",
- CellID->716390872,ExpressionUUID->"d3b05227-88d3-3c4b-b8fc-31afe09e28a6"]
+ CellID->1722077940,ExpressionUUID->"73148b2c-663e-e046-9eae-a8c61a125f62"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
@@ -458,21 +570,62 @@ Cell[BoxData[GridBox[{
        StyleBox[
         RowBox[{"See", " ", "Also"}], "SeeAlsoSection"]},
       {Cell[TextData[{
-        ButtonBox["EigenspectralData",
-         BaseStyle->"Link",
-         ButtonData->"paclet:TBMethod/ref/EigenspectralData"],
-        " \[FilledVerySmallSquare] ",
-        ButtonBox["ParallelBandData",
-         BaseStyle->"Link",
-         ButtonData->"paclet:TBMethod/ref/ParallelBandData"],
-        " \[FilledVerySmallSquare] ",
-        ButtonBox["ParallelBandDataWithWeight",
-         BaseStyle->"Link",
-         ButtonData->"paclet:TBMethod/ref/ParallelBandDataWithWeight"]
-       }], "SeeAlso",ExpressionUUID->"9a1031ea-2825-e246-8dca-8d421a36e97d"]}
+        Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["EigenspectralData"]], 
+           "paclet:TBMethod/ref/EigenspectralData", "TBMethod Package Symbol"},
+          "PackageLink",
+          BaseStyle->"InlineFormula"]], "InlineFormula",
+         FontFamily->"Source Sans Pro",ExpressionUUID->
+         "93688a2e-0f6c-4748-9780-30f2908e2516"],
+        "\[NonBreakingSpace]",
+        StyleBox[
+        "\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+         "InlineSeparator"],
+        " ",
+        Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["ParallelBandData"]], 
+           "paclet:TBMethod/ref/ParallelBandData", "TBMethod Package Symbol"},
+          
+          "PackageLink",
+          BaseStyle->"InlineFormula"]], "InlineFormula",
+         FontFamily->"Source Sans Pro",ExpressionUUID->
+         "01212d57-621b-4a4f-a5d9-9da7df2fe7dc"],
+        "\[NonBreakingSpace]",
+        StyleBox[
+        "\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+         "InlineSeparator"],
+        " ",
+        Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["ParallelBandDataWithWeight"]], 
+           "paclet:TBMethod/ref/ParallelBandDataWithWeight", 
+           "TBMethod Package Symbol"},
+          "PackageLink",
+          BaseStyle->"InlineFormula"]], "InlineFormula",
+         FontFamily->"Source Sans Pro",ExpressionUUID->
+         "4987f089-51fb-2a40-bacb-639b0281181e"],
+        "\[NonBreakingSpace]",
+        StyleBox[
+        "\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+         "InlineSeparator"],
+        " ",
+        Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["Eigensystem"]], "paclet:ref/Eigensystem"},
+          "RefLink",
+          BaseStyle->{"InlineFormula"}]], "InlineFormula",
+         FontFamily->"Source Sans Pro",ExpressionUUID->
+         "12ff1549-2824-f84b-9f6a-2863c76b0608"]
+       }], "SeeAlso",ExpressionUUID->"2f0a1ec4-0f50-0547-a3df-57a5215ed918"]}
      }]}
-  }]], "SeeAlsoSection",ExpressionUUID->"8a92b273-3fb5-7046-847e-\
-5cac71ddfec9"],
+  }]], "SeeAlsoSection",ExpressionUUID->"cfec948c-8514-3e45-a374-\
+43cb9ab666d2"],
 
 Cell[BoxData[GridBox[{
    {
@@ -492,10 +645,10 @@ Cell[BoxData[GridBox[{
            "paclet:TBMethod/tutorial/GettingStarted"},
           "RefLinkPlain",
           BaseStyle->{"Tutorials"}]], "Tutorials",ExpressionUUID->
-         "ea49b39f-9d60-0f42-958f-1e58eef37366"]}]}
+         "679aa69d-beac-5549-90af-fc60523f37d2"]}]}
      }]}
-  }]], "TutorialsSection",ExpressionUUID->"237c6990-60d1-9247-814d-\
-3d816a809b0c"],
+  }]], "TutorialsSection",ExpressionUUID->"6e3ef4a7-aadb-f040-8577-\
+e2a460389f91"],
 
 Cell[BoxData[GridBox[{
    {
@@ -513,12 +666,12 @@ Cell[BoxData[GridBox[{
             TextData["TBMethod"]], "paclet:TBMethod/guide/TBMethod"},
           "RefLinkPlain",
           BaseStyle->{"MoreAbout"}]], "MoreAbout",ExpressionUUID->
-         "b70211c3-a623-c84a-b077-94b30564b047"]}]}
+         "790e4bb4-d5aa-8947-a5db-3753c2fafde8"]}]}
      }]}
-  }]], "MoreAboutSection",ExpressionUUID->"d53d1abf-567d-6b4a-adda-\
-eb279949c081"],
+  }]], "MoreAboutSection",ExpressionUUID->"848419d5-066b-0b4b-84ed-\
+854ae0a321ac"],
 
-Cell[" ", "FooterCell",ExpressionUUID->"75d9282b-e7da-1c46-bd8e-0e35df5409a0"]
+Cell[" ", "FooterCell",ExpressionUUID->"571ac296-61a4-a34d-92e8-c00ea7f0664f"]
 },
 Saveable->False,
 ScreenStyleEnvironment->"Working",
@@ -535,21 +688,23 @@ TaggingRules->{
   "CitationPopupData" -> $Failed, "ShowCitation" -> False, "HasOptions" -> 
   True, "RootCaptions" -> "", "HeaderCoreAreaLink" -> {}, 
   "Metadata" -> {
-   "built" -> "{2026, 10, 24, 17, 33, 13.1645995}", 
+   "built" -> "{2026, 10, 24, 21, 51, 9.2716169}", 
     "history" -> {"", "", "", ""}, "context" -> "TBMethod`EigenSpect`", 
     "keywords" -> {"ParallelEigenspectralData tight binding TBMethod"}, 
     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
      "label" -> "T B Method Symbol", "language" -> "en", "paclet" -> 
     "TBMethod", "status" -> "None", "summary" -> 
-    "ParallelEigenspectralData[h, samples] ParallelEigenspectralData[h, \
-samples, stateFunction, opts] ParallelEigenspectralData[h, samples, \
-stateFunction, n, opts] Evaluates energy-sorted eigensystem data \
-independently at parameter samples on parallel kernels.", "synonyms" -> {}, 
-    "tabletags" -> {}, "title" -> "ParallelEigenspectralData", 
-    "titlemodifier" -> "", "metadescription" -> "", "windowtitle" -> 
-    "ParallelEigenspectralData", "type" -> "Symbol", "uri" -> 
-    "TBMethod/ref/ParallelEigenspectralData", "WorkflowDockedCell" -> ""}, 
-  "SearchTextTranslated" -> ""},
+    "ParallelEigenspectralData[h, samples] returns energy-sorted \
+eigenvalue\\[Dash]eigenvector pairs at each sample, evaluating samples in \
+parallel. ParallelEigenspectralData[h, samples, stateFunction] replaces each \
+eigenvector by the value of stateFunction applied to it. \
+ParallelEigenspectralData[h, samples, stateFunction, n] retains the n \
+eigenpairs selected by Eigensystem before applying stateFunction.", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "ParallelEigenspectralData", "titlemodifier" -> "", "metadescription" -> 
+    "", "windowtitle" -> "ParallelEigenspectralData", "type" -> "Symbol", 
+    "uri" -> "TBMethod/ref/ParallelEigenspectralData", "WorkflowDockedCell" -> 
+    ""}, "SearchTextTranslated" -> ""},
 CellContext->"Global`",
 FrontEndVersion->"15.0 for Microsoft Windows (64-bit) (July 2, 2026)",
 StyleDefinitions->Notebook[{
@@ -562,7 +717,7 @@ StyleDefinitions->Notebook[{
     StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
   FrontEndVersion -> "15.0 for Microsoft Windows (64-bit) (July 2, 2026)", 
   StyleDefinitions -> "PrivateStylesheetFormatting.nb"],
-ExpressionUUID->"a5a78792-5a72-264b-8fb1-e0f1d4858e93"
+ExpressionUUID->"31847759-0f0a-f746-b123-6f378ec9ea37"
 ]
 (* End of Notebook Content *)
 
@@ -575,50 +730,50 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[1499, 34, 6460, 157, 70, "AnchorBarGrid",ExpressionUUID->"2087619f-5ceb-3c44-9dea-857b2bcfa5ac",
+Cell[1499, 34, 7073, 169, 70, "AnchorBarGrid",ExpressionUUID->"216e6e46-9846-b84b-a5d5-4f661047621d",
  CellID->1],
-Cell[7805, 193, 102, 0, 70, "ContextNameCell",ExpressionUUID->"f34a64ce-d75a-b64d-b7f5-74af2c729bcc"],
+Cell[8406, 205, 102, 0, 70, "ContextNameCell",ExpressionUUID->"77d2aed5-8665-7045-805b-c0e485f72297"],
 Cell[CellGroupData[{
-Cell[7932, 197, 582, 14, 70, "ObjectNameGrid",ExpressionUUID->"9b1699e7-b262-1b44-a3ba-f131b661b4f3"],
-Cell[8503, 213, 1345, 27, 70, "Usage",ExpressionUUID->"d3b9123f-fbf2-ae42-93f6-a551b6f6c4f8",
- CellID->1121992704]
+Cell[8533, 209, 582, 14, 70, "ObjectNameGrid",ExpressionUUID->"3eafa549-0c61-644c-8ced-20be2e92b418"],
+Cell[9104, 225, 3973, 108, 70, "Usage",ExpressionUUID->"897f26cf-df50-f046-8720-009bd593cdb5",
+ CellID->1782682923]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[9858, 245, 1481, 34, 70, "NotesSection",ExpressionUUID->"7ac3f686-0290-e34b-a3ff-7b6e4c4edfac",
+Cell[13006, 338, 1481, 34, 70, "NotesSection",ExpressionUUID->"5b50bdc8-e473-df44-b902-9e4953dc87d2",
  CellGroupingRules->{"SectionGrouping", 50},
- CellID->667727318],
-Cell[11308, 281, 245, 4, 70, "Notes",ExpressionUUID->"79afc022-d33d-7c4b-a163-b1b6f8a1b197",
- CellID->1732493261],
-Cell[11552, 287, 214, 4, 70, "Notes",ExpressionUUID->"5c58ea60-70e4-e642-b6a2-de1d6a6c6dd0",
- CellID->1281670797],
-Cell[11765, 293, 203, 4, 70, "Notes",ExpressionUUID->"ed5e230d-e715-eb4c-a7a0-1eae13777a78",
- CellID->1370267372],
-Cell[11967, 299, 188, 4, 70, "Notes",ExpressionUUID->"46ac7921-2c35-6248-822c-d8d2d96a433b",
- CellID->1234941892]
+ CellID->134880153],
+Cell[14456, 374, 512, 13, 70, "Notes",ExpressionUUID->"3601f659-cf0c-124d-a1b6-4387f4e9f824",
+ CellID->1116221272],
+Cell[14958, 389, 213, 4, 70, "Notes",ExpressionUUID->"d0855b2e-4a1d-2343-a3e5-4a238a054337",
+ CellID->971721287],
+Cell[15170, 395, 203, 4, 70, "Notes",ExpressionUUID->"5d57abfc-c5f3-6049-be88-4fc21042e265",
+ CellID->1284950013],
+Cell[15372, 401, 445, 11, 70, "Notes",ExpressionUUID->"802ce6d6-0225-eb4e-bf62-d04714d24c82",
+ CellID->637061934]
 }, Closed]],
-Cell[12166, 306, 80, 0, 70, "PageDelimiter",ExpressionUUID->"ec699fe7-4db1-f947-aaae-34e5773924b5"],
+Cell[15821, 415, 80, 0, 70, "PageDelimiter",ExpressionUUID->"c5c7377b-3406-ef4f-b84a-08562b154fcd"],
 Cell[CellGroupData[{
-Cell[12271, 310, 1439, 37, 70, "PrimaryExamplesSection",ExpressionUUID->"19ebfe54-5aa9-be4f-bf54-bd8c067ca766",
- CellID->892774468],
+Cell[15926, 419, 1439, 37, 70, "PrimaryExamplesSection",ExpressionUUID->"bd367304-7d63-7148-bad7-c0f30cfbc14f",
+ CellID->235453475],
 Cell[CellGroupData[{
-Cell[13698, 351, 1265, 31, 70, "ExampleSection",ExpressionUUID->"9f98cce0-b6c2-064d-afc9-c6ce5af712de",
- CellID->85277192],
-Cell[14935, 384, 174, 3, 70, "ExampleText",ExpressionUUID->"f80ce791-c7ea-3741-a07b-f194976b1f9c",
- CellID->212362707],
-Cell[15109, 389, 175, 3, 70, "Input",ExpressionUUID->"c0af7b8e-d084-b84c-815c-99babba335ec",
- CellID->336012159],
+Cell[17353, 460, 1265, 31, 70, "ExampleSection",ExpressionUUID->"914bf24a-aa32-ae47-b328-ffa0a1d229d6",
+ CellID->75769567],
+Cell[18590, 493, 174, 3, 70, "ExampleText",ExpressionUUID->"390f098e-e41b-8241-bcea-258780c1e5ef",
+ CellID->562643805],
+Cell[18764, 498, 175, 3, 70, "Input",ExpressionUUID->"6c494d08-6c3b-0041-8dda-0911d9537b86",
+ CellID->590727531],
 Cell[CellGroupData[{
-Cell[15306, 396, 1052, 28, 70, "Input",ExpressionUUID->"483844ed-f73e-9b4e-bc65-889c620f5240",
- CellID->1266696714],
-Cell[16333, 426, 561, 18, 70, "Output",ExpressionUUID->"d3b05227-88d3-3c4b-b8fc-31afe09e28a6",
- CellID->716390872]
+Cell[18961, 505, 1156, 31, 70, "Input",ExpressionUUID->"cdded87f-3ba1-4d42-9c1a-8bacba4c92d7",
+ CellID->1849326491],
+Cell[20089, 538, 562, 18, 70, "Output",ExpressionUUID->"73148b2c-663e-e046-9eae-a8c61a125f62",
+ CellID->1722077940]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
-Cell[16915, 449, 1025, 25, 70, "SeeAlsoSection",ExpressionUUID->"8a92b273-3fb5-7046-847e-5cac71ddfec9"],
-Cell[17918, 476, 807, 21, 70, "TutorialsSection",ExpressionUUID->"237c6990-60d1-9247-814d-3d816a809b0c"],
-Cell[18707, 499, 756, 19, 70, "MoreAboutSection",ExpressionUUID->"d53d1abf-567d-6b4a-adda-eb279949c081"],
-Cell[19447, 520, 78, 0, 70, "FooterCell",ExpressionUUID->"75d9282b-e7da-1c46-bd8e-0e35df5409a0"]
+Cell[20672, 561, 2529, 66, 70, "SeeAlsoSection",ExpressionUUID->"cfec948c-8514-3e45-a374-43cb9ab666d2"],
+Cell[23138, 629, 807, 21, 70, "TutorialsSection",ExpressionUUID->"6e3ef4a7-aadb-f040-8577-e2a460389f91"],
+Cell[23927, 652, 756, 19, 70, "MoreAboutSection",ExpressionUUID->"848419d5-066b-0b4b-84ed-854ae0a321ac"],
+Cell[24667, 673, 78, 0, 70, "FooterCell",ExpressionUUID->"571ac296-61a4-a34d-92e8-c00ea7f0664f"]
 }
 ]
 *)

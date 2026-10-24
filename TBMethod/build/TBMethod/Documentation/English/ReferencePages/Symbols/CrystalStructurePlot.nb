@@ -23,10 +23,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[      1060,         20]
-NotebookDataLength[     47951,       1173]
-NotebookOptionsPosition[     44322,       1093]
-NotebookOutlinePosition[     46522,       1145]
-CellTagsIndexPosition[     46479,       1142]
+NotebookDataLength[     52827,       1308]
+NotebookOptionsPosition[     48952,       1224]
+NotebookOutlinePosition[     51397,       1280]
+CellTagsIndexPosition[     51354,       1277]
 WindowTitle->CrystalStructurePlot
 WindowFrame->Normal*)
 
@@ -40,11 +40,11 @@ Cell[BoxData[GridBox[{
           TemplateBox[{12},
            "Spacer1"], Cell["T B METHOD SYMBOL", "PacletNameCell",
            TextAlignment->Center,ExpressionUUID->
-           "3774aa57-b993-4045-9382-1a552458097b"], 
+           "d4977d7c-c492-c747-b664-4e0c48614408"], 
           TemplateBox[{8},
            "Spacer1"]}]],
          TextAlignment->Center,ExpressionUUID->
-         "6e362c5f-9b68-4946-83bc-65f83b72500d"],
+         "0034b9af-f8f7-df4d-8c15-1f3e0b63277b"],
         Background->LightDarkSwitched[
           RGBColor[0.490196, 0.576471, 0.690196]],
         ItemSize->Full], ""}
@@ -65,21 +65,32 @@ Cell[BoxData[GridBox[{
             AspectRatio->1,
             ImageSize->20,
             PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
-           "6e0a5a4f-ae45-a342-acff-8c76291ec3a5"]
-         }],ExpressionUUID->"b33c10cc-cda1-2b42-ac30-01fcc1d9821b"],
+           "59aaa865-bed9-cd45-830f-f362085f44f5"]
+         }],ExpressionUUID->"95906064-e417-374f-bd1f-6c3e2607525a"],
          StripOnInput->False],{
-        StyleBox[
-          "\"CrystalStructure\"", "SeeAlsoRelated", StripOnInput -> False] :> 
+        StyleBox["\"VoronoiMesh\"", "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup["paclet:ref/VoronoiMesh"], Delimiter, 
+         StyleBox[
+          "\"Functions\"", "SeeAlsoSection", FontSize -> 14, FontSlant -> 
+           "Italic", StripOnInput -> False] :> 
+         NotebookFind[EvaluationNotebook[], "SeeAlsoSection", All, CellStyle],
+          StyleBox[
+          StyleBox[
+           "\"CrystalStructure\"", "SeeAlsoRelated", StripOnInput -> False], 
+           "SeeAlsoRelated", StripOnInput -> False] :> 
          Documentation`HelpLookup["paclet:TBMethod/ref/CrystalStructure"], 
          StyleBox[
-          "\"ReciprocalVectors\"", "SeeAlsoRelated", StripOnInput -> False] :> 
-         Documentation`HelpLookup["paclet:TBMethod/ref/ReciprocalVectors"]},
+          StyleBox[
+           "\"FirstBrillouinZonePlot\"", "SeeAlsoRelated", StripOnInput -> 
+            False], "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup[
+          "paclet:TBMethod/ref/FirstBrillouinZonePlot"]},
         Appearance->None,
         MenuAppearance->Automatic,
         MenuStyle->"SeeAlso"],
        MouseAppearanceTag["LinkHand"]]],
       LineSpacing->{1.4, 0},ExpressionUUID->
-      "5331c727-8f5d-0749-b4a6-c21e7de92581"],
+      "802850e2-80f7-5743-8747-0263ac6df4a2"],
      "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
 \[ThickSpace]",
      Cell[BoxData[
@@ -95,8 +106,8 @@ Cell[BoxData[GridBox[{
             AspectRatio->1,
             ImageSize->20,
             PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
-           "e8ad718e-1a0f-574e-a7ff-b91192e6100a"]
-         }],ExpressionUUID->"45745473-7572-4f4c-96af-3812e14decb2"],
+           "99adf467-b883-3448-918a-a7fb4d0b29b6"]
+         }],ExpressionUUID->"0475d257-847f-7642-a17d-4610e7016c7d"],
          StripOnInput->False],{
         "\"TBMethod\"" :> 
          Documentation`HelpLookup["paclet:TBMethod/guide/TBMethod"]},
@@ -105,7 +116,7 @@ Cell[BoxData[GridBox[{
         MenuStyle->"MoreAbout"],
        MouseAppearanceTag["LinkHand"]]],
       LineSpacing->{1.4, 0},ExpressionUUID->
-      "8c7385f3-881c-204e-91c3-43651af13f49"],
+      "8cb98c9a-e1f1-6b43-a558-5bf5e116841f"],
      "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
 \[ThickSpace]",
      Cell[BoxData[
@@ -121,8 +132,8 @@ Cell[BoxData[GridBox[{
             AspectRatio->1,
             ImageSize->20,
             PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
-           "d44833ce-2061-934c-964d-aefa1d9f40c5"]
-         }],ExpressionUUID->"d4a26748-4824-a74a-8840-e37997be400d"],
+           "b3b8a0bb-35e0-4942-8960-d8ddba17e230"]
+         }],ExpressionUUID->"c781e24b-b534-e64d-910c-c894a6ed93f2"],
          StripOnInput->False],{
         "\"Getting Started with TBMethod\"" :> 
          Documentation`HelpLookup["paclet:TBMethod/tutorial/GettingStarted"]},
@@ -132,7 +143,7 @@ Cell[BoxData[GridBox[{
         MenuStyle->"Tutorials"],
        MouseAppearanceTag["LinkHand"]]],
       LineSpacing->{1.4, 0},ExpressionUUID->
-      "8caae03e-8b93-1542-9ee5-06d1a044c061"],
+      "148e05c6-1e37-354c-b2c7-6e97eb8b38ac"],
      "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
 \[ThickSpace]",
      Cell[BoxData[
@@ -148,8 +159,8 @@ Cell[BoxData[GridBox[{
             AspectRatio->1,
             ImageSize->20,
             PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
-           "29a77f8b-7c27-4648-9bcf-8e7f20beac9e"]
-         }],ExpressionUUID->"75506b37-f97c-2642-8d62-398208736247"],
+           "53d17bca-d1dd-7a46-af46-c62457038854"]
+         }],ExpressionUUID->"6900387b-df38-f746-ab6b-5c6897091c63"],
          StripOnInput->False],{
         "\"TBMethod/ref/CrystalStructurePlot\"" :> None, 
          "\"Copy Wolfram Documentation Center URL\"" :> 
@@ -180,14 +191,14 @@ CrystalStructurePlot.html"], StandardForm]], "Input", TextClipboardType ->
         MenuStyle->"URLMenu"],
        MouseAppearanceTag["LinkHand"]]],
       LineSpacing->{1.4, 0},ExpressionUUID->
-      "a65bf12c-81c1-e044-a5df-e0f8e9459ea3"]
+      "774821da-e0b6-9a4e-bf11-f04d36c2fb03"]
     }], "AnchorBar",
      CacheGraphics->False,ExpressionUUID->
-     "a28ef779-aa1d-4140-be0e-d3d5afc192f2"]}
+     "a11720bf-ccc0-1e48-ad6d-823ca53b17f7"]}
   }]], "AnchorBarGrid",
- CellID->1,ExpressionUUID->"2e92ef63-da0b-014d-adb1-121a41c5a301"],
+ CellID->1,ExpressionUUID->"d4481100-14e0-294f-94a4-063595519c24"],
 
-Cell["TBMethod`DataVisualization`", "ContextNameCell",ExpressionUUID->"09318cd1-2ba1-da4e-954c-8e6c6cf60292"],
+Cell["TBMethod`DataVisualization`", "ContextNameCell",ExpressionUUID->"19d28191-d08b-6a4a-8edc-4a8c66cb8e54"],
 
 Cell[CellGroupData[{
 
@@ -195,33 +206,113 @@ Cell[BoxData[GridBox[{
    {Cell[TextData[{
      Cell[
      "CrystalStructurePlot", "ObjectName",ExpressionUUID->
-      "d98f7a2c-f83e-ac44-93dd-73b741fb803e"],
+      "e5259754-bd11-c84d-8185-bfb320eda389"],
      Cell[BoxData[
       TemplateBox[{8},
-       "Spacer1"]],ExpressionUUID->"3969730d-58ff-7a42-a9d6-4ea61a88c8cd"],
+       "Spacer1"]],ExpressionUUID->"a00b4bb7-100b-6742-bbcc-e2cd1c4f8507"],
      Cell[BoxData[
      ""], "ObjectNameTranslation",ExpressionUUID->
-      "49b428d4-cb3c-0142-a7b5-85d4d01aa523"]
-    }],ExpressionUUID->"5c2fd3f5-8bcc-2548-ab71-19b00372d837"], 
+      "eafb67f6-5a81-e147-aa6d-813871ecd3e2"]
+    }],ExpressionUUID->"6ed15cb8-c031-a548-9360-c66ba92bb0a8"], 
     "\[SpanFromLeft]"}
-  }]], "ObjectNameGrid",ExpressionUUID->"97fd8a2b-b9fe-6a42-a6ab-\
-fa1af5f6fbab"],
+  }]], "ObjectNameGrid",ExpressionUUID->"d4919d7e-9af1-cc4e-af22-\
+538153b8e113"],
 
 Cell[BoxData[GridBox[{
-   {"", Cell[TextData[Cell[BoxData[
-     RowBox[{"CrystalStructurePlot", "[", 
-      RowBox[{"latticeVectors", ",", "crystalStructure", ",", 
-       RowBox[{"cellRange", ":", "2"}], ",", 
-       RowBox[{"cellType", ":", "\"\<Voronoi\>\""}], ",", "opts"}], "]"}]], 
-     "InlineFormula",
-     FontFamily->"Source Sans Pro",ExpressionUUID->
-     "f83d5f54-246f-e54a-b91d-aec2b9f080db"]],ExpressionUUID->
-     "a1d4e009-49f5-b04b-b4d8-1a60f28376ce"]},
-   {"", Cell["\<\
-Displays a crystal structure with lattice vectors and primitive-cell outlines.\
-\>",ExpressionUUID->"d0e5bd25-c6ac-3c41-9008-9a7503798f51"]}
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["CrystalStructurePlot"]], 
+         "paclet:TBMethod/ref/CrystalStructurePlot", 
+         "TBMethod Package Symbol"},
+        "PackageLink",
+        BaseStyle->"InlineFormula"], "[", 
+       RowBox[{
+        StyleBox["latticeVectors", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"], ",", 
+        StyleBox["crystalStructure", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"]}], "]"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "93d8c9a1-3a02-054d-b23a-39a39212400c"],
+     " \[LineSeparator]",
+     "displays ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["crystalStructure"]], 
+        "paclet:TBMethod/ref/crystalStructure", "TBMethod Package Symbol"},
+       "PackageLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "d6282fde-d6b2-154c-b7b8-2e43c36e2bc2"],
+     " together with its lattice vectors and Voronoi-cell outlines."
+    }],ExpressionUUID->"5d157c88-ae2a-f048-a4f6-c71fe69c06b4"]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["CrystalStructurePlot"]], 
+         "paclet:TBMethod/ref/CrystalStructurePlot", 
+         "TBMethod Package Symbol"},
+        "PackageLink",
+        BaseStyle->"InlineFormula"], "[", 
+       RowBox[{
+        StyleBox["latticeVectors", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"], ",", 
+        StyleBox["crystalStructure", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"], ",", 
+        StyleBox["cellRange", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"]}], "]"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "b975390f-1fbd-2e4d-a9ca-3682d0f5ff9b"],
+     " \[LineSeparator]",
+     "uses the specified range of surrounding lattice cells."
+    }],ExpressionUUID->"b02703d3-f90c-b74d-b5e9-907f96b663e8"]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["CrystalStructurePlot"]], 
+         "paclet:TBMethod/ref/CrystalStructurePlot", 
+         "TBMethod Package Symbol"},
+        "PackageLink",
+        BaseStyle->"InlineFormula"], "[", 
+       RowBox[{
+        StyleBox["latticeVectors", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"], ",", 
+        StyleBox["crystalStructure", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"], ",", 
+        StyleBox["cellRange", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"], ",", 
+        StyleBox["cellType", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"]}], "]"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "e9d5fe3d-e359-2240-96e8-2007bf24e534"],
+     " \[LineSeparator]",
+     "uses Voronoi cells or basis parallelepipeds according to ",
+     Cell[BoxData[
+      StyleBox["cellType", "TI",
+       FontFamily->"Times",
+       FontSlant->"Italic"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "86754daa-4342-7145-bc17-ad8c5ec456c8"],
+     "."
+    }],ExpressionUUID->"8a7cc945-1364-7a40-b1b2-a618a1bee363"]}
   }]], "Usage",
- CellID->752562768,ExpressionUUID->"af31fcc2-9265-524e-be80-aedea0f25b64"]
+ CellID->339795856,ExpressionUUID->"1e9b6d03-3682-6f44-8ec5-7650ddaa37df"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -248,44 +339,53 @@ Cell[TextData[Cell[BoxData[Cell[TextData[{
         0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
     ImageSizeCache->{
      13.600000000000001`, {-0.16630120645742785`, 13.76630120645743}}]],
-   ExpressionUUID->"7b25474c-9cd1-9d4e-9eab-b09d40c6691c"],
+   ExpressionUUID->"bbc71f21-113e-9642-a9a2-b4f4804b24e8"],
   Cell[BoxData[
    TemplateBox[{1},
-    "Spacer1"]],ExpressionUUID->"3bd09978-cbf6-4e45-927d-bfd4cb8566b6"],
+    "Spacer1"]],ExpressionUUID->"46d399e7-d4e1-b440-95cc-8879a6cb8752"],
   "Details and Options"
  }], "NotesFrameText",ExpressionUUID->
-  "c473fac9-79e0-104c-a8f5-64d5a3cdce5a"]],ExpressionUUID->"a8c0da43-4126-\
-cc4e-9d83-b9984fdc2b42"]], "NotesSection",
+  "d4f2e5ec-d5fe-0c48-8edd-82ce1f3c5dd8"]],ExpressionUUID->"dc677e82-0e3b-\
+0242-9493-8f9f94daa524"]], "NotesSection",
  ShowGroupOpener->"Thumbnail",
  WholeCellGroupOpener->True,
  CellGroupingRules->{"SectionGrouping", 50},
  CacheGraphics->False,
- CellID->434464966,ExpressionUUID->"601e1c05-0356-4445-9d86-757cf94b8685"],
+ CellID->141273548,ExpressionUUID->"51f0cebf-2178-c540-b978-2ebfaef5f4bc"],
 
 Cell["\<\
 latticeVectors must be a 2 by 2 or 3 by 3 matrix with lattice vectors as rows.\
 \>", "Notes",
- CellID->1348674796,ExpressionUUID->"e9b14fa5-20ed-b949-9e2f-af442052d7a1"],
+ CellID->635565840,ExpressionUUID->"be0b53f5-4ff3-f24c-ae23-92e1389e84e7"],
 
-Cell["\<\
-crystalStructure is an Association from lattice translation vectors to site \
-lists; labeled site rules are accepted.\
-\>", "Notes",
- CellID->1654898041,ExpressionUUID->"8db3e2e5-27d6-9f4d-a209-52130b2250e2"],
+Cell[TextData[{
+ "crystalStructure is an ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Association"]], "paclet:ref/Association"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "ce249d70-89d7-5248-b502-ca4a62253319"],
+ " from lattice translation vectors to site lists; labeled site rules are \
+accepted."
+}], "Notes",
+ CellID->612420158,ExpressionUUID->"83df1264-721c-4245-a42d-026bf13e4e00"],
 
 Cell["\<\
 cellType is \"Voronoi\" or \"Unit\". cellRange controls the surrounding \
 lattice used for cell outlines.\
 \>", "Notes",
- CellID->1793633084,ExpressionUUID->"0f74f440-664f-1846-ba83-2bd01161c5c5"],
+ CellID->101457044,ExpressionUUID->"8eab0282-f8ee-954a-a116-2c74dc2f15de"],
 
 Cell["\<\
 Options are forwarded to the relevant plotting and graphics functions.\
 \>", "Notes",
- CellID->160645896,ExpressionUUID->"acf128d7-aee0-1045-bf21-9c2ce0332db5"]
+ CellID->1184371764,ExpressionUUID->"a7c7ca7f-136d-6e4b-9ebb-6db6e4f292ad"]
 }, Closed]],
 
-Cell["", "PageDelimiter",ExpressionUUID->"5de513bb-69db-2b42-9af1-94d612168f35"],
+Cell["", "PageDelimiter",ExpressionUUID->"f5eab44d-3360-a144-813a-bfc6c86ae584"],
 
 Cell[CellGroupData[{
 
@@ -315,18 +415,18 @@ Cell[TextData[{
        0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
    ImageSizeCache->{
     13.600000000000001`, {4.253698793542572, 9.34630120645743}}]],
-  ExpressionUUID->"5075b154-66e3-264f-a605-cdf86ac73832"],
+  ExpressionUUID->"3934f686-48c0-f543-8ff2-594587bef96b"],
  Cell[BoxData[
   TemplateBox[{1},
-   "Spacer1"]],ExpressionUUID->"883388d1-0c70-5b43-bd86-c2e0a1862f2d"],
+   "Spacer1"]],ExpressionUUID->"f6149ed9-4930-1448-b5cf-401c1c65dc19"],
  "Examples",
  "\[NonBreakingSpace]\[NonBreakingSpace]",
  Cell["(1)", "ExampleCount",ExpressionUUID->
-  "ada4dbec-3508-9145-bb75-51d540308806"]
+  "d6504f7d-6030-c64b-a2fc-f5da8d8bee41"]
 }], "PrimaryExamplesSection",
  WholeCellGroupOpener->True,
  CacheGraphics->False,
- CellID->277575912,ExpressionUUID->"4fabfcb8-4162-de4d-9ca4-d0dcec5ee8ec"],
+ CellID->381423358,ExpressionUUID->"c50edb5d-1883-9d44-a036-6b1afe458280"],
 
 Cell[CellGroupData[{
 
@@ -350,73 +450,73 @@ Cell[TextData[{
          Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
         PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
        0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]]]],ExpressionUUID->
-  "486240e3-bc61-9b48-921f-10ac3e5b76d3"],
+  "0ea02859-92cf-4347-a37a-59dc34de11e9"],
  Cell[BoxData[
   TemplateBox[{1},
-   "Spacer1"]],ExpressionUUID->"657dbbbe-0b47-7646-b03c-132e531ad4ae"],
+   "Spacer1"]],ExpressionUUID->"06d2364a-dc0f-dd41-bb06-aedf78c2fd63"],
  "Basic Examples",
  "\[NonBreakingSpace]\[NonBreakingSpace]",
  Cell["(1)", "ExampleCount",ExpressionUUID->
-  "d94ae978-2a77-2f40-b3f9-adac9fc6539c"]
+  "647f811f-fcbf-3649-9bcd-2281af5fc03d"]
 }], "ExampleSection", "ExampleSection",
  WholeCellGroupOpener->True,
  CacheGraphics->False,
- CellID->341667177,ExpressionUUID->"da24fd20-135f-b44f-9eac-9c467bb792f5"],
+ CellID->9358691,ExpressionUUID->"09bdd1ad-a33b-4140-9e28-a88b5abdbfad"],
 
 Cell["\<\
 Display a square lattice with one site in each of four translated cells.\
 \>", "ExampleText",
- CellID->898074140,ExpressionUUID->"de59dab2-a208-e34e-80d3-5b393f0ce927"],
+ CellID->562114236,ExpressionUUID->"e2a0692a-f5d7-6c42-b47a-4f168acc9adc"],
 
 Cell[BoxData[
  RowBox[{"Needs", "[", "\"\<TBMethod`\>\"", "]"}]], "Input",
  CellLabel->"In[1]:=",
- CellID->511012523,ExpressionUUID->"a795faa0-9a19-7a4d-b583-b0733a1f6a70"],
+ CellID->940987929,ExpressionUUID->"e4e963dd-548b-8c4d-9589-0791517a853f"],
 
 Cell[CellGroupData[{
 
-Cell[BoxData[
+Cell[BoxData[{
  RowBox[{
   RowBox[{"vectors", "=", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{"{", 
-      RowBox[{"1.`", ",", "0.`"}], "}"}], ",", 
+      RowBox[{"1.", ",", "0."}], "}"}], ",", 
      RowBox[{"{", 
-      RowBox[{"0.`", ",", "1.`"}], "}"}]}], "}"}]}], ";", 
+      RowBox[{"0.", ",", "1."}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{"structure", "=", 
    RowBox[{"AssociationThread", "[", 
     RowBox[{
      RowBox[{"{", 
       RowBox[{
        RowBox[{"{", 
-        RowBox[{"0.`", ",", "0.`"}], "}"}], ",", 
+        RowBox[{"0.", ",", "0."}], "}"}], ",", 
        RowBox[{"{", 
-        RowBox[{"1.`", ",", "0.`"}], "}"}], ",", 
+        RowBox[{"1.", ",", "0."}], "}"}], ",", 
        RowBox[{"{", 
-        RowBox[{"0.`", ",", "1.`"}], "}"}], ",", 
+        RowBox[{"0.", ",", "1."}], "}"}], ",", 
        RowBox[{"{", 
-        RowBox[{"1.`", ",", "1.`"}], "}"}]}], "}"}], ",", 
+        RowBox[{"1.", ",", "1."}], "}"}]}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{
        RowBox[{"{", 
         RowBox[{"{", 
-         RowBox[{"0.`", ",", "0.`"}], "}"}], "}"}], ",", 
+         RowBox[{"0.", ",", "0."}], "}"}], "}"}], ",", 
        RowBox[{"{", 
         RowBox[{"{", 
-         RowBox[{"1.`", ",", "0.`"}], "}"}], "}"}], ",", 
+         RowBox[{"1.", ",", "0."}], "}"}], "}"}], ",", 
        RowBox[{"{", 
         RowBox[{"{", 
-         RowBox[{"0.`", ",", "1.`"}], "}"}], "}"}], ",", 
+         RowBox[{"0.", ",", "1."}], "}"}], "}"}], ",", 
        RowBox[{"{", 
         RowBox[{"{", 
-         RowBox[{"1.`", ",", "1.`"}], "}"}], "}"}]}], "}"}]}], "]"}]}], ";", 
-  RowBox[{"result", "=", 
-   RowBox[{"CrystalStructurePlot", "[", 
-    RowBox[{"vectors", ",", "structure", ",", "1", ",", "\"\<Unit\>\""}], 
-    "]"}]}], ";", "result"}]], "Input",
+         RowBox[{"1.", ",", "1."}], "}"}], "}"}]}], "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"CrystalStructurePlot", "[", 
+  RowBox[{"vectors", ",", "structure", ",", "1", ",", "\"\<Unit\>\""}], 
+  "]"}]}], "Input",
  CellLabel->"In[2]:=",
- CellID->530108993,ExpressionUUID->"818cedfa-60ce-d04b-bcbc-db818ad8abea"],
+ CellID->984622273,ExpressionUUID->"74ba27f0-411f-be46-84fd-c1a585c12276"],
 
 Cell[BoxData[
  TemplateBox[{
@@ -1017,7 +1117,7 @@ Cell[BoxData[
        RowBox[{"Placed", "[", 
          RowBox[{#2, ",", "After"}], "]"}]}], "]"}]& )]], "Output",
  CellLabel->"Out[3]=",
- CellID->858072870,ExpressionUUID->"35380523-782f-7e40-902e-d30d06837c5d"]
+ CellID->1284555501,ExpressionUUID->"06ea4159-0698-dd45-8d9f-c86864094cf3"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
@@ -1033,17 +1133,48 @@ Cell[BoxData[GridBox[{
        StyleBox[
         RowBox[{"See", " ", "Also"}], "SeeAlsoSection"]},
       {Cell[TextData[{
-        ButtonBox["CrystalStructure",
-         BaseStyle->"Link",
-         ButtonData->"paclet:TBMethod/ref/CrystalStructure"],
-        " \[FilledVerySmallSquare] ",
-        ButtonBox["ReciprocalVectors",
-         BaseStyle->"Link",
-         ButtonData->"paclet:TBMethod/ref/ReciprocalVectors"]
-       }], "SeeAlso",ExpressionUUID->"d67fe363-6eff-4d4d-be1e-9a14aed5fd47"]}
+        Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["CrystalStructure"]], 
+           "paclet:TBMethod/ref/CrystalStructure", "TBMethod Package Symbol"},
+          
+          "PackageLink",
+          BaseStyle->"InlineFormula"]], "InlineFormula",
+         FontFamily->"Source Sans Pro",ExpressionUUID->
+         "9a78f36f-2ed5-b447-bf8b-ac9066c6e0ee"],
+        "\[NonBreakingSpace]",
+        StyleBox[
+        "\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+         "InlineSeparator"],
+        " ",
+        Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["FirstBrillouinZonePlot"]], 
+           "paclet:TBMethod/ref/FirstBrillouinZonePlot", 
+           "TBMethod Package Symbol"},
+          "PackageLink",
+          BaseStyle->"InlineFormula"]], "InlineFormula",
+         FontFamily->"Source Sans Pro",ExpressionUUID->
+         "0d360f63-7fc9-fa46-9fc0-b2312bb62719"],
+        "\[NonBreakingSpace]",
+        StyleBox[
+        "\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+         "InlineSeparator"],
+        " ",
+        Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["VoronoiMesh"]], "paclet:ref/VoronoiMesh"},
+          "RefLink",
+          BaseStyle->{"InlineFormula"}]], "InlineFormula",
+         FontFamily->"Source Sans Pro",ExpressionUUID->
+         "333fc6cf-f66d-f143-a7f6-12146293ee81"]
+       }], "SeeAlso",ExpressionUUID->"41db3c23-acee-6e4d-b795-f8a4d9256337"]}
      }]}
-  }]], "SeeAlsoSection",ExpressionUUID->"c508f7cb-f906-3b48-86ca-\
-2bfd55e78cd1"],
+  }]], "SeeAlsoSection",ExpressionUUID->"5fe9f780-d2ee-8045-a028-\
+dce670f886b1"],
 
 Cell[BoxData[GridBox[{
    {
@@ -1063,10 +1194,10 @@ Cell[BoxData[GridBox[{
            "paclet:TBMethod/tutorial/GettingStarted"},
           "RefLinkPlain",
           BaseStyle->{"Tutorials"}]], "Tutorials",ExpressionUUID->
-         "4e845db4-87e4-6044-b2de-92b4379479f8"]}]}
+         "d4874c62-dfd6-b244-8f58-ed69ad5cbd9c"]}]}
      }]}
-  }]], "TutorialsSection",ExpressionUUID->"b41751dc-06de-fe48-b327-\
-a6211d2c5c2a"],
+  }]], "TutorialsSection",ExpressionUUID->"fa6955f1-d550-1042-abc9-\
+4d262f6262c1"],
 
 Cell[BoxData[GridBox[{
    {
@@ -1084,12 +1215,12 @@ Cell[BoxData[GridBox[{
             TextData["TBMethod"]], "paclet:TBMethod/guide/TBMethod"},
           "RefLinkPlain",
           BaseStyle->{"MoreAbout"}]], "MoreAbout",ExpressionUUID->
-         "0e1640cd-e5cb-034b-9b07-810be4e7ebda"]}]}
+         "d3c52edc-6e3d-9e4d-9fd2-84255e340959"]}]}
      }]}
-  }]], "MoreAboutSection",ExpressionUUID->"62948b88-683c-9f4e-a403-\
-b8906a69dd30"],
+  }]], "MoreAboutSection",ExpressionUUID->"97973d17-5e01-6e4b-be27-\
+d706af533001"],
 
-Cell[" ", "FooterCell",ExpressionUUID->"7e4bd2aa-4e18-8f4e-a84c-ea0bb1bf3035"]
+Cell[" ", "FooterCell",ExpressionUUID->"eaf28d84-8f66-2d4d-9373-2f9204b0e1c2"]
 },
 Saveable->False,
 ScreenStyleEnvironment->"Working",
@@ -1106,17 +1237,21 @@ TaggingRules->{
   "CitationPopupData" -> $Failed, "ShowCitation" -> False, "HasOptions" -> 
   True, "RootCaptions" -> "", "HeaderCoreAreaLink" -> {}, 
   "Metadata" -> {
-   "built" -> "{2026, 10, 24, 17, 32, 1.7896884}", 
+   "built" -> "{2026, 10, 24, 21, 50, 1.3214963}", 
     "history" -> {"", "", "", ""}, "context" -> "TBMethod`DataVisualization`",
      "keywords" -> {"CrystalStructurePlot tight binding TBMethod"}, 
     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
      "label" -> "T B Method Symbol", "language" -> "en", "paclet" -> 
     "TBMethod", "status" -> "None", "summary" -> 
-    "CrystalStructurePlot[latticeVectors, crystalStructure, cellRange : 2, \
-cellType : Voronoi, opts] Displays a crystal structure with lattice vectors \
-and primitive-cell outlines.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
-    "CrystalStructurePlot", "titlemodifier" -> "", "metadescription" -> "", 
-    "windowtitle" -> "CrystalStructurePlot", "type" -> "Symbol", "uri" -> 
+    "CrystalStructurePlot[latticeVectors, crystalStructure] displays \
+crystalStructure together with its lattice vectors and Voronoi-cell outlines. \
+CrystalStructurePlot[latticeVectors, crystalStructure, cellRange] uses the \
+specified range of surrounding lattice cells. \
+CrystalStructurePlot[latticeVectors, crystalStructure, cellRange, \\ \
+cellType] uses Voronoi cells or basis parallelepipeds according to cellType.",
+     "synonyms" -> {}, "tabletags" -> {}, "title" -> "CrystalStructurePlot", 
+    "titlemodifier" -> "", "metadescription" -> "", "windowtitle" -> 
+    "CrystalStructurePlot", "type" -> "Symbol", "uri" -> 
     "TBMethod/ref/CrystalStructurePlot", "WorkflowDockedCell" -> ""}, 
   "SearchTextTranslated" -> ""},
 CellContext->"Global`",
@@ -1131,7 +1266,7 @@ StyleDefinitions->Notebook[{
     StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
   FrontEndVersion -> "15.0 for Microsoft Windows (64-bit) (July 2, 2026)", 
   StyleDefinitions -> "PrivateStylesheetFormatting.nb"],
-ExpressionUUID->"a5a78792-5a72-264b-8fb1-e0f1d4858e93"
+ExpressionUUID->"31847759-0f0a-f746-b123-6f378ec9ea37"
 ]
 (* End of Notebook Content *)
 
@@ -1144,50 +1279,50 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[1494, 34, 6229, 153, 70, "AnchorBarGrid",ExpressionUUID->"2e92ef63-da0b-014d-adb1-121a41c5a301",
+Cell[1494, 34, 6789, 164, 70, "AnchorBarGrid",ExpressionUUID->"d4481100-14e0-294f-94a4-063595519c24",
  CellID->1],
-Cell[7573, 189, 109, 0, 70, "ContextNameCell",ExpressionUUID->"09318cd1-2ba1-da4e-954c-8e6c6cf60292"],
+Cell[8122, 200, 109, 0, 70, "ContextNameCell",ExpressionUUID->"19d28191-d08b-6a4a-8edc-4a8c66cb8e54"],
 Cell[CellGroupData[{
-Cell[7707, 193, 577, 14, 70, "ObjectNameGrid",ExpressionUUID->"97fd8a2b-b9fe-6a42-a6ab-fa1af5f6fbab"],
-Cell[8273, 209, 735, 14, 70, "Usage",ExpressionUUID->"af31fcc2-9265-524e-be80-aedea0f25b64",
- CellID->752562768]
+Cell[8256, 204, 577, 14, 70, "ObjectNameGrid",ExpressionUUID->"d4919d7e-9af1-cc4e-af22-538153b8e113"],
+Cell[8822, 220, 3540, 94, 70, "Usage",ExpressionUUID->"1e9b6d03-3682-6f44-8ec5-7650ddaa37df",
+ CellID->339795856]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[9031, 228, 1481, 34, 70, "NotesSection",ExpressionUUID->"601e1c05-0356-4445-9d86-757cf94b8685",
+Cell[12305, 319, 1481, 34, 70, "NotesSection",ExpressionUUID->"51f0cebf-2178-c540-b978-2ebfaef5f4bc",
  CellGroupingRules->{"SectionGrouping", 50},
- CellID->434464966],
-Cell[10481, 264, 182, 3, 70, "Notes",ExpressionUUID->"e9b14fa5-20ed-b949-9e2f-af442052d7a1",
- CellID->1348674796],
-Cell[10663, 269, 222, 4, 70, "Notes",ExpressionUUID->"8db3e2e5-27d6-9f4d-a209-52130b2250e2",
- CellID->1654898041],
-Cell[10884, 275, 210, 4, 70, "Notes",ExpressionUUID->"0f74f440-664f-1846-ba83-2bd01161c5c5",
- CellID->1793633084],
-Cell[11093, 281, 173, 3, 70, "Notes",ExpressionUUID->"acf128d7-aee0-1045-bf21-9c2ce0332db5",
- CellID->160645896]
+ CellID->141273548],
+Cell[13755, 355, 181, 3, 70, "Notes",ExpressionUUID->"be0b53f5-4ff3-f24c-ae23-92e1389e84e7",
+ CellID->635565840],
+Cell[13936, 360, 488, 13, 70, "Notes",ExpressionUUID->"83df1264-721c-4245-a42d-026bf13e4e00",
+ CellID->612420158],
+Cell[14414, 375, 209, 4, 70, "Notes",ExpressionUUID->"8eab0282-f8ee-954a-a116-2c74dc2f15de",
+ CellID->101457044],
+Cell[14622, 381, 174, 3, 70, "Notes",ExpressionUUID->"a7c7ca7f-136d-6e4b-9ebb-6db6e4f292ad",
+ CellID->1184371764]
 }, Closed]],
-Cell[11278, 287, 80, 0, 70, "PageDelimiter",ExpressionUUID->"5de513bb-69db-2b42-9af1-94d612168f35"],
+Cell[14808, 387, 80, 0, 70, "PageDelimiter",ExpressionUUID->"f5eab44d-3360-a144-813a-bfc6c86ae584"],
 Cell[CellGroupData[{
-Cell[11383, 291, 1439, 37, 70, "PrimaryExamplesSection",ExpressionUUID->"4fabfcb8-4162-de4d-9ca4-d0dcec5ee8ec",
- CellID->277575912],
+Cell[14913, 391, 1439, 37, 70, "PrimaryExamplesSection",ExpressionUUID->"c50edb5d-1883-9d44-a036-6b1afe458280",
+ CellID->381423358],
 Cell[CellGroupData[{
-Cell[12810, 332, 1266, 31, 70, "ExampleSection",ExpressionUUID->"da24fd20-135f-b44f-9eac-9c467bb792f5",
- CellID->341667177],
-Cell[14048, 365, 181, 3, 70, "ExampleText",ExpressionUUID->"de59dab2-a208-e34e-80d3-5b393f0ce927",
- CellID->898074140],
-Cell[14229, 370, 175, 3, 70, "Input",ExpressionUUID->"a795faa0-9a19-7a4d-b583-b0733a1f6a70",
- CellID->511012523],
+Cell[16340, 432, 1264, 31, 70, "ExampleSection",ExpressionUUID->"09bdd1ad-a33b-4140-9e28-a88b5abdbfad",
+ CellID->9358691],
+Cell[17576, 465, 181, 3, 70, "ExampleText",ExpressionUUID->"e2a0692a-f5d7-6c42-b47a-4f168acc9adc",
+ CellID->562114236],
+Cell[17757, 470, 175, 3, 70, "Input",ExpressionUUID->"e4e963dd-548b-8c4d-9589-0791517a853f",
+ CellID->940987929],
 Cell[CellGroupData[{
-Cell[14426, 377, 1411, 41, 70, "Input",ExpressionUUID->"818cedfa-60ce-d04b-bcbc-db818ad8abea",
- CellID->530108993],
-Cell[15799, 420, 26655, 599, 70, "Output",ExpressionUUID->"35380523-782f-7e40-902e-d30d06837c5d",
- CellID->858072870]
+Cell[17954, 477, 1402, 41, 70, "Input",ExpressionUUID->"74ba27f0-411f-be46-84fd-c1a585c12276",
+ CellID->984622273],
+Cell[19318, 520, 26656, 599, 70, "Output",ExpressionUUID->"06ea4159-0698-dd45-8d9f-c86864094cf3",
+ CellID->1284555501]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
-Cell[41894, 1024, 835, 21, 70, "SeeAlsoSection",ExpressionUUID->"c508f7cb-f906-3b48-86ca-2bfd55e78cd1"],
-Cell[42711, 1047, 807, 21, 70, "TutorialsSection",ExpressionUUID->"b41751dc-06de-fe48-b327-a6211d2c5c2a"],
-Cell[43500, 1070, 756, 19, 70, "MoreAboutSection",ExpressionUUID->"62948b88-683c-9f4e-a403-b8906a69dd30"],
-Cell[44240, 1091, 78, 0, 70, "FooterCell",ExpressionUUID->"7e4bd2aa-4e18-8f4e-a84c-ea0bb1bf3035"]
+Cell[45414, 1124, 1976, 52, 70, "SeeAlsoSection",ExpressionUUID->"5fe9f780-d2ee-8045-a028-dce670f886b1"],
+Cell[47341, 1178, 807, 21, 70, "TutorialsSection",ExpressionUUID->"fa6955f1-d550-1042-abc9-4d262f6262c1"],
+Cell[48130, 1201, 756, 19, 70, "MoreAboutSection",ExpressionUUID->"97973d17-5e01-6e4b-be27-d706af533001"],
+Cell[48870, 1222, 78, 0, 70, "FooterCell",ExpressionUUID->"eaf28d84-8f66-2d4d-9373-2f9204b0e1c2"]
 }
 ]
 *)
