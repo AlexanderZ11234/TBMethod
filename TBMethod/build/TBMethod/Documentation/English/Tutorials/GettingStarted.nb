@@ -40,11 +40,11 @@ Cell[BoxData[GridBox[{
           TemplateBox[{12},
            "Spacer1"], Cell["T B METHOD TECH NOTE", "PacletNameCell",
            TextAlignment->Center,ExpressionUUID->
-           "527cacd5-e00d-ef4e-aef6-525a15648fb3"], 
+           "aed53c53-d847-e948-b775-b239ab9f9e1a"], 
           TemplateBox[{8},
            "Spacer1"]}]],
          TextAlignment->Center,ExpressionUUID->
-         "916ce227-3388-8b49-86d7-d7b224747fcf"],
+         "9f6c57b9-c901-7548-bdde-6c29b51fd968"],
         Background->LightDarkSwitched[
           RGBColor[
           0.3843137254901961, 0.4627450980392157, 0.7019607843137254]],
@@ -65,8 +65,8 @@ Cell[BoxData[GridBox[{
            AspectRatio->1,
            ImageSize->20,
            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
-          "0773bbd2-e1ed-254a-b322-d1b47d272758"]
-        }],ExpressionUUID->"34cf9158-46b1-5140-8bf2-c89a5ac11c3a"],
+          "487bbfc6-7747-ef48-92cd-be6a8f173d13"]
+        }],ExpressionUUID->"c22f5587-05fd-714e-b78f-b4c5088241ba"],
         StripOnInput->False],{
        "\"TBMethod/tutorial/GettingStarted\"" :> None, 
         "\"Copy Wolfram Documentation Center URL\"" :> 
@@ -97,26 +97,26 @@ GettingStarted.html"], StandardForm]], "Input", TextClipboardType ->
        MenuStyle->"URLMenu"],
       MouseAppearanceTag["LinkHand"]]],
      LineSpacing->{1.4, 0},ExpressionUUID->
-     "37110bc6-cd32-f441-a84b-e827a925fe76"]], "AnchorBar",
+     "11a389ed-e580-144b-8a1e-e7eed2e073f6"]], "AnchorBar",
      CacheGraphics->False,ExpressionUUID->
-     "435d5c1f-68ef-4f49-ba66-6a7997996f6f"]}
+     "8326c7bc-a017-124a-991d-8c288d2c76df"]}
   }]], "AnchorBarGrid",
  GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
      Scaled[0.65], {
       Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
    "RowsIndexed" -> {}}},
- CellID->1,ExpressionUUID->"c2fb71d6-063d-1f40-862a-d5b166289098"],
+ CellID->1,ExpressionUUID->"0e329a0e-a435-9a4c-a0b8-64bc7747738f"],
 
 Cell[CellGroupData[{
 
 Cell["Getting Started with TBMethod", "TechNoteTitle",
- CellID->1505489210,ExpressionUUID->"7adc61a8-6814-f24f-ace9-c1b180a61da3"],
+ CellID->1728759913,ExpressionUUID->"c9c690ed-43e5-524f-a741-e7b578e67552"],
 
 Cell[BoxData[GridBox[{
    {
     TemplateBox[{
       Cell["Load the package"], 
-      "paclet:TBMethod/tutorial/GettingStarted#2025593072", 
+      "paclet:TBMethod/tutorial/GettingStarted#281029105", 
       StyleBox[
        GraphicsBox[{
          Thickness[0.18], 
@@ -135,7 +135,7 @@ Cell[BoxData[GridBox[{
      BaseStyle->{"TutorialJumpBoxLink"}], 
     TemplateBox[{
       Cell["A central-region Green's function"], 
-      "paclet:TBMethod/tutorial/GettingStarted#1159372123", 
+      "paclet:TBMethod/tutorial/GettingStarted#1563325188", 
       StyleBox[
        GraphicsBox[{
          Thickness[0.18], 
@@ -155,7 +155,7 @@ Cell[BoxData[GridBox[{
    {
     TemplateBox[{
       Cell["A one-dimensional Bloch Hamiltonian"], 
-      "paclet:TBMethod/tutorial/GettingStarted#538303269", 
+      "paclet:TBMethod/tutorial/GettingStarted#1519429240", 
       StyleBox[
        GraphicsBox[{
          Thickness[0.18], 
@@ -174,7 +174,7 @@ Cell[BoxData[GridBox[{
      BaseStyle->{"TutorialJumpBoxLink"}], 
     TemplateBox[{
       Cell["Parallel calculations"], 
-      "paclet:TBMethod/tutorial/GettingStarted#1087177084", 
+      "paclet:TBMethod/tutorial/GettingStarted#1819787587", 
       StyleBox[
        GraphicsBox[{
          Thickness[0.18], 
@@ -194,7 +194,7 @@ Cell[BoxData[GridBox[{
    {
     TemplateBox[{
       Cell["Calculate and display the band"], 
-      "paclet:TBMethod/tutorial/GettingStarted#1093391302", 
+      "paclet:TBMethod/tutorial/GettingStarted#1101464713", 
       StyleBox[
        GraphicsBox[{
          Thickness[0.18], 
@@ -211,44 +211,44 @@ Cell[BoxData[GridBox[{
        0.68 Inherited, StripOnInput -> False]},
      "GrayLinkWithIcon",
      BaseStyle->{"TutorialJumpBoxLink"}], ""}
-  }]], "TechNoteJumpBox",ExpressionUUID->"8cf1be27-9c0d-5c40-b623-\
-959389af5f17"],
+  }]], "TechNoteJumpBox",ExpressionUUID->"ea4658fe-e681-734f-af69-\
+078b9389f835"],
 
 Cell["\<\
 Load the package, construct a one-orbital chain, and inspect its band \
 dispersion. All examples are deliberately small and can be evaluated directly \
 in this notebook.\
 \>", "TechNoteText",
- CellID->2084636343,ExpressionUUID->"639e9090-4cfe-b24d-8ea2-71a4264c025c"],
+ CellID->1752415699,ExpressionUUID->"22a2025a-2ddb-d844-be4f-332d8113db27"],
 
 Cell[CellGroupData[{
 
 Cell["Load the package", "TechNoteSection",
- CellID->2025593072,ExpressionUUID->"e59b262f-3e40-5b45-bd54-ce753d542efd"],
+ CellID->281029105,ExpressionUUID->"ed98440f-a04e-b546-a9a8-89790d4f785c"],
 
 Cell[BoxData[
  RowBox[{"Needs", "[", "\"\<TBMethod`\>\"", "]"}]], "Input",
- CellID->899539881,ExpressionUUID->"1d17dd98-1770-4744-acfa-5e24761588ea"],
+ CellID->1902672607,ExpressionUUID->"344ecee3-ff4e-a741-8e04-dd8e18b9c7e7"],
 
 Cell["\<\
 Press F1 while the cursor is on an exported TBMethod symbol to open its \
 reference page. Examples are ordinary evaluatable input cells; use \
 Shift+Enter to run one.\
 \>", "TechNoteText",
- CellID->1386696042,ExpressionUUID->"39cddf6e-5738-7a41-81f5-223138325879"]
+ CellID->1507458875,ExpressionUUID->"55ce3730-33b4-284e-b0f7-40d57882a7bc"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell["A one-dimensional Bloch Hamiltonian", "TechNoteSection",
- CellID->538303269,ExpressionUUID->"f3eccc9b-09d3-734b-8e40-381ff026ad2c"],
+ CellID->1519429240,ExpressionUUID->"bdc35e1e-bf49-e94b-b9e6-1ea10a53ea7f"],
 
 Cell["\<\
 The first association entry is the onsite matrix. Subsequent entries give one \
 orientation of each hopping; HBloch adds its Hermitian conjugate. Use sparse \
 matrices for the association values.\
 \>", "TechNoteText",
- CellID->1563371468,ExpressionUUID->"abc4cccd-6a0b-ad4e-8c14-335dbac9068d"],
+ CellID->862415594,ExpressionUUID->"0f8b193f-2e23-d343-ac1d-878b9a20c09e"],
 
 Cell[BoxData[{
  RowBox[{
@@ -286,13 +286,13 @@ Cell[BoxData[{
       RowBox[{"0.", ",", 
        FractionBox["\[Pi]", "2"], ",", "\[Pi]"}], "}"}]}], "}"}]}], 
   "]"}]}], "Input",
- CellID->1026310839,ExpressionUUID->"8acfaa67-8738-dd40-82b8-3278253fe1c5"]
+ CellID->1463727602,ExpressionUUID->"e8df70f0-a850-ad4a-a79e-b7f11157cf24"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell["Calculate and display the band", "TechNoteSection",
- CellID->1093391302,ExpressionUUID->"4c4499f3-0a74-404e-a08e-d22cab650a18"],
+ CellID->1101464713,ExpressionUUID->"98b25a0b-4b8c-bd43-98d5-be18774f054d"],
 
 Cell[BoxData[{
  RowBox[{
@@ -312,20 +312,20 @@ Cell[BoxData[{
    
    RowBox[{"{", 
     RowBox[{"1", ",", "21", ",", "41"}], "}"}]}], "]"}]}], "Input",
- CellID->418396022,ExpressionUUID->"57c802d5-20ff-6b41-8a1a-02318d8d8712"]
+ CellID->131078957,ExpressionUUID->"7fa8a227-b310-554c-b237-8d35bd26242b"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell["A central-region Green's function", "TechNoteSection",
- CellID->1159372123,ExpressionUUID->"fe7f57c8-30e5-2d4d-aa74-9c922b83694a"],
+ CellID->1563325188,ExpressionUUID->"7a037e41-741e-774a-b455-1a0d8430b337"],
 
 Cell["\<\
 Use a positive imaginary energy part for the retarded resolvent. \
 Self-energies supplied to CentralGreen have the full central-region matrix \
 dimensions.\
 \>", "TechNoteText",
- CellID->537783212,ExpressionUUID->"4a0d6d82-605d-c54d-a085-70bf0468b6a6"],
+ CellID->650362763,ExpressionUUID->"ae7d3161-b0d4-434c-92e1-52c5379a2d79"],
 
 Cell[BoxData[{
  RowBox[{
@@ -371,19 +371,19 @@ Cell[BoxData[{
       RowBox[{"energy", " ", 
        RowBox[{"IdentityMatrix", "[", "2", "]"}]}], "-", "hCentral", "-", 
       "sigma"}], ")"}]}], "]"}], "]"}]}], "Input",
- CellID->1801928524,ExpressionUUID->"bbb5f01d-b992-db40-ba11-4dee11dd118f"]
+ CellID->1790026013,ExpressionUUID->"e231eef0-fa85-b24f-b6e0-40b4313c65bd"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell["Parallel calculations", "TechNoteSection",
- CellID->1087177084,ExpressionUUID->"707d9907-37de-e945-a502-86c0e86b78f9"],
+ CellID->1819787587,ExpressionUUID->"8676627e-9449-fa48-b366-72edf644b02c"],
 
 Cell["\<\
 Choose a kernel count appropriate to your workstation. Loading the package on \
 subkernels is required before using the Parallel-prefixed functions.\
 \>", "TechNoteText",
- CellID->966477130,ExpressionUUID->"854467a1-f9f7-6a44-8488-da757446b4f6"],
+ CellID->1602644575,ExpressionUUID->"80ccc383-3bf3-334a-ab59-0723a7ccde42"],
 
 Cell[BoxData[{
  RowBox[{
@@ -392,16 +392,16 @@ Cell[BoxData[{
   RowBox[{"ParallelNeeds", "[", "\"\<TBMethod`\>\"", "]"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{"ParallelBandData", "[", 
   RowBox[{"h", ",", "momenta"}], "]"}]}], "Input",
- CellID->1608381578,ExpressionUUID->"4da31fe7-b5a5-9e40-9da2-c944b4753adc"],
+ CellID->972976161,ExpressionUUID->"231114b7-4cef-a046-9396-a68d18d899aa"],
 
 Cell[TextData[ButtonBox["TBMethod function guide",
  BaseStyle->"Link",
  ButtonData->"paclet:TBMethod/guide/TBMethod"]], "TechNoteText",
- CellID->1477612116,ExpressionUUID->"6434c854-1c48-aa42-ae0f-88b2c0a3cf3e"]
+ CellID->1904415489,ExpressionUUID->"7eb7baff-1f2f-7641-bd83-e6adb1c5994f"]
 }, Open  ]]
 }, Open  ]],
 
-Cell[" ", "FooterCell",ExpressionUUID->"2995af58-8ec9-c54f-a74f-58f9e3256761"]
+Cell[" ", "FooterCell",ExpressionUUID->"2dd851fe-4482-5c4f-bde2-c67175464d94"]
 },
 Saveable->False,
 ScreenStyleEnvironment->"Working",
@@ -417,7 +417,7 @@ TaggingRules->{
   "NewStyles" -> True, "CitationPopupData" -> {$Failed, ""}, "ShowCitation" -> 
   False, "RootCaptions" -> "", "HeaderCoreAreaLink" -> {}, 
   "Metadata" -> {
-   "built" -> "{2026, 10, 24, 22, 34, 11.5681250}", 
+   "built" -> "{2026, 10, 24, 23, 21, 20.3315359}", 
     "history" -> {"", "", "", ""}, "context" -> "TBMethod`", "keywords" -> {},
      "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> 
     True, "label" -> "T B Method Tech Note", "language" -> "en", "paclet" -> 
@@ -454,7 +454,7 @@ StyleDefinitions->Notebook[{
     CellGroupingRules -> {"SectionGrouping", 30}]}, Visible -> False, 
   FrontEndVersion -> "15.0 for Microsoft Windows (64-bit) (July 2, 2026)", 
   StyleDefinitions -> "PrivateStylesheetFormatting.nb"],
-ExpressionUUID->"57036b22-2e82-8a43-a469-0bf31ade61d3"
+ExpressionUUID->"fd505eac-58bb-8f4b-8fea-034831adf589"
 ]
 (* End of Notebook Content *)
 
@@ -467,56 +467,56 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[1503, 34, 3109, 73, 70, "AnchorBarGrid",ExpressionUUID->"c2fb71d6-063d-1f40-862a-d5b166289098",
+Cell[1503, 34, 3109, 73, 70, "AnchorBarGrid",ExpressionUUID->"0e329a0e-a435-9a4c-a0b8-64bc7747738f",
  CellID->1],
 Cell[CellGroupData[{
-Cell[4564, 111, 131, 1, 70, "TechNoteTitle",ExpressionUUID->"7adc61a8-6814-f24f-ace9-c1b180a61da3",
- CellID->1505489210],
-Cell[4697, 114, 4517, 100, 70, "TechNoteJumpBox",ExpressionUUID->"8cf1be27-9c0d-5c40-b623-959389af5f17"],
-Cell[9117, 216, 282, 5, 70, "TechNoteText",ExpressionUUID->"639e9090-4cfe-b24d-8ea2-71a4264c025c",
- CellID->2084636343],
+Cell[4564, 111, 131, 1, 70, "TechNoteTitle",ExpressionUUID->"c9c690ed-43e5-524f-a741-e7b578e67552",
+ CellID->1728759913],
+Cell[4697, 114, 4517, 100, 70, "TechNoteJumpBox",ExpressionUUID->"ea4658fe-e681-734f-af69-078b9389f835"],
+Cell[9117, 216, 282, 5, 70, "TechNoteText",ExpressionUUID->"22a2025a-2ddb-d844-be4f-332d8113db27",
+ CellID->1752415699],
 Cell[CellGroupData[{
-Cell[9419, 225, 120, 1, 70, "TechNoteSection",ExpressionUUID->"e59b262f-3e40-5b45-bd54-ce753d542efd",
- CellID->2025593072],
-Cell[9541, 228, 151, 2, 70, "Input",ExpressionUUID->"1d17dd98-1770-4744-acfa-5e24761588ea",
- CellID->899539881],
-Cell[9693, 232, 279, 5, 70, "TechNoteText",ExpressionUUID->"39cddf6e-5738-7a41-81f5-223138325879",
- CellID->1386696042]
+Cell[9419, 225, 119, 1, 70, "TechNoteSection",ExpressionUUID->"ed98440f-a04e-b546-a9a8-89790d4f785c",
+ CellID->281029105],
+Cell[9540, 228, 152, 2, 70, "Input",ExpressionUUID->"344ecee3-ff4e-a741-8e04-dd8e18b9c7e7",
+ CellID->1902672607],
+Cell[9693, 232, 279, 5, 70, "TechNoteText",ExpressionUUID->"55ce3730-33b4-284e-b0f7-40d57882a7bc",
+ CellID->1507458875]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[10004, 242, 138, 1, 70, "TechNoteSection",ExpressionUUID->"f3eccc9b-09d3-734b-8e40-381ff026ad2c",
- CellID->538303269],
-Cell[10144, 245, 308, 5, 70, "TechNoteText",ExpressionUUID->"abc4cccd-6a0b-ad4e-8c14-335dbac9068d",
- CellID->1563371468],
-Cell[10450, 252, 1214, 36, 70, "Input",ExpressionUUID->"8acfaa67-8738-dd40-82b8-3278253fe1c5",
- CellID->1026310839]
+Cell[10004, 242, 139, 1, 70, "TechNoteSection",ExpressionUUID->"bdc35e1e-bf49-e94b-b9e6-1ea10a53ea7f",
+ CellID->1519429240],
+Cell[10145, 245, 307, 5, 70, "TechNoteText",ExpressionUUID->"0f8b193f-2e23-d343-ac1d-878b9a20c09e",
+ CellID->862415594],
+Cell[10450, 252, 1214, 36, 70, "Input",ExpressionUUID->"e8df70f0-a850-ad4a-a79e-b7f11157cf24",
+ CellID->1463727602]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[11665, 293, 134, 1, 70, "TechNoteSection",ExpressionUUID->"4c4499f3-0a74-404e-a08e-d22cab650a18",
- CellID->1093391302],
-Cell[11801, 296, 690, 18, 70, "Input",ExpressionUUID->"57c802d5-20ff-6b41-8a1a-02318d8d8712",
- CellID->418396022]
+Cell[11665, 293, 134, 1, 70, "TechNoteSection",ExpressionUUID->"98b25a0b-4b8c-bd43-98d5-be18774f054d",
+ CellID->1101464713],
+Cell[11801, 296, 690, 18, 70, "Input",ExpressionUUID->"7fa8a227-b310-554c-b237-8d35bd26242b",
+ CellID->131078957]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[12510, 319, 137, 1, 70, "TechNoteSection",ExpressionUUID->"fe7f57c8-30e5-2d4d-aa74-9c922b83694a",
- CellID->1159372123],
-Cell[12649, 322, 267, 5, 70, "TechNoteText",ExpressionUUID->"4a0d6d82-605d-c54d-a085-70bf0468b6a6",
- CellID->537783212],
-Cell[12914, 329, 1482, 44, 70, "Input",ExpressionUUID->"bbb5f01d-b992-db40-ba11-4dee11dd118f",
- CellID->1801928524]
+Cell[12510, 319, 137, 1, 70, "TechNoteSection",ExpressionUUID->"7a037e41-741e-774a-b455-1a0d8430b337",
+ CellID->1563325188],
+Cell[12649, 322, 267, 5, 70, "TechNoteText",ExpressionUUID->"ae7d3161-b0d4-434c-92e1-52c5379a2d79",
+ CellID->650362763],
+Cell[12914, 329, 1482, 44, 70, "Input",ExpressionUUID->"e231eef0-fa85-b24f-b6e0-40b4313c65bd",
+ CellID->1790026013]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14389, 378, 125, 1, 70, "TechNoteSection",ExpressionUUID->"707d9907-37de-e945-a502-86c0e86b78f9",
- CellID->1087177084],
-Cell[14516, 381, 259, 4, 70, "TechNoteText",ExpressionUUID->"854467a1-f9f7-6a44-8488-da757446b4f6",
- CellID->966477130],
-Cell[14774, 387, 369, 7, 70, "Input",ExpressionUUID->"4da31fe7-b5a5-9e40-9da2-c944b4753adc",
- CellID->1608381578],
-Cell[15139, 396, 214, 3, 70, "TechNoteText",ExpressionUUID->"6434c854-1c48-aa42-ae0f-88b2c0a3cf3e",
- CellID->1477612116]
+Cell[14389, 378, 125, 1, 70, "TechNoteSection",ExpressionUUID->"8676627e-9449-fa48-b366-72edf644b02c",
+ CellID->1819787587],
+Cell[14516, 381, 260, 4, 70, "TechNoteText",ExpressionUUID->"80ccc383-3bf3-334a-ab59-0723a7ccde42",
+ CellID->1602644575],
+Cell[14775, 387, 368, 7, 70, "Input",ExpressionUUID->"231114b7-4cef-a046-9396-a68d18d899aa",
+ CellID->972976161],
+Cell[15139, 396, 214, 3, 70, "TechNoteText",ExpressionUUID->"7eb7baff-1f2f-7641-bd83-e6adb1c5994f",
+ CellID->1904415489]
 }, Open  ]]
 }, Open  ]],
-Cell[15377, 403, 78, 0, 70, "FooterCell",ExpressionUUID->"2995af58-8ec9-c54f-a74f-58f9e3256761"]
+Cell[15377, 403, 78, 0, 70, "FooterCell",ExpressionUUID->"2dd851fe-4482-5c4f-bde2-c67175464d94"]
 }
 ]
 *)
