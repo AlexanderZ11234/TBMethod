@@ -1,0 +1,581 @@
+(* Content-type: application/vnd.wolfram.cdf.text *)
+
+(*** Wolfram CDF File ***)
+(* http://www.wolfram.com/cdf *)
+
+(* CreatedBy='Wolfram 15.0' *)
+
+(*************************************************************************)
+(*                                                                       *)
+(*                                                                       *)
+(*  This file was created under the Wolfram Enterprise licensing terms.  *)
+(*                                                                       *)
+(*       For additional information concerning CDF licensing see:        *)
+(*                                                                       *)
+(*        www.wolfram.com/cdf/adopting-cdf/licensing-options.html        *)
+(*                                                                       *)
+(*                                                                       *)
+(*                                                                       *)
+(*************************************************************************)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[      1060,         20]
+NotebookDataLength[     21474,        559]
+NotebookOptionsPosition[     17941,        480]
+NotebookOutlinePosition[     20052,        531]
+CellTagsIndexPosition[     20009,        528]
+WindowTitle->GlobalBandGap
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {GridBox[{
+      {
+       ItemBox[Cell[BoxData[
+         RowBox[{
+          TemplateBox[{12},
+           "Spacer1"], Cell["T B METHOD SYMBOL", "PacletNameCell",
+           TextAlignment->Center,ExpressionUUID->
+           "158bc2e3-9e2c-d543-adf8-c1b8e166de82"], 
+          TemplateBox[{8},
+           "Spacer1"]}]],
+         TextAlignment->Center,ExpressionUUID->
+         "1e69c4a9-dbe6-684a-8d8e-3f3b18d25a15"],
+        Background->LightDarkSwitched[
+          RGBColor[0.490196, 0.576471, 0.690196]],
+        ItemSize->Full], ""}
+     },
+     GridBoxAlignment->{"Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {Full, 
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[{
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "See Also",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "6f3b5bb9-0d68-434e-9b17-b2ab1146f7db"]
+         }],ExpressionUUID->"1b4b190f-01c0-8c47-831a-208502071d0f"],
+         StripOnInput->False],{
+        StyleBox["\"LocalBandGap\"", "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup["paclet:TBMethod/ref/LocalBandGap"], 
+         StyleBox[
+          "\"ParallelGlobalBandGap\"", "SeeAlsoRelated", StripOnInput -> 
+           False] :> Documentation`HelpLookup[
+          "paclet:TBMethod/ref/ParallelGlobalBandGap"], 
+         StyleBox["\"BandData\"", "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup["paclet:TBMethod/ref/BandData"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"SeeAlso"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "6470a651-681e-084c-93d8-071c74628a6b"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "Related Guides",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "5726cd16-4c83-6749-a2c8-477460e3895b"]
+         }],ExpressionUUID->"7dce4de7-ed3b-6040-bcb8-e4d572b52ab1"],
+         StripOnInput->False],{
+        "\"TBMethod\"" :> 
+         Documentation`HelpLookup["paclet:TBMethod/guide/TBMethod"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"MoreAbout"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "d5e1a355-9d58-f34f-962e-c1664a902fd8"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "Tech Notes",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "fd6628a0-b7fe-eb42-8276-d93917959fdb"]
+         }],ExpressionUUID->"7cec4b1f-0ec6-7445-8368-4fcf4108fee2"],
+         StripOnInput->False],{
+        "\"Getting Started with TBMethod\"" :> 
+         Documentation`HelpLookup["paclet:TBMethod/tutorial/GettingStarted"]},
+        
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"Tutorials"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "317c6962-76ba-4d43-a9fb-b8cbe8d652b0"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "URL",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "02c48127-b75c-1048-bc71-a06b65347788"]
+         }],ExpressionUUID->"5af66d6a-3a28-df4e-8d46-2f2c2a9a1de1"],
+         StripOnInput->False],{
+        "\"TBMethod/ref/GlobalBandGap\"" :> None, 
+         "\"Copy Wolfram Documentation Center URL\"" :> 
+         CopyToClipboard["TBMethod/ref/GlobalBandGap"], Delimiter, 
+         "\"Copy web URL\"" :> 
+         Module[{DocumentationSearch`Private`nb$}, 
+           DocumentationSearch`Private`nb$ = 
+            NotebookPut[
+             Notebook[{
+               Cell[BoxData[
+                 MakeBoxes[
+                  Hyperlink[
+                   "http://reference.wolfram.com/language/TBMethod/ref/\
+GlobalBandGap.html"], StandardForm]], "Input", TextClipboardType -> 
+                 "PlainText"]}, Visible -> False]]; 
+           SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+           FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+           NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+         "\"Go to web URL\"" :> 
+         FrontEndExecute[{
+           NotebookLocate[{
+             URL[If[TrueQ[False], 
+                 "http://reference.wolfram.com/system-modeler/", 
+                 "http://reference.wolfram.com/language/"] <> 
+               "TBMethod/ref/GlobalBandGap" <> ".html"], None}]}]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"URLMenu"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "f492195b-d46c-da45-8e35-1934f6eac35f"]
+    }], "AnchorBar",
+     CacheGraphics->False,ExpressionUUID->
+     "5d86372a-325e-b44e-9566-6d3865a42d2e"]}
+  }]], "AnchorBarGrid",
+ CellID->1,ExpressionUUID->"20370d76-835f-684b-882b-64bf3eceade2"],
+
+Cell["TBMethod`EigenSpect`", "ContextNameCell",ExpressionUUID->"f9055d70-b063-ea4c-95ca-8928f435a92a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {Cell[TextData[{
+     Cell[
+     "GlobalBandGap", "ObjectName",ExpressionUUID->
+      "d57f7f5d-6b07-924c-91b2-46eb1463c53c"],
+     Cell[BoxData[
+      TemplateBox[{8},
+       "Spacer1"]],ExpressionUUID->"b4b5a19b-d5ce-c74a-ba31-6bdc8b53ba31"],
+     Cell[BoxData[
+     ""], "ObjectNameTranslation",ExpressionUUID->
+      "e491e9bc-e051-ed4f-bc95-07418b8f1987"]
+    }],ExpressionUUID->"a2985475-0979-274b-b8fa-9dc1615befc7"], 
+    "\[SpanFromLeft]"}
+  }]], "ObjectNameGrid",ExpressionUUID->"3eac0db3-ae7e-6243-bf71-\
+3b64a8b1fd46"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[Cell[BoxData[
+     RowBox[{"GlobalBandGap", "[", 
+      RowBox[{"h", ",", "samples", ",", "n", ",", "opts"}], "]"}]], 
+     "InlineFormula",
+     FontFamily->"Source Sans Pro",ExpressionUUID->
+     "e1c740ce-35fa-3140-a48d-9d4d0dfa6650"]],ExpressionUUID->
+     "ea6eb0f0-4359-ec43-bc3c-aed198ec57a5"]},
+   {"", Cell["\<\
+Returns the sampled indirect gap between the minimum of band n+1 and the \
+maximum of band n.\
+\>",ExpressionUUID->"3eb1b527-800d-4141-a7d2-ad62c27b7ed9"]}
+  }]], "Usage",
+ CellID->1134892726,ExpressionUUID->"5d8da515-950c-1a49-bbb6-e3662ea9891d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[Cell[TextData[{
+  Cell[BoxData[
+   DynamicBox[ToBoxes[
+     If[CurrentValue[
+        EvaluationCell[], "CellGroupOpen"] =!= Closed, 
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], 
+      Rotate[
+       Style[
+        Graphics[{
+          Thickness[0.18], 
+          RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+          Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+         PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+        0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+    ImageSizeCache->{
+     13.600000000000001`, {-0.16630120645742785`, 13.76630120645743}}]],
+   ExpressionUUID->"c5ab5124-6c28-844e-baa2-011769514f9e"],
+  Cell[BoxData[
+   TemplateBox[{1},
+    "Spacer1"]],ExpressionUUID->"7eb2f3f4-e781-4142-8e9d-24b9a2725afa"],
+  "Details and Options"
+ }], "NotesFrameText",ExpressionUUID->
+  "79c0b0cd-3ba4-d341-a0de-b21cbafb4ba6"]],ExpressionUUID->"08ffbe9c-ecbc-\
+5146-87c1-baa796058e3b"]], "NotesSection",
+ ShowGroupOpener->"Thumbnail",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CacheGraphics->False,
+ CellID->610139525,ExpressionUUID->"c2cbd3f7-ff11-fd4c-a711-930e1a773d72"],
+
+Cell["\<\
+samples must be a nonempty list of real scalar values or real coordinate \
+lists; exact integer samples do not match this implementation's pattern.\
+\>", "Notes",
+ CellID->449193884,ExpressionUUID->"1616f7ae-8a84-914b-bba9-512de32f6da4"],
+
+Cell["\<\
+Computes Min[E[n+1]] - Max[E[n]] after sorting eigenvalues separately at each \
+sample. A negative value indicates sampled band overlap.\
+\>", "Notes",
+ CellID->933821666,ExpressionUUID->"0ee4bcd9-3a16-4b4b-ae4e-50467ecfedde"],
+
+Cell["\<\
+n lies between 1 and matrixDimension-1. The two extrema may occur at \
+different samples, in contrast to LocalBandGap.\
+\>", "Notes",
+ CellID->1176459718,ExpressionUUID->"79e7d9c5-716d-9f44-bc93-c00fb7c9c653"],
+
+Cell["\<\
+This is an estimate over the supplied points. Eigenvalues options are \
+accepted and Method -> \"Direct\" is supplied internally.\
+\>", "Notes",
+ CellID->714099464,ExpressionUUID->"816a1177-96d4-954b-80d5-d915d62112ee"]
+}, Closed]],
+
+Cell["", "PageDelimiter",ExpressionUUID->"47ec17fc-30c3-cc4c-8059-ed54e542c746"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[
+     MatchQ[
+      CurrentValue[
+       EvaluationNotebook[], {
+       TaggingRules, "Openers", "PrimaryExamplesSection"}, Open], 
+      Alternatives[True, Open]], 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+   ImageSizeCache->{
+    13.600000000000001`, {4.253698793542572, 9.34630120645743}}]],
+  ExpressionUUID->"c9ff8000-0b29-eb4e-9f37-a1fcc925a532"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"74290d81-78ce-534b-8997-8b3c194c4554"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "de5106f3-78cc-d84f-b0f1-6311e7f3ca5b"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellID->867388520,ExpressionUUID->"d7baff3c-9589-184f-8687-bbd7c6bb63ed"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[CurrentValue[
+       EvaluationCell[], "CellGroupOpen"] =!= Closed, 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]]]],ExpressionUUID->
+  "15f4b8d9-9a96-7041-90af-2ebc19c762e4"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"61fca9ef-0f6b-264f-bed3-c8ebff106150"],
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "183e16c6-7cd5-f34e-b4d6-82b9699aac9a"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellID->251925977,ExpressionUUID->"8aeaa905-af6d-0540-bec7-bc8b95efbbd5"],
+
+Cell["\<\
+A dispersive common energy shift reduces the indirect gap from two to one.\
+\>", "ExampleText",
+ CellID->1705706758,ExpressionUUID->"ef21c788-e55b-2641-b871-3a526f7133ce"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<TBMethod`\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1313660049,ExpressionUUID->"f2d77671-4c1f-0a41-b5d8-ec30d44a1206"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Clear", "[", "h", "]"}], ";", 
+  RowBox[{
+   RowBox[{"h", "[", "k_", "]"}], ":=", 
+   RowBox[{"DiagonalMatrix", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"k", "-", "1.`"}], ",", 
+      RowBox[{"k", "+", "1.`"}]}], "}"}], "]"}]}], ";", 
+  RowBox[{"result", "=", 
+   RowBox[{"GlobalBandGap", "[", 
+    RowBox[{"h", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "0.5`"}], ",", "0.`", ",", "0.5`"}], "}"}], ",", "1"}], 
+    "]"}]}], ";", "result"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->813197727,ExpressionUUID->"4c14b691-8271-c343-9c8a-3990c54ed61f"],
+
+Cell[BoxData["1.`"], "Output",
+ CellLabel->"Out[3]=",
+ CellID->1397470501,ExpressionUUID->"fd25b172-c4d7-924c-9e76-3d7d80fea881"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, 
+       "RelatedFunction.png"]],
+     ImageSizeCache->{50., {26.472656144876964`, 33.527343855123036`}}], 
+    GridBox[{
+      {
+       StyleBox[
+        RowBox[{"See", " ", "Also"}], "SeeAlsoSection"]},
+      {Cell[TextData[{
+        ButtonBox["LocalBandGap",
+         BaseStyle->"Link",
+         ButtonData->"paclet:TBMethod/ref/LocalBandGap"],
+        " \[FilledVerySmallSquare] ",
+        ButtonBox["ParallelGlobalBandGap",
+         BaseStyle->"Link",
+         ButtonData->"paclet:TBMethod/ref/ParallelGlobalBandGap"],
+        " \[FilledVerySmallSquare] ",
+        ButtonBox["BandData",
+         BaseStyle->"Link",
+         ButtonData->"paclet:TBMethod/ref/BandData"]
+       }], "SeeAlso",ExpressionUUID->"aa9a39b9-028c-5b4c-ae02-1c6034ac7292"]}
+     }]}
+  }]], "SeeAlsoSection",ExpressionUUID->"944a979c-f930-df49-9fba-\
+c1c8a5be09f6"],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, 
+       "RelatedTutorial.png"]],
+     ImageSizeCache->{50., {26.472656144876964`, 33.527343855123036`}}], 
+    GridBox[{
+      {
+       StyleBox[
+        RowBox[{"Tech", " ", "Notes"}], "TutorialsSection"]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["Getting Started with TBMethod"]], 
+           "paclet:TBMethod/tutorial/GettingStarted"},
+          "RefLinkPlain",
+          BaseStyle->{"Tutorials"}]], "Tutorials",ExpressionUUID->
+         "dedfda78-ad2a-7949-8757-c7c5e459e95e"]}]}
+     }]}
+  }]], "TutorialsSection",ExpressionUUID->"a45339bd-f161-e342-b4f2-\
+64fe9bdc2ad0"],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, "RelatedGuide.png"]],
+     ImageSizeCache->{50., {26.472656144876964`, 33.527343855123036`}}], 
+    GridBox[{
+      {
+       StyleBox[
+        RowBox[{"Related", " ", "Guides"}], "MoreAboutSection"]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["TBMethod"]], "paclet:TBMethod/guide/TBMethod"},
+          "RefLinkPlain",
+          BaseStyle->{"MoreAbout"}]], "MoreAbout",ExpressionUUID->
+         "cb6820e1-f78c-db41-b3e2-0e1d03d896c8"]}]}
+     }]}
+  }]], "MoreAboutSection",ExpressionUUID->"721fc0d2-ba1d-7b4c-b41b-\
+03b0070495fb"],
+
+Cell[" ", "FooterCell",ExpressionUUID->"0c45d276-5551-6946-ba0a-8c6b9924897d"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{900, 845.25},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"GlobalBandGap",
+Visible->True,
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
+  "ExampleCounter" -> 1, 
+  "Openers" -> {
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}, 
+    "AllOptsTable" -> Closed}, "NewStyles" -> True, 
+  "CitationPopupData" -> $Failed, "ShowCitation" -> False, "HasOptions" -> 
+  True, "RootCaptions" -> "", "HeaderCoreAreaLink" -> {}, 
+  "Metadata" -> {
+   "built" -> "{2026, 10, 24, 17, 32, 28.6224627}", 
+    "history" -> {"", "", "", ""}, "context" -> "TBMethod`EigenSpect`", 
+    "keywords" -> {"GlobalBandGap tight binding TBMethod"}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "T B Method Symbol", "language" -> "en", "paclet" -> 
+    "TBMethod", "status" -> "None", "summary" -> 
+    "GlobalBandGap[h, samples, n, opts] Returns the sampled indirect gap \
+between the minimum of band n+1 and the maximum of band n.", "synonyms" -> {},
+     "tabletags" -> {}, "title" -> "GlobalBandGap", "titlemodifier" -> "", 
+    "metadescription" -> "", "windowtitle" -> "GlobalBandGap", "type" -> 
+    "Symbol", "uri" -> "TBMethod/ref/GlobalBandGap", "WorkflowDockedCell" -> 
+    ""}, "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"15.0 for Microsoft Windows (64-bit) (July 2, 2026)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "15.0 for Microsoft Windows (64-bit) (July 2, 2026)", 
+  StyleDefinitions -> "PrivateStylesheetFormatting.nb"],
+ExpressionUUID->"a5a78792-5a72-264b-8fb1-e0f1d4858e93"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[1487, 34, 6352, 155, 70, "AnchorBarGrid",ExpressionUUID->"20370d76-835f-684b-882b-64bf3eceade2",
+ CellID->1],
+Cell[7687, 191, 102, 0, 70, "ContextNameCell",ExpressionUUID->"f9055d70-b063-ea4c-95ca-8928f435a92a"],
+Cell[CellGroupData[{
+Cell[7814, 195, 570, 14, 70, "ObjectNameGrid",ExpressionUUID->"3eac0db3-ae7e-6243-bf71-3b64a8b1fd46"],
+Cell[8373, 211, 626, 13, 70, "Usage",ExpressionUUID->"5d8da515-950c-1a49-bbb6-e3662ea9891d",
+ CellID->1134892726]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9023, 229, 1481, 34, 70, "NotesSection",ExpressionUUID->"c2cbd3f7-ff11-fd4c-a711-930e1a773d72",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->610139525],
+Cell[10473, 265, 251, 4, 70, "Notes",ExpressionUUID->"1616f7ae-8a84-914b-bba9-512de32f6da4",
+ CellID->449193884],
+Cell[10723, 271, 240, 4, 70, "Notes",ExpressionUUID->"0ee4bcd9-3a16-4b4b-ae4e-50467ecfedde",
+ CellID->933821666],
+Cell[10962, 277, 223, 4, 70, "Notes",ExpressionUUID->"79e7d9c5-716d-9f44-bc93-c00fb7c9c653",
+ CellID->1176459718],
+Cell[11184, 283, 233, 4, 70, "Notes",ExpressionUUID->"816a1177-96d4-954b-80d5-d915d62112ee",
+ CellID->714099464]
+}, Closed]],
+Cell[11428, 290, 80, 0, 70, "PageDelimiter",ExpressionUUID->"47ec17fc-30c3-cc4c-8059-ed54e542c746"],
+Cell[CellGroupData[{
+Cell[11533, 294, 1439, 37, 70, "PrimaryExamplesSection",ExpressionUUID->"d7baff3c-9589-184f-8687-bbd7c6bb63ed",
+ CellID->867388520],
+Cell[CellGroupData[{
+Cell[12960, 335, 1266, 31, 70, "ExampleSection",ExpressionUUID->"8aeaa905-af6d-0540-bec7-bc8b95efbbd5",
+ CellID->251925977],
+Cell[14198, 368, 184, 3, 70, "ExampleText",ExpressionUUID->"ef21c788-e55b-2641-b871-3a526f7133ce",
+ CellID->1705706758],
+Cell[14382, 373, 176, 3, 70, "Input",ExpressionUUID->"f2d77671-4c1f-0a41-b5d8-ec30d44a1206",
+ CellID->1313660049],
+Cell[CellGroupData[{
+Cell[14580, 380, 630, 18, 70, "Input",ExpressionUUID->"4c14b691-8271-c343-9c8a-3990c54ed61f",
+ CellID->813197727],
+Cell[15195, 400, 131, 2, 70, "Output",ExpressionUUID->"fd25b172-c4d7-924c-9e76-3d7d80fea881",
+ CellID->1397470501]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[15363, 407, 989, 25, 70, "SeeAlsoSection",ExpressionUUID->"944a979c-f930-df49-9fba-c1c8a5be09f6"],
+Cell[16330, 434, 807, 21, 70, "TutorialsSection",ExpressionUUID->"a45339bd-f161-e342-b4f2-64fe9bdc2ad0"],
+Cell[17119, 457, 756, 19, 70, "MoreAboutSection",ExpressionUUID->"721fc0d2-ba1d-7b4c-b41b-03b0070495fb"],
+Cell[17859, 478, 78, 0, 70, "FooterCell",ExpressionUUID->"0c45d276-5551-6946-ba0a-8c6b9924897d"]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,573 @@
+(* Content-type: application/vnd.wolfram.cdf.text *)
+
+(*** Wolfram CDF File ***)
+(* http://www.wolfram.com/cdf *)
+
+(* CreatedBy='Wolfram 15.0' *)
+
+(*************************************************************************)
+(*                                                                       *)
+(*                                                                       *)
+(*  This file was created under the Wolfram Enterprise licensing terms.  *)
+(*                                                                       *)
+(*       For additional information concerning CDF licensing see:        *)
+(*                                                                       *)
+(*        www.wolfram.com/cdf/adopting-cdf/licensing-options.html        *)
+(*                                                                       *)
+(*                                                                       *)
+(*                                                                       *)
+(*************************************************************************)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[      1060,         20]
+NotebookDataLength[     21386,        551]
+NotebookOptionsPosition[     17875,        473]
+NotebookOutlinePosition[     20077,        525]
+CellTagsIndexPosition[     20034,        522]
+WindowTitle->FirstBrillouinZonePlot
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {GridBox[{
+      {
+       ItemBox[Cell[BoxData[
+         RowBox[{
+          TemplateBox[{12},
+           "Spacer1"], Cell["T B METHOD SYMBOL", "PacletNameCell",
+           TextAlignment->Center,ExpressionUUID->
+           "db383c73-c6ba-9b4b-8188-717b4d6a14db"], 
+          TemplateBox[{8},
+           "Spacer1"]}]],
+         TextAlignment->Center,ExpressionUUID->
+         "24465e8f-ec18-ee43-a2fd-1e843cf0038b"],
+        Background->LightDarkSwitched[
+          RGBColor[0.490196, 0.576471, 0.690196]],
+        ItemSize->Full], ""}
+     },
+     GridBoxAlignment->{"Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {Full, 
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[{
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "See Also",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "aec11d80-6a05-6142-a4ce-073f87f81757"]
+         }],ExpressionUUID->"e1676f49-0116-564f-9ec4-bdea9761d3c0"],
+         StripOnInput->False],{
+        StyleBox[
+          "\"FirstBrillouinZoneRegion\"", "SeeAlsoRelated", StripOnInput -> 
+           False] :> Documentation`HelpLookup[
+          "paclet:TBMethod/ref/FirstBrillouinZoneRegion"], 
+         StyleBox[
+          "\"ReciprocalVectors\"", "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup["paclet:TBMethod/ref/ReciprocalVectors"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"SeeAlso"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "e6d268eb-0908-dd44-8558-367acf535be9"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "Related Guides",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "402597ac-c96d-d74c-a40b-0c0b28354c2f"]
+         }],ExpressionUUID->"1c485b93-7e98-f64a-a0f8-85793968d331"],
+         StripOnInput->False],{
+        "\"TBMethod\"" :> 
+         Documentation`HelpLookup["paclet:TBMethod/guide/TBMethod"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"MoreAbout"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "2e75c7db-ecbf-ec4f-9c32-018a492b4648"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "Tech Notes",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "642b266e-b3bd-1540-8c41-7e9deaee9270"]
+         }],ExpressionUUID->"34f2b75b-586c-7048-a6cd-c936e11028fc"],
+         StripOnInput->False],{
+        "\"Getting Started with TBMethod\"" :> 
+         Documentation`HelpLookup["paclet:TBMethod/tutorial/GettingStarted"]},
+        
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"Tutorials"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "cf4e10bd-5df3-a245-a8ed-4fe1bc738f17"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "URL",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "83c38d15-5980-f349-a0ba-ad405b2bf1f7"]
+         }],ExpressionUUID->"9d05768c-8802-0c40-9b6c-c7123c0ee7c5"],
+         StripOnInput->False],{
+        "\"TBMethod/ref/FirstBrillouinZonePlot\"" :> None, 
+         "\"Copy Wolfram Documentation Center URL\"" :> 
+         CopyToClipboard["TBMethod/ref/FirstBrillouinZonePlot"], Delimiter, 
+         "\"Copy web URL\"" :> 
+         Module[{DocumentationSearch`Private`nb$}, 
+           DocumentationSearch`Private`nb$ = 
+            NotebookPut[
+             Notebook[{
+               Cell[BoxData[
+                 MakeBoxes[
+                  Hyperlink[
+                   "http://reference.wolfram.com/language/TBMethod/ref/\
+FirstBrillouinZonePlot.html"], StandardForm]], "Input", TextClipboardType -> 
+                 "PlainText"]}, Visible -> False]]; 
+           SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+           FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+           NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+         "\"Go to web URL\"" :> 
+         FrontEndExecute[{
+           NotebookLocate[{
+             URL[If[TrueQ[False], 
+                 "http://reference.wolfram.com/system-modeler/", 
+                 "http://reference.wolfram.com/language/"] <> 
+               "TBMethod/ref/FirstBrillouinZonePlot" <> ".html"], None}]}]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"URLMenu"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "5727ec04-f945-0a47-b7e1-f07f519de284"]
+    }], "AnchorBar",
+     CacheGraphics->False,ExpressionUUID->
+     "c0713324-1621-0f4f-8760-cf14b84c4cdf"]}
+  }]], "AnchorBarGrid",
+ CellID->1,ExpressionUUID->"83e3f685-5abb-af4f-be5a-2bcece0b10c1"],
+
+Cell["TBMethod`EigenSpect`", "ContextNameCell",ExpressionUUID->"6b3545d4-680a-1849-a362-0bbea3a0f7f0"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {Cell[TextData[{
+     Cell[
+     "FirstBrillouinZonePlot", "ObjectName",ExpressionUUID->
+      "e2ac916e-7177-ac4e-8c4e-c24ce49c3df1"],
+     Cell[BoxData[
+      TemplateBox[{8},
+       "Spacer1"]],ExpressionUUID->"dc548b72-5ba0-b64a-baa6-4627152572d3"],
+     Cell[BoxData[
+     ""], "ObjectNameTranslation",ExpressionUUID->
+      "8c2409d9-91e9-d84c-82cd-78677d7f16d8"]
+    }],ExpressionUUID->"c5c52d72-f229-2548-8e0b-b71c4fe74490"], 
+    "\[SpanFromLeft]"}
+  }]], "ObjectNameGrid",ExpressionUUID->"63ba2f92-f46a-ff47-b4f5-\
+5a081ba518d0"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[Cell[BoxData[
+     RowBox[{"FirstBrillouinZonePlot", "[", "reciprocalBasis", "]"}]], 
+     "InlineFormula",
+     FontFamily->"Source Sans Pro",ExpressionUUID->
+     "3da02ac2-37f4-ce49-8587-7ce4105bc57a"]],ExpressionUUID->
+     "7f884005-e520-664e-8798-63cf34f758c8"]},
+   {"", Cell[TextData[Cell[BoxData[
+     RowBox[{"FirstBrillouinZonePlot", "[", 
+      RowBox[{"reciprocalBasis", ",", "n", ",", "opts"}], "]"}]], 
+     "InlineFormula",
+     FontFamily->"Source Sans Pro",ExpressionUUID->
+     "fe48eabd-e9ab-b54b-91cb-602569f4aa1f"]],ExpressionUUID->
+     "b19f3700-a64c-1245-af35-d88b01bbe981"]},
+   {"", Cell["\<\
+Displays the first Brillouin zone together with colored reciprocal basis \
+vectors.\
+\>",ExpressionUUID->"1bbfa936-3784-054a-8b7f-e8a7443d45dc"]}
+  }]], "Usage",
+ CellID->542271717,ExpressionUUID->"05681b2c-7c49-9b42-ace7-0722f37f4639"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[Cell[TextData[{
+  Cell[BoxData[
+   DynamicBox[ToBoxes[
+     If[CurrentValue[
+        EvaluationCell[], "CellGroupOpen"] =!= Closed, 
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], 
+      Rotate[
+       Style[
+        Graphics[{
+          Thickness[0.18], 
+          RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+          Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+         PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+        0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+    ImageSizeCache->{
+     13.600000000000001`, {-0.16630120645742785`, 13.76630120645743}}]],
+   ExpressionUUID->"4ca6b20a-91b5-fb4b-9261-29fbd98d5597"],
+  Cell[BoxData[
+   TemplateBox[{1},
+    "Spacer1"]],ExpressionUUID->"d63509ee-81b0-ce45-b5e5-f39172f25dbd"],
+  "Details and Options"
+ }], "NotesFrameText",ExpressionUUID->
+  "a0a63d2c-8794-2a45-96d1-eb4b6178fe25"]],ExpressionUUID->"853ae7db-945c-\
+bd46-89e2-7757d867ac30"]], "NotesSection",
+ ShowGroupOpener->"Thumbnail",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CacheGraphics->False,
+ CellID->151866534,ExpressionUUID->"6156a594-10d9-f84e-ac55-76d8a057063b"],
+
+Cell["\<\
+The basis is a 2 by 2 or 3 by 3 matrix with rows representing reciprocal \
+vectors. Use exact input because FirstBrillouinZoneRegion, called internally, \
+requires infinite input precision.\
+\>", "Notes",
+ CellID->440721989,ExpressionUUID->"f1193eab-a241-ed4d-b5e9-b5f3a0684fc7"],
+
+Cell["\<\
+n defaults to 2 and controls the reciprocal lattice points included in the \
+Voronoi construction.\
+\>", "Notes",
+ CellID->1885938770,ExpressionUUID->"d88fd024-92fa-8741-b783-6104719d472b"],
+
+Cell["\<\
+The zone boundary is highlighted and reciprocal vectors are drawn as red, \
+green, and, in three dimensions, blue arrows. Show options are accepted.\
+\>", "Notes",
+ CellID->1323214321,ExpressionUUID->"9883a28c-3323-2b4e-9acf-4165fac73c95"]
+}, Closed]],
+
+Cell["", "PageDelimiter",ExpressionUUID->"d6fceead-f365-9147-a663-44df9a40e3ff"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[
+     MatchQ[
+      CurrentValue[
+       EvaluationNotebook[], {
+       TaggingRules, "Openers", "PrimaryExamplesSection"}, Open], 
+      Alternatives[True, Open]], 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+   ImageSizeCache->{
+    13.600000000000001`, {4.253698793542572, 9.34630120645743}}]],
+  ExpressionUUID->"ef55f96c-2e64-9f42-adbe-4bb07d35017e"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"22c0e906-bc9c-6244-96e1-6534dfa94a1e"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "d7284e2a-dd5d-0a43-92af-6fc5f223288a"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellID->302040734,ExpressionUUID->"92514ba1-c844-fb48-921d-7c3ac2f64953"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[CurrentValue[
+       EvaluationCell[], "CellGroupOpen"] =!= Closed, 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]]]],ExpressionUUID->
+  "084d5d8f-cb8e-3e43-8a92-b00a153a454d"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"d1b34e28-272b-1846-921a-ea9d063b2356"],
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "2211c013-e12c-3644-995d-63e6cfeded85"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellID->137135872,ExpressionUUID->"6cf55729-3855-6443-9d78-dedb6b753f64"],
+
+Cell["\<\
+Draw the square first Brillouin zone and its two reciprocal basis vectors.\
+\>", "ExampleText",
+ CellID->1220370049,ExpressionUUID->"219168ff-246a-0445-ba27-652a22507f6b"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<TBMethod`\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1759154377,ExpressionUUID->"830f4892-2c46-4147-bd70-5cf783fe934f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"result", "=", 
+   RowBox[{"FirstBrillouinZonePlot", "[", 
+    RowBox[{"IdentityMatrix", "[", "2", "]"}], "]"}]}], ";", 
+  "result"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1444417518,ExpressionUUID->"ef3ac498-ac36-d546-b207-b475d360351d"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   GraphicsComplexBox[{{-0.5, -0.5}, {-0.5, 0.5}, {0.5, -0.5}, {0.5, 0.5}}, 
+    {GrayLevel[0.5], Opacity[0.1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     TagBox[PolygonBox[{{1, 3, 4, 2}}],
+      Annotation[#, "Geometry"]& ]}], 
+   {Thickness[Large], 
+    {RGBColor[1, 0, 0], ArrowBox[{{0, 0}, {1, 0}}]}, 
+    {RGBColor[0, 1, 0], ArrowBox[{{0, 0}, {0, 1}}]}}}]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->1904056718,ExpressionUUID->"6296163d-d987-9b4b-8b59-63e803dbaff5"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, 
+       "RelatedFunction.png"]],
+     ImageSizeCache->{50., {26.472656144876964`, 33.527343855123036`}}], 
+    GridBox[{
+      {
+       StyleBox[
+        RowBox[{"See", " ", "Also"}], "SeeAlsoSection"]},
+      {Cell[TextData[{
+        ButtonBox["FirstBrillouinZoneRegion",
+         BaseStyle->"Link",
+         ButtonData->"paclet:TBMethod/ref/FirstBrillouinZoneRegion"],
+        " \[FilledVerySmallSquare] ",
+        ButtonBox["ReciprocalVectors",
+         BaseStyle->"Link",
+         ButtonData->"paclet:TBMethod/ref/ReciprocalVectors"]
+       }], "SeeAlso",ExpressionUUID->"7c36d21c-05ec-7e4f-ae73-99270a06dcd9"]}
+     }]}
+  }]], "SeeAlsoSection",ExpressionUUID->"22fa97a1-f514-1845-980c-\
+f3192311e301"],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, 
+       "RelatedTutorial.png"]],
+     ImageSizeCache->{50., {26.472656144876964`, 33.527343855123036`}}], 
+    GridBox[{
+      {
+       StyleBox[
+        RowBox[{"Tech", " ", "Notes"}], "TutorialsSection"]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["Getting Started with TBMethod"]], 
+           "paclet:TBMethod/tutorial/GettingStarted"},
+          "RefLinkPlain",
+          BaseStyle->{"Tutorials"}]], "Tutorials",ExpressionUUID->
+         "a1966344-2996-a741-b411-4417234e4fab"]}]}
+     }]}
+  }]], "TutorialsSection",ExpressionUUID->"c80eb704-5e72-7e4f-99b1-\
+19abea49da3f"],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, "RelatedGuide.png"]],
+     ImageSizeCache->{50., {26.472656144876964`, 33.527343855123036`}}], 
+    GridBox[{
+      {
+       StyleBox[
+        RowBox[{"Related", " ", "Guides"}], "MoreAboutSection"]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["TBMethod"]], "paclet:TBMethod/guide/TBMethod"},
+          "RefLinkPlain",
+          BaseStyle->{"MoreAbout"}]], "MoreAbout",ExpressionUUID->
+         "b4375226-df86-e947-b1b3-d7caa8da83cd"]}]}
+     }]}
+  }]], "MoreAboutSection",ExpressionUUID->"ff1ab3f6-31fc-3441-88d8-\
+d53dc7b5d470"],
+
+Cell[" ", "FooterCell",ExpressionUUID->"3fd7998d-1510-6245-b904-d1ab569f6f5a"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{900, 845.25},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"FirstBrillouinZonePlot",
+Visible->True,
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
+  "ExampleCounter" -> 1, 
+  "Openers" -> {
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}, 
+    "AllOptsTable" -> Closed}, "NewStyles" -> True, 
+  "CitationPopupData" -> $Failed, "ShowCitation" -> False, "HasOptions" -> 
+  True, "RootCaptions" -> "", "HeaderCoreAreaLink" -> {}, 
+  "Metadata" -> {
+   "built" -> "{2026, 10, 24, 17, 32, 23.5926909}", 
+    "history" -> {"", "", "", ""}, "context" -> "TBMethod`EigenSpect`", 
+    "keywords" -> {"FirstBrillouinZonePlot tight binding TBMethod"}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "T B Method Symbol", "language" -> "en", "paclet" -> 
+    "TBMethod", "status" -> "None", "summary" -> 
+    "FirstBrillouinZonePlot[reciprocalBasis] \
+FirstBrillouinZonePlot[reciprocalBasis, n, opts] Displays the first Brillouin \
+zone together with colored reciprocal basis vectors.", "synonyms" -> {}, 
+    "tabletags" -> {}, "title" -> "FirstBrillouinZonePlot", "titlemodifier" -> 
+    "", "metadescription" -> "", "windowtitle" -> "FirstBrillouinZonePlot", 
+    "type" -> "Symbol", "uri" -> "TBMethod/ref/FirstBrillouinZonePlot", 
+    "WorkflowDockedCell" -> ""}, "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"15.0 for Microsoft Windows (64-bit) (July 2, 2026)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "15.0 for Microsoft Windows (64-bit) (July 2, 2026)", 
+  StyleDefinitions -> "PrivateStylesheetFormatting.nb"],
+ExpressionUUID->"a5a78792-5a72-264b-8fb1-e0f1d4858e93"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[1496, 34, 6267, 154, 70, "AnchorBarGrid",ExpressionUUID->"83e3f685-5abb-af4f-be5a-2bcece0b10c1",
+ CellID->1],
+Cell[7612, 190, 102, 0, 70, "ContextNameCell",ExpressionUUID->"6b3545d4-680a-1849-a362-0bbea3a0f7f0"],
+Cell[CellGroupData[{
+Cell[7739, 194, 579, 14, 70, "ObjectNameGrid",ExpressionUUID->"63ba2f92-f46a-ff47-b4f5-5a081ba518d0"],
+Cell[8307, 210, 920, 19, 70, "Usage",ExpressionUUID->"05681b2c-7c49-9b42-ace7-0722f37f4639",
+ CellID->542271717]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9245, 234, 1481, 34, 70, "NotesSection",ExpressionUUID->"6156a594-10d9-f84e-ac55-76d8a057063b",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->151866534],
+Cell[10695, 270, 294, 5, 70, "Notes",ExpressionUUID->"f1193eab-a241-ed4d-b5e9-b5f3a0684fc7",
+ CellID->440721989],
+Cell[10987, 277, 203, 4, 70, "Notes",ExpressionUUID->"d88fd024-92fa-8741-b783-6104719d472b",
+ CellID->1885938770],
+Cell[11189, 283, 253, 4, 70, "Notes",ExpressionUUID->"9883a28c-3323-2b4e-9acf-4165fac73c95",
+ CellID->1323214321]
+}, Closed]],
+Cell[11453, 290, 80, 0, 70, "PageDelimiter",ExpressionUUID->"d6fceead-f365-9147-a663-44df9a40e3ff"],
+Cell[CellGroupData[{
+Cell[11558, 294, 1439, 37, 70, "PrimaryExamplesSection",ExpressionUUID->"92514ba1-c844-fb48-921d-7c3ac2f64953",
+ CellID->302040734],
+Cell[CellGroupData[{
+Cell[12985, 335, 1266, 31, 70, "ExampleSection",ExpressionUUID->"6cf55729-3855-6443-9d78-dedb6b753f64",
+ CellID->137135872],
+Cell[14223, 368, 184, 3, 70, "ExampleText",ExpressionUUID->"219168ff-246a-0445-ba27-652a22507f6b",
+ CellID->1220370049],
+Cell[14407, 373, 176, 3, 70, "Input",ExpressionUUID->"830f4892-2c46-4147-bd70-5cf783fe934f",
+ CellID->1759154377],
+Cell[CellGroupData[{
+Cell[14605, 380, 284, 7, 70, "Input",ExpressionUUID->"ef3ac498-ac36-d546-b207-b475d360351d",
+ CellID->1444417518],
+Cell[14885, 389, 517, 10, 70, "Output",ExpressionUUID->"6296163d-d987-9b4b-8b59-63e803dbaff5",
+ CellID->1904056718]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[15431, 404, 851, 21, 70, "SeeAlsoSection",ExpressionUUID->"22fa97a1-f514-1845-980c-f3192311e301"],
+Cell[16264, 427, 807, 21, 70, "TutorialsSection",ExpressionUUID->"c80eb704-5e72-7e4f-99b1-19abea49da3f"],
+Cell[17053, 450, 756, 19, 70, "MoreAboutSection",ExpressionUUID->"ff1ab3f6-31fc-3441-88d8-d53dc7b5d470"],
+Cell[17793, 471, 78, 0, 70, "FooterCell",ExpressionUUID->"3fd7998d-1510-6245-b904-d1ab569f6f5a"]
+}
+]
+*)
+
+(* End of internal cache information *)

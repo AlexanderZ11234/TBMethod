@@ -1,0 +1,515 @@
+(* Content-type: application/vnd.wolfram.cdf.text *)
+
+(*** Wolfram CDF File ***)
+(* http://www.wolfram.com/cdf *)
+
+(* CreatedBy='Wolfram 15.0' *)
+
+(*************************************************************************)
+(*                                                                       *)
+(*                                                                       *)
+(*  This file was created under the Wolfram Enterprise licensing terms.  *)
+(*                                                                       *)
+(*       For additional information concerning CDF licensing see:        *)
+(*                                                                       *)
+(*        www.wolfram.com/cdf/adopting-cdf/licensing-options.html        *)
+(*                                                                       *)
+(*                                                                       *)
+(*                                                                       *)
+(*************************************************************************)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[      1060,         20]
+NotebookDataLength[     19436,        493]
+NotebookOptionsPosition[     15146,        396]
+NotebookOutlinePosition[     17915,        459]
+CellTagsIndexPosition[     17872,        456]
+WindowTitle->Getting Started with TBMethod
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {GridBox[{
+      {
+       ItemBox[Cell[BoxData[
+         RowBox[{
+          TemplateBox[{12},
+           "Spacer1"], Cell["T B METHOD TECH NOTE", "PacletNameCell",
+           TextAlignment->Center,ExpressionUUID->
+           "21283e4f-878b-cc4b-8b80-667e2578159c"], 
+          TemplateBox[{8},
+           "Spacer1"]}]],
+         TextAlignment->Center,ExpressionUUID->
+         "89f2fed3-c628-a642-ae4a-a52a607a3faa"],
+        Background->LightDarkSwitched[
+          RGBColor[
+          0.3843137254901961, 0.4627450980392157, 0.7019607843137254]],
+        ItemSize->Full], ""}
+     },
+     GridBoxAlignment->{"Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {Full, 
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[Cell[BoxData[
+     TagBox[
+      ActionMenuBox[
+       FrameBox[Cell[TextData[{
+         "URL",
+         " ",
+         Cell[BoxData[
+          GraphicsBox[
+           {GrayLevel[0.66667], Thickness[0.13], 
+            LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+           AspectRatio->1,
+           ImageSize->20,
+           PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+          "e987ce4a-a209-d747-a592-cc705fea0c84"]
+        }],ExpressionUUID->"24efd35e-f2ae-4041-8862-42ae8feffef1"],
+        StripOnInput->False],{
+       "\"TBMethod/tutorial/GettingStarted\"" :> None, 
+        "\"Copy Wolfram Documentation Center URL\"" :> 
+        CopyToClipboard["TBMethod/tutorial/GettingStarted"], Delimiter, 
+        "\"Copy web URL\"" :> 
+        Module[{DocumentationSearch`Private`nb$}, 
+          DocumentationSearch`Private`nb$ = 
+           NotebookPut[
+            Notebook[{
+              Cell[BoxData[
+                MakeBoxes[
+                 Hyperlink[
+                  "http://reference.wolfram.com/language/TBMethod/tutorial/\
+GettingStarted.html"], StandardForm]], "Input", TextClipboardType -> 
+                "PlainText"]}, Visible -> False]]; 
+          SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+          FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+          NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+        "\"Go to web URL\"" :> 
+        FrontEndExecute[{
+          NotebookLocate[{
+            URL[If[TrueQ[False], 
+                "http://reference.wolfram.com/system-modeler/", 
+                "http://reference.wolfram.com/language/"] <> 
+              "TBMethod/tutorial/GettingStarted" <> ".html"], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"],
+      MouseAppearanceTag["LinkHand"]]],
+     LineSpacing->{1.4, 0},ExpressionUUID->
+     "96e28f99-a7f8-bb4e-bb9a-cb40c04b2d31"]], "AnchorBar",
+     CacheGraphics->False,ExpressionUUID->
+     "192d56a9-27d6-244d-86d5-714d9e93607d"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"e2549585-9af7-6945-8185-576549fc6cc5"],
+
+Cell[CellGroupData[{
+
+Cell["Getting Started with TBMethod", "TechNoteTitle",
+ CellID->768556015,ExpressionUUID->"23bb8cce-55c2-fd46-8113-2ef6e1b46a89"],
+
+Cell[BoxData[GridBox[{
+   {
+    TemplateBox[{
+      Cell["Load the package"], 
+      "paclet:TBMethod/tutorial/GettingStarted#1238537435", 
+      StyleBox[
+       GraphicsBox[{
+         Thickness[0.18], 
+         RGBColor[0.3843137254901961, 0.4627450980392157, 0.7019607843137254], 
+         LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited, StripOnInput -> False], 
+      StyleBox[
+       GraphicsBox[{
+         Thickness[0.18], 
+         RGBColor[0.9686274509803922, 0.4666666666666667, 0.], 
+         LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited, StripOnInput -> False]},
+     "GrayLinkWithIcon",
+     BaseStyle->{"TutorialJumpBoxLink"}], 
+    TemplateBox[{
+      Cell["A central-region Green's function"], 
+      "paclet:TBMethod/tutorial/GettingStarted#302267665", 
+      StyleBox[
+       GraphicsBox[{
+         Thickness[0.18], 
+         RGBColor[0.3843137254901961, 0.4627450980392157, 0.7019607843137254], 
+         LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited, StripOnInput -> False], 
+      StyleBox[
+       GraphicsBox[{
+         Thickness[0.18], 
+         RGBColor[0.9686274509803922, 0.4666666666666667, 0.], 
+         LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited, StripOnInput -> False]},
+     "GrayLinkWithIcon",
+     BaseStyle->{"TutorialJumpBoxLink"}]},
+   {
+    TemplateBox[{
+      Cell["A one-dimensional Bloch Hamiltonian"], 
+      "paclet:TBMethod/tutorial/GettingStarted#806294729", 
+      StyleBox[
+       GraphicsBox[{
+         Thickness[0.18], 
+         RGBColor[0.3843137254901961, 0.4627450980392157, 0.7019607843137254], 
+         LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited, StripOnInput -> False], 
+      StyleBox[
+       GraphicsBox[{
+         Thickness[0.18], 
+         RGBColor[0.9686274509803922, 0.4666666666666667, 0.], 
+         LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited, StripOnInput -> False]},
+     "GrayLinkWithIcon",
+     BaseStyle->{"TutorialJumpBoxLink"}], 
+    TemplateBox[{
+      Cell["Parallel calculations"], 
+      "paclet:TBMethod/tutorial/GettingStarted#1779948289", 
+      StyleBox[
+       GraphicsBox[{
+         Thickness[0.18], 
+         RGBColor[0.3843137254901961, 0.4627450980392157, 0.7019607843137254], 
+         LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited, StripOnInput -> False], 
+      StyleBox[
+       GraphicsBox[{
+         Thickness[0.18], 
+         RGBColor[0.9686274509803922, 0.4666666666666667, 0.], 
+         LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited, StripOnInput -> False]},
+     "GrayLinkWithIcon",
+     BaseStyle->{"TutorialJumpBoxLink"}]},
+   {
+    TemplateBox[{
+      Cell["Calculate and display the band"], 
+      "paclet:TBMethod/tutorial/GettingStarted#1123750866", 
+      StyleBox[
+       GraphicsBox[{
+         Thickness[0.18], 
+         RGBColor[0.3843137254901961, 0.4627450980392157, 0.7019607843137254], 
+         LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited, StripOnInput -> False], 
+      StyleBox[
+       GraphicsBox[{
+         Thickness[0.18], 
+         RGBColor[0.9686274509803922, 0.4666666666666667, 0.], 
+         LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited, StripOnInput -> False]},
+     "GrayLinkWithIcon",
+     BaseStyle->{"TutorialJumpBoxLink"}], ""}
+  }]], "TechNoteJumpBox",ExpressionUUID->"2a1d2322-e3a0-3540-9733-\
+89d556526b28"],
+
+Cell["\<\
+Load the package, construct a one-orbital chain, and inspect its band \
+dispersion. All examples are deliberately small and can be evaluated directly \
+in this notebook.\
+\>", "TechNoteText",
+ CellID->1975681404,ExpressionUUID->"25845d91-b150-9b41-b38c-3e0e77c98238"],
+
+Cell[CellGroupData[{
+
+Cell["Load the package", "TechNoteSection",
+ CellID->1238537435,ExpressionUUID->"13ab2fec-2840-2948-aebf-2d48a8735b79"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<TBMethod`\>\"", "]"}]], "Input",
+ CellID->907759818,ExpressionUUID->"44864c92-20ef-9b49-ba73-9b984e4a8019"],
+
+Cell["\<\
+Press F1 while the cursor is on an exported TBMethod symbol to open its \
+reference page. Examples are ordinary evaluatable input cells; use \
+Shift+Enter to run one.\
+\>", "TechNoteText",
+ CellID->1832987748,ExpressionUUID->"35ab613e-1318-0c48-8824-6aa82c5fc4c2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["A one-dimensional Bloch Hamiltonian", "TechNoteSection",
+ CellID->806294729,ExpressionUUID->"94ce7d00-fdd8-a847-82fb-f0018ef1d39f"],
+
+Cell["\<\
+The first association entry is the onsite matrix. Subsequent entries give one \
+orientation of each hopping; HBloch adds its Hermitian conjugate. Use sparse \
+matrices for the association values.\
+\>", "TechNoteText",
+ CellID->1922894369,ExpressionUUID->"957f2667-674b-9147-a13b-a89b042f0dff"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"hoppings", "=", 
+   RowBox[{"Association", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", "0", "}"}], "\[Rule]", 
+      RowBox[{"SparseArray", "[", 
+       RowBox[{"{", 
+        RowBox[{"{", "0.`", "}"}], "}"}], "]"}]}], ",", 
+     RowBox[{
+      RowBox[{"{", "1", "}"}], "\[Rule]", 
+      RowBox[{"SparseArray", "[", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"-", "1.`"}], "}"}], "}"}], "]"}]}]}], "]"}]}], ";", 
+  RowBox[{"Clear", "[", "h", "]"}], ";", 
+  RowBox[{
+   RowBox[{"h", "[", "k_", "]"}], ":=", 
+   RowBox[{"HBloch", "[", 
+    RowBox[{"k", ",", "hoppings"}], "]"}]}], ";", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"k", ",", 
+      RowBox[{"Normal", "[", 
+       RowBox[{"h", "[", 
+        RowBox[{"{", "k", "}"}], "]"}], "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", 
+      RowBox[{"{", 
+       RowBox[{"0.`", ",", 
+        FractionBox["\[Pi]", "2"], ",", "\[Pi]"}], "}"}]}], "}"}]}], 
+   "]"}]}]], "Input",
+ CellID->1137666460,ExpressionUUID->"e66f7b51-8636-1a48-a5c6-19817378beb1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Calculate and display the band", "TechNoteSection",
+ CellID->1123750866,ExpressionUUID->"e3644aaf-3eb5-4b44-b726-581fe9b48685"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"momenta", "=", 
+   RowBox[{"List", "/@", 
+    RowBox[{"Subdivide", "[", 
+     RowBox[{
+      RowBox[{"-", "\[Pi]"}], ",", "\[Pi]", ",", "40"}], "]"}]}]}], ";", 
+  RowBox[{"bands", "=", 
+   RowBox[{"BandData", "[", 
+    RowBox[{"h", ",", "momenta"}], "]"}]}], ";", 
+  RowBox[{"BandPlot", "[", 
+   RowBox[{"bands", ",", 
+    RowBox[{"{", 
+     RowBox[{"\"\<-Pi\>\"", ",", "\"\<0\>\"", ",", "\"\<Pi\>\""}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "21", ",", "41"}], "}"}]}], "]"}]}]], "Input",
+ CellID->224828836,ExpressionUUID->"fca50b23-0edb-b142-b0f5-74807dcedae7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["A central-region Green's function", "TechNoteSection",
+ CellID->302267665,ExpressionUUID->"44339d29-d09e-9540-b82c-c21f6a860e4f"],
+
+Cell["\<\
+Use a positive imaginary energy part for the retarded resolvent. \
+Self-energies supplied to CentralGreen have the full central-region matrix \
+dimensions.\
+\>", "TechNoteText",
+ CellID->150789733,ExpressionUUID->"1c70617e-b4df-2e4e-aaf3-c5e79812f506"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"energy", "=", 
+   RowBox[{"0.2`", "\[VeryThinSpace]", "+", 
+    RowBox[{"0.05`", " ", "\[ImaginaryI]"}]}]}], ";", 
+  RowBox[{"hCentral", "=", 
+   RowBox[{"SparseArray", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0.`", ",", 
+        RowBox[{"-", "1.`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1.`"}], ",", "0.`"}], "}"}]}], "}"}], "]"}]}], ";", 
+  RowBox[{"sigma", "=", 
+   RowBox[{"SparseArray", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "0.1`"}], " ", "\[ImaginaryI]"}], ",", "0.`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0.`", ",", 
+        RowBox[{
+         RowBox[{"-", "0.1`"}], " ", "\[ImaginaryI]"}]}], "}"}]}], "}"}], 
+    "]"}]}], ";", 
+  RowBox[{"g", "=", 
+   RowBox[{"CentralGreen", "[", 
+    RowBox[{"energy", ",", "hCentral", ",", 
+     RowBox[{"{", "sigma", "}"}]}], "]"}]}], ";", 
+  RowBox[{"Chop", "[", 
+   RowBox[{"Normal", "[", 
+    RowBox[{"g", ".", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"energy", " ", 
+        RowBox[{"IdentityMatrix", "[", "2", "]"}]}], "-", "hCentral", "-", 
+       "sigma"}], ")"}]}], "]"}], "]"}]}]], "Input",
+ CellID->157715703,ExpressionUUID->"8e8a78aa-4b91-f54a-9353-f12a3acd19be"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Parallel calculations", "TechNoteSection",
+ CellID->1779948289,ExpressionUUID->"2684ff36-2def-5a46-a749-d52064178628"],
+
+Cell["\<\
+Choose a kernel count appropriate to your workstation. Loading the package on \
+subkernels is required before using the Parallel-prefixed functions.\
+\>", "TechNoteText",
+ CellID->1624031615,ExpressionUUID->"2896f9ef-49b1-854c-8d04-d9e88ad9347f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"LaunchKernels", "[", "2", "]"}], ";", 
+  RowBox[{"ParallelNeeds", "[", "\"\<TBMethod`\>\"", "]"}], ";", 
+  RowBox[{"ParallelBandData", "[", 
+   RowBox[{"h", ",", "momenta"}], "]"}]}]], "Input",
+ CellID->1105997702,ExpressionUUID->"4238b49b-592d-aa43-9e4b-1b2df6856502"],
+
+Cell[TextData[ButtonBox["TBMethod function guide",
+ BaseStyle->"Link",
+ ButtonData->"paclet:TBMethod/guide/TBMethod"]], "TechNoteText",
+ CellID->1270707720,ExpressionUUID->"d1115dfe-7dc8-4a4a-9e4d-32fb20ec5dd3"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"160abe5f-7c64-6045-ab7f-820cb8bf2bfe"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{900, 845.25},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Getting Started with TBMethod",
+Visible->True,
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
+  "ExampleCounter" -> 1, 
+  "Openers" -> {
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}}, 
+  "NewStyles" -> True, "CitationPopupData" -> {$Failed, ""}, "ShowCitation" -> 
+  False, "RootCaptions" -> "", "HeaderCoreAreaLink" -> {}, 
+  "Metadata" -> {
+   "built" -> "{2026, 10, 24, 17, 34, 5.6813483}", 
+    "history" -> {"", "", "", ""}, "context" -> "TBMethod`", "keywords" -> {},
+     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> 
+    True, "label" -> "T B Method Tech Note", "language" -> "en", "paclet" -> 
+    "TBMethod", "status" -> "None", "summary" -> 
+    "Load the package, construct a one-orbital chain, and inspect its band \
+dispersion. All examples are deliberately small and can be evaluated directly \
+in this notebook. Press F1 while the cursor is on an exported TBMethod symbol \
+to open its reference page. Examples are ordinary evaluatable input cells; \
+use Shift+Enter to run one. The first association entry is the onsite matrix. \
+Subsequent entries give one orientation of each hopping; HBloch adds its \
+Hermitian conjugate. Use sparse matrices for the association values.", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "Getting Started with TBMethod", "titlemodifier" -> "", "metadescription" -> 
+    "", "windowtitle" -> "Getting Started with TBMethod", "type" -> 
+    "Tech Note", "uri" -> "TBMethod/tutorial/GettingStarted", 
+    "WorkflowDockedCell" -> ""}, "SearchTextTranslated" -> ""},
+FrontEndVersion->"15.0 for Microsoft Windows (64-bit) (July 2, 2026)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> Notebook], 
+   Cell[
+    StyleData["Output"], CellContext -> Notebook], 
+   Cell[
+    StyleData["TutorialMoreAboutSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["RelatedTutorialsSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["TutorialRelatedLinksSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}]}, Visible -> False, 
+  FrontEndVersion -> "15.0 for Microsoft Windows (64-bit) (July 2, 2026)", 
+  StyleDefinitions -> "PrivateStylesheetFormatting.nb"],
+ExpressionUUID->"a5a78792-5a72-264b-8fb1-e0f1d4858e93"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[1503, 34, 3109, 73, 70, "AnchorBarGrid",ExpressionUUID->"e2549585-9af7-6945-8185-576549fc6cc5",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4564, 111, 130, 1, 70, "TechNoteTitle",ExpressionUUID->"23bb8cce-55c2-fd46-8113-2ef6e1b46a89",
+ CellID->768556015],
+Cell[4696, 114, 4516, 100, 70, "TechNoteJumpBox",ExpressionUUID->"2a1d2322-e3a0-3540-9733-89d556526b28"],
+Cell[9115, 216, 282, 5, 70, "TechNoteText",ExpressionUUID->"25845d91-b150-9b41-b38c-3e0e77c98238",
+ CellID->1975681404],
+Cell[CellGroupData[{
+Cell[9417, 225, 120, 1, 70, "TechNoteSection",ExpressionUUID->"13ab2fec-2840-2948-aebf-2d48a8735b79",
+ CellID->1238537435],
+Cell[9539, 228, 151, 2, 70, "Input",ExpressionUUID->"44864c92-20ef-9b49-ba73-9b984e4a8019",
+ CellID->907759818],
+Cell[9691, 232, 279, 5, 70, "TechNoteText",ExpressionUUID->"35ab613e-1318-0c48-8824-6aa82c5fc4c2",
+ CellID->1832987748]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10002, 242, 138, 1, 70, "TechNoteSection",ExpressionUUID->"94ce7d00-fdd8-a847-82fb-f0018ef1d39f",
+ CellID->806294729],
+Cell[10142, 245, 308, 5, 70, "TechNoteText",ExpressionUUID->"957f2667-674b-9147-a13b-a89b042f0dff",
+ CellID->1922894369],
+Cell[10448, 252, 1133, 34, 70, "Input",ExpressionUUID->"e66f7b51-8636-1a48-a5c6-19817378beb1",
+ CellID->1137666460]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11584, 291, 134, 1, 70, "TechNoteSection",ExpressionUUID->"e3644aaf-3eb5-4b44-b726-581fe9b48685",
+ CellID->1123750866],
+Cell[11720, 294, 630, 16, 70, "Input",ExpressionUUID->"fca50b23-0edb-b142-b0f5-74807dcedae7",
+ CellID->224828836]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12371, 315, 136, 1, 70, "TechNoteSection",ExpressionUUID->"44339d29-d09e-9540-b82c-c21f6a860e4f",
+ CellID->302267665],
+Cell[12509, 318, 267, 5, 70, "TechNoteText",ExpressionUUID->"1c70617e-b4df-2e4e-aaf3-c5e79812f506",
+ CellID->150789733],
+Cell[12774, 325, 1362, 40, 70, "Input",ExpressionUUID->"8e8a78aa-4b91-f54a-9353-f12a3acd19be",
+ CellID->157715703]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14133, 370, 125, 1, 70, "TechNoteSection",ExpressionUUID->"2684ff36-2def-5a46-a749-d52064178628",
+ CellID->1779948289],
+Cell[14260, 373, 260, 4, 70, "TechNoteText",ExpressionUUID->"2896f9ef-49b1-854c-8d04-d9e88ad9347f",
+ CellID->1624031615],
+Cell[14519, 379, 310, 6, 70, "Input",ExpressionUUID->"4238b49b-592d-aa43-9e4b-1b2df6856502",
+ CellID->1105997702],
+Cell[14826, 387, 214, 3, 70, "TechNoteText",ExpressionUUID->"d1115dfe-7dc8-4a4a-9e4d-32fb20ec5dd3",
+ CellID->1270707720]
+}, Open  ]]
+}, Open  ]],
+Cell[15064, 394, 78, 0, 70, "FooterCell",ExpressionUUID->"160abe5f-7c64-6045-ab7f-820cb8bf2bfe"]
+}
+]
+*)
+
+(* End of internal cache information *)

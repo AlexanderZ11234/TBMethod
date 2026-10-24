@@ -1,19 +1,32 @@
-(* Content-type: application/vnd.wolfram.mathematica *)
+(* Content-type: application/vnd.wolfram.cdf.text *)
 
-(*** Wolfram Notebook File ***)
-(* http://www.wolfram.com/nb *)
+(*** Wolfram CDF File ***)
+(* http://www.wolfram.com/cdf *)
 
-(* CreatedBy='Mathematica 13.2' *)
+(* CreatedBy='Wolfram 15.0' *)
+
+(*************************************************************************)
+(*                                                                       *)
+(*                                                                       *)
+(*  This file was created under the Wolfram Enterprise licensing terms.  *)
+(*                                                                       *)
+(*       For additional information concerning CDF licensing see:        *)
+(*                                                                       *)
+(*        www.wolfram.com/cdf/adopting-cdf/licensing-options.html        *)
+(*                                                                       *)
+(*                                                                       *)
+(*                                                                       *)
+(*************************************************************************)
 
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
-NotebookDataPosition[       158,          7]
-NotebookDataLength[      8917,        221]
-NotebookOptionsPosition[      6378,        164]
-NotebookOutlinePosition[      8495,        215]
-CellTagsIndexPosition[      8452,        212]
+NotebookDataPosition[      1060,         20]
+NotebookDataLength[     25160,        666]
+NotebookOptionsPosition[     21294,        580]
+NotebookOutlinePosition[     23454,        632]
+CellTagsIndexPosition[     23411,        629]
 WindowTitle->AdaptivePartition
 WindowFrame->Normal*)
 
@@ -27,77 +40,157 @@ Cell[BoxData[GridBox[{
           TemplateBox[{12},
            "Spacer1"], Cell["T B METHOD SYMBOL", "PacletNameCell",
            TextAlignment->Center,ExpressionUUID->
-           "16ed5819-2ab7-4294-b99a-280f1a982f2b"], 
+           "d04e24a3-44be-a84c-83c7-9ae87bdf810c"], 
           TemplateBox[{8},
            "Spacer1"]}]],
          TextAlignment->Center,ExpressionUUID->
-         "d60003c8-2b34-46bc-97bf-bfaf62eb15cf"],
-        Background->RGBColor[0.490196, 0.576471, 0.690196],
+         "606b8bd6-5312-1748-9baf-3d9e052e8a3b"],
+        Background->LightDarkSwitched[
+          RGBColor[0.490196, 0.576471, 0.690196]],
         ItemSize->Full], ""}
      },
      GridBoxAlignment->{"Rows" -> {{Center}}},
      GridBoxItemSize->{"Columns" -> {Full, 
-         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[Cell[BoxData[
-     TagBox[
-      ActionMenuBox[
-       FrameBox[Cell[TextData[{
-         "URL",
-         " ",
-         Cell[BoxData[
-          GraphicsBox[
-           {GrayLevel[0.66667], Thickness[0.13], 
-            LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
-           AspectRatio->1,
-           ImageSize->20,
-           PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
-          "e87722e1-301d-49d2-a112-4f44e38fe12c"]
-        }],ExpressionUUID->"68bac3a5-4f12-4952-9a91-62eeef5f1e7c"],
-        StripOnInput->False], {"\<\"TBMethod/ref/AdaptivePartition\"\>":>
-       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
-       Module[{DocumentationSearch`Private`nb$}, 
-        DocumentationSearch`Private`nb$ = NotebookPut[
-           Notebook[{
-             Cell["TBMethod/ref/AdaptivePartition"]}, Visible -> False]]; 
-        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
-        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
-        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
-       Delimiter, "\<\"Copy web URL\"\>":>
-       Module[{DocumentationSearch`Private`nb$}, 
-        DocumentationSearch`Private`nb$ = NotebookPut[
-           Notebook[{
-             Cell[
-              BoxData[
-               MakeBoxes[
-                Hyperlink[
-                "http://reference.wolfram.com/language/TBMethod/ref/\
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[{
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "See Also",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "e0c8948f-ebea-8c4c-bb0c-0fcecb0232be"]
+         }],ExpressionUUID->"e16a4d40-dd5f-ac43-a897-d0fc70022386"],
+         StripOnInput->False],{
+        StyleBox[
+          "\"HCSRDiagOffDiagBlocks\"", "SeeAlsoRelated", StripOnInput -> 
+           False] :> Documentation`HelpLookup[
+          "paclet:TBMethod/ref/HCSRDiagOffDiagBlocks"], 
+         StyleBox[
+          "\"AtomPerLayerPlot\"", "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup["paclet:TBMethod/ref/AtomPerLayerPlot"], 
+         StyleBox["\"AttachFreeQ\"", "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup["paclet:TBMethod/ref/AttachFreeQ"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"SeeAlso"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "64d1fbd9-3369-6245-957b-1c997898b234"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "Related Guides",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "ab170fae-1bbe-b04b-9780-a3aa85012a7c"]
+         }],ExpressionUUID->"120e7724-b76b-af4e-ae67-b9c433398e39"],
+         StripOnInput->False],{
+        "\"TBMethod\"" :> 
+         Documentation`HelpLookup["paclet:TBMethod/guide/TBMethod"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"MoreAbout"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "857f218b-aac5-4c4c-a071-b324cf7af8f7"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "Tech Notes",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "fdeceb9f-7df1-5844-87dc-41c9f007d6f7"]
+         }],ExpressionUUID->"421bba2f-619d-f947-b1e7-0a162fe94715"],
+         StripOnInput->False],{
+        "\"Getting Started with TBMethod\"" :> 
+         Documentation`HelpLookup["paclet:TBMethod/tutorial/GettingStarted"]},
+        
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"Tutorials"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "2458024b-b2c3-4346-bb84-f5e6bdb4d1ac"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "URL",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "630e7099-1947-b742-b635-93ca28441015"]
+         }],ExpressionUUID->"f100a5bc-8d13-8247-83fc-cf744be39d0c"],
+         StripOnInput->False],{
+        "\"TBMethod/ref/AdaptivePartition\"" :> None, 
+         "\"Copy Wolfram Documentation Center URL\"" :> 
+         CopyToClipboard["TBMethod/ref/AdaptivePartition"], Delimiter, 
+         "\"Copy web URL\"" :> 
+         Module[{DocumentationSearch`Private`nb$}, 
+           DocumentationSearch`Private`nb$ = 
+            NotebookPut[
+             Notebook[{
+               Cell[BoxData[
+                 MakeBoxes[
+                  Hyperlink[
+                   "http://reference.wolfram.com/language/TBMethod/ref/\
 AdaptivePartition.html"], StandardForm]], "Input", TextClipboardType -> 
-              "PlainText"]}, Visible -> False]]; 
-        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
-        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
-        NotebookClose[DocumentationSearch`Private`nb$]; 
-        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
-         NotebookLocate[{
-           URL[If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$12321], 
-              "http://reference.wolfram.com/system-modeler/", 
-              "http://reference.wolfram.com/language/"] <> 
-            "TBMethod/ref/AdaptivePartition" <> ".html"], None}]}]},
-       Appearance->None,
-       MenuAppearance->Automatic,
-       MenuStyle->"URLMenu"],
-      MouseAppearanceTag["LinkHand"]]],
-     LineSpacing->{1.4, 0},ExpressionUUID->
-     "e65c03e6-3d2f-4238-b20e-311a656d2e0f"]], "AnchorBar",
+                 "PlainText"]}, Visible -> False]]; 
+           SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+           FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+           NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+         "\"Go to web URL\"" :> 
+         FrontEndExecute[{
+           NotebookLocate[{
+             URL[If[TrueQ[False], 
+                 "http://reference.wolfram.com/system-modeler/", 
+                 "http://reference.wolfram.com/language/"] <> 
+               "TBMethod/ref/AdaptivePartition" <> ".html"], None}]}]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"URLMenu"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "f92f2d1a-17ef-7f4c-aa42-9647fb5dd5c3"]
+    }], "AnchorBar",
      CacheGraphics->False,ExpressionUUID->
-     "492c1542-c66d-4078-8ac5-2c9a3d078fcd"]}
+     "3857dbfc-43e3-b34d-bdb4-5acf0f83a9d1"]}
   }]], "AnchorBarGrid",
- GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
-     Scaled[0.65], {
-      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
-   "RowsIndexed" -> {}}},
- CellID->1,ExpressionUUID->"a5dadf33-598e-4626-8df9-1c91c5ca2cd4"],
+ CellID->1,ExpressionUUID->"774b0443-5eb3-a344-a80b-92aebd8dcc3f"],
 
-Cell["TBMethod`MDConstruct`", "ContextNameCell",ExpressionUUID->"e6f8dd20-b455-4539-9d64-a35346ac6e5a"],
+Cell["TBMethod`MDConstruct`", "ContextNameCell",ExpressionUUID->"b561e1dc-e632-8e43-a816-309f72c3723e"],
 
 Cell[CellGroupData[{
 
@@ -105,92 +198,416 @@ Cell[BoxData[GridBox[{
    {Cell[TextData[{
      Cell[
      "AdaptivePartition", "ObjectName",ExpressionUUID->
-      "f6033260-45ca-4345-85a7-8918bde5d23a"],
+      "d497fa36-43e9-8c4c-b323-bb492a0db07d"],
      Cell[BoxData[
       TemplateBox[{8},
-       "Spacer1"]],ExpressionUUID->"8b1ba1d1-358e-43c7-9424-e56b1f4a24d5"],
+       "Spacer1"]],ExpressionUUID->"e1399f04-a2ce-9c40-8eb6-c155d26b2287"],
      Cell[BoxData[
      ""], "ObjectNameTranslation",ExpressionUUID->
-      "5bcb0084-4a58-4af0-a2a8-d229af944d64"]
-    }],ExpressionUUID->"1ea04aa4-812c-477a-90a3-3cafc6fceaba"], 
+      "e82ca131-5b30-604d-ad47-18116a9bc678"]
+    }],ExpressionUUID->"d883f9d5-912e-1c44-a72e-85b0d10d1f13"], 
     "\[SpanFromLeft]"}
-  }]], "ObjectNameGrid",ExpressionUUID->"50592da0-1962-43ce-a5ed-\
-b9104306fb90"],
+  }]], "ObjectNameGrid",ExpressionUUID->"6d4ca67a-b8f0-d749-806e-\
+4195e8ec2fcb"],
 
 Cell[BoxData[GridBox[{
-   {"", Cell[TextData[{
-     Cell[BoxData[
-      RowBox[{" ", 
-       RowBox[{
-        TemplateBox[{
-          Cell[
-           TextData["AdaptivePartition"]], 
-          "paclet:TBMethod/ref/AdaptivePartition", "TBMethod Package Symbol"},
-         "PackageLink",
-         BaseStyle->"InlineFormula"], "[", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           StyleBox["ptsleads", "TI"], ",", " ", 
-           StyleBox["ptscsr", "TI"]}], "}"}], ",", " ", 
-         SubscriptBox[
-          StyleBox["d", "TI"], "up"]}], "]"}]}]], "InlineFormula",
-      FontFamily->"Source Sans Pro",ExpressionUUID->
-      "144a1d2c-f403-4427-8cd7-ac5c5313b124"],
-     " partitions the CSR in an adaptive way to achieve an optimal slicing \
-status, according to the given leads' configuration, where ",
-     Cell[BoxData[
-      StyleBox["ptsleads", "TI"]], "InlineFormula",
-      FontFamily->"Source Sans Pro",ExpressionUUID->
-      "d8d6c582-a3fb-4ca4-870b-5505b3a0fbda"],
-     " are the points in all the 1st cells of every lead, ",
-     Cell[BoxData[
-      StyleBox["ptscsr", "TI"]], "InlineFormula",
-      FontFamily->"Source Sans Pro",ExpressionUUID->
-      "412586f7-e839-4ee8-b7ae-98ee98048f16"],
-     " are the points in CSR, and ",
-     Cell[BoxData[
-      SubscriptBox[
-       StyleBox["d", "TI"], "up"]], "InlineFormula",
-      FontFamily->"Source Sans Pro",ExpressionUUID->
-      "f25be20a-ec86-423a-9023-580ab50c3baa"],
-     " is the upper limit of distance under consideration."
-    }],ExpressionUUID->"c377aa95-3219-42c6-b8ac-411e319cffa6"]}
+   {"", Cell[TextData[Cell[BoxData[
+     RowBox[{"AdaptivePartition", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"leadContactPoints", ",", "scatteringPoints"}], "}"}], ",", 
+       "distance"}], "]"}]], "InlineFormula",
+     FontFamily->"Source Sans Pro",ExpressionUUID->
+     "ba43ab28-8b8b-a645-885e-024f08ac11a0"]],ExpressionUUID->
+     "06e2df9c-2490-f649-b984-c12e8ff809d6"]},
+   {"", Cell["\<\
+Partition a scattering region into layers according to distance from its lead \
+contacts.\
+\>",ExpressionUUID->"0661572c-e47e-ed42-9f56-6f3990d20c22"]}
   }]], "Usage",
- CellID->477852663,ExpressionUUID->"7aaf0d9d-39c1-44b3-999d-fc4e84c160fd"]
+ CellID->1452741394,ExpressionUUID->"c23cc4dc-7d08-bf4b-8080-ba62c6bdeb62"]
 }, Open  ]],
 
-Cell[" ", "FooterCell",ExpressionUUID->"ed418f1e-5619-4072-87ab-a42a9ddcefcd"]
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[Cell[TextData[{
+  Cell[BoxData[
+   DynamicBox[ToBoxes[
+     If[CurrentValue[
+        EvaluationCell[], "CellGroupOpen"] =!= Closed, 
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], 
+      Rotate[
+       Style[
+        Graphics[{
+          Thickness[0.18], 
+          RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+          Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+         PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+        0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+    ImageSizeCache->{
+     13.600000000000001`, {-0.16630120645742785`, 13.76630120645743}}]],
+   ExpressionUUID->"d59ac100-f646-784b-bfb8-8e291611fdc6"],
+  Cell[BoxData[
+   TemplateBox[{1},
+    "Spacer1"]],ExpressionUUID->"8658b408-6bf5-4042-9c55-e61f7080ad1c"],
+  "Details and Options"
+ }], "NotesFrameText",ExpressionUUID->
+  "0fce397d-7312-bf44-a045-677b9763d118"]],ExpressionUUID->"332a65c2-43da-\
+234c-8fc7-2d788625c556"]], "NotesSection",
+ ShowGroupOpener->"Thumbnail",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CacheGraphics->False,
+ CellID->257499884,ExpressionUUID->"239b7691-47da-e349-a62b-4f0910029650"],
+
+Cell["\<\
+Starts from scattering sites within distance of leadContactPoints and expands \
+through geometric nearest-neighbor connections.\
+\>", "Notes",
+ CellID->830120503,ExpressionUUID->"8022b5d2-81f8-ee4f-9e43-092c67f09245"],
+
+Cell["\<\
+Returns an association of point lists ordered from the deepest reachable \
+layer to the lead-contact layer. Preserve this order when constructing CSR \
+blocks.\
+\>", "Notes",
+ CellID->1720825754,ExpressionUUID->"febcaec7-8fe2-554d-972c-cec38fdb0df7"],
+
+Cell["\<\
+Only the component reachable from the lead contacts is included. Verify that \
+the total returned site count equals the intended scattering-region site \
+count.\
+\>", "Notes",
+ CellID->786354104,ExpressionUUID->"f320c85a-f72e-124e-a7b7-a4008c677fb7"],
+
+Cell["\<\
+Coordinates may be labeled with rules; the geometric search uses their \
+coordinate values.\
+\>", "Notes",
+ CellID->1539486954,ExpressionUUID->"bcfc983c-bbcb-de41-9c03-28b9218e41dc"]
+}, Closed]],
+
+Cell["", "PageDelimiter",ExpressionUUID->"30afedf8-5b9b-dd41-9ed1-c7684cba2b7f"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[
+     MatchQ[
+      CurrentValue[
+       EvaluationNotebook[], {
+       TaggingRules, "Openers", "PrimaryExamplesSection"}, Open], 
+      Alternatives[True, Open]], 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+   ImageSizeCache->{
+    13.600000000000001`, {4.253698793542572, 9.34630120645743}}]],
+  ExpressionUUID->"25a943f8-3275-6746-8cba-32d70789e5be"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"80872d26-3a00-044f-aa95-f84769b02a83"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount",ExpressionUUID->
+  "47864ddd-708d-354d-bf75-cb4a096c5207"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellID->429608867,ExpressionUUID->"5ddec82f-e2af-8b4d-9e46-d8c4eeda87e3"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[CurrentValue[
+       EvaluationCell[], "CellGroupOpen"] =!= Closed, 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]]]],ExpressionUUID->
+  "25337056-7337-0342-81a8-3cff1ce499d9"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"3b30f398-f5a2-0f47-ab82-60e383d59130"],
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "22424537-fff9-c641-9c2c-e933f8ed676f"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellID->625196893,ExpressionUUID->"30eeacbc-3a96-8a46-82b4-f4ae41dd9753"],
+
+Cell["\<\
+Layer a three-site chain starting from a contact adjacent to its rightmost \
+site.\
+\>", "ExampleText",
+ CellID->1489133364,ExpressionUUID->"e1da0cc1-949a-2b4b-a2a2-35eb3870357c"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<TBMethod`\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1440950323,ExpressionUUID->"d33c54ae-c228-214e-b9e4-8d1a5557463d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"pts", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0.`", ",", "0.`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1.`", ",", "0.`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2.`", ",", "0.`"}], "}"}]}], "}"}]}], ";", 
+  RowBox[{"result", "=", 
+   RowBox[{"AdaptivePartition", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"3.`", ",", "0.`"}], "}"}], "}"}], ",", "pts"}], "}"}], ",", 
+     "1.01`"}], "]"}]}], ";", "result"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->474411668,ExpressionUUID->"77e2140b-9ec3-4e45-af5d-2b79de264d9a"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"1", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"0.`", ",", "0.`"}], "}"}], "}"}]}], ",", 
+   RowBox[{"2", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"1.`", ",", "0.`"}], "}"}], "}"}]}], ",", 
+   RowBox[{"3", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"2.`", ",", "0.`"}], "}"}], "}"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->1503389234,ExpressionUUID->"3fbb963c-8657-1e44-8a42-5ff1a3f442d9"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[CurrentValue[
+       EvaluationCell[], "CellGroupOpen"] =!= Closed, 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]]]],ExpressionUUID->
+  "d9c9a100-bb73-d94c-90f9-5dcc8e9c0546"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"41920177-ddb6-1245-b26d-930bd104d961"],
+ "Additional Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "1d9d2ecc-f12a-d44e-b26e-8ab638ccecc1"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellID->1772826271,ExpressionUUID->"4e6cc4c8-22f3-e94f-8b7d-e54dd40c1d53"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  RowBox[{" ", 
+   RowBox[{
+    TemplateBox[{
+      Cell[
+       TextData["AdaptivePartition"]], 
+      "paclet:TBMethod/ref/AdaptivePartition", "TBMethod Package Symbol"},
+     "PackageLink",
+     BaseStyle->"InlineFormula"], "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       StyleBox["ptsleads", "TI"], ",", " ", 
+       StyleBox["ptscsr", "TI"]}], "}"}], ",", " ", 
+     SubscriptBox[
+      StyleBox["d", "TI"], "up"]}], "]"}]}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "4d95565a-1a31-cb4a-b437-4ca8977db659"],
+ " partitions the CSR in an adaptive way to achieve an optimal slicing \
+status, according to the given leads' configuration, where ",
+ Cell[BoxData[
+  StyleBox["ptsleads", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "8953129f-dc21-9644-9eda-31d7b44be225"],
+ " are the points in all the 1st cells of every lead, ",
+ Cell[BoxData[
+  StyleBox["ptscsr", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "7e961527-ec72-5840-9147-bafc94c509c0"],
+ " are the points in CSR, and ",
+ Cell[BoxData[
+  SubscriptBox[
+   StyleBox["d", "TI"], "up"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "a1abebd4-d404-2448-b4cf-a0aae558172d"],
+ " is the upper limit of distance under consideration."
+}], "ExampleText",
+ CellID->477852663,ExpressionUUID->"2dfdc6a3-70a8-594e-9cb3-7720323ffec8"]
+}, Closed]]
+}, Open  ]],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, 
+       "RelatedFunction.png"]],
+     ImageSizeCache->{50., {26.472656144876964`, 33.527343855123036`}}], 
+    GridBox[{
+      {
+       StyleBox[
+        RowBox[{"See", " ", "Also"}], "SeeAlsoSection"]},
+      {Cell[TextData[{
+        ButtonBox["HCSRDiagOffDiagBlocks",
+         BaseStyle->"Link",
+         ButtonData->"paclet:TBMethod/ref/HCSRDiagOffDiagBlocks"],
+        " \[FilledVerySmallSquare] ",
+        ButtonBox["AtomPerLayerPlot",
+         BaseStyle->"Link",
+         ButtonData->"paclet:TBMethod/ref/AtomPerLayerPlot"],
+        " \[FilledVerySmallSquare] ",
+        ButtonBox["AttachFreeQ",
+         BaseStyle->"Link",
+         ButtonData->"paclet:TBMethod/ref/AttachFreeQ"]
+       }], "SeeAlso",ExpressionUUID->"5dfb7c69-afbe-af40-b574-8526d428a509"]}
+     }]}
+  }]], "SeeAlsoSection",ExpressionUUID->"d6cfde09-210e-aa47-89b6-\
+6d953ee3ff06"],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, 
+       "RelatedTutorial.png"]],
+     ImageSizeCache->{50., {26.472656144876964`, 33.527343855123036`}}], 
+    GridBox[{
+      {
+       StyleBox[
+        RowBox[{"Tech", " ", "Notes"}], "TutorialsSection"]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["Getting Started with TBMethod"]], 
+           "paclet:TBMethod/tutorial/GettingStarted"},
+          "RefLinkPlain",
+          BaseStyle->{"Tutorials"}]], "Tutorials",ExpressionUUID->
+         "ef311778-7eb5-4940-833a-1c19f5a544ab"]}]}
+     }]}
+  }]], "TutorialsSection",ExpressionUUID->"dcc018df-0946-004b-b76b-\
+04c65c9bab85"],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, "RelatedGuide.png"]],
+     ImageSizeCache->{50., {26.472656144876964`, 33.527343855123036`}}], 
+    GridBox[{
+      {
+       StyleBox[
+        RowBox[{"Related", " ", "Guides"}], "MoreAboutSection"]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["TBMethod"]], "paclet:TBMethod/guide/TBMethod"},
+          "RefLinkPlain",
+          BaseStyle->{"MoreAbout"}]], "MoreAbout",ExpressionUUID->
+         "7934e5ca-7018-5940-af48-6dd503c3fc06"]}]}
+     }]}
+  }]], "MoreAboutSection",ExpressionUUID->"7c76e9e0-f3ce-a449-bf03-\
+81b286c937a1"],
+
+Cell[" ", "FooterCell",ExpressionUUID->"4b9f3fc8-cb22-524e-b0dc-42d975d71b82"]
 },
 Saveable->False,
 ScreenStyleEnvironment->"Working",
-WindowSize->{900., 830.25},
+WindowSize->{900, 845.25},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 WindowTitle->"AdaptivePartition",
+Visible->True,
 TaggingRules->{
  "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
-  "HasOptions" -> True, "ExampleCounter" -> 1, 
+  "ExampleCounter" -> 1, 
   "Openers" -> {
-   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}}, 
-  "NewStyles" -> True, "CitationPopupData" -> $Failed, "ShowCitation" -> 
-  False, "RootCaptions" -> "", 
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}, 
+    "AllOptsTable" -> Closed}, "NewStyles" -> True, 
+  "CitationPopupData" -> $Failed, "ShowCitation" -> False, "HasOptions" -> 
+  True, "RootCaptions" -> "", "HeaderCoreAreaLink" -> {}, 
   "Metadata" -> {
-   "built" -> "{2023, 2, 18, 16, 21, 34.3886989}", 
-    "history" -> {"XX", "", "", ""}, "context" -> "TBMethod`MDConstruct`", 
-    "keywords" -> {}, "specialkeywords" -> {}, 
-    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
-    "T B Method Symbol", "language" -> "en", "paclet" -> "TBMethod", "status" -> 
-    "None", "summary" -> 
-    "AdaptivePartition[{ptsleads, ptscsr}, dup] partitions the CSR in an \
-adaptive way to achieve an optimal slicing status, according to the given \
-leads' configuration, where ptsleads are the points in all the 1st cells of \
-every lead, ptscsr are the points in CSR, and dup is the upper limit of \
-distance under consideration.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
-    "AdaptivePartition", "titlemodifier" -> "", "windowtitle" -> 
-    "AdaptivePartition", "type" -> "Symbol", "uri" -> 
-    "TBMethod/ref/AdaptivePartition"}},
+   "built" -> "{2026, 10, 24, 17, 31, 18.9344583}", 
+    "history" -> {"", "", "", ""}, "context" -> "TBMethod`MDConstruct`", 
+    "keywords" -> {"AdaptivePartition tight binding TBMethod"}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "T B Method Symbol", "language" -> "en", "paclet" -> 
+    "TBMethod", "status" -> "None", "summary" -> 
+    "AdaptivePartition[{leadContactPoints, scatteringPoints}, distance] \
+Partition a scattering region into layers according to distance from its lead \
+contacts.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "AdaptivePartition", "titlemodifier" -> "", "metadescription" -> "", 
+    "windowtitle" -> "AdaptivePartition", "type" -> "Symbol", "uri" -> 
+    "TBMethod/ref/AdaptivePartition", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> ""},
 CellContext->"Global`",
-FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 30, 2023)",
+FrontEndVersion->"15.0 for Microsoft Windows (64-bit) (July 2, 2026)",
 StyleDefinitions->Notebook[{
    Cell[
     StyleData[
@@ -199,9 +616,9 @@ StyleDefinitions->Notebook[{
     StyleData["Input"], CellContext -> "Global`"], 
    Cell[
     StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
-  FrontEndVersion -> "13.2 for Microsoft Windows (64-bit) (January 30, 2023)",
-   StyleDefinitions -> "Default.nb"],
-ExpressionUUID->"203b86e5-b0fb-4666-a268-d100a9bcfafb"
+  FrontEndVersion -> "15.0 for Microsoft Windows (64-bit) (July 2, 2026)", 
+  StyleDefinitions -> "PrivateStylesheetFormatting.nb"],
+ExpressionUUID->"a5a78792-5a72-264b-8fb1-e0f1d4858e93"
 ]
 (* End of Notebook Content *)
 
@@ -214,18 +631,58 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[589, 21, 3328, 76, 70, "AnchorBarGrid",ExpressionUUID->"a5dadf33-598e-4626-8df9-1c91c5ca2cd4",
+Cell[1491, 34, 6394, 156, 70, "AnchorBarGrid",ExpressionUUID->"774b0443-5eb3-a344-a80b-92aebd8dcc3f",
  CellID->1],
-Cell[3920, 99, 103, 0, 70, "ContextNameCell",ExpressionUUID->"e6f8dd20-b455-4539-9d64-a35346ac6e5a"],
+Cell[7732, 192, 103, 0, 70, "ContextNameCell",ExpressionUUID->"b561e1dc-e632-8e43-a816-309f72c3723e"],
 Cell[CellGroupData[{
-Cell[4048, 103, 560, 14, 70, "ObjectNameGrid",ExpressionUUID->"50592da0-1962-43ce-a5ed-b9104306fb90"],
-Cell[4611, 119, 1670, 40, 70, "Usage",ExpressionUUID->"7aaf0d9d-39c1-44b3-999d-fc4e84c160fd",
- CellID->477852663]
+Cell[7860, 196, 574, 14, 70, "ObjectNameGrid",ExpressionUUID->"6d4ca67a-b8f0-d749-806e-4195e8ec2fcb"],
+Cell[8423, 212, 696, 15, 70, "Usage",ExpressionUUID->"c23cc4dc-7d08-bf4b-8080-ba62c6bdeb62",
+ CellID->1452741394]
 }, Open  ]],
-Cell[6296, 162, 78, 0, 70, "FooterCell",ExpressionUUID->"ed418f1e-5619-4072-87ab-a42a9ddcefcd"]
+Cell[CellGroupData[{
+Cell[9141, 232, 1481, 34, 70, "NotesSection",ExpressionUUID->"239b7691-47da-e349-a62b-4f0910029650",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->257499884],
+Cell[10591, 268, 231, 4, 70, "Notes",ExpressionUUID->"8022b5d2-81f8-ee4f-9e43-092c67f09245",
+ CellID->830120503],
+Cell[10821, 274, 265, 5, 70, "Notes",ExpressionUUID->"febcaec7-8fe2-554d-972c-cec38fdb0df7",
+ CellID->1720825754],
+Cell[11084, 281, 265, 5, 70, "Notes",ExpressionUUID->"f320c85a-f72e-124e-a7b7-a4008c677fb7",
+ CellID->786354104],
+Cell[11347, 288, 196, 4, 70, "Notes",ExpressionUUID->"bcfc983c-bbcb-de41-9c03-28b9218e41dc",
+ CellID->1539486954]
+}, Closed]],
+Cell[11554, 295, 80, 0, 70, "PageDelimiter",ExpressionUUID->"30afedf8-5b9b-dd41-9ed1-c7684cba2b7f"],
+Cell[CellGroupData[{
+Cell[11659, 299, 1439, 37, 70, "PrimaryExamplesSection",ExpressionUUID->"5ddec82f-e2af-8b4d-9e46-d8c4eeda87e3",
+ CellID->429608867],
+Cell[CellGroupData[{
+Cell[13086, 340, 1266, 31, 70, "ExampleSection",ExpressionUUID->"30eeacbc-3a96-8a46-82b4-f4ae41dd9753",
+ CellID->625196893],
+Cell[14324, 373, 193, 4, 70, "ExampleText",ExpressionUUID->"e1da0cc1-949a-2b4b-a2a2-35eb3870357c",
+ CellID->1489133364],
+Cell[14516, 379, 176, 3, 70, "Input",ExpressionUUID->"d33c54ae-c228-214e-b9e4-8d1a5557463d",
+ CellID->1440950323],
+Cell[CellGroupData[{
+Cell[14714, 386, 692, 21, 70, "Input",ExpressionUUID->"77e2140b-9ec3-4e45-af5d-2b79de264d9a",
+ CellID->474411668],
+Cell[15388, 409, 573, 17, 70, "Output",ExpressionUUID->"3fbb963c-8657-1e44-8a42-5ff1a3f442d9",
+ CellID->1503389234]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15993, 432, 1272, 31, 70, "ExampleSection",ExpressionUUID->"4e6cc4c8-22f3-e94f-8b7d-e54dd40c1d53",
+ CellID->1772826271],
+Cell[17237, 465, 1476, 38, 70, "ExampleText",ExpressionUUID->"2dfdc6a3-70a8-594e-9cb3-7720323ffec8",
+ CellID->477852663]
+}, Closed]]
+}, Open  ]],
+Cell[18702, 507, 1003, 25, 70, "SeeAlsoSection",ExpressionUUID->"d6cfde09-210e-aa47-89b6-6d953ee3ff06"],
+Cell[19683, 534, 807, 21, 70, "TutorialsSection",ExpressionUUID->"dcc018df-0946-004b-b76b-04c65c9bab85"],
+Cell[20472, 557, 756, 19, 70, "MoreAboutSection",ExpressionUUID->"7c76e9e0-f3ce-a449-bf03-81b286c937a1"],
+Cell[21212, 578, 78, 0, 70, "FooterCell",ExpressionUUID->"4b9f3fc8-cb22-524e-b0dc-42d975d71b82"]
 }
 ]
 *)
 
 (* End of internal cache information *)
-

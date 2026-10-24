@@ -1,0 +1,576 @@
+(* Content-type: application/vnd.wolfram.cdf.text *)
+
+(*** Wolfram CDF File ***)
+(* http://www.wolfram.com/cdf *)
+
+(* CreatedBy='Wolfram 15.0' *)
+
+(*************************************************************************)
+(*                                                                       *)
+(*                                                                       *)
+(*  This file was created under the Wolfram Enterprise licensing terms.  *)
+(*                                                                       *)
+(*       For additional information concerning CDF licensing see:        *)
+(*                                                                       *)
+(*        www.wolfram.com/cdf/adopting-cdf/licensing-options.html        *)
+(*                                                                       *)
+(*                                                                       *)
+(*                                                                       *)
+(*************************************************************************)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[      1060,         20]
+NotebookDataLength[     21246,        554]
+NotebookOptionsPosition[     17771,        476]
+NotebookOutlinePosition[     19935,        528]
+CellTagsIndexPosition[     19892,        525]
+WindowTitle->PhaseFactor2DAB
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {GridBox[{
+      {
+       ItemBox[Cell[BoxData[
+         RowBox[{
+          TemplateBox[{12},
+           "Spacer1"], Cell["T B METHOD SYMBOL", "PacletNameCell",
+           TextAlignment->Center,ExpressionUUID->
+           "5a1adb42-13ba-a14b-adb3-b7f8dcf09489"], 
+          TemplateBox[{8},
+           "Spacer1"]}]],
+         TextAlignment->Center,ExpressionUUID->
+         "5bcfadad-0587-204f-8203-95b3a322c02d"],
+        Background->LightDarkSwitched[
+          RGBColor[0.490196, 0.576471, 0.690196]],
+        ItemSize->Full], ""}
+     },
+     GridBoxAlignment->{"Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {Full, 
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[{
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "See Also",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "82e8574b-8212-a84e-92b8-618840f9dfd4"]
+         }],ExpressionUUID->"a67950de-28bf-4a4d-b11e-51f6910d393a"],
+         StripOnInput->False],{
+        StyleBox[
+          "\"PhaseFactor3DAB\"", "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup["paclet:TBMethod/ref/PhaseFactor3DAB"], 
+         StyleBox[
+          "\"UGaugeTransformMatrix\"", "SeeAlsoRelated", StripOnInput -> 
+           False] :> Documentation`HelpLookup[
+          "paclet:TBMethod/ref/UGaugeTransformMatrix"], 
+         StyleBox[
+          "\"SigmaGaugeTransform\"", "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup["paclet:TBMethod/ref/SigmaGaugeTransform"]},
+        
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"SeeAlso"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "6dac5c24-2faa-9648-8638-0f83e579aa7d"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "Related Guides",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "201738cf-af0d-eb41-a51e-1ea4606905c6"]
+         }],ExpressionUUID->"4ca9bfbb-7541-8546-8031-56a12482af63"],
+         StripOnInput->False],{
+        "\"TBMethod\"" :> 
+         Documentation`HelpLookup["paclet:TBMethod/guide/TBMethod"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"MoreAbout"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "49cc49c7-b14b-4c47-bb6c-97ab4d550e19"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "Tech Notes",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "ab36b4cc-b15e-b144-b8a1-cca52c35170b"]
+         }],ExpressionUUID->"bcdf0860-d718-ee45-b16b-11472737f668"],
+         StripOnInput->False],{
+        "\"Getting Started with TBMethod\"" :> 
+         Documentation`HelpLookup["paclet:TBMethod/tutorial/GettingStarted"]},
+        
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"Tutorials"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "07165ad6-bea1-8349-9d6b-1c110f5d3daa"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "URL",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "f963c808-2ccb-024b-910f-bf4e97651d4a"]
+         }],ExpressionUUID->"416d7662-f77f-a643-8ee4-9ead311f7eed"],
+         StripOnInput->False],{
+        "\"TBMethod/ref/PhaseFactor2DAB\"" :> None, 
+         "\"Copy Wolfram Documentation Center URL\"" :> 
+         CopyToClipboard["TBMethod/ref/PhaseFactor2DAB"], Delimiter, 
+         "\"Copy web URL\"" :> 
+         Module[{DocumentationSearch`Private`nb$}, 
+           DocumentationSearch`Private`nb$ = 
+            NotebookPut[
+             Notebook[{
+               Cell[BoxData[
+                 MakeBoxes[
+                  Hyperlink[
+                   "http://reference.wolfram.com/language/TBMethod/ref/\
+PhaseFactor2DAB.html"], StandardForm]], "Input", TextClipboardType -> 
+                 "PlainText"]}, Visible -> False]]; 
+           SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+           FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+           NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+         "\"Go to web URL\"" :> 
+         FrontEndExecute[{
+           NotebookLocate[{
+             URL[If[TrueQ[False], 
+                 "http://reference.wolfram.com/system-modeler/", 
+                 "http://reference.wolfram.com/language/"] <> 
+               "TBMethod/ref/PhaseFactor2DAB" <> ".html"], None}]}]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"URLMenu"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "9c81c82f-16f1-1940-b17c-984e03cfba64"]
+    }], "AnchorBar",
+     CacheGraphics->False,ExpressionUUID->
+     "5746510c-5458-4242-8d2d-01bb19c70a07"]}
+  }]], "AnchorBarGrid",
+ CellID->1,ExpressionUUID->"e87e8392-1353-204b-b881-644c245c4f1b"],
+
+Cell["TBMethod`MDConstruct`", "ContextNameCell",ExpressionUUID->"ae664b0f-4924-c74f-9d1e-75e77797e6b5"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {Cell[TextData[{
+     Cell[
+     "PhaseFactor2DAB", "ObjectName",ExpressionUUID->
+      "89ce8216-bc22-7141-a31c-a590abc45df0"],
+     Cell[BoxData[
+      TemplateBox[{8},
+       "Spacer1"]],ExpressionUUID->"7f2abf09-b328-414e-8343-6d2a5fbba8e0"],
+     Cell[BoxData[
+     ""], "ObjectNameTranslation",ExpressionUUID->
+      "98dc26d2-524e-d049-b823-e0907cea8e2a"]
+    }],ExpressionUUID->"098efee8-1d8d-2f40-a5c8-1ef9a0c2bb3b"], 
+    "\[SpanFromLeft]"}
+  }]], "ObjectNameGrid",ExpressionUUID->"22bf8cfd-4176-7f4d-89e1-\
+6f168fa2d79c"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[Cell[BoxData[
+     RowBox[{
+      RowBox[{"PhaseFactor2DAB", "[", 
+       RowBox[{"Bz", ",", "angle"}], "]"}], "[", 
+      RowBox[{"finalPoint", ",", "initialPoint"}], "]"}]], "InlineFormula",
+     FontFamily->"Source Sans Pro",ExpressionUUID->
+     "10e4471d-6850-964b-96c1-ce4b6e8ff0f1"]],ExpressionUUID->
+     "2a4f6804-e010-d842-85af-8edbd73d9b6e"]},
+   {"", Cell["\<\
+Compute a Peierls phase for a perpendicular magnetic field in a gauge adapted \
+to an in-plane translation direction.\
+\>",ExpressionUUID->"abd0d8da-180d-5b4b-bc9b-9fd9c4943e9b"]}
+  }]], "Usage",
+ CellID->1061499931,ExpressionUUID->"0ea2fcbd-009b-6c4d-b730-450d2a247861"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[Cell[TextData[{
+  Cell[BoxData[
+   DynamicBox[ToBoxes[
+     If[CurrentValue[
+        EvaluationCell[], "CellGroupOpen"] =!= Closed, 
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], 
+      Rotate[
+       Style[
+        Graphics[{
+          Thickness[0.18], 
+          RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+          Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+         PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+        0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+    ImageSizeCache->{
+     13.600000000000001`, {-0.16630120645742785`, 13.76630120645743}}]],
+   ExpressionUUID->"7f8f691f-10f9-0042-bcef-28783300eb9a"],
+  Cell[BoxData[
+   TemplateBox[{1},
+    "Spacer1"]],ExpressionUUID->"888a35ea-b8eb-1547-82bd-4bcd02af3b34"],
+  "Details and Options"
+ }], "NotesFrameText",ExpressionUUID->
+  "eec8d35a-670a-7f4a-9e87-cb18dd2420f8"]],ExpressionUUID->"e1339539-c285-\
+5e4c-a33c-f173b05cc324"]], "NotesSection",
+ ShowGroupOpener->"Thumbnail",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CacheGraphics->False,
+ CellID->236157923,ExpressionUUID->"55b6c120-7a4f-6c44-83f6-2ba9820f263f"],
+
+Cell["\<\
+The gauge direction is {Cos[angle], Sin[angle], 0}. Two- or three-component \
+coordinates are accepted; two-component points are padded with zero z.\
+\>", "Notes",
+ CellID->1996145496,ExpressionUUID->"310f71cb-dea6-ad46-8c6e-61dd5010eb8f"],
+
+Cell["\<\
+The implementation returns Exp[I Pi ((rf-ri).n) (Cross[rf+ri, {0,0,Bz}].n)]. \
+The numerical inputs must already use consistent charge, flux, and length \
+units; no physical constants are inserted.\
+\>", "Notes",
+ CellID->1617151468,ExpressionUUID->"eecb1c87-e90c-704a-96ab-8754964f8e1f"],
+
+Cell["\<\
+Reversing the two real coordinate arguments conjugates the phase for real Bz \
+and angle.\
+\>", "Notes",
+ CellID->1141809940,ExpressionUUID->"241065cf-5159-6242-9317-74a6bd6c5a77"]
+}, Closed]],
+
+Cell["", "PageDelimiter",ExpressionUUID->"4b8b6c10-6ea3-8a45-9ad1-ebfae7692593"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[
+     MatchQ[
+      CurrentValue[
+       EvaluationNotebook[], {
+       TaggingRules, "Openers", "PrimaryExamplesSection"}, Open], 
+      Alternatives[True, Open]], 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+   ImageSizeCache->{
+    13.600000000000001`, {4.253698793542572, 9.34630120645743}}]],
+  ExpressionUUID->"1e25462f-83f9-8942-a837-ff6f377aecac"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"e744f594-e852-e14d-8807-d1e28af7a65b"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "b9b836b2-cdad-d44a-8025-10fb64460c8a"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellID->904652397,ExpressionUUID->"76581bb6-0460-9d45-9132-2094f4569c68"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[CurrentValue[
+       EvaluationCell[], "CellGroupOpen"] =!= Closed, 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]]]],ExpressionUUID->
+  "3bf5d0d7-6492-0e4b-981c-85ba6b6f3f20"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"9e859d8a-0d45-5349-ad84-f0aa0a7f6544"],
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "4f857984-34e3-cd44-99f9-766e3aba9104"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellID->105507326,ExpressionUUID->"d18e406e-b214-e741-b018-c827b1b16479"],
+
+Cell["\<\
+For translation along x, a horizontal unit bond at y=1 acquires phase -1 when \
+Bz=1/2.\
+\>", "ExampleText",
+ CellID->1397118513,ExpressionUUID->"e4f49e8b-22e9-7b42-b4d8-dae5d1260e66"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<TBMethod`\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1461566038,ExpressionUUID->"0c2908db-b6a2-a340-b45c-c401eefc3424"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"result", "=", 
+   RowBox[{
+    RowBox[{"PhaseFactor2DAB", "[", 
+     RowBox[{
+      FractionBox["1", "2"], ",", "0"}], "]"}], "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}]}], "]"}]}], ";", "result"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->547666881,ExpressionUUID->"5cf1d9f3-fd11-8c40-bcf6-22f1b664011c"],
+
+Cell[BoxData[
+ RowBox[{"-", "1"}]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->1481131869,ExpressionUUID->"ff27d504-867d-a84e-a386-7c4b5033d667"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, 
+       "RelatedFunction.png"]],
+     ImageSizeCache->{50., {26.472656144876964`, 33.527343855123036`}}], 
+    GridBox[{
+      {
+       StyleBox[
+        RowBox[{"See", " ", "Also"}], "SeeAlsoSection"]},
+      {Cell[TextData[{
+        ButtonBox["PhaseFactor3DAB",
+         BaseStyle->"Link",
+         ButtonData->"paclet:TBMethod/ref/PhaseFactor3DAB"],
+        " \[FilledVerySmallSquare] ",
+        ButtonBox["UGaugeTransformMatrix",
+         BaseStyle->"Link",
+         ButtonData->"paclet:TBMethod/ref/UGaugeTransformMatrix"],
+        " \[FilledVerySmallSquare] ",
+        ButtonBox["SigmaGaugeTransform",
+         BaseStyle->"Link",
+         ButtonData->"paclet:TBMethod/ref/SigmaGaugeTransform"]
+       }], "SeeAlso",ExpressionUUID->"2d20af83-bf9d-f843-869a-54d83510c0e9"]}
+     }]}
+  }]], "SeeAlsoSection",ExpressionUUID->"a78342a6-eda5-8241-b858-\
+b9a7e0f84eb3"],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, 
+       "RelatedTutorial.png"]],
+     ImageSizeCache->{50., {26.472656144876964`, 33.527343855123036`}}], 
+    GridBox[{
+      {
+       StyleBox[
+        RowBox[{"Tech", " ", "Notes"}], "TutorialsSection"]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["Getting Started with TBMethod"]], 
+           "paclet:TBMethod/tutorial/GettingStarted"},
+          "RefLinkPlain",
+          BaseStyle->{"Tutorials"}]], "Tutorials",ExpressionUUID->
+         "f13ad78c-c7a4-9f43-a800-f5544d935d15"]}]}
+     }]}
+  }]], "TutorialsSection",ExpressionUUID->"f15034d1-0042-384d-b60d-\
+292412e6af6d"],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, "RelatedGuide.png"]],
+     ImageSizeCache->{50., {26.472656144876964`, 33.527343855123036`}}], 
+    GridBox[{
+      {
+       StyleBox[
+        RowBox[{"Related", " ", "Guides"}], "MoreAboutSection"]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["TBMethod"]], "paclet:TBMethod/guide/TBMethod"},
+          "RefLinkPlain",
+          BaseStyle->{"MoreAbout"}]], "MoreAbout",ExpressionUUID->
+         "9953042a-10ae-db49-b296-c63b0362a45e"]}]}
+     }]}
+  }]], "MoreAboutSection",ExpressionUUID->"c7740d65-5ec4-f544-8b6e-\
+5815b2254c87"],
+
+Cell[" ", "FooterCell",ExpressionUUID->"7290940a-12b0-6a4d-858a-6aa4daf60e85"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{900, 845.25},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"PhaseFactor2DAB",
+Visible->True,
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
+  "ExampleCounter" -> 1, 
+  "Openers" -> {
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}, 
+    "AllOptsTable" -> Closed}, "NewStyles" -> True, 
+  "CitationPopupData" -> $Failed, "ShowCitation" -> False, "HasOptions" -> 
+  True, "RootCaptions" -> "", "HeaderCoreAreaLink" -> {}, 
+  "Metadata" -> {
+   "built" -> "{2026, 10, 24, 17, 33, 28.3374492}", 
+    "history" -> {"", "", "", ""}, "context" -> "TBMethod`MDConstruct`", 
+    "keywords" -> {"PhaseFactor2DAB tight binding TBMethod"}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "T B Method Symbol", "language" -> "en", "paclet" -> 
+    "TBMethod", "status" -> "None", "summary" -> 
+    "PhaseFactor2DAB[Bz, angle][finalPoint, initialPoint] Compute a Peierls \
+phase for a perpendicular magnetic field in a gauge adapted to an in-plane \
+translation direction.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "PhaseFactor2DAB", "titlemodifier" -> "", "metadescription" -> "", 
+    "windowtitle" -> "PhaseFactor2DAB", "type" -> "Symbol", "uri" -> 
+    "TBMethod/ref/PhaseFactor2DAB", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"15.0 for Microsoft Windows (64-bit) (July 2, 2026)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "15.0 for Microsoft Windows (64-bit) (July 2, 2026)", 
+  StyleDefinitions -> "PrivateStylesheetFormatting.nb"],
+ExpressionUUID->"a5a78792-5a72-264b-8fb1-e0f1d4858e93"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[1489, 34, 6422, 158, 70, "AnchorBarGrid",ExpressionUUID->"e87e8392-1353-204b-b881-644c245c4f1b",
+ CellID->1],
+Cell[7756, 194, 103, 0, 70, "ContextNameCell",ExpressionUUID->"ae664b0f-4924-c74f-9d1e-75e77797e6b5"],
+Cell[CellGroupData[{
+Cell[7884, 198, 572, 14, 70, "ObjectNameGrid",ExpressionUUID->"22bf8cfd-4176-7f4d-89e1-6f168fa2d79c"],
+Cell[8445, 214, 703, 14, 70, "Usage",ExpressionUUID->"0ea2fcbd-009b-6c4d-b730-450d2a247861",
+ CellID->1061499931]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9171, 233, 1481, 34, 70, "NotesSection",ExpressionUUID->"55b6c120-7a4f-6c44-83f6-2ba9820f263f",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->236157923],
+Cell[10621, 269, 253, 4, 70, "Notes",ExpressionUUID->"310f71cb-dea6-ad46-8c6e-61dd5010eb8f",
+ CellID->1996145496],
+Cell[10873, 275, 303, 5, 70, "Notes",ExpressionUUID->"eecb1c87-e90c-704a-96ab-8754964f8e1f",
+ CellID->1617151468],
+Cell[11174, 282, 194, 4, 70, "Notes",ExpressionUUID->"241065cf-5159-6242-9317-74a6bd6c5a77",
+ CellID->1141809940]
+}, Closed]],
+Cell[11379, 289, 80, 0, 70, "PageDelimiter",ExpressionUUID->"4b8b6c10-6ea3-8a45-9ad1-ebfae7692593"],
+Cell[CellGroupData[{
+Cell[11484, 293, 1439, 37, 70, "PrimaryExamplesSection",ExpressionUUID->"76581bb6-0460-9d45-9132-2094f4569c68",
+ CellID->904652397],
+Cell[CellGroupData[{
+Cell[12911, 334, 1266, 31, 70, "ExampleSection",ExpressionUUID->"d18e406e-b214-e741-b018-c827b1b16479",
+ CellID->105507326],
+Cell[14149, 367, 198, 4, 70, "ExampleText",ExpressionUUID->"e4f49e8b-22e9-7b42-b4d8-dae5d1260e66",
+ CellID->1397118513],
+Cell[14346, 373, 176, 3, 70, "Input",ExpressionUUID->"0c2908db-b6a2-a340-b45c-c401eefc3424",
+ CellID->1461566038],
+Cell[CellGroupData[{
+Cell[14544, 380, 448, 13, 70, "Input",ExpressionUUID->"5cf1d9f3-fd11-8c40-bcf6-22f1b664011c",
+ CellID->547666881],
+Cell[14982, 395, 147, 3, 70, "Output",ExpressionUUID->"ff27d504-867d-a84e-a386-7c4b5033d667",
+ CellID->1481131869]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[15165, 403, 1017, 25, 70, "SeeAlsoSection",ExpressionUUID->"a78342a6-eda5-8241-b858-b9a7e0f84eb3"],
+Cell[16160, 430, 807, 21, 70, "TutorialsSection",ExpressionUUID->"f15034d1-0042-384d-b60d-292412e6af6d"],
+Cell[16949, 453, 756, 19, 70, "MoreAboutSection",ExpressionUUID->"c7740d65-5ec4-f544-8b6e-5815b2254c87"],
+Cell[17689, 474, 78, 0, 70, "FooterCell",ExpressionUUID->"7290940a-12b0-6a4d-858a-6aa4daf60e85"]
+}
+]
+*)
+
+(* End of internal cache information *)

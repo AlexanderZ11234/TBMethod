@@ -1,0 +1,937 @@
+(* Content-type: application/vnd.wolfram.cdf.text *)
+
+(*** Wolfram CDF File ***)
+(* http://www.wolfram.com/cdf *)
+
+(* CreatedBy='Wolfram 15.0' *)
+
+(*************************************************************************)
+(*                                                                       *)
+(*                                                                       *)
+(*  This file was created under the Wolfram Enterprise licensing terms.  *)
+(*                                                                       *)
+(*       For additional information concerning CDF licensing see:        *)
+(*                                                                       *)
+(*        www.wolfram.com/cdf/adopting-cdf/licensing-options.html        *)
+(*                                                                       *)
+(*                                                                       *)
+(*                                                                       *)
+(*************************************************************************)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[      1060,         20]
+NotebookDataLength[     39630,        915]
+NotebookOptionsPosition[     36165,        837]
+NotebookOutlinePosition[     38316,        889]
+CellTagsIndexPosition[     38273,        886]
+WindowTitle->LocalDOSPlot
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {GridBox[{
+      {
+       ItemBox[Cell[BoxData[
+         RowBox[{
+          TemplateBox[{12},
+           "Spacer1"], Cell["T B METHOD SYMBOL", "PacletNameCell",
+           TextAlignment->Center,ExpressionUUID->
+           "70879c5d-6ba0-ea40-a30e-318d7b5d5571"], 
+          TemplateBox[{8},
+           "Spacer1"]}]],
+         TextAlignment->Center,ExpressionUUID->
+         "3e5fcbfc-bfd6-b14f-a2ef-683c08bbae88"],
+        Background->LightDarkSwitched[
+          RGBColor[0.490196, 0.576471, 0.690196]],
+        ItemSize->Full], ""}
+     },
+     GridBoxAlignment->{"Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {Full, 
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[{
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "See Also",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "9e3f9bfc-148e-f64e-a2da-e0fd7de6b4e1"]
+         }],ExpressionUUID->"1b79cb8e-6ad2-3c46-9d2d-fd82d6acb9a8"],
+         StripOnInput->False],{
+        StyleBox[
+          "\"LocalDOSRealSpace\"", "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup["paclet:TBMethod/ref/LocalDOSRealSpace"], 
+         StyleBox[
+          "\"LocalDOSReciprocalSpace\"", "SeeAlsoRelated", StripOnInput -> 
+           False] :> Documentation`HelpLookup[
+          "paclet:TBMethod/ref/LocalDOSReciprocalSpace"], 
+         StyleBox[
+          "\"LocalDOSTidy\"", "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup["paclet:TBMethod/ref/LocalDOSTidy"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"SeeAlso"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "b3b4066c-0619-6244-9270-f649b9a6a2bf"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "Related Guides",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "66ae0b09-e1c3-2645-b4db-914e7fecd83e"]
+         }],ExpressionUUID->"750f3659-5fb0-a94d-95b4-556fc16ce1e6"],
+         StripOnInput->False],{
+        "\"TBMethod\"" :> 
+         Documentation`HelpLookup["paclet:TBMethod/guide/TBMethod"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"MoreAbout"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "890d9e82-dcb2-1f40-a58d-dc04eb8996ab"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "Tech Notes",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "c0234ea2-40ae-3649-a53d-e9204054bb9b"]
+         }],ExpressionUUID->"3e78ad01-20b5-2a41-a8ba-0a6d52507c5f"],
+         StripOnInput->False],{
+        "\"Getting Started with TBMethod\"" :> 
+         Documentation`HelpLookup["paclet:TBMethod/tutorial/GettingStarted"]},
+        
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"Tutorials"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "d2f54b6f-c2d2-794d-8174-a964d448fb31"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "URL",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "e46e2a95-6df5-6440-9bd9-d865aef0948f"]
+         }],ExpressionUUID->"aa7259bd-7e3c-8f43-9d8c-56c75d24f10b"],
+         StripOnInput->False],{
+        "\"TBMethod/ref/LocalDOSPlot\"" :> None, 
+         "\"Copy Wolfram Documentation Center URL\"" :> 
+         CopyToClipboard["TBMethod/ref/LocalDOSPlot"], Delimiter, 
+         "\"Copy web URL\"" :> 
+         Module[{DocumentationSearch`Private`nb$}, 
+           DocumentationSearch`Private`nb$ = 
+            NotebookPut[
+             Notebook[{
+               Cell[BoxData[
+                 MakeBoxes[
+                  Hyperlink[
+                   "http://reference.wolfram.com/language/TBMethod/ref/\
+LocalDOSPlot.html"], StandardForm]], "Input", TextClipboardType -> 
+                 "PlainText"]}, Visible -> False]]; 
+           SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+           FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+           NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+         "\"Go to web URL\"" :> 
+         FrontEndExecute[{
+           NotebookLocate[{
+             URL[If[TrueQ[False], 
+                 "http://reference.wolfram.com/system-modeler/", 
+                 "http://reference.wolfram.com/language/"] <> 
+               "TBMethod/ref/LocalDOSPlot" <> ".html"], None}]}]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"URLMenu"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "0b022202-cc32-9841-ba7e-52b6ddfcc6b9"]
+    }], "AnchorBar",
+     CacheGraphics->False,ExpressionUUID->
+     "c5c94a17-2dce-af44-91ef-7e5397e64ff8"]}
+  }]], "AnchorBarGrid",
+ CellID->1,ExpressionUUID->"de251e85-740b-b74c-8bd8-c87acf97da98"],
+
+Cell["TBMethod`DataVisualization`", "ContextNameCell",ExpressionUUID->"9bf7c5aa-da72-e945-a219-db7358278b8d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {Cell[TextData[{
+     Cell[
+     "LocalDOSPlot", "ObjectName",ExpressionUUID->
+      "07918340-4d50-e149-92c7-f52f36457c5f"],
+     Cell[BoxData[
+      TemplateBox[{8},
+       "Spacer1"]],ExpressionUUID->"649ff5c3-0eb2-804d-87b6-d45b04b7a701"],
+     Cell[BoxData[
+     ""], "ObjectNameTranslation",ExpressionUUID->
+      "31b5b1cf-1a00-7a45-ac36-4afeae7008e0"]
+    }],ExpressionUUID->"f8465665-322b-4144-a21e-45fddde26006"], 
+    "\[SpanFromLeft]"}
+  }]], "ObjectNameGrid",ExpressionUUID->"7773490b-3654-4147-8b2a-\
+dcca124eb843"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[Cell[BoxData[
+     RowBox[{"LocalDOSPlot", "[", 
+      RowBox[{"data", ",", "opts"}], "]"}]], "InlineFormula",
+     FontFamily->"Source Sans Pro",ExpressionUUID->
+     "29ff1e5f-a66e-e545-9eb5-59d0a89b8f69"]],ExpressionUUID->
+     "9253f5a8-0f40-4143-ac7a-7a5bba863e66"]},
+   {"", Cell[TextData[Cell[BoxData[
+     RowBox[{"LocalDOSPlot", "[", 
+      RowBox[{"data", ",", 
+       RowBox[{"labels", ":", 
+        RowBox[{"{", "\"\<\>\"", "}"}]}], ",", 
+       RowBox[{"nodeIndices", ":", 
+        RowBox[{"{", "}"}]}], ",", "opts"}], "]"}]], "InlineFormula",
+     FontFamily->"Source Sans Pro",ExpressionUUID->
+     "94f75f4e-90d3-bd44-8116-13bd4837e8af"]],ExpressionUUID->
+     "05c556a7-094a-6940-bbfb-f582253de756"]},
+   {"", Cell["\<\
+Displays sampled local or momentum-resolved density as an interpolated \
+density plot.\
+\>",ExpressionUUID->"12f4a0af-8113-6c45-b69c-4a5739ec98cf"]}
+  }]], "Usage",
+ CellID->982439657,ExpressionUUID->"7cc94df1-d148-4142-85cb-4273ebcdfd9e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[Cell[TextData[{
+  Cell[BoxData[
+   DynamicBox[ToBoxes[
+     If[CurrentValue[
+        EvaluationCell[], "CellGroupOpen"] =!= Closed, 
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], 
+      Rotate[
+       Style[
+        Graphics[{
+          Thickness[0.18], 
+          RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+          Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+         PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+        0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+    ImageSizeCache->{
+     13.600000000000001`, {-0.16630120645742785`, 13.76630120645743}}]],
+   ExpressionUUID->"9d3f90a0-8f22-5442-a23f-f655af78d1c1"],
+  Cell[BoxData[
+   TemplateBox[{1},
+    "Spacer1"]],ExpressionUUID->"5ffd7b7c-c1bb-9748-9a41-cb29eb6c40b0"],
+  "Details and Options"
+ }], "NotesFrameText",ExpressionUUID->
+  "a0c1863e-8f60-8644-a22a-de95485c9c05"]],ExpressionUUID->"21a7a703-ccbe-\
+d643-b67e-dc9db6a5f12a"]], "NotesSection",
+ ShowGroupOpener->"Thumbnail",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CacheGraphics->False,
+ CellID->497437967,ExpressionUUID->"050895a3-a45c-e64e-a978-1fdecf03fbf2"],
+
+Cell["\<\
+Wraps ListDensityPlot. data follows that built-in function's input formats.\
+\>", "Notes",
+ CellID->1498988386,ExpressionUUID->"8ea7d9c8-3972-da4f-9262-f451c00da0c5"],
+
+Cell["\<\
+The labeled form adds high-symmetry path ticks and vertical grid lines.\
+\>", "Notes",
+ CellID->965805264,ExpressionUUID->"1ea47084-d810-b545-a50c-7e6b16b587eb"],
+
+Cell["\<\
+The default SunsetColors mapping uses the square root of the scaled color \
+argument.\
+\>", "Notes",
+ CellID->1580554830,ExpressionUUID->"95297a6a-e893-4b49-8793-8dbc01269899"]
+}, Closed]],
+
+Cell["", "PageDelimiter",ExpressionUUID->"1ca3d979-1d37-254d-af12-c48cabc256cd"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[
+     MatchQ[
+      CurrentValue[
+       EvaluationNotebook[], {
+       TaggingRules, "Openers", "PrimaryExamplesSection"}, Open], 
+      Alternatives[True, Open]], 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+   ImageSizeCache->{
+    13.600000000000001`, {4.253698793542572, 9.34630120645743}}]],
+  ExpressionUUID->"70d64b5c-9453-ca4c-b043-dc24e4914fe5"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"aa2c2082-b8c7-ae47-a304-cc215e17f4ca"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "31251a36-431e-e241-ad69-06780aada327"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellID->53970638,ExpressionUUID->"092ea9d9-eda1-fb42-b381-7208e28328bd"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[CurrentValue[
+       EvaluationCell[], "CellGroupOpen"] =!= Closed, 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]]]],ExpressionUUID->
+  "c7012a8b-eb5f-9d4a-bd14-6784ceef5599"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"83a9460f-27a8-3741-ad71-890f2afe1de7"],
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "92159512-d6c7-9147-8c53-5e456dd1cd82"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellID->455904990,ExpressionUUID->"6f928611-6183-a441-a2ce-35264934254a"],
+
+Cell["Plot a smooth density peak on a small square grid.", "ExampleText",
+ CellID->1111667152,ExpressionUUID->"3f3f7597-2f18-6b45-9718-8b85d4e692b6"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<TBMethod`\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1492042135,ExpressionUUID->"562cdd26-8189-204f-8bc9-52c339531d45"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"x", ",", "y", ",", 
+         RowBox[{"Exp", "[", 
+          RowBox[{
+           RowBox[{"-", 
+            SuperscriptBox["x", "2"]}], "-", 
+           SuperscriptBox["y", "2"]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", 
+         RowBox[{"-", "1.`"}], ",", "1.`", ",", "0.25`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", 
+         RowBox[{"-", "1.`"}], ",", "1.`", ",", "0.25`"}], "}"}]}], "]"}], ",",
+      "1"}], "]"}]}], ";", 
+  RowBox[{"result", "=", 
+   RowBox[{"LocalDOSPlot", "[", "data", "]"}]}], ";", "result"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->2080308119,ExpressionUUID->"f4742a74-1733-6e4e-b58d-67f63c53ad5e"],
+
+Cell[BoxData[
+ TemplateBox[{
+   GraphicsBox[
+    GraphicsComplexBox[CompressedData["
+1:eJyF1MENwkAMBMCITqgkNUAJSLwpkRZcgp9+XgkEIfMY5XQrRauNkuzaZ+f6
+eN2fl23bbsf15R/G+5wLnehA+73YeR9d6LGf+9aEEx3oRpGnyFPkKfJYt745
+4UA3kjxJniRPkse+W7e+MeFGkCfIE+QJ8jScA8/BPphDBN9PdOnf+Zgrz92+
+W7e+sZ9zokt/nnMPnEPnwHNo6JsTLv257x66B86hc9Cwbn1rwkOe/QdWe7Ca
+g1Uf/vwBPZ3Ijw==
+     "], {{{
+        EdgeForm[], 
+        GrayLevel[0.8], 
+        GraphicsGroupBox[{
+          PolygonBox[CompressedData["
+1:eJwNwweW4QAAAFCrDCOddNJJJ510UoTRd48wF9gr7NF3/ntf+v7757vf6/X+
+/Rz87AODATgEB8C0/+sDGQ+h0Qj+GKMTiITnwBTAQZwjJtgn0J8SIA4SEMGT
+8AhCaBSmEJTBkA8YGoLoGCEFaonPOZWffWLYBMWBOcbOSIiQLYWCSQalKZFm
+ZJZGKFZZsBjDa8JixqqOtuaWgi5y+JKWGJ7gJFOWaFE0JJESZEZS7JVA8gor
+a66ucuvVQtmq690m0j1D41Vd0MzAMkTdlAw72lihbcmmqzme7jqxu3e2tmJ5
+qe8m3mZlO+o2yMPY2fuGF5h+VO7CIgqtIHFjPwviKjnG+8gO0yZL6vSwKw3f
+TL0ka/M8yJq0zvy0CPPyfCi6soyK+tZU8bG61l/V8XI4N/e2TqrTs8tPRZs1
+p7w9vy/d69wVp/ZxOpfdrb4+2vu9uT1Pj2v19eqe7/Pr/fvyH3aSP6w=
+           "]]}]}, {}, {}, {}, {}}}, VertexColors -> CompressedData["
+1:eJxTTMoPSmViYGAIBGJmBtxAr0oq/TjzM3sxh16TzJyz9hvK7/f9+nHFvrqe
+J18w7I39olSnr+H3rtk/2vPhkHz0Efs79baf08Xe23tE792knnzH/s5OM2mh
+y+vs19a6f36e+d5+1YFNfs3d9+xtYt5ay6xZh1M9LvNxuYdU97888+fxXs13
+9r9e3rme33HL/lTZo5tHX263n9sinTt353t7TZ//F/IPP7K3UJgRPvnqDqj5
+H+yFft1fbR3zzP7joqsBD0KPwMUVV64O0i57bn8r+rPxE/8zONXjMh+Xe0gN
+f0LuP7StyNNm2gt7S6WfOurWl+DiW7d8kDgq98b+l6jMlRts9+HijrPZWVmf
+vrFXW5NlO3HKI4Lq0c3H5R5S0w+h8Mflnug6g7/hGe/sF+2uEoqSewkXr3aY
+8K/V8L39JNEU+d3Nbwiqx2U+untITf+E0g+u8Mflflw0LvW4zEd3D6n5d6jH
+13DNX8O1PGTAAYZ6/QUAsoNLKg==
+      "]], {
+    DisplayFunction -> Identity, PlotInteractivity :> True, 
+     DefaultBaseStyle -> {"PlotGraphics", "Graphics"}, AspectRatio -> 1, 
+     AxesOrigin -> {Automatic, Automatic}, DisplayFunction :> Identity, Frame -> 
+     True, FrameLabel -> {None, None}, FrameStyle -> Directive[
+       GrayLevel[0]], 
+     FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
+     GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
+       GrayLevel[0.5, 0.4]], 
+     LabelStyle -> {FontFamily -> "Helvetica", FontSize -> 14}, 
+     Method -> {
+      "DefaultBoundaryStyle" -> Automatic, "DefaultColorFunction" -> 
+       "DarkColorDensityGradient", 
+       "DefaultGraphicsInteraction" -> {
+        "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+         "Effects" -> {
+          "Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> {"ratio" -> 2}, 
+           "Droplines" -> {
+            "freeformCursorMode" -> True, 
+             "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
+       "GridLinesInFront" -> True}, PlotRange -> {{-1., 1.}, {-1., 1.}}, 
+     PlotRangeClipping -> True, PlotRangePadding -> {{
+        Scaled[0.02], 
+        Scaled[0.02]}, {
+        Scaled[0.02], 
+        Scaled[0.02]}}, Ticks -> {Automatic, Automatic}}], 
+   FormBox[
+    FormBox[
+     TemplateBox[{
+       FormBox[
+        StyleBox[
+         StyleBox[
+          PaneBox[
+           GraphicsBox[{
+             RasterBox[CompressedData["
+1:eJx11wk0lWvbB3Ck3lQoldJAIQkJdTpC/UPDEYqSIRKnKEOpE6IkcUJIaFCG
+itKk2EmEkmmbx8zZNja2vdl7P+Yhqde33vfs51vfWt+z1r2eZ/3Wva77Wfe6
+1n1f1/o/3Q47zBEQECibHYKz43++/78n8vjvKW92FcGvyzvh47W3OHVv7+2w
+6xV4u2g05kxCJXTV9t/uaEtHfMCim+su1qNBSWzgSHAdogLcr02HZgH3BkU3
+fW3Gf+I0/DfO5//GaUOo3jyhM4lNOB3adzzkah6cd7sOUfLo+P1knjuT2YJH
+VUEGpoIFaJkpMZhf34HHnTpLPq1tw5KwpEvvjhRi61979/8VSUcRr7PSbHM7
+XITrDJLCi2A/XbZSxrEd83xHbWlrOuAez452z6BCVkZv34wRDRpxG99SvTpx
+381Bb2d1MTSWygVK6rchdVjG7pVFF77FOjyyainBQRMLR9V935C9eKN2ggoD
+p5i5j+ObShE8LqccbNaKkbGTgz2TDDzYXeJ0tbwMMsraigWuLUizS9C88Lkb
+ixwYGQofykHp74r9fKsZUusPWkte6YGqCl09KroC1V4j6uEZTch3YJ3x1+hF
+2Na1b27/VYm1Lg1nzjEbYXZ6+aM/enrh++skUb2vCt+IN1sy1zQipWpxCzOC
+iX9JSegyl1XD25r9odWyAQ0Xx1PLNPsgW7rfwKK9GlJF1gXHYupRsp76+BCt
+D7VL5zREPakBw6lmfU3nV7BYG9wrrrCgMSNDv7qlFt/yv3e2KH+Fa7L7jsAV
+bHAWHoxzD6uF/cDitRuu1EFM46rUhBsbZ26tqSsRrYN6cY5/eHMtaNedrnil
+s5Fk+PWWenQdLA8HnpXQqkVusMjGiAk2rLJ1cqlrv0LSipKbjBpEm4jEHdnR
+D4UEYf/UhK8w851uPrikGjIXo4ybvPuh7JdFWy5XD7OkZdnprEpo2n7s3ZTV
+D+EL4jvXJNZjw8K0zWHUCqy8L+9rO9GPzm9hPIZ0AyyCglVCX5Sjdmp+rf+2
+AUA00zvoYQM8i1qFz4WXYc8jns2z8wNoMuKOyUs0IsSlIX7cuxRLlZ9G1iQP
+wFLU61BDcCPEN/1sGnAqwfC7vT3izAFcrqgJeDPTiBLxBT9X2hajiKLLc5Ph
+wFE6u7HgfBOERR0sjM2pEH7T4T9lwUFkc9h3JUYTtj/zzLA+XIT57JGCD7c5
+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
+r/6zdWv4dbbcyXzS/+/73w0NZVA=
+              "], {{(-15)/2, (-225)/2}, {15/2, 225/2}}], {
+             Antialiasing -> False, 
+              AbsoluteThickness[0.1], 
+              Directive[
+               Opacity[0.3], 
+               GrayLevel[0]], 
+              LineBox[
+               
+               NCache[{{
+                 15/2, (-225)/2}, {(-15)/2, (-225)/2}, {(-15)/2, 225/2}, {
+                 15/2, 225/2}, {15/2, (-225)/2}}, {{
+                7.5, -112.5}, {-7.5, -112.5}, {-7.5, 112.5}, {7.5, 112.5}, {
+                7.5, -112.5}}]]}, {
+              CapForm[None], {}}, 
+             StyleBox[{Antialiasing -> False, 
+               StyleBox[
+                StyleBox[{{
+                   StyleBox[
+                    LineBox[{{{7.5, -95.59248554913296}, 
+                    Offset[{4., 0}, {7.5, -95.59248554913296}]}, {{
+                    7.5, -43.56936416184971}, 
+                    Offset[{4., 0}, {7.5, -43.56936416184971}]}, {{7.5, 
+                    8.453757225433527}, 
+                    Offset[{4., 0}, {7.5, 8.453757225433527}]}, {{7.5, 
+                    60.47687861271677}, 
+                    Offset[{4., 0}, {7.5, 60.47687861271677}]}, {{7.5, 
+                    112.50000000000001`}, 
+                    Offset[{4., 0}, {7.5, 112.50000000000001`}]}}], {
+                    Directive[
+                    AbsoluteThickness[0.5], 
+                    GrayLevel[0.3999633796890805]]}, StripOnInput -> False], 
+                   StyleBox[
+                    LineBox[{{{7.5, -108.59826589595376`}, 
+                    Offset[{2.5, 0.}, {7.5, -108.59826589595376`}]}, {{
+                    7.5, -82.58670520231215}, 
+                    Offset[{2.5, 0.}, {7.5, -82.58670520231215}]}, {{
+                    7.5, -69.58092485549133}, 
+                    Offset[{2.5, 0.}, {7.5, -69.58092485549133}]}, {{
+                    7.5, -56.575144508670526`}, 
+                    Offset[{2.5, 0.}, {7.5, -56.575144508670526`}]}, {{
+                    7.5, -30.563583815028903`}, 
+                    Offset[{2.5, 0.}, {7.5, -30.563583815028903`}]}, {{
+                    7.5, -17.557803468208093`}, 
+                    Offset[{2.5, 0.}, {7.5, -17.557803468208093`}]}, {{
+                    7.5, -4.5520231213872675`}, 
+                    Offset[{2.5, 0.}, {7.5, -4.5520231213872675`}]}, {{7.5, 
+                    21.459537572254337`}, 
+                    Offset[{2.5, 0.}, {7.5, 21.459537572254337`}]}, {{7.5, 
+                    34.46531791907515}, 
+                    Offset[{2.5, 0.}, {7.5, 34.46531791907515}]}, {{7.5, 
+                    47.47109826589596}, 
+                    Offset[{2.5, 0.}, {7.5, 47.47109826589596}]}, {{7.5, 
+                    73.48265895953757}, 
+                    Offset[{2.5, 0.}, {7.5, 73.48265895953757}]}, {{7.5, 
+                    86.48843930635839}, 
+                    Offset[{2.5, 0.}, {7.5, 86.48843930635839}]}, {{7.5, 
+                    99.4942196531792}, 
+                    Offset[{2.5, 0.}, {7.5, 99.4942196531792}]}}], {
+                    Directive[
+                    AbsoluteThickness[0.5], 
+                    GrayLevel[0.3999633796890805]]}, StripOnInput -> False]}, 
+                  
+                  StyleBox[
+                   StyleBox[{{
+                    StyleBox[{
+                    InsetBox[
+                    FormBox[
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.2\"", ShowStringCharacters -> False], 0.2, 
+                    AutoDelete -> True], NumberForm[#, {Infinity, 1}]& ], 
+                    TraditionalForm], 
+                    Offset[{7., 0.}, {7.5, -95.59248554913296}], 
+                    ImageScaled[{0, 0.5}], Automatic, {1, 0}], 
+                    InsetBox[
+                    FormBox[
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.4\"", ShowStringCharacters -> False], 0.4, 
+                    AutoDelete -> True], NumberForm[#, {Infinity, 1}]& ], 
+                    TraditionalForm], 
+                    Offset[{7., 0.}, {7.5, -43.56936416184971}], 
+                    ImageScaled[{0, 0.5}], Automatic, {1, 0}], 
+                    InsetBox[
+                    FormBox[
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.6\"", ShowStringCharacters -> False], 0.6, 
+                    AutoDelete -> True], NumberForm[#, {Infinity, 1}]& ], 
+                    TraditionalForm], 
+                    Offset[{7., 0.}, {7.5, 8.453757225433527}], 
+                    ImageScaled[{0, 0.5}], Automatic, {1, 0}], 
+                    InsetBox[
+                    FormBox[
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.8\"", ShowStringCharacters -> False], 0.8, 
+                    AutoDelete -> True], NumberForm[#, {Infinity, 1}]& ], 
+                    TraditionalForm], 
+                    Offset[{7., 0.}, {7.5, 60.47687861271677}], 
+                    ImageScaled[{0, 0.5}], Automatic, {1, 0}], 
+                    InsetBox[
+                    FormBox[
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"1.0\"", ShowStringCharacters -> False], 1., 
+                    AutoDelete -> True], NumberForm[#, {Infinity, 1}]& ], 
+                    TraditionalForm], 
+                    Offset[{7., 0.}, {7.5, 112.50000000000001`}], 
+                    ImageScaled[{0, 0.5}], Automatic, {1, 0}]}, {
+                    Directive[
+                    AbsoluteThickness[0.5], 
+                    GrayLevel[0.3999633796890805]], {
+                    Directive[
+                    Opacity[1], FontFamily -> "Helvetica", FontSize -> 14], 
+                    Directive[
+                    Opacity[1], FontFamily -> "Helvetica", FontSize -> 14]}}, 
+                    StripOnInput -> False], 
+                    
+                    StyleBox[{{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, \
+{}}, {
+                    Directive[
+                    AbsoluteThickness[0.5], 
+                    GrayLevel[0.3999633796890805]], {
+                    Directive[
+                    Opacity[1], FontFamily -> "Helvetica", FontSize -> 14], 
+                    Directive[
+                    Opacity[1], FontFamily -> "Helvetica", FontSize -> 14]}}, 
+                    StripOnInput -> False]}, {}}, {{
+                    Directive[
+                    Opacity[1], FontFamily -> "Helvetica", FontSize -> 14], 
+                    Directive[
+                    Opacity[1], FontFamily -> "Helvetica", FontSize -> 14]}}, 
+                    StripOnInput -> False], {"GraphicsLabel"}, StripOnInput -> 
+                   False]}, {"GraphicsTicks"}, StripOnInput -> False], {{
+                  Directive[
+                   AbsoluteThickness[0.5], 
+                   GrayLevel[0.3999633796890805]], 
+                  Directive[
+                   AbsoluteThickness[0.5], 
+                   GrayLevel[0.3999633796890805]]}}, StripOnInput -> 
+                False]}, {"GraphicsAxes"}, StripOnInput -> False]}, 
+            PlotRangePadding -> Scaled[0.02], PlotRange -> All, Frame -> True,
+             FrameTicks -> {{False, False}, {True, False}}, FrameStyle -> 
+            Opacity[0], FrameTicksStyle -> Opacity[0], 
+            ImageSize -> {Automatic, 225}, BaseStyle -> {}, 
+            DefaultBaseStyle -> {"PlotGraphics", "Graphics"}], Alignment -> 
+           Left, AppearanceElements -> None, ImageMargins -> {{5, 5}, {5, 5}},
+            ImageSizeAction -> "ResizeToFit"], LineIndent -> 0, StripOnInput -> 
+          False], {FontFamily -> "Helvetica", FontSize -> 14}, Background -> 
+         Automatic, StripOnInput -> False], TraditionalForm]}, "BarLegend", 
+      DisplayFunction -> (#& ), 
+      InterpretationFunction :> (RowBox[{"BarLegend", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{
+               RowBox[{
+                 RowBox[{
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"ColorData", "[", "\"SunsetColors\"", "]"}], "[", 
+                    
+                    SqrtBox["#1"], "]"}], "&"}], ")"}], "[", "#1", "]"}], 
+                 "&"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   FractionBox["27", "200"], ",", "1"}], "}"}]}], "}"}], ",", 
+           
+           RowBox[{"LabelStyle", "\[Rule]", 
+             RowBox[{"{", 
+               RowBox[{
+                 RowBox[{"FontFamily", "\[Rule]", "\"Helvetica\""}], ",", 
+                 RowBox[{"FontSize", "\[Rule]", "14"}]}], "}"}]}], ",", 
+           RowBox[{"LegendLayout", "\[Rule]", "\"Column\""}], ",", 
+           RowBox[{"LegendMarkerSize", "\[Rule]", "225"}], ",", 
+           RowBox[{"ScalingFunctions", "\[Rule]", 
+             RowBox[{"{", 
+               RowBox[{"Identity", ",", "Identity"}], "}"}]}], ",", 
+           RowBox[{"Charting`TickSide", "\[Rule]", "Right"}], ",", 
+           RowBox[{"ColorFunctionScaling", "\[Rule]", "True"}]}], "]"}]& )], 
+     TraditionalForm], TraditionalForm]},
+  "Legended",
+  DisplayFunction->(GridBox[{{
+      TagBox[
+       ItemBox[
+        PaneBox[
+         TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline}, 
+         BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+       "SkipImageSizeLevel"], 
+      ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+    GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+    AutoDelete -> False, GridBoxItemSize -> Automatic, 
+    BaselinePosition -> {1, 1}]& ),
+  Editable->True,
+  InterpretationFunction->(RowBox[{"Legended", "[", 
+     RowBox[{#, ",", 
+       RowBox[{"Placed", "[", 
+         RowBox[{#2, ",", "After"}], "]"}]}], "]"}]& )]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->1450221054,ExpressionUUID->"01c0e105-fb23-4f41-b722-2cba71a3a6e7"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, 
+       "RelatedFunction.png"]],
+     ImageSizeCache->{50., {26.472656144876964`, 33.527343855123036`}}], 
+    GridBox[{
+      {
+       StyleBox[
+        RowBox[{"See", " ", "Also"}], "SeeAlsoSection"]},
+      {Cell[TextData[{
+        ButtonBox["LocalDOSRealSpace",
+         BaseStyle->"Link",
+         ButtonData->"paclet:TBMethod/ref/LocalDOSRealSpace"],
+        " \[FilledVerySmallSquare] ",
+        ButtonBox["LocalDOSReciprocalSpace",
+         BaseStyle->"Link",
+         ButtonData->"paclet:TBMethod/ref/LocalDOSReciprocalSpace"],
+        " \[FilledVerySmallSquare] ",
+        ButtonBox["LocalDOSTidy",
+         BaseStyle->"Link",
+         ButtonData->"paclet:TBMethod/ref/LocalDOSTidy"]
+       }], "SeeAlso",ExpressionUUID->"f1e9209c-1e71-f645-9197-689b40642411"]}
+     }]}
+  }]], "SeeAlsoSection",ExpressionUUID->"ab995c19-7302-7542-863d-\
+936409fcec4d"],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, 
+       "RelatedTutorial.png"]],
+     ImageSizeCache->{50., {26.472656144876964`, 33.527343855123036`}}], 
+    GridBox[{
+      {
+       StyleBox[
+        RowBox[{"Tech", " ", "Notes"}], "TutorialsSection"]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["Getting Started with TBMethod"]], 
+           "paclet:TBMethod/tutorial/GettingStarted"},
+          "RefLinkPlain",
+          BaseStyle->{"Tutorials"}]], "Tutorials",ExpressionUUID->
+         "daf1ee94-d337-634c-b30c-55a247f9345c"]}]}
+     }]}
+  }]], "TutorialsSection",ExpressionUUID->"aa682b95-15ca-7e43-849f-\
+baeee2e17f12"],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, "RelatedGuide.png"]],
+     ImageSizeCache->{50., {26.472656144876964`, 33.527343855123036`}}], 
+    GridBox[{
+      {
+       StyleBox[
+        RowBox[{"Related", " ", "Guides"}], "MoreAboutSection"]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["TBMethod"]], "paclet:TBMethod/guide/TBMethod"},
+          "RefLinkPlain",
+          BaseStyle->{"MoreAbout"}]], "MoreAbout",ExpressionUUID->
+         "502ea3f3-34ba-2b45-aa0c-28a94fef879b"]}]}
+     }]}
+  }]], "MoreAboutSection",ExpressionUUID->"489134dd-35fa-494c-ab23-\
+3fe82ae8b42e"],
+
+Cell[" ", "FooterCell",ExpressionUUID->"2da913d3-1243-da4e-8a8e-82121a05ec4d"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{900, 845.25},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"LocalDOSPlot",
+Visible->True,
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
+  "ExampleCounter" -> 1, 
+  "Openers" -> {
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}, 
+    "AllOptsTable" -> Closed}, "NewStyles" -> True, 
+  "CitationPopupData" -> $Failed, "ShowCitation" -> False, "HasOptions" -> 
+  True, "RootCaptions" -> "", "HeaderCoreAreaLink" -> {}, 
+  "Metadata" -> {
+   "built" -> "{2026, 10, 24, 17, 33, 2.1780437}", 
+    "history" -> {"", "", "", ""}, "context" -> "TBMethod`DataVisualization`",
+     "keywords" -> {"LocalDOSPlot tight binding TBMethod"}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "T B Method Symbol", "language" -> "en", "paclet" -> 
+    "TBMethod", "status" -> "None", "summary" -> 
+    "LocalDOSPlot[data, opts] LocalDOSPlot[data, labels : {}, nodeIndices : \
+{}, opts] Displays sampled local or momentum-resolved density as an \
+interpolated density plot.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "LocalDOSPlot", "titlemodifier" -> "", "metadescription" -> "", 
+    "windowtitle" -> "LocalDOSPlot", "type" -> "Symbol", "uri" -> 
+    "TBMethod/ref/LocalDOSPlot", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"15.0 for Microsoft Windows (64-bit) (July 2, 2026)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "15.0 for Microsoft Windows (64-bit) (July 2, 2026)", 
+  StyleDefinitions -> "PrivateStylesheetFormatting.nb"],
+ExpressionUUID->"a5a78792-5a72-264b-8fb1-e0f1d4858e93"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[1486, 34, 6394, 157, 70, "AnchorBarGrid",ExpressionUUID->"de251e85-740b-b74c-8bd8-c87acf97da98",
+ CellID->1],
+Cell[7726, 193, 109, 0, 70, "ContextNameCell",ExpressionUUID->"9bf7c5aa-da72-e945-a219-db7358278b8d"],
+Cell[CellGroupData[{
+Cell[7860, 197, 569, 14, 70, "ObjectNameGrid",ExpressionUUID->"7773490b-3654-4147-8b2a-dcca124eb843"],
+Cell[8418, 213, 1043, 22, 70, "Usage",ExpressionUUID->"7cc94df1-d148-4142-85cb-4273ebcdfd9e",
+ CellID->982439657]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9476, 240, 1481, 34, 70, "NotesSection",ExpressionUUID->"050895a3-a45c-e64e-a978-1fdecf03fbf2",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->497437967],
+Cell[10926, 276, 179, 3, 70, "Notes",ExpressionUUID->"8ea7d9c8-3972-da4f-9262-f451c00da0c5",
+ CellID->1498988386],
+Cell[11105, 281, 174, 3, 70, "Notes",ExpressionUUID->"1ea47084-d810-b545-a50c-7e6b16b587eb",
+ CellID->965805264],
+Cell[11279, 286, 190, 4, 70, "Notes",ExpressionUUID->"95297a6a-e893-4b49-8793-8dbc01269899",
+ CellID->1580554830]
+}, Closed]],
+Cell[11480, 293, 80, 0, 70, "PageDelimiter",ExpressionUUID->"1ca3d979-1d37-254d-af12-c48cabc256cd"],
+Cell[CellGroupData[{
+Cell[11585, 297, 1438, 37, 70, "PrimaryExamplesSection",ExpressionUUID->"092ea9d9-eda1-fb42-b381-7208e28328bd",
+ CellID->53970638],
+Cell[CellGroupData[{
+Cell[13011, 338, 1266, 31, 70, "ExampleSection",ExpressionUUID->"6f928611-6183-a441-a2ce-35264934254a",
+ CellID->455904990],
+Cell[14249, 371, 150, 1, 70, "ExampleText",ExpressionUUID->"3f3f7597-2f18-6b45-9718-8b85d4e692b6",
+ CellID->1111667152],
+Cell[14401, 374, 176, 3, 70, "Input",ExpressionUUID->"562cdd26-8189-204f-8bc9-52c339531d45",
+ CellID->1492042135],
+Cell[CellGroupData[{
+Cell[14599, 381, 871, 24, 70, "Input",ExpressionUUID->"f4742a74-1733-6e4e-b58d-67f63c53ad5e",
+ CellID->2080308119],
+Cell[15449, 407, 18429, 352, 70, "Output",ExpressionUUID->"01c0e105-fb23-4f41-b722-2cba71a3a6e7",
+ CellID->1450221054]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[33565, 764, 1011, 25, 70, "SeeAlsoSection",ExpressionUUID->"ab995c19-7302-7542-863d-936409fcec4d"],
+Cell[34554, 791, 807, 21, 70, "TutorialsSection",ExpressionUUID->"aa682b95-15ca-7e43-849f-baeee2e17f12"],
+Cell[35343, 814, 756, 19, 70, "MoreAboutSection",ExpressionUUID->"489134dd-35fa-494c-ab23-3fe82ae8b42e"],
+Cell[36083, 835, 78, 0, 70, "FooterCell",ExpressionUUID->"2da913d3-1243-da4e-8a8e-82121a05ec4d"]
+}
+]
+*)
+
+(* End of internal cache information *)

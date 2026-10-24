@@ -1,6 +1,6 @@
 <|"IndexedPaths" -> None, "Driver" -> "Lucene", 
- "CreationDate" -> DateObject[{2023, 4, 14, 13, 5, 
-    14.8127768`8.923211429879053}, "Instant", "Gregorian", 8.], 
+ "CreationDate" -> DateObject[{2026, 10, 24, 17, 39, 
+    42.3338369`9.379262506861828}, "Instant", "Gregorian", 8.], 
  "Version" -> 5, "Synonyms" -> None, "Method" -> "BM25", 
  "Language" -> "English", "ContentFieldOptions" -> 
   <|"Title" -> <|"Stored" -> True, "Weight" -> 2|>, 
@@ -57,19 +57,21 @@
      "Workflow" -> 0.9166666666666666, "BatchComputationProvider" -> 
       0.9166666666666666, "Interpreter" -> 0.8333333333333334, 
      "Tutorial" -> 0.8333333333333334, "Tech Note" -> 0.8333333333333334, 
-     "Overview" -> 0.8333333333333334, "Database Connection" -> 
-      0.8333333333333334, "Device Connection" -> 0.8333333333333334, 
-     "Service Connection" -> 0.8333333333333334, "Text Content" -> 
+     "Overview" -> 0.8333333333333334, "Connection" -> 0.8333333333333334, 
+     "Database Connection" -> 0.8333333333333334, "Device Connection" -> 
+      0.8333333333333334, "Service Connection" -> 0.8333333333333334, 
+     "Text Content" -> 0.8333333333333334, "Incremental Object" -> 
       0.8333333333333334, "Question Interface" -> 0.8333333333333334, 
-     "Character Name" -> 0.75, "MathLink C Function" -> 0.75, 
-     "UnityLink C# Function" -> 0.75, "System Program" -> 0.6666666666666666, 
-     "Program" -> 0.6666666666666666, "File" -> 0.6666666666666666, 
-     "Embedding Format" -> 0.6666666666666666, "Indicator" -> 
-      0.6666666666666666, "Front End Object" -> 0.5833333333333334, 
-     "Example" -> 0.5, "Menu Item" -> 0.5, "Message" -> 0.5, 
-     "Widget" -> 0.5}, "NotebookStatus" -> {"ObsoleteFlag" -> 1.*^-6, 
-     "AwaitingFutureDesignReviewFlag" -> 0.25, "NewInOldVersion" -> 0.00001, 
-     "None" -> 1.}, "NotebookPackage" -> {"Compatibility" -> 1., 
-     "Package" -> 0.6, "Mathematica" -> 1.}|>, 
- "DocumentWeightingFunction" -> {"min(max(1+(log10(Frequency)),0.1),1.5)"}, 
- "IdField" -> None, "AutoApplySuggestionsField" -> None|>
+     "Comparison Method" -> 0.8333333333333334, "Character Name" -> 0.75, 
+     "MathLink C Function" -> 0.75, "UnityLink C# Function" -> 0.75, 
+     "System Program" -> 0.6666666666666666, "Program" -> 0.6666666666666666, 
+     "File" -> 0.6666666666666666, "Embedding Format" -> 0.6666666666666666, 
+     "Indicator" -> 0.6666666666666666, "Front End Object" -> 
+      0.5833333333333334, "Example" -> 0.5, "Menu Item" -> 0.5, 
+     "Message" -> 0.5, "Widget" -> 0.5}, "NotebookStatus" -> 
+    {"ObsoleteFlag" -> 1.*^-6, "AwaitingFutureDesignReviewFlag" -> 0.25, 
+     "NewInOldVersion" -> 0.00001, "None" -> 1.}, 
+   "NotebookPackage" -> {"Compatibility" -> 1., "Package" -> 0.6, 
+     "Mathematica" -> 1.}|>, "DocumentWeightingFunction" -> 
+  {"min(max(1+(log10(Frequency)),0.1),1.5)"}, "IdField" -> None, 
+ "AutoApplySuggestionsField" -> None|>

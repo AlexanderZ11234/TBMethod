@@ -1,19 +1,32 @@
-(* Content-type: application/vnd.wolfram.mathematica *)
+(* Content-type: application/vnd.wolfram.cdf.text *)
 
-(*** Wolfram Notebook File ***)
-(* http://www.wolfram.com/nb *)
+(*** Wolfram CDF File ***)
+(* http://www.wolfram.com/cdf *)
 
-(* CreatedBy='Mathematica 13.2' *)
+(* CreatedBy='Wolfram 15.0' *)
+
+(*************************************************************************)
+(*                                                                       *)
+(*                                                                       *)
+(*  This file was created under the Wolfram Enterprise licensing terms.  *)
+(*                                                                       *)
+(*       For additional information concerning CDF licensing see:        *)
+(*                                                                       *)
+(*        www.wolfram.com/cdf/adopting-cdf/licensing-options.html        *)
+(*                                                                       *)
+(*                                                                       *)
+(*                                                                       *)
+(*************************************************************************)
 
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
-NotebookDataPosition[       158,          7]
-NotebookDataLength[      9994,        255]
-NotebookOptionsPosition[      7635,        202]
-NotebookOutlinePosition[      9467,        248]
-CellTagsIndexPosition[      9424,        245]
+NotebookDataPosition[      1060,         20]
+NotebookDataLength[     22470,        577]
+NotebookOptionsPosition[     18783,        497]
+NotebookOutlinePosition[     21164,        551]
+CellTagsIndexPosition[     21121,        548]
 WindowTitle->LocalDOSReciprocalSpace
 WindowFrame->Normal*)
 
@@ -27,17 +40,51 @@ Cell[BoxData[GridBox[{
           TemplateBox[{12},
            "Spacer1"], Cell["T B METHOD SYMBOL", "PacletNameCell",
            TextAlignment->Center,ExpressionUUID->
-           "c494cb4c-a253-48b3-a677-23f1ba078988"], 
+           "eb06f7a7-5217-db46-b1a4-b67ac2889f5d"], 
           TemplateBox[{8},
            "Spacer1"]}]],
          TextAlignment->Center,ExpressionUUID->
-         "f9d79145-d825-4bc8-944b-8ec122308452"],
-        Background->RGBColor[0.490196, 0.576471, 0.690196],
+         "369763d6-adf5-e14d-8780-d55c9beb18ad"],
+        Background->LightDarkSwitched[
+          RGBColor[0.490196, 0.576471, 0.690196]],
         ItemSize->Full], ""}
      },
      GridBoxAlignment->{"Rows" -> {{Center}}},
      GridBoxItemSize->{"Columns" -> {Full, 
          Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[{
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "See Also",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "ab4d9f17-2f37-6744-aac6-6f30314aa4dc"]
+         }],ExpressionUUID->"978cda2c-61da-ab4a-bee9-66fbd10f2830"],
+         StripOnInput->False],{
+        StyleBox[
+          "\"LocalDOSRealSpace\"", "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup["paclet:TBMethod/ref/LocalDOSRealSpace"], 
+         StyleBox[
+          "\"HBlochsForSpecFunc\"", "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup["paclet:TBMethod/ref/HBlochsForSpecFunc"], 
+         StyleBox[
+          "\"SurfaceGreen\"", "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup["paclet:TBMethod/ref/SurfaceGreen"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"SeeAlso"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "e22c5420-bd66-f24f-baeb-c4f65e47555e"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
      Cell[BoxData[
       TagBox[
        ActionMenuBox[
@@ -51,16 +98,44 @@ Cell[BoxData[GridBox[{
             AspectRatio->1,
             ImageSize->20,
             PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
-           "42002e4f-4650-4efb-92e9-3e4f6a8e2c6a"]
-         }],ExpressionUUID->"1da6d774-5f29-4235-ad89-980fa4a88340"],
-         StripOnInput->False], {"\<\"TBMethod\"\>":>Documentation`HelpLookup[
-        "paclet:TBMethod/guide/TBMethod"]},
+           "2290a1c5-4018-f94d-8a09-c241d3594268"]
+         }],ExpressionUUID->"86c21d6a-e441-2e49-986f-9704ef334881"],
+         StripOnInput->False],{
+        "\"TBMethod\"" :> 
+         Documentation`HelpLookup["paclet:TBMethod/guide/TBMethod"]},
         Appearance->None,
         MenuAppearance->Automatic,
         MenuStyle->"MoreAbout"],
        MouseAppearanceTag["LinkHand"]]],
       LineSpacing->{1.4, 0},ExpressionUUID->
-      "ea3f48d9-1632-4202-9f20-bc176d4a0019"],
+      "85cd5cad-4761-c744-928a-a3b3657e7a33"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "Tech Notes",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "6e5addfe-ca80-e843-b388-047dced0b861"]
+         }],ExpressionUUID->"fb4fc2fc-3359-4349-b35c-83b539e77396"],
+         StripOnInput->False],{
+        "\"Getting Started with TBMethod\"" :> 
+         Documentation`HelpLookup["paclet:TBMethod/tutorial/GettingStarted"]},
+        
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"Tutorials"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "c298ac61-4e74-804f-9baf-46135a38cf0d"],
      "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
 \[ThickSpace]",
      Cell[BoxData[
@@ -76,57 +151,46 @@ Cell[BoxData[GridBox[{
             AspectRatio->1,
             ImageSize->20,
             PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
-           "ace62388-7612-41f1-8948-b18e3ad3a7bc"]
-         }],ExpressionUUID->"05fcea55-b97e-4765-9c13-031c3dae35e7"],
-         StripOnInput->
-          False], {"\<\"TBMethod/ref/LocalDOSReciprocalSpace\"\>":>
-        None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
-        Module[{DocumentationSearch`Private`nb$}, 
-         DocumentationSearch`Private`nb$ = NotebookPut[
-            Notebook[{
-              Cell["TBMethod/ref/LocalDOSReciprocalSpace"]}, Visible -> 
-             False]]; SelectionMove[
-          DocumentationSearch`Private`nb$, All, Notebook]; 
-         FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
-         NotebookClose[DocumentationSearch`Private`nb$]; Null], 
-        Delimiter, "\<\"Copy web URL\"\>":>
-        Module[{DocumentationSearch`Private`nb$}, 
-         DocumentationSearch`Private`nb$ = NotebookPut[
-            Notebook[{
-              Cell[
-               BoxData[
-                MakeBoxes[
-                 Hyperlink[
-                 "http://reference.wolfram.com/language/TBMethod/ref/\
+           "4dbe419b-2313-6c4a-aab7-64846a6a6153"]
+         }],ExpressionUUID->"72f4f2bb-a088-7946-a819-6659bf9389d1"],
+         StripOnInput->False],{
+        "\"TBMethod/ref/LocalDOSReciprocalSpace\"" :> None, 
+         "\"Copy Wolfram Documentation Center URL\"" :> 
+         CopyToClipboard["TBMethod/ref/LocalDOSReciprocalSpace"], Delimiter, 
+         "\"Copy web URL\"" :> 
+         Module[{DocumentationSearch`Private`nb$}, 
+           DocumentationSearch`Private`nb$ = 
+            NotebookPut[
+             Notebook[{
+               Cell[BoxData[
+                 MakeBoxes[
+                  Hyperlink[
+                   "http://reference.wolfram.com/language/TBMethod/ref/\
 LocalDOSReciprocalSpace.html"], StandardForm]], "Input", TextClipboardType -> 
-               "PlainText"]}, Visible -> False]]; 
-         SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
-         FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
-         NotebookClose[DocumentationSearch`Private`nb$]; 
-         Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
-          NotebookLocate[{
-            URL[If[
-               TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$18068], 
-               "http://reference.wolfram.com/system-modeler/", 
-               "http://reference.wolfram.com/language/"] <> 
-             "TBMethod/ref/LocalDOSReciprocalSpace" <> ".html"], None}]}]},
+                 "PlainText"]}, Visible -> False]]; 
+           SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+           FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+           NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+         "\"Go to web URL\"" :> 
+         FrontEndExecute[{
+           NotebookLocate[{
+             URL[If[TrueQ[False], 
+                 "http://reference.wolfram.com/system-modeler/", 
+                 "http://reference.wolfram.com/language/"] <> 
+               "TBMethod/ref/LocalDOSReciprocalSpace" <> ".html"], None}]}]},
         Appearance->None,
         MenuAppearance->Automatic,
         MenuStyle->"URLMenu"],
        MouseAppearanceTag["LinkHand"]]],
       LineSpacing->{1.4, 0},ExpressionUUID->
-      "37822406-677d-43df-9d12-e753921a9726"]
+      "cadc18fa-0a10-fa4c-9156-5c71bfde56ac"]
     }], "AnchorBar",
      CacheGraphics->False,ExpressionUUID->
-     "04eac521-0224-4c56-8ad1-4a8f67c3062f"]}
+     "4294deb2-4405-c943-86ed-75fefeff63c5"]}
   }]], "AnchorBarGrid",
- GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
-     Scaled[0.65], {
-      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
-   "RowsIndexed" -> {}}},
- CellID->1,ExpressionUUID->"c9cf1741-6d65-43e8-87d6-6bfd83559093"],
+ CellID->1,ExpressionUUID->"7752fdd4-e8ce-cd4e-9fe7-4ad5cbec1098"],
 
-Cell["TBMethod`LGFF`", "ContextNameCell",ExpressionUUID->"8251449c-59f9-4127-b07a-edb4857d4240"],
+Cell["TBMethod`LGFF`", "ContextNameCell",ExpressionUUID->"3ede9e72-9efb-bf47-ba7a-fc72528fb0b9"],
 
 Cell[CellGroupData[{
 
@@ -134,55 +198,286 @@ Cell[BoxData[GridBox[{
    {Cell[TextData[{
      Cell[
      "LocalDOSReciprocalSpace", "ObjectName",ExpressionUUID->
-      "8902dbfb-3adb-4e42-9f7d-e3832a505151"],
+      "0949bfa1-cce6-b840-b05d-4cff7ffb42df"],
      Cell[BoxData[
       TemplateBox[{8},
-       "Spacer1"]],ExpressionUUID->"82e515f7-b7f9-4aa6-b734-04455e4804c9"],
+       "Spacer1"]],ExpressionUUID->"6c3aa276-2dd8-5541-90fb-79ebfab21f79"],
      Cell[BoxData[
      ""], "ObjectNameTranslation",ExpressionUUID->
-      "228ba2a6-2f68-4780-bcc6-bf73c070e807"]
-    }],ExpressionUUID->"455840c2-5d89-4bbc-af89-e204b09b27ab"], Cell[BoxData[
-     TooltipBox[
-      StyleBox[
-       TagBox[
-        StyleBox[
-         GraphicsBox[InsetBox[
-           StyleBox["\<\"NEW IN ??\"\>",
-            StripOnInput->False,
-            FontFamily->"Source Sans Pro",
-            FontSize->18,
-            FontWeight->"Bold",
-            FontSlant->"Italic",
-            FontColor->RGBColor[0.968627, 0.466667, 0]], {Right, Center}, {
-           Right, Center}],
-          ImageSize->{125, 24}], "NewInGraphic",
-         StripOnInput->False],
-        Deploy,
-        DefaultBaseStyle->"Deploy"], "NewInGraphic",
-       StripOnInput->False],
-      "New in 13.2",
-      TooltipDelay->0.3]],
-     Magnification->1,ExpressionUUID->"a0d34df4-dd0a-4c2e-b9f4-05aa7b7ffb05"]}
-  }]], "ObjectNameGrid",
- CacheGraphics->False,ExpressionUUID->"d03b1bb9-9833-426a-bd05-de3e38be31e0"],
+      "a2d5f756-20f1-9d40-8235-edf34a596641"]
+    }],ExpressionUUID->"59fbcd09-ead2-eb4d-b7c7-2d0845553c69"], 
+    "\[SpanFromLeft]"}
+  }]], "ObjectNameGrid",ExpressionUUID->"be12e4aa-69e7-1342-9b74-\
+706cb7da23be"],
 
 Cell[BoxData[GridBox[{
-   {"", Cell[TextData[{
-     Cell[BoxData[
-      RowBox[{"LocalDOSReciprocalSpace", "[", "]"}]], "InlineFormula",
-      FontFamily->"Source Sans Pro",ExpressionUUID->
-      "c6565350-ad26-46ef-9918-5854f8685cf4"],
-     " \[LineSeparator]XXXX"
-    }],ExpressionUUID->"6f0d5c42-3488-4a6e-b5f8-3490f0e7cdb5"]}
+   {"", Cell[TextData[Cell[BoxData[
+     RowBox[{
+      RowBox[{"LocalDOSReciprocalSpace", "[", "projection", "]"}], "[", 
+      RowBox[{"energy", ",", 
+       RowBox[{"{", 
+        RowBox[{"hLead", ",", "hLead12"}], "}"}], ",", 
+       RowBox[{"mode", ":", "3"}]}], "]"}]], "InlineFormula",
+     FontFamily->"Source Sans Pro",ExpressionUUID->
+     "b8dfecfb-ab66-f249-bcc4-aea76cda4c92"]],ExpressionUUID->
+     "ffa09150-5c16-7d46-bd7c-8e1fb6c2c0a8"]},
+   {"", Cell[TextData[Cell[BoxData[
+     RowBox[{
+      RowBox[{"LocalDOSReciprocalSpace", "[", "projection", "]"}], "[", 
+      RowBox[{"energy", ",", 
+       RowBox[{"{", 
+        RowBox[{"hLead", ",", "hLead12"}], "}"}], ",", "hDevice", ",", 
+       RowBox[{"mode", ":", "3"}]}], "]"}]], "InlineFormula",
+     FontFamily->"Source Sans Pro",ExpressionUUID->
+     "0735344e-41a1-614a-8ac1-1f42de861c53"]],ExpressionUUID->
+     "1381ede2-3533-5947-9c0e-e0a739f385cf"]},
+   {"", Cell[TextData[Cell[BoxData[
+     RowBox[{
+      RowBox[{"LocalDOSReciprocalSpace", "[", "projection", "]"}], "[", 
+      RowBox[{"energy", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"hLead", ",", "hLead12"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"hDevice", ",", "hDeviceLead"}], "}"}]}], "}"}], ",", 
+       RowBox[{"mode", ":", "3"}]}], "]"}]], "InlineFormula",
+     FontFamily->"Source Sans Pro",ExpressionUUID->
+     "d52dc734-5c83-f444-a445-603c4ecd4a65"]],ExpressionUUID->
+     "cdc48a0c-9cba-d34e-a484-0a05c7733e74"]},
+   {"", Cell["\<\
+Computes projected spectral density for a Bloch-resolved device coupled to a \
+semi-infinite lead.\
+\>",ExpressionUUID->"f50497b0-56ea-354f-aa10-d004713490f8"]}
   }]], "Usage",
- CellID->672376913,ExpressionUUID->"6607f6ae-2b0f-4f66-8e7e-786f2ddba4c0"]
+ CellID->885315816,ExpressionUUID->"577babfe-9ca3-9c40-832d-c8006e88edc2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[Cell[TextData[{
+  Cell[BoxData[
+   DynamicBox[ToBoxes[
+     If[CurrentValue[
+        EvaluationCell[], "CellGroupOpen"] =!= Closed, 
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], 
+      Rotate[
+       Style[
+        Graphics[{
+          Thickness[0.18], 
+          RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+          Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+         PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+        0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+    ImageSizeCache->{
+     13.600000000000001`, {-0.16630120645742785`, 13.76630120645743}}]],
+   ExpressionUUID->"6bb52808-9b78-4c41-9468-7f7aa1e5298b"],
+  Cell[BoxData[
+   TemplateBox[{1},
+    "Spacer1"]],ExpressionUUID->"67ff90b6-5694-9e49-b5ce-71c54d557dfd"],
+  "Details and Options"
+ }], "NotesFrameText",ExpressionUUID->
+  "29880e94-55b4-014f-84e5-016f1f3c304f"]],ExpressionUUID->"398a2b05-6cdb-\
+bf4d-bab1-b3efd1e47d19"]], "NotesSection",
+ ShowGroupOpener->"Thumbnail",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CacheGraphics->False,
+ CellID->514539999,ExpressionUUID->"b0b8e6e9-d3ea-104d-8123-1991c3ad2c9c"],
+
+Cell["Accepts a real energy and internally uses energy + 1.*^-4 I.", "Notes",
+ CellID->762732182,ExpressionUUID->"be10d882-c1d3-304f-831a-5ad50756e2d7"],
+
+Cell["\<\
+Returns -(1/Pi) Im of the summed projected site-diagonal Green blocks.\
+\>", "Notes",
+ CellID->1834049178,ExpressionUUID->"ddadaebf-5b57-964e-bbc5-f14d53efb1d6"],
+
+Cell["\<\
+The shortest form uses the lead onsite block as the device Hamiltonian. Only \
+modes 1, 2 and 3 are accepted by this wrapper.\
+\>", "Notes",
+ CellID->878178488,ExpressionUUID->"819548e3-ed9a-da42-adb3-c7743c6d83e4"]
+}, Closed]],
+
+Cell["", "PageDelimiter",ExpressionUUID->"6f88f774-df59-3c47-9395-d503d7433b72"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[
+     MatchQ[
+      CurrentValue[
+       EvaluationNotebook[], {
+       TaggingRules, "Openers", "PrimaryExamplesSection"}, Open], 
+      Alternatives[True, Open]], 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+   ImageSizeCache->{
+    13.600000000000001`, {4.253698793542572, 9.34630120645743}}]],
+  ExpressionUUID->"b05db1ed-da70-7e40-bfd6-228deb2600e2"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"980582f3-773c-0d4f-adf8-51f0d8833807"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "a1fdb0c9-c110-ed4f-a049-254d4ce15723"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellID->54766029,ExpressionUUID->"8a6332cc-36a2-fc4b-a6b5-82da4960d95c"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[CurrentValue[
+       EvaluationCell[], "CellGroupOpen"] =!= Closed, 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]]]],ExpressionUUID->
+  "274bb961-1b9d-4341-ba91-19af28a62c7d"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"efd7bdeb-ef50-454d-bbef-6fb92701427c"],
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "8dec21aa-059a-b249-9f82-1d07ab1ffc28"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellID->153903614,ExpressionUUID->"6f089281-a541-a746-9506-b474c21abdb3"],
+
+Cell["\<\
+Obtain a positive scalar spectral density for a unit-hopping chain.\
+\>", "ExampleText",
+ CellID->677271736,ExpressionUUID->"99423009-0ee5-704b-9161-03ff2a154de7"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<TBMethod`\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->319352683,ExpressionUUID->"2fb3ff1b-eb45-f24d-9f0c-5fe84ebb7f5a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"result", "=", 
+   RowBox[{
+    RowBox[{"LocalDOSReciprocalSpace", "[", 
+     RowBox[{"{", 
+      RowBox[{"{", "1.`", "}"}], "}"}], "]"}], "[", 
+    RowBox[{"0.`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"{", "0.`", "}"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"-", "1.`"}], "}"}], "}"}]}], "}"}], ",", "1"}], "]"}]}], ";",
+   "result"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1002191557,ExpressionUUID->"ea787db2-1169-894e-8037-3173d2c63eda"],
+
+Cell[BoxData["0.3182939700136701`"], "Output",
+ CellLabel->"Out[3]=",
+ CellID->282044546,ExpressionUUID->"ce424cec-db69-8c41-90ce-9641baada2a4"]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]],
 
 Cell[BoxData[GridBox[{
    {
     DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, 
+       "RelatedFunction.png"]],
+     ImageSizeCache->{50., {26.472656144876964`, 33.527343855123036`}}], 
+    GridBox[{
+      {
+       StyleBox[
+        RowBox[{"See", " ", "Also"}], "SeeAlsoSection"]},
+      {Cell[TextData[{
+        ButtonBox["LocalDOSRealSpace",
+         BaseStyle->"Link",
+         ButtonData->"paclet:TBMethod/ref/LocalDOSRealSpace"],
+        " \[FilledVerySmallSquare] ",
+        ButtonBox["HBlochsForSpecFunc",
+         BaseStyle->"Link",
+         ButtonData->"paclet:TBMethod/ref/HBlochsForSpecFunc"],
+        " \[FilledVerySmallSquare] ",
+        ButtonBox["SurfaceGreen",
+         BaseStyle->"Link",
+         ButtonData->"paclet:TBMethod/ref/SurfaceGreen"]
+       }], "SeeAlso",ExpressionUUID->"c7526084-bf9e-7f42-a789-dd01de53f5ff"]}
+     }]}
+  }]], "SeeAlsoSection",ExpressionUUID->"1a3f4a1c-e150-9b4d-8b8c-\
+c80e874b6360"],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, 
+       "RelatedTutorial.png"]],
+     ImageSizeCache->{50., {26.472656144876964`, 33.527343855123036`}}], 
+    GridBox[{
+      {
+       StyleBox[
+        RowBox[{"Tech", " ", "Notes"}], "TutorialsSection"]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["Getting Started with TBMethod"]], 
+           "paclet:TBMethod/tutorial/GettingStarted"},
+          "RefLinkPlain",
+          BaseStyle->{"Tutorials"}]], "Tutorials",ExpressionUUID->
+         "4d320f7c-e728-1a48-bb19-d3c589a71734"]}]}
+     }]}
+  }]], "TutorialsSection",ExpressionUUID->"625dde5c-25c6-3740-8218-\
+9d7f44f4e565"],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
       FrontEnd`FileName[{"Documentation", "FooterIcons"}, "RelatedGuide.png"]],
-     ImageSizeCache->{50., {27., 33.}}], GridBox[{
+     ImageSizeCache->{50., {26.472656144876964`, 33.527343855123036`}}], 
+    GridBox[{
       {
        StyleBox[
         RowBox[{"Related", " ", "Guides"}], "MoreAboutSection"]},
@@ -193,37 +488,45 @@ Cell[BoxData[GridBox[{
             TextData["TBMethod"]], "paclet:TBMethod/guide/TBMethod"},
           "RefLinkPlain",
           BaseStyle->{"MoreAbout"}]], "MoreAbout",ExpressionUUID->
-         "d2451391-2066-4293-b5a0-ac7b0d9230ba"]}]}
+         "2e2f2cef-4bef-984c-9fe2-b1e92ece7ef3"]}]}
      }]}
-  }]], "MoreAboutSection",ExpressionUUID->"ede687a2-3202-4c96-9f41-\
-20abf7f72b05"],
+  }]], "MoreAboutSection",ExpressionUUID->"81507bae-3d38-2c4a-bf73-\
+549ca5fc3962"],
 
-Cell[" ", "FooterCell",ExpressionUUID->"8f7e7814-8981-41ca-b37d-969363d3bb31"]
+Cell[" ", "FooterCell",ExpressionUUID->"da9299d3-8559-784d-9cda-b1ccbdac9f74"]
 },
 Saveable->False,
 ScreenStyleEnvironment->"Working",
-WindowSize->{900., 830.25},
+WindowSize->{900, 845.25},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 WindowTitle->"LocalDOSReciprocalSpace",
+Visible->True,
 TaggingRules->{
  "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
-  "HasOptions" -> True, "ExampleCounter" -> 1, 
+  "ExampleCounter" -> 1, 
   "Openers" -> {
-   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}}, 
-  "NewStyles" -> True, "CitationPopupData" -> $Failed, "ShowCitation" -> 
-  False, "RootCaptions" -> "", 
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}, 
+    "AllOptsTable" -> Closed}, "NewStyles" -> True, 
+  "CitationPopupData" -> $Failed, "ShowCitation" -> False, "HasOptions" -> 
+  True, "RootCaptions" -> "", "HeaderCoreAreaLink" -> {}, 
   "Metadata" -> {
-   "built" -> "{2023, 2, 18, 16, 21, 42.4821098}", 
-    "history" -> {"??", "", "", ""}, "context" -> "TBMethod`LGFF`", 
-    "keywords" -> {}, "specialkeywords" -> {}, 
-    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
-    "T B Method Symbol", "language" -> "en", "paclet" -> "TBMethod", "status" -> 
-    "None", "summary" -> "LocalDOSReciprocalSpace[] XXXX", "synonyms" -> {}, 
+   "built" -> "{2026, 10, 24, 17, 33, 4.6046233}", 
+    "history" -> {"", "", "", ""}, "context" -> "TBMethod`LGFF`", 
+    "keywords" -> {"LocalDOSReciprocalSpace tight binding TBMethod"}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "T B Method Symbol", "language" -> "en", "paclet" -> 
+    "TBMethod", "status" -> "None", "summary" -> 
+    "LocalDOSReciprocalSpace[projection][energy, {hLead, hLead12}, mode : 3] \
+LocalDOSReciprocalSpace[projection][energy, {hLead, hLead12}, hDevice, mode : \
+3] LocalDOSReciprocalSpace[projection][energy, {{hLead, hLead12}, {hDevice, \
+hDeviceLead}}, mode : 3] Computes projected spectral density for a \
+Bloch-resolved device coupled to a semi-infinite lead.", "synonyms" -> {}, 
     "tabletags" -> {}, "title" -> "LocalDOSReciprocalSpace", "titlemodifier" -> 
-    "", "windowtitle" -> "LocalDOSReciprocalSpace", "type" -> "Symbol", "uri" -> 
-    "TBMethod/ref/LocalDOSReciprocalSpace"}},
+    "", "metadescription" -> "", "windowtitle" -> "LocalDOSReciprocalSpace", 
+    "type" -> "Symbol", "uri" -> "TBMethod/ref/LocalDOSReciprocalSpace", 
+    "WorkflowDockedCell" -> ""}, "SearchTextTranslated" -> ""},
 CellContext->"Global`",
-FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 30, 2023)",
+FrontEndVersion->"15.0 for Microsoft Windows (64-bit) (July 2, 2026)",
 StyleDefinitions->Notebook[{
    Cell[
     StyleData[
@@ -232,9 +535,9 @@ StyleDefinitions->Notebook[{
     StyleData["Input"], CellContext -> "Global`"], 
    Cell[
     StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
-  FrontEndVersion -> "13.2 for Microsoft Windows (64-bit) (January 30, 2023)",
-   StyleDefinitions -> "Default.nb"],
-ExpressionUUID->"7be5c97a-bbde-4a6a-bf07-4997dcea9e53"
+  FrontEndVersion -> "15.0 for Microsoft Windows (64-bit) (July 2, 2026)", 
+  StyleDefinitions -> "PrivateStylesheetFormatting.nb"],
+ExpressionUUID->"a5a78792-5a72-264b-8fb1-e0f1d4858e93"
 ]
 (* End of Notebook Content *)
 
@@ -247,19 +550,50 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[595, 21, 4402, 105, 70, "AnchorBarGrid",ExpressionUUID->"c9cf1741-6d65-43e8-87d6-6bfd83559093",
+Cell[1497, 34, 6414, 156, 70, "AnchorBarGrid",ExpressionUUID->"7752fdd4-e8ce-cd4e-9fe7-4ad5cbec1098",
  CellID->1],
-Cell[5000, 128, 96, 0, 70, "ContextNameCell",ExpressionUUID->"8251449c-59f9-4127-b07a-edb4857d4240"],
+Cell[7758, 192, 96, 0, 70, "ContextNameCell",ExpressionUUID->"3ede9e72-9efb-bf47-ba7a-fc72528fb0b9"],
 Cell[CellGroupData[{
-Cell[5121, 132, 1291, 34, 70, "ObjectNameGrid",ExpressionUUID->"d03b1bb9-9833-426a-bd05-de3e38be31e0"],
-Cell[6415, 168, 420, 9, 70, "Usage",ExpressionUUID->"6607f6ae-2b0f-4f66-8e7e-786f2ddba4c0",
- CellID->672376913]
+Cell[7879, 196, 580, 14, 70, "ObjectNameGrid",ExpressionUUID->"be12e4aa-69e7-1342-9b74-706cb7da23be"],
+Cell[8448, 212, 1848, 40, 70, "Usage",ExpressionUUID->"577babfe-9ca3-9c40-832d-c8006e88edc2",
+ CellID->885315816]
 }, Open  ]],
-Cell[6850, 180, 700, 18, 70, "MoreAboutSection",ExpressionUUID->"ede687a2-3202-4c96-9f41-20abf7f72b05"],
-Cell[7553, 200, 78, 0, 70, "FooterCell",ExpressionUUID->"8f7e7814-8981-41ca-b37d-969363d3bb31"]
+Cell[CellGroupData[{
+Cell[10293, 257, 1481, 34, 70, "NotesSection",ExpressionUUID->"b0b8e6e9-d3ea-104d-8123-1991c3ad2c9c",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->514539999],
+Cell[11743, 293, 153, 1, 70, "Notes",ExpressionUUID->"be10d882-c1d3-304f-831a-5ad50756e2d7",
+ CellID->762732182],
+Cell[11898, 296, 174, 3, 70, "Notes",ExpressionUUID->"ddadaebf-5b57-964e-bbc5-f14d53efb1d6",
+ CellID->1834049178],
+Cell[12072, 301, 229, 4, 70, "Notes",ExpressionUUID->"819548e3-ed9a-da42-adb3-c7743c6d83e4",
+ CellID->878178488]
+}, Closed]],
+Cell[12312, 308, 80, 0, 70, "PageDelimiter",ExpressionUUID->"6f88f774-df59-3c47-9395-d503d7433b72"],
+Cell[CellGroupData[{
+Cell[12417, 312, 1438, 37, 70, "PrimaryExamplesSection",ExpressionUUID->"8a6332cc-36a2-fc4b-a6b5-82da4960d95c",
+ CellID->54766029],
+Cell[CellGroupData[{
+Cell[13843, 353, 1266, 31, 70, "ExampleSection",ExpressionUUID->"6f089281-a541-a746-9506-b474c21abdb3",
+ CellID->153903614],
+Cell[15081, 386, 176, 3, 70, "ExampleText",ExpressionUUID->"99423009-0ee5-704b-9161-03ff2a154de7",
+ CellID->677271736],
+Cell[15257, 391, 175, 3, 70, "Input",ExpressionUUID->"2fb3ff1b-eb45-f24d-9f0c-5fe84ebb7f5a",
+ CellID->319352683],
+Cell[CellGroupData[{
+Cell[15454, 398, 570, 17, 70, "Input",ExpressionUUID->"ea787db2-1169-894e-8037-3173d2c63eda",
+ CellID->1002191557],
+Cell[16010, 417, 146, 2, 70, "Output",ExpressionUUID->"ce424cec-db69-8c41-90ce-9641baada2a4",
+ CellID->282044546]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[16193, 424, 1001, 25, 70, "SeeAlsoSection",ExpressionUUID->"1a3f4a1c-e150-9b4d-8b8c-c80e874b6360"],
+Cell[17172, 451, 807, 21, 70, "TutorialsSection",ExpressionUUID->"625dde5c-25c6-3740-8218-9d7f44f4e565"],
+Cell[17961, 474, 756, 19, 70, "MoreAboutSection",ExpressionUUID->"81507bae-3d38-2c4a-bf73-549ca5fc3962"],
+Cell[18701, 495, 78, 0, 70, "FooterCell",ExpressionUUID->"da9299d3-8559-784d-9cda-b1ccbdac9f74"]
 }
 ]
 *)
 
 (* End of internal cache information *)
-
