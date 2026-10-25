@@ -147,7 +147,8 @@ Module[{func, lbllen = Length[labels], numberlen, ptsall, numbers, numbersfinal}
 
 
 (*Berry's-connection-related topological characteristic method*)
-BerryCurvature[veck_, H_, nF_?(# \[Element] PositiveIntegers &), opts:OptionsPattern[Eigensystem]] :=
+(*BerryCurvature[veck_, H_, nF_?(# \[Element] PositiveIntegers &), opts:OptionsPattern[Eigensystem]] :=*)
+BerryCurvature[veck : {_?NumericQ, _?NumericQ}, H_, nF_?(# \[Element] PositiveIntegers &), opts:OptionsPattern[Eigensystem]] :=
 Module[{vx, vy, eigensyst, \[CapitalOmega]nl, \[Delta]k = 1.*^-7, Hveck = H[veck]},
 	{vx, vy} = (Hveck - H[veck - \[Delta]k #])/(*\[HBar]*)\[Delta]k & /@ PauliMatrix[0];
 	eigensyst = Sort[Eigensystem[Hveck, opts, Method -> "Direct"]\[Transpose]];
@@ -158,7 +159,8 @@ Module[{vx, vy, eigensyst, \[CapitalOmega]nl, \[Delta]k = 1.*^-7, Hveck = H[veck
 	-2Total[\[CapitalOmega]nl@@@Join@@@Tuples[TakeDrop[eigensyst,nF]]//Im]*)
 ];
 
-BerryCurvature[veck_, H_, \[Epsilon]F_?(# \[Element] Reals &), opts:OptionsPattern[Eigensystem]] :=
+(*BerryCurvature[veck_, H_, \[Epsilon]F_?(# \[Element] Reals &), opts:OptionsPattern[Eigensystem]] :=*)
+BerryCurvature[veck : {_?NumericQ, _?NumericQ}, H_, \[Epsilon]F_?(# \[Element] Reals &), opts:OptionsPattern[Eigensystem]] :=
 Module[{vx, vy, eigensyst, \[CapitalOmega]nl, \[Delta]k = 1.*^-7, Hveck = H[veck], group},
 	{vx, vy} = (Hveck - H[veck - \[Delta]k #])/(*\[HBar]*)\[Delta]k & /@ PauliMatrix[0];
 	eigensyst = Sort[Eigensystem[Hveck, opts, Method -> "Direct"]\[Transpose]];
