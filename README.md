@@ -66,7 +66,7 @@ This can be initialized automatically by putting the `init.m` file to the direct
 
 ## 3. Documentation
 
-<a href="#" class="magic-button" title="Onsite testable"> _MMA-style_ </a> documentation under construction
+<a href="#" class="magic-button" title="Onsite testable"> _MMA-style_ </a> documentation ~~under construction~~ available
 
 Cooperation is highly welcome.
 
