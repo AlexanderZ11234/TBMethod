@@ -10,7 +10,7 @@
 (*Or, at least the newer versions are their efficiency reparations.*)
 
 
-(* ::Title::Closed:: *)
+(* ::Title:: *)
 (*MDConstruct`**)
 
 
@@ -287,6 +287,22 @@ Module[{hds, hods, hdsdisordered, hdsensemble, innerdof = Length[innerdofmat], d
 \[Lambda]SKOnsiteBlock["sd"][\[Lambda]_] := ConstantArray[0, {1, 5}2, SparseArray];
 \[Lambda]SKOnsiteBlock["pd"][\[Lambda]_] := ConstantArray[0, {3, 5}2, SparseArray];*)
 
+
+(*Options[DownfoldedDUp] = {"ZeroThreshold" -> 1.*^-5};
+DownfoldedDUp[cryststruct_Association, hi0svas_Association, dup0_, opts : OptionsPattern[]][hi0svasdfed_Association] :=
+Module[{hi0svas0, hi0svasdfed0, homepts, nsite, newhops, zeroBlockQ, hopDistances, zero = OptionValue["ZeroThreshold"]},
+	zeroBlockQ[b_] := If[MatrixQ[b, NumericQ], Max[Abs @ Flatten[b]] <= zero, AllTrue[Flatten[b], PossibleZeroQ]];
+	{hi0svas0, hi0svasdfed0} = Select[Not @* zeroBlockQ] /@ {hi0svas, hi0svasdfed};
+	newhops = KeyDrop[hi0svasdfed0, Keys[hi0svas0]]; If[newhops === <||>, Return[dup0]];
+	homepts = Replace[First @ Values[cryststruct], Rule[_, pt_] :> pt, {1}]; nsite = Length[homepts];
+	
+	hopDistances[r_, h_] := Module[{hblocks, pairs},
+		hblocks = Partition[h, Dimensions[h]/nsite];
+		pairs = Position[hblocks, b_ /; !zeroBlockQ[b], {2}, Heads -> False];
+		Norm[homepts[[#[[1]]]] + r - homepts[[#[[2]]]]] & /@ pairs
+	];
+	Max @ Catenate @ KeyValueMap[hopDistances, newhops]
+];*)
 
 
 
@@ -843,5 +859,3 @@ Module[{kbdat, colors, m, n, lines, bfig, legend, fontfamily = (*"Helvetica"*)(*
 	legend = BarLegend[{cfunc, {0, 1}}, ps2, Ticks -> Transpose[{{0, 1}, NumberForm[#, {3, 4}] & /@ MinMax[cdat]}], (*"Ticks" -> {0, 1}, "TickLabels" -> {"Min", "Max"},*) TicksStyle -> style2, FrameStyle -> style2, LabelStyle -> style];
 	Legended[bfig, legend]
 ];*)
-
-

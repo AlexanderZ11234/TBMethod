@@ -667,19 +667,18 @@ Module[{nph = 2 mnup + 1, r0, rl, rc, rld, triple, u0},
 ];
 
 Options[DownfoldedDUp] = {"ZeroThreshold" -> 1.*^-5};
-DownfoldedDUp[cryststruct_Association, hi0svas_Association, dup0_, opts : OptionsPattern[]][hi0svasdfed_Association] :=
-Module[{hi0svas0, hi0svasdfed0, homepts, nsite, newhops, zeroBlockQ, hopDistances, zero = OptionValue["ZeroThreshold"]},
-	zeroBlockQ[b_] := If[MatrixQ[b, NumericQ], Max[Abs @ Flatten[b]] <= zero, AllTrue[Flatten[b], PossibleZeroQ]];
-	{hi0svas0, hi0svasdfed0} = Select[Not @* zeroBlockQ] /@ {hi0svas, hi0svasdfed};
-	newhops = KeyDrop[hi0svasdfed0, Keys[hi0svas0]]; If[newhops === <||>, Return[dup0]];
-	homepts = Replace[First @ Values[cryststruct], Rule[_, pt_] :> pt, {1}]; nsite = Length[homepts];
-	
-	hopDistances[r_, h_] := Module[{hblocks, pairs},
-		hblocks = Partition[h, Dimensions[h]/nsite];
-		pairs = Position[hblocks, b_ /; !zeroBlockQ[b], {2}, Heads -> False];
-		Norm[homepts[[#[[1]]]] + r - homepts[[#[[2]]]]] & /@ pairs
-	];
-	Max @ Catenate @ KeyValueMap[hopDistances, newhops]
+DownfoldedDUp[cryststruct_Association, opts : OptionsPattern[]][hi0svasdfed_Association] :=
+Module[{homepts, nsite, zeroBlockQ, hopDistances, zero = OptionValue["ZeroThreshold"]},
+    zeroBlockQ[b_] := If[MatrixQ[b, NumericQ], Max[Abs @ Flatten[b]] <= zero, AllTrue[Flatten[b], PossibleZeroQ]];
+    homepts = Replace[First @ Values[cryststruct], Rule[_, pt_] :> pt, {1}]; nsite = Length[homepts];
+
+    hopDistances[r_, h_] := Module[{hblocks, pairs},
+        hblocks = Partition[h, Dimensions[h]/nsite];
+        pairs = Position[hblocks, b_ /; !zeroBlockQ[b], {2}, Heads -> False];
+        Norm[homepts[[#[[1]]]] + r - homepts[[#[[2]]]]] & /@ pairs
+    ];
+
+    Max @ Catenate @ KeyValueMap[hopDistances, hi0svasdfed]
 ];
 
 
