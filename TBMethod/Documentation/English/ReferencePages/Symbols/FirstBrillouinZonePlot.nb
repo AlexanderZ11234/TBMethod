@@ -1,0 +1,134 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 1210489131], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 357113599], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 1533604410], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 958650236], Cell["TBMethod`EigenSpect`", "Categorization", 
+      CellLabel -> "Context", CellID -> 188663339], 
+     Cell["TBMethod/ref/FirstBrillouinZonePlot", "Categorization", 
+      CellLabel -> "URI", CellID -> 120825753]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 2049453607], 
+     Cell["FirstBrillouinZonePlot, tight binding, TBMethod", "Keywords", 
+      CellID -> 548980918]}, Closed]], 
+  Cell[CellGroupData[{Cell["FirstBrillouinZonePlot", "ObjectName", 
+      CellID -> 1750010782], Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["FirstBrillouinZonePlot", 
+             BaseStyle -> "Link", ButtonData -> 
+              "paclet:TBMethod/ref/FirstBrillouinZonePlot"], "[", 
+            StyleBox["reciprocalBasis", "TI", FontFamily -> "Times", 
+             FontSlant -> "Italic"], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", "plots the first Brillouin zone together with \
+colored reciprocal basis vectors.", "\n", Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["FirstBrillouinZonePlot", 
+             BaseStyle -> "Link", ButtonData -> 
+              "paclet:TBMethod/ref/FirstBrillouinZonePlot"], "[", 
+            RowBox[{StyleBox["reciprocalBasis", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"], ",", StyleBox["n", "TI", FontFamily -> 
+                "Times", FontSlant -> "Italic"]}], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", "uses the specified reciprocal-lattice \
+translation range when constructing the zone."}], "Usage", 
+      CellID -> 310766143], Cell[TextData[{"The rows of ", 
+        Cell[BoxData[StyleBox["reciprocalBasis", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        " are reciprocal vectors, and its dimensions must be ", 
+        Cell[BoxData[RowBox[{"{", RowBox[{"2", ",", "2"}], "}"}]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], " or ", 
+        Cell[BoxData[RowBox[{"{", RowBox[{"3", ",", "3"}], "}"}]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        ". Use exact input because ", 
+        Cell[BoxData[ButtonBox["FirstBrillouinZoneRegion", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/FirstBrillouinZoneRegion"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        ", called internally, requires infinite input precision."}], "Notes", 
+      CellID -> 412304401], Cell[TextData[{Cell[BoxData[StyleBox["n", "TI"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], " defaults to ", 
+        Cell[BoxData["2"], "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        " and controls the reciprocal lattice points included in the Voronoi \
+construction."}], "Notes", CellID -> 322738513], 
+     Cell[TextData[{"The zone boundary is highlighted and reciprocal vectors \
+are drawn as red, green, and, in three dimensions, blue arrows. Options for "\
+, Cell[BoxData[ButtonBox["Show", BaseStyle -> "Link", ButtonData -> 
+            "paclet:ref/Show"]], "InlineFormula", FontFamily -> 
+          "Source Sans Pro"], " are accepted."}], "Notes", 
+      CellID -> 1501175255]}, Open]], 
+  Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 1634285140], Cell[TextData[{"Draw the square first Brillouin \
+zone and its two reciprocal basis vectors."}], "ExampleText", 
+      CellID -> 327566715], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 950794732], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{"FirstBrillouinZonePlot", "[", 
+            RowBox[{"IdentityMatrix", "[", "2", "]"}], "]"}]], "Input", 
+         CellID -> 1610037923], Cell[BoxData[GraphicsBox[
+           {GraphicsComplexBox[{{-0.5, -0.5}, {-0.5, 0.5}, {0.5, -0.5}, 
+              {0.5, 0.5}}, {Directive[{RGBColor[0.6260033081763745, 
+                 0.8359330492764128, 0.9185378316380052], EdgeForm[
+                 {RGBColor[0.372575209344428, 0.6124949134587575, 
+                   0.706900379014863]}], GrayLevel[0.5], Opacity[0.1], 
+                EdgeForm[Directive[GrayLevel[0], Thickness[Large]]]}], 
+              {TagBox[PolygonBox[{{1, 3, 4, 2}}], Annotation[#1, 
+                  "Geometry"] & ]}}], {Thickness[Large], 
+             {{RGBColor[1, 0, 0], ArrowBox[{{0, 0}, {1, 0}}]}, 
+              {RGBColor[0, 1, 0], ArrowBox[{{0, 0}, {0, 1}}]}}}}, {}]], 
+         "Output", CellID -> 1793588420]}, Open]], 
+     Cell[CellGroupData[{Cell[BoxData[InterpretationBox[
+           Cell["\t", "ExampleDelimiter"], $Line = 0; ]], "ExampleDelimiter", 
+         CellID -> 1712919937], Cell[TextData[
+          {"Draw the zone using a larger reciprocal-lattice neighborhood."}], 
+         "ExampleText", CellID -> 312357679], 
+        Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+         CellID -> 1643735507], Cell[CellGroupData[
+          {Cell[BoxData[RowBox[{"FirstBrillouinZonePlot", "[", RowBox[
+                {RowBox[{"IdentityMatrix", "[", "2", "]"}], ",", "3"}], 
+               "]"}]], "Input", CellID -> 2085842375], 
+           Cell[BoxData[GraphicsBox[{GraphicsComplexBox[{{-0.5, -0.5}, 
+                 {-0.5, 0.5}, {0.5, -0.5}, {0.5, 0.5}}, {Directive[
+                  {RGBColor[0.6260033081763745, 0.8359330492764128, 
+                    0.9185378316380052], EdgeForm[{RGBColor[
+                      0.372575209344428, 0.6124949134587575, 
+                      0.706900379014863]}], GrayLevel[0.5], Opacity[0.1], 
+                   EdgeForm[Directive[GrayLevel[0], Thickness[Large]]]}], 
+                 {TagBox[PolygonBox[{{1, 3, 4, 2}}], Annotation[#1, 
+                     "Geometry"] & ]}}], {Thickness[Large], 
+                {{RGBColor[1, 0, 0], ArrowBox[{{0, 0}, {1, 0}}]}, 
+                 {RGBColor[0, 1, 0], ArrowBox[{{0, 0}, {0, 1}}]}}}}, {}]], 
+            "Output", CellID -> 767753825]}, Open]]}, Open]]}, Open]], 
+  Cell[CellGroupData[{Cell["More Examples", "ExtendedExamplesSection", 
+      CellTags -> "ExtendedExamples", CellID -> 1923495996]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 1071599173], 
+     Cell[TextData[{Cell[BoxData[ButtonBox["FirstBrillouinZoneRegion", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/FirstBrillouinZoneRegion"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["ReciprocalVectors", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/ReciprocalVectors"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["VoronoiMesh", 
+           BaseStyle -> "Link", ButtonData -> "paclet:ref/VoronoiMesh"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}]}], "SeeAlso", CellID -> 1534719295]}, 
+    Open]], Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 1783134250], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 688294551]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 234793384], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 1061167829]}, Open]]}, 
+ WindowTitle -> "FirstBrillouinZonePlot", Saveable -> True, Editable -> True, 
+ CellContext -> "Global`", TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]

@@ -1,0 +1,147 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 115988154], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 1785586816], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 1885897313], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 778420946], Cell["TBMethod`EigenSpect`", "Categorization", 
+      CellLabel -> "Context", CellID -> 155425948], 
+     Cell["TBMethod/ref/ChernNumberByWilsonLoop", "Categorization", 
+      CellLabel -> "URI", CellID -> 717014448]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 543419633], 
+     Cell["ChernNumberByWilsonLoop, tight binding, TBMethod", "Keywords", 
+      CellID -> 1248038855]}, Closed]], 
+  Cell[CellGroupData[{Cell["ChernNumberByWilsonLoop", "ObjectName", 
+      CellID -> 622333116], Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["ChernNumberByWilsonLoop", 
+             BaseStyle -> "Link", ButtonData -> 
+              "paclet:TBMethod/ref/ChernNumberByWilsonLoop"], "[", 
+            RowBox[{StyleBox["h", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"], ",", RowBox[{"{", RowBox[{StyleBox["momenta", 
+                   "TI", FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                  StyleBox["plaquettePositions", "TI", FontFamily -> "Times", 
+                   FontSlant -> "Italic"]}], "}"}], ",", StyleBox[
+               "nOccupied", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"]}], "]"}]], "InlineFormula"], " \[LineSeparator]", "\
+sums determinant phases of occupied-state Wilson loops over oriented \
+momentum-space plaquettes."}], "Usage", CellID -> 878531362], 
+     Cell[TextData[{Cell[BoxData[RowBox[{StyleBox["h", "TI"], "[", 
+            StyleBox["k", "TI"], "]"}]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        " returns a Hermitian Hamiltonian. The positive integer ", 
+        Cell[BoxData[StyleBox["nOccupied", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        " selects its lowest-energy eigenstates after sorting."}], "Notes", 
+      CellID -> 1918164110], 
+     Cell[TextData[{"The second argument has the form returned by ", 
+        Cell[BoxData[ButtonBox["PlaquetteRegionPartitionComplex", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/PlaquetteRegionPartitionComplex"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        ". Each plaquette selector is an ", 
+        Cell[BoxData[ButtonBox["Extract", BaseStyle -> "Link", 
+           ButtonData -> "paclet:ref/Extract"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " position for its ordered vertex \
+states; a triangle with vertex indices ", Cell[BoxData[StyleBox["i", "TI"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], ", ", 
+        Cell[BoxData[StyleBox["j", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], ", and ", 
+        Cell[BoxData[StyleBox["k", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " uses ", 
+        Cell[BoxData[RowBox[{"{", RowBox[{"{", RowBox[{StyleBox["i", "TI"], 
+                ",", StyleBox["j", "TI"], ",", StyleBox["k", "TI"]}], "}"}], 
+            "}"}]], "InlineFormula", FontFamily -> "Source Sans Pro"], "."}], 
+      "Notes", CellID -> 438364596], 
+     Cell[TextData[{"Each plaquette loop is closed internally. Its \
+orientation affects the determinant phase and the sign of the returned sum."}]\
+, "Notes", CellID -> 277435572], Cell[TextData[{"A meaningful Chern estimate \
+requires a consistent oriented covering of the relevant closed momentum space \
+and a separated occupied subspace. The function does not validate \
+orientation, convergence, or integrality."}], "Notes", CellID -> 1233611759], 
+     Cell[TextData[{"Options for ", Cell[BoxData[ButtonBox["Eigensystem", 
+           BaseStyle -> "Link", ButtonData -> "paclet:ref/Eigensystem"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        " are accepted, with ", Cell[BoxData[
+          RowBox[{ButtonBox["Method", BaseStyle -> "Link", ButtonData -> 
+              "paclet:ref/Method"], "\[Rule]", "\"Direct\""}]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        " supplied internally."}], "Notes", CellID -> 859100748], 
+     Cell[TextData[{"For each oriented plaquette, let ", 
+        Cell[BoxData[FormBox[TagBox["W", HoldForm], TraditionalForm]], 
+         "InlineMath", ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], " denote the ordered product of \
+occupied-state overlap matrices. The returned sum is", "\[LineSeparator]", 
+        Cell[BoxData[FormBox[TagBox[RowBox[{"C", "\[LongEqual]", 
+              RowBox[{"-", FractionBox[RowBox[{UnderoverscriptBox["\[Sum]", 
+                    RowBox[{"p", "=", "1"}], SubscriptBox["N", "P"]], 
+                   RowBox[{"arg", "(", TemplateBox[{SubscriptBox["W", "p"]}, 
+                      "Det"], ")"}]}], RowBox[{"2", " ", "\[Pi]"}]]}]}], 
+            HoldForm], TraditionalForm]], "InlineMath", ScriptLevel -> 0, 
+         FontSize -> 14, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}]}], "Notes", 
+      CellID -> 514161825]}, Open]], 
+  Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 2031598294], Cell[TextData[{"A constant two-level Hamiltonian \
+has zero Wilson-loop phase on both triangles of a square."}], "ExampleText", 
+      CellID -> 252996525], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 510025968], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{RowBox[{"Clear", "[", "h", "]"}], ";", 
+            "\[IndentingNewLine]", RowBox[{RowBox[{"h", "[", "k_", "]"}], 
+              ":=", RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{RowBox[
+                       {"-", "1."}], ",", "0."}], "}"}], ",", RowBox[
+                   {"{", RowBox[{"0.", ",", "1."}], "}"}]}], "}"}]}], ";", 
+            "\[IndentingNewLine]", RowBox[{"mesh", "=", RowBox[{"{", 
+                RowBox[{RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{"0.", ",", 
+                          "0."}], "}"}], ",", RowBox[{"{", RowBox[{"1.", ",", 
+                          "0."}], "}"}], ",", RowBox[{"{", RowBox[{"1.", ",", 
+                          "1."}], "}"}], ",", RowBox[{"{", RowBox[{"0.", ",", 
+                          "1."}], "}"}]}], "}"}], ",", RowBox[{"{", 
+                    RowBox[{RowBox[{"{", RowBox[{"{", RowBox[{"1", ",", "2", 
+                          ",", "3"}], "}"}], "}"}], ",", RowBox[{"{", 
+                        RowBox[{"{", RowBox[{"1", ",", "3", ",", "4"}], 
+                          "}"}], "}"}]}], "}"}]}], "}"}]}], ";", 
+            "\[IndentingNewLine]", RowBox[{"ChernNumberByWilsonLoop", "[", 
+              RowBox[{"h", ",", "mesh", ",", "1"}], "]"}]}]], "Input", 
+         CellID -> 408253434], Cell[BoxData["0"], "Output", 
+         CellID -> 349776502]}, Open]]}, Open]], 
+  Cell[CellGroupData[{Cell["More Examples", "ExtendedExamplesSection", 
+      CellTags -> "ExtendedExamples", CellID -> 915030628]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 262575546], 
+     Cell[TextData[{Cell[BoxData[ButtonBox["WannierChargeCenterByWilsonLoop", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/WannierChargeCenterByWilsonLoop"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox[
+           "PlaquetteRegionPartitionComplex", BaseStyle -> "Link", 
+           ButtonData -> 
+            "paclet:TBMethod/ref/PlaquetteRegionPartitionComplex"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["BerryCurvature", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/BerryCurvature"]], "InlineSeeAlsoFunction", 
+         TaggingRules -> {"PageType" -> "Function"}]}], "SeeAlso", 
+      CellID -> 661634599]}, Open]], 
+  Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 2072256315], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 977032146]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 404261212], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 984759838]}, Open]]}, 
+ WindowTitle -> "ChernNumberByWilsonLoop", Saveable -> True, 
+ Editable -> True, CellContext -> "Global`", 
+ TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]

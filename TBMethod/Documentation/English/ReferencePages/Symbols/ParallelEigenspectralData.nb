@@ -1,0 +1,222 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 1159684866], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 559573183], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 695202655], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 187752139], Cell["TBMethod`EigenSpect`", "Categorization", 
+      CellLabel -> "Context", CellID -> 1588472418], 
+     Cell["TBMethod/ref/ParallelEigenspectralData", "Categorization", 
+      CellLabel -> "URI", CellID -> 1222348230]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 1329534201], 
+     Cell["ParallelEigenspectralData, tight binding, TBMethod", "Keywords", 
+      CellID -> 739428317]}, Closed]], 
+  Cell[CellGroupData[{Cell["ParallelEigenspectralData", "ObjectName", 
+      CellID -> 1781966210], Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["ParallelEigenspectralData", 
+             BaseStyle -> "Link", ButtonData -> 
+              "paclet:TBMethod/ref/ParallelEigenspectralData"], "[", 
+            RowBox[{StyleBox["h", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"], ",", StyleBox["samples", "TI", FontFamily -> 
+                "Times", FontSlant -> "Italic"]}], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", "returns energy-sorted \
+eigenvalue\[Dash]eigenvector pairs at each sample, evaluating samples in \
+parallel.", "\n", Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["ParallelEigenspectralData", 
+             BaseStyle -> "Link", ButtonData -> 
+              "paclet:TBMethod/ref/ParallelEigenspectralData"], "[", 
+            RowBox[{StyleBox["h", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"], ",", StyleBox["samples", "TI", FontFamily -> 
+                "Times", FontSlant -> "Italic"], ",", StyleBox[
+               "stateFunction", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"]}], "]"}]], "InlineFormula"], " \[LineSeparator]", 
+        "replaces each eigenvector by the value of ", 
+        Cell[BoxData[StyleBox["stateFunction", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], " applied to it.", 
+        "\n", Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["ParallelEigenspectralData", 
+             BaseStyle -> "Link", ButtonData -> 
+              "paclet:TBMethod/ref/ParallelEigenspectralData"], "[", 
+            RowBox[{StyleBox["h", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"], ",", StyleBox["samples", "TI", FontFamily -> 
+                "Times", FontSlant -> "Italic"], ",", StyleBox[
+               "stateFunction", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"], ",", StyleBox["n", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"]}], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", "retains the ", 
+        Cell[BoxData[StyleBox["n", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], 
+        " eigenpairs selected by ", Cell[BoxData[ButtonBox["Eigensystem", 
+           BaseStyle -> "Link", ButtonData -> "paclet:ref/Eigensystem"]], 
+         "InlineFormula"], " before applying ", 
+        Cell[BoxData[StyleBox["stateFunction", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], "."}], "Usage", 
+      CellID -> 2072724042], 
+     Cell[TextData[{"Returns the same sample-by-sample list of ", 
+        Cell[BoxData[RowBox[{"{", RowBox[{StyleBox["energy", "TI"], ",", 
+              RowBox[{StyleBox["stateFunction", "TI"], "[", StyleBox[
+                 "eigenvector", "TI"], "]"}]}], "}"}]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " pairs as ", 
+        Cell[BoxData[ButtonBox["EigenspectralData", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/EigenspectralData"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], ", using ", 
+        Cell[BoxData[ButtonBox["ParallelMap", BaseStyle -> "Link", 
+           ButtonData -> "paclet:ref/ParallelMap"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " over the samples."}], "Notes", 
+      CellID -> 344848874], Cell[TextData[{"The default ", 
+        Cell[BoxData[StyleBox["stateFunction", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " is ", 
+        Cell[BoxData[ButtonBox["Identity", BaseStyle -> "Link", 
+           ButtonData -> "paclet:ref/Identity"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], ". Supply it explicitly before ", 
+        Cell[BoxData[StyleBox["n", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        " when selecting a subset of eigenpairs."}], "Notes", 
+      CellID -> 614821458], Cell[TextData[{"Load TBMethod on subkernels and \
+distribute user model definitions before evaluating the example."}], "Notes", 
+      CellID -> 1511444077], Cell[TextData[{"Options for ", 
+        Cell[BoxData[ButtonBox["Eigensystem", BaseStyle -> "Link", 
+           ButtonData -> "paclet:ref/Eigensystem"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " are accepted, and ", 
+        Cell[BoxData[RowBox[{ButtonBox["Method", BaseStyle -> "Link", 
+             ButtonData -> "paclet:ref/Method"], "\[Rule]", "\"Direct\""}]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        " is supplied internally."}], "Notes", CellID -> 1069464649]}, 
+    Open]], Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 1498791694], 
+     Cell[TextData[
+       {"Return the energies and normalized eigenvectors at two sample \
+points."}], "ExampleText", CellID -> 882310871], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 2056511411], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{RowBox[{"If", "[", RowBox[{RowBox[
+                 {"$KernelCount", "\[Equal]", "0"}], ",", RowBox[
+                 {"LaunchKernels", "[", "2", "]"}]}], "]"}], ";", 
+            "\[IndentingNewLine]", RowBox[{"ParallelNeeds", "[", 
+              "\"TBMethod`\"", "]"}], ";", "\[IndentingNewLine]", 
+            RowBox[{"Clear", "[", "h", "]"}], ";", "\[IndentingNewLine]", 
+            RowBox[{RowBox[{"h", "[", "k_", "]"}], ":=", RowBox[{
+                "DiagonalMatrix", "[", RowBox[{"{", RowBox[{RowBox[
+                     {RowBox[{"-", "1."}], "-", "k"}], ",", RowBox[
+                     {RowBox[{"1.", "\[VeryThinSpace]"}], "+", "k"}]}], 
+                  "}"}], "]"}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"DistributeDefinitions", "[", "h", "]"}], ";", 
+            "\[IndentingNewLine]", RowBox[{"ParallelEigenspectralData", "[", 
+              RowBox[{"h", ",", RowBox[{"{", RowBox[{"0.", ",", "1."}], 
+                  "}"}]}], "]"}]}]], "Input", CellID -> 1007472159], 
+        Cell[BoxData[RowBox[{"{", RowBox[{RowBox[{"{", RowBox[
+                 {RowBox[{"{", RowBox[{RowBox[{"-", "1.`"}], ",", RowBox[
+                       {"{", RowBox[{RowBox[{"-", "1.`"}], ",", "0.`"}], 
+                        "}"}]}], "}"}], ",", RowBox[{"{", RowBox[{"1.`", ",", 
+                      RowBox[{"{", RowBox[{"0.`", ",", "1.`"}], "}"}]}], 
+                    "}"}]}], "}"}], ",", RowBox[{"{", RowBox[
+                 {RowBox[{"{", RowBox[{RowBox[{"-", "2.`"}], ",", RowBox[
+                       {"{", RowBox[{RowBox[{"-", "1.`"}], ",", "0.`"}], 
+                        "}"}]}], "}"}], ",", RowBox[{"{", RowBox[{"2.`", ",", 
+                      RowBox[{"{", RowBox[{"0.`", ",", "1.`"}], "}"}]}], 
+                    "}"}]}], "}"}]}], "}"}]], "Output", 
+         CellID -> 531887520]}, Open]], 
+     Cell[CellGroupData[{Cell[BoxData[InterpretationBox[
+           Cell["\t", "ExampleDelimiter"], $Line = 0; ]], "ExampleDelimiter", 
+         CellID -> 542522643], Cell[TextData[
+          {"Calculate energy and state-norm pairs at two samples in \
+parallel."}], "ExampleText", CellID -> 1687414159], 
+        Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+         CellID -> 1406709830], Cell[CellGroupData[
+          {Cell[BoxData[RowBox[{RowBox[{"If", "[", RowBox[
+                  {RowBox[{"$KernelCount", "\[Equal]", "0"}], ",", 
+                   RowBox[{"LaunchKernels", "[", "2", "]"}]}], "]"}], ";", 
+               "\[IndentingNewLine]", RowBox[{"ParallelNeeds", "[", 
+                 "\"TBMethod`\"", "]"}], ";", "\[IndentingNewLine]", RowBox[
+                {"Clear", "[", "h", "]"}], ";", "\[IndentingNewLine]", RowBox[
+                {RowBox[{"h", "[", "k_", "]"}], ":=", RowBox[
+                  {"DiagonalMatrix", "[", RowBox[{"{", RowBox[{RowBox[
+                        {RowBox[{"-", "1."}], "-", "k"}], ",", RowBox[
+                        {RowBox[{"1.", "\[VeryThinSpace]"}], "+", "k"}]}], 
+                     "}"}], "]"}]}], ";", "\[IndentingNewLine]", RowBox[
+                {"DistributeDefinitions", "[", "h", "]"}], ";", 
+               "\[IndentingNewLine]", RowBox[{"ParallelEigenspectralData", 
+                 "[", RowBox[{"h", ",", RowBox[{"{", RowBox[{"0.", ",", 
+                       "1."}], "}"}], ",", RowBox[{RowBox[{"Total", "[", 
+                       SuperscriptBox[RowBox[{"Abs", "[", "#1", "]"}], "2"], 
+                       "]"}], "&"}]}], "]"}]}]], "Input", 
+            CellID -> 1790508888], Cell[BoxData[RowBox[{"{", RowBox[
+                {RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{RowBox[{"-", 
+                          "1.`"}], ",", "1.`"}], "}"}], ",", RowBox[
+                      {"{", RowBox[{"1.`", ",", "1.`"}], "}"}]}], "}"}], ",", 
+                 RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{RowBox[{"-", 
+                          "2.`"}], ",", "1.`"}], "}"}], ",", RowBox[
+                      {"{", RowBox[{"2.`", ",", "1.`"}], "}"}]}], "}"}]}], 
+               "}"}]], "Output", CellID -> 477317883]}, Open]]}, Open]], 
+     Cell[CellGroupData[{Cell[BoxData[InterpretationBox[
+           Cell["\t", "ExampleDelimiter"], $Line = 0; ]], "ExampleDelimiter", 
+         CellID -> 2027064968], Cell[TextData[{"Evaluate a state function for \
+just one selected eigenstate per sample."}], "ExampleText", 
+         CellID -> 994154770], Cell[BoxData[RowBox[{"Needs", "[", 
+            "\"TBMethod`\"", "]"}]], "Input", CellID -> 1395671742], 
+        Cell[CellGroupData[{Cell[BoxData[RowBox[{RowBox[{"If", "[", 
+                 RowBox[{RowBox[{"$KernelCount", "\[Equal]", "0"}], ",", 
+                   RowBox[{"LaunchKernels", "[", "2", "]"}]}], "]"}], ";", 
+               "\[IndentingNewLine]", RowBox[{"ParallelNeeds", "[", 
+                 "\"TBMethod`\"", "]"}], ";", "\[IndentingNewLine]", RowBox[
+                {"Clear", "[", "h", "]"}], ";", "\[IndentingNewLine]", RowBox[
+                {RowBox[{"h", "[", "k_", "]"}], ":=", RowBox[
+                  {"DiagonalMatrix", "[", RowBox[{"{", RowBox[{RowBox[
+                        {RowBox[{"-", "1."}], "-", "k"}], ",", RowBox[
+                        {RowBox[{"1.", "\[VeryThinSpace]"}], "+", "k"}]}], 
+                     "}"}], "]"}]}], ";", "\[IndentingNewLine]", RowBox[
+                {"DistributeDefinitions", "[", "h", "]"}], ";", 
+               "\[IndentingNewLine]", RowBox[{"ParallelEigenspectralData", 
+                 "[", RowBox[{"h", ",", RowBox[{"{", RowBox[{"0.", ",", 
+                       "1."}], "}"}], ",", RowBox[{RowBox[{"Total", "[", 
+                       SuperscriptBox[RowBox[{"Abs", "[", "#1", "]"}], "2"], 
+                       "]"}], "&"}], ",", RowBox[{"-", "1"}]}], "]"}]}]], 
+            "Input", CellID -> 303314607], Cell[BoxData[
+             RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{"{", RowBox[{"1.`", 
+                       ",", "1.`"}], "}"}], "}"}], ",", RowBox[{"{", 
+                   RowBox[{"{", RowBox[{"2.`", ",", "1.`"}], "}"}], "}"}]}], 
+               "}"}]], "Output", CellID -> 967701197]}, Open]]}, Open]]}, 
+    Open]], Cell[CellGroupData[{Cell["More Examples", 
+      "ExtendedExamplesSection", CellTags -> "ExtendedExamples", 
+      CellID -> 1130971504]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 1922382032], 
+     Cell[TextData[{Cell[BoxData[ButtonBox["EigenspectralData", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/EigenspectralData"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["ParallelBandData", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/ParallelBandData"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox[
+           "ParallelBandDataWithWeight", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/ParallelBandDataWithWeight"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["Eigensystem", 
+           BaseStyle -> "Link", ButtonData -> "paclet:ref/Eigensystem"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}]}], "SeeAlso", CellID -> 1791014849]}, 
+    Open]], Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 1456703453], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 220361194]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 611707115], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 765771635]}, Open]]}, 
+ WindowTitle -> "ParallelEigenspectralData", Saveable -> True, 
+ Editable -> True, CellContext -> "Global`", 
+ TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]

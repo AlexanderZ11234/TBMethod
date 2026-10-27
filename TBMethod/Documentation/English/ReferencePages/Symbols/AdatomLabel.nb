@@ -1,0 +1,154 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 733672674], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 928168073], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 893710589], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 1092287905], Cell["TBMethod`MDConstruct`", "Categorization", 
+      CellLabel -> "Context", CellID -> 1712993870], 
+     Cell["TBMethod/ref/AdatomLabel", "Categorization", CellLabel -> "URI", 
+      CellID -> 642689488]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 810453513], Cell["AdatomLabel, tight binding, TBMethod", 
+      "Keywords", CellID -> 1229132485]}, Closed]], 
+  Cell[CellGroupData[{Cell["AdatomLabel", "ObjectName", CellID -> 833588900], 
+     Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{RowBox[{ButtonBox["AdatomLabel", BaseStyle -> 
+                "Link", ButtonData -> "paclet:TBMethod/ref/AdatomLabel"], 
+              "[", RowBox[{StyleBox["latticeVectors", "TI", FontFamily -> 
+                  "Times", FontSlant -> "Italic"], ",", StyleBox["distance", 
+                 "TI", FontFamily -> "Times", FontSlant -> "Italic"]}], 
+              "]"}], "[", RowBox[{StyleBox["points", "TI", FontFamily -> 
+                "Times", FontSlant -> "Italic"], ",", StyleBox[
+               "adatomPositions", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"], ",", StyleBox["selectedIndices", "TI", 
+               FontFamily -> "Times", FontSlant -> "Italic"]}], "]"}]], 
+         "InlineFormula"], " \[LineSeparator]", "labels the selected sites \
+according to whether an adatom lies within ", 
+        Cell[BoxData[StyleBox["distance", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], 
+        ", using periodic boundary conditions.", "\n", 
+        Cell["   ", "ModInfo"], Cell[BoxData[
+          RowBox[{RowBox[{ButtonBox["AdatomLabel", BaseStyle -> "Link", 
+               ButtonData -> "paclet:TBMethod/ref/AdatomLabel"], "[", 
+              RowBox[{StyleBox["latticeVectors", "TI", FontFamily -> "Times", 
+                 FontSlant -> "Italic"], ",", StyleBox["distance", "TI", 
+                 FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                RowBox[{"{", RowBox[{StyleBox["affectedLabel", "TI", 
+                     FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                    StyleBox["otherLabel", "TI", FontFamily -> "Times", 
+                     FontSlant -> "Italic"]}], "}"}], ",", StyleBox[
+                 "boundaryCondition", "TI", FontFamily -> "Times", 
+                 FontSlant -> "Italic"]}], "]"}], "[", 
+            RowBox[{StyleBox["points", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"], ",", StyleBox["adatomPositions", "TI", 
+               FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+              StyleBox["selectedIndices", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"]}], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", "uses the specified two labels and periodic or \
+open boundary conditions."}], "Usage", CellID -> 1234521098], 
+     Cell[TextData[{"The real-valued ", Cell[BoxData[StyleBox["distance", 
+           "TI"]], "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        " is the site-to-adatom search radius. ", 
+        Cell[BoxData[StyleBox["selectedIndices", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        " is an integer or a list of integers indexing ", 
+        Cell[BoxData[StyleBox["adatomPositions", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], "."}], "Notes", 
+      CellID -> 518426637], Cell[TextData[{"The default labels are ", 
+        Cell[BoxData[RowBox[{"{", RowBox[{"1", ",", "0"}], "}"}]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        "; the default boundary condition is ", Cell[BoxData["\"PBC\""], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], ". The value ", 
+        Cell[BoxData["\"OBC\""], "InlineFormula", FontFamily -> 
+          "Source Sans Pro"], " selects ordinary Euclidean matching of \
+reference adatom positions."}], "Notes", CellID -> 1677790818], 
+     Cell[TextData[{"For ", Cell[BoxData["\"PBC\""], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], ", reference-adatom equivalence \
+uses fractional coordinates modulo lattice translations. Site neighborhoods \
+are then found by a coordinate nearest-neighbor search."}], "Notes", 
+      CellID -> 136601759], 
+     Cell[TextData[{"For unlabeled points, returns a list of ", 
+        Cell[BoxData[RowBox[{StyleBox["label", "TI"], "\[Rule]", 
+            StyleBox["coordinates", "TI"]}]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " rules. For existing rule labels, \
+appends the new label to the existing label information."}], "Notes", 
+      CellID -> 1498294465]}, Open]], 
+  Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 1893058014], 
+     Cell[TextData[{"Use the default labels and periodic boundary \
+convention."}], "ExampleText", CellID -> 1603399749], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 1334122395], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{RowBox[{"pts", "=", RowBox[{"{", RowBox[
+                 {RowBox[{"{", RowBox[{"0.", ",", "0."}], "}"}], ",", 
+                  RowBox[{"{", RowBox[{"0.5", ",", "0."}], "}"}]}], "}"}]}], 
+            ";", "\[IndentingNewLine]", RowBox[{RowBox[{"AdatomLabel", "[", 
+                RowBox[{RowBox[{"N", "[", RowBox[{"IdentityMatrix", "[", "2", 
+                      "]"}], "]"}], ",", "0.2"}], "]"}], "[", 
+              RowBox[{"pts", ",", "pts", ",", RowBox[{"{", "1", "}"}]}], 
+              "]"}]}]], "Input", CellID -> 244800001], 
+        Cell[BoxData[RowBox[{"{", RowBox[{RowBox[{"1", "\[Rule]", 
+                RowBox[{"{", RowBox[{"0.`", ",", "0.`"}], "}"}]}], ",", 
+              RowBox[{"0", "\[Rule]", RowBox[{"{", RowBox[{"0.5`", ",", 
+                    "0.`"}], "}"}]}]}], "}"}]], "Output", 
+         CellID -> 139614815]}, Open]], 
+     Cell[CellGroupData[{Cell[BoxData[InterpretationBox[
+           Cell["\t", "ExampleDelimiter"], $Line = 0; ]], "ExampleDelimiter", 
+         CellID -> 216091821], Cell[TextData[
+          {"Choose descriptive labels and open boundary conditions."}], 
+         "ExampleText", CellID -> 482330473], 
+        Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+         CellID -> 127797839], Cell[CellGroupData[
+          {Cell[BoxData[RowBox[{RowBox[{"pts", "=", RowBox[{"{", RowBox[
+                    {RowBox[{"{", RowBox[{"0.", ",", "0."}], "}"}], ",", 
+                     RowBox[{"{", RowBox[{"1.", ",", "0."}], "}"}]}], 
+                   "}"}]}], ";", "\[IndentingNewLine]", RowBox[
+                {RowBox[{"AdatomLabel", "[", RowBox[{RowBox[
+                      {"IdentityMatrix", "[", "2", "]"}], ",", "0.2", ",", 
+                     RowBox[{"{", RowBox[{"\"affected\"", ",", "\"other\""}], 
+                       "}"}], ",", "\"OBC\""}], "]"}], "[", RowBox[
+                  {"pts", ",", "pts", ",", RowBox[{"{", "1", "}"}]}], 
+                 "]"}]}]], "Input", CellID -> 379931939], 
+           Cell[BoxData[RowBox[{"{", RowBox[{RowBox[{"\"affected\"", 
+                   "\[Rule]", RowBox[{"{", RowBox[{"0.`", ",", "0.`"}], 
+                     "}"}]}], ",", RowBox[{"\"other\"", "\[Rule]", 
+                   RowBox[{"{", RowBox[{"1.`", ",", "0.`"}], "}"}]}]}], 
+               "}"}]], "Output", CellID -> 1937053157]}, Open]]}, Open]]}, 
+    Open]], Cell[CellGroupData[{Cell["More Examples", 
+      "ExtendedExamplesSection", CellTags -> "ExtendedExamples", 
+      CellID -> 872667823]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 996490624], 
+     Cell[TextData[{Cell[BoxData[ButtonBox["CrystalStructure", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/CrystalStructure"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["HMatrixFromHoppings", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/HMatrixFromHoppings"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["Nearest", 
+           BaseStyle -> "Link", ButtonData -> "paclet:ref/Nearest"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}]}], "SeeAlso", CellID -> 2084690917]}, 
+    Open]], Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 1970534583], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 2018367537]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 682798168], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 1568000566]}, Open]]}, WindowTitle -> "AdatomLabel", 
+ Saveable -> True, Editable -> True, CellContext -> "Global`", 
+ TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]

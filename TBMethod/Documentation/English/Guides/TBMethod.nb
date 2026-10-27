@@ -1,681 +1,628 @@
-(* Content-type: application/vnd.wolfram.mathematica *)
-
-(*** Wolfram Notebook File ***)
-(* http://www.wolfram.com/nb *)
-
-(* CreatedBy='Mathematica 13.0' *)
-
-(*CacheID: 234*)
-(* Internal cache information:
-NotebookFileLineBreakTest
-NotebookFileLineBreakTest
-NotebookDataPosition[       158,          7]
-NotebookDataLength[     27136,        673]
-NotebookOptionsPosition[     21667,        561]
-NotebookOutlinePosition[     22239,        580]
-CellTagsIndexPosition[     22196,        577]
-WindowFrame->Normal*)
-
-(* Beginning of Notebook Content *)
-Notebook[{
-Cell[TextData[{
- "New in: ",
- Cell["??", "HistoryData",
-  CellTags->"New",ExpressionUUID->"2707560c-e669-467a-8c7e-9e699c6634ec"],
- " | Modified in: ",
- Cell[" ", "HistoryData",
-  CellTags->"Modified",ExpressionUUID->"07292025-5eea-4d05-8035-41a9baca8adb"],
- " | Obsolete in: ",
- Cell[" ", "HistoryData",
-  CellTags->"Obsolete",ExpressionUUID->"a51ecf59-a523-441c-9cc1-e03936377def"],
- " | Excised in: ",
- Cell[" ", "HistoryData",
-  CellTags->"Excised",ExpressionUUID->"cd05125b-9b1c-40ae-a589-abaec47d32f0"]
-}], "History",
- CellID->259135985,ExpressionUUID->"80d64ae7-98dd-40c3-bb21-435f4a076ae7"],
-
-Cell["Created by: Junjie Zeng on 12-16-2021 15:57:12", "AuthorDate",
- CellID->107590918,ExpressionUUID->"688c1c22-cb6e-4157-b4d4-5baf4b9ca4b7"],
-
-Cell[CellGroupData[{
-
-Cell["Categorization", "CategorizationSection",
- CellID->305856448,ExpressionUUID->"ac683646-b76d-4843-a2aa-c7e379a2050b"],
-
-Cell["Guide", "Categorization",
- CellLabel->"Entity Type",
- CellID->74544402,ExpressionUUID->"90220e09-4d3a-4a4b-bcaf-9dff14991172"],
-
-Cell["TBMethod", "Categorization",
- CellLabel->"Paclet Name",
- CellID->626917467,ExpressionUUID->"ffa94718-3789-4acf-94b4-d5759351eff2"],
-
-Cell["TBMethod`", "Categorization",
- CellLabel->"Context",
- CellID->393077842,ExpressionUUID->"495a7df9-c58a-4dc5-bc90-0a36619fac24"],
-
-Cell["TBMethod/guide/TBMethod", "Categorization",
- CellLabel->"URI",
- CellID->762480707,ExpressionUUID->"65ef5874-ce7c-447e-a218-c66ca61b5803"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Keywords", "KeywordsSection",
- CellID->216857809,ExpressionUUID->"052c578a-51bf-4ff3-94de-da6971f41880"],
-
-Cell["XXXX", "Keywords",
- CellID->857107,ExpressionUUID->"91e0e81f-7144-4522-8944-593dcad159a4"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["TBMethod", "GuideTitle",
- CellID->22888259,ExpressionUUID->"9223e687-b07c-4988-9af6-4eb05ebc69df"],
-
-Cell[TextData[{
- ButtonBox["Context",
-  BaseStyle->"Link",
-  ButtonData->"paclet:ref/Context"],
- " ",
- StyleBox["\"TBMethod`\"", "InlineCode"],
- " (Tight-Binding Method) is trying to provide a facilitation of fast \
-construction of tight-binding models and related quantum transport \
-calculation. So far it contains two subpackages, ",
- StyleBox["\"TBMethod`MDConstruct`\"", "InlineCode"],
- " (Model Construction) for tight-binding model construction and ",
- StyleBox["\"TBMethod`LGFF`\"", "InlineCode"],
- " (lattice Green's function formalism) for quantum transport.\nIt can be \
-loaded by ",
- StyleBox[ButtonBox["Needs",
-  BaseStyle->"Link",
-  ButtonData->"paclet:ref/Needs"], "InlineCode"],
- StyleBox["[\"TBMethod`\"]", "InlineCode"],
- "; if parallel computation is intended, it can be tailed with ",
- StyleBox[ButtonBox["ParallelNeeds",
-  BaseStyle->"Link",
-  ButtonData->"paclet:ref/ParallelNeeds"], "InlineCode"],
- StyleBox["[\"TBMethod`\"]", "InlineCode"],
- "."
-}], "GuideAbstract",
- CellChangeTimes->{{3.8486320560051656`*^9, 3.8486320937356167`*^9}, {
-  3.848899456809715*^9, 3.8488995652841415`*^9}, {3.8488996350169897`*^9, 
-  3.8488998388689747`*^9}},
- CellID->663849441,ExpressionUUID->"3886dc47-08c8-4470-9583-0a23115e5d7a"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["", "GuideFunctionsSection",
- CellChangeTimes->{{3.848632122216361*^9, 3.8486321353995113`*^9}, 
-   3.8486321908150997`*^9},
- CellID->67056571,ExpressionUUID->"462c2f1a-d476-4727-9c53-7859747be8f5"],
-
-Cell[CellGroupData[{
-
-Cell["Model Construction", "GuideFunctionsSubsection",
- CellChangeTimes->{
-  3.848632193644509*^9, {3.848902267981247*^9, 3.848902273469162*^9}},
- CellID->251962891,ExpressionUUID->"64661832-ed33-433e-9353-ba97d9800105"],
-
-Cell[TextData[{
- "01. ",
- Cell[BoxData[
-  ButtonBox["AttachFreeQ",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/AttachFreeQ"]], "InlineGuideFunction",
-  ExpressionUUID->"821d6d8d-3032-41b5-a281-cd9935c5c0c1"],
- " \[LongDash] tests if two groups of points are totally out of contact."
-}], "GuideText",
- CellChangeTimes->{{3.848630243912695*^9, 3.84863027165456*^9}, 
-   3.8486321033809347`*^9, 3.8486322525027657`*^9, 3.848633903466959*^9, {
-   3.848900530385106*^9, 3.8489005593876405`*^9}},
- CellID->654270987,ExpressionUUID->"97808ae8-0956-43cc-8c2d-142e4b23ad25"],
-
-Cell[TextData[{
- "02. ",
- Cell[BoxData[
-  ButtonBox["BerryCurvature",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/BerryCurvature"]], "InlineGuideFunction",
-  ExpressionUUID->"43525e02-0562-4235-8e57-e29fe75ace59"],
- " \[LongDash] calculates Berry curvature from a (locally gapped) Bloch \
-Hamiltonian matrix in any dimension."
-}], "GuideText",
- CellChangeTimes->{{3.848632413057832*^9, 3.8486324153697696`*^9}, {
-   3.848632533841447*^9, 3.8486325443100476`*^9}, 3.8486343666966257`*^9, 
-   3.848647157843455*^9, {3.848900564373658*^9, 3.848900569011666*^9}},
- CellID->82560336,ExpressionUUID->"7ade6f4a-200d-433d-8a01-862bf1ec9ce8"],
-
-Cell[TextData[{
- "03. ",
- Cell[BoxData[
-  ButtonBox["CoordinatesGroupByRegions",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/CoordinatesGroupByRegions"]], 
-  "InlineGuideFunction",ExpressionUUID->
-  "35e62d8f-dd46-45dc-a827-ecc68e0ba5d4"],
- " \[LongDash] groups the CSR atoms into groups according to a set of regions."
-}], "GuideText",
- CellChangeTimes->{{3.848632564625594*^9, 3.8486325734813204`*^9}, {
-   3.848633736539941*^9, 3.848633736539941*^9}, 3.848634368360235*^9, 
-   3.8486471671873245`*^9, {3.848900571386671*^9, 3.8489005730590715`*^9}},
- CellID->48652837,ExpressionUUID->"fbc8f7e4-09c7-4988-85b7-8716af310170"],
-
-Cell[TextData[{
- "04. ",
- Cell[BoxData[
-  ButtonBox["DisjointedShellDivisionRegions",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/DisjointedShellDivisionRegions"]], 
-  "InlineGuideFunction",ExpressionUUID->
-  "dafb13c3-9456-4eff-b2c9-6be60c8a75f4"],
- " \[LongDash] generates a group of ",
- Cell[BoxData[
-  StyleBox["n",
-   FontSlant->"Italic"]], "InlineFormula",ExpressionUUID->
-  "d3018cd2-b4fa-48b3-873e-d780463444ba"],
- "D regions, which forms the disjointed shellwise covering division of the \
-encompassing ",
- Cell[BoxData[
-  StyleBox["n",
-   FontSlant->"Italic"]], "InlineFormula",ExpressionUUID->
-  "23476173-7c3e-49ac-ad99-06f68d983afe"],
- "D region of CSR, and typically ",
- Cell[BoxData[
-  RowBox[{
-   StyleBox["n",
-    FontSlant->"Italic"], " ", "=", " ", 
-   RowBox[{"2", " ", "and", " ", "3"}]}]], "InlineFormula",ExpressionUUID->
-  "122ec6b7-5c94-4412-b753-33c82259f54a"],
- "."
-}], "GuideText",
- CellChangeTimes->{{3.848633748066599*^9, 3.8486337649824495`*^9}, 
-   3.8486343690558414`*^9, {3.8486471794924974`*^9, 3.8486472151219125`*^9}, {
-   3.848647247046331*^9, 3.8486472470473304`*^9}, {3.848647329413035*^9, 
-   3.848647342811843*^9}, {3.848900575219984*^9, 3.8489005766912727`*^9}, {
-   3.8493180054334126`*^9, 3.8493180158408623`*^9}},
- CellID->279369656,ExpressionUUID->"826dc793-0983-4037-aa74-424fbea186e7"],
-
-Cell[TextData[{
- "05. ",
- Cell[BoxData[
-  ButtonBox["HBloch",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/HBloch"]], "InlineGuideFunction",
-  ExpressionUUID->"f3ebd4f9-254a-4e01-9030-ab466880056a"],
- " \[LongDash] constructs the Bloch Hamiltonian matrix from the real-space \
-Hamiltonian matrixes."
-}], "GuideText",
- CellChangeTimes->{{3.8486337690869894`*^9, 3.8486337710688934`*^9}, {
-   3.8486338660300035`*^9, 3.8486338660300035`*^9}, 3.848634370281497*^9, 
-   3.848647283355942*^9, {3.8489005789570704`*^9, 3.848900581636239*^9}},
- CellID->229047313,ExpressionUUID->"73f394a3-0352-43af-bd56-3977d9bc1d92"],
-
-Cell[TextData[{
- "06. ",
- Cell[BoxData[
-  ButtonBox["HCSRDiagOffDiagBlocks",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/HCSRDiagOffDiagBlocks"]], 
-  "InlineGuideFunction",ExpressionUUID->
-  "3a5a0b9d-6fb0-42cd-8f50-56700c542a2b"],
- " \[LongDash] constructs the Hamiltonian matrixes of ",
- Cell[BoxData[
-  StyleBox["n",
-   FontSlant->"Italic"]], "InlineFormula",ExpressionUUID->
-  "8890b947-3026-4fd4-bb23-523045a9fb79"],
- " diagonal blocks and ",
- Cell[BoxData[
-  RowBox[{"(", 
-   RowBox[{
-    StyleBox["n",
-     FontSlant->"Italic"], "\[Minus]", "1"}], ")"}]], "InlineFormula",
-  ExpressionUUID->"4a2f5129-812c-4f0d-9b9f-429fabe4baf0"],
- " second-diagonal blocks, where ",
- Cell[BoxData[
-  StyleBox["n",
-   FontSlant->"Italic"]], "InlineFormula",ExpressionUUID->
-  "24ac14a1-a1c8-4ee0-b2e6-073e07cb7044"],
- " is the division number of CSR."
-}], "GuideText",
- CellChangeTimes->{{3.848633774677513*^9, 3.848633785298443*^9}, {
-   3.8486338687635717`*^9, 3.8486338687635717`*^9}, 3.848634371304825*^9, {
-   3.8486472929001293`*^9, 3.8486473167249937`*^9}, {3.8489005833391104`*^9, 
-   3.848900585276827*^9}},
- CellID->346535429,ExpressionUUID->"3e180a0a-aea8-4a37-a63a-81d6d3e1448f"],
-
-Cell[TextData[{
- "07. ",
- Cell[BoxData[
-  ButtonBox["HLeadBlocks",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/HLeadBlocks"]], "InlineGuideFunction",
-  ExpressionUUID->"2bede823-35d7-420f-af62-045b7a3000c0"],
- " \[LongDash] constructs three Hamiltonian matrixes within lead cell, \
-between the lead cells (in the direction from infinite to CSR), and between \
-lead cell and the outer region of CSR."
-}], "GuideText",
- CellChangeTimes->{{3.8486337922290792`*^9, 3.8486337961570177`*^9}, {
-   3.8486338716090956`*^9, 3.8486338716090956`*^9}, 3.8486343724167614`*^9, 
-   3.8486473560679955`*^9, {3.8489005868190594`*^9, 3.848900588515703*^9}},
- CellID->325438966,ExpressionUUID->"4cb3320b-b10f-4f2d-a980-c8e2e1407d7a"],
-
-Cell[TextData[{
- "08. ",
- Cell[BoxData[
-  ButtonBox["HMatrixFromHoppings",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/HMatrixFromHoppings"]], 
-  "InlineGuideFunction",ExpressionUUID->
-  "e015bcde-981f-4cb2-9986-8b1220f4825f"],
- " \[LongDash] constructs real-space Hamiltonian matrix."
-}], "GuideText",
- CellChangeTimes->{{3.848633800293431*^9, 3.8486338055253*^9}, {
-   3.848633874905549*^9, 3.848633874905549*^9}, 3.848634373288706*^9, {
-   3.848647367732041*^9, 3.8486473695773735`*^9}, {3.8489005908915277`*^9, 
-   3.848900593003843*^9}},
- CellID->35668300,ExpressionUUID->"19293b17-a620-43ad-9117-5d4e8f006864"],
-
-Cell[TextData[{
- "09. ",
- Cell[BoxData[
-  ButtonBox["PathSample",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/PathSample"]], "InlineGuideFunction",
-  ExpressionUUID->"0174eafc-68d2-4f7e-9579-d71ba64313bb"],
- " \[LongDash] makes even samplings along a multinoded line, typical \
-application as sampling Brillouin zone for band structure plotting, given \
-high-symmetry points as nodes."
-}], "GuideText",
- CellChangeTimes->{{3.84863380980562*^9, 3.848633812012332*^9}, {
-   3.8486338780117416`*^9, 3.8486338780117416`*^9}, 3.8486343742246113`*^9, 
-   3.8486473792373657`*^9, {3.8489005953236523`*^9, 3.848900597523703*^9}},
- CellID->178701211,ExpressionUUID->"725e038e-52ed-4542-9058-c276c48cbf5c"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Lattice Green's function formalism", "GuideFunctionsSubsection",
- CellChangeTimes->{{3.848632213584463*^9, 3.8486322237674336`*^9}},
- CellID->595598371,ExpressionUUID->"f1db6b28-7042-4e1c-977f-cc7b553b1908"],
-
-Cell[TextData[{
- "01. ",
- Cell[BoxData[
-  ButtonBox["CentralBlockGreens",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/CentralBlockGreens"]], 
-  "InlineGuideFunction",ExpressionUUID->
-  "48977003-e72b-4a35-9451-40a7aaee9bf9"],
- " \[LongDash] generates the desired block(s) of Green's function for central \
-scattering region (CSR)."
-}], "GuideText",
- CellChangeTimes->{{3.8486338188056507`*^9, 3.848633822917349*^9}, {
-   3.848633880808008*^9, 3.848633880808008*^9}, 3.8486343767597966`*^9, {
-   3.848647403221444*^9, 3.8486474384030676`*^9}, {3.848647476713707*^9, 
-   3.8486474768348436`*^9}, {3.848900607371971*^9, 3.848900607843608*^9}, 
-   3.8493179712247972`*^9},
- CellID->6925321,ExpressionUUID->"421c5b3a-2f3d-4dc0-a690-2e31b460d21c"],
-
-Cell[TextData[{
- "02. ",
- Cell[BoxData[
-  ButtonBox["CentralGreen",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/CentralGreen"]], "InlineGuideFunction",
-  ExpressionUUID->"bfda7c29-7360-4f35-b6eb-8e7d2398ac0b"],
- " \[LongDash] generates the full Green's function for CSR."
-}], "GuideText",
- CellChangeTimes->{{3.848633828532342*^9, 3.8486338304683332`*^9}, {
-   3.8486338836771765`*^9, 3.8486338836771765`*^9}, 3.8486343775046034`*^9, 
-   3.848647446811974*^9, {3.848647480130127*^9, 3.848647480250945*^9}, {
-   3.848900617842732*^9, 3.848900619194602*^9}},
- CellID->620695221,ExpressionUUID->"942bc613-9df3-4d80-942c-00f6d263c7aa"],
-
-Cell[TextData[{
- "03. ",
- Cell[BoxData[
-  ButtonBox["LocalDOSRealSpace",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/LocalDOSRealSpace"]], 
-  "InlineGuideFunction",ExpressionUUID->
-  "5bfdb8d1-6d09-48da-b990-c3891ef19132"],
- " \[LongDash] calculates real-space local density of states."
-}], "GuideText",
- CellChangeTimes->{{3.848633834765319*^9, 3.8486338383101187`*^9}, {
-   3.848633885915203*^9, 3.8486338859162025`*^9}, 3.8486343786337833`*^9, {
-   3.8486474549162827`*^9, 3.848647482995271*^9}, {3.848900620466734*^9, 
-   3.8489006216267366`*^9}, {3.848902288897813*^9, 3.8489022987839365`*^9}, 
-   3.848903889078354*^9, {3.8489042195611267`*^9, 3.8489042195611267`*^9}},
- CellID->283254338,ExpressionUUID->"5051497f-4572-46b5-9eb5-d88817aa1ea7"],
-
-Cell[TextData[{
- "04. ",
- Cell[BoxData[
-  ButtonBox["LocalDOSReciprocalSpace",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/LocalDOSReciprocalSpace"]], 
-  "InlineGuideFunction",ExpressionUUID->
-  "1e507739-45a3-4a04-a56f-cf48547fc9f4"],
- " \[LongDash] calculates reciprocal-space local density of states."
-}], "GuideText",
- CellChangeTimes->{{3.848903907563052*^9, 3.848903952246411*^9}, {
-  3.8489040241837254`*^9, 3.84890402996319*^9}, {3.848904084186209*^9, 
-  3.848904084186209*^9}, {3.84890515084204*^9, 3.8489051676671004`*^9}},
- CellID->193815052,ExpressionUUID->"8e9301d5-9d93-4838-a05e-2f9876880af0"],
-
-Cell[TextData[{
- "05. ",
- Cell[BoxData[
-  ButtonBox["Sigma",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/Sigma"]], "InlineGuideFunction",
-  ExpressionUUID->"6d57e3ed-5040-4524-8414-1db0ecf43d22"],
- " \[LongDash] generates self-energy from a lead, in the right dimension to \
-be readily added to the CSR Hamiltonian, by both iterative and non-iterative \
-methods."
-}], "GuideText",
- CellChangeTimes->{{3.8486338436210823`*^9, 3.848633844444766*^9}, {
-  3.8486338882177896`*^9, 3.8486338882177896`*^9}, {3.848634274617313*^9, 
-  3.848634308089039*^9}, {3.848647472132494*^9, 3.8486474857866983`*^9}, {
-  3.8489006227627797`*^9, 3.8489006239547224`*^9}, {3.84890391535852*^9, 
-  3.848903915503062*^9}},
- CellID->712518277,ExpressionUUID->"868e9c4a-12e8-4910-b995-8752a0a9968c"],
-
-Cell[TextData[{
- "06. ",
- Cell[BoxData[
-  ButtonBox["SurfaceGreen",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/SurfaceGreen"]], "InlineGuideFunction",
-  ExpressionUUID->"476b3794-13d8-4139-82dd-fc207c0c2d70"],
- " \[LongDash] generates surface Green's function of a semi-infinite lead, by \
-both iterative and non-iterative methods. Also can be used for calculating \
-the momentum-space LDOS to show edge states."
-}], "GuideText",
- CellChangeTimes->{{3.8486338489020214`*^9, 3.8486338531012635`*^9}, {
-   3.8486338904849873`*^9, 3.8486338904849873`*^9}, 3.848634379464959*^9, {
-   3.848647494028572*^9, 3.8486474961304994`*^9}, {3.848900625395727*^9, 
-   3.8489006265308485`*^9}, {3.8489039179679427`*^9, 3.848903918055744*^9}},
- CellID->122533408,ExpressionUUID->"0795ccbb-7145-4f89-9332-7198ef93ea9e"],
-
-Cell[TextData[{
- "07. ",
- Cell[BoxData[
-  ButtonBox["Transmission",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/Transmission"]], "InlineGuideFunction",
-  ExpressionUUID->"ba8b13e1-7a45-4de4-b6ea-ff89dc048266"],
- " \[LongDash] calculates transmission between an arbitrary pair of leads."
-}], "GuideText",
- CellChangeTimes->{{3.8486338565012393`*^9, 3.8486338584528008`*^9}, {
-   3.8486338925008373`*^9, 3.8486338925008373`*^9}, 3.8486343799448843`*^9, {
-   3.848647509613168*^9, 3.8486475251301885`*^9}, {3.848900628044715*^9, 
-   3.8489006298672657`*^9}, {3.8489039208306427`*^9, 3.8489039209030724`*^9}},
- CellID->33851533,ExpressionUUID->"1516ad7b-4c5f-40a4-a389-0794ac46b196"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["\t", "GuideDelimiter",
- CellID->124836151,ExpressionUUID->"cf708070-d03f-46f4-93aa-412dc17e18f0"],
-
-Cell[TextData[{
- Cell[BoxData[
-  ButtonBox["AttachFreeQ",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/AttachFreeQ"]], "InlineFormula",
-  ExpressionUUID->"be08b169-1153-425d-90b9-541d278355ff"],
- " . ",
- Cell[BoxData[
-  ButtonBox["BerryCurvature",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/BerryCurvature"]], "InlineFormula",
-  ExpressionUUID->"d7db46ed-0a56-48f4-907a-3d6aa7e95db7"],
- " . ",
- Cell[BoxData[
-  ButtonBox["CoordinatesGroupByRegions",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/CoordinatesGroupByRegions"]], 
-  "InlineFormula",ExpressionUUID->"df41260f-5028-419f-9ab6-597c0fd4102a"],
- " . ",
- Cell[BoxData[
-  ButtonBox["DisjointedShellDivisionRegions",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/DisjointedShellDivisionRegions"]], 
-  "InlineFormula",ExpressionUUID->"f9640394-52c3-4105-a202-afa7008b88ad"],
- " . ",
- Cell[BoxData[
-  ButtonBox["HBloch",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/HBloch"]], "InlineFormula",ExpressionUUID->
-  "7ad46d32-d545-4a1e-ba6b-34e13b86b1b1"],
- " . ",
- Cell[BoxData[
-  ButtonBox["HCSRDiagOffDiagBlocks",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/HCSRDiagOffDiagBlocks"]], "InlineFormula",
-  ExpressionUUID->"10ce1c84-78f7-44e9-90f9-9d71ee1014cb"],
- " . ",
- Cell[BoxData[
-  ButtonBox["HLeadBlocks",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/HLeadBlocks"]], "InlineFormula",
-  ExpressionUUID->"f063a9fd-e4a1-49a7-b617-c07db645c12d"],
- " . ",
- Cell[BoxData[
-  ButtonBox["HMatrixFromHoppings",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/HMatrixFromHoppings"]], "InlineFormula",
-  ExpressionUUID->"7ee922e6-ec5d-442b-a678-5dd573a489fc"],
- " . ",
- Cell[BoxData[
-  ButtonBox["PathSample",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/PathSample"]], "InlineFormula",
-  ExpressionUUID->"b76ca5b7-c3f7-4bfc-8d28-603a666d07dd"],
- " . ",
- Cell[BoxData[
-  ButtonBox["CentralBlockGreens",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/CentralBlockGreens"]], "InlineFormula",
-  ExpressionUUID->"31d78079-7ca9-4287-a776-1386574a71b9"],
- " . ",
- Cell[BoxData[
-  ButtonBox["CentralGreen",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/CentralGreen"]], "InlineFormula",
-  ExpressionUUID->"72e52c94-9a53-4dcd-a2aa-44cef3d1359c"],
- " . ",
- Cell[BoxData[
-  ButtonBox["LocalDOSRealSpace",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/LocalDOSRealSpace"]], 
-  "InlineGuideFunction",ExpressionUUID->
-  "ec53d210-7214-4b18-820d-f1c2f240a760"],
- " . ",
- Cell[BoxData[
-  ButtonBox["LocalDOSReciprocalSpace",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/LocalDOSReciprocalSpace"]], 
-  "InlineGuideFunction",ExpressionUUID->
-  "44f5520c-8c4d-42c0-b7f7-42fdf290073f"],
- " . ",
- Cell[BoxData[
-  ButtonBox["Sigma",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/Sigma"]], "InlineFormula",ExpressionUUID->
-  "937bba06-c6eb-44e2-b3a4-1ba4c9e00faa"],
- " . ",
- Cell[BoxData[
-  ButtonBox["SurfaceGreen",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/SurfaceGreen"]], "InlineFormula",
-  ExpressionUUID->"fa49717f-7225-4ace-9233-ecd7c7154bc6"],
- " . ",
- Cell[BoxData[
-  ButtonBox["Transmission",
-   BaseStyle->"Link",
-   ButtonData->"paclet:TBMethod/ref/Transmission"]], "InlineGuideFunction",
-  ExpressionUUID->"cad3e37a-f2ec-4d32-b908-13ebaf7a9617"]
-}], "InlineGuideFunctionListing",
- CellChangeTimes->{{3.8486339470993347`*^9, 3.8486339701318283`*^9}, {
-  3.848634344147355*^9, 3.848634349916339*^9}, {3.848646668917878*^9, 
-  3.8486467854690075`*^9}, {3.8486468379301662`*^9, 3.8486469778834505`*^9}, {
-  3.8486470198962445`*^9, 3.84864710996964*^9}, {3.8491684257790203`*^9, 
-  3.8491684704879713`*^9}, {3.8491685192919955`*^9, 3.8491685306367035`*^9}, {
-  3.8491685766846385`*^9, 3.849168638192718*^9}, {3.8491686722804813`*^9, 
-  3.8491687293609967`*^9}},
- CellID->123152187,ExpressionUUID->"43ef486e-6d60-4b30-86ba-94390aae857b"]
-}, Open  ]]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Tech Notes", "GuideTutorialsSection",
- CellID->37666043,ExpressionUUID->"e71b6c03-3799-4fb5-80e9-d60e288c8140"],
-
-Cell["XXXX", "GuideTutorial",
- CellID->293126031,ExpressionUUID->"8f6e88d3-aeab-4353-9ae5-04bd3e6c9233"],
-
-Cell["XXXX", "GuideTutorial",
- CellID->511625648,ExpressionUUID->"af0b4064-b930-4f60-81d5-fd0283e6352b"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Related Guides", "GuideMoreAboutSection",
- CellChangeTimes->{{3.8430423939366693`*^9, 3.843042395176153*^9}},
- CellID->498613083,ExpressionUUID->"b0d0d90e-c1b6-4a23-a0ef-39ad4ad6697c"],
-
-Cell["XXXX", "GuideMoreAbout",
- CellID->670525814,ExpressionUUID->"dd89577a-07b5-4562-8027-b31825ffbae1"],
-
-Cell["XXXX", "GuideMoreAbout",
- CellID->46789427,ExpressionUUID->"a8317ca4-0fc8-4980-b18f-ac439e7d431a"]
-}, Open  ]],
-
-Cell["Related Links", "GuideRelatedLinksSection",
- CellID->11326463,ExpressionUUID->"3a9c68f4-de90-47b8-b821-c2dbc4650fd1"]
-},
-WindowSize->{700.5, 735.75},
-WindowMargins->{{15.75, Automatic}, {Automatic, 3}},
-TaggingRules-><|
- "Author" -> "Junjie Zeng", "CreationDate" -> "12-16-2021 15:57:12"|>,
-FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (December 2, 2021)",
-StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "GuidePageStylesExt.nb", 
-  CharacterEncoding -> "UTF-8"],
-ExpressionUUID->"fe199008-f6a9-43aa-8aa3-ee08a9d41db9"
-]
-(* End of Notebook Content *)
-
-(* Internal cache information *)
-(*CellTagsOutline
-CellTagsIndex->{}
-*)
-(*CellTagsIndex
-CellTagsIndex->{}
-*)
-(*NotebookFileOutline
-Notebook[{
-Cell[558, 20, 598, 14, 24, "History",ExpressionUUID->"80d64ae7-98dd-40c3-bb21-435f4a076ae7",
- CellID->259135985],
-Cell[1159, 36, 143, 1, 20, "AuthorDate",ExpressionUUID->"688c1c22-cb6e-4157-b4d4-5baf4b9ca4b7",
- CellID->107590918],
-Cell[CellGroupData[{
-Cell[1327, 41, 122, 1, 29, "CategorizationSection",ExpressionUUID->"ac683646-b76d-4843-a2aa-c7e379a2050b",
- CellID->305856448],
-Cell[1452, 44, 132, 2, 31, "Categorization",ExpressionUUID->"90220e09-4d3a-4a4b-bcaf-9dff14991172",
- CellID->74544402],
-Cell[1587, 48, 136, 2, 31, "Categorization",ExpressionUUID->"ffa94718-3789-4acf-94b4-d5759351eff2",
- CellID->626917467],
-Cell[1726, 52, 133, 2, 31, "Categorization",ExpressionUUID->"495a7df9-c58a-4dc5-bc90-0a36619fac24",
- CellID->393077842],
-Cell[1862, 56, 143, 2, 31, "Categorization",ExpressionUUID->"65ef5874-ce7c-447e-a218-c66ca61b5803",
- CellID->762480707]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[2042, 63, 110, 1, 29, "KeywordsSection",ExpressionUUID->"052c578a-51bf-4ff3-94de-da6971f41880",
- CellID->216857809],
-Cell[2155, 66, 96, 1, 19, "Keywords",ExpressionUUID->"91e0e81f-7144-4522-8944-593dcad159a4",
- CellID->857107]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[2288, 72, 104, 1, 77, "GuideTitle",ExpressionUUID->"9223e687-b07c-4988-9af6-4eb05ebc69df",
- CellID->22888259],
-Cell[2395, 75, 1239, 28, 137, "GuideAbstract",ExpressionUUID->"3886dc47-08c8-4470-9583-0a23115e5d7a",
- CellID->663849441]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[3671, 108, 203, 3, 70, "GuideFunctionsSection",ExpressionUUID->"462c2f1a-d476-4727-9c53-7859747be8f5",
- CellID->67056571],
-Cell[CellGroupData[{
-Cell[3899, 115, 220, 3, 35, "GuideFunctionsSubsection",ExpressionUUID->"64661832-ed33-433e-9353-ba97d9800105",
- CellID->251962891],
-Cell[4122, 120, 579, 12, 25, "GuideText",ExpressionUUID->"97808ae8-0956-43cc-8c2d-142e4b23ad25",
- CellID->654270987],
-Cell[4704, 134, 647, 13, 41, "GuideText",ExpressionUUID->"7ade6f4a-200d-433d-8a01-862bf1ec9ce8",
- CellID->82560336],
-Cell[5354, 149, 640, 13, 41, "GuideText",ExpressionUUID->"fbc8f7e4-09c7-4988-85b7-8716af310170",
- CellID->48652837],
-Cell[5997, 164, 1348, 33, 57, "GuideText",ExpressionUUID->"826dc793-0983-4037-aa74-424fbea186e7",
- CellID->279369656],
-Cell[7348, 199, 624, 13, 41, "GuideText",ExpressionUUID->"73f394a3-0352-43af-bd56-3977d9bc1d92",
- CellID->229047313],
-Cell[7975, 214, 1196, 31, 41, "GuideText",ExpressionUUID->"3e180a0a-aea8-4a37-a63a-81d6d3e1448f",
- CellID->346535429],
-Cell[9174, 247, 729, 14, 57, "GuideText",ExpressionUUID->"4cb3320b-b10f-4f2d-a980-c8e2e1407d7a",
- CellID->325438966],
-Cell[9906, 263, 630, 14, 25, "GuideText",ExpressionUUID->"19293b17-a620-43ad-9117-5d4e8f006864",
- CellID->35668300],
-Cell[10539, 279, 710, 14, 41, "GuideText",ExpressionUUID->"725e038e-52ed-4542-9058-c276c48cbf5c",
- CellID->178701211]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[11286, 298, 213, 2, 35, "GuideFunctionsSubsection",ExpressionUUID->"f1db6b28-7042-4e1c-977f-cc7b553b1908",
- CellID->595598371],
-Cell[11502, 302, 755, 16, 41, "GuideText",ExpressionUUID->"421c5b3a-2f3d-4dc0-a690-2e31b460d21c",
- CellID->6925321],
-Cell[12260, 320, 645, 13, 25, "GuideText",ExpressionUUID->"942bc613-9df3-4d80-942c-00f6d263c7aa",
- CellID->620695221],
-Cell[12908, 335, 764, 15, 25, "GuideText",ExpressionUUID->"5051497f-4572-46b5-9eb5-d88817aa1ea7",
- CellID->283254338],
-Cell[13675, 352, 622, 13, 25, "GuideText",ExpressionUUID->"8e9301d5-9d93-4838-a05e-2f9876880af0",
- CellID->193815052],
-Cell[14300, 367, 788, 16, 41, "GuideText",ExpressionUUID->"868e9c4a-12e8-4910-b995-8752a0a9968c",
- CellID->712518277],
-Cell[15091, 385, 817, 15, 57, "GuideText",ExpressionUUID->"0795ccbb-7145-4f89-9332-7198ef93ea9e",
- CellID->122533408],
-Cell[15911, 402, 693, 13, 25, "GuideText",ExpressionUUID->"1516ad7b-4c5f-40a4-a389-0794ac46b196",
- CellID->33851533]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[16641, 420, 103, 1, 26, "GuideDelimiter",ExpressionUUID->"cf708070-d03f-46f4-93aa-412dc17e18f0",
- CellID->124836151],
-Cell[16747, 423, 3956, 106, 101, "InlineGuideFunctionListing",ExpressionUUID->"43ef486e-6d60-4b30-86ba-94390aae857b",
- CellID->123152187]
-}, Open  ]]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[20752, 535, 117, 1, 72, "GuideTutorialsSection",ExpressionUUID->"e71b6c03-3799-4fb5-80e9-d60e288c8140",
- CellID->37666043],
-Cell[20872, 538, 104, 1, 22, "GuideTutorial",ExpressionUUID->"8f6e88d3-aeab-4353-9ae5-04bd3e6c9233",
- CellID->293126031],
-Cell[20979, 541, 104, 1, 22, "GuideTutorial",ExpressionUUID->"af0b4064-b930-4f60-81d5-fd0283e6352b",
- CellID->511625648]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[21120, 547, 190, 2, 72, "GuideMoreAboutSection",ExpressionUUID->"b0d0d90e-c1b6-4a23-a0ef-39ad4ad6697c",
- CellID->498613083],
-Cell[21313, 551, 105, 1, 22, "GuideMoreAbout",ExpressionUUID->"dd89577a-07b5-4562-8027-b31825ffbae1",
- CellID->670525814],
-Cell[21421, 554, 104, 1, 22, "GuideMoreAbout",ExpressionUUID->"a8317ca4-0fc8-4980-b18f-ac439e7d431a",
- CellID->46789427]
-}, Open  ]],
-Cell[21540, 558, 123, 1, 72, "GuideRelatedLinksSection",ExpressionUUID->"3a9c68f4-de90-47b8-b821-c2dbc4650fd1",
- CellID->11326463]
-}
-]
-*)
-
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 1670691604], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 1063214779], Cell["Guide", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 1980853353], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 1219161778], Cell["TBMethod`", "Categorization", 
+      CellLabel -> "Context", CellID -> 636253389], 
+     Cell["TBMethod/guide/TBMethod", "Categorization", CellLabel -> "URI", 
+      CellID -> 1001963887]}, Closed]], 
+  Cell[CellGroupData[{Cell["TBMethod", "GuideTitle", CellID -> 2091899336], 
+     Cell["TBMethod supports tight-binding model construction, eigenspectra \
+and topological characterization, lattice Green's function transport \
+calculations, and visualization. Load all four subpackages with \
+Needs[\"TBMethod`\"].", "GuideAbstract", CellID -> 1516896072]}, Open]], 
+  Cell[CellGroupData[{Cell["Functions", "GuideFunctionsSection", 
+      CellID -> 1316994800], Cell[CellGroupData[
+       {Cell["MDConstruct", "GuideFunctionsSubsection", CellID -> 236101209], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["HMatrixFromHoppings", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/HMatrixFromHoppings"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Construct a real-space \
+tight-binding Hamiltonian block from a hopping function and two point sets."}]\
+, "GuideText", CellID -> 239577079], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["ParallelHMatrixFromHoppings", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/ParallelHMatrixFromHoppings"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Construct a real-space \
+Hamiltonian block by summing hopping contributions in parallel."}], 
+         "GuideText", CellID -> 2092715410], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["HMatricesRealSpace", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/HMatricesRealSpace"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Construct an \
+association of hopping matrices from translated crystal cells to the first \
+cell."}], "GuideText", CellID -> 2033845710], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["ParallelHMatricesRealSpace", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/ParallelHMatricesRealSpace"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Construct an \
+association of hopping matrices from translated crystal cells to the first \
+cell."}], "GuideText", CellID -> 1844025842], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["HBloch", BaseStyle -> "Link", 
+              ButtonData -> "paclet:TBMethod/ref/HBloch"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Construct a Bloch \
+Hamiltonian and add the Hermitian-conjugate reverse hoppings automatically."}]\
+, "GuideText", CellID -> 1448053248], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["HBlochFull", BaseStyle -> 
+               "Link", ButtonData -> "paclet:TBMethod/ref/HBlochFull"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Construct a Bloch \
+Hamiltonian from every explicitly supplied hopping displacement."}], 
+         "GuideText", CellID -> 1727400978], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["HVBloch", BaseStyle -> "Link", 
+              ButtonData -> "paclet:TBMethod/ref/HVBloch"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Return a Bloch \
+Hamiltonian and its first derivatives with respect to momentum."}], 
+         "GuideText", CellID -> 1321386594], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["HVBlochFull", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/HVBlochFull"]], "InlineGuideFunction"], 
+           " \[LongDash] ", "Return a Bloch Hamiltonian and its first \
+derivatives with respect to momentum."}], "GuideText", CellID -> 1268264034], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["HVWBloch", BaseStyle -> 
+               "Link", ButtonData -> "paclet:TBMethod/ref/HVWBloch"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Return a Bloch \
+Hamiltonian, its momentum gradient, and its momentum Hessian."}], 
+         "GuideText", CellID -> 1794579658], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["HVWBlochFull", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/HVWBlochFull"]], "InlineGuideFunction"], 
+           " \[LongDash] ", "Return a Bloch Hamiltonian, its momentum \
+gradient, and its momentum Hessian."}], "GuideText", CellID -> 909250579], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["HPDTensorsBloch", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/HPDTensorsBloch"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Return a Bloch \
+Hamiltonian and all momentum-derivative tensors through a specified order."}]\
+, "GuideText", CellID -> 2019897587], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["HPDTensorsBlochFull", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/HPDTensorsBlochFull"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Return a Bloch \
+Hamiltonian and all momentum-derivative tensors through a specified order."}]\
+, "GuideText", CellID -> 1884152782], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["AttachFreeQ", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/AttachFreeQ"]], "InlineGuideFunction"], 
+           " \[LongDash] ", "Test whether two point sets have no pair within \
+a given distance cutoff."}], "GuideText", CellID -> 1329258481], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["HCSRDiagOffDiagBlocks", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/HCSRDiagOffDiagBlocks"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Construct the diagonal \
+and nearest-layer lower off-diagonal Hamiltonian blocks of a partitioned \
+scattering region."}], "GuideText", CellID -> 1458100459], 
+        Cell[TextData[{Cell[BoxData[ButtonBox[
+              "ParallelHCSRDiagOffDiagBlocks", BaseStyle -> "Link", 
+              ButtonData -> 
+               "paclet:TBMethod/ref/ParallelHCSRDiagOffDiagBlocks"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Construct the diagonal \
+and nearest-layer lower off-diagonal Hamiltonian blocks of a partitioned \
+scattering region."}], "GuideText", CellID -> 446702868], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["HCSRDiagOffDiagBlocksVerbose", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/HCSRDiagOffDiagBlocksVerbose"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Construct the diagonal \
+and nearest-layer lower off-diagonal Hamiltonian blocks of a partitioned \
+scattering region."}], "GuideText", CellID -> 127691527], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["HLeadBlocks", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/HLeadBlocks"]], "InlineGuideFunction"], 
+           " \[LongDash] ", "Construct a lead onsite block, intercell hopping \
+block, and coupling from the lead to the scattering region."}], "GuideText", 
+         CellID -> 1405851746], Cell[TextData[
+          {Cell[BoxData[ButtonBox["ParallelHLeadBlocks", BaseStyle -> "Link", 
+              ButtonData -> "paclet:TBMethod/ref/ParallelHLeadBlocks"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Construct a lead onsite \
+block, intercell hopping block, and coupling from the lead to the scattering \
+region."}], "GuideText", CellID -> 864861319], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["HLeadBlocksVerbose", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/HLeadBlocksVerbose"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Construct a lead onsite \
+block, intercell hopping block, and coupling from the lead to the scattering \
+region."}], "GuideText", CellID -> 1822528456], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["AdaptivePartition", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/AdaptivePartition"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Partition a scattering \
+region into layers according to distance from its lead contacts."}], 
+         "GuideText", CellID -> 543743109], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["\[CapitalGamma]Matrix", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/GammaMatrix"]], "InlineGuideFunction"], 
+           " \[LongDash] ", 
+           "Construct a tensor product of Pauli matrices."}], "GuideText", 
+         CellID -> 239520355], Cell[TextData[
+          {Cell[BoxData[ButtonBox["FillWithDistance", BaseStyle -> "Link", 
+              ButtonData -> "paclet:TBMethod/ref/FillWithDistance"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Select a held matrix \
+expression by matching a distance to a list of shell distances."}], 
+         "GuideText", CellID -> 1848617431], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["FillWithCondition", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/FillWithCondition"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Select a held matrix \
+expression according to a list of conditions."}], "GuideText", 
+         CellID -> 1153323237], Cell[TextData[
+          {Cell[BoxData[ButtonBox["PhaseFactor2DAB", BaseStyle -> "Link", 
+              ButtonData -> "paclet:TBMethod/ref/PhaseFactor2DAB"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Compute a Peierls phase \
+for a perpendicular magnetic field in a gauge adapted to an in-plane \
+translation direction."}], "GuideText", CellID -> 1574162036], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["PhaseFactor3DAB", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/PhaseFactor3DAB"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Compute a Peierls phase \
+in the symmetric gauge for a magnetic field vector."}], "GuideText", 
+         CellID -> 1394686531], Cell[TextData[
+          {Cell[BoxData[ButtonBox["UGaugeTransformMatrix", BaseStyle -> 
+               "Link", ButtonData -> 
+               "paclet:TBMethod/ref/UGaugeTransformMatrix"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Construct the diagonal \
+unitary matrix used to transform between magnetic gauges."}], "GuideText", 
+         CellID -> 2023319158], Cell[TextData[
+          {Cell[BoxData[ButtonBox["HBlochsForSpecFunc", BaseStyle -> "Link", 
+              ButtonData -> "paclet:TBMethod/ref/HBlochsForSpecFunc"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Construct \
+momentum-dependent lead and surface Hamiltonian blocks for a reciprocal-space \
+spectral function."}], "GuideText", CellID -> 1693708445], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["GellMannMatrix", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/GellMannMatrix"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Return an identity or \
+Gell-Mann matrix in a three-dimensional internal space."}], "GuideText", 
+         CellID -> 2099722880], Cell[TextData[
+          {Cell[BoxData[ButtonBox["PauliGellMannDecomposition", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/PauliGellMannDecomposition"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Expand a matrix in a \
+tensor-product basis of Pauli and Gell-Mann matrices."}], "GuideText", 
+         CellID -> 2080676313], Cell[TextData[
+          {Cell[BoxData[ButtonBox["PauliGellMannAbstract", BaseStyle -> 
+               "Link", ButtonData -> 
+               "paclet:TBMethod/ref/PauliGellMannAbstract"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Express a \
+Pauli/Gell-Mann coefficient association as a compact symbolic tensor-product \
+sum."}], "GuideText", CellID -> 1079473172], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["PauliGellMannRepresent", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/PauliGellMannRepresent"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Convert an abstract \
+Pauli/Gell-Mann expression to its matrix representation."}], "GuideText", 
+         CellID -> 1199493303], Cell[TextData[
+          {Cell[BoxData[ButtonBox["PhotonBlocks", BaseStyle -> "Link", 
+              ButtonData -> "paclet:TBMethod/ref/PhotonBlocks"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Construct Floquet \
+photon-space factors for a periodic scalar modulation."}], "GuideText", 
+         CellID -> 1838883016], Cell[TextData[
+          {Cell[BoxData[ButtonBox["NPhotonBlocks", BaseStyle -> "Link", 
+              ButtonData -> "paclet:TBMethod/ref/NPhotonBlocks"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Construct Floquet \
+photon-space factors for a periodic scalar modulation."}], "GuideText", 
+         CellID -> 630617478], Cell[TextData[
+          {Cell[BoxData[ButtonBox["PhotonDress", BaseStyle -> "Link", 
+              ButtonData -> "paclet:TBMethod/ref/PhotonDress"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Combine a bare hopping \
+matrix with scalar Floquet photon factors."}], "GuideText", 
+         CellID -> 2069258890], Cell[TextData[
+          {Cell[BoxData[ButtonBox["PhotonBlocksTensor", BaseStyle -> "Link", 
+              ButtonData -> "paclet:TBMethod/ref/PhotonBlocksTensor"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Construct Floquet \
+photon factors for a matrix-valued periodic modulation."}], "GuideText", 
+         CellID -> 681326389], Cell[TextData[
+          {Cell[BoxData[ButtonBox["NPhotonBlocksTensor", BaseStyle -> "Link", 
+              ButtonData -> "paclet:TBMethod/ref/NPhotonBlocksTensor"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Construct Floquet \
+photon factors for a matrix-valued periodic modulation."}], "GuideText", 
+         CellID -> 436459861], Cell[TextData[
+          {Cell[BoxData[ButtonBox["PhotonDressTensor", BaseStyle -> "Link", 
+              ButtonData -> "paclet:TBMethod/ref/PhotonDressTensor"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Contract a bare hopping \
+matrix with matrix-valued Floquet photon tensors."}], "GuideText", 
+         CellID -> 791335406], Cell[TextData[
+          {Cell[BoxData[ButtonBox["PhotonBlockProjectionMatrix", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/PhotonBlockProjectionMatrix"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Construct the projector \
+onto a selected photon sector in a site/internal/photon basis."}], 
+         "GuideText", CellID -> 1237206619], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["CompiledSuccessfulQ", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/CompiledSuccessfulQ"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Inspect a compiled \
+function for calls back to the main Wolfram evaluator."}], "GuideText", 
+         CellID -> 1357426443], Cell[TextData[
+          {Cell[BoxData[ButtonBox["CrystalStructure", BaseStyle -> "Link", 
+              ButtonData -> "paclet:TBMethod/ref/CrystalStructure"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Generate translated \
+crystal cells from lattice vectors, an atomic basis, and cell indices."}], 
+         "GuideText", CellID -> 1071000906], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["HEffectiveMatrix", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/HEffectiveMatrix"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Expand a Bloch \
+Hamiltonian near a momentum point and return its Pauli/Gell-Mann \
+coefficients."}], "GuideText", CellID -> 1788195256], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["LatticePointsCentralize", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/LatticePointsCentralize"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Translate a set of \
+atomic coordinates so that its arithmetic centroid is the origin."}], 
+         "GuideText", CellID -> 528908595], 
+        Cell[TextData[{Cell[BoxData[ButtonBox[
+              "HFloquetEffectiveBlochMatrixFromExtended", BaseStyle -> 
+               "Link", ButtonData -> 
+               "paclet:TBMethod/ref/HFloquetEffectiveBlochMatrixFromExtended"]\
+], "InlineGuideFunction"], " \[LongDash] ", 
+           "Compute a van Vleck effective Hamiltonian from an extended \
+Floquet matrix."}], "GuideText", CellID -> 1153051580], 
+        Cell[TextData[{Cell[BoxData[ButtonBox[
+              "HFloquetEffectiveHoppingMatricesFromExtended", 
+              BaseStyle -> "Link", ButtonData -> "paclet:TBMethod/ref/HFloque\
+tEffectiveHoppingMatricesFromExtended"]], "InlineGuideFunction"], 
+           " \[LongDash] ", "Compute effective real-space hopping blocks from \
+extended Floquet hopping matrices."}], "GuideText", CellID -> 1764598556], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["HLeadBlocksFloquetDownfold", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/HLeadBlocksFloquetDownfold"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Project extended lead \
+blocks to photon sector zero, with an optional interface micromotion \
+correction."}], "GuideText", CellID -> 341073660], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["DownfoldedDUp", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/DownfoldedDUp"]], "InlineGuideFunction"], 
+           " \[LongDash] ", "Finds the maximum site-to-site hopping distance \
+in a supplied hopping association."}], "GuideText", CellID -> 782369330], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["AdatomLabel", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/AdatomLabel"]], "InlineGuideFunction"], 
+           " \[LongDash] ", "Label sites according to whether they lie near \
+selected adatom positions."}], "GuideText", CellID -> 1948682981], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["HCSRBlocksAndersonDisordered", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/HCSRBlocksAndersonDisordered"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Generate an ensemble of \
+layered CSR Hamiltonians with onsite Anderson disorder."}], "GuideText", 
+         CellID -> 433351158], Cell[TextData[
+          {Cell[BoxData[ButtonBox["SlaterKosterOnsiteBlock", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/SlaterKosterOnsiteBlock"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Construct onsite \
+orbital-energy blocks for sp or spd Slater-Koster models."}], "GuideText", 
+         CellID -> 721120034], Cell[TextData[
+          {Cell[BoxData[ButtonBox["SlaterKosterHoppingBlock", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/SlaterKosterHoppingBlock"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Construct a \
+direction-dependent Slater-Koster hopping block between two three-dimensional \
+positions."}], "GuideText", CellID -> 300423493], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["SlaterKosterSOCOnsiteBlock", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/SlaterKosterSOCOnsiteBlock"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Construct onsite \
+spin-orbit-coupling blocks for sp or spd orbital bases."}], "GuideText", 
+         CellID -> 1486691007]}, Open]], 
+     Cell[CellGroupData[{Cell["EigenSpect", "GuideFunctionsSubsection", 
+         CellID -> 1146605793], Cell[TextData[
+          {Cell[BoxData[ButtonBox["ReciprocalVectors", BaseStyle -> "Link", 
+              ButtonData -> "paclet:TBMethod/ref/ReciprocalVectors"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Computes reciprocal \
+lattice basis vectors from a two- or three-dimensional real-space basis."}], 
+         "GuideText", CellID -> 1041712845], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["BandData", BaseStyle -> 
+               "Link", ButtonData -> "paclet:TBMethod/ref/BandData"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Collects sorted \
+eigenvalues of a parameter-dependent Hamiltonian as one list per band."}], 
+         "GuideText", CellID -> 1806161082], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["ParallelBandData", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/ParallelBandData"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Collects sorted energy \
+bands by evaluating independent samples on parallel kernels."}], "GuideText", 
+         CellID -> 175725511], Cell[TextData[
+          {Cell[BoxData[ButtonBox["EigenspectralData", BaseStyle -> "Link", 
+              ButtonData -> "paclet:TBMethod/ref/EigenspectralData"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Returns energy-sorted \
+eigenvalue and eigenvector data at each parameter sample, optionally \
+replacing each state with an observable."}], "GuideText", 
+         CellID -> 346221086], Cell[TextData[
+          {Cell[BoxData[ButtonBox["ParallelEigenspectralData", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/ParallelEigenspectralData"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Evaluates energy-sorted \
+eigensystem data independently at parameter samples on parallel kernels."}], 
+         "GuideText", CellID -> 1571540781], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["BandDataWithWeight", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/BandDataWithWeight"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Pairs each sorted \
+energy with one or more state weights over a parameter grid."}], "GuideText", 
+         CellID -> 1860626091], Cell[TextData[
+          {Cell[BoxData[ButtonBox["ParallelBandDataWithWeight", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/ParallelBandDataWithWeight"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Evaluates sorted energy \
+and state-weight pairs independently on parallel kernels."}], "GuideText", 
+         CellID -> 1592693141], Cell[TextData[
+          {Cell[BoxData[ButtonBox["PathSample", BaseStyle -> "Link", 
+              ButtonData -> "paclet:TBMethod/ref/PathSample"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Samples a piecewise \
+straight path with a common approximate spacing and returns sample-index \
+markers for its vertices."}], "GuideText", CellID -> 1641611910], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["BerryCurvature", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/BerryCurvature"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Calculates the \
+occupied-band Berry curvature, optionally with a symmetrized \
+observable-current insertion."}], "GuideText", CellID -> 545671105], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["QuantumMetric", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/QuantumMetric"]], "InlineGuideFunction"], 
+           " \[LongDash] ", "Calculates a component of the occupied-band \
+quantum metric from Hamiltonian derivatives."}], "GuideText", 
+         CellID -> 1929308690], Cell[TextData[
+          {Cell[BoxData[ButtonBox["FirstBrillouinZoneRegion", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/FirstBrillouinZoneRegion"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Returns the Voronoi \
+cell around the reciprocal-lattice origin as a two- or three-dimensional \
+region."}], "GuideText", CellID -> 1941254529], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["FirstBrillouinZonePlot", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/FirstBrillouinZonePlot"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Displays the first \
+Brillouin zone together with colored reciprocal basis vectors."}], 
+         "GuideText", CellID -> 724649030], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["LabelPathSamplings", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/LabelPathSamplings"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Attaches callouts to \
+selected path samples using the vertex markers returned by PathSample."}], 
+         "GuideText", CellID -> 289762699], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["ChernNumberByWilsonLoop", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/ChernNumberByWilsonLoop"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Sums determinant phases \
+of occupied-state Wilson loops over oriented momentum-space plaquettes."}], 
+         "GuideText", CellID -> 1723336371], 
+        Cell[TextData[{Cell[BoxData[ButtonBox[
+              "PlaquetteRegionPartitionComplex", BaseStyle -> "Link", 
+              ButtonData -> 
+               "paclet:TBMethod/ref/PlaquetteRegionPartitionComplex"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Triangulates a region \
+and returns mesh coordinates and plaquette selectors for Wilson-loop \
+calculations."}], "GuideText", CellID -> 973306397], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["RegionPolarSample", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/RegionPolarSample"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Samples a polygonal \
+region on concentric polygonal loops with increasing angular resolution."}], 
+         "GuideText", CellID -> 829332868], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["ParallelogramCartesianSample", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/ParallelogramCartesianSample"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Builds a tensor grid \
+over a basis parallelogram and explicitly closes each row of samples."}], 
+         "GuideText", CellID -> 1140228961], 
+        Cell[TextData[{Cell[BoxData[ButtonBox[
+              "WannierChargeCenterByWilsonLoop", BaseStyle -> "Link", 
+              ButtonData -> 
+               "paclet:TBMethod/ref/WannierChargeCenterByWilsonLoop"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Computes \
+occupied-subspace Wilson-loop eigenphases along a closed momentum path."}], 
+         "GuideText", CellID -> 632979750], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["LocalBandGap", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/LocalBandGap"]], "InlineGuideFunction"], 
+           " \[LongDash] ", "Returns the smallest direct gap between bands n \
+and n+1 over a finite sample set."}], "GuideText", CellID -> 1833315618], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["GlobalBandGap", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/GlobalBandGap"]], "InlineGuideFunction"], 
+           " \[LongDash] ", "Returns the sampled indirect gap between the \
+minimum of band n+1 and the maximum of band n."}], "GuideText", 
+         CellID -> 467833647], Cell[TextData[
+          {Cell[BoxData[ButtonBox["ParallelLocalBandGap", BaseStyle -> 
+               "Link", ButtonData -> 
+               "paclet:TBMethod/ref/ParallelLocalBandGap"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Finds the smallest \
+sampled direct band gap with independent eigensystem calculations on parallel \
+kernels."}], "GuideText", CellID -> 1763592993], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["ParallelGlobalBandGap", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/ParallelGlobalBandGap"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Finds the sampled \
+indirect gap using parallel calculations of the two adjacent band energies."}]\
+, "GuideText", CellID -> 2011350935], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["BottIndex", BaseStyle -> 
+               "Link", ButtonData -> "paclet:TBMethod/ref/BottIndex"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Evaluates a chiral \
+real-space Bott expression from a Hamiltonian and coordinate-dependent \
+internal-space generators."}], "GuideText", CellID -> 921823639]}, Open]], 
+     Cell[CellGroupData[{Cell["LGFF", "GuideFunctionsSubsection", 
+         CellID -> 1798019151], Cell[TextData[
+          {Cell[BoxData[ButtonBox["SurfaceGreen", BaseStyle -> "Link", 
+              ButtonData -> "paclet:TBMethod/ref/SurfaceGreen"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Computes the retarded \
+surface Green matrix of a semi-infinite periodic lead."}], "GuideText", 
+         CellID -> 1068871019], Cell[TextData[
+          {Cell[BoxData[ButtonBox["SurfaceGreenOverlap", BaseStyle -> "Link", 
+              ButtonData -> "paclet:TBMethod/ref/SurfaceGreenOverlap"]], 
+            "InlineGuideFunction"], " \[LongDash] ", 
+           "Computes a lead surface Green matrix in a nonorthogonal basis."}]\
+, "GuideText", CellID -> 847229782], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["Sigma", BaseStyle -> "Link", 
+              ButtonData -> "paclet:TBMethod/ref/Sigma"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Computes the \
+self-energy of a semi-infinite lead projected onto the device contact."}], 
+         "GuideText", CellID -> 1080378028], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["SigmaOverlap", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/SigmaOverlap"]], "InlineGuideFunction"], 
+           " \[LongDash] ", "Computes a lead self-energy including \
+nonorthogonal interface overlaps."}], "GuideText", CellID -> 1656707710], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["CentralGreen", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/CentralGreen"]], "InlineGuideFunction"], 
+           " \[LongDash] ", "Computes the full Green matrix of a finite \
+central scattering region."}], "GuideText", CellID -> 783394106], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["CentralGreenOverlap", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/CentralGreenOverlap"]], 
+            "InlineGuideFunction"], " \[LongDash] ", 
+           "Computes the full device resolvent in a nonorthogonal basis."}], 
+         "GuideText", CellID -> 1009671174], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["CentralBlockGreens", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/CentralBlockGreens"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Computes a contact \
+block or the final block column of a layered device Green matrix."}], 
+         "GuideText", CellID -> 1962091064], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["CentralBlockGreensOverlap", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/CentralBlockGreensOverlap"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Computes a layered \
+device contact Green block or final block column with overlap."}], 
+         "GuideText", CellID -> 1230371186], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["CentralDiagonalBlockGreens", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/CentralDiagonalBlockGreens"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Computes every diagonal \
+block of the Green matrix of a layered device."}], "GuideText", 
+         CellID -> 677595443], Cell[TextData[
+          {Cell[BoxData[ButtonBox["CentralDiagonalBlockGreensOverlap", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/CentralDiagonalBlockGreensOverlap"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Computes all diagonal \
+Green blocks of a layered nonorthogonal device."}], "GuideText", 
+         CellID -> 157361709], Cell[TextData[
+          {Cell[BoxData[ButtonBox["Transmission", BaseStyle -> "Link", 
+              ButtonData -> "paclet:TBMethod/ref/Transmission"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Evaluates the \
+two-contact Caroli transmission from a retarded device Green matrix."}], 
+         "GuideText", CellID -> 350754687], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["TransportCoefficient", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/TransportCoefficient"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Evaluates a \
+transmission or reflection coefficient through a Green-function scattering \
+matrix."}], "GuideText", CellID -> 1325612885], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["LocalDOSRealSpace", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/LocalDOSRealSpace"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Computes \
+contact-induced local spectral density at the sites of a layered device."}], 
+         "GuideText", CellID -> 1222324900], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["LocalDOSReciprocalSpace", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/LocalDOSReciprocalSpace"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Computes projected \
+spectral density for a Bloch-resolved device coupled to a semi-infinite \
+lead."}], "GuideText", CellID -> 1664043637], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["LocalCDV", BaseStyle -> 
+               "Link", ButtonData -> "paclet:TBMethod/ref/LocalCDV"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Computes a local \
+current-density vector field from layered Green-function blocks."}], 
+         "GuideText", CellID -> 108433862], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["SigmaGaugeTransform", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/SigmaGaugeTransform"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Transforms a list of \
+lead self-energies by matching unitary matrices."}], "GuideText", 
+         CellID -> 1348102556], Cell[TextData[
+          {Cell[BoxData[ButtonBox["HallAndLongitudinalResistances", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/HallAndLongitudinalResistances"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Computes transverse and \
+longitudinal resistances for the supported multiterminal ordering."}], 
+         "GuideText", CellID -> 1955790983], 
+        Cell[TextData[{Cell[BoxData[ButtonBox[
+              "HallAndLongitudinalConductances", BaseStyle -> "Link", 
+              ButtonData -> 
+               "paclet:TBMethod/ref/HallAndLongitudinalConductances"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Converts the supported \
+device Hall and longitudinal resistances into conductances."}], "GuideText", 
+         CellID -> 742030754]}, Open]], 
+     Cell[CellGroupData[{Cell["DataVisualization", 
+         "GuideFunctionsSubsection", CellID -> 1976867598], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["BandPlot", BaseStyle -> 
+               "Link", ButtonData -> "paclet:TBMethod/ref/BandPlot"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Plots energy bands with \
+labeled path nodes and vertical guide lines."}], "GuideText", 
+         CellID -> 248487636], Cell[TextData[
+          {Cell[BoxData[ButtonBox["Vector2DPlot", BaseStyle -> "Link", 
+              ButtonData -> "paclet:TBMethod/ref/Vector2DPlot"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Displays a \
+two-dimensional vector field over a density background."}], "GuideText", 
+         CellID -> 1335740174], Cell[TextData[
+          {Cell[BoxData[ButtonBox["Stream2DPlot", BaseStyle -> "Link", 
+              ButtonData -> "paclet:TBMethod/ref/Stream2DPlot"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Displays streamlines \
+and density shading for a two-dimensional vector field."}], "GuideText", 
+         CellID -> 1832760404], Cell[TextData[
+          {Cell[BoxData[ButtonBox["RealSpaceLocalDOSPlot", BaseStyle -> 
+               "Link", ButtonData -> 
+               "paclet:TBMethod/ref/RealSpaceLocalDOSPlot"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Plots site weights from \
+one eigenpair as disks at real-space coordinates."}], "GuideText", 
+         CellID -> 1462098772], Cell[TextData[
+          {Cell[BoxData[ButtonBox["LocalDOSPlot", BaseStyle -> "Link", 
+              ButtonData -> "paclet:TBMethod/ref/LocalDOSPlot"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Displays sampled local \
+or momentum-resolved density as an interpolated density plot."}], 
+         "GuideText", CellID -> 1152802445], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["LocalDOSTidy", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/LocalDOSTidy"]], "InlineGuideFunction"], 
+           " \[LongDash] ", "Clips a density array at a chosen quantile and \
+smooths it with a Gaussian filter."}], "GuideText", CellID -> 1660935182], 
+        Cell[TextData[{Cell[BoxData[ButtonBox["BandPlotWithWeight", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/BandPlotWithWeight"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Plots energy bands \
+whose colors encode an additional state weight."}], "GuideText", 
+         CellID -> 1766487146], Cell[TextData[
+          {Cell[BoxData[ButtonBox["AtomPerLayerPlot", BaseStyle -> "Link", 
+              ButtonData -> "paclet:TBMethod/ref/AtomPerLayerPlot"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Plots site counts in \
+the layers of an adaptively partitioned device."}], "GuideText", 
+         CellID -> 578958871], Cell[TextData[
+          {Cell[BoxData[ButtonBox["ExportAdaptivePartitionAnimation", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/ExportAdaptivePartitionAnimation"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Exports an animation \
+that successively adds the partitioned device layers."}], "GuideText", 
+         CellID -> 1959782239], Cell[TextData[
+          {Cell[BoxData[ButtonBox["CrystalStructurePlot", BaseStyle -> 
+               "Link", ButtonData -> 
+               "paclet:TBMethod/ref/CrystalStructurePlot"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Displays a crystal \
+structure with lattice vectors and primitive-cell outlines."}], "GuideText", 
+         CellID -> 1888857324], Cell[TextData[
+          {Cell[BoxData[ButtonBox["RibbonBulkBoundaryOperator", 
+              BaseStyle -> "Link", ButtonData -> 
+               "paclet:TBMethod/ref/RibbonBulkBoundaryOperator"]], 
+            "InlineGuideFunction"], " \[LongDash] ", "Constructs a diagonal \
+operator measuring a state's signed transverse position in a ribbon."}], 
+         "GuideText", CellID -> 230468366], 
+        Cell[TextData[{Cell[BoxData[ButtonBox[
+              "MultiterminalCentralScatteringRegionPlot", BaseStyle -> 
+               "Link", ButtonData -> 
+               "paclet:TBMethod/ref/MultiterminalCentralScatteringRegionPlot"]\
+], "InlineGuideFunction"], " \[LongDash] ", 
+           "Plots a finite device and the neighboring primitive cells of its \
+leads."}], "GuideText", CellID -> 1779717255]}, Open]]}, Open]], 
+  Cell[CellGroupData[{Cell["Tutorials", "GuideTutorialsSection", 
+      CellID -> 1372999059], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "GuideTutorial", 
+      CellID -> 1878990578]}, Open]]}, Saveable -> True, Editable -> True, 
+ TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "GuidePageStylesExt.nb", 
+   CharacterEncoding -> "UTF-8"]]

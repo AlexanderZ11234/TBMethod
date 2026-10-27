@@ -1,0 +1,438 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 1364818837], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 1911884645], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 2061507043], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 535405874], Cell["TBMethod`MDConstruct`", "Categorization", 
+      CellLabel -> "Context", CellID -> 1405781004], 
+     Cell["TBMethod/ref/SlaterKosterOnsiteBlock", "Categorization", 
+      CellLabel -> "URI", CellID -> 639901416]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 1674123467], 
+     Cell["SlaterKosterOnsiteBlock, tight binding, TBMethod", "Keywords", 
+      CellID -> 1503058568]}, Closed]], 
+  Cell[CellGroupData[{Cell["SlaterKosterOnsiteBlock", "ObjectName", 
+      CellID -> 202125671], Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{RowBox[{ButtonBox["SlaterKosterOnsiteBlock", 
+               BaseStyle -> "Link", ButtonData -> 
+                "paclet:TBMethod/ref/SlaterKosterOnsiteBlock"], "[", 
+              "\"sp\"", "]"}], "[", RowBox[{"{", RowBox[{StyleBox["sEnergy", 
+                 "TI", FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                StyleBox["pEnergy", "TI", FontFamily -> "Times", FontSlant -> 
+                  "Italic"]}], "}"}], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", 
+        "constructs the onsite block for one s orbital and three p orbitals."\
+, "\n", Cell["   ", "ModInfo"], Cell[BoxData[
+          RowBox[{RowBox[{ButtonBox["SlaterKosterOnsiteBlock", BaseStyle -> 
+                "Link", ButtonData -> 
+                "paclet:TBMethod/ref/SlaterKosterOnsiteBlock"], "[", 
+              "\"spd\"", "]"}], "[", RowBox[{"{", RowBox[{StyleBox["sEnergy", 
+                 "TI", FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                StyleBox["pEnergy", "TI", FontFamily -> "Times", FontSlant -> 
+                  "Italic"], ",", StyleBox["dEnergy", "TI", FontFamily -> 
+                  "Times", FontSlant -> "Italic"]}], "}"}], "]"}]], 
+         "InlineFormula"], " \[LineSeparator]", 
+        "includes the five d orbitals."}], "Usage", CellID -> 847009473], 
+     Cell[TextData[{"The ", Cell[BoxData["\"sp\""], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        " block uses the ordered orbitals ", 
+        Cell[BoxData[FormBox[TagBox["s", HoldForm], TraditionalForm]], 
+         "InlineMath", ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], ", ", 
+        Cell[BoxData[FormBox[TagBox[SubscriptBox["p", "x"], HoldForm], 
+           TraditionalForm]], "InlineMath", ScriptLevel -> 0, 
+         FractionBoxOptions -> {BaseStyle -> {ScriptLevel -> 0}}], ", ", 
+        Cell[BoxData[FormBox[TagBox[SubscriptBox["p", "y"], HoldForm], 
+           TraditionalForm]], "InlineMath", ScriptLevel -> 0, 
+         FractionBoxOptions -> {BaseStyle -> {ScriptLevel -> 0}}], ", ", 
+        Cell[BoxData[FormBox[TagBox[SubscriptBox["p", "z"], HoldForm], 
+           TraditionalForm]], "InlineMath", ScriptLevel -> 0, 
+         FractionBoxOptions -> {BaseStyle -> {ScriptLevel -> 0}}], 
+        " and has dimension ", Cell[BoxData["4"], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], ". The ", Cell[BoxData["\"spd\""], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        " block appends five d orbitals and has dimension ", 
+        Cell[BoxData["9"], "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        "."}], "Notes", CellID -> 918559893], 
+     Cell[TextData[
+       {"The d-orbital order used by the companion hopping implementation is \
+", Cell[BoxData[FormBox[TagBox[SubscriptBox["d", RowBox[{"x", " ", "y"}]], 
+            HoldForm], TraditionalForm]], "InlineMath", ScriptLevel -> 0, 
+         FractionBoxOptions -> {BaseStyle -> {ScriptLevel -> 0}}], ", ", 
+        Cell[BoxData[FormBox[TagBox[SubscriptBox["d", 
+             RowBox[{"y", " ", "z"}]], HoldForm], TraditionalForm]], 
+         "InlineMath", ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], ", ", 
+        Cell[BoxData[FormBox[TagBox[SubscriptBox["d", 
+             RowBox[{"z", " ", "x"}]], HoldForm], TraditionalForm]], 
+         "InlineMath", ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], ", ", 
+        Cell[BoxData[FormBox[TagBox[SubscriptBox["d", 
+             RowBox[{SuperscriptBox["x", "2"], "-", SuperscriptBox["y", 
+                "2"]}]], HoldForm], TraditionalForm]], "InlineMath", 
+         ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], ", and ", 
+        Cell[BoxData[FormBox[TagBox[SubscriptBox["d", 
+             RowBox[{RowBox[{"3", " ", SuperscriptBox["z", "2"]}], "-", 
+               SuperscriptBox["r", "2"]}]], HoldForm], TraditionalForm]], 
+         "InlineMath", ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], ". Every orbital within a shell \
+receives the same supplied onsite energy."}], "Notes", CellID -> 180934810], 
+     Cell[TextData[{"These blocks contain orbital energies only. Add spin \
+degrees of freedom and spin\[Dash]orbit coupling separately when required."}]\
+, "Notes", CellID -> 788329342]}, Open]], 
+  Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 778915891], Cell[TextData[{"Assign one s-orbital energy and a \
+shared energy for the three p orbitals."}], "ExampleText", 
+      CellID -> 1266079121], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 1802375534], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{RowBox[{"SlaterKosterOnsiteBlock", "[", 
+              "\"sp\"", "]"}], "[", RowBox[{"{", RowBox[{"1.", ",", "2."}], 
+              "}"}], "]"}]], "Input", CellID -> 1207294429], 
+        Cell[BoxData[InterpretationBox[RowBox[{TagBox["BlockDiagonalMatrix", 
+              "SummaryHead"], "[", DynamicModuleBox[{Typeset`open$$ = False, 
+               Typeset`embedState$$ = "Ready"}, TemplateBox[{PaneSelectorBox[
+                 {False -> GridBox[{{GraphicsBox[RasterBox[{{{0.235431, 
+                          0.32765, 0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.772061, 0.92462, 
+                          0.998703}}, {{0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.772061, 0.92462, 
+                          0.998703}, {0.235431, 0.32765, 0.833291}}, 
+                         {{0.235431, 0.32765, 0.833291}, {0.772061, 0.92462, 
+                          0.998703}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}}, {{0.282325, 
+                          0.661868, 0.973082}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}}}, {{0, 0}, {4, 4}}, {0, 1}], 
+                       AspectRatio -> 1, Axes -> False, Frame -> False, 
+                       FrameLabel -> {None, None}, FrameStyle -> Directive[
+                         Opacity[0.5], Thickness[Tiny], RGBColor[0.368417, 
+                          0.506779, 0.709798]], FrameTicks -> {{None, None}, 
+                         {None, None}}, GridLinesStyle -> Directive[GrayLevel[
+                          0.5, 0.4]], ImageSize -> Dynamic[{Automatic, 
+                          3.5*(CurrentValue["FontCapHeight"]/
+                          AbsoluteCurrentValue[Magnification])}], Method -> 
+                        {"GridLinesInFront" -> True, "AxisPadding" -> 
+                          Scaled[0.02], "DefaultBoundaryStyle" -> Automatic, 
+                         "DefaultGraphicsInteraction" -> {"Version" -> 1.2, 
+                          "TrackMousePosition" -> {True, False}, "Effects" -> 
+                          {"Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> 
+                          {"ratio" -> 2}, "Droplines" -> 
+                          {"freeformCursorMode" -> True, "placement" -> 
+                          {"x" -> "All", "y" -> "None"}}}}, 
+                         "DefaultPlotStyle" -> Automatic, "DomainPadding" -> 
+                          Scaled[0.02], "RangePadding" -> Scaled[0.05]}], 
+                      GridBox[{{RowBox[{TagBox["\"Dimensions: \"", 
+                          "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                          TagBox[RowBox[{"{", RowBox[{"4", ",", "4"}], "}"}], 
+                          "SummaryItem"]}]}}, GridBoxAlignment -> 
+                        {"Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                       AutoDelete -> False, GridBoxItemSize -> {"Columns" -> 
+                          {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                       GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> 
+                          {{Automatic}}}, BaseStyle -> 
+                        {ShowStringCharacters -> False, NumberMarks -> False, 
+                         PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> 
+                       {{Top}}}, AutoDelete -> False, GridBoxItemSize -> 
+                     {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    BaselinePosition -> {1, 1}], True -> GridBox[
+                    {{GraphicsBox[RasterBox[{{{0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.772061, 0.92462, 0.998703}}, 
+                         {{0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.772061, 0.92462, 0.998703}, 
+                          {0.235431, 0.32765, 0.833291}}, {{0.235431, 
+                          0.32765, 0.833291}, {0.772061, 0.92462, 0.998703}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}}, {{0.282325, 0.661868, 0.973082}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}}}, 
+                        {{0, 0}, {4, 4}}, {0, 1}], AspectRatio -> 1, 
+                       Axes -> False, Frame -> False, FrameLabel -> {None, 
+                         None}, FrameStyle -> Directive[Opacity[0.5], 
+                         Thickness[Tiny], RGBColor[0.368417, 0.506779, 
+                          0.709798]], FrameTicks -> {{None, None}, {None, 
+                          None}}, GridLinesStyle -> Directive[GrayLevel[0.5, 
+                          0.4]], ImageSize -> Dynamic[{Automatic, 3.5*
+                          (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                          Magnification])}], Method -> {"GridLinesInFront" -> 
+                          True, "AxisPadding" -> Scaled[0.02], 
+                         "DefaultBoundaryStyle" -> Automatic, 
+                         "DefaultGraphicsInteraction" -> {"Version" -> 1.2, 
+                          "TrackMousePosition" -> {True, False}, "Effects" -> 
+                          {"Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> 
+                          {"ratio" -> 2}, "Droplines" -> 
+                          {"freeformCursorMode" -> True, "placement" -> 
+                          {"x" -> "All", "y" -> "None"}}}}, 
+                         "DefaultPlotStyle" -> Automatic, "DomainPadding" -> 
+                          Scaled[0.02], "RangePadding" -> Scaled[0.05]}], 
+                      GridBox[{{RowBox[{TagBox["\"Dimensions: \"", 
+                          "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                          TagBox[RowBox[{"{", RowBox[{"4", ",", "4"}], "}"}], 
+                          "SummaryItem"]}]}}, GridBoxAlignment -> 
+                        {"Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                       AutoDelete -> False, GridBoxItemSize -> {"Columns" -> 
+                          {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                       GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> 
+                          {{Automatic}}}, BaseStyle -> 
+                        {ShowStringCharacters -> False, NumberMarks -> False, 
+                         PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> 
+                       {{Top}}}, AutoDelete -> False, GridBoxItemSize -> 
+                     {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    BaselinePosition -> {1, 1}]}, Dynamic[Typeset`open$$], 
+                 ImageSize -> Automatic]}, "SummaryPanel"], 
+              DynamicModuleValues :> {}], "]"}], BlockDiagonalMatrix[
+            StructuredArray`StructuredData[{4, 4}, {{{{1.}}, SparseArray[
+                Automatic, {3, 3}, 0., {1, {{0, 1, 2, 3}, {{1}, {2}, {3}}}, 
+                 {2., 2., 2.}}]}, {1, 2, 3, 4}, {1, 2, 3, 4}}]], 
+           Selectable -> False, Editable -> False, SelectWithContents -> 
+            True]], "Output", CellID -> 1390881409]}, Open]], 
+     Cell[CellGroupData[{Cell[BoxData[InterpretationBox[
+           Cell["\t", "ExampleDelimiter"], $Line = 0; ]], "ExampleDelimiter", 
+         CellID -> 1038677400], Cell[TextData[
+          {"Include the five d orbitals in the onsite energy block."}], 
+         "ExampleText", CellID -> 1860386483], 
+        Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+         CellID -> 857159016], Cell[CellGroupData[
+          {Cell[BoxData[RowBox[{RowBox[{"SlaterKosterOnsiteBlock", "[", 
+                 "\"spd\"", "]"}], "[", RowBox[{"{", RowBox[{"1.", ",", "2.", 
+                   ",", "3."}], "}"}], "]"}]], "Input", 
+            CellID -> 1093878641], Cell[BoxData[InterpretationBox[
+              RowBox[{TagBox["BlockDiagonalMatrix", "SummaryHead"], "[", 
+                DynamicModuleBox[{Typeset`open$$ = False, 
+                  Typeset`embedState$$ = "Ready"}, TemplateBox[
+                  {PaneSelectorBox[{False -> GridBox[{{GraphicsBox[RasterBox[
+                          {{{0.235431, 0.32765, 0.833291}, {0.235431, 
+                          0.32765, 0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.772061, 0.92462, 0.998703}}, 
+                          {{0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.772061, 0.92462, 
+                          0.998703}, {0.235431, 0.32765, 0.833291}}, 
+                          {{0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.772061, 0.92462, 0.998703}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}}, 
+                          {{0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.772061, 0.92462, 0.998703}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}}, 
+                          {{0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.772061, 0.92462, 
+                          0.998703}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}}, 
+                          {{0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.4455703333333332, 0.7494519999999999, 
+                          0.9816223333333334}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}}, {{0.235431, 
+                          0.32765, 0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.4455703333333332, 0.7494519999999999, 
+                          0.9816223333333334}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}}, {{0.235431, 0.32765, 0.833291}, 
+                          {0.4455703333333332, 0.7494519999999999, 
+                          0.9816223333333334}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}}, 
+                          {{0.26669366666666666, 0.550462, 0.926485}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}}}, {{0, 0}, {9, 9}}, {0, 1}], 
+                          AspectRatio -> 1, Axes -> False, Frame -> False, 
+                          FrameLabel -> {None, None}, FrameStyle -> Directive[
+                          Opacity[0.5], Thickness[Tiny], RGBColor[0.368417, 
+                          0.506779, 0.709798]], FrameTicks -> {{None, None}, 
+                          {None, None}}, GridLinesStyle -> Directive[
+                          GrayLevel[0.5, 0.4]], ImageSize -> Dynamic[
+                          {Automatic, 3.5*(CurrentValue["FontCapHeight"]/
+                          AbsoluteCurrentValue[Magnification])}], Method -> 
+                          {"GridLinesInFront" -> True, "AxisPadding" -> 
+                          Scaled[0.02], "DefaultBoundaryStyle" -> Automatic, 
+                          "DefaultGraphicsInteraction" -> {"Version" -> 1.2, 
+                          "TrackMousePosition" -> {True, False}, "Effects" -> 
+                          {"Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> 
+                          {"ratio" -> 2}, "Droplines" -> 
+                          {"freeformCursorMode" -> True, "placement" -> 
+                          {"x" -> "All", "y" -> "None"}}}}, 
+                          "DefaultPlotStyle" -> Automatic, "DomainPadding" -> 
+                          Scaled[0.02], "RangePadding" -> Scaled[0.05]}], 
+                         GridBox[{{RowBox[{TagBox["\"Dimensions: \"", 
+                          "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                          TagBox[RowBox[{"{", RowBox[{"9", ",", "9"}], "}"}], 
+                          "SummaryItem"]}]}}, GridBoxAlignment -> 
+                          {"Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                          AutoDelete -> False, GridBoxItemSize -> 
+                          {"Columns" -> {{Automatic}}, "Rows" -> 
+                          {{Automatic}}}, GridBoxSpacings -> {"Columns" -> 
+                          {{2}}, "Rows" -> {{Automatic}}}, BaseStyle -> 
+                          {ShowStringCharacters -> False, NumberMarks -> 
+                          False, PrintPrecision -> 3, ShowSyntaxStyles -> 
+                          False}]}}, GridBoxAlignment -> {"Columns" -> 
+                          {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> False, 
+                       GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                         "Rows" -> {{Automatic}}}, BaselinePosition -> 
+                        {1, 1}], True -> GridBox[{{GraphicsBox[RasterBox[
+                          {{{0.235431, 0.32765, 0.833291}, {0.235431, 
+                          0.32765, 0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.772061, 0.92462, 0.998703}}, 
+                          {{0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.772061, 0.92462, 
+                          0.998703}, {0.235431, 0.32765, 0.833291}}, 
+                          {{0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.772061, 0.92462, 0.998703}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}}, 
+                          {{0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.772061, 0.92462, 0.998703}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}}, 
+                          {{0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.772061, 0.92462, 
+                          0.998703}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}}, 
+                          {{0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.4455703333333332, 0.7494519999999999, 
+                          0.9816223333333334}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}}, {{0.235431, 
+                          0.32765, 0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.4455703333333332, 0.7494519999999999, 
+                          0.9816223333333334}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}}, {{0.235431, 0.32765, 0.833291}, 
+                          {0.4455703333333332, 0.7494519999999999, 
+                          0.9816223333333334}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}}, 
+                          {{0.26669366666666666, 0.550462, 0.926485}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}, {0.235431, 0.32765, 0.833291}, 
+                          {0.235431, 0.32765, 0.833291}, {0.235431, 0.32765, 
+                          0.833291}}}, {{0, 0}, {9, 9}}, {0, 1}], 
+                          AspectRatio -> 1, Axes -> False, Frame -> False, 
+                          FrameLabel -> {None, None}, FrameStyle -> Directive[
+                          Opacity[0.5], Thickness[Tiny], RGBColor[0.368417, 
+                          0.506779, 0.709798]], FrameTicks -> {{None, None}, 
+                          {None, None}}, GridLinesStyle -> Directive[
+                          GrayLevel[0.5, 0.4]], ImageSize -> Dynamic[
+                          {Automatic, 3.5*(CurrentValue["FontCapHeight"]/
+                          AbsoluteCurrentValue[Magnification])}], Method -> 
+                          {"GridLinesInFront" -> True, "AxisPadding" -> 
+                          Scaled[0.02], "DefaultBoundaryStyle" -> Automatic, 
+                          "DefaultGraphicsInteraction" -> {"Version" -> 1.2, 
+                          "TrackMousePosition" -> {True, False}, "Effects" -> 
+                          {"Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> 
+                          {"ratio" -> 2}, "Droplines" -> 
+                          {"freeformCursorMode" -> True, "placement" -> 
+                          {"x" -> "All", "y" -> "None"}}}}, 
+                          "DefaultPlotStyle" -> Automatic, "DomainPadding" -> 
+                          Scaled[0.02], "RangePadding" -> Scaled[0.05]}], 
+                         GridBox[{{RowBox[{TagBox["\"Dimensions: \"", 
+                          "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                          TagBox[RowBox[{"{", RowBox[{"9", ",", "9"}], "}"}], 
+                          "SummaryItem"]}]}}, GridBoxAlignment -> 
+                          {"Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                          AutoDelete -> False, GridBoxItemSize -> 
+                          {"Columns" -> {{Automatic}}, "Rows" -> 
+                          {{Automatic}}}, GridBoxSpacings -> {"Columns" -> 
+                          {{2}}, "Rows" -> {{Automatic}}}, BaseStyle -> 
+                          {ShowStringCharacters -> False, NumberMarks -> 
+                          False, PrintPrecision -> 3, ShowSyntaxStyles -> 
+                          False}]}}, GridBoxAlignment -> {"Columns" -> 
+                          {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> False, 
+                       GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                         "Rows" -> {{Automatic}}}, BaselinePosition -> 
+                        {1, 1}]}, Dynamic[Typeset`open$$], ImageSize -> 
+                     Automatic]}, "SummaryPanel"], DynamicModuleValues :> 
+                  {}], "]"}], BlockDiagonalMatrix[
+               StructuredArray`StructuredData[{9, 9}, {{{{1.}}, SparseArray[
+                   Automatic, {3, 3}, 0., {1, {{0, 1, 2, 3}, {{1}, {2}, 
+                      {3}}}, {2., 2., 2.}}], SparseArray[Automatic, {5, 5}, 
+                   0., {1, {{0, 1, 2, 3, 4, 5}, {{1}, {2}, {3}, {4}, {5}}}, 
+                    {3., 3., 3., 3., 3.}}]}, {1, 2, 3, 4, 5, 6, 7, 8, 9}, 
+                 {1, 2, 3, 4, 5, 6, 7, 8, 9}}]], Selectable -> False, 
+              Editable -> False, SelectWithContents -> True]], "Output", 
+            CellID -> 1939848521]}, Open]]}, Open]]}, Open]], 
+  Cell[CellGroupData[{Cell["More Examples", "ExtendedExamplesSection", 
+      CellTags -> "ExtendedExamples", CellID -> 1905605493]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 1719174864], 
+     Cell[TextData[{Cell[BoxData[ButtonBox["SlaterKosterHoppingBlock", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/SlaterKosterHoppingBlock"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox[
+           "SlaterKosterSOCOnsiteBlock", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/SlaterKosterSOCOnsiteBlock"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["HMatrixFromHoppings", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/HMatrixFromHoppings"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}]}], "SeeAlso", CellID -> 652911405]}, 
+    Open]], Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 1105525437], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 569122929]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 1123853090], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 1520366556]}, Open]]}, 
+ WindowTitle -> "SlaterKosterOnsiteBlock", Saveable -> True, 
+ Editable -> True, CellContext -> "Global`", 
+ TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]

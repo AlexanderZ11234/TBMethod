@@ -131,7 +131,8 @@ Module[{rf, ri, dm, dp, Bvec, n, \[CurlyPhi]},
 PhaseFactor3DAB[Bz_][ptf:{_, _}, pti:{_, _}] := PhaseFactor3DAB[{0, 0, Bz}][Append[ptf, 0], Append[pti, 0]]
 PhaseFactor3DAB[vecB:{_, _, _}][ptf:{_, _, _}, pti:{_, _, _}] :=
 Module[{\[CurlyPhi]},
-	\[CurlyPhi] = (*2/(2 \[CapitalPhi]0)*)\[Pi] Det[{ptf, vecB, pti}];
+	(*electron: q = -e, e > 0*)
+	\[CurlyPhi] = (*2/(2 \[CapitalPhi]0)*)-\[Pi] Det[{ptf, vecB, pti}];
 	Exp[I \[CurlyPhi]]
 ];
 UGaugeTransformMatrix[innerdof_Integer][{B_, \[Phi]A_}][pts: {__List | __Rule}] :=

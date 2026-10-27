@@ -1,0 +1,258 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 642384925], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 879374169], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 2002974901], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 576097144], Cell["TBMethod`MDConstruct`", "Categorization", 
+      CellLabel -> "Context", CellID -> 1977727017], 
+     Cell["TBMethod/ref/PhotonBlocksTensor", "Categorization", 
+      CellLabel -> "URI", CellID -> 1034054881]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 1358559199], 
+     Cell["PhotonBlocksTensor, tight binding, TBMethod", "Keywords", 
+      CellID -> 934774496]}, Closed]], 
+  Cell[CellGroupData[{Cell["PhotonBlocksTensor", "ObjectName", 
+      CellID -> 106412004], Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{RowBox[{ButtonBox["PhotonBlocksTensor", 
+               BaseStyle -> "Link", ButtonData -> 
+                "paclet:TBMethod/ref/PhotonBlocksTensor"], "[", 
+              RowBox[{StyleBox["matrixModulation", "TI", FontFamily -> 
+                  "Times", FontSlant -> "Italic"], ",", StyleBox["omega", 
+                 "TI", FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                StyleBox["m", "TI", FontFamily -> "Times", FontSlant -> 
+                  "Italic"]}], "]"}], "[", RowBox[{StyleBox["finalPoint", 
+               "TI", FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+              StyleBox["initialPoint", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"]}], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", "constructs Floquet photon factors for a \
+matrix-valued periodic modulation."}], "Usage", CellID -> 1211652956], 
+     Cell[TextData[{Cell[BoxData[StyleBox["matrixModulation", "TI"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], " is a periodic \
+matrix-valued function of a dimensionless angle. Its dimensions are inferred \
+by evaluating ", Cell[BoxData[RowBox[{StyleBox["matrixModulation", "TI"], 
+            "[", "0.123", "]"}]], "InlineFormula", FontFamily -> 
+          "Source Sans Pro"], "."}], "Notes", CellID -> 1565103609], 
+     Cell[TextData[{"Returns two rank-4 tensors with axes ", 
+        Cell[BoxData[RowBox[{"{", RowBox[{StyleBox["internalRow", "TI"], ",", 
+              StyleBox["internalColumn", "TI"], ",", StyleBox["photonRow", 
+               "TI"], ",", StyleBox["photonColumn", "TI"]}], "}"}]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        ". Photon indices run from ", 
+        Cell[BoxData[FormBox[TagBox[RowBox[{"-", "m"}], HoldForm], 
+           TraditionalForm]], "InlineMath", ScriptLevel -> 0, 
+         FractionBoxOptions -> {BaseStyle -> {ScriptLevel -> 0}}], 
+        " through ", Cell[BoxData[StyleBox["m", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], "."}], "Notes", 
+      CellID -> 123957955], Cell[TextData[{"For distinct sites, the first \
+tensor contains Fourier coefficients at ", 
+        Cell[BoxData[RowBox[{StyleBox["columnIndex", "TI"], "-", 
+            StyleBox["rowIndex", "TI"]}]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " and the second is zero. For \
+coincident sites, the first is the internal/photon identity tensor and the \
+second includes the Fourier tensor and a diagonal photon-energy shift of ", 
+        Cell[BoxData[FormBox[TagBox[RowBox[{RowBox[{"-", "n"}], " ", 
+              "\[Omega]"}], HoldForm], TraditionalForm]], "InlineMath", 
+         ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], ", where ", 
+        Cell[BoxData[FormBox[TagBox["n", HoldForm], TraditionalForm]], 
+         "InlineMath", ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], " is the photon index."}], 
+      "Notes", CellID -> 1061837692], 
+     Cell[TextData[{"Coincidence is detected using a distance threshold of ", 
+        Cell[BoxData["0.00001"], "InlineFormula", FontFamily -> 
+          "Source Sans Pro"], ". Combine the tensors with ", 
+        Cell[BoxData[ButtonBox["PhotonDressTensor", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/PhotonDressTensor"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], "."}], "Notes", 
+      CellID -> 1180924330], 
+     Cell[TextData[{"Uses ", Cell[BoxData[ButtonBox["FourierCoefficient", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:ref/FourierCoefficient"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " and ", 
+        Cell[BoxData[ButtonBox["FullSimplify", BaseStyle -> "Link", 
+           ButtonData -> "paclet:ref/FullSimplify"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], ". Options of ", 
+        Cell[BoxData[ButtonBox["FourierCoefficient", BaseStyle -> "Link", 
+           ButtonData -> "paclet:ref/FourierCoefficient"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " are accepted."}], "Notes", 
+      CellID -> 1478909334]}, Open]], 
+  Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 1603254980], Cell[TextData[{"Use opposite cosine modulations \
+for two internal components and inspect their photon couplings."}], 
+      "ExampleText", CellID -> 396989501], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 871348763], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{RowBox[{"modulation", "=", RowBox[{"Function", 
+                "[", RowBox[{"angle", ",", RowBox[{RowBox[{"Cos", "[", 
+                      "angle", "]"}], " ", RowBox[{"PauliMatrix", "[", "3", 
+                      "]"}]}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{RowBox[{"PhotonBlocksTensor", "[", RowBox[{"modulation", 
+                  ",", "2.", ",", "1"}], "]"}], "[", RowBox[{RowBox[
+                 {"{", RowBox[{"1.", ",", "0."}], "}"}], ",", RowBox[
+                 {"{", RowBox[{"0.", ",", "0."}], "}"}]}], "]"}]}]], "Input", 
+         CellID -> 1229185857], Cell[BoxData[
+          RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{RowBox[{"{", RowBox[
+                     {RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{"0", ",", 
+                          FractionBox["1", "2"], ",", "0"}], "}"}], ",", 
+                          RowBox[{"{", RowBox[{FractionBox["1", "2"], ",", 
+                          "0", ",", FractionBox["1", "2"]}], "}"}], ",", 
+                          RowBox[{"{", RowBox[{"0", ",", FractionBox["1", 
+                          "2"], ",", "0"}], "}"}]}], "}"}], ",", RowBox[
+                       {"{", RowBox[{RowBox[{"{", RowBox[{"0", ",", "0", ",", 
+                          "0"}], "}"}], ",", RowBox[{"{", RowBox[{"0", ",", 
+                          "0", ",", "0"}], "}"}], ",", RowBox[{"{", RowBox[
+                          {"0", ",", "0", ",", "0"}], "}"}]}], "}"}]}], 
+                    "}"}], ",", RowBox[{"{", RowBox[{RowBox[{"{", RowBox[
+                         {RowBox[{"{", RowBox[{"0", ",", "0", ",", "0"}], 
+                          "}"}], ",", RowBox[{"{", RowBox[{"0", ",", "0", 
+                          ",", "0"}], "}"}], ",", RowBox[{"{", RowBox[{"0", 
+                          ",", "0", ",", "0"}], "}"}]}], "}"}], ",", 
+                      RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{"0", ",", 
+                          RowBox[{"-", FractionBox["1", "2"]}], ",", "0"}], 
+                          "}"}], ",", RowBox[{"{", RowBox[{RowBox[{"-", 
+                          FractionBox["1", "2"]}], ",", "0", ",", RowBox[
+                          {"-", FractionBox["1", "2"]}]}], "}"}], ",", 
+                          RowBox[{"{", RowBox[{"0", ",", RowBox[{"-", 
+                          FractionBox["1", "2"]}], ",", "0"}], "}"}]}], 
+                        "}"}]}], "}"}]}], "}"}], ",", InterpretationBox[
+               RowBox[{TagBox["SparseArray", "SummaryHead"], "[", 
+                 DynamicModuleBox[{Typeset`open$$ = False, 
+                   Typeset`embedState$$ = "Ready"}, TemplateBox[
+                   {PaneSelectorBox[{False -> GridBox[{{PaneBox[ButtonBox[
+                          DynamicBox[FEPrivate`FrontEndResource["FEBitmaps", 
+                          "SummaryBoxOpener"]], ButtonFunction :> 
+                          (Typeset`open$$ = True), Appearance -> None, 
+                          BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+                          "Preemptive"], Alignment -> {Center, Center}, 
+                          ImageSize -> Dynamic[{Automatic, 3.5*(CurrentValue[
+                          "FontCapHeight"]/AbsoluteCurrentValue[
+                          Magnification])}]], GraphicsBox[RasterBox[
+                          SparseArray[Automatic, {10, 10}, 0.93, {1, 
+                          {{0, 1, 1, 4, 4, 5, 6, 6, 8, 10, 13}, {{4}, {6}, 
+                          {7}, {10}, {5}, {9}, {3}, {8}, {5}, {7}, {2}, {3}, 
+                          {7}}}, {0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 
+                          0., 0.}}], {{0, 0}, {10, 10}}, {0, 1}], Frame -> 
+                          False, Axes -> False, AspectRatio -> 1, 
+                          ImageSize -> Dynamic[{Automatic, 3.5*(CurrentValue[
+                          "FontCapHeight"]/AbsoluteCurrentValue[
+                          Magnification])}], Frame -> True, FrameTicks -> 
+                          None, FrameStyle -> Directive[Opacity[0.5], 
+                          Thickness[Tiny], RGBColor[0.368417, 0.506779, 
+                          0.709798]], FrameLabel -> {None, None}, 
+                          FrameTicks -> {{None, None}, {None, None}}], 
+                          GridBox[{{RowBox[{TagBox[
+                          "\"Specified elements: \"", 
+                          "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                          TagBox["0", "SummaryItem"]}]}, {RowBox[{TagBox[
+                          "\"Dimensions: \"", "SummaryItemAnnotation"], 
+                          "\[InvisibleSpace]", TagBox[RowBox[{"{", RowBox[
+                          {"2", ",", "2", ",", "3", ",", "3"}], "}"}], 
+                          "SummaryItem"]}]}}, GridBoxAlignment -> 
+                          {"Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                          AutoDelete -> False, GridBoxItemSize -> 
+                          {"Columns" -> {{Automatic}}, "Rows" -> 
+                          {{Automatic}}}, GridBoxSpacings -> {"Columns" -> 
+                          {{2}}, "Rows" -> {{Automatic}}}, BaseStyle -> 
+                          {ShowStringCharacters -> False, NumberMarks -> 
+                          False, PrintPrecision -> 3, ShowSyntaxStyles -> 
+                          False}]}}, GridBoxAlignment -> {"Columns" -> 
+                          {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> False, 
+                        GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                          "Rows" -> {{Automatic}}}, BaselinePosition -> 
+                         {1, 1}], True -> GridBox[{{PaneBox[ButtonBox[
+                          DynamicBox[FEPrivate`FrontEndResource["FEBitmaps", 
+                          "SummaryBoxCloser"]], ButtonFunction :> 
+                          (Typeset`open$$ = False), Appearance -> None, 
+                          BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+                          "Preemptive"], Alignment -> {Center, Center}, 
+                          ImageSize -> Dynamic[{Automatic, 3.5*(CurrentValue[
+                          "FontCapHeight"]/AbsoluteCurrentValue[
+                          Magnification])}]], GraphicsBox[RasterBox[
+                          SparseArray[Automatic, {10, 10}, 0.93, {1, 
+                          {{0, 1, 1, 4, 4, 5, 6, 6, 8, 10, 13}, {{4}, {6}, 
+                          {7}, {10}, {5}, {9}, {3}, {8}, {5}, {7}, {2}, {3}, 
+                          {7}}}, {0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 
+                          0., 0.}}], {{0, 0}, {10, 10}}, {0, 1}], Frame -> 
+                          False, Axes -> False, AspectRatio -> 1, 
+                          ImageSize -> Dynamic[{Automatic, 3.5*(CurrentValue[
+                          "FontCapHeight"]/AbsoluteCurrentValue[
+                          Magnification])}], Frame -> True, FrameTicks -> 
+                          None, FrameStyle -> Directive[Opacity[0.5], 
+                          Thickness[Tiny], RGBColor[0.368417, 0.506779, 
+                          0.709798]], FrameLabel -> {None, None}, 
+                          FrameTicks -> {{None, None}, {None, None}}], 
+                          GridBox[{{RowBox[{TagBox[
+                          "\"Specified elements: \"", 
+                          "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                          TagBox["0", "SummaryItem"]}]}, {RowBox[{TagBox[
+                          "\"Dimensions: \"", "SummaryItemAnnotation"], 
+                          "\[InvisibleSpace]", TagBox[RowBox[{"{", RowBox[
+                          {"2", ",", "2", ",", "3", ",", "3"}], "}"}], 
+                          "SummaryItem"]}]}, {RowBox[{TagBox["\"Default: \"", 
+                          "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                          TagBox["0", "SummaryItem"]}]}, {RowBox[{TagBox[
+                          "\"Density: \"", "SummaryItemAnnotation"], 
+                          "\[InvisibleSpace]", TagBox["0.`", 
+                          "SummaryItem"]}]}, {RowBox[{TagBox[
+                          "\"Elements: \"", "SummaryItemAnnotation"], 
+                          "\[InvisibleSpace]", TagBox["None", 
+                          "SummaryItem"]}]}}, GridBoxAlignment -> 
+                          {"Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                          AutoDelete -> False, GridBoxItemSize -> 
+                          {"Columns" -> {{Automatic}}, "Rows" -> 
+                          {{Automatic}}}, GridBoxSpacings -> {"Columns" -> 
+                          {{2}}, "Rows" -> {{Automatic}}}, BaseStyle -> 
+                          {ShowStringCharacters -> False, NumberMarks -> 
+                          False, PrintPrecision -> 3, ShowSyntaxStyles -> 
+                          False}]}}, GridBoxAlignment -> {"Columns" -> 
+                          {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> False, 
+                        GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                          "Rows" -> {{Automatic}}}, BaselinePosition -> 
+                         {1, 1}]}, Dynamic[Typeset`open$$], ImageSize -> 
+                      Automatic]}, "SummaryPanel"], DynamicModuleValues :> 
+                   {}], "]"}], SparseArray[Automatic, {2, 2, 3, 3}, 0, 
+                {1, {{0, 0, 0}, {}}, {}}], Selectable -> False, Editable -> 
+                False, SelectWithContents -> True]}], "}"}]], "Output", 
+         CellID -> 206348911]}, Open]]}, Open]], 
+  Cell[CellGroupData[{Cell["More Examples", "ExtendedExamplesSection", 
+      CellTags -> "ExtendedExamples", CellID -> 732797100]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 1236833030], 
+     Cell[TextData[{Cell[BoxData[ButtonBox["NPhotonBlocksTensor", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/NPhotonBlocksTensor"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["PhotonDressTensor", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/PhotonDressTensor"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["PhotonBlocks", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/PhotonBlocks"]], "InlineSeeAlsoFunction", 
+         TaggingRules -> {"PageType" -> "Function"}], 
+        StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"], 
+        Cell[BoxData[ButtonBox["FourierCoefficient", BaseStyle -> "Link", 
+           ButtonData -> "paclet:ref/FourierCoefficient"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}]}], "SeeAlso", CellID -> 783263279]}, 
+    Open]], Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 442964484], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 1824784157]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 1044334960], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 454442982]}, Open]]}, WindowTitle -> "PhotonBlocksTensor", 
+ Saveable -> True, Editable -> True, CellContext -> "Global`", 
+ TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]

@@ -1,0 +1,121 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 407059112], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 1195783028], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 842018520], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 796513569], Cell["TBMethod`EigenSpect`", "Categorization", 
+      CellLabel -> "Context", CellID -> 1583172517], 
+     Cell["TBMethod/ref/ParallelLocalBandGap", "Categorization", 
+      CellLabel -> "URI", CellID -> 1701796238]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 1843819450], 
+     Cell["ParallelLocalBandGap, tight binding, TBMethod", "Keywords", 
+      CellID -> 652301213]}, Closed]], 
+  Cell[CellGroupData[{Cell["ParallelLocalBandGap", "ObjectName", 
+      CellID -> 1930239687], Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["ParallelLocalBandGap", 
+             BaseStyle -> "Link", ButtonData -> 
+              "paclet:TBMethod/ref/ParallelLocalBandGap"], "[", 
+            RowBox[{StyleBox["h", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"], ",", StyleBox["samples", "TI", FontFamily -> 
+                "Times", FontSlant -> "Italic"], ",", StyleBox["n", "TI", 
+               FontFamily -> "Times", FontSlant -> "Italic"]}], "]"}]], 
+         "InlineFormula"], " \[LineSeparator]", "finds the smallest sampled \
+direct band gap with independent eigensystem calculations on parallel \
+kernels."}], "Usage", CellID -> 255871020], 
+     Cell[TextData[{"Uses ", Cell[BoxData[ButtonBox["ParallelTable", 
+           BaseStyle -> "Link", ButtonData -> "paclet:ref/ParallelTable"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], " over the same \
+nonempty real scalar or real-vector samples required by ", 
+        Cell[BoxData[ButtonBox["LocalBandGap", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/LocalBandGap"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], ", matching ", 
+        Cell[BoxData[RowBox[{"{", RowBox[{RowBox[{"(", RowBox[
+                 {RowBox[{"{", "__Real", "}"}], "|", "_Real"}], ")"}], 
+              ".."}], "}"}]], "InlineFormula", FontFamily -> 
+          "Source Sans Pro"], "."}], "Notes", CellID -> 482648568], 
+     Cell[TextData[{"Returns the smallest direct gap ", 
+        Cell[BoxData[FormBox[TagBox[RowBox[{RowBox[{SubscriptBox[
+                 "\[ExponentialE]", RowBox[{"n", "+", "1"}]], "(", "k", 
+                ")"}], "-", RowBox[{SubscriptBox["\[ExponentialE]", "n"], 
+                "(", "k", ")"}]}], HoldForm], TraditionalForm]], 
+         "InlineMath", ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], 
+        " over the supplied samples, after ", 
+        Cell[BoxData[ButtonBox["Chop", BaseStyle -> "Link", 
+           ButtonData -> "paclet:ref/Chop"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], ". ", 
+        Cell[BoxData[StyleBox["n", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " indexes sorted eigenvalues."}], 
+      "Notes", CellID -> 128050373], 
+     Cell[TextData[
+       {"Load TBMethod and make the model available on subkernels. Options \
+for ", Cell[BoxData[ButtonBox["Eigenvalues", BaseStyle -> "Link", 
+           ButtonData -> "paclet:ref/Eigenvalues"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " are accepted, with ", 
+        Cell[BoxData[RowBox[{ButtonBox["Method", BaseStyle -> "Link", 
+             ButtonData -> "paclet:ref/Method"], "\[Rule]", "\"Direct\""}]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        " supplied internally."}], "Notes", CellID -> 2020919137], 
+     Cell[TextData[{"The example launches two kernels only if no kernels are \
+already running."}], "Notes", CellID -> 525648622]}, Open]], 
+  Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 1432185339], 
+     Cell[TextData[
+       {"Calculate a constant direct gap over three samples in parallel."}], 
+      "ExampleText", CellID -> 643214649], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 348002814], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{RowBox[{"If", "[", RowBox[{RowBox[
+                 {"$KernelCount", "\[Equal]", "0"}], ",", RowBox[
+                 {"LaunchKernels", "[", "2", "]"}]}], "]"}], ";", 
+            "\[IndentingNewLine]", RowBox[{"ParallelNeeds", "[", 
+              "\"TBMethod`\"", "]"}], ";", "\[IndentingNewLine]", 
+            RowBox[{"Clear", "[", "h", "]"}], ";", "\[IndentingNewLine]", 
+            RowBox[{RowBox[{"h", "[", "k_", "]"}], ":=", RowBox[{
+                "DiagonalMatrix", "[", RowBox[{"{", RowBox[{RowBox[{"k", "-", 
+                      "1."}], ",", RowBox[{"k", "+", "1."}]}], "}"}], 
+                "]"}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"DistributeDefinitions", "[", "h", "]"}], ";", 
+            "\[IndentingNewLine]", RowBox[{"ParallelLocalBandGap", "[", 
+              RowBox[{"h", ",", RowBox[{"{", RowBox[{RowBox[{"-", "0.5"}], 
+                    ",", "0.", ",", "0.5"}], "}"}], ",", "1"}], "]"}]}]], 
+         "Input", CellID -> 1285828737], Cell[BoxData["2.`"], "Output", 
+         CellID -> 1497936515]}, Open]]}, Open]], 
+  Cell[CellGroupData[{Cell["More Examples", "ExtendedExamplesSection", 
+      CellTags -> "ExtendedExamples", CellID -> 957653114]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 1445443238], 
+     Cell[TextData[{Cell[BoxData[ButtonBox["LocalBandGap", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/LocalBandGap"]], "InlineSeeAlsoFunction", 
+         TaggingRules -> {"PageType" -> "Function"}], 
+        StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"], 
+        Cell[BoxData[ButtonBox["ParallelGlobalBandGap", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/ParallelGlobalBandGap"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["ParallelBandData", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/ParallelBandData"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}]}], "SeeAlso", CellID -> 1440176034]}, 
+    Open]], Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 1371854428], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 2074682521]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 832280690], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 1235874121]}, Open]]}, WindowTitle -> "ParallelLocalBandGap", 
+ Saveable -> True, Editable -> True, CellContext -> "Global`", 
+ TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]

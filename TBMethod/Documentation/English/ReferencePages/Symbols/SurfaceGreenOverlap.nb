@@ -1,0 +1,165 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 597104859], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 504044315], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 298844772], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 1188563147], Cell["TBMethod`LGFF`", "Categorization", 
+      CellLabel -> "Context", CellID -> 1615251456], 
+     Cell["TBMethod/ref/SurfaceGreenOverlap", "Categorization", 
+      CellLabel -> "URI", CellID -> 1642607668]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 1159557787], 
+     Cell["SurfaceGreenOverlap, tight binding, TBMethod", "Keywords", 
+      CellID -> 1399809340]}, Closed]], 
+  Cell[CellGroupData[{Cell["SurfaceGreenOverlap", "ObjectName", 
+      CellID -> 1932388622], Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["SurfaceGreenOverlap", 
+             BaseStyle -> "Link", ButtonData -> 
+              "paclet:TBMethod/ref/SurfaceGreenOverlap"], "[", 
+            RowBox[{StyleBox["z", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"], ",", RowBox[{"{", RowBox[{RowBox[{"{", RowBox[
+                     {StyleBox["h0", "TI", FontFamily -> "Times", 
+                       FontSlant -> "Italic"], ",", StyleBox["h1", "TI", 
+                       FontFamily -> "Times", FontSlant -> "Italic"]}], 
+                    "}"}], ",", RowBox[{"{", RowBox[{StyleBox["s0", "TI", 
+                       FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                      StyleBox["s1", "TI", FontFamily -> "Times", 
+                       FontSlant -> "Italic"]}], "}"}]}], "}"}]}], "]"}]], 
+         "InlineFormula"], " \[LineSeparator]", "computes the lead surface \
+Green matrix with onsite and interlayer overlap matrices ", 
+        Cell[BoxData[StyleBox["s0", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], " and ", 
+        Cell[BoxData[StyleBox["s1", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], ".", "\n", 
+        Cell["   ", "ModInfo"], Cell[BoxData[
+          RowBox[{ButtonBox["SurfaceGreenOverlap", BaseStyle -> "Link", 
+             ButtonData -> "paclet:TBMethod/ref/SurfaceGreenOverlap"], "[", 
+            RowBox[{StyleBox["z", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"], ",", RowBox[{"{", RowBox[{RowBox[{"{", RowBox[
+                     {StyleBox["h0", "TI", FontFamily -> "Times", 
+                       FontSlant -> "Italic"], ",", StyleBox["h1", "TI", 
+                       FontFamily -> "Times", FontSlant -> "Italic"]}], 
+                    "}"}], ",", RowBox[{"{", RowBox[{StyleBox["s0", "TI", 
+                       FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                      StyleBox["s1", "TI", FontFamily -> "Times", 
+                       FontSlant -> "Italic"]}], "}"}]}], "}"}], ",", 
+              StyleBox["mode", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"]}], "]"}]], "InlineFormula"], " \[LineSeparator]", 
+        "uses the specified surface-Green algorithm."}], "Usage", 
+      CellID -> 610620466], 
+     Cell[TextData[{Cell[BoxData[StyleBox["s0", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " and ", 
+        Cell[BoxData[StyleBox["s1", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        " are the onsite and interlayer overlap blocks, matching ", 
+        Cell[BoxData[StyleBox["h0", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " and ", 
+        Cell[BoxData[StyleBox["h1", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " in size."}], "Notes", 
+      CellID -> 1847050706], Cell[TextData[{"The energy-dependent upper and \
+lower transformed hoppings are retained separately at complex energy. The \
+upper coupling is not formed by conjugating the already transformed lower \
+coupling."}], "Notes", CellID -> 108704371], 
+     Cell[TextData[{"The default ", Cell[BoxData[StyleBox["mode", "TI"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], " is ", 
+        Cell[BoxData["3"], "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        ". Algorithms and the singular-value regularization option follow ", 
+        Cell[BoxData[ButtonBox["SurfaceGreen", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/SurfaceGreen"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], "."}], "Notes", 
+      CellID -> 499599101], Cell[TextData[{"The nonorthogonal lead satisfies \
+the corresponding surface resolvent equation", "\[LineSeparator]", 
+        Cell[BoxData[FormBox[TagBox[RowBox[{RowBox[{SubscriptBox["g", "s"], 
+                "(", "z", ")"}], "\[LongEqual]", TemplateBox[{RowBox[
+                 {"(", RowBox[{RowBox[{"z", " ", SubscriptBox["s", "0"]}], 
+                    "-", SubscriptBox["h", "0"], "-", RowBox[{RowBox[
+                       {"(", RowBox[{SubscriptBox["h", "1"], "-", RowBox[
+                          {"z", " ", SubscriptBox["s", "1"]}]}], ")"}], ".", 
+                      RowBox[{SubscriptBox["g", "s"], "(", "z", ")"}], ".", 
+                      RowBox[{"(", RowBox[{TemplateBox[{RowBox[{"(", 
+                          SubscriptBox["h", "1"], ")"}]}, 
+                          "ConjugateTranspose", SyntaxForm -> 
+                          SuperscriptBox], "-", RowBox[{"z", " ", TemplateBox[
+                          {RowBox[{"(", SubscriptBox["s", "1"], ")"}]}, 
+                          "ConjugateTranspose", SyntaxForm -> 
+                          SuperscriptBox]}]}], ")"}]}]}], ")"}]}, "Inverse", 
+               SyntaxForm -> SuperscriptBox]}], HoldForm], TraditionalForm]], 
+         "InlineMath", ScriptLevel -> 0, FontSize -> 14, 
+         FractionBoxOptions -> {BaseStyle -> {ScriptLevel -> 0}}]}], "Notes", 
+      CellID -> 1243210473]}, Open]], 
+  Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 240174873], 
+     Cell[TextData[
+       {"Use the default generalized transfer-matrix algorithm."}], 
+      "ExampleText", CellID -> 1336742363], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 847125000], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{"SurfaceGreenOverlap", "[", 
+            RowBox[{RowBox[{"1.5", " ", "\[ImaginaryI]"}], ",", 
+              RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{RowBox[{"{", 
+                        RowBox[{"{", "0.", "}"}], "}"}], ",", RowBox[
+                       {"{", RowBox[{"{", RowBox[{"-", "1."}], "}"}], 
+                        "}"}]}], "}"}], ",", RowBox[{"{", RowBox[
+                     {RowBox[{"{", RowBox[{"{", "1.", "}"}], "}"}], ",", 
+                      RowBox[{"{", RowBox[{"{", "0.", "}"}], "}"}]}], 
+                    "}"}]}], "}"}]}], "]"}]], "Input", CellID -> 906367502], 
+        Cell[BoxData[RowBox[{"{", RowBox[{"{", RowBox[{RowBox[{"0.`", 
+                  "\[VeryThinSpace]"}], "-", RowBox[{"0.5`", " ", 
+                  "\[ImaginaryI]"}]}], "}"}], "}"}]], "Output", 
+         CellID -> 1533115903]}, Open]], 
+     Cell[CellGroupData[{Cell[BoxData[InterpretationBox[
+           Cell["\t", "ExampleDelimiter"], $Line = 0; ]], "ExampleDelimiter", 
+         CellID -> 1355520562], Cell[TextData[{"Identity onsite overlap and \
+zero interlayer overlap reproduce an orthogonal chain."}], "ExampleText", 
+         CellID -> 1914196843], Cell[BoxData[RowBox[{"Needs", "[", 
+            "\"TBMethod`\"", "]"}]], "Input", CellID -> 1082809668], 
+        Cell[CellGroupData[{Cell[BoxData[RowBox[{"SurfaceGreenOverlap", "[", 
+               RowBox[{RowBox[{"1.5", " ", "\[ImaginaryI]"}], ",", 
+                 RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{RowBox[{"{", 
+                          RowBox[{"{", "0.", "}"}], "}"}], ",", RowBox[
+                          {"{", RowBox[{"{", RowBox[{"-", "1."}], "}"}], 
+                          "}"}]}], "}"}], ",", RowBox[{"{", RowBox[
+                        {RowBox[{"{", RowBox[{"{", "1.", "}"}], "}"}], ",", 
+                         RowBox[{"{", RowBox[{"{", "0.", "}"}], "}"}]}], 
+                       "}"}]}], "}"}], ",", "1"}], "]"}]], "Input", 
+            CellID -> 1007679540], Cell[BoxData[RowBox[{"{", RowBox[
+                {"{", RowBox[{RowBox[{"0.`", "\[VeryThinSpace]"}], "-", 
+                   RowBox[{"0.5`", " ", "\[ImaginaryI]"}]}], "}"}], "}"}]], 
+            "Output", CellID -> 1711700451]}, Open]]}, Open]]}, Open]], 
+  Cell[CellGroupData[{Cell["More Examples", "ExtendedExamplesSection", 
+      CellTags -> "ExtendedExamples", CellID -> 1382662877]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 830267075], 
+     Cell[TextData[{Cell[BoxData[ButtonBox["SurfaceGreen", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/SurfaceGreen"]], "InlineSeeAlsoFunction", 
+         TaggingRules -> {"PageType" -> "Function"}], 
+        StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"], 
+        Cell[BoxData[ButtonBox["SigmaOverlap", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/SigmaOverlap"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["HLeadBlocks", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/HLeadBlocks"]], "InlineSeeAlsoFunction", 
+         TaggingRules -> {"PageType" -> "Function"}]}], "SeeAlso", 
+      CellID -> 760524050]}, Open]], 
+  Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 1878406208], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 905761188]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 1474095074], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 1599127867]}, Open]]}, WindowTitle -> "SurfaceGreenOverlap", 
+ Saveable -> True, Editable -> True, CellContext -> "Global`", 
+ TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]

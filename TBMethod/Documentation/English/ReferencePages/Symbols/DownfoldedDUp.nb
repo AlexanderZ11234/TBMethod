@@ -1,0 +1,198 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 1955413464], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 836298510], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 1491880128], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 1334409914], Cell["TBMethod`MDConstruct`", "Categorization", 
+      CellLabel -> "Context", CellID -> 409332335], 
+     Cell["TBMethod/ref/DownfoldedDUp", "Categorization", CellLabel -> "URI", 
+      CellID -> 459477070]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 243892019], Cell["DownfoldedDUp, tight binding, TBMethod", 
+      "Keywords", CellID -> 141335531]}, Closed]], 
+  Cell[CellGroupData[{Cell["DownfoldedDUp", "ObjectName", 
+      CellID -> 184391470], Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{RowBox[{ButtonBox["DownfoldedDUp", BaseStyle -> 
+                "Link", ButtonData -> "paclet:TBMethod/ref/DownfoldedDUp"], 
+              "[", StyleBox["crystal", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"], "]"}], "[", StyleBox[
+             "effectiveHoppings", "TI", FontFamily -> "Times", 
+             FontSlant -> "Italic"], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", "returns the longest distance associated with a \
+retained site-to-site block in ", Cell[BoxData[StyleBox["effectiveHoppings", 
+           "TI", FontFamily -> "Times", FontSlant -> "Italic"]], 
+         "InlineFormula"], ".", "\n", Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{RowBox[{ButtonBox["DownfoldedDUp", BaseStyle -> 
+                "Link", ButtonData -> "paclet:TBMethod/ref/DownfoldedDUp"], 
+              "[", RowBox[{StyleBox["crystal", "TI", FontFamily -> "Times", 
+                 FontSlant -> "Italic"], ",", StyleBox["opts", "TI", 
+                 FontFamily -> "Times", FontSlant -> "Italic"]}], "]"}], "[", 
+            StyleBox["effectiveHoppings", "TI", FontFamily -> "Times", 
+             FontSlant -> "Italic"], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", "uses option settings ", 
+        Cell[BoxData[StyleBox["opts", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], 
+        " to determine which hopping blocks are retained."}], "Usage", 
+      CellID -> 565359051], 
+     Cell[TextData[{Cell[BoxData[StyleBox["crystal", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " is a nonempty association of \
+cell translations with site-coordinate lists. The coordinates in its first \
+cell supply the basis positions and site ordering. Labeled sites of the form \
+", Cell[BoxData[RowBox[{StyleBox["label", "TI"], "\[Rule]", 
+            StyleBox["position", "TI"]}]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " are also accepted."}], "Notes", 
+      CellID -> 802271024], 
+     Cell[TextData[{Cell[BoxData[StyleBox["effectiveHoppings", "TI"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], " maps \
+displacement vectors to square hopping matrices. Each matrix must have equal \
+internal dimension per site and a matrix size divisible by the number of \
+basis sites."}], "Notes", CellID -> 1016644864], 
+     Cell[TextData[{"Every supplied displacement is examined, including the \
+zero displacement. The matrix is partitioned into site-to-site internal \
+blocks, and only retained blocks contribute distances."}], "Notes", 
+      CellID -> 1802124139], Cell[TextData[{"The string-named option ", 
+        Cell[BoxData[RowBox[{"\"ZeroThreshold\"", "\[Rule]", "0.00001"}]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], " is the default. \
+A numeric block is discarded when the largest absolute value of its entries \
+is less than or equal to this threshold."}], "Notes", CellID -> 427449942], 
+     Cell[TextData[{"For a nonnumeric block, all entries must satisfy ", 
+        Cell[BoxData[ButtonBox["PossibleZeroQ", BaseStyle -> "Link", 
+           ButtonData -> "paclet:ref/PossibleZeroQ"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " for the block to be discarded. A \
+symbolic entry that cannot be recognized as zero keeps its block."}], 
+      "Notes", CellID -> 1180593144], 
+     Cell[TextData[{"The return value is a nonnegative distance when at least \
+one block is retained. An empty hopping association, or one with no retained \
+blocks, returns ", Cell[BoxData[RowBox[{"-", "\[Infinity]"}]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], "."}], "Notes", 
+      CellID -> 635529244], Cell[TextData[{"The current interface takes no \
+original-hoppings association or original distance cutoff. It measures the \
+supplied association directly, including bonds within displacement keys that \
+were already present before downfolding."}], "Notes", CellID -> 1339785259], 
+     Cell[TextData[{"For each retained block from site ", 
+        Cell[BoxData[FormBox[TagBox["j", HoldForm], TraditionalForm]], 
+         "InlineMath", ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], " to site ", 
+        Cell[BoxData[FormBox[TagBox["i", HoldForm], TraditionalForm]], 
+         "InlineMath", ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], 
+        ", the distance uses basis-position vectors ", 
+        Cell[BoxData[FormBox[TagBox[StyleBox[SubscriptBox["r", "i"], 
+             FontWeight -> "Bold", FontSlant -> "Italic", StripOnInput -> 
+              False], HoldForm], TraditionalForm]], "InlineMath", 
+         ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], " and ", 
+        Cell[BoxData[FormBox[TagBox[StyleBox[SubscriptBox["r", "j"], 
+             FontWeight -> "Bold", FontSlant -> "Italic", StripOnInput -> 
+              False], HoldForm], TraditionalForm]], "InlineMath", 
+         ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], " and displacement ", 
+        Cell[BoxData[FormBox[TagBox[StyleBox["R", FontWeight -> "Bold", 
+             FontSlant -> "Italic", StripOnInput -> False], HoldForm], 
+           TraditionalForm]], "InlineMath", ScriptLevel -> 0, 
+         FractionBoxOptions -> {BaseStyle -> {ScriptLevel -> 0}}], 
+        ". The result is the maximum of these distances:", 
+        "\[LineSeparator]", Cell[BoxData[FormBox[
+           TagBox[RowBox[{SubscriptBox["d", RowBox[{"{", RowBox[{"i", ",", 
+                   "j"}], "}"}]], "\[LongEqual]", TemplateBox[{
+                RowBox[{StyleBox[SubscriptBox["r", "i"], FontWeight -> 
+                    "Bold", FontSlant -> "Italic", StripOnInput -> False], 
+                  "+", StyleBox["R", FontWeight -> "Bold", FontSlant -> 
+                    "Italic", StripOnInput -> False], "-", StyleBox[
+                   SubscriptBox["r", "j"], FontWeight -> "Bold", FontSlant -> 
+                    "Italic", StripOnInput -> False]}]}, "Norm"]}], 
+            HoldForm], TraditionalForm]], "InlineMath", ScriptLevel -> 0, 
+         FontSize -> 14, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}]}], "Notes", 
+      CellID -> 387888782]}, Open]], 
+  Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 1085126430], 
+     Cell[TextData[
+       {"Find the longest retained hopping distance in a one-site chain."}], 
+      "ExampleText", CellID -> 455548696], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 447229147], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{RowBox[{"crystal", "=", RowBox[{"Association", 
+                "[", RowBox[{RowBox[{"{", RowBox[{"0.", ",", "0."}], "}"}], 
+                  "\[Rule]", RowBox[{"{", RowBox[{"{", RowBox[{"0.", ",", 
+                        "0."}], "}"}], "}"}]}], "]"}]}], ";", 
+            "\[IndentingNewLine]", RowBox[{"effective", "=", 
+              RowBox[{"Association", "[", RowBox[{RowBox[{RowBox[{"{", 
+                      RowBox[{"1.", ",", "0."}], "}"}], "\[Rule]", 
+                    RowBox[{"SparseArray", "[", RowBox[{"{", RowBox[{"{", 
+                          RowBox[{"-", "1."}], "}"}], "}"}], "]"}]}], ",", 
+                  RowBox[{RowBox[{"{", RowBox[{"2.", ",", "0."}], "}"}], 
+                    "\[Rule]", RowBox[{"SparseArray", "[", RowBox[{"{", 
+                        RowBox[{"{", "0.1", "}"}], "}"}], "]"}]}]}], "]"}]}], 
+            ";", "\[IndentingNewLine]", RowBox[{RowBox[{"DownfoldedDUp", "[", 
+                "crystal", "]"}], "[", "effective", "]"}]}]], "Input", 
+         CellID -> 1934323391], Cell[BoxData["2.`"], "Output", 
+         CellID -> 774176751]}, Open]], 
+     Cell[CellGroupData[{Cell[BoxData[InterpretationBox[
+           Cell["\t", "ExampleDelimiter"], $Line = 0; ]], "ExampleDelimiter", 
+         CellID -> 1711440995], Cell[TextData[{"Lower the threshold to retain \
+a weak hopping at distance three. The default threshold would discard it and \
+return one."}], "ExampleText", CellID -> 1063806275], 
+        Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+         CellID -> 660110568], Cell[CellGroupData[
+          {Cell[BoxData[RowBox[{RowBox[{"crystal", "=", RowBox[
+                  {"Association", "[", RowBox[{RowBox[{"{", RowBox[{"0.", 
+                         ",", "0."}], "}"}], "\[Rule]", RowBox[{"{", 
+                       RowBox[{"{", RowBox[{"0.", ",", "0."}], "}"}], 
+                       "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", RowBox[
+                {"effective", "=", RowBox[{"Association", "[", RowBox[
+                    {RowBox[{RowBox[{"{", RowBox[{"1.", ",", "0."}], "}"}], 
+                       "\[Rule]", RowBox[{"{", RowBox[{"{", "1.", "}"}], 
+                         "}"}]}], ",", RowBox[{RowBox[{"{", RowBox[{"3.", 
+                          ",", "0."}], "}"}], "\[Rule]", RowBox[{"{", 
+                         RowBox[{"{", FractionBox["1", SuperscriptBox["10", 
+                          "6"]], "}"}], "}"}]}]}], "]"}]}], ";", 
+               "\[IndentingNewLine]", RowBox[{RowBox[{"DownfoldedDUp", "[", 
+                   RowBox[{"crystal", ",", RowBox[{"\"ZeroThreshold\"", 
+                       "\[Rule]", FractionBox["1", SuperscriptBox["10", 
+                         "7"]]}]}], "]"}], "[", "effective", "]"}]}]], 
+            "Input", CellID -> 1586188242], Cell[BoxData["3.`"], "Output", 
+            CellID -> 306872439]}, Open]]}, Open]]}, Open]], 
+  Cell[CellGroupData[{Cell["More Examples", "ExtendedExamplesSection", 
+      CellTags -> "ExtendedExamples", CellID -> 1665544959]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 348034818], 
+     Cell[TextData[{Cell[BoxData[ButtonBox[
+           "HFloquetEffectiveHoppingMatricesFromExtended", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/HFloquetEffectiveHoppingMatricesFromExtended\
+"]], "InlineSeeAlsoFunction", TaggingRules -> {"PageType" -> "Function"}], 
+        StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"], 
+        Cell[BoxData[ButtonBox["HMatricesRealSpace", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/HMatricesRealSpace"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["HMatrixFromHoppings", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/HMatrixFromHoppings"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["CrystalStructure", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/CrystalStructure"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}]}], "SeeAlso", CellID -> 973780301]}, 
+    Open]], Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 2070718091], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 1649893682]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 571279580], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 146203014]}, Open]]}, WindowTitle -> "DownfoldedDUp", 
+ Saveable -> True, Editable -> True, CellContext -> "Global`", 
+ TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]

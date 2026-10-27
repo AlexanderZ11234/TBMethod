@@ -1,0 +1,1341 @@
+(* Content-type: application/vnd.wolfram.cdf.text *)
+
+(*** Wolfram CDF File ***)
+(* http://www.wolfram.com/cdf *)
+
+(* CreatedBy='Wolfram 15.0' *)
+
+(*************************************************************************)
+(*                                                                       *)
+(*                                                                       *)
+(*  This file was created under the Wolfram Enterprise licensing terms.  *)
+(*                                                                       *)
+(*       For additional information concerning CDF licensing see:        *)
+(*                                                                       *)
+(*        www.wolfram.com/cdf/adopting-cdf/licensing-options.html        *)
+(*                                                                       *)
+(*                                                                       *)
+(*                                                                       *)
+(*************************************************************************)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[      1060,         20]
+NotebookDataLength[     47988,       1319]
+NotebookOptionsPosition[     40783,       1168]
+NotebookOutlinePosition[     43454,       1227]
+CellTagsIndexPosition[     43411,       1224]
+WindowTitle->QuantumMetric
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {GridBox[{
+      {
+       ItemBox[Cell[BoxData[
+         RowBox[{
+          TemplateBox[{12},
+           "Spacer1"], Cell["T B METHOD SYMBOL", "PacletNameCell",
+           TextAlignment->Center,ExpressionUUID->
+           "13ec9db4-8a29-8142-a35e-155e0081f834"], 
+          TemplateBox[{8},
+           "Spacer1"]}]],
+         TextAlignment->Center,ExpressionUUID->
+         "059d5302-2bed-1547-893d-b6f956cb3561"],
+        Background->LightDarkSwitched[
+          RGBColor[0.490196, 0.576471, 0.690196]],
+        ItemSize->Full], ""}
+     },
+     GridBoxAlignment->{"Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {Full, 
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[{
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "See Also",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "ade4f3fd-123d-c04c-a4e8-0be35be8b956"]
+         }],ExpressionUUID->"a49b9dcc-3b1a-3440-8b15-321abb16c68b"],
+         StripOnInput->False],{
+        StyleBox[
+          "\"BerryCurvature\"", "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup["paclet:TBMethod/ref/BerryCurvature"], 
+         StyleBox["\"HVBloch\"", "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup["paclet:TBMethod/ref/HVBloch"], 
+         StyleBox["\"HVBlochFull\"", "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup["paclet:TBMethod/ref/HVBlochFull"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"SeeAlso"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "86d87983-a345-bb48-8ac7-3c15fe74396e"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "Related Guides",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "7b4f51b2-73e0-6747-a1c6-1773cac72568"]
+         }],ExpressionUUID->"6ca8ac70-0faa-a145-bb01-fadf9e1a3c9e"],
+         StripOnInput->False],{
+        "\"TBMethod\"" :> 
+         Documentation`HelpLookup["paclet:TBMethod/guide/TBMethod"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"MoreAbout"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "041543c7-411a-c24c-859d-92d84b947bfd"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "Tech Notes",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "fced007e-cc08-2b4a-a751-56cca2679e56"]
+         }],ExpressionUUID->"dd58de54-9f84-544e-9f9b-c6c3d2291b18"],
+         StripOnInput->False],{
+        "\"Getting Started with TBMethod\"" :> 
+         Documentation`HelpLookup["paclet:TBMethod/tutorial/GettingStarted"]},
+        
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"Tutorials"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "22fb9e79-dbb6-0841-9806-f6372cb1b0f5"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "URL",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "254b70c1-e206-4443-9090-8c5dc89f89fd"]
+         }],ExpressionUUID->"d1cff062-e6c2-2943-a14a-2172ebf5b4c6"],
+         StripOnInput->False],{
+        "\"TBMethod/ref/QuantumMetric\"" :> None, 
+         "\"Copy Wolfram Documentation Center URL\"" :> 
+         CopyToClipboard["TBMethod/ref/QuantumMetric"], Delimiter, 
+         "\"Copy web URL\"" :> 
+         Module[{DocumentationSearch`Private`nb$}, 
+           DocumentationSearch`Private`nb$ = 
+            NotebookPut[
+             Notebook[{
+               Cell[BoxData[
+                 MakeBoxes[
+                  Hyperlink[
+                   "http://reference.wolfram.com/language/TBMethod/ref/\
+QuantumMetric.html"], StandardForm]], "Input", TextClipboardType -> 
+                 "PlainText"]}, Visible -> False]]; 
+           SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+           FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+           NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+         "\"Go to web URL\"" :> 
+         FrontEndExecute[{
+           NotebookLocate[{
+             URL[If[TrueQ[False], 
+                 "http://reference.wolfram.com/system-modeler/", 
+                 "http://reference.wolfram.com/language/"] <> 
+               "TBMethod/ref/QuantumMetric" <> ".html"], None}]}]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"URLMenu"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "c64d9b1b-bb18-f246-9692-90cedd734e67"]
+    }], "AnchorBar",
+     CacheGraphics->False,ExpressionUUID->
+     "685aa3d0-2e66-2a47-be51-69b046178c92"]}
+  }]], "AnchorBarGrid",
+ CellID->1,ExpressionUUID->"c267fd8a-4b33-5c4b-84d8-675f1768a0a9"],
+
+Cell["TBMethod`EigenSpect`", "ContextNameCell",ExpressionUUID->"90d32989-bed7-014e-881c-0202712e90db"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {Cell[TextData[{
+     Cell[
+     "QuantumMetric", "ObjectName",ExpressionUUID->
+      "7466d539-fb67-6044-bd28-0bc47e15ddcc"],
+     Cell[BoxData[
+      TemplateBox[{8},
+       "Spacer1"]],ExpressionUUID->"244a2a6c-aa5a-2f4d-8bc5-b53e5bad684f"],
+     Cell[BoxData[
+     ""], "ObjectNameTranslation",ExpressionUUID->
+      "921e5c54-b8d6-f04d-8f0b-ac4ef9a55571"]
+    }],ExpressionUUID->"2f63d69d-2bfa-704d-bc0e-11e25f6a0a71"], 
+    "\[SpanFromLeft]"}
+  }]], "ObjectNameGrid",ExpressionUUID->"aad65c3b-c287-b54e-b424-\
+670039afa1fb"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       RowBox[{
+        TemplateBox[{
+          Cell[
+           TextData["QuantumMetric"]], "paclet:TBMethod/ref/QuantumMetric", 
+          "TBMethod Package Symbol"},
+         "PackageLink",
+         BaseStyle->"InlineFormula"], "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           StyleBox["h", "TI",
+            FontFamily->"Times",
+            FontSlant->"Italic"], ",", 
+           StyleBox["velocities", "TI",
+            FontFamily->"Times",
+            FontSlant->"Italic"]}], "}"}], ",", 
+         StyleBox["filling", "TI",
+          FontFamily->"Times",
+          FontSlant->"Italic"]}], "]"}], "[", 
+       StyleBox["k", "TI",
+        FontFamily->"Times",
+        FontSlant->"Italic"], "]"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "b55a5c79-2e97-8140-bf09-2d9cb3fe7a53"],
+     " \[LineSeparator]",
+     "computes the first diagonal component of the occupied-band quantum \
+metric at ",
+     Cell[BoxData[
+      StyleBox["k", "TI",
+       FontFamily->"Times",
+       FontSlant->"Italic"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "c2b4471b-5300-1d49-a79b-1e841bfc0b52"],
+     "."
+    }],ExpressionUUID->"552e03ab-b8aa-794f-9c16-384423a1fc20"]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       RowBox[{
+        TemplateBox[{
+          Cell[
+           TextData["QuantumMetric"]], "paclet:TBMethod/ref/QuantumMetric", 
+          "TBMethod Package Symbol"},
+         "PackageLink",
+         BaseStyle->"InlineFormula"], "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           StyleBox["h", "TI",
+            FontFamily->"Times",
+            FontSlant->"Italic"], ",", 
+           StyleBox["velocities", "TI",
+            FontFamily->"Times",
+            FontSlant->"Italic"]}], "}"}], ",", 
+         StyleBox["filling", "TI",
+          FontFamily->"Times",
+          FontSlant->"Italic"], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           StyleBox["alpha", "TI",
+            FontFamily->"Times",
+            FontSlant->"Italic"], ",", 
+           StyleBox["beta", "TI",
+            FontFamily->"Times",
+            FontSlant->"Italic"]}], "}"}]}], "]"}], "[", 
+       StyleBox["k", "TI",
+        FontFamily->"Times",
+        FontSlant->"Italic"], "]"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "b8e717b8-7753-5646-affe-3a75122ad9e6"],
+     " \[LineSeparator]",
+     "computes the component specified by derivative directions ",
+     Cell[BoxData[
+      StyleBox["alpha", "TI",
+       FontFamily->"Times",
+       FontSlant->"Italic"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "e73a69bd-6ce6-7048-91cc-47e08cd3474b"],
+     " and ",
+     Cell[BoxData[
+      StyleBox["beta", "TI",
+       FontFamily->"Times",
+       FontSlant->"Italic"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "2cba17c8-adb3-d44c-b919-080a0482b94d"],
+     "."
+    }],ExpressionUUID->"a2b19c59-c156-b241-b99b-d7ae1486c59b"]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       RowBox[{
+        TemplateBox[{
+          Cell[
+           TextData["QuantumMetric"]], "paclet:TBMethod/ref/QuantumMetric", 
+          "TBMethod Package Symbol"},
+         "PackageLink",
+         BaseStyle->"InlineFormula"], "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           StyleBox["h", "TI",
+            FontFamily->"Times",
+            FontSlant->"Italic"], ",", 
+           StyleBox["velocities", "TI",
+            FontFamily->"Times",
+            FontSlant->"Italic"]}], "}"}], ",", 
+         StyleBox["q", "TI",
+          FontFamily->"Times",
+          FontSlant->"Italic"], ",", 
+         StyleBox["filling", "TI",
+          FontFamily->"Times",
+          FontSlant->"Italic"], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           StyleBox["alpha", "TI",
+            FontFamily->"Times",
+            FontSlant->"Italic"], ",", 
+           StyleBox["beta", "TI",
+            FontFamily->"Times",
+            FontSlant->"Italic"]}], "}"}]}], "]"}], "[", 
+       StyleBox["k", "TI",
+        FontFamily->"Times",
+        FontSlant->"Italic"], "]"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "4f5d94b0-9021-1a4a-b5ee-50d831a97c01"],
+     " \[LineSeparator]",
+     "uses the symmetrized observable current associated with ",
+     Cell[BoxData[
+      StyleBox["q", "TI",
+       FontFamily->"Times",
+       FontSlant->"Italic"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "3eb514b3-5297-ed4c-85de-06550ee2e9e8"],
+     " in the first direction."
+    }],ExpressionUUID->"e8388ff5-9934-ed40-83fa-a635c5cfb5ae"]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       RowBox[{
+        TemplateBox[{
+          Cell[
+           TextData["QuantumMetric"]], "paclet:TBMethod/ref/QuantumMetric", 
+          "TBMethod Package Symbol"},
+         "PackageLink",
+         BaseStyle->"InlineFormula"], "[", 
+        RowBox[{
+         StyleBox["hv", "TI",
+          FontFamily->"Times",
+          FontSlant->"Italic"], ",", 
+         StyleBox["filling", "TI",
+          FontFamily->"Times",
+          FontSlant->"Italic"], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           StyleBox["alpha", "TI",
+            FontFamily->"Times",
+            FontSlant->"Italic"], ",", 
+           StyleBox["beta", "TI",
+            FontFamily->"Times",
+            FontSlant->"Italic"]}], "}"}]}], "]"}], "[", 
+       StyleBox["k", "TI",
+        FontFamily->"Times",
+        FontSlant->"Italic"], "]"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "041d965d-79a2-f74f-bd3a-b30c4a495cbc"],
+     " \[LineSeparator]",
+     "uses a combined function ",
+     Cell[BoxData[
+      StyleBox["hv", "TI",
+       FontFamily->"Times",
+       FontSlant->"Italic"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "bfcf6332-0156-2841-b54e-50a16971c80d"],
+     " that returns the Hamiltonian and its derivative matrices."
+    }],ExpressionUUID->"db1058d0-aa94-2442-8791-f8188041419c"]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       RowBox[{
+        TemplateBox[{
+          Cell[
+           TextData["QuantumMetric"]], "paclet:TBMethod/ref/QuantumMetric", 
+          "TBMethod Package Symbol"},
+         "PackageLink",
+         BaseStyle->"InlineFormula"], "[", 
+        RowBox[{
+         StyleBox["hv", "TI",
+          FontFamily->"Times",
+          FontSlant->"Italic"], ",", 
+         StyleBox["q", "TI",
+          FontFamily->"Times",
+          FontSlant->"Italic"], ",", 
+         StyleBox["filling", "TI",
+          FontFamily->"Times",
+          FontSlant->"Italic"], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           StyleBox["alpha", "TI",
+            FontFamily->"Times",
+            FontSlant->"Italic"], ",", 
+           StyleBox["beta", "TI",
+            FontFamily->"Times",
+            FontSlant->"Italic"]}], "}"}]}], "]"}], "[", 
+       StyleBox["k", "TI",
+        FontFamily->"Times",
+        FontSlant->"Italic"], "]"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "2056649d-29f2-d24e-a304-c628de43a9aa"],
+     " \[LineSeparator]",
+     "uses the combined Hamiltonian\[Dash]derivative function and an \
+observable-current insertion."
+    }],ExpressionUUID->"2d91b80a-337c-f146-b488-96ce096842a1"]}
+  }]], "Usage",
+ CellID->1477374411,ExpressionUUID->"147338fd-c8e6-934d-babc-38448ea5eea9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[Cell[TextData[{
+  Cell[BoxData[
+   DynamicBox[ToBoxes[
+     If[CurrentValue[
+        EvaluationCell[], "CellGroupOpen"] =!= Closed, 
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], 
+      Rotate[
+       Style[
+        Graphics[{
+          Thickness[0.18], 
+          RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+          Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+         PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+        0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+    ImageSizeCache->{
+     13.600000000000001`, {-0.16630120645742785`, 13.76630120645743}}]],
+   ExpressionUUID->"5c0d06d5-cec7-3540-8274-0408704da863"],
+  Cell[BoxData[
+   TemplateBox[{1},
+    "Spacer1"]],ExpressionUUID->"117f8f90-b465-4443-b750-3b37f969ca8c"],
+  "Details and Options"
+ }], "NotesFrameText",ExpressionUUID->
+  "d3884186-71e6-3a49-99ca-da9160378aa9"]],ExpressionUUID->"0b71f6e0-729c-\
+9e40-961c-3ed6e2d5f290"]], "NotesSection",
+ ShowGroupOpener->"Thumbnail",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CacheGraphics->False,
+ CellID->347781044,ExpressionUUID->"bcba1b0a-27a0-e24b-af4c-940e42945c40"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  RowBox[{
+   StyleBox["h", "TI"], "[", 
+   StyleBox["k", "TI"], "]"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "db94a970-6663-f647-84a1-33b1c2a3b26f"],
+ " returns a Hermitian Hamiltonian and ",
+ Cell[BoxData[
+  RowBox[{
+   StyleBox["velocities", "TI"], "[", 
+   StyleBox["k", "TI"], "]"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "08910abc-b932-e84c-bff2-cca3a47fe3af"],
+ " returns its derivative-matrix list. Alternatively, ",
+ Cell[BoxData[
+  RowBox[{
+   StyleBox["hv", "TI"], "[", 
+   StyleBox["k", "TI"], "]"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "d0a26b35-4cf1-974c-9041-89fbf59f4aff"],
+ " returns ",
+ Cell[BoxData[
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     StyleBox["h", "TI"], "[", 
+     StyleBox["k", "TI"], "]"}], ",", 
+    RowBox[{
+     StyleBox["velocities", "TI"], "[", 
+     StyleBox["k", "TI"], "]"}]}], "}"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "4feff376-943a-3e4c-8dc0-55acfd052603"],
+ "."
+}], "Notes",
+ CellID->414763077,ExpressionUUID->"4b22c273-685f-ba46-be3c-df84f99a241e"],
+
+Cell[TextData[{
+ "The default derivative directions are ",
+ Cell[BoxData[
+  RowBox[{"{", 
+   RowBox[{"1", ",", "1"}], "}"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "707a140e-a9cb-904f-b2cd-8ddea9efe018"],
+ ", selecting the first diagonal metric component. Direction indices are \
+one-based."
+}], "Notes",
+ CellID->923052976,ExpressionUUID->"dde78c4f-5143-7a4b-a470-2ad3a186089d"],
+
+Cell[TextData[{
+ "A positive integer ",
+ Cell[BoxData[
+  StyleBox["filling", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "7b7dd312-1f3b-994e-8dd2-eeb6bb3a708e"],
+ " counts occupied low-energy states. A real ",
+ Cell[BoxData[
+  StyleBox["filling", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "974ba777-ffca-7243-acad-49081a311f00"],
+ " is a Fermi energy; use a real number such as ",
+ Cell[BoxData["0."], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "0146d873-954d-824c-a7b8-40e919aa8d60"],
+ " to distinguish it from a band count."
+}], "Notes",
+ CellID->617522257,ExpressionUUID->"d684be16-574b-0940-9983-99b3dd56d6d9"],
+
+Cell[TextData[{
+ "The optional observable matrix ",
+ Cell[BoxData[
+  StyleBox["q", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "1997acec-e9c6-4343-8899-d0e1866b7d96"],
+ " produces the symmetrized current shown below. The special value ",
+ Cell[BoxData["1"], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "b61b1cbb-1b2e-3943-9104-8a91a40f5c23"],
+ " gives the ordinary metric."
+}], "Notes",
+ CellID->1763080235,ExpressionUUID->"ad42b98e-d2b1-c24c-98e4-7f48d3790bc0"],
+
+Cell[TextData[{
+ "An empty or completely occupied spectrum returns ",
+ Cell[BoxData["0."], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "e431d4fb-fd3c-1444-9602-dc71a13b57b1"],
+ ". Degeneracies across the filling require care because energy differences \
+are squared in the denominator."
+}], "Notes",
+ CellID->828318854,ExpressionUUID->"c1d878b6-5d12-0842-8eeb-f287f8a3d601"],
+
+Cell[TextData[{
+ "Options for ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Eigensystem"]], "paclet:ref/Eigensystem"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "fd49e653-2a90-e342-bcfe-b61b08dcf41d"],
+ " are accepted, with ",
+ Cell[BoxData[
+  RowBox[{
+   TemplateBox[{
+     Cell[
+      TextData["Method"]], "paclet:ref/Method"},
+    "RefLink",
+    BaseStyle->{"InlineFormula"}], "\[Rule]", "\"\<Direct\>\""}]], 
+  "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "191a3f3a-d3bd-fe47-9a0f-50f45288c4fe"],
+ " supplied internally."
+}], "Notes",
+ CellID->1396012936,ExpressionUUID->"cd98ceba-3b39-904d-b30a-298b00ccefbc"],
+
+Cell[TextData[{
+ "With the same occupied-to-unoccupied ordering as ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["BerryCurvature"]], "paclet:TBMethod/ref/BerryCurvature", 
+    "TBMethod Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "4133e067-dd84-f742-90a5-e569f46c778c"],
+ ", the component is",
+ "\[LineSeparator]",
+ Cell[BoxData[
+  FormBox[
+   TagBox[
+    RowBox[{
+     SubscriptBox["g", 
+      RowBox[{"{", 
+       RowBox[{"\[Alpha]", ",", "\[Beta]"}], "}"}]], "\[LongEqual]", 
+     RowBox[{"Re", "(", 
+      RowBox[{
+       UnderoverscriptBox["\[Sum]", 
+        RowBox[{"n", "=", "1"}], 
+        SubscriptBox["N", "occ"]], 
+       RowBox[{
+        UnderoverscriptBox["\[Sum]", 
+         RowBox[{"m", "=", 
+          RowBox[{
+           SubscriptBox["N", "occ"], "+", "1"}]}], 
+         SubscriptBox["N", "bands"]], 
+        FractionBox[
+         RowBox[{
+          SubscriptBox["j", 
+           RowBox[{"{", 
+            RowBox[{"\[Alpha]", ",", "m", ",", "n"}], "}"}]], " ", 
+          SubscriptBox["v", 
+           RowBox[{"{", 
+            RowBox[{"\[Beta]", ",", "n", ",", "m"}], "}"}]]}], 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            SubscriptBox["\[Epsilon]", "m"], "-", 
+            SubscriptBox["\[Epsilon]", "n"]}], ")"}], "2"]]}]}], ")"}]}],
+    HoldForm], TraditionalForm]], "InlineMath",
+  ScriptLevel->0,
+  FontSize->14,
+  FractionBoxOptions->{BaseStyle->{ScriptLevel -> 0}},ExpressionUUID->
+  "3915a2a5-06b1-4741-93b5-c2a624c9559b"]
+}], "Notes",
+ CellID->1076402731,ExpressionUUID->"188c9b1b-b773-e946-b8d3-eaf22a77c34d"],
+
+Cell[TextData[{
+ "The first-direction observable-current insertion is",
+ "\[LineSeparator]",
+ Cell[BoxData[
+  FormBox[
+   TagBox[
+    RowBox[{
+     SubscriptBox["j", "\[Alpha]"], "\[LongEqual]", 
+     RowBox[{
+      FractionBox["1", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"Q", ".", 
+         SubscriptBox["v", "\[Alpha]"]}], "+", 
+        RowBox[{
+         SubscriptBox["v", "\[Alpha]"], ".", "Q"}]}], ")"}]}]}],
+    HoldForm], TraditionalForm]], "InlineMath",
+  ScriptLevel->0,
+  FontSize->14,
+  FractionBoxOptions->{BaseStyle->{ScriptLevel -> 0}},ExpressionUUID->
+  "25b8b393-f4d6-6243-907b-e00a852d429c"]
+}], "Notes",
+ CellID->2062345893,ExpressionUUID->"3698afff-fcc1-bd46-84a1-5a978089e3fe"]
+}, Closed]],
+
+Cell["", "PageDelimiter",ExpressionUUID->"b2fce883-54f3-5b48-a410-067a9c9ba313"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[
+     MatchQ[
+      CurrentValue[
+       EvaluationNotebook[], {
+       TaggingRules, "Openers", "PrimaryExamplesSection"}, Open], 
+      Alternatives[True, Open]], 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+   ImageSizeCache->{
+    13.600000000000001`, {4.253698793542572, 9.34630120645743}}]],
+  ExpressionUUID->"b0e47c91-b34a-224b-9319-09c60dbc0373"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"04d6794a-f5db-3846-87f2-d0c8c87fa812"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(5)", "ExampleCount",ExpressionUUID->
+  "075f73c1-e4c7-ac4b-88bd-6a4e51bb1d40"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellID->91042372,ExpressionUUID->"ebdf0c5d-845e-9b47-b9fd-94cf4298e4f3"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[CurrentValue[
+       EvaluationCell[], "CellGroupOpen"] =!= Closed, 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]]]],ExpressionUUID->
+  "1f073a20-ffaa-384c-8411-ef4e54f7ae20"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"497e4b5d-1fb3-8145-b80d-4b0e6bbb7f71"],
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(5)", "ExampleCount",ExpressionUUID->
+  "f5b3fc4c-3aba-d34f-b4bf-0fda9b82a155"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellID->14059957,ExpressionUUID->"45b5befb-c267-ea4e-8a6d-a61d1599e236"],
+
+Cell["\<\
+Find the xx metric component of a massive two-level Dirac model at the origin.\
+\>", "ExampleText",
+ CellID->1419066875,ExpressionUUID->"e2ac73d5-6a5b-7a4a-a41d-89ac3b584cb6"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<TBMethod`\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1782592516,ExpressionUUID->"08101bf7-5353-6b4d-aa4d-46045d8ff47b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"h", ",", "v"}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"h", "[", "k_", "]"}], ":=", 
+   RowBox[{"N", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"k", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], " ", 
+      RowBox[{"PauliMatrix", "[", "1", "]"}]}], "+", 
+     RowBox[{
+      RowBox[{"k", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], " ", 
+      RowBox[{"PauliMatrix", "[", "2", "]"}]}], "+", 
+     RowBox[{"PauliMatrix", "[", "3", "]"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"v", "[", "k_", "]"}], ":=", 
+   RowBox[{"N", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"PauliMatrix", "[", "1", "]"}], ",", 
+      RowBox[{"PauliMatrix", "[", "2", "]"}]}], "}"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"QuantumMetric", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"h", ",", "v"}], "}"}], ",", "1"}], "]"}], "[", 
+  RowBox[{"{", 
+   RowBox[{"0.", ",", "0."}], "}"}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->206813529,ExpressionUUID->"5fa5675c-6179-ae4d-a9df-10ea643009e1"],
+
+Cell[BoxData["0.25`"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->875989929,ExpressionUUID->"9a0943ed-6063-e24b-8f90-764a31ba421c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "f9fa744e-58ce-e048-9940-ba9f74cfda22"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->789431314,ExpressionUUID->"976baa7c-9917-b849-9188-13520df0d982"],
+
+Cell["Select the off-diagonal metric component.", "ExampleText",
+ CellID->705661097,ExpressionUUID->"1adc91fc-6ebd-974c-a7f8-42f580b27c4a"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<TBMethod`\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->545869207,ExpressionUUID->"9f39ca2c-a379-4249-9550-12c7a36080fe"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"h", ",", "v", ",", "hv"}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"h", "[", "k_", "]"}], ":=", 
+   RowBox[{"N", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"k", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], " ", 
+      RowBox[{"PauliMatrix", "[", "1", "]"}]}], "+", 
+     RowBox[{
+      RowBox[{"k", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], " ", 
+      RowBox[{"PauliMatrix", "[", "2", "]"}]}], "+", 
+     RowBox[{"PauliMatrix", "[", "3", "]"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"v", "[", "k_", "]"}], ":=", 
+   RowBox[{"N", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"PauliMatrix", "[", "1", "]"}], ",", 
+      RowBox[{"PauliMatrix", "[", "2", "]"}]}], "}"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"hv", "[", "k_", "]"}], ":=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"h", "[", "k", "]"}], ",", 
+     RowBox[{"v", "[", "k", "]"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"QuantumMetric", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"h", ",", "v"}], "}"}], ",", "1", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2"}], "}"}]}], "]"}], "[", 
+  RowBox[{"{", 
+   RowBox[{"0.", ",", "0."}], "}"}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1140299749,ExpressionUUID->"b094bf90-9ef8-784e-a94c-b356c5e8ebac"],
+
+Cell[BoxData["0.`"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->657879908,ExpressionUUID->"81d57196-924d-df45-bdcd-7873e1925ec1"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "da9c99b1-f2bf-444b-b3ef-bfa50eaa72d3"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->173167854,ExpressionUUID->"07aa9186-591e-f845-aa2b-4e0a9a64439b"],
+
+Cell["\<\
+Insert an observable that doubles the first current operator.\
+\>", "ExampleText",
+ CellID->459890771,ExpressionUUID->"4094dabe-bfc5-ea4a-9554-ab43a3c1f9dc"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<TBMethod`\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1121643623,ExpressionUUID->"ca86d324-60fc-8846-9cd4-84355cf5d135"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"h", ",", "v", ",", "hv"}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"h", "[", "k_", "]"}], ":=", 
+   RowBox[{"N", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"k", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], " ", 
+      RowBox[{"PauliMatrix", "[", "1", "]"}]}], "+", 
+     RowBox[{
+      RowBox[{"k", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], " ", 
+      RowBox[{"PauliMatrix", "[", "2", "]"}]}], "+", 
+     RowBox[{"PauliMatrix", "[", "3", "]"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"v", "[", "k_", "]"}], ":=", 
+   RowBox[{"N", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"PauliMatrix", "[", "1", "]"}], ",", 
+      RowBox[{"PauliMatrix", "[", "2", "]"}]}], "}"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"hv", "[", "k_", "]"}], ":=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"h", "[", "k", "]"}], ",", 
+     RowBox[{"v", "[", "k", "]"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"QuantumMetric", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"h", ",", "v"}], "}"}], ",", 
+    RowBox[{"2", " ", 
+     RowBox[{"IdentityMatrix", "[", "2", "]"}]}], ",", "1", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "1"}], "}"}]}], "]"}], "[", 
+  RowBox[{"{", 
+   RowBox[{"0.", ",", "0."}], "}"}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->2020068631,ExpressionUUID->"991450e4-3bc8-0a44-ac91-38f796c331ff"],
+
+Cell[BoxData["0.5`"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->774020056,ExpressionUUID->"118d2916-2bc3-6749-9be8-b7d785f81162"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "724b9802-41f6-bb45-9045-e2db012cae3f"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->2062192525,ExpressionUUID->"636a9831-fdbc-5646-bfdb-1d1490d139d1"],
+
+Cell["Use a combined Hamiltonian-and-derivatives function.", "ExampleText",
+ CellID->1636949318,ExpressionUUID->"ab894577-24b3-804c-b94f-e16c0e7fe654"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<TBMethod`\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1420193926,ExpressionUUID->"87acd396-73ad-e943-8ca8-71910d64d312"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"h", ",", "v", ",", "hv"}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"h", "[", "k_", "]"}], ":=", 
+   RowBox[{"N", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"k", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], " ", 
+      RowBox[{"PauliMatrix", "[", "1", "]"}]}], "+", 
+     RowBox[{
+      RowBox[{"k", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], " ", 
+      RowBox[{"PauliMatrix", "[", "2", "]"}]}], "+", 
+     RowBox[{"PauliMatrix", "[", "3", "]"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"v", "[", "k_", "]"}], ":=", 
+   RowBox[{"N", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"PauliMatrix", "[", "1", "]"}], ",", 
+      RowBox[{"PauliMatrix", "[", "2", "]"}]}], "}"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"hv", "[", "k_", "]"}], ":=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"h", "[", "k", "]"}], ",", 
+     RowBox[{"v", "[", "k", "]"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"QuantumMetric", "[", 
+   RowBox[{"hv", ",", "1", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "1"}], "}"}]}], "]"}], "[", 
+  RowBox[{"{", 
+   RowBox[{"0.", ",", "0."}], "}"}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->578678824,ExpressionUUID->"47ff5a95-e134-0246-a50a-13bb177bcab1"],
+
+Cell[BoxData["0.25`"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->602503480,ExpressionUUID->"1f2c47be-ab86-864a-8042-43777aee7920"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "a08233c7-cd63-8740-a14e-8a5778123810"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->2029473595,ExpressionUUID->"f61dd0ec-ec8c-2644-84d3-84b6d02780fe"],
+
+Cell["\<\
+Combine the derivative function with an observable insertion.\
+\>", "ExampleText",
+ CellID->209092719,ExpressionUUID->"825198e1-64a5-4a40-bf07-022737397314"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<TBMethod`\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1386123765,ExpressionUUID->"aeb14e94-3439-584b-b2f0-6daf3aa8626b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"h", ",", "v", ",", "hv"}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"h", "[", "k_", "]"}], ":=", 
+   RowBox[{"N", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"k", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], " ", 
+      RowBox[{"PauliMatrix", "[", "1", "]"}]}], "+", 
+     RowBox[{
+      RowBox[{"k", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], " ", 
+      RowBox[{"PauliMatrix", "[", "2", "]"}]}], "+", 
+     RowBox[{"PauliMatrix", "[", "3", "]"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"v", "[", "k_", "]"}], ":=", 
+   RowBox[{"N", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"PauliMatrix", "[", "1", "]"}], ",", 
+      RowBox[{"PauliMatrix", "[", "2", "]"}]}], "}"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"hv", "[", "k_", "]"}], ":=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"h", "[", "k", "]"}], ",", 
+     RowBox[{"v", "[", "k", "]"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"QuantumMetric", "[", 
+   RowBox[{"hv", ",", 
+    RowBox[{"2", " ", 
+     RowBox[{"IdentityMatrix", "[", "2", "]"}]}], ",", "1", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "1"}], "}"}]}], "]"}], "[", 
+  RowBox[{"{", 
+   RowBox[{"0.", ",", "0."}], "}"}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1816074005,ExpressionUUID->"949bcc87-a88e-d248-8405-6d7b09203fa0"],
+
+Cell[BoxData["0.5`"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1514953506,ExpressionUUID->"f8b93c40-ee5a-fc4b-8c88-64b75d402f50"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, 
+       "RelatedFunction.png"]],
+     ImageSizeCache->{50., {26.472656144876964`, 33.527343855123036`}}], 
+    GridBox[{
+      {
+       StyleBox[
+        RowBox[{"See", " ", "Also"}], "SeeAlsoSection"]},
+      {Cell[TextData[{
+        Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["BerryCurvature"]], "paclet:TBMethod/ref/BerryCurvature",
+            "TBMethod Package Symbol"},
+          "PackageLink",
+          BaseStyle->"InlineFormula"]], "InlineFormula",
+         FontFamily->"Source Sans Pro",ExpressionUUID->
+         "8069ce1b-f7b6-a749-a2bb-435d23643465"],
+        "\[NonBreakingSpace]",
+        StyleBox[
+        "\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+         "InlineSeparator"],
+        " ",
+        Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["HVBloch"]], "paclet:TBMethod/ref/HVBloch", 
+           "TBMethod Package Symbol"},
+          "PackageLink",
+          BaseStyle->"InlineFormula"]], "InlineFormula",
+         FontFamily->"Source Sans Pro",ExpressionUUID->
+         "dcdb165e-011c-3448-b7e4-f62ff7771e62"],
+        "\[NonBreakingSpace]",
+        StyleBox[
+        "\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+         "InlineSeparator"],
+        " ",
+        Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["HVBlochFull"]], "paclet:TBMethod/ref/HVBlochFull", 
+           "TBMethod Package Symbol"},
+          "PackageLink",
+          BaseStyle->"InlineFormula"]], "InlineFormula",
+         FontFamily->"Source Sans Pro",ExpressionUUID->
+         "6c6a4960-3322-b243-acf0-35a225d3a708"]
+       }], "SeeAlso",ExpressionUUID->"c6c4f803-8efb-2040-8333-f3ad3db4829c"]}
+     }]}
+  }]], "SeeAlsoSection",ExpressionUUID->"9b554c52-7815-3b4e-a69f-\
+c10720613895"],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, 
+       "RelatedTutorial.png"]],
+     ImageSizeCache->{50., {26.472656144876964`, 33.527343855123036`}}], 
+    GridBox[{
+      {
+       StyleBox[
+        RowBox[{"Tech", " ", "Notes"}], "TutorialsSection"]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["Getting Started with TBMethod"]], 
+           "paclet:TBMethod/tutorial/GettingStarted"},
+          "RefLinkPlain",
+          BaseStyle->{"Tutorials"}]], "Tutorials",ExpressionUUID->
+         "b854dfd8-aa6c-d24a-a2bf-ab44cda85814"]}]}
+     }]}
+  }]], "TutorialsSection",ExpressionUUID->"ce645422-094a-0f41-8810-\
+978b60b9f539"],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, "RelatedGuide.png"]],
+     ImageSizeCache->{50., {26.472656144876964`, 33.527343855123036`}}], 
+    GridBox[{
+      {
+       StyleBox[
+        RowBox[{"Related", " ", "Guides"}], "MoreAboutSection"]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["TBMethod"]], "paclet:TBMethod/guide/TBMethod"},
+          "RefLinkPlain",
+          BaseStyle->{"MoreAbout"}]], "MoreAbout",ExpressionUUID->
+         "acdf0de8-3520-874c-84fb-b166b92da70e"]}]}
+     }]}
+  }]], "MoreAboutSection",ExpressionUUID->"9b078c68-6cf3-7d40-8e8c-\
+b07b91a2adc0"],
+
+Cell[" ", "FooterCell",ExpressionUUID->"4509a9cb-897d-d343-bfd5-1f3d9691803f"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{900, 845.25},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"QuantumMetric",
+Visible->True,
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
+  "ExampleCounter" -> 1, 
+  "Openers" -> {
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}, 
+    "AllOptsTable" -> Closed}, "NewStyles" -> True, 
+  "CitationPopupData" -> $Failed, "ShowCitation" -> False, "HasOptions" -> 
+  True, "RootCaptions" -> "", "HeaderCoreAreaLink" -> {}, 
+  "Metadata" -> {
+   "built" -> "{2026, 10, 26, 16, 56, 7.9809911}", 
+    "history" -> {"", "", "", ""}, "context" -> "TBMethod`EigenSpect`", 
+    "keywords" -> {"QuantumMetric tight binding TBMethod"}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "T B Method Symbol", "language" -> "en", "paclet" -> 
+    "TBMethod", "status" -> "None", "summary" -> 
+    "QuantumMetric[{h, velocities}, filling][k] computes the first diagonal \
+component of the occupied-band quantum metric at k. QuantumMetric[{h, \
+velocities}, filling, {alpha, beta}][k] computes the component specified by \
+derivative directions alpha and beta. QuantumMetric[{h, velocities}, q, \
+filling, {alpha, beta}][k] uses the symmetrized observable current associated \
+with q in the first direction. QuantumMetric[hv, filling, {alpha, beta}][k] \
+uses a combined function hv that returns the Hamiltonian and its derivative \
+matrices. QuantumMetric[hv, q, filling, {alpha, beta}][k] uses the combined \
+Hamiltonian\\[Dash]derivative function and an observable-current insertion.", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "QuantumMetric", 
+    "titlemodifier" -> "", "metadescription" -> "", "windowtitle" -> 
+    "QuantumMetric", "type" -> "Symbol", "uri" -> 
+    "TBMethod/ref/QuantumMetric", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"15.0 for Microsoft Windows (64-bit) (July 2, 2026)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "15.0 for Microsoft Windows (64-bit) (July 2, 2026)", 
+  StyleDefinitions -> "PrivateStylesheetFormatting.nb"],
+ExpressionUUID->"285b4470-89d6-4743-919c-78bbc4a27144"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[1487, 34, 6320, 154, 70, "AnchorBarGrid",ExpressionUUID->"c267fd8a-4b33-5c4b-84d8-675f1768a0a9",
+ CellID->1],
+Cell[7656, 190, 102, 0, 70, "ContextNameCell",ExpressionUUID->"90d32989-bed7-014e-881c-0202712e90db"],
+Cell[CellGroupData[{
+Cell[7783, 194, 570, 14, 70, "ObjectNameGrid",ExpressionUUID->"aad65c3b-c287-b54e-b424-670039afa1fb"],
+Cell[8342, 210, 7821, 217, 70, "Usage",ExpressionUUID->"147338fd-c8e6-934d-babc-38448ea5eea9",
+ CellID->1477374411]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15983, 432, 1481, 34, 70, "NotesSection",ExpressionUUID->"bcba1b0a-27a0-e24b-af4c-940e42945c40",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->347781044],
+Cell[17433, 468, 1190, 35, 70, "Notes",ExpressionUUID->"4b22c273-685f-ba46-be3c-df84f99a241e",
+ CellID->414763077],
+Cell[18591, 505, 419, 10, 70, "Notes",ExpressionUUID->"dde78c4f-5143-7a4b-a470-2ad3a186089d",
+ CellID->923052976],
+Cell[19003, 517, 722, 17, 70, "Notes",ExpressionUUID->"d684be16-574b-0940-9983-99b3dd56d6d9",
+ CellID->617522257],
+Cell[19711, 536, 530, 12, 70, "Notes",ExpressionUUID->"ad42b98e-d2b1-c24c-98e4-7f48d3790bc0",
+ CellID->1763080235],
+Cell[20232, 550, 406, 8, 70, "Notes",ExpressionUUID->"c1d878b6-5d12-0842-8eeb-f287f8a3d601",
+ CellID->828318854],
+Cell[20633, 560, 748, 23, 70, "Notes",ExpressionUUID->"cd98ceba-3b39-904d-b30a-298b00ccefbc",
+ CellID->1396012936],
+Cell[21361, 585, 1729, 50, 70, "Notes",ExpressionUUID->"188c9b1b-b773-e946-b8d3-eaf22a77c34d",
+ CellID->1076402731],
+Cell[23043, 637, 743, 22, 70, "Notes",ExpressionUUID->"3698afff-fcc1-bd46-84a1-5a978089e3fe",
+ CellID->2062345893]
+}, Closed]],
+Cell[23779, 662, 80, 0, 70, "PageDelimiter",ExpressionUUID->"b2fce883-54f3-5b48-a410-067a9c9ba313"],
+Cell[CellGroupData[{
+Cell[23884, 666, 1438, 37, 70, "PrimaryExamplesSection",ExpressionUUID->"ebdf0c5d-845e-9b47-b9fd-94cf4298e4f3",
+ CellID->91042372],
+Cell[CellGroupData[{
+Cell[25310, 707, 1265, 31, 70, "ExampleSection",ExpressionUUID->"45b5befb-c267-ea4e-8a6d-a61d1599e236",
+ CellID->14059957],
+Cell[26547, 740, 188, 3, 70, "ExampleText",ExpressionUUID->"e2ac73d5-6a5b-7a4a-a41d-89ac3b584cb6",
+ CellID->1419066875],
+Cell[26735, 745, 176, 3, 70, "Input",ExpressionUUID->"08101bf7-5353-6b4d-aa4d-46045d8ff47b",
+ CellID->1782592516],
+Cell[CellGroupData[{
+Cell[26933, 752, 1196, 32, 70, "Input",ExpressionUUID->"5fa5675c-6179-ae4d-a9df-10ea643009e1",
+ CellID->206813529],
+Cell[28100, 786, 132, 2, 70, "Output",ExpressionUUID->"9a0943ed-6063-e24b-8f90-764a31ba421c",
+ CellID->875989929]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28267, 793, 247, 5, 70, "ExampleDelimiter",ExpressionUUID->"976baa7c-9917-b849-9188-13520df0d982",
+ CellID->789431314],
+Cell[28512, 800, 140, 1, 70, "ExampleText",ExpressionUUID->"1adc91fc-6ebd-974c-a7f8-42f580b27c4a",
+ CellID->705661097],
+Cell[28654, 803, 175, 3, 70, "Input",ExpressionUUID->"9f39ca2c-a379-4249-9550-12c7a36080fe",
+ CellID->545869207],
+Cell[CellGroupData[{
+Cell[28851, 810, 1489, 41, 70, "Input",ExpressionUUID->"b094bf90-9ef8-784e-a94c-b356c5e8ebac",
+ CellID->1140299749],
+Cell[30302, 853, 130, 2, 70, "Output",ExpressionUUID->"81d57196-924d-df45-bdcd-7873e1925ec1",
+ CellID->657879908]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30479, 861, 247, 5, 70, "ExampleDelimiter",ExpressionUUID->"07aa9186-591e-f845-aa2b-4e0a9a64439b",
+ CellID->173167854],
+Cell[30724, 868, 170, 3, 70, "ExampleText",ExpressionUUID->"4094dabe-bfc5-ea4a-9554-ab43a3c1f9dc",
+ CellID->459890771],
+Cell[30894, 873, 176, 3, 70, "Input",ExpressionUUID->"ca86d324-60fc-8846-9cd4-84355cf5d135",
+ CellID->1121643623],
+Cell[CellGroupData[{
+Cell[31092, 880, 1570, 43, 70, "Input",ExpressionUUID->"991450e4-3bc8-0a44-ac91-38f796c331ff",
+ CellID->2020068631],
+Cell[32622, 925, 131, 2, 70, "Output",ExpressionUUID->"118d2916-2bc3-6749-9be8-b7d785f81162",
+ CellID->774020056]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32800, 933, 248, 5, 70, "ExampleDelimiter",ExpressionUUID->"636a9831-fdbc-5646-bfdb-1d1490d139d1",
+ CellID->2062192525],
+Cell[33046, 940, 152, 1, 70, "ExampleText",ExpressionUUID->"ab894577-24b3-804c-b94f-e16c0e7fe654",
+ CellID->1636949318],
+Cell[33200, 943, 176, 3, 70, "Input",ExpressionUUID->"87acd396-73ad-e943-8ca8-71910d64d312",
+ CellID->1420193926],
+Cell[CellGroupData[{
+Cell[33398, 950, 1436, 39, 70, "Input",ExpressionUUID->"47ff5a95-e134-0246-a50a-13bb177bcab1",
+ CellID->578678824],
+Cell[34798, 991, 132, 2, 70, "Output",ExpressionUUID->"1f2c47be-ab86-864a-8042-43777aee7920",
+ CellID->602503480]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34977, 999, 248, 5, 70, "ExampleDelimiter",ExpressionUUID->"f61dd0ec-ec8c-2644-84d3-84b6d02780fe",
+ CellID->2029473595],
+Cell[35223, 1006, 170, 3, 70, "ExampleText",ExpressionUUID->"825198e1-64a5-4a40-bf07-022737397314",
+ CellID->209092719],
+Cell[35393, 1011, 176, 3, 70, "Input",ExpressionUUID->"aeb14e94-3439-584b-b2f0-6daf3aa8626b",
+ CellID->1386123765],
+Cell[CellGroupData[{
+Cell[35591, 1018, 1518, 41, 70, "Input",ExpressionUUID->"949bcc87-a88e-d248-8405-6d7b09203fa0",
+ CellID->1816074005],
+Cell[37071, 1061, 132, 2, 70, "Output",ExpressionUUID->"f8b93c40-ee5a-fc4b-8c88-64b75d402f50",
+ CellID->1514953506]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[37252, 1069, 1968, 51, 70, "SeeAlsoSection",ExpressionUUID->"9b554c52-7815-3b4e-a69f-c10720613895"],
+Cell[39172, 1122, 807, 21, 70, "TutorialsSection",ExpressionUUID->"ce645422-094a-0f41-8810-978b60b9f539"],
+Cell[39961, 1145, 756, 19, 70, "MoreAboutSection",ExpressionUUID->"9b078c68-6cf3-7d40-8e8c-b07b91a2adc0"],
+Cell[40701, 1166, 78, 0, 70, "FooterCell",ExpressionUUID->"4509a9cb-897d-d343-bfd5-1f3d9691803f"]
+}
+]
+*)
+
+(* End of internal cache information *)

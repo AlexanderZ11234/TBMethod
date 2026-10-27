@@ -1,0 +1,207 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 1402781243], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 1194140792], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 1567458330], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 1120921018], Cell["TBMethod`LGFF`", "Categorization", 
+      CellLabel -> "Context", CellID -> 178731682], 
+     Cell["TBMethod/ref/CentralBlockGreensOverlap", "Categorization", 
+      CellLabel -> "URI", CellID -> 694679390]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 753502010], 
+     Cell["CentralBlockGreensOverlap, tight binding, TBMethod", "Keywords", 
+      CellID -> 1577231193]}, Closed]], 
+  Cell[CellGroupData[{Cell["CentralBlockGreensOverlap", "ObjectName", 
+      CellID -> 2046451508], Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["CentralBlockGreensOverlap", 
+             BaseStyle -> "Link", ButtonData -> 
+              "paclet:TBMethod/ref/CentralBlockGreensOverlap"], "[", 
+            RowBox[{StyleBox["z", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"], ",", RowBox[{"{", RowBox[{StyleBox[
+                   "hamiltonianBlocks", "TI", FontFamily -> "Times", 
+                   FontSlant -> "Italic"], ",", StyleBox["overlapBlocks", 
+                   "TI", FontFamily -> "Times", FontSlant -> "Italic"]}], 
+                "}"}], ",", StyleBox["sigmas", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"]}], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", "computes the final contact Green block of a \
+layered device in a nonorthogonal basis.", "\n", Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["CentralBlockGreensOverlap", 
+             BaseStyle -> "Link", ButtonData -> 
+              "paclet:TBMethod/ref/CentralBlockGreensOverlap"], "[", 
+            RowBox[{StyleBox["z", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"], ",", RowBox[{"{", RowBox[{StyleBox[
+                   "hamiltonianBlocks", "TI", FontFamily -> "Times", 
+                   FontSlant -> "Italic"], ",", StyleBox["overlapBlocks", 
+                   "TI", FontFamily -> "Times", FontSlant -> "Italic"]}], 
+                "}"}], ",", StyleBox["sigmas", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"], ",", StyleBox["mode", "TI", 
+               FontFamily -> "Times", FontSlant -> "Italic"]}], "]"}]], 
+         "InlineFormula"], " \[LineSeparator]", 
+        "returns the contact block or the final block column according to ", 
+        Cell[BoxData[StyleBox["mode", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], "."}], "Usage", 
+      CellID -> 811086705], 
+     Cell[TextData[{Cell[BoxData[StyleBox["hamiltonianBlocks", "TI"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], " and ", 
+        Cell[BoxData[StyleBox["overlapBlocks", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        " must have matching block dimensions and layer order."}], "Notes", 
+      CellID -> 177688561], 
+     Cell[TextData[{"All ", Cell[BoxData[StyleBox["sigmas", "TI"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        " are attached to the last layer. The default mode ", 
+        Cell[BoxData["\"T\""], "InlineFormula", FontFamily -> 
+          "Source Sans Pro"], " returns its diagonal block; ", 
+        Cell[BoxData["\"LDOS\""], "InlineFormula", FontFamily -> 
+          "Source Sans Pro"], " and ", Cell[BoxData["\"LCDV\""], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        " return the final column in reverse layer order."}], "Notes", 
+      CellID -> 1204569600], Cell[TextData[{"At complex energy, the \
+transformed upper overlap coupling is computed separately, preserving ", 
+        Cell[BoxData[FormBox["z", TraditionalForm]], "InlineMath", 
+         ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], " rather than ", 
+        Cell[BoxData[FormBox[TemplateBox[{"z"}, "Conjugate", 
+            SyntaxForm -> SuperscriptBox], TraditionalForm]], "InlineMath", 
+         ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], "."}], "Notes", 
+      CellID -> 434901824]}, Open]], 
+  Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 371269060], 
+     Cell[TextData[
+       {"Return the terminal Green block using the default output mode."}], 
+      "ExampleText", CellID -> 846000566], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 741903285], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{RowBox[{"z", "=", RowBox[{RowBox[{"0.2", 
+                  "\[VeryThinSpace]"}], "+", RowBox[{"0.1", " ", 
+                  "\[ImaginaryI]"}]}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"diag", "=", RowBox[{"{", RowBox[{RowBox[{"{", 
+                    RowBox[{"{", "0.", "}"}], "}"}], ",", RowBox[
+                   {"{", RowBox[{"{", "0.", "}"}], "}"}]}], "}"}]}], ";", 
+            "\[IndentingNewLine]", RowBox[{"lower", "=", RowBox[{"{", 
+                RowBox[{"{", RowBox[{"{", RowBox[{"-", "0.5"}], "}"}], "}"}], 
+                "}"}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"sdiag", "=", RowBox[{"{", RowBox[{RowBox[{"{", 
+                    RowBox[{"{", "1.", "}"}], "}"}], ",", RowBox[
+                   {"{", RowBox[{"{", "1.", "}"}], "}"}]}], "}"}]}], ";", 
+            "\[IndentingNewLine]", RowBox[{"slower", "=", RowBox[{"{", 
+                RowBox[{"{", RowBox[{"{", "0.04", "}"}], "}"}], "}"}]}], ";", 
+            "\[IndentingNewLine]", RowBox[{"sigmas", "=", RowBox[{"{", 
+                RowBox[{"{", RowBox[{"{", RowBox[{RowBox[{"-", "0.1"}], " ", 
+                      "\[ImaginaryI]"}], "}"}], "}"}], "}"}]}], ";", 
+            "\[IndentingNewLine]", RowBox[{"full", "=", TemplateBox[{
+                RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{"z", ",", RowBox[
+                         {RowBox[{"0.5", "\[VeryThinSpace]"}], "+", RowBox[
+                          {"0.04", " ", "z"}]}]}], "}"}], ",", RowBox[
+                     {"{", RowBox[{RowBox[{RowBox[{"0.5", 
+                          "\[VeryThinSpace]"}], "+", RowBox[{"0.04", " ", 
+                          "z"}]}], ",", RowBox[{"z", "+", RowBox[{"0.1", " ", 
+                          "\[ImaginaryI]"}]}]}], "}"}]}], "}"}]}, "Inverse", 
+               SyntaxForm -> SuperscriptBox]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"CentralBlockGreensOverlap", "[", RowBox[{"z", ",", 
+                RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{"diag", ",", 
+                        "lower"}], "}"}], ",", RowBox[{"{", RowBox[{"sdiag", 
+                        ",", "slower"}], "}"}]}], "}"}], ",", "sigmas"}], 
+              "]"}]}]], "Input", CellID -> 1310602098], 
+        Cell[BoxData[RowBox[{"{", RowBox[{"{", RowBox[{RowBox[{"-", 
+                  "0.7026593811288702`"}], "-", RowBox[
+                 {"0.5851927138342875`", " ", "\[ImaginaryI]"}]}], "}"}], 
+            "}"}]], "Output", CellID -> 1110946470]}, Open]], 
+     Cell[CellGroupData[{Cell[BoxData[InterpretationBox[
+           Cell["\t", "ExampleDelimiter"], $Line = 0; ]], "ExampleDelimiter", 
+         CellID -> 437410507], Cell[TextData[
+          {"Check the final column for a two-site nonorthogonal device."}], 
+         "ExampleText", CellID -> 1876592431], 
+        Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+         CellID -> 1344547749], Cell[CellGroupData[
+          {Cell[BoxData[RowBox[{RowBox[{"z", "=", RowBox[{RowBox[{"0.2", 
+                     "\[VeryThinSpace]"}], "+", RowBox[{"0.1", " ", 
+                     "\[ImaginaryI]"}]}]}], ";", "\[IndentingNewLine]", 
+               RowBox[{"diag", "=", RowBox[{"{", RowBox[{RowBox[{"{", 
+                       RowBox[{"{", "0.", "}"}], "}"}], ",", RowBox[
+                      {"{", RowBox[{"{", "0.", "}"}], "}"}]}], "}"}]}], ";", 
+               "\[IndentingNewLine]", RowBox[{"lower", "=", RowBox[
+                  {"{", RowBox[{"{", RowBox[{"{", RowBox[{"-", "0.5"}], 
+                       "}"}], "}"}], "}"}]}], ";", "\[IndentingNewLine]", 
+               RowBox[{"sdiag", "=", RowBox[{"{", RowBox[{RowBox[{"{", 
+                       RowBox[{"{", "1.", "}"}], "}"}], ",", RowBox[
+                      {"{", RowBox[{"{", "1.", "}"}], "}"}]}], "}"}]}], ";", 
+               "\[IndentingNewLine]", RowBox[{"slower", "=", RowBox[
+                  {"{", RowBox[{"{", RowBox[{"{", "0.04", "}"}], "}"}], 
+                   "}"}]}], ";", "\[IndentingNewLine]", RowBox[{"sigmas", 
+                 "=", RowBox[{"{", RowBox[{"{", RowBox[{"{", RowBox[
+                        {RowBox[{"-", "0.1"}], " ", "\[ImaginaryI]"}], "}"}], 
+                     "}"}], "}"}]}], ";", "\[IndentingNewLine]", RowBox[
+                {"full", "=", TemplateBox[{RowBox[{"{", RowBox[
+                      {RowBox[{"{", RowBox[{"z", ",", RowBox[{RowBox[{"0.5", 
+                          "\[VeryThinSpace]"}], "+", RowBox[{"0.04", " ", 
+                          "z"}]}]}], "}"}], ",", RowBox[{"{", RowBox[
+                          {RowBox[{RowBox[{"0.5", "\[VeryThinSpace]"}], "+", 
+                          RowBox[{"0.04", " ", "z"}]}], ",", RowBox[{"z", 
+                          "+", RowBox[{"0.1", " ", "\[ImaginaryI]"}]}]}], 
+                         "}"}]}], "}"}]}, "Inverse", SyntaxForm -> 
+                   SuperscriptBox]}], ";", "\[IndentingNewLine]", RowBox[
+                {"CentralBlockGreensOverlap", "[", RowBox[{"z", ",", 
+                   RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{"diag", ",", 
+                          "lower"}], "}"}], ",", RowBox[{"{", RowBox[
+                          {"sdiag", ",", "slower"}], "}"}]}], "}"}], ",", 
+                   "sigmas", ",", "\"LDOS\""}], "]"}]}]], "Input", 
+            CellID -> 595071375], Cell[BoxData[RowBox[{"{", RowBox[
+                {RowBox[{"{", RowBox[{"{", RowBox[{RowBox[{"-", 
+                         "0.7026593811288702`"}], "-", RowBox[
+                        {"0.5851927138342875`", " ", "\[ImaginaryI]"}]}], 
+                     "}"}], "}"}], ",", RowBox[{"{", RowBox[{"{", RowBox[
+                      {RowBox[{"2.018617851337183`", "\[VeryThinSpace]"}], 
+                       "+", RowBox[{"0.49113375509307633`", " ", 
+                         "\[ImaginaryI]"}]}], "}"}], "}"}]}], "}"}]], 
+            "Output", CellID -> 1462639160]}, Open]]}, Open]]}, Open]], 
+  Cell[CellGroupData[{Cell["More Examples", "ExtendedExamplesSection", 
+      CellTags -> "ExtendedExamples", CellID -> 669529058]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 1308486182], 
+     Cell[TextData[{Cell[BoxData[ButtonBox["CentralBlockGreens", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/CentralBlockGreens"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox[
+           "CentralDiagonalBlockGreensOverlap", BaseStyle -> "Link", 
+           ButtonData -> 
+            "paclet:TBMethod/ref/CentralDiagonalBlockGreensOverlap"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["CentralGreenOverlap", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/CentralGreenOverlap"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["SigmaOverlap", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/SigmaOverlap"]], "InlineSeeAlsoFunction", 
+         TaggingRules -> {"PageType" -> "Function"}], 
+        StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"], 
+        Cell[BoxData[ButtonBox["LocalDOSRealSpace", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/LocalDOSRealSpace"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}]}], "SeeAlso", CellID -> 1114051571]}, 
+    Open]], Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 1705095542], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 1457674298]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 621415072], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 102943480]}, Open]]}, 
+ WindowTitle -> "CentralBlockGreensOverlap", Saveable -> True, 
+ Editable -> True, CellContext -> "Global`", 
+ TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]

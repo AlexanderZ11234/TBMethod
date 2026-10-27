@@ -1,0 +1,650 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 1228268360], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 952495221], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 1526663024], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 296265540], Cell["TBMethod`DataVisualization`", 
+      "Categorization", CellLabel -> "Context", CellID -> 1028293920], 
+     Cell["TBMethod/ref/BandPlot", "Categorization", CellLabel -> "URI", 
+      CellID -> 1937871453]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 504728574], Cell["BandPlot, tight binding, TBMethod", 
+      "Keywords", CellID -> 656767982]}, Closed]], 
+  Cell[CellGroupData[{Cell["BandPlot", "ObjectName", CellID -> 1608153488], 
+     Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["BandPlot", BaseStyle -> "Link", 
+             ButtonData -> "paclet:TBMethod/ref/BandPlot"], "[", 
+            StyleBox["bandData", "TI", FontFamily -> "Times", 
+             FontSlant -> "Italic"], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", "plots the energy bands in ", 
+        Cell[BoxData[StyleBox["bandData", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], ".", "\n", 
+        Cell["   ", "ModInfo"], Cell[BoxData[
+          RowBox[{ButtonBox["BandPlot", BaseStyle -> "Link", 
+             ButtonData -> "paclet:TBMethod/ref/BandPlot"], "[", 
+            RowBox[{StyleBox["bandData", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"], ",", StyleBox["labels", "TI", 
+               FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+              StyleBox["nodeIndices", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"]}], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", "labels the selected sample indices with ", 
+        Cell[BoxData[StyleBox["labels", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], 
+        " and adds vertical guide lines.", "\n", Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["BandPlot", BaseStyle -> "Link", 
+             ButtonData -> "paclet:TBMethod/ref/BandPlot"], "[", 
+            RowBox[{StyleBox["bandData", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"], ",", StyleBox["labels", "TI", 
+               FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+              StyleBox["nodeIndices", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"], ",", StyleBox["yTicks", "TI", 
+               FontFamily -> "Times", FontSlant -> "Italic"]}], "]"}]], 
+         "InlineFormula"], " \[LineSeparator]", 
+        "uses the specified vertical-axis tick positions and labels."}], 
+      "Usage", CellID -> 1870786747], 
+     Cell[TextData[{Cell[BoxData[StyleBox["bandData", "TI"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        " is band-major: one list of energies per band, as returned by ", 
+        Cell[BoxData[ButtonBox["BandData", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/BandData"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], "."}], "Notes", 
+      CellID -> 711190354], 
+     Cell[TextData[{Cell[BoxData[StyleBox["labels", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " and ", 
+        Cell[BoxData[StyleBox["nodeIndices", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        " must have the same length. Options are passed to ", 
+        Cell[BoxData[ButtonBox["ListLinePlot", BaseStyle -> "Link", 
+           ButtonData -> "paclet:ref/ListLinePlot"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], "."}], "Notes", 
+      CellID -> 1346890748], 
+     Cell[TextData[{Cell[BoxData[StyleBox["yTicks", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " may be supplied as explicit ", 
+        Cell[BoxData[RowBox[{"{", RowBox[{StyleBox["position", "TI"], ",", 
+              StyleBox["label", "TI"]}], "}"}]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " pairs."}], "Notes", 
+      CellID -> 639445296]}, Open]], 
+  Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 589152268], 
+     Cell[TextData[{"Plot two bands with the default horizontal labels."}], 
+      "ExampleText", CellID -> 441219083], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 1674542344], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{"BandPlot", "[", RowBox[
+             {RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{RowBox[{"-", "1."}], 
+                      ",", RowBox[{"-", "0.5"}], ",", RowBox[{"-", "1."}]}], 
+                    "}"}], ",", RowBox[{"{", RowBox[{"1.", ",", "0.5", ",", 
+                      "1."}], "}"}]}], "}"}], ",", RowBox[{"Frame", 
+                "\[Rule]", "True"}]}], "]"}]], "Input", 
+         CellID -> 1462552255], Cell[BoxData[GraphicsBox[
+           {{}, InterpretationBox[{TagBox[{{{}, {}, TagBox[{Hue[0.67, 0.6, 
+                    0.6], Directive[PointSize[NCache[7/360, 
+                      0.019444444444444445]], CapForm["Butt"], 
+                    AbsoluteThickness[1.6], RGBColor[0, 0, 1]], LineBox[
+                    {{1., -1.}, {2., -0.5}, {3., -1.}}]}, Annotation[#1, 
+                    "Charting`Private`Tag#1"] & ], TagBox[
+                  {Hue[0.9060679774997897, 0.6, 0.6], Directive[PointSize[
+                     NCache[7/360, 0.019444444444444445]], CapForm["Butt"], 
+                    AbsoluteThickness[1.6], RGBColor[0, 0, 1]], LineBox[
+                    {{1., 1.}, {2., 0.5}, {3., 1.}}]}, Annotation[#1, 
+                    "Charting`Private`Tag#2"] & ]}}, {
+                "WolframDynamicHighlight", Association["Label" -> 
+                  {"XYLabel"}, "Ball" -> {"InterpolatedBall"}]}], 
+              StyleBox[DynamicBox[(Charting`HighlightActionBox[
+                   "DynamicHighlight", {}, #HighlightElements, 
+                   #LayoutOptions, #Meta, Charting`HighlightActionFunction[
+                    "DynamicHighlight", {{{}, {}, Annotation[{Hue[0.67, 0.6, 
+                         0.6], Directive[PointSize[7/360], CapForm["Butt"], 
+                         AbsoluteThickness[1.6], RGBColor[0, 0, 1]], 
+                        Line[{{1., -1.}, {2., -0.5}, {3., -1.}}]}, 
+                       "Charting`Private`Tag#1"], Annotation[
+                       {Hue[0.9060679774997897, 0.6, 0.6], Directive[
+                         PointSize[7/360], CapForm["Butt"], AbsoluteThickness[
+                          1.6], RGBColor[0, 0, 1]], Line[{{1., 1.}, {2., 
+                          0.5}, {3., 1.}}]}, "Charting`Private`Tag#2"]}}, 
+                    Association["HighlightElements" -> Association["Label" -> 
+                        {"XYLabel"}, "Ball" -> {"InterpolatedBall"}], 
+                     "LayoutOptions" -> Association["PanelPlotLayout" -> 
+                        Association[], "PlotRange" -> {{0., 3.}, {-1., 1.}}, 
+                       "Frame" -> {{True, True}, {True, True}}, 
+                       "AxesOrigin" -> {0., 0}, "ImageSize" -> {360, 
+                         360/GoldenRatio}, "Axes" -> {False, False}, 
+                       "LabelStyle" -> {FontFamily -> "Helvetica", 
+                         FontSize -> 14}, "AspectRatio" -> GoldenRatio^(-1), 
+                       "DefaultStyle" -> {Directive[PointSize[7/360], 
+                          CapForm["Butt"], AbsoluteThickness[1.6], RGBColor[
+                          0, 0, 1]], Directive[PointSize[7/360], CapForm[
+                          "Butt"], AbsoluteThickness[1.6], RGBColor[0, 0, 
+                          1]]}, "HighlightLabelingFunctions" -> Association[
+                         "CoordinatesToolOptions" -> ({(Identity[#1] & )[
+                          #1[[1]]], (Identity[#1] & )[#1[[2]]]} & ), 
+                         "ScalingFunctions" -> {{Identity, Identity}, 
+                          {Identity, Identity}}], "Primitives" -> {}, 
+                       "GCFlag" -> False], "Meta" -> Association[
+                       "DefaultHighlight" -> {"Dynamic", None}, "Index" -> 
+                        {}, "Function" -> ListLinePlot, "GroupHighlight" -> 
+                        False]]]] & )[Association["HighlightElements" -> 
+                   Association["Label" -> {"XYLabel"}, "Ball" -> 
+                     {"InterpolatedBall"}], "LayoutOptions" -> Association[
+                    "PanelPlotLayout" -> Association[], "PlotRange" -> 
+                     {{0., 3.}, {-1., 1.}}, "Frame" -> {{True, True}, 
+                      {True, True}}, "AxesOrigin" -> {0., 0}, "ImageSize" -> 
+                     {360, 360/GoldenRatio}, "Axes" -> {False, False}, 
+                    "LabelStyle" -> {FontFamily -> "Helvetica", FontSize -> 
+                       14}, "AspectRatio" -> GoldenRatio^(-1), 
+                    "DefaultStyle" -> {Directive[PointSize[7/360], CapForm[
+                        "Butt"], AbsoluteThickness[1.6], RGBColor[0, 0, 1]], 
+                      Directive[PointSize[7/360], CapForm["Butt"], 
+                       AbsoluteThickness[1.6], RGBColor[0, 0, 1]]}, 
+                    "HighlightLabelingFunctions" -> Association[
+                      "CoordinatesToolOptions" -> ({(Identity[#1] & )[
+                          #1[[1]]], (Identity[#1] & )[#1[[2]]]} & ), 
+                      "ScalingFunctions" -> {{Identity, Identity}, {Identity, 
+                         Identity}}], "Primitives" -> {}, "GCFlag" -> False], 
+                  "Meta" -> Association["DefaultHighlight" -> {"Dynamic", 
+                      None}, "Index" -> {}, "Function" -> ListLinePlot, 
+                    "GroupHighlight" -> False]]]], Selectable -> False]}, 
+             Annotation[{{{}, {}, Annotation[{Hue[0.67, 0.6, 0.6], 
+                  Directive[PointSize[7/360], CapForm["Butt"], 
+                   AbsoluteThickness[1.6], RGBColor[0, 0, 1]], 
+                  Line[{{1., -1.}, {2., -0.5}, {3., -1.}}]}, 
+                 "Charting`Private`Tag#1"], Annotation[
+                 {Hue[0.9060679774997897, 0.6, 0.6], Directive[PointSize[
+                    7/360], CapForm["Butt"], AbsoluteThickness[1.6], 
+                   RGBColor[0, 0, 1]], Line[{{1., 1.}, {2., 0.5}, 
+                    {3., 1.}}]}, "Charting`Private`Tag#2"]}}, 
+              Association["HighlightElements" -> Association["Label" -> 
+                  {"XYLabel"}, "Ball" -> {"InterpolatedBall"}], 
+               "LayoutOptions" -> Association["PanelPlotLayout" -> 
+                  Association[], "PlotRange" -> {{0., 3.}, {-1., 1.}}, 
+                 "Frame" -> {{True, True}, {True, True}}, "AxesOrigin" -> 
+                  {0., 0}, "ImageSize" -> {360, 360/GoldenRatio}, 
+                 "Axes" -> {False, False}, "LabelStyle" -> {FontFamily -> 
+                    "Helvetica", FontSize -> 14}, "AspectRatio" -> 
+                  GoldenRatio^(-1), "DefaultStyle" -> {Directive[PointSize[
+                     7/360], CapForm["Butt"], AbsoluteThickness[1.6], 
+                    RGBColor[0, 0, 1]], Directive[PointSize[7/360], 
+                    CapForm["Butt"], AbsoluteThickness[1.6], RGBColor[0, 0, 
+                     1]]}, "HighlightLabelingFunctions" -> Association[
+                   "CoordinatesToolOptions" -> ({(Identity[#1] & )[#1[[1]]], 
+                      (Identity[#1] & )[#1[[2]]]} & ), "ScalingFunctions" -> 
+                    {{Identity, Identity}, {Identity, Identity}}], 
+                 "Primitives" -> {}, "GCFlag" -> False], "Meta" -> 
+                Association["DefaultHighlight" -> {"Dynamic", None}, 
+                 "Index" -> {}, "Function" -> ListLinePlot, 
+                 "GroupHighlight" -> False]], "DynamicHighlight"]], 
+            {{}, {}}}, {DisplayFunction -> Identity, DisplayFunction -> 
+             Identity, PlotInteractivity :> True, DefaultBaseStyle -> 
+             {"PlotGraphics", "Graphics"}, DisplayFunction -> Identity, 
+            PlotInteractivity :> True, DefaultBaseStyle -> {"PlotGraphics", 
+              "Graphics"}, AspectRatio -> NCache[GoldenRatio^(-1), 
+              0.6180339887498948], Axes -> {False, False}, 
+            AxesLabel -> {None, None}, AxesOrigin -> {0., 0}, 
+            DisplayFunction :> Identity, Frame -> {{True, True}, 
+              {True, True}}, FrameLabel -> {{None, None}, {None, None}}, 
+            FrameStyle -> Directive[GrayLevel[0]], FrameTicks -> 
+             {{Automatic, None}, {{{1, FormBox["\"\"", TraditionalForm]}}, 
+               None}}, GridLines -> {{1}, Automatic}, GridLinesStyle -> 
+             Directive[GrayLevel[0.5, 0.4]], LabelStyle -> 
+             {FontFamily -> "Helvetica", FontSize -> 14}, 
+            Method -> {"AxisPadding" -> Scaled[0.02], 
+              "DefaultBoundaryStyle" -> Automatic, 
+              "DefaultGraphicsInteraction" -> {"Version" -> 1.2, 
+                "TrackMousePosition" -> {True, False}, "Effects" -> 
+                 {"Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> 
+                   {"ratio" -> 2}, "Droplines" -> {"freeformCursorMode" -> 
+                     True, "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
+              "DefaultMeshStyle" -> AbsolutePointSize[6], 
+              "DefaultPlotStyle" -> {Directive[RGBColor[0.9, 0.36, 0.054], 
+                 CapForm["Butt"], AbsoluteThickness[1.6]], Directive[
+                 RGBColor[0.365248, 0.427802, 0.758297], CapForm["Butt"], 
+                 AbsoluteThickness[1.6]], Directive[RGBColor[0.945109, 
+                  0.593901, 0.], CapForm["Butt"], AbsoluteThickness[1.6]], 
+                Directive[RGBColor[0.645957, 0.253192, 0.685109], 
+                 CapForm["Butt"], AbsoluteThickness[1.6]], Directive[
+                 RGBColor[0.285821, 0.56, 0.450773], CapForm["Butt"], 
+                 AbsoluteThickness[1.6]], Directive[RGBColor[0.7, 0.336, 0.], 
+                 CapForm["Butt"], AbsoluteThickness[1.6]], Directive[
+                 RGBColor[0.491486, 0.345109, 0.8], CapForm["Butt"], 
+                 AbsoluteThickness[1.6]], Directive[RGBColor[0.71788, 
+                  0.568653, 0.], CapForm["Butt"], AbsoluteThickness[1.6]], 
+                Directive[RGBColor[0.70743, 0.224, 0.542415], CapForm[
+                  "Butt"], AbsoluteThickness[1.6]], Directive[RGBColor[
+                  0.287228, 0.490217, 0.664674], CapForm["Butt"], 
+                 AbsoluteThickness[1.6]], Directive[RGBColor[
+                  0.982289285128704, 0.5771321368979874, 
+                  0.011542503255145636], CapForm["Butt"], AbsoluteThickness[
+                  1.6]], Directive[RGBColor[0.5876740325800278, 
+                  0.2877284499870081, 0.7500695697462922], CapForm["Butt"], 
+                 AbsoluteThickness[1.6]], Directive[RGBColor[
+                  0.4262088601796793, 0.5581552810007578, 
+                  0.2777996730417023], CapForm["Butt"], AbsoluteThickness[
+                  1.6]], Directive[RGBColor[0.9431487543762861, 
+                  0.414555896337833, 0.07140829055870854], CapForm["Butt"], 
+                 AbsoluteThickness[1.6]], Directive[RGBColor[
+                  0.41497437140121635, 0.393632147507352, 
+                  0.7842993779115092], CapForm["Butt"], AbsoluteThickness[
+                  1.6]]}, "DomainPadding" -> Scaled[0.02], "RangePadding" -> 
+               Scaled[0.05], "OptimizePlotMarkers" -> True, 
+              "IncludeHighlighting" -> Automatic, "HighlightStyle" -> 
+               Automatic, "OptimizePlotMarkers" -> True, 
+              "IncludeHighlighting" -> "CurrentSet", "HighlightStyle" -> 
+               Automatic, "OptimizePlotMarkers" -> True, 
+              "CoordinatesToolOptions" -> {"DisplayFunction" -> 
+                 ({(Identity[#1] & )[#1[[1]]], (Identity[#1] & )[
+                    #1[[2]]]} & ), "CopiedValueFunction" -> 
+                 ({(Identity[#1] & )[#1[[1]]], (Identity[#1] & )[
+                    #1[[2]]]} & )}}, PlotInteractivity :> True, 
+            PlotRange -> {{0., 3.}, {-1., 1.}}, PlotRangeClipping -> True, 
+            PlotRangePadding -> {{Scaled[0.02], Scaled[0.02]}, 
+              {Scaled[0.05], Scaled[0.05]}}, Ticks -> {Automatic, Automatic}, 
+            PlotInteractivity :> True}]], "Output", CellID -> 1584959512]}, 
+       Open]], Cell[CellGroupData[
+       {Cell[BoxData[InterpretationBox[Cell["\t", "ExampleDelimiter"], 
+           $Line = 0; ]], "ExampleDelimiter", CellID -> 873658799], 
+        Cell[TextData[{"Label the endpoints of two short energy bands."}], 
+         "ExampleText", CellID -> 454146223], 
+        Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+         CellID -> 1760423458], Cell[CellGroupData[
+          {Cell[BoxData[RowBox[{"BandPlot", "[", RowBox[
+                {RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{RowBox[{"-", 
+                          "1."}], ",", RowBox[{"-", "0.5"}], ",", RowBox[
+                          {"-", "1."}]}], "}"}], ",", RowBox[{"{", RowBox[
+                        {"1.", ",", "0.5", ",", "1."}], "}"}]}], "}"}], ",", 
+                 RowBox[{"{", RowBox[{"\"G\"", ",", "\"X\""}], "}"}], ",", 
+                 RowBox[{"{", RowBox[{"1", ",", "3"}], "}"}], ",", 
+                 RowBox[{"Frame", "\[Rule]", "True"}]}], "]"}]], "Input", 
+            CellID -> 1728646497], Cell[BoxData[GraphicsBox[
+              {{}, InterpretationBox[{TagBox[{{{}, {}, TagBox[{Hue[0.67, 0.6, 
+                       0.6], Directive[PointSize[NCache[7/360, 
+                         0.019444444444444445]], CapForm["Butt"], 
+                       AbsoluteThickness[1.6], RGBColor[0, 0, 1]], LineBox[
+                       {{1., -1.}, {2., -0.5}, {3., -1.}}]}, Annotation[#1, 
+                       "Charting`Private`Tag#1"] & ], TagBox[
+                     {Hue[0.9060679774997897, 0.6, 0.6], Directive[PointSize[
+                        NCache[7/360, 0.019444444444444445]], CapForm[
+                        "Butt"], AbsoluteThickness[1.6], RGBColor[0, 0, 1]], 
+                      LineBox[{{1., 1.}, {2., 0.5}, {3., 1.}}]}, 
+                     Annotation[#1, "Charting`Private`Tag#2"] & ]}}, 
+                  {"WolframDynamicHighlight", Association["Label" -> 
+                     {"XYLabel"}, "Ball" -> {"InterpolatedBall"}]}], 
+                 StyleBox[DynamicBox[(Charting`HighlightActionBox[
+                      "DynamicHighlight", {}, #HighlightElements, 
+                      #LayoutOptions, #Meta, Charting`HighlightActionFunction[
+                       "DynamicHighlight", {{{}, {}, Annotation[{Hue[0.67, 
+                          0.6, 0.6], Directive[PointSize[7/360], CapForm[
+                          "Butt"], AbsoluteThickness[1.6], RGBColor[0, 0, 
+                          1]], Line[{{1., -1.}, {2., -0.5}, {3., -1.}}]}, 
+                          "Charting`Private`Tag#1"], Annotation[
+                          {Hue[0.9060679774997897, 0.6, 0.6], Directive[
+                          PointSize[7/360], CapForm["Butt"], 
+                          AbsoluteThickness[1.6], RGBColor[0, 0, 1]], 
+                          Line[{{1., 1.}, {2., 0.5}, {3., 1.}}]}, 
+                          "Charting`Private`Tag#2"]}}, Association[
+                        "HighlightElements" -> Association["Label" -> 
+                          {"XYLabel"}, "Ball" -> {"InterpolatedBall"}], 
+                        "LayoutOptions" -> Association["PanelPlotLayout" -> 
+                          Association[], "PlotRange" -> {{0., 3.}, {-1., 
+                          1.}}, "Frame" -> {{True, True}, {True, True}}, 
+                          "AxesOrigin" -> {0., 0}, "ImageSize" -> {360, 
+                          360/GoldenRatio}, "Axes" -> {False, False}, 
+                          "LabelStyle" -> {FontFamily -> "Helvetica", 
+                          FontSize -> 14}, "AspectRatio" -> GoldenRatio^(-1), 
+                          "DefaultStyle" -> {Directive[PointSize[7/360], 
+                          CapForm["Butt"], AbsoluteThickness[1.6], RGBColor[
+                          0, 0, 1]], Directive[PointSize[7/360], CapForm[
+                          "Butt"], AbsoluteThickness[1.6], RGBColor[0, 0, 
+                          1]]}, "HighlightLabelingFunctions" -> Association[
+                          "CoordinatesToolOptions" -> ({(Identity[#1] & )[
+                          #1[[1]]], (Identity[#1] & )[#1[[2]]]} & ), 
+                          "ScalingFunctions" -> {{Identity, Identity}, 
+                          {Identity, Identity}}], "Primitives" -> {}, 
+                          "GCFlag" -> False], "Meta" -> Association[
+                          "DefaultHighlight" -> {"Dynamic", None}, "Index" -> 
+                          {}, "Function" -> ListLinePlot, "GroupHighlight" -> 
+                          False]]]] & )[Association["HighlightElements" -> 
+                      Association["Label" -> {"XYLabel"}, "Ball" -> 
+                        {"InterpolatedBall"}], "LayoutOptions" -> Association[
+                       "PanelPlotLayout" -> Association[], "PlotRange" -> 
+                        {{0., 3.}, {-1., 1.}}, "Frame" -> {{True, True}, 
+                         {True, True}}, "AxesOrigin" -> {0., 0}, 
+                       "ImageSize" -> {360, 360/GoldenRatio}, "Axes" -> 
+                        {False, False}, "LabelStyle" -> {FontFamily -> 
+                          "Helvetica", FontSize -> 14}, "AspectRatio" -> 
+                        GoldenRatio^(-1), "DefaultStyle" -> {Directive[
+                          PointSize[7/360], CapForm["Butt"], 
+                          AbsoluteThickness[1.6], RGBColor[0, 0, 1]], 
+                         Directive[PointSize[7/360], CapForm["Butt"], 
+                          AbsoluteThickness[1.6], RGBColor[0, 0, 1]]}, 
+                       "HighlightLabelingFunctions" -> Association[
+                         "CoordinatesToolOptions" -> ({(Identity[#1] & )[
+                          #1[[1]]], (Identity[#1] & )[#1[[2]]]} & ), 
+                         "ScalingFunctions" -> {{Identity, Identity}, 
+                          {Identity, Identity}}], "Primitives" -> {}, 
+                       "GCFlag" -> False], "Meta" -> Association[
+                       "DefaultHighlight" -> {"Dynamic", None}, "Index" -> 
+                        {}, "Function" -> ListLinePlot, "GroupHighlight" -> 
+                        False]]]], Selectable -> False]}, Annotation[
+                 {{{}, {}, Annotation[{Hue[0.67, 0.6, 0.6], Directive[
+                      PointSize[7/360], CapForm["Butt"], AbsoluteThickness[
+                       1.6], RGBColor[0, 0, 1]], Line[{{1., -1.}, {2., -0.5}, 
+                       {3., -1.}}]}, "Charting`Private`Tag#1"], Annotation[
+                    {Hue[0.9060679774997897, 0.6, 0.6], Directive[PointSize[
+                       7/360], CapForm["Butt"], AbsoluteThickness[1.6], 
+                      RGBColor[0, 0, 1]], Line[{{1., 1.}, {2., 0.5}, 
+                       {3., 1.}}]}, "Charting`Private`Tag#2"]}}, Association[
+                  "HighlightElements" -> Association["Label" -> {"XYLabel"}, 
+                    "Ball" -> {"InterpolatedBall"}], "LayoutOptions" -> 
+                   Association["PanelPlotLayout" -> Association[], 
+                    "PlotRange" -> {{0., 3.}, {-1., 1.}}, "Frame" -> 
+                     {{True, True}, {True, True}}, "AxesOrigin" -> {0., 0}, 
+                    "ImageSize" -> {360, 360/GoldenRatio}, "Axes" -> 
+                     {False, False}, "LabelStyle" -> {FontFamily -> 
+                       "Helvetica", FontSize -> 14}, "AspectRatio" -> 
+                     GoldenRatio^(-1), "DefaultStyle" -> {Directive[PointSize[
+                        7/360], CapForm["Butt"], AbsoluteThickness[1.6], 
+                       RGBColor[0, 0, 1]], Directive[PointSize[7/360], 
+                       CapForm["Butt"], AbsoluteThickness[1.6], RGBColor[0, 
+                        0, 1]]}, "HighlightLabelingFunctions" -> Association[
+                      "CoordinatesToolOptions" -> ({(Identity[#1] & )[
+                          #1[[1]]], (Identity[#1] & )[#1[[2]]]} & ), 
+                      "ScalingFunctions" -> {{Identity, Identity}, {Identity, 
+                         Identity}}], "Primitives" -> {}, "GCFlag" -> False], 
+                  "Meta" -> Association["DefaultHighlight" -> {"Dynamic", 
+                      None}, "Index" -> {}, "Function" -> ListLinePlot, 
+                    "GroupHighlight" -> False]], "DynamicHighlight"]], {{}, 
+                {}}}, {DisplayFunction -> Identity, DisplayFunction -> 
+                Identity, PlotInteractivity :> True, DefaultBaseStyle -> 
+                {"PlotGraphics", "Graphics"}, DisplayFunction -> Identity, 
+               PlotInteractivity :> True, DefaultBaseStyle -> 
+                {"PlotGraphics", "Graphics"}, AspectRatio -> NCache[
+                 GoldenRatio^(-1), 0.6180339887498948], Axes -> 
+                {False, False}, AxesLabel -> {None, None}, AxesOrigin -> 
+                {0., 0}, DisplayFunction :> Identity, Frame -> {{True, True}, 
+                 {True, True}}, FrameLabel -> {{None, None}, {None, None}}, 
+               FrameStyle -> Directive[GrayLevel[0]], FrameTicks -> 
+                {{Automatic, None}, {{{1, FormBox["\"G\"", TraditionalForm]}, 
+                   {3, FormBox["\"X\"", TraditionalForm]}}, None}}, 
+               GridLines -> {{1, 3}, Automatic}, GridLinesStyle -> 
+                Directive[GrayLevel[0.5, 0.4]], LabelStyle -> 
+                {FontFamily -> "Helvetica", FontSize -> 14}, Method -> 
+                {"AxisPadding" -> Scaled[0.02], "DefaultBoundaryStyle" -> 
+                  Automatic, "DefaultGraphicsInteraction" -> {"Version" -> 
+                    1.2, "TrackMousePosition" -> {True, False}, "Effects" -> 
+                    {"Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> 
+                      {"ratio" -> 2}, "Droplines" -> {"freeformCursorMode" -> 
+                        True, "placement" -> {"x" -> "All", "y" -> 
+                          "None"}}}}, "DefaultMeshStyle" -> AbsolutePointSize[
+                   6], "DefaultPlotStyle" -> {Directive[RGBColor[0.9, 0.36, 
+                     0.054], CapForm["Butt"], AbsoluteThickness[1.6]], 
+                   Directive[RGBColor[0.365248, 0.427802, 0.758297], 
+                    CapForm["Butt"], AbsoluteThickness[1.6]], Directive[
+                    RGBColor[0.945109, 0.593901, 0.], CapForm["Butt"], 
+                    AbsoluteThickness[1.6]], Directive[RGBColor[0.645957, 
+                     0.253192, 0.685109], CapForm["Butt"], AbsoluteThickness[
+                     1.6]], Directive[RGBColor[0.285821, 0.56, 0.450773], 
+                    CapForm["Butt"], AbsoluteThickness[1.6]], Directive[
+                    RGBColor[0.7, 0.336, 0.], CapForm["Butt"], 
+                    AbsoluteThickness[1.6]], Directive[RGBColor[0.491486, 
+                     0.345109, 0.8], CapForm["Butt"], AbsoluteThickness[
+                     1.6]], Directive[RGBColor[0.71788, 0.568653, 0.], 
+                    CapForm["Butt"], AbsoluteThickness[1.6]], Directive[
+                    RGBColor[0.70743, 0.224, 0.542415], CapForm["Butt"], 
+                    AbsoluteThickness[1.6]], Directive[RGBColor[0.287228, 
+                     0.490217, 0.664674], CapForm["Butt"], AbsoluteThickness[
+                     1.6]], Directive[RGBColor[0.982289285128704, 
+                     0.5771321368979874, 0.011542503255145636], CapForm[
+                     "Butt"], AbsoluteThickness[1.6]], Directive[RGBColor[
+                     0.5876740325800278, 0.2877284499870081, 
+                     0.7500695697462922], CapForm["Butt"], AbsoluteThickness[
+                     1.6]], Directive[RGBColor[0.4262088601796793, 
+                     0.5581552810007578, 0.2777996730417023], CapForm[
+                     "Butt"], AbsoluteThickness[1.6]], Directive[RGBColor[
+                     0.9431487543762861, 0.414555896337833, 
+                     0.07140829055870854], CapForm["Butt"], AbsoluteThickness[
+                     1.6]], Directive[RGBColor[0.41497437140121635, 
+                     0.393632147507352, 0.7842993779115092], CapForm["Butt"], 
+                    AbsoluteThickness[1.6]]}, "DomainPadding" -> 
+                  Scaled[0.02], "RangePadding" -> Scaled[0.05], 
+                 "OptimizePlotMarkers" -> True, "IncludeHighlighting" -> 
+                  Automatic, "HighlightStyle" -> Automatic, 
+                 "OptimizePlotMarkers" -> True, "IncludeHighlighting" -> 
+                  "CurrentSet", "HighlightStyle" -> Automatic, 
+                 "OptimizePlotMarkers" -> True, "CoordinatesToolOptions" -> 
+                  {"DisplayFunction" -> ({(Identity[#1] & )[#1[[1]]], 
+                      (Identity[#1] & )[#1[[2]]]} & ), 
+                   "CopiedValueFunction" -> ({(Identity[#1] & )[#1[[1]]], 
+                      (Identity[#1] & )[#1[[2]]]} & )}}, PlotInteractivity :> 
+                True, PlotRange -> {{0., 3.}, {-1., 1.}}, 
+               PlotRangeClipping -> True, PlotRangePadding -> 
+                {{Scaled[0.02], Scaled[0.02]}, {Scaled[0.05], Scaled[0.05]}}, 
+               Ticks -> {Automatic, Automatic}, PlotInteractivity :> True}]], 
+            "Output", CellID -> 549005023]}, Open]]}, Open]], 
+     Cell[CellGroupData[{Cell[BoxData[InterpretationBox[
+           Cell["\t", "ExampleDelimiter"], $Line = 0; ]], "ExampleDelimiter", 
+         CellID -> 443282632], Cell[TextData[
+          {"Specify the vertical tick positions and labels explicitly."}], 
+         "ExampleText", CellID -> 518733758], 
+        Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+         CellID -> 2031025781], Cell[CellGroupData[
+          {Cell[BoxData[RowBox[{"BandPlot", "[", RowBox[
+                {RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{RowBox[{"-", 
+                          "1."}], ",", RowBox[{"-", "0.5"}], ",", RowBox[
+                          {"-", "1."}]}], "}"}], ",", RowBox[{"{", RowBox[
+                        {"1.", ",", "0.5", ",", "1."}], "}"}]}], "}"}], ",", 
+                 RowBox[{"{", RowBox[{"\"G\"", ",", "\"X\""}], "}"}], ",", 
+                 RowBox[{"{", RowBox[{"1", ",", "3"}], "}"}], ",", 
+                 RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{RowBox[{"-", 
+                          "1"}], ",", "\"lower\""}], "}"}], ",", RowBox[
+                      {"{", RowBox[{"0", ",", "\"zero\""}], "}"}], ",", 
+                     RowBox[{"{", RowBox[{"1", ",", "\"upper\""}], "}"}]}], 
+                   "}"}], ",", RowBox[{"Frame", "\[Rule]", "True"}]}], 
+               "]"}]], "Input", CellID -> 418010365], 
+           Cell[BoxData[GraphicsBox[{{}, InterpretationBox[
+                {TagBox[{{{}, {}, TagBox[{Hue[0.67, 0.6, 0.6], Directive[
+                       PointSize[NCache[7/360, 0.019444444444444445]], 
+                       CapForm["Butt"], AbsoluteThickness[1.6], RGBColor[0, 
+                        0, 1]], LineBox[{{1., -1.}, {2., -0.5}, {3., -1.}}]}, 
+                     Annotation[#1, "Charting`Private`Tag#1"] & ], 
+                    TagBox[{Hue[0.9060679774997897, 0.6, 0.6], Directive[
+                       PointSize[NCache[7/360, 0.019444444444444445]], 
+                       CapForm["Butt"], AbsoluteThickness[1.6], RGBColor[0, 
+                        0, 1]], LineBox[{{1., 1.}, {2., 0.5}, {3., 1.}}]}, 
+                     Annotation[#1, "Charting`Private`Tag#2"] & ]}}, 
+                  {"WolframDynamicHighlight", Association["Label" -> 
+                     {"XYLabel"}, "Ball" -> {"InterpolatedBall"}]}], 
+                 StyleBox[DynamicBox[(Charting`HighlightActionBox[
+                      "DynamicHighlight", {}, #HighlightElements, 
+                      #LayoutOptions, #Meta, Charting`HighlightActionFunction[
+                       "DynamicHighlight", {{{}, {}, Annotation[{Hue[0.67, 
+                          0.6, 0.6], Directive[PointSize[7/360], CapForm[
+                          "Butt"], AbsoluteThickness[1.6], RGBColor[0, 0, 
+                          1]], Line[{{1., -1.}, {2., -0.5}, {3., -1.}}]}, 
+                          "Charting`Private`Tag#1"], Annotation[
+                          {Hue[0.9060679774997897, 0.6, 0.6], Directive[
+                          PointSize[7/360], CapForm["Butt"], 
+                          AbsoluteThickness[1.6], RGBColor[0, 0, 1]], 
+                          Line[{{1., 1.}, {2., 0.5}, {3., 1.}}]}, 
+                          "Charting`Private`Tag#2"]}}, Association[
+                        "HighlightElements" -> Association["Label" -> 
+                          {"XYLabel"}, "Ball" -> {"InterpolatedBall"}], 
+                        "LayoutOptions" -> Association["PanelPlotLayout" -> 
+                          Association[], "PlotRange" -> {{0., 3.}, {-1., 
+                          1.}}, "Frame" -> {{True, True}, {True, True}}, 
+                          "AxesOrigin" -> {0., 0}, "ImageSize" -> {360, 
+                          360/GoldenRatio}, "Axes" -> {False, False}, 
+                          "LabelStyle" -> {FontFamily -> "Helvetica", 
+                          FontSize -> 14}, "AspectRatio" -> GoldenRatio^(-1), 
+                          "DefaultStyle" -> {Directive[PointSize[7/360], 
+                          CapForm["Butt"], AbsoluteThickness[1.6], RGBColor[
+                          0, 0, 1]], Directive[PointSize[7/360], CapForm[
+                          "Butt"], AbsoluteThickness[1.6], RGBColor[0, 0, 
+                          1]]}, "HighlightLabelingFunctions" -> Association[
+                          "CoordinatesToolOptions" -> ({(Identity[#1] & )[
+                          #1[[1]]], (Identity[#1] & )[#1[[2]]]} & ), 
+                          "ScalingFunctions" -> {{Identity, Identity}, 
+                          {Identity, Identity}}], "Primitives" -> {}, 
+                          "GCFlag" -> False], "Meta" -> Association[
+                          "DefaultHighlight" -> {"Dynamic", None}, "Index" -> 
+                          {}, "Function" -> ListLinePlot, "GroupHighlight" -> 
+                          False]]]] & )[Association["HighlightElements" -> 
+                      Association["Label" -> {"XYLabel"}, "Ball" -> 
+                        {"InterpolatedBall"}], "LayoutOptions" -> Association[
+                       "PanelPlotLayout" -> Association[], "PlotRange" -> 
+                        {{0., 3.}, {-1., 1.}}, "Frame" -> {{True, True}, 
+                         {True, True}}, "AxesOrigin" -> {0., 0}, 
+                       "ImageSize" -> {360, 360/GoldenRatio}, "Axes" -> 
+                        {False, False}, "LabelStyle" -> {FontFamily -> 
+                          "Helvetica", FontSize -> 14}, "AspectRatio" -> 
+                        GoldenRatio^(-1), "DefaultStyle" -> {Directive[
+                          PointSize[7/360], CapForm["Butt"], 
+                          AbsoluteThickness[1.6], RGBColor[0, 0, 1]], 
+                         Directive[PointSize[7/360], CapForm["Butt"], 
+                          AbsoluteThickness[1.6], RGBColor[0, 0, 1]]}, 
+                       "HighlightLabelingFunctions" -> Association[
+                         "CoordinatesToolOptions" -> ({(Identity[#1] & )[
+                          #1[[1]]], (Identity[#1] & )[#1[[2]]]} & ), 
+                         "ScalingFunctions" -> {{Identity, Identity}, 
+                          {Identity, Identity}}], "Primitives" -> {}, 
+                       "GCFlag" -> False], "Meta" -> Association[
+                       "DefaultHighlight" -> {"Dynamic", None}, "Index" -> 
+                        {}, "Function" -> ListLinePlot, "GroupHighlight" -> 
+                        False]]]], Selectable -> False]}, Annotation[
+                 {{{}, {}, Annotation[{Hue[0.67, 0.6, 0.6], Directive[
+                      PointSize[7/360], CapForm["Butt"], AbsoluteThickness[
+                       1.6], RGBColor[0, 0, 1]], Line[{{1., -1.}, {2., -0.5}, 
+                       {3., -1.}}]}, "Charting`Private`Tag#1"], Annotation[
+                    {Hue[0.9060679774997897, 0.6, 0.6], Directive[PointSize[
+                       7/360], CapForm["Butt"], AbsoluteThickness[1.6], 
+                      RGBColor[0, 0, 1]], Line[{{1., 1.}, {2., 0.5}, 
+                       {3., 1.}}]}, "Charting`Private`Tag#2"]}}, Association[
+                  "HighlightElements" -> Association["Label" -> {"XYLabel"}, 
+                    "Ball" -> {"InterpolatedBall"}], "LayoutOptions" -> 
+                   Association["PanelPlotLayout" -> Association[], 
+                    "PlotRange" -> {{0., 3.}, {-1., 1.}}, "Frame" -> 
+                     {{True, True}, {True, True}}, "AxesOrigin" -> {0., 0}, 
+                    "ImageSize" -> {360, 360/GoldenRatio}, "Axes" -> 
+                     {False, False}, "LabelStyle" -> {FontFamily -> 
+                       "Helvetica", FontSize -> 14}, "AspectRatio" -> 
+                     GoldenRatio^(-1), "DefaultStyle" -> {Directive[PointSize[
+                        7/360], CapForm["Butt"], AbsoluteThickness[1.6], 
+                       RGBColor[0, 0, 1]], Directive[PointSize[7/360], 
+                       CapForm["Butt"], AbsoluteThickness[1.6], RGBColor[0, 
+                        0, 1]]}, "HighlightLabelingFunctions" -> Association[
+                      "CoordinatesToolOptions" -> ({(Identity[#1] & )[
+                          #1[[1]]], (Identity[#1] & )[#1[[2]]]} & ), 
+                      "ScalingFunctions" -> {{Identity, Identity}, {Identity, 
+                         Identity}}], "Primitives" -> {}, "GCFlag" -> False], 
+                  "Meta" -> Association["DefaultHighlight" -> {"Dynamic", 
+                      None}, "Index" -> {}, "Function" -> ListLinePlot, 
+                    "GroupHighlight" -> False]], "DynamicHighlight"]], {{}, 
+                {}}}, {DisplayFunction -> Identity, DisplayFunction -> 
+                Identity, PlotInteractivity :> True, DefaultBaseStyle -> 
+                {"PlotGraphics", "Graphics"}, DisplayFunction -> Identity, 
+               PlotInteractivity :> True, DefaultBaseStyle -> 
+                {"PlotGraphics", "Graphics"}, AspectRatio -> NCache[
+                 GoldenRatio^(-1), 0.6180339887498948], Axes -> 
+                {False, False}, AxesLabel -> {None, None}, AxesOrigin -> 
+                {0., 0}, DisplayFunction :> Identity, Frame -> {{True, True}, 
+                 {True, True}}, FrameLabel -> {{None, None}, {None, None}}, 
+               FrameStyle -> Directive[GrayLevel[0]], FrameTicks -> 
+                {{{{-1, FormBox["\"lower\"", TraditionalForm]}, 
+                   {0, FormBox["\"zero\"", TraditionalForm]}, {1, FormBox[
+                     "\"upper\"", TraditionalForm]}}, None}, 
+                 {{{1, FormBox["\"G\"", TraditionalForm]}, {3, FormBox[
+                     "\"X\"", TraditionalForm]}}, None}}, GridLines -> 
+                {{1, 3}, {-1, 0, 1}}, GridLinesStyle -> Directive[
+                 GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> 
+                  "Helvetica", FontSize -> 14}, Method -> {"AxisPadding" -> 
+                  Scaled[0.02], "DefaultBoundaryStyle" -> Automatic, 
+                 "DefaultGraphicsInteraction" -> {"Version" -> 1.2, 
+                   "TrackMousePosition" -> {True, False}, "Effects" -> 
+                    {"Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> 
+                      {"ratio" -> 2}, "Droplines" -> {"freeformCursorMode" -> 
+                        True, "placement" -> {"x" -> "All", "y" -> 
+                          "None"}}}}, "DefaultMeshStyle" -> AbsolutePointSize[
+                   6], "DefaultPlotStyle" -> {Directive[RGBColor[0.9, 0.36, 
+                     0.054], CapForm["Butt"], AbsoluteThickness[1.6]], 
+                   Directive[RGBColor[0.365248, 0.427802, 0.758297], 
+                    CapForm["Butt"], AbsoluteThickness[1.6]], Directive[
+                    RGBColor[0.945109, 0.593901, 0.], CapForm["Butt"], 
+                    AbsoluteThickness[1.6]], Directive[RGBColor[0.645957, 
+                     0.253192, 0.685109], CapForm["Butt"], AbsoluteThickness[
+                     1.6]], Directive[RGBColor[0.285821, 0.56, 0.450773], 
+                    CapForm["Butt"], AbsoluteThickness[1.6]], Directive[
+                    RGBColor[0.7, 0.336, 0.], CapForm["Butt"], 
+                    AbsoluteThickness[1.6]], Directive[RGBColor[0.491486, 
+                     0.345109, 0.8], CapForm["Butt"], AbsoluteThickness[
+                     1.6]], Directive[RGBColor[0.71788, 0.568653, 0.], 
+                    CapForm["Butt"], AbsoluteThickness[1.6]], Directive[
+                    RGBColor[0.70743, 0.224, 0.542415], CapForm["Butt"], 
+                    AbsoluteThickness[1.6]], Directive[RGBColor[0.287228, 
+                     0.490217, 0.664674], CapForm["Butt"], AbsoluteThickness[
+                     1.6]], Directive[RGBColor[0.982289285128704, 
+                     0.5771321368979874, 0.011542503255145636], CapForm[
+                     "Butt"], AbsoluteThickness[1.6]], Directive[RGBColor[
+                     0.5876740325800278, 0.2877284499870081, 
+                     0.7500695697462922], CapForm["Butt"], AbsoluteThickness[
+                     1.6]], Directive[RGBColor[0.4262088601796793, 
+                     0.5581552810007578, 0.2777996730417023], CapForm[
+                     "Butt"], AbsoluteThickness[1.6]], Directive[RGBColor[
+                     0.9431487543762861, 0.414555896337833, 
+                     0.07140829055870854], CapForm["Butt"], AbsoluteThickness[
+                     1.6]], Directive[RGBColor[0.41497437140121635, 
+                     0.393632147507352, 0.7842993779115092], CapForm["Butt"], 
+                    AbsoluteThickness[1.6]]}, "DomainPadding" -> 
+                  Scaled[0.02], "RangePadding" -> Scaled[0.05], 
+                 "OptimizePlotMarkers" -> True, "IncludeHighlighting" -> 
+                  Automatic, "HighlightStyle" -> Automatic, 
+                 "OptimizePlotMarkers" -> True, "IncludeHighlighting" -> 
+                  "CurrentSet", "HighlightStyle" -> Automatic, 
+                 "OptimizePlotMarkers" -> True, "CoordinatesToolOptions" -> 
+                  {"DisplayFunction" -> ({(Identity[#1] & )[#1[[1]]], 
+                      (Identity[#1] & )[#1[[2]]]} & ), 
+                   "CopiedValueFunction" -> ({(Identity[#1] & )[#1[[1]]], 
+                      (Identity[#1] & )[#1[[2]]]} & )}}, PlotInteractivity :> 
+                True, PlotRange -> {{0., 3.}, {-1., 1.}}, 
+               PlotRangeClipping -> True, PlotRangePadding -> 
+                {{Scaled[0.02], Scaled[0.02]}, {Scaled[0.05], Scaled[0.05]}}, 
+               Ticks -> {Automatic, Automatic}, PlotInteractivity :> True}]], 
+            "Output", CellID -> 2007746295]}, Open]]}, Open]]}, Open]], 
+  Cell[CellGroupData[{Cell["More Examples", "ExtendedExamplesSection", 
+      CellTags -> "ExtendedExamples", CellID -> 1079586033]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 362138494], 
+     Cell[TextData[{Cell[BoxData[ButtonBox["BandData", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/BandData"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["PathSample", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/PathSample"]], "InlineSeeAlsoFunction", 
+         TaggingRules -> {"PageType" -> "Function"}], 
+        StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"], 
+        Cell[BoxData[ButtonBox["BandPlotWithWeight", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/BandPlotWithWeight"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["ListLinePlot", 
+           BaseStyle -> "Link", ButtonData -> "paclet:ref/ListLinePlot"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}]}], "SeeAlso", CellID -> 473702213]}, 
+    Open]], Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 2057784460], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 1329518671]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 393543166], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 893805353]}, Open]]}, WindowTitle -> "BandPlot", 
+ Saveable -> True, Editable -> True, CellContext -> "Global`", 
+ TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]

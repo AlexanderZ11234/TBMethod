@@ -1,0 +1,134 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 982630639], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 1643035910], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 149489445], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 967436716], Cell["TBMethod`MDConstruct`", "Categorization", 
+      CellLabel -> "Context", CellID -> 1476006338], 
+     Cell["TBMethod/ref/FillWithDistance", "Categorization", 
+      CellLabel -> "URI", CellID -> 330861165]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 820902737], Cell["FillWithDistance, tight binding, TBMethod", 
+      "Keywords", CellID -> 1672504548]}, Closed]], 
+  Cell[CellGroupData[{Cell["FillWithDistance", "ObjectName", 
+      CellID -> 1082110467], Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["FillWithDistance", BaseStyle -> 
+              "Link", ButtonData -> "paclet:TBMethod/ref/FillWithDistance"], 
+            "[", RowBox[{StyleBox["heldMatrices", "TI", FontFamily -> 
+                "Times", FontSlant -> "Italic"], ",", StyleBox["distances", 
+               "TI", FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+              StyleBox["d", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"]}], "]"}]], "InlineFormula"], " \[LineSeparator]", "\
+selects and releases a held matrix whose listed distance matches ", 
+        Cell[BoxData[StyleBox["d", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], ".", "\n", 
+        Cell["   ", "ModInfo"], Cell[BoxData[
+          RowBox[{ButtonBox["FillWithDistance", BaseStyle -> "Link", 
+             ButtonData -> "paclet:TBMethod/ref/FillWithDistance"], "[", 
+            RowBox[{StyleBox["heldMatrices", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"], ",", StyleBox["distances", "TI", 
+               FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+              StyleBox["d", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"], ",", StyleBox["tolerance", "TI", FontFamily -> 
+                "Times", FontSlant -> "Italic"]}], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", 
+        "uses the specified absolute distance-matching tolerance."}], 
+      "Usage", CellID -> 1980681856], 
+     Cell[TextData[{Cell[BoxData[StyleBox["heldMatrices", "TI"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], " and ", 
+        Cell[BoxData[StyleBox["distances", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        " are equally long lists. Each entry of ", 
+        Cell[BoxData[StyleBox["heldMatrices", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " has the form ", 
+        Cell[BoxData[RowBox[{ButtonBox["Hold", BaseStyle -> "Link", 
+             ButtonData -> "paclet:ref/Hold"], "[", StyleBox[
+             "matrixExpression", "TI"], "]"}]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], ". The implementation determines \
+the default zero-matrix shape from the first held expression."}], "Notes", 
+      CellID -> 1765124467], Cell[TextData[{"A branch is selected when ", 
+        Cell[BoxData[FormBox[TagBox[RowBox[{TemplateBox[{RowBox[{"d", "-", 
+                  "shellDistance"}]}, "Abs"], "<", "tolerance"}], HoldForm], 
+           TraditionalForm]], "InlineMath", ScriptLevel -> 0, 
+         FractionBoxOptions -> {BaseStyle -> {ScriptLevel -> 0}}], 
+        ". The default ", Cell[BoxData[StyleBox["tolerance", "TI"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], " is ", 
+        Cell[BoxData["0.00001"], "InlineFormula", FontFamily -> 
+          "Source Sans Pro"], "; the first matching branch wins."}], "Notes", 
+      CellID -> 676272485], Cell[TextData[{"If no branch matches, returns a \
+zero array of the first matrix shape. ", 
+        Cell[BoxData[ButtonBox["ReleaseHold", BaseStyle -> "Link", 
+           ButtonData -> "paclet:ref/ReleaseHold"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        " is applied to the resulting piecewise expression."}], "Notes", 
+      CellID -> 1720839708]}, Open]], 
+  Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 458177856], Cell[TextData[{"Choose the nearest-neighbor \
+hopping block instead of the onsite block."}], "ExampleText", 
+      CellID -> 1621567478], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 1228766280], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{"FillWithDistance", "[", 
+            RowBox[{RowBox[{"{", RowBox[{RowBox[{"Hold", "[", RowBox[
+                     {"{", RowBox[{"{", "2.", "}"}], "}"}], "]"}], ",", 
+                  RowBox[{"Hold", "[", RowBox[{"{", RowBox[{"{", RowBox[
+                         {"-", "1."}], "}"}], "}"}], "]"}]}], "}"}], ",", 
+              RowBox[{"{", RowBox[{"0.", ",", "1."}], "}"}], ",", "1."}], 
+            "]"}]], "Input", CellID -> 692341141], 
+        Cell[BoxData[RowBox[{"{", RowBox[{"{", RowBox[{"-", "1.`"}], "}"}], 
+            "}"}]], "Output", CellID -> 1949810043]}, Open]], 
+     Cell[CellGroupData[{Cell[BoxData[InterpretationBox[
+           Cell["\t", "ExampleDelimiter"], $Line = 0; ]], "ExampleDelimiter", 
+         CellID -> 1940404704], Cell[TextData[
+          {
+           "Allow a distance to match a shell within an explicit tolerance."}]\
+, "ExampleText", CellID -> 1143362559], 
+        Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+         CellID -> 1867822205], Cell[CellGroupData[
+          {Cell[BoxData[RowBox[{"FillWithDistance", "[", RowBox[
+                {RowBox[{"{", RowBox[{RowBox[{"Hold", "[", RowBox[{"{", 
+                         RowBox[{"{", "2.", "}"}], "}"}], "]"}], ",", 
+                     RowBox[{"Hold", "[", RowBox[{"{", RowBox[{"{", RowBox[
+                          {"-", "1."}], "}"}], "}"}], "]"}]}], "}"}], ",", 
+                 RowBox[{"{", RowBox[{"0.", ",", "1."}], "}"}], ",", 
+                 "1.0005", ",", "0.001"}], "]"}]], "Input", 
+            CellID -> 495252833], Cell[BoxData[RowBox[{"{", RowBox[
+                {"{", RowBox[{"-", "1.`"}], "}"}], "}"}]], "Output", 
+            CellID -> 1917797778]}, Open]]}, Open]]}, Open]], 
+  Cell[CellGroupData[{Cell["More Examples", "ExtendedExamplesSection", 
+      CellTags -> "ExtendedExamples", CellID -> 188601220]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 1691719630], 
+     Cell[TextData[{Cell[BoxData[ButtonBox["FillWithCondition", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/FillWithCondition"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["HMatrixFromHoppings", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/HMatrixFromHoppings"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["Piecewise", 
+           BaseStyle -> "Link", ButtonData -> "paclet:ref/Piecewise"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}]}], "SeeAlso", CellID -> 853751780]}, 
+    Open]], Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 707987688], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 209466426]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 1228058664], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 282812088]}, Open]]}, WindowTitle -> "FillWithDistance", 
+ Saveable -> True, Editable -> True, CellContext -> "Global`", 
+ TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]

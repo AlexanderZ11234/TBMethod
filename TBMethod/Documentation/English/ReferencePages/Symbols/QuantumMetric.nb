@@ -1,0 +1,361 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 1098203434], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 953101878], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 189285556], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 1100890928], Cell["TBMethod`EigenSpect`", "Categorization", 
+      CellLabel -> "Context", CellID -> 2072135521], 
+     Cell["TBMethod/ref/QuantumMetric", "Categorization", CellLabel -> "URI", 
+      CellID -> 1750222638]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 1143375442], Cell["QuantumMetric, tight binding, TBMethod", 
+      "Keywords", CellID -> 308029556]}, Closed]], 
+  Cell[CellGroupData[{Cell["QuantumMetric", "ObjectName", 
+      CellID -> 955096694], Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{RowBox[{ButtonBox["QuantumMetric", BaseStyle -> 
+                "Link", ButtonData -> "paclet:TBMethod/ref/QuantumMetric"], 
+              "[", RowBox[{RowBox[{"{", RowBox[{StyleBox["h", "TI", 
+                     FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                    StyleBox["velocities", "TI", FontFamily -> "Times", 
+                     FontSlant -> "Italic"]}], "}"}], ",", StyleBox[
+                 "filling", "TI", FontFamily -> "Times", FontSlant -> 
+                  "Italic"]}], "]"}], "[", StyleBox["k", "TI", 
+             FontFamily -> "Times", FontSlant -> "Italic"], "]"}]], 
+         "InlineFormula"], " \[LineSeparator]", "computes the first diagonal \
+component of the occupied-band quantum metric at ", 
+        Cell[BoxData[StyleBox["k", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], ".", "\n", 
+        Cell["   ", "ModInfo"], Cell[BoxData[
+          RowBox[{RowBox[{ButtonBox["QuantumMetric", BaseStyle -> "Link", 
+               ButtonData -> "paclet:TBMethod/ref/QuantumMetric"], "[", 
+              RowBox[{RowBox[{"{", RowBox[{StyleBox["h", "TI", FontFamily -> 
+                      "Times", FontSlant -> "Italic"], ",", StyleBox[
+                     "velocities", "TI", FontFamily -> "Times", FontSlant -> 
+                      "Italic"]}], "}"}], ",", StyleBox["filling", "TI", 
+                 FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                RowBox[{"{", RowBox[{StyleBox["alpha", "TI", FontFamily -> 
+                      "Times", FontSlant -> "Italic"], ",", StyleBox["beta", 
+                     "TI", FontFamily -> "Times", FontSlant -> "Italic"]}], 
+                  "}"}]}], "]"}], "[", StyleBox["k", "TI", FontFamily -> 
+              "Times", FontSlant -> "Italic"], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", 
+        "computes the component specified by derivative directions ", 
+        Cell[BoxData[StyleBox["alpha", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], " and ", 
+        Cell[BoxData[StyleBox["beta", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], ".", "\n", 
+        Cell["   ", "ModInfo"], Cell[BoxData[
+          RowBox[{RowBox[{ButtonBox["QuantumMetric", BaseStyle -> "Link", 
+               ButtonData -> "paclet:TBMethod/ref/QuantumMetric"], "[", 
+              RowBox[{RowBox[{"{", RowBox[{StyleBox["h", "TI", FontFamily -> 
+                      "Times", FontSlant -> "Italic"], ",", StyleBox[
+                     "velocities", "TI", FontFamily -> "Times", FontSlant -> 
+                      "Italic"]}], "}"}], ",", StyleBox["q", "TI", 
+                 FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                StyleBox["filling", "TI", FontFamily -> "Times", FontSlant -> 
+                  "Italic"], ",", RowBox[{"{", RowBox[{StyleBox["alpha", 
+                     "TI", FontFamily -> "Times", FontSlant -> "Italic"], 
+                    ",", StyleBox["beta", "TI", FontFamily -> "Times", 
+                     FontSlant -> "Italic"]}], "}"}]}], "]"}], "[", 
+            StyleBox["k", "TI", FontFamily -> "Times", FontSlant -> 
+              "Italic"], "]"}]], "InlineFormula"], " \[LineSeparator]", 
+        "uses the symmetrized observable current associated with ", 
+        Cell[BoxData[StyleBox["q", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], 
+        " in the first direction.", "\n", Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{RowBox[{ButtonBox["QuantumMetric", BaseStyle -> 
+                "Link", ButtonData -> "paclet:TBMethod/ref/QuantumMetric"], 
+              "[", RowBox[{StyleBox["hv", "TI", FontFamily -> "Times", 
+                 FontSlant -> "Italic"], ",", StyleBox["filling", "TI", 
+                 FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                RowBox[{"{", RowBox[{StyleBox["alpha", "TI", FontFamily -> 
+                      "Times", FontSlant -> "Italic"], ",", StyleBox["beta", 
+                     "TI", FontFamily -> "Times", FontSlant -> "Italic"]}], 
+                  "}"}]}], "]"}], "[", StyleBox["k", "TI", FontFamily -> 
+              "Times", FontSlant -> "Italic"], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", "uses a combined function ", 
+        Cell[BoxData[StyleBox["hv", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], 
+        " that returns the Hamiltonian and its derivative matrices.", "\n", 
+        Cell["   ", "ModInfo"], Cell[BoxData[
+          RowBox[{RowBox[{ButtonBox["QuantumMetric", BaseStyle -> "Link", 
+               ButtonData -> "paclet:TBMethod/ref/QuantumMetric"], "[", 
+              RowBox[{StyleBox["hv", "TI", FontFamily -> "Times", 
+                 FontSlant -> "Italic"], ",", StyleBox["q", "TI", 
+                 FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                StyleBox["filling", "TI", FontFamily -> "Times", FontSlant -> 
+                  "Italic"], ",", RowBox[{"{", RowBox[{StyleBox["alpha", 
+                     "TI", FontFamily -> "Times", FontSlant -> "Italic"], 
+                    ",", StyleBox["beta", "TI", FontFamily -> "Times", 
+                     FontSlant -> "Italic"]}], "}"}]}], "]"}], "[", 
+            StyleBox["k", "TI", FontFamily -> "Times", FontSlant -> 
+              "Italic"], "]"}]], "InlineFormula"], " \[LineSeparator]", "uses \
+the combined Hamiltonian\[Dash]derivative function and an observable-current \
+insertion."}], "Usage", CellID -> 1477374411], 
+     Cell[TextData[{Cell[BoxData[RowBox[{StyleBox["h", "TI"], "[", 
+            StyleBox["k", "TI"], "]"}]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        " returns a Hermitian Hamiltonian and ", 
+        Cell[BoxData[RowBox[{StyleBox["velocities", "TI"], "[", 
+            StyleBox["k", "TI"], "]"}]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        " returns its derivative-matrix list. Alternatively, ", 
+        Cell[BoxData[RowBox[{StyleBox["hv", "TI"], "[", StyleBox["k", "TI"], 
+            "]"}]], "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        " returns ", Cell[BoxData[RowBox[{"{", RowBox[
+             {RowBox[{StyleBox["h", "TI"], "[", StyleBox["k", "TI"], "]"}], 
+              ",", RowBox[{StyleBox["velocities", "TI"], "[", StyleBox["k", 
+                 "TI"], "]"}]}], "}"}]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], "."}], "Notes", 
+      CellID -> 414763077], 
+     Cell[TextData[{"The default derivative directions are ", 
+        Cell[BoxData[RowBox[{"{", RowBox[{"1", ",", "1"}], "}"}]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], ", selecting the \
+first diagonal metric component. Direction indices are one-based."}], 
+      "Notes", CellID -> 923052976], 
+     Cell[TextData[{"A positive integer ", 
+        Cell[BoxData[StyleBox["filling", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        " counts occupied low-energy states. A real ", 
+        Cell[BoxData[StyleBox["filling", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        " is a Fermi energy; use a real number such as ", 
+        Cell[BoxData["0."], "InlineFormula", FontFamily -> 
+          "Source Sans Pro"], " to distinguish it from a band count."}], 
+      "Notes", CellID -> 617522257], 
+     Cell[TextData[{"The optional observable matrix ", 
+        Cell[BoxData[StyleBox["q", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        " produces the symmetrized current shown below. The special value ", 
+        Cell[BoxData["1"], "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        " gives the ordinary metric."}], "Notes", CellID -> 1763080235], 
+     Cell[TextData[{"An empty or completely occupied spectrum returns ", 
+        Cell[BoxData["0."], "InlineFormula", FontFamily -> 
+          "Source Sans Pro"], ". Degeneracies across the filling require care \
+because energy differences are squared in the denominator."}], "Notes", 
+      CellID -> 828318854], Cell[TextData[{"Options for ", 
+        Cell[BoxData[ButtonBox["Eigensystem", BaseStyle -> "Link", 
+           ButtonData -> "paclet:ref/Eigensystem"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " are accepted, with ", 
+        Cell[BoxData[RowBox[{ButtonBox["Method", BaseStyle -> "Link", 
+             ButtonData -> "paclet:ref/Method"], "\[Rule]", "\"Direct\""}]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        " supplied internally."}], "Notes", CellID -> 1396012936], 
+     Cell[TextData[{"With the same occupied-to-unoccupied ordering as ", 
+        Cell[BoxData[ButtonBox["BerryCurvature", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/BerryCurvature"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        ", the component is", "\[LineSeparator]", 
+        Cell[BoxData[FormBox[TagBox[RowBox[{SubscriptBox["g", RowBox[
+                {"{", RowBox[{"\[Alpha]", ",", "\[Beta]"}], "}"}]], 
+              "\[LongEqual]", RowBox[{"Re", "(", RowBox[{UnderoverscriptBox[
+                   "\[Sum]", RowBox[{"n", "=", "1"}], SubscriptBox["N", 
+                    "occ"]], RowBox[{UnderoverscriptBox["\[Sum]", RowBox[
+                      {"m", "=", RowBox[{SubscriptBox["N", "occ"], "+", 
+                         "1"}]}], SubscriptBox["N", "bands"]], FractionBox[
+                     RowBox[{SubscriptBox["j", RowBox[{"{", RowBox[
+                          {"\[Alpha]", ",", "m", ",", "n"}], "}"}]], " ", 
+                       SubscriptBox["v", RowBox[{"{", RowBox[{"\[Beta]", ",", 
+                          "n", ",", "m"}], "}"}]]}], SuperscriptBox[
+                      RowBox[{"(", RowBox[{SubscriptBox["\[Epsilon]", "m"], 
+                          "-", SubscriptBox["\[Epsilon]", "n"]}], ")"}], 
+                      "2"]]}]}], ")"}]}], HoldForm], TraditionalForm]], 
+         "InlineMath", ScriptLevel -> 0, FontSize -> 14, 
+         FractionBoxOptions -> {BaseStyle -> {ScriptLevel -> 0}}]}], "Notes", 
+      CellID -> 1076402731], 
+     Cell[TextData[{"The first-direction observable-current insertion is", 
+        "\[LineSeparator]", Cell[BoxData[FormBox[
+           TagBox[RowBox[{SubscriptBox["j", "\[Alpha]"], "\[LongEqual]", 
+              RowBox[{FractionBox["1", "2"], " ", RowBox[{"(", RowBox[
+                   {RowBox[{"Q", ".", SubscriptBox["v", "\[Alpha]"]}], "+", 
+                    RowBox[{SubscriptBox["v", "\[Alpha]"], ".", "Q"}]}], 
+                  ")"}]}]}], HoldForm], TraditionalForm]], "InlineMath", 
+         ScriptLevel -> 0, FontSize -> 14, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}]}], "Notes", 
+      CellID -> 2062345893]}, Open]], 
+  Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 1074115355], Cell[TextData[{"Find the xx metric component of \
+a massive two-level Dirac model at the origin."}], "ExampleText", 
+      CellID -> 1419066875], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 1782592516], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{RowBox[{"Clear", "[", RowBox[{"h", ",", "v"}], 
+              "]"}], ";", "\[IndentingNewLine]", RowBox[
+             {RowBox[{"h", "[", "k_", "]"}], ":=", RowBox[{"N", "[", 
+                RowBox[{RowBox[{RowBox[{"k", "\[LeftDoubleBracket]", "1", 
+                      "\[RightDoubleBracket]"}], " ", RowBox[{"PauliMatrix", 
+                      "[", "1", "]"}]}], "+", RowBox[{RowBox[{"k", 
+                      "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+                    " ", RowBox[{"PauliMatrix", "[", "2", "]"}]}], "+", 
+                  RowBox[{"PauliMatrix", "[", "3", "]"}]}], "]"}]}], ";", 
+            "\[IndentingNewLine]", RowBox[{RowBox[{"v", "[", "k_", "]"}], 
+              ":=", RowBox[{"N", "[", RowBox[{"{", RowBox[{RowBox[
+                     {"PauliMatrix", "[", "1", "]"}], ",", RowBox[
+                     {"PauliMatrix", "[", "2", "]"}]}], "}"}], "]"}]}], ";", 
+            "\[IndentingNewLine]", RowBox[{RowBox[{"QuantumMetric", "[", 
+                RowBox[{RowBox[{"{", RowBox[{"h", ",", "v"}], "}"}], ",", 
+                  "1"}], "]"}], "[", RowBox[{"{", RowBox[{"0.", ",", "0."}], 
+                "}"}], "]"}]}]], "Input", CellID -> 206813529], 
+        Cell[BoxData["0.25`"], "Output", CellID -> 875989929]}, Open]], 
+     Cell[CellGroupData[{Cell[BoxData[InterpretationBox[
+           Cell["\t", "ExampleDelimiter"], $Line = 0; ]], "ExampleDelimiter", 
+         CellID -> 789431314], Cell[TextData[
+          {"Select the off-diagonal metric component."}], "ExampleText", 
+         CellID -> 705661097], Cell[BoxData[RowBox[{"Needs", "[", 
+            "\"TBMethod`\"", "]"}]], "Input", CellID -> 545869207], 
+        Cell[CellGroupData[{Cell[BoxData[RowBox[{RowBox[{"Clear", "[", 
+                 RowBox[{"h", ",", "v", ",", "hv"}], "]"}], ";", 
+               "\[IndentingNewLine]", RowBox[{RowBox[{"h", "[", "k_", "]"}], 
+                 ":=", RowBox[{"N", "[", RowBox[{RowBox[{RowBox[{"k", 
+                         "\[LeftDoubleBracket]", "1", 
+                         "\[RightDoubleBracket]"}], " ", RowBox[
+                        {"PauliMatrix", "[", "1", "]"}]}], "+", RowBox[
+                      {RowBox[{"k", "\[LeftDoubleBracket]", "2", 
+                         "\[RightDoubleBracket]"}], " ", RowBox[
+                        {"PauliMatrix", "[", "2", "]"}]}], "+", RowBox[
+                      {"PauliMatrix", "[", "3", "]"}]}], "]"}]}], ";", 
+               "\[IndentingNewLine]", RowBox[{RowBox[{"v", "[", "k_", "]"}], 
+                 ":=", RowBox[{"N", "[", RowBox[{"{", RowBox[{RowBox[
+                        {"PauliMatrix", "[", "1", "]"}], ",", RowBox[
+                        {"PauliMatrix", "[", "2", "]"}]}], "}"}], "]"}]}], 
+               ";", "\[IndentingNewLine]", RowBox[{RowBox[{"hv", "[", "k_", 
+                   "]"}], ":=", RowBox[{"{", RowBox[{RowBox[{"h", "[", "k", 
+                       "]"}], ",", RowBox[{"v", "[", "k", "]"}]}], "}"}]}], 
+               ";", "\[IndentingNewLine]", RowBox[{RowBox[{"QuantumMetric", 
+                   "[", RowBox[{RowBox[{"{", RowBox[{"h", ",", "v"}], "}"}], 
+                     ",", "1", ",", RowBox[{"{", RowBox[{"1", ",", "2"}], 
+                       "}"}]}], "]"}], "[", RowBox[{"{", RowBox[{"0.", ",", 
+                     "0."}], "}"}], "]"}]}]], "Input", CellID -> 1140299749], 
+           Cell[BoxData["0.`"], "Output", CellID -> 657879908]}, Open]]}, 
+       Open]], Cell[CellGroupData[
+       {Cell[BoxData[InterpretationBox[Cell["\t", "ExampleDelimiter"], 
+           $Line = 0; ]], "ExampleDelimiter", CellID -> 173167854], 
+        Cell[TextData[
+          {"Insert an observable that doubles the first current operator."}], 
+         "ExampleText", CellID -> 459890771], 
+        Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+         CellID -> 1121643623], Cell[CellGroupData[
+          {Cell[BoxData[RowBox[{RowBox[{"Clear", "[", RowBox[{"h", ",", "v", 
+                   ",", "hv"}], "]"}], ";", "\[IndentingNewLine]", RowBox[
+                {RowBox[{"h", "[", "k_", "]"}], ":=", RowBox[{"N", "[", 
+                   RowBox[{RowBox[{RowBox[{"k", "\[LeftDoubleBracket]", "1", 
+                         "\[RightDoubleBracket]"}], " ", RowBox[
+                        {"PauliMatrix", "[", "1", "]"}]}], "+", RowBox[
+                      {RowBox[{"k", "\[LeftDoubleBracket]", "2", 
+                         "\[RightDoubleBracket]"}], " ", RowBox[
+                        {"PauliMatrix", "[", "2", "]"}]}], "+", RowBox[
+                      {"PauliMatrix", "[", "3", "]"}]}], "]"}]}], ";", 
+               "\[IndentingNewLine]", RowBox[{RowBox[{"v", "[", "k_", "]"}], 
+                 ":=", RowBox[{"N", "[", RowBox[{"{", RowBox[{RowBox[
+                        {"PauliMatrix", "[", "1", "]"}], ",", RowBox[
+                        {"PauliMatrix", "[", "2", "]"}]}], "}"}], "]"}]}], 
+               ";", "\[IndentingNewLine]", RowBox[{RowBox[{"hv", "[", "k_", 
+                   "]"}], ":=", RowBox[{"{", RowBox[{RowBox[{"h", "[", "k", 
+                       "]"}], ",", RowBox[{"v", "[", "k", "]"}]}], "}"}]}], 
+               ";", "\[IndentingNewLine]", RowBox[{RowBox[{"QuantumMetric", 
+                   "[", RowBox[{RowBox[{"{", RowBox[{"h", ",", "v"}], "}"}], 
+                     ",", RowBox[{"2", " ", RowBox[{"IdentityMatrix", "[", 
+                         "2", "]"}]}], ",", "1", ",", RowBox[{"{", RowBox[
+                        {"1", ",", "1"}], "}"}]}], "]"}], "[", RowBox[
+                  {"{", RowBox[{"0.", ",", "0."}], "}"}], "]"}]}]], "Input", 
+            CellID -> 2020068631], Cell[BoxData["0.5`"], "Output", 
+            CellID -> 774020056]}, Open]]}, Open]], 
+     Cell[CellGroupData[{Cell[BoxData[InterpretationBox[
+           Cell["\t", "ExampleDelimiter"], $Line = 0; ]], "ExampleDelimiter", 
+         CellID -> 2062192525], Cell[TextData[
+          {"Use a combined Hamiltonian-and-derivatives function."}], 
+         "ExampleText", CellID -> 1636949318], 
+        Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+         CellID -> 1420193926], Cell[CellGroupData[
+          {Cell[BoxData[RowBox[{RowBox[{"Clear", "[", RowBox[{"h", ",", "v", 
+                   ",", "hv"}], "]"}], ";", "\[IndentingNewLine]", RowBox[
+                {RowBox[{"h", "[", "k_", "]"}], ":=", RowBox[{"N", "[", 
+                   RowBox[{RowBox[{RowBox[{"k", "\[LeftDoubleBracket]", "1", 
+                         "\[RightDoubleBracket]"}], " ", RowBox[
+                        {"PauliMatrix", "[", "1", "]"}]}], "+", RowBox[
+                      {RowBox[{"k", "\[LeftDoubleBracket]", "2", 
+                         "\[RightDoubleBracket]"}], " ", RowBox[
+                        {"PauliMatrix", "[", "2", "]"}]}], "+", RowBox[
+                      {"PauliMatrix", "[", "3", "]"}]}], "]"}]}], ";", 
+               "\[IndentingNewLine]", RowBox[{RowBox[{"v", "[", "k_", "]"}], 
+                 ":=", RowBox[{"N", "[", RowBox[{"{", RowBox[{RowBox[
+                        {"PauliMatrix", "[", "1", "]"}], ",", RowBox[
+                        {"PauliMatrix", "[", "2", "]"}]}], "}"}], "]"}]}], 
+               ";", "\[IndentingNewLine]", RowBox[{RowBox[{"hv", "[", "k_", 
+                   "]"}], ":=", RowBox[{"{", RowBox[{RowBox[{"h", "[", "k", 
+                       "]"}], ",", RowBox[{"v", "[", "k", "]"}]}], "}"}]}], 
+               ";", "\[IndentingNewLine]", RowBox[{RowBox[{"QuantumMetric", 
+                   "[", RowBox[{"hv", ",", "1", ",", RowBox[{"{", RowBox[
+                        {"1", ",", "1"}], "}"}]}], "]"}], "[", RowBox[
+                  {"{", RowBox[{"0.", ",", "0."}], "}"}], "]"}]}]], "Input", 
+            CellID -> 578678824], Cell[BoxData["0.25`"], "Output", 
+            CellID -> 602503480]}, Open]]}, Open]], 
+     Cell[CellGroupData[{Cell[BoxData[InterpretationBox[
+           Cell["\t", "ExampleDelimiter"], $Line = 0; ]], "ExampleDelimiter", 
+         CellID -> 2029473595], Cell[TextData[
+          {"Combine the derivative function with an observable insertion."}], 
+         "ExampleText", CellID -> 209092719], 
+        Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+         CellID -> 1386123765], Cell[CellGroupData[
+          {Cell[BoxData[RowBox[{RowBox[{"Clear", "[", RowBox[{"h", ",", "v", 
+                   ",", "hv"}], "]"}], ";", "\[IndentingNewLine]", RowBox[
+                {RowBox[{"h", "[", "k_", "]"}], ":=", RowBox[{"N", "[", 
+                   RowBox[{RowBox[{RowBox[{"k", "\[LeftDoubleBracket]", "1", 
+                         "\[RightDoubleBracket]"}], " ", RowBox[
+                        {"PauliMatrix", "[", "1", "]"}]}], "+", RowBox[
+                      {RowBox[{"k", "\[LeftDoubleBracket]", "2", 
+                         "\[RightDoubleBracket]"}], " ", RowBox[
+                        {"PauliMatrix", "[", "2", "]"}]}], "+", RowBox[
+                      {"PauliMatrix", "[", "3", "]"}]}], "]"}]}], ";", 
+               "\[IndentingNewLine]", RowBox[{RowBox[{"v", "[", "k_", "]"}], 
+                 ":=", RowBox[{"N", "[", RowBox[{"{", RowBox[{RowBox[
+                        {"PauliMatrix", "[", "1", "]"}], ",", RowBox[
+                        {"PauliMatrix", "[", "2", "]"}]}], "}"}], "]"}]}], 
+               ";", "\[IndentingNewLine]", RowBox[{RowBox[{"hv", "[", "k_", 
+                   "]"}], ":=", RowBox[{"{", RowBox[{RowBox[{"h", "[", "k", 
+                       "]"}], ",", RowBox[{"v", "[", "k", "]"}]}], "}"}]}], 
+               ";", "\[IndentingNewLine]", RowBox[{RowBox[{"QuantumMetric", 
+                   "[", RowBox[{"hv", ",", RowBox[{"2", " ", RowBox[
+                        {"IdentityMatrix", "[", "2", "]"}]}], ",", "1", ",", 
+                     RowBox[{"{", RowBox[{"1", ",", "1"}], "}"}]}], "]"}], 
+                 "[", RowBox[{"{", RowBox[{"0.", ",", "0."}], "}"}], 
+                 "]"}]}]], "Input", CellID -> 1816074005], 
+           Cell[BoxData["0.5`"], "Output", CellID -> 1514953506]}, Open]]}, 
+       Open]]}, Open]], 
+  Cell[CellGroupData[{Cell["More Examples", "ExtendedExamplesSection", 
+      CellTags -> "ExtendedExamples", CellID -> 216555668]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 2099637855], 
+     Cell[TextData[{Cell[BoxData[ButtonBox["BerryCurvature", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/BerryCurvature"]], "InlineSeeAlsoFunction", 
+         TaggingRules -> {"PageType" -> "Function"}], 
+        StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"], 
+        Cell[BoxData[ButtonBox["HVBloch", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/HVBloch"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["HVBlochFull", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/HVBlochFull"]], "InlineSeeAlsoFunction", 
+         TaggingRules -> {"PageType" -> "Function"}]}], "SeeAlso", 
+      CellID -> 319371282]}, Open]], 
+  Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 1001169973], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 677443215]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 1474310563], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 983397596]}, Open]]}, WindowTitle -> "QuantumMetric", 
+ Saveable -> True, Editable -> True, CellContext -> "Global`", 
+ TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]

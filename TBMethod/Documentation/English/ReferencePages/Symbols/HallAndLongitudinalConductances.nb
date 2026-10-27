@@ -1,0 +1,145 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 264665114], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 701472070], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 1460088616], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 1375220992], Cell["TBMethod`LGFF`", "Categorization", 
+      CellLabel -> "Context", CellID -> 536996444], 
+     Cell["TBMethod/ref/HallAndLongitudinalConductances", "Categorization", 
+      CellLabel -> "URI", CellID -> 1447928074]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 1441485189], 
+     Cell["HallAndLongitudinalConductances, tight binding, TBMethod", 
+      "Keywords", CellID -> 525324270]}, Closed]], 
+  Cell[CellGroupData[{Cell["HallAndLongitudinalConductances", "ObjectName", 
+      CellID -> 214647366], Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["HallAndLongitudinalConductances", 
+             BaseStyle -> "Link", ButtonData -> 
+              "paclet:TBMethod/ref/HallAndLongitudinalConductances"], "[", 
+            RowBox[{StyleBox["z", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"], ",", StyleBox["deviceBlocks", "TI", FontFamily -> 
+                "Times", FontSlant -> "Italic"], ",", StyleBox["leadBlocks", 
+               "TI", FontFamily -> "Times", FontSlant -> "Italic"]}], "]"}]], 
+         "InlineFormula"], " \[LineSeparator]", "converts the supported \
+device Hall and longitudinal resistances into conductances."}], "Usage", 
+      CellID -> 206770004], 
+     Cell[TextData[{"Uses ", Cell[BoxData[ButtonBox[
+           "HallAndLongitudinalResistances", BaseStyle -> "Link", 
+           ButtonData -> 
+            "paclet:TBMethod/ref/HallAndLongitudinalResistances"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        " with the same lead ordering and options."}], "Notes", 
+      CellID -> 1577296851], 
+     Cell[TextData[{"No additional conductance-unit factor is applied."}], 
+      "Notes", CellID -> 246974084], 
+     Cell[TextData[{"The same ", Cell[BoxData[ButtonBox["LUDecomposition", 
+           BaseStyle -> "Link", ButtonData -> "paclet:ref/LUDecomposition"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        " compatibility limitation as in ", 
+        Cell[BoxData[ButtonBox["HallAndLongitudinalResistances", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/HallAndLongitudinalResistances"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], " applies. Zero \
+or nonnumeric resistance pairs cannot be converted meaningfully."}], "Notes", 
+      CellID -> 1165545688], 
+     Cell[TextData[{"The conversion applied to the resistance pair is", 
+        "\[LineSeparator]", Cell[BoxData[FormBox[
+           TagBox[RowBox[{RowBox[{"{", RowBox[{SubscriptBox["\[Sigma]", 
+                   "xy"], ",", SubscriptBox["\[Sigma]", "xx"]}], "}"}], 
+              "\[LongEqual]", FractionBox[RowBox[{"{", RowBox[
+                  {RowBox[{"-", SubscriptBox["R", "H"]}], ",", SubscriptBox[
+                    "R", "L"]}], "}"}], RowBox[{SubsuperscriptBox["R", "H", 
+                  "2"], "+", SubsuperscriptBox["R", "L", "2"]}]]}], 
+            HoldForm], TraditionalForm]], "InlineMath", ScriptLevel -> 0, 
+         FontSize -> 14, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}]}], "Notes", 
+      CellID -> 1303169301]}, Open]], 
+  Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 1642823728], 
+     Cell[TextData[
+       {"Check the conversion identity on a five-contact ring fixture."}], 
+      "ExampleText", CellID -> 547228601], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 591556759], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{RowBox[{"z", "=", RowBox[{RowBox[{"0.2", 
+                  "\[VeryThinSpace]"}], "+", RowBox[{"0.01", " ", 
+                  "\[ImaginaryI]"}]}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"hRing", "=", RowBox[{"Table", "[", RowBox[
+                 {RowBox[{"Which", "[", RowBox[{RowBox[{RowBox[{"Mod", "[", 
+                          RowBox[{RowBox[{"i", "-", "j"}], ",", "5"}], "]"}], 
+                        "\[Equal]", "1"}], ",", RowBox[{"-", RowBox[{"Exp", 
+                          "[", RowBox[{"0.2", " ", "\[ImaginaryI]"}], 
+                          "]"}]}], ",", RowBox[{RowBox[{"Mod", "[", RowBox[
+                          {RowBox[{"j", "-", "i"}], ",", "5"}], "]"}], 
+                        "\[Equal]", "1"}], ",", RowBox[{"-", RowBox[{"Exp", 
+                          "[", RowBox[{RowBox[{"-", "0.2"}], " ", 
+                          "\[ImaginaryI]"}], "]"}]}], ",", "True", ",", 
+                      "0."}], "]"}], ",", RowBox[{"{", RowBox[{"i", ",", 
+                      "5"}], "}"}], ",", RowBox[{"{", RowBox[{"j", ",", 
+                      "5"}], "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"blocks", "=", RowBox[{"{", RowBox[{RowBox[{"{", 
+                    RowBox[{"hRing", ",", "hRing"}], "}"}], ",", 
+                  RowBox[{"{", RowBox[{RowBox[{"-", "0.3"}], " ", RowBox[
+                       {"IdentityMatrix", "[", "5", "]"}]}], "}"}]}], 
+                "}"}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"leads", "=", RowBox[{"Table", "[", RowBox[
+                 {RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{"{", "0.", "}"}], 
+                        "}"}], ",", RowBox[{"{", RowBox[{"{", RowBox[{"-", 
+                          "1."}], "}"}], "}"}], ",", RowBox[{"List", "/@", 
+                        RowBox[{"(", RowBox[{RowBox[{"-", "0.5"}], " ", 
+                          RowBox[{"UnitVector", "[", RowBox[{"5", ",", "j"}], 
+                          "]"}]}], ")"}]}]}], "}"}], ",", RowBox[
+                   {"{", RowBox[{"j", ",", "5"}], "}"}]}], "]"}]}], ";", 
+            "\[IndentingNewLine]", RowBox[{"r", "=", RowBox[{
+                "HallAndLongitudinalResistances", "[", RowBox[{"z", ",", 
+                  "blocks", ",", "leads", ",", RowBox[{"\"SigmaMode\"", 
+                    "\[Rule]", "1"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"HallAndLongitudinalConductances", "[", RowBox[{"z", ",", 
+                "blocks", ",", "leads", ",", RowBox[{"\"SigmaMode\"", 
+                  "\[Rule]", "1"}]}], "]"}]}]], "Input", 
+         CellID -> 1699797974], Cell[BoxData[
+          RowBox[{"{", RowBox[{RowBox[{RowBox[{"1.7251229168981246`", 
+                  "\[VeryThinSpace]"}], "-", RowBox[
+                 {"6.762422523033529`*^-17", " ", "\[ImaginaryI]"}]}], ",", 
+              RowBox[{RowBox[{"0.5567524658464844`", "\[VeryThinSpace]"}], 
+                "-", RowBox[{"3.716996611398176`*^-17", " ", 
+                  "\[ImaginaryI]"}]}]}], "}"}]], "Output", 
+         CellID -> 783058649]}, Open]]}, Open]], 
+  Cell[CellGroupData[{Cell["More Examples", "ExtendedExamplesSection", 
+      CellTags -> "ExtendedExamples", CellID -> 575375366]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 1684248837], 
+     Cell[TextData[{Cell[BoxData[ButtonBox["HallAndLongitudinalResistances", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/HallAndLongitudinalResistances"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["Transmission", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/Transmission"]], "InlineSeeAlsoFunction", 
+         TaggingRules -> {"PageType" -> "Function"}], 
+        StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"], 
+        Cell[BoxData[ButtonBox["CentralBlockGreens", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/CentralBlockGreens"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}]}], "SeeAlso", CellID -> 1421601198]}, 
+    Open]], Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 539225962], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 2025444531]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 316307834], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 1505785885]}, Open]]}, 
+ WindowTitle -> "HallAndLongitudinalConductances", Saveable -> True, 
+ Editable -> True, CellContext -> "Global`", 
+ TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]

@@ -1,0 +1,116 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 2094139526], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 1559854633], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 1080416809], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 1094711570], Cell["TBMethod`MDConstruct`", "Categorization", 
+      CellLabel -> "Context", CellID -> 1450823382], 
+     Cell["TBMethod/ref/CrystalStructure", "Categorization", 
+      CellLabel -> "URI", CellID -> 2059356115]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 639292683], Cell["CrystalStructure, tight binding, TBMethod", 
+      "Keywords", CellID -> 1046328667]}, Closed]], 
+  Cell[CellGroupData[{Cell["CrystalStructure", "ObjectName", 
+      CellID -> 1163744753], Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["CrystalStructure", BaseStyle -> 
+              "Link", ButtonData -> "paclet:TBMethod/ref/CrystalStructure"], 
+            "[", RowBox[{StyleBox["latticeVectors", "TI", FontFamily -> 
+                "Times", FontSlant -> "Italic"], ",", StyleBox["atomicBasis", 
+               "TI", FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+              StyleBox["cellIndices", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"]}], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", "generates translated crystal cells from lattice \
+vectors, an atomic basis, and cell indices."}], "Usage", 
+      CellID -> 283329242], Cell[TextData[{"Rows of ", 
+        Cell[BoxData[StyleBox["latticeVectors", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        " are the real-space lattice vectors. Each cell displacement is ", 
+        Cell[BoxData[RowBox[{StyleBox["cellIndex", "TI"], ".", 
+            StyleBox["latticeVectors", "TI"]}]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], "."}], "Notes", 
+      CellID -> 426287070], 
+     Cell[TextData[{Cell[BoxData[StyleBox["cellIndices", "TI"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], " must be a list \
+of integer or rational vectors. The result is an ordered ", 
+        Cell[BoxData[ButtonBox["Association", BaseStyle -> "Link", 
+           ButtonData -> "paclet:ref/Association"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " with entries ", 
+        Cell[BoxData[RowBox[{StyleBox["displacement", "TI"], "\[Rule]", 
+            StyleBox["translatedBasis", "TI"]}]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " in the supplied cell order."}], 
+      "Notes", CellID -> 1895840999], 
+     Cell[TextData[{Cell[BoxData[StyleBox["atomicBasis", "TI"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        " may contain coordinate lists or ", 
+        Cell[BoxData[RowBox[{StyleBox["label", "TI"], "\[Rule]", 
+            StyleBox["coordinates", "TI"]}]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " rules. Labels are preserved \
+while coordinates are translated. Put the home cell first when using the \
+result with ", Cell[BoxData[ButtonBox["HMatricesRealSpace", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/HMatricesRealSpace"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], "."}], "Notes", 
+      CellID -> 1052235702]}, Open]], 
+  Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 1214164888], Cell[TextData[{"Create a home cell and its \
+nearest translated neighbor on a square lattice."}], "ExampleText", 
+      CellID -> 1333138424], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 390490979], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{"CrystalStructure", "[", 
+            RowBox[{RowBox[{"IdentityMatrix", "[", "2", "]"}], ",", 
+              RowBox[{"{", RowBox[{"{", RowBox[{"0.", ",", "0."}], "}"}], 
+                "}"}], ",", RowBox[{"{", RowBox[{RowBox[{"{", RowBox[
+                     {"0", ",", "0"}], "}"}], ",", RowBox[{"{", RowBox[
+                     {"1", ",", "0"}], "}"}]}], "}"}]}], "]"}]], "Input", 
+         CellID -> 2088387167], Cell[BoxData[RowBox[{"\[LeftAssociation]", 
+            RowBox[{RowBox[{RowBox[{"{", RowBox[{"0", ",", "0"}], "}"}], 
+                "\[Rule]", RowBox[{"{", RowBox[{"{", RowBox[{"0.`", ",", 
+                      "0.`"}], "}"}], "}"}]}], ",", RowBox[{RowBox[
+                 {"{", RowBox[{"1", ",", "0"}], "}"}], "\[Rule]", 
+                RowBox[{"{", RowBox[{"{", RowBox[{"1.`", ",", "0.`"}], "}"}], 
+                  "}"}]}]}], "\[RightAssociation]"}]], "Output", 
+         CellID -> 1088919911]}, Open]]}, Open]], 
+  Cell[CellGroupData[{Cell["More Examples", "ExtendedExamplesSection", 
+      CellTags -> "ExtendedExamples", CellID -> 614165627]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 1522269317], 
+     Cell[TextData[{Cell[BoxData[ButtonBox["CrystalStructurePlot", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/CrystalStructurePlot"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["HMatricesRealSpace", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/HMatricesRealSpace"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox[
+           "LatticePointsCentralize", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/LatticePointsCentralize"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["ReciprocalVectors", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/ReciprocalVectors"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}]}], "SeeAlso", CellID -> 589171380]}, 
+    Open]], Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 1587493266], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 852532421]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 414661959], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 233475997]}, Open]]}, WindowTitle -> "CrystalStructure", 
+ Saveable -> True, Editable -> True, CellContext -> "Global`", 
+ TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]

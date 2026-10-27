@@ -1,0 +1,182 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 242928856], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 339630025], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 792692898], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 1921791423], Cell["TBMethod`DataVisualization`", 
+      "Categorization", CellLabel -> "Context", CellID -> 1108262472], 
+     Cell["TBMethod/ref/RibbonBulkBoundaryOperator", "Categorization", 
+      CellLabel -> "URI", CellID -> 1597134706]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 1556733389], 
+     Cell["RibbonBulkBoundaryOperator, tight binding, TBMethod", "Keywords", 
+      CellID -> 1054251600]}, Closed]], 
+  Cell[CellGroupData[{Cell["RibbonBulkBoundaryOperator", "ObjectName", 
+      CellID -> 841952245], Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["RibbonBulkBoundaryOperator", 
+             BaseStyle -> "Link", ButtonData -> 
+              "paclet:TBMethod/ref/RibbonBulkBoundaryOperator"], "[", 
+            RowBox[{StyleBox["points", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"], ",", StyleBox["normalVector", "TI", 
+               FontFamily -> "Times", FontSlant -> "Italic"]}], "]"}]], 
+         "InlineFormula"], " \[LineSeparator]", "constructs a diagonal \
+operator measuring signed transverse position in a ribbon with two internal \
+states per site.", "\n", Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["RibbonBulkBoundaryOperator", 
+             BaseStyle -> "Link", ButtonData -> 
+              "paclet:TBMethod/ref/RibbonBulkBoundaryOperator"], "[", 
+            RowBox[{StyleBox["points", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"], ",", StyleBox["normalVector", "TI", 
+               FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+              StyleBox["internalDimension", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"]}], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", "uses ", 
+        Cell[BoxData[StyleBox["internalDimension", "TI", FontFamily -> 
+            "Times", FontSlant -> "Italic"]], "InlineFormula"], 
+        " internal states per site.", "\n", Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["RibbonBulkBoundaryOperator", 
+             BaseStyle -> "Link", ButtonData -> 
+              "paclet:TBMethod/ref/RibbonBulkBoundaryOperator"], "[", 
+            RowBox[{StyleBox["points", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"], ",", StyleBox["normalVector", "TI", 
+               FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+              StyleBox["internalDimension", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"], ",", StyleBox["power", "TI", 
+               FontFamily -> "Times", FontSlant -> "Italic"]}], "]"}]], 
+         "InlineFormula"], " \[LineSeparator]", 
+        "raises the magnitude of the rescaled transverse coordinate to ", 
+        Cell[BoxData[StyleBox["power", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], 
+        " while preserving its sign."}], "Usage", CellID -> 855560201], 
+     Cell[TextData[{"Projects site coordinates onto the normalized ", 
+        Cell[BoxData[StyleBox["normalVector", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        ", rescales the projected coordinates to ", 
+        Cell[BoxData[FormBox[RowBox[{RowBox[{"-", "1"}], "\[LessEqual]", "x", 
+             "\[LessEqual]", "1"}], TraditionalForm]], "InlineMath", 
+         ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], ", and applies ", 
+        Cell[BoxData[FormBox[RowBox[{TemplateBox[{"x"}, "Sign"], " ", 
+             SuperscriptBox[TemplateBox[{"x"}, "Abs"], "power"]}], 
+           TraditionalForm]], "InlineMath", ScriptLevel -> 0, 
+         FractionBoxOptions -> {BaseStyle -> {ScriptLevel -> 0}}], "."}], 
+      "Notes", CellID -> 1118673121], 
+     Cell[TextData[{"Repeats each diagonal weight ", 
+        Cell[BoxData[StyleBox["internalDimension", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " times and returns a ", 
+        Cell[BoxData[ButtonBox["SparseArray", BaseStyle -> "Link", 
+           ButtonData -> "paclet:ref/SparseArray"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " matrix."}], "Notes", 
+      CellID -> 1251119685], Cell[TextData[{"Points may carry labels. The \
+normal vector must be nonzero, and projected coordinates must span a nonzero \
+range."}], "Notes", CellID -> 1548334420], 
+     Cell[TextData[{"Opposite edges receive opposite signs; cancellation can \
+occur for a state occupying both edges equally."}], "Notes", 
+      CellID -> 1757527947]}, Open]], 
+  Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 1447181232], 
+     Cell[TextData[
+       {"Build the boundary operator with the default two internal \
+components."}], "ExampleText", CellID -> 666636045], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 973594011], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{"Normal", "[", RowBox[
+             {"RibbonBulkBoundaryOperator", "[", RowBox[{RowBox[
+                 {"{", RowBox[{RowBox[{"{", RowBox[{"0.", ",", RowBox[
+                         {"-", "1."}]}], "}"}], ",", RowBox[{"{", RowBox[
+                       {"0.", ",", "0."}], "}"}], ",", RowBox[{"{", 
+                      RowBox[{"0.", ",", "1."}], "}"}]}], "}"}], ",", 
+                RowBox[{"{", RowBox[{"0.", ",", "1."}], "}"}]}], "]"}], 
+            "]"}]], "Input", CellID -> 1975422037], 
+        Cell[BoxData[RowBox[{"{", RowBox[{RowBox[{"{", RowBox[
+                 {RowBox[{"-", "1.`"}], ",", "0.`", ",", "0.`", ",", "0.`", 
+                  ",", "0.`", ",", "0.`"}], "}"}], ",", RowBox[{"{", 
+                RowBox[{"0.`", ",", RowBox[{"-", "1.`"}], ",", "0.`", ",", 
+                  "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+              RowBox[{"{", RowBox[{"0.`", ",", "0.`", ",", "0.`", ",", "0.`", 
+                  ",", "0.`", ",", "0.`"}], "}"}], ",", RowBox[{"{", 
+                RowBox[{"0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+                  "0.`", ",", "0.`"}], "}"}], ",", RowBox[{"{", 
+                RowBox[{"0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+                  "1.`", ",", "0.`"}], "}"}], ",", RowBox[{"{", 
+                RowBox[{"0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+                  "0.`", ",", "1.`"}], "}"}]}], "}"}]], "Output", 
+         CellID -> 1725391587]}, Open]], 
+     Cell[CellGroupData[{Cell[BoxData[InterpretationBox[
+           Cell["\t", "ExampleDelimiter"], $Line = 0; ]], "ExampleDelimiter", 
+         CellID -> 2045248156], Cell[TextData[
+          {"Use one internal component per site."}], "ExampleText", 
+         CellID -> 1022238567], Cell[BoxData[RowBox[{"Needs", "[", 
+            "\"TBMethod`\"", "]"}]], "Input", CellID -> 115703304], 
+        Cell[CellGroupData[{Cell[BoxData[RowBox[{"Normal", "[", RowBox[
+                {"RibbonBulkBoundaryOperator", "[", RowBox[
+                  {RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{"0.", ",", 
+                          RowBox[{"-", "1."}]}], "}"}], ",", RowBox[{"{", 
+                         RowBox[{"0.", ",", "0."}], "}"}], ",", RowBox[
+                        {"{", RowBox[{"0.", ",", "1."}], "}"}]}], "}"}], ",", 
+                   RowBox[{"{", RowBox[{"0.", ",", "1."}], "}"}], ",", "1"}], 
+                 "]"}], "]"}]], "Input", CellID -> 1070112918], 
+           Cell[BoxData[RowBox[{"{", RowBox[{RowBox[{"{", RowBox[
+                    {RowBox[{"-", "1.`"}], ",", "0.`", ",", "0.`"}], "}"}], 
+                 ",", RowBox[{"{", RowBox[{"0.`", ",", "0.`", ",", "0.`"}], 
+                   "}"}], ",", RowBox[{"{", RowBox[{"0.`", ",", "0.`", ",", 
+                     "1.`"}], "}"}]}], "}"}]], "Output", 
+            CellID -> 278830434]}, Open]]}, Open]], 
+     Cell[CellGroupData[{Cell[BoxData[InterpretationBox[
+           Cell["\t", "ExampleDelimiter"], $Line = 0; ]], "ExampleDelimiter", 
+         CellID -> 582923220], Cell[TextData[{"Construct the \
+transverse-position operator for a three-site ribbon."}], "ExampleText", 
+         CellID -> 1518798836], Cell[BoxData[RowBox[{"Needs", "[", 
+            "\"TBMethod`\"", "]"}]], "Input", CellID -> 840852052], 
+        Cell[CellGroupData[{Cell[BoxData[RowBox[{"Normal", "[", RowBox[
+                {"RibbonBulkBoundaryOperator", "[", RowBox[
+                  {RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{"0.", ",", 
+                          RowBox[{"-", "1."}]}], "}"}], ",", RowBox[{"{", 
+                         RowBox[{"0.", ",", "0."}], "}"}], ",", RowBox[
+                        {"{", RowBox[{"0.", ",", "1."}], "}"}]}], "}"}], ",", 
+                   RowBox[{"{", RowBox[{"0.", ",", "1."}], "}"}], ",", "1", 
+                   ",", "3"}], "]"}], "]"}]], "Input", CellID -> 1941019219], 
+           Cell[BoxData[RowBox[{"{", RowBox[{RowBox[{"{", RowBox[
+                    {RowBox[{"-", "1.`"}], ",", "0.`", ",", "0.`"}], "}"}], 
+                 ",", RowBox[{"{", RowBox[{"0.`", ",", "0.`", ",", "0.`"}], 
+                   "}"}], ",", RowBox[{"{", RowBox[{"0.`", ",", "0.`", ",", 
+                     "1.`"}], "}"}]}], "}"}]], "Output", 
+            CellID -> 110179857]}, Open]]}, Open]]}, Open]], 
+  Cell[CellGroupData[{Cell["More Examples", "ExtendedExamplesSection", 
+      CellTags -> "ExtendedExamples", CellID -> 606140711]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 1876395160], 
+     Cell[TextData[{Cell[BoxData[ButtonBox["BandDataWithWeight", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/BandDataWithWeight"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["BandPlotWithWeight", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/BandPlotWithWeight"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["DiagonalMatrix", 
+           BaseStyle -> "Link", ButtonData -> "paclet:ref/DiagonalMatrix"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}]}], "SeeAlso", CellID -> 719087254]}, 
+    Open]], Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 1497138917], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 976522568]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 1011072445], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 171116177]}, Open]]}, 
+ WindowTitle -> "RibbonBulkBoundaryOperator", Saveable -> True, 
+ Editable -> True, CellContext -> "Global`", 
+ TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]

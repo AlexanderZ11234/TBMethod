@@ -1,0 +1,192 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 1534239013], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 1693447247], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 1488900261], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 783952813], Cell["TBMethod`LGFF`", "Categorization", 
+      CellLabel -> "Context", CellID -> 916974834], 
+     Cell["TBMethod/ref/CentralDiagonalBlockGreens", "Categorization", 
+      CellLabel -> "URI", CellID -> 914749697]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 1853680788], 
+     Cell["CentralDiagonalBlockGreens, tight binding, TBMethod", "Keywords", 
+      CellID -> 1136002483]}, Closed]], 
+  Cell[CellGroupData[{Cell["CentralDiagonalBlockGreens", "ObjectName", 
+      CellID -> 1440914915], Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["CentralDiagonalBlockGreens", 
+             BaseStyle -> "Link", ButtonData -> 
+              "paclet:TBMethod/ref/CentralDiagonalBlockGreens"], "[", 
+            RowBox[{StyleBox["z", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"], ",", RowBox[{"{", RowBox[{StyleBox[
+                   "diagonalBlocks", "TI", FontFamily -> "Times", 
+                   FontSlant -> "Italic"], ",", StyleBox["lowerBlocks", "TI", 
+                   FontFamily -> "Times", FontSlant -> "Italic"]}], "}"}], 
+              ",", StyleBox["sigmas", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"]}], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", 
+        "computes all diagonal Green blocks in the original layer order.", 
+        "\n", Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["CentralDiagonalBlockGreens", 
+             BaseStyle -> "Link", ButtonData -> 
+              "paclet:TBMethod/ref/CentralDiagonalBlockGreens"], "[", 
+            RowBox[{StyleBox["z", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"], ",", RowBox[{"{", RowBox[{StyleBox[
+                   "diagonalBlocks", "TI", FontFamily -> "Times", 
+                   FontSlant -> "Italic"], ",", StyleBox["lowerBlocks", "TI", 
+                   FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                  StyleBox["upperBlocks", "TI", FontFamily -> "Times", 
+                   FontSlant -> "Italic"]}], "}"}], ",", StyleBox["sigmas", 
+               "TI", FontFamily -> "Times", FontSlant -> "Italic"]}], "]"}]], 
+         "InlineFormula"], " \[LineSeparator]", 
+        "uses explicitly supplied upper off-diagonal blocks."}], "Usage", 
+      CellID -> 1233185542], Cell[TextData[{"Requires ", 
+        Cell[BoxData[RowBox[{RowBox[{ButtonBox["Length", BaseStyle -> "Link", 
+               ButtonData -> "paclet:ref/Length"], "[", StyleBox[
+               "diagonalBlocks", "TI"], "]"}], "\[GreaterEqual]", "2"}]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], " and ", 
+        Cell[BoxData[RowBox[{RowBox[{ButtonBox["Length", BaseStyle -> "Link", 
+               ButtonData -> "paclet:ref/Length"], "[", StyleBox[
+               "lowerBlocks", "TI"], "]"}], "\[Equal]", 
+            RowBox[{RowBox[{ButtonBox["Length", BaseStyle -> "Link", 
+                 ButtonData -> "paclet:ref/Length"], "[", StyleBox[
+                 "diagonalBlocks", "TI"], "]"}], "-", "1"}]}]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], "."}], "Notes", 
+      CellID -> 206331983], Cell[TextData[{"All self-energies act on the \
+final layer. Diagonal Green blocks are returned in the original layer order."}\
+], "Notes", CellID -> 1466008639], 
+     Cell[TextData[{"When ", Cell[BoxData[StyleBox["upperBlocks", "TI"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        " is omitted, the upper blocks are ", 
+        Cell[BoxData[RowBox[{ButtonBox["ConjugateTranspose", 
+             BaseStyle -> "Link", ButtonData -> 
+              "paclet:ref/ConjugateTranspose"], "/@", StyleBox["lowerBlocks", 
+             "TI"]}]], "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        "."}], "Notes", CellID -> 631567139], 
+     Cell[TextData[{"Given the left-connected Green blocks ", 
+        Cell[BoxData[FormBox[TagBox["F", HoldForm], TraditionalForm]], 
+         "InlineMath", ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], 
+        " from the forward recursion, the backward recursion is", 
+        "\[LineSeparator]", Cell[BoxData[FormBox[
+           TagBox[RowBox[{SubscriptBox["G", RowBox[{"{", RowBox[{"j", ",", 
+                   "j"}], "}"}]], "\[LongEqual]", RowBox[{SubscriptBox["F", 
+                 "j"], "+", RowBox[{SubscriptBox["F", "j"], ".", SubscriptBox[
+                   "H", RowBox[{"{", RowBox[{"j", ",", RowBox[{"j", "+", 
+                         "1"}]}], "}"}]], ".", SubscriptBox["G", RowBox[
+                    {"{", RowBox[{RowBox[{"j", "+", "1"}], ",", RowBox[
+                        {"j", "+", "1"}]}], "}"}]], ".", SubscriptBox["H", 
+                   RowBox[{"{", RowBox[{RowBox[{"j", "+", "1"}], ",", "j"}], 
+                     "}"}]], ".", SubscriptBox["F", "j"]}]}]}], HoldForm], 
+           TraditionalForm]], "InlineMath", ScriptLevel -> 0, FontSize -> 14, 
+         FractionBoxOptions -> {BaseStyle -> {ScriptLevel -> 0}}]}], "Notes", 
+      CellID -> 1578336900]}, Open]], 
+  Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 1752103250], 
+     Cell[TextData[{"Compare both diagonal blocks with a dense inverse."}], 
+      "ExampleText", CellID -> 1666496263], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 335397923], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{RowBox[{"z", "=", RowBox[{RowBox[{"0.2", 
+                  "\[VeryThinSpace]"}], "+", RowBox[{"0.1", " ", 
+                  "\[ImaginaryI]"}]}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"diag", "=", RowBox[{"{", RowBox[{RowBox[{"{", 
+                    RowBox[{"{", "0.", "}"}], "}"}], ",", RowBox[
+                   {"{", RowBox[{"{", "0.", "}"}], "}"}]}], "}"}]}], ";", 
+            "\[IndentingNewLine]", RowBox[{"lower", "=", RowBox[{"{", 
+                RowBox[{"{", RowBox[{"{", RowBox[{"-", "0.5"}], "}"}], "}"}], 
+                "}"}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"sigmas", "=", RowBox[{"{", RowBox[{"{", RowBox[
+                   {"{", RowBox[{RowBox[{"-", "0.1"}], " ", 
+                      "\[ImaginaryI]"}], "}"}], "}"}], "}"}]}], ";", 
+            "\[IndentingNewLine]", RowBox[{"full", "=", TemplateBox[{
+                RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{"z", ",", "0.5"}], 
+                      "}"}], ",", RowBox[{"{", RowBox[{"0.5", ",", RowBox[
+                         {"z", "+", RowBox[{"0.1", " ", 
+                          "\[ImaginaryI]"}]}]}], "}"}]}], "}"}]}, "Inverse", 
+               SyntaxForm -> SuperscriptBox]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"CentralDiagonalBlockGreens", "[", RowBox[{"z", ",", 
+                RowBox[{"{", RowBox[{"diag", ",", "lower"}], "}"}], ",", 
+                "sigmas"}], "]"}]}]], "Input", CellID -> 1057444999], 
+        Cell[BoxData[RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{"{", 
+                  RowBox[{RowBox[{"-", "0.6017699115044248`"}], "-", 
+                    RowBox[{"1.0265486725663713`", " ", "\[ImaginaryI]"}]}], 
+                  "}"}], "}"}], ",", RowBox[{"{", RowBox[{"{", RowBox[
+                   {RowBox[{"-", "0.7079646017699116`"}], "-", RowBox[
+                     {"0.6194690265486725`", " ", "\[ImaginaryI]"}]}], "}"}], 
+                "}"}]}], "}"}]], "Output", CellID -> 1667569835]}, Open]], 
+     Cell[CellGroupData[{Cell[BoxData[InterpretationBox[
+           Cell["\t", "ExampleDelimiter"], $Line = 0; ]], "ExampleDelimiter", 
+         CellID -> 1442174193], Cell[TextData[{"Compute both diagonal Green \
+blocks with independent reverse hoppings."}], "ExampleText", 
+         CellID -> 269413377], Cell[BoxData[RowBox[{"Needs", "[", 
+            "\"TBMethod`\"", "]"}]], "Input", CellID -> 506597795], 
+        Cell[CellGroupData[{Cell[BoxData[RowBox[{RowBox[{"z", "=", 
+                 RowBox[{RowBox[{"0.2", "\[VeryThinSpace]"}], "+", 
+                   RowBox[{"0.1", " ", "\[ImaginaryI]"}]}]}], ";", 
+               "\[IndentingNewLine]", RowBox[{"diag", "=", RowBox[
+                  {"{", RowBox[{RowBox[{"{", RowBox[{"{", "0.", "}"}], "}"}], 
+                     ",", RowBox[{"{", RowBox[{"{", "0.", "}"}], "}"}]}], 
+                   "}"}]}], ";", "\[IndentingNewLine]", RowBox[{"lower", "=", 
+                 RowBox[{"{", RowBox[{"{", RowBox[{"{", RowBox[{"-", "0.5"}], 
+                       "}"}], "}"}], "}"}]}], ";", "\[IndentingNewLine]", 
+               RowBox[{"upper", "=", RowBox[{"{", RowBox[{"{", RowBox[
+                      {"{", RowBox[{"-", "0.3"}], "}"}], "}"}], "}"}]}], ";", 
+               "\[IndentingNewLine]", RowBox[{"sigmas", "=", RowBox[
+                  {"{", RowBox[{"{", RowBox[{"{", RowBox[{RowBox[{"-", 
+                          "0.1"}], " ", "\[ImaginaryI]"}], "}"}], "}"}], 
+                   "}"}]}], ";", "\[IndentingNewLine]", RowBox[
+                {"CentralDiagonalBlockGreens", "[", RowBox[{"z", ",", 
+                   RowBox[{"{", RowBox[{"diag", ",", "lower", ",", "upper"}], 
+                     "}"}], ",", "sigmas"}], "]"}]}]], "Input", 
+            CellID -> 569603875], Cell[BoxData[RowBox[{"{", RowBox[
+                {RowBox[{"{", RowBox[{"{", RowBox[{RowBox[{"-", 
+                         "0.6829268292682924`"}], "-", RowBox[
+                        {"1.853658536585366`", " ", "\[ImaginaryI]"}]}], 
+                     "}"}], "}"}], ",", RowBox[{"{", RowBox[{"{", RowBox[
+                      {RowBox[{"-", "0.975609756097561`"}], "-", RowBox[
+                        {"1.2195121951219512`", " ", "\[ImaginaryI]"}]}], 
+                     "}"}], "}"}]}], "}"}]], "Output", CellID -> 
+             1663344129]}, Open]]}, Open]]}, Open]], 
+  Cell[CellGroupData[{Cell["More Examples", "ExtendedExamplesSection", 
+      CellTags -> "ExtendedExamples", CellID -> 1806403516]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 2015613314], 
+     Cell[TextData[{Cell[BoxData[ButtonBox["CentralDiagonalBlockGreensOverlap\
+", BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/CentralDiagonalBlockGreensOverlap"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["CentralBlockGreens", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/CentralBlockGreens"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["CentralGreen", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/CentralGreen"]], "InlineSeeAlsoFunction", 
+         TaggingRules -> {"PageType" -> "Function"}], 
+        StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"], 
+        Cell[BoxData[ButtonBox["HCSRDiagOffDiagBlocks", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/HCSRDiagOffDiagBlocks"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}]}], "SeeAlso", CellID -> 140770858]}, 
+    Open]], Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 1803156551], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 264865400]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 1005813317], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 1294946119]}, Open]]}, 
+ WindowTitle -> "CentralDiagonalBlockGreens", Saveable -> True, 
+ Editable -> True, CellContext -> "Global`", 
+ TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]

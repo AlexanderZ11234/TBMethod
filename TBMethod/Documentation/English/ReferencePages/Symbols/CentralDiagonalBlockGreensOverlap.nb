@@ -1,0 +1,128 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 721724107], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 928425203], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 1037408171], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 1398444826], Cell["TBMethod`LGFF`", "Categorization", 
+      CellLabel -> "Context", CellID -> 167767424], 
+     Cell["TBMethod/ref/CentralDiagonalBlockGreensOverlap", "Categorization", 
+      CellLabel -> "URI", CellID -> 1353855281]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 592071388], 
+     Cell["CentralDiagonalBlockGreensOverlap, tight binding, TBMethod", 
+      "Keywords", CellID -> 177018073]}, Closed]], 
+  Cell[CellGroupData[{Cell["CentralDiagonalBlockGreensOverlap", "ObjectName", 
+      CellID -> 684146230], Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["CentralDiagonalBlockGreensOverlap", 
+             BaseStyle -> "Link", ButtonData -> 
+              "paclet:TBMethod/ref/CentralDiagonalBlockGreensOverlap"], "[", 
+            RowBox[{StyleBox["z", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"], ",", RowBox[{"{", RowBox[{StyleBox[
+                   "hamiltonianBlocks", "TI", FontFamily -> "Times", 
+                   FontSlant -> "Italic"], ",", StyleBox["overlapBlocks", 
+                   "TI", FontFamily -> "Times", FontSlant -> "Italic"]}], 
+                "}"}], ",", StyleBox["sigmas", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"]}], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", "computes all diagonal Green blocks of a layered \
+nonorthogonal device in the original layer order."}], "Usage", 
+      CellID -> 1392772204], 
+     Cell[TextData[{"Requires at least two layers. The ", 
+        Cell[BoxData[StyleBox["overlapBlocks", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " and ", 
+        Cell[BoxData[StyleBox["hamiltonianBlocks", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        " lists must have matching block dimensions and layer order."}], 
+      "Notes", CellID -> 407258551], 
+     Cell[TextData[{"Returns diagonal Green blocks in the original layer \
+order; self-energies are supported on the final layer."}], "Notes", 
+      CellID -> 1293624986]}, Open]], 
+  Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 1853250617], 
+     Cell[TextData[
+       {"Check diagonal blocks against Inverse[z s - h - sigma]."}], 
+      "ExampleText", CellID -> 459669145], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 709601067], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{RowBox[{"z", "=", RowBox[{RowBox[{"0.2", 
+                  "\[VeryThinSpace]"}], "+", RowBox[{"0.1", " ", 
+                  "\[ImaginaryI]"}]}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"diag", "=", RowBox[{"{", RowBox[{RowBox[{"{", 
+                    RowBox[{"{", "0.", "}"}], "}"}], ",", RowBox[
+                   {"{", RowBox[{"{", "0.", "}"}], "}"}]}], "}"}]}], ";", 
+            "\[IndentingNewLine]", RowBox[{"lower", "=", RowBox[{"{", 
+                RowBox[{"{", RowBox[{"{", RowBox[{"-", "0.5"}], "}"}], "}"}], 
+                "}"}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"sdiag", "=", RowBox[{"{", RowBox[{RowBox[{"{", 
+                    RowBox[{"{", "1.", "}"}], "}"}], ",", RowBox[
+                   {"{", RowBox[{"{", "1.", "}"}], "}"}]}], "}"}]}], ";", 
+            "\[IndentingNewLine]", RowBox[{"slower", "=", RowBox[{"{", 
+                RowBox[{"{", RowBox[{"{", "0.04", "}"}], "}"}], "}"}]}], ";", 
+            "\[IndentingNewLine]", RowBox[{"sigmas", "=", RowBox[{"{", 
+                RowBox[{"{", RowBox[{"{", RowBox[{RowBox[{"-", "0.1"}], " ", 
+                      "\[ImaginaryI]"}], "}"}], "}"}], "}"}]}], ";", 
+            "\[IndentingNewLine]", RowBox[{"full", "=", TemplateBox[{
+                RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{"z", ",", RowBox[
+                         {RowBox[{"0.5", "\[VeryThinSpace]"}], "+", RowBox[
+                          {"0.04", " ", "z"}]}]}], "}"}], ",", RowBox[
+                     {"{", RowBox[{RowBox[{RowBox[{"0.5", 
+                          "\[VeryThinSpace]"}], "+", RowBox[{"0.04", " ", 
+                          "z"}]}], ",", RowBox[{"z", "+", RowBox[{"0.1", " ", 
+                          "\[ImaginaryI]"}]}]}], "}"}]}], "}"}]}, "Inverse", 
+               SyntaxForm -> SuperscriptBox]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"CentralDiagonalBlockGreensOverlap", "[", 
+              RowBox[{"z", ",", RowBox[{"{", RowBox[{RowBox[{"{", RowBox[
+                       {"diag", ",", "lower"}], "}"}], ",", RowBox[
+                     {"{", RowBox[{"sdiag", ",", "slower"}], "}"}]}], "}"}], 
+                ",", "sigmas"}], "]"}]}]], "Input", CellID -> 1243852339], 
+        Cell[BoxData[RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{"{", 
+                  RowBox[{RowBox[{"-", "0.6091141718209299`"}], "-", 
+                    RowBox[{"0.9832950090526926`", " ", "\[ImaginaryI]"}]}], 
+                  "}"}], "}"}], ",", RowBox[{"{", RowBox[{"{", RowBox[
+                   {RowBox[{"-", "0.7026593811288702`"}], "-", RowBox[
+                     {"0.5851927138342875`", " ", "\[ImaginaryI]"}]}], "}"}], 
+                "}"}]}], "}"}]], "Output", CellID -> 208858837]}, Open]]}, 
+    Open]], Cell[CellGroupData[{Cell["More Examples", 
+      "ExtendedExamplesSection", CellTags -> "ExtendedExamples", 
+      CellID -> 1123173598]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 1970125500], 
+     Cell[TextData[{Cell[BoxData[ButtonBox["CentralDiagonalBlockGreens", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/CentralDiagonalBlockGreens"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox[
+           "CentralBlockGreensOverlap", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/CentralBlockGreensOverlap"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["CentralGreenOverlap", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/CentralGreenOverlap"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["SigmaOverlap", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/SigmaOverlap"]], "InlineSeeAlsoFunction", 
+         TaggingRules -> {"PageType" -> "Function"}]}], "SeeAlso", 
+      CellID -> 1860270005]}, Open]], 
+  Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 1304486108], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 1443683742]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 325533287], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 1539210426]}, Open]]}, 
+ WindowTitle -> "CentralDiagonalBlockGreensOverlap", Saveable -> True, 
+ Editable -> True, CellContext -> "Global`", 
+ TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]

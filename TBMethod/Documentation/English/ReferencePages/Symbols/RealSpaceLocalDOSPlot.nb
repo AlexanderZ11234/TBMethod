@@ -1,0 +1,244 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 2080707393], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 1765385946], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 1703689272], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 1366203782], Cell["TBMethod`DataVisualization`", 
+      "Categorization", CellLabel -> "Context", CellID -> 293937293], 
+     Cell["TBMethod/ref/RealSpaceLocalDOSPlot", "Categorization", 
+      CellLabel -> "URI", CellID -> 352507060]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 918124469], 
+     Cell["RealSpaceLocalDOSPlot, tight binding, TBMethod", "Keywords", 
+      CellID -> 293720453]}, Closed]], 
+  Cell[CellGroupData[{Cell["RealSpaceLocalDOSPlot", "ObjectName", 
+      CellID -> 433949544], Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["RealSpaceLocalDOSPlot", 
+             BaseStyle -> "Link", ButtonData -> 
+              "paclet:TBMethod/ref/RealSpaceLocalDOSPlot"], "[", 
+            RowBox[{RowBox[{"{", RowBox[{StyleBox["energy", "TI", 
+                   FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                  StyleBox["eigenvector", "TI", FontFamily -> "Times", 
+                   FontSlant -> "Italic"]}], "}"}], ",", StyleBox["points", 
+               "TI", FontFamily -> "Times", FontSlant -> "Italic"]}], "]"}]], 
+         "InlineFormula"], " \[LineSeparator]", 
+        "shows the site probabilities of ", 
+        Cell[BoxData[StyleBox["eigenvector", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], " as disks at ", 
+        Cell[BoxData[StyleBox["points", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], 
+        " and annotates the energy.", "\n", Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["RealSpaceLocalDOSPlot", 
+             BaseStyle -> "Link", ButtonData -> 
+              "paclet:TBMethod/ref/RealSpaceLocalDOSPlot"], "[", 
+            RowBox[{RowBox[{"{", RowBox[{StyleBox["energy", "TI", 
+                   FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                  StyleBox["eigenvector", "TI", FontFamily -> "Times", 
+                   FontSlant -> "Italic"]}], "}"}], ",", StyleBox["points", 
+               "TI", FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+              StyleBox["internalDimension", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"]}], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", "sums the probabilities over ", 
+        Cell[BoxData[StyleBox["internalDimension", "TI", FontFamily -> 
+            "Times", FontSlant -> "Italic"]], "InlineFormula"], 
+        " internal states per site.", "\n", Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["RealSpaceLocalDOSPlot", 
+             BaseStyle -> "Link", ButtonData -> 
+              "paclet:TBMethod/ref/RealSpaceLocalDOSPlot"], "[", 
+            RowBox[{RowBox[{"{", RowBox[{StyleBox["energy", "TI", 
+                   FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                  StyleBox["eigenvector", "TI", FontFamily -> "Times", 
+                   FontSlant -> "Italic"]}], "}"}], ",", StyleBox["points", 
+               "TI", FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+              StyleBox["internalDimension", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"], ",", StyleBox["radiusScale", "TI", 
+               FontFamily -> "Times", FontSlant -> "Italic"]}], "]"}]], 
+         "InlineFormula"], " \[LineSeparator]", 
+        "scales the displayed disk radii by ", 
+        Cell[BoxData[StyleBox["radiusScale", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], "."}], "Usage", 
+      CellID -> 1648503470], 
+     Cell[TextData[{Cell[BoxData[StyleBox["points", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        " may be plain coordinate lists or labeled coordinate rules."}], 
+      "Notes", CellID -> 1586667161], 
+     Cell[TextData[{"Site weights sum squared eigenvector amplitudes over \
+internal states. Only weights satisfying ", 
+        Cell[BoxData[FormBox[RowBox[{SubscriptBox["w", "i"], ">", 
+             FractionBox["1", SuperscriptBox["10", "4"]]}], 
+           TraditionalForm]], "InlineMath", ScriptLevel -> 0, 
+         FractionBoxOptions -> {BaseStyle -> {ScriptLevel -> 0}}], 
+        " are retained."}], "Notes", CellID -> 427071155], 
+     Cell[TextData[{"The input must satisfy ", 
+        Cell[BoxData[RowBox[{RowBox[{ButtonBox["Length", BaseStyle -> "Link", 
+               ButtonData -> "paclet:ref/Length"], "[", StyleBox[
+               "eigenvector", "TI"], "]"}], "\[Equal]", 
+            RowBox[{RowBox[{ButtonBox["Length", BaseStyle -> "Link", 
+                 ButtonData -> "paclet:ref/Length"], "[", StyleBox["points", 
+                 "TI"], "]"}], " ", StyleBox["internalDimension", "TI"]}]}]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], ". \
+Three-dimensional coordinates are projected onto the first two coordinates \
+and combined by position."}], "Notes", CellID -> 1887620986], 
+     Cell[TextData[
+       {"The output includes a convex-hull outline and an energy label. ", 
+        Cell[BoxData[StyleBox["radiusScale", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " scales disk radii."}], "Notes", 
+      CellID -> 991820141], Cell[TextData[{"The defaults are ", 
+        Cell[BoxData[RowBox[{StyleBox["internalDimension", "TI"], "=", 
+            "1"}]], "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        " and ", Cell[BoxData[RowBox[{StyleBox["radiusScale", "TI"], "=", 
+            "2"}]], "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        ". Additional options are passed to ", 
+        Cell[BoxData[ButtonBox["Graphics", BaseStyle -> "Link", 
+           ButtonData -> "paclet:ref/Graphics"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], "."}], "Notes", 
+      CellID -> 764499784]}, Open]], 
+  Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 393515706], 
+     Cell[TextData[
+       {"Display the site weights of a normalized three-site state."}], 
+      "ExampleText", CellID -> 1419335310], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 1878501987], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{RowBox[{"points", "=", RowBox[{"{", 
+                RowBox[{RowBox[{"{", RowBox[{"0.", ",", "0."}], "}"}], ",", 
+                  RowBox[{"{", RowBox[{"1.", ",", "0."}], "}"}], ",", 
+                  RowBox[{"{", RowBox[{"0.5", ",", "1."}], "}"}]}], "}"}]}], 
+            ";", "\[IndentingNewLine]", RowBox[{"state", "=", 
+              RowBox[{"Normalize", "[", RowBox[{"{", RowBox[{"1.", ",", "1.", 
+                    ",", "1."}], "}"}], "]"}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"RealSpaceLocalDOSPlot", "[", RowBox[{RowBox[
+                 {"{", RowBox[{"0.5", ",", "state"}], "}"}], ",", "points"}], 
+              "]"}]}]], "Input", CellID -> 335176887], 
+        Cell[BoxData[GraphicsBox[{{FaceForm[{Opacity[0.2], RGBColor[0, 1, 
+                0]}], EdgeForm[GrayLevel[0]], TagBox[DynamicModuleBox[{
+                Typeset`mesh = HoldComplete[BoundaryMeshRegion[{{0., 0.}, 
+                    {1., 0.}, {0.5, 1.}}, {Line[{{1, 2}, {2, 3}, {3, 1}}]}, 
+                   Method -> {"SeparateBoundaries" -> False}, {PlotTheme -> 
+                     None}]]}, TagBox[GraphicsComplexBox[{{0., 0.}, {1., 0.}, 
+                  {0.5, 1.}}, {{}, {TagBox[PolygonBox[{{1, 2, 3}}], 
+                    Annotation[#1, "Geometry"] & ]}}], MouseAppearanceTag[
+                 "LinkHand"]], AllowKernelInitialization -> False], 
+              "BoundaryMeshRegion"]}, {Opacity[0.4], RGBColor[1, 0, 0], 
+             {DiskBox[{0., 0.}, 1.1547005383792517], DiskBox[{1., 0.}, 
+               1.1547005383792517], DiskBox[{0.5, 1.}, 1.1547005383792517]}}, 
+            {InsetBox[FormBox["\"\\!\\(\\*SubscriptBox[\\(E\\), \
+\\(\[VeryThinSpace]\\)]\\) = \
+\\!\\(\\*TagBox[InterpretationBox[StyleBox[RowBox[{\\\"\\\\\\\"5.\\\\\\\"\\\"\
+, \\\"\[Times]\\\", SuperscriptBox[\\\"10\\\", \\\"\\\\\\\"-1\\\\\\\"\\\"]}], \
+Rule[ShowStringCharacters, False]], 0.5`, Rule[AutoDelete, True]], \
+Function[ScientificForm[Slot[1], 4]]]\\)\"", TraditionalForm], {0, 0}]}}]], 
+         "Output", CellID -> 782689458]}, Open]], 
+     Cell[CellGroupData[{Cell[BoxData[InterpretationBox[
+           Cell["\t", "ExampleDelimiter"], $Line = 0; ]], "ExampleDelimiter", 
+         CellID -> 1265214560], Cell[TextData[
+          {"Group two internal components into the weight of each site."}], 
+         "ExampleText", CellID -> 977686066], 
+        Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+         CellID -> 1835436097], Cell[CellGroupData[
+          {Cell[BoxData[RowBox[{RowBox[{"points", "=", RowBox[{"{", 
+                   RowBox[{RowBox[{"{", RowBox[{"0.", ",", "0."}], "}"}], 
+                     ",", RowBox[{"{", RowBox[{"1.", ",", "0."}], "}"}], ",", 
+                     RowBox[{"{", RowBox[{"0.5", ",", "1."}], "}"}]}], 
+                   "}"}]}], ";", "\[IndentingNewLine]", RowBox[{"state", "=", 
+                 RowBox[{"Normalize", "[", RowBox[{"{", RowBox[{"1.", ",", 
+                       "0.", ",", "0.", ",", "1.", ",", "1.", ",", "1."}], 
+                     "}"}], "]"}]}], ";", "\[IndentingNewLine]", RowBox[
+                {"RealSpaceLocalDOSPlot", "[", RowBox[{RowBox[{"{", 
+                     RowBox[{"0.5", ",", "state"}], "}"}], ",", "points", 
+                   ",", "2"}], "]"}]}]], "Input", CellID -> 2063756499], 
+           Cell[BoxData[GraphicsBox[{{FaceForm[{Opacity[0.2], RGBColor[0, 1, 
+                   0]}], EdgeForm[GrayLevel[0]], TagBox[DynamicModuleBox[
+                  {Typeset`mesh = HoldComplete[BoundaryMeshRegion[{{0., 0.}, 
+                       {1., 0.}, {0.5, 1.}}, {Line[{{1, 2}, {2, 3}, 
+                         {3, 1}}]}, Method -> {"SeparateBoundaries" -> 
+                         False}, {PlotTheme -> None}]]}, TagBox[
+                   GraphicsComplexBox[{{0., 0.}, {1., 0.}, {0.5, 1.}}, 
+                    {{}, {TagBox[PolygonBox[{{1, 2, 3}}], Annotation[#1, 
+                         "Geometry"] & ]}}], MouseAppearanceTag["LinkHand"]], 
+                  AllowKernelInitialization -> False], 
+                 "BoundaryMeshRegion"]}, {Opacity[0.4], RGBColor[1, 0, 0], 
+                {DiskBox[{0., 0.}, 0.8660254037844386], DiskBox[{1., 0.}, 
+                  0.8660254037844386], DiskBox[{0.5, 1.}, 
+                  1.7320508075688772]}}, {InsetBox[FormBox["\"\\!\\(\\*Subscr\
+iptBox[\\(E\\), \\(\[VeryThinSpace]\\)]\\) = \
+\\!\\(\\*TagBox[InterpretationBox[StyleBox[RowBox[{\\\"\\\\\\\"5.\\\\\\\"\\\"\
+, \\\"\[Times]\\\", SuperscriptBox[\\\"10\\\", \\\"\\\\\\\"-1\\\\\\\"\\\"]}], \
+Rule[ShowStringCharacters, False]], 0.5`, Rule[AutoDelete, True]], \
+Function[ScientificForm[Slot[1], 4]]]\\)\"", TraditionalForm], {0, 0}]}}]], 
+            "Output", CellID -> 1927355600]}, Open]]}, Open]], 
+     Cell[CellGroupData[{Cell[BoxData[InterpretationBox[
+           Cell["\t", "ExampleDelimiter"], $Line = 0; ]], "ExampleDelimiter", 
+         CellID -> 834904385], Cell[TextData[
+          {"Show equal eigenstate weights on a triangular three-site \
+cluster."}], "ExampleText", CellID -> 1245000902], 
+        Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+         CellID -> 402253315], Cell[CellGroupData[
+          {Cell[BoxData[RowBox[{RowBox[{"points", "=", RowBox[{"{", 
+                   RowBox[{RowBox[{"{", RowBox[{"0.", ",", "0."}], "}"}], 
+                     ",", RowBox[{"{", RowBox[{"1.", ",", "0."}], "}"}], ",", 
+                     RowBox[{"{", RowBox[{"0.5", ",", "1."}], "}"}]}], 
+                   "}"}]}], ";", "\[IndentingNewLine]", RowBox[{"state", "=", 
+                 RowBox[{"Normalize", "[", RowBox[{"{", RowBox[{"1.", ",", 
+                       "1.", ",", "1."}], "}"}], "]"}]}], ";", 
+               "\[IndentingNewLine]", RowBox[{"RealSpaceLocalDOSPlot", "[", 
+                 RowBox[{RowBox[{"{", RowBox[{"0.5", ",", "state"}], "}"}], 
+                   ",", "points", ",", "1", ",", "0.2"}], "]"}]}]], "Input", 
+            CellID -> 181905058], Cell[BoxData[GraphicsBox[
+              {{FaceForm[{Opacity[0.2], RGBColor[0, 1, 0]}], EdgeForm[
+                 GrayLevel[0]], TagBox[DynamicModuleBox[{Typeset`mesh = 
+                    HoldComplete[BoundaryMeshRegion[{{0., 0.}, {1., 0.}, 
+                       {0.5, 1.}}, {Line[{{1, 2}, {2, 3}, {3, 1}}]}, 
+                      Method -> {"SeparateBoundaries" -> False}, 
+                      {PlotTheme -> None}]]}, TagBox[GraphicsComplexBox[
+                    {{0., 0.}, {1., 0.}, {0.5, 1.}}, {{}, {TagBox[PolygonBox[
+                        {{1, 2, 3}}], Annotation[#1, "Geometry"] & ]}}], 
+                   MouseAppearanceTag["LinkHand"]], 
+                  AllowKernelInitialization -> False], 
+                 "BoundaryMeshRegion"]}, {Opacity[0.4], RGBColor[1, 0, 0], 
+                {DiskBox[{0., 0.}, 0.11547005383792519], DiskBox[{1., 0.}, 
+                  0.11547005383792519], DiskBox[{0.5, 1.}, 
+                  0.11547005383792519]}}, {InsetBox[FormBox["\"\\!\\(\\*Subsc\
+riptBox[\\(E\\), \\(\[VeryThinSpace]\\)]\\) = \
+\\!\\(\\*TagBox[InterpretationBox[StyleBox[RowBox[{\\\"\\\\\\\"5.\\\\\\\"\\\"\
+, \\\"\[Times]\\\", SuperscriptBox[\\\"10\\\", \\\"\\\\\\\"-1\\\\\\\"\\\"]}], \
+Rule[ShowStringCharacters, False]], 0.5`, Rule[AutoDelete, True]], \
+Function[ScientificForm[Slot[1], 4]]]\\)\"", TraditionalForm], {0, 0}]}}]], 
+            "Output", CellID -> 449910773]}, Open]]}, Open]]}, Open]], 
+  Cell[CellGroupData[{Cell["More Examples", "ExtendedExamplesSection", 
+      CellTags -> "ExtendedExamples", CellID -> 1168451349]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 1331325586], 
+     Cell[TextData[{Cell[BoxData[ButtonBox["EigenspectralData", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/EigenspectralData"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["LocalDOSPlot", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/LocalDOSPlot"]], "InlineSeeAlsoFunction", 
+         TaggingRules -> {"PageType" -> "Function"}], 
+        StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"], 
+        Cell[BoxData[ButtonBox["Eigensystem", BaseStyle -> "Link", 
+           ButtonData -> "paclet:ref/Eigensystem"]], "InlineSeeAlsoFunction", 
+         TaggingRules -> {"PageType" -> "Function"}]}], "SeeAlso", 
+      CellID -> 367638619]}, Open]], 
+  Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 1694625329], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 1145711997]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 179628036], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 1541853004]}, Open]]}, 
+ WindowTitle -> "RealSpaceLocalDOSPlot", Saveable -> True, Editable -> True, 
+ CellContext -> "Global`", TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]

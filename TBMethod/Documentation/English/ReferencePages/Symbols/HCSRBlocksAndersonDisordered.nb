@@ -1,0 +1,196 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 280096276], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 102497064], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 952882069], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 1748208551], Cell["TBMethod`MDConstruct`", "Categorization", 
+      CellLabel -> "Context", CellID -> 427689106], 
+     Cell["TBMethod/ref/HCSRBlocksAndersonDisordered", "Categorization", 
+      CellLabel -> "URI", CellID -> 375929870]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 989022445], 
+     Cell["HCSRBlocksAndersonDisordered, tight binding, TBMethod", 
+      "Keywords", CellID -> 1859591633]}, Closed]], 
+  Cell[CellGroupData[{Cell["HCSRBlocksAndersonDisordered", "ObjectName", 
+      CellID -> 157670012], Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{RowBox[{RowBox[{ButtonBox[
+                 "HCSRBlocksAndersonDisordered", BaseStyle -> "Link", 
+                 ButtonData -> 
+                  "paclet:TBMethod/ref/HCSRBlocksAndersonDisordered"], "[", 
+                StyleBox["n", "TI", FontFamily -> "Times", FontSlant -> 
+                  "Italic"], "]"}], "[", RowBox[{StyleBox["width", "TI", 
+                 FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                StyleBox["internalMatrix", "TI", FontFamily -> "Times", 
+                 FontSlant -> "Italic"]}], "]"}], "[", 
+            RowBox[{"{", RowBox[{StyleBox["diagonalBlocks", "TI", 
+                 FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                StyleBox["lowerBlocks", "TI", FontFamily -> "Times", 
+                 FontSlant -> "Italic"]}], "}"}], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", "generates ", 
+        Cell[BoxData[StyleBox["n", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], " realizations of \
+independent onsite Anderson disorder in the specified internal channel.", 
+        "\n", Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{RowBox[{RowBox[{ButtonBox[
+                 "HCSRBlocksAndersonDisordered", BaseStyle -> "Link", 
+                 ButtonData -> 
+                  "paclet:TBMethod/ref/HCSRBlocksAndersonDisordered"], "[", 
+                StyleBox["n", "TI", FontFamily -> "Times", FontSlant -> 
+                  "Italic"], "]"}], "[", RowBox[{StyleBox["widths", "TI", 
+                 FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                StyleBox["internalMatrices", "TI", FontFamily -> "Times", 
+                 FontSlant -> "Italic"]}], "]"}], "[", 
+            RowBox[{"{", RowBox[{StyleBox["diagonalBlocks", "TI", 
+                 FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                StyleBox["lowerBlocks", "TI", FontFamily -> "Times", 
+                 FontSlant -> "Italic"]}], "}"}], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", "combines independently sampled disorder \
+channels with the corresponding widths and internal matrices."}], "Usage", 
+      CellID -> 1250182390], Cell[TextData[{"Returns a list of ", 
+        Cell[BoxData[StyleBox["n", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        " scattering-region block pairs; ", 
+        Cell[BoxData[StyleBox["n", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " defaults to ", 
+        Cell[BoxData["1"], "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        ". The input representation requires nonempty diagonal- and \
+lower-block lists."}], "Notes", CellID -> 1400439078], 
+     Cell[TextData[{"Each disorder channel adds ", 
+        Cell[BoxData[RowBox[{ButtonBox["KroneckerProduct", BaseStyle -> 
+              "Link", ButtonData -> "paclet:ref/KroneckerProduct"], "[", 
+            RowBox[{StyleBox["siteDiagonalRandomMatrix", "TI"], ",", 
+              StyleBox["internalMatrix", "TI"]}], "]"}]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " to every diagonal block. Site \
+amplitudes are independently sampled from the continuous uniform distribution \
+specified by ", Cell[BoxData[RowBox[{ButtonBox["RandomReal", 
+             BaseStyle -> "Link", ButtonData -> "paclet:ref/RandomReal"], 
+            "[", RowBox[{"{", RowBox[{RowBox[{"-", FractionBox[StyleBox[
+                    "width", "TI"], "2"]}], ",", FractionBox[StyleBox[
+                  "width", "TI"], "2"]}], "}"}], "]"}]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        ". Lower off-diagonal blocks are preserved."}], "Notes", 
+      CellID -> 810674417], Cell[TextData[{"For several channels, ", 
+        Cell[BoxData[StyleBox["widths", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " and ", 
+        Cell[BoxData[StyleBox["internalMatrices", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " must have the same length. All \
+internal matrices should have the same dimension compatible with the site \
+ordering."}], "Notes", CellID -> 1262669055], 
+     Cell[TextData[{"Set ", Cell[BoxData[ButtonBox["SeedRandom", 
+           BaseStyle -> "Link", ButtonData -> "paclet:ref/SeedRandom"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        ", optionally inside ", Cell[BoxData[ButtonBox["BlockRandom", 
+           BaseStyle -> "Link", ButtonData -> "paclet:ref/BlockRandom"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        ", when reproducible disorder examples or tests are needed."}], 
+      "Notes", CellID -> 1991790482]}, Open]], 
+  Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 786858736], Cell[TextData[{"Generate two reproducible \
+disorder realizations for a two-layer scalar chain."}], "ExampleText", 
+      CellID -> 1748034942], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 102468642], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{RowBox[{"SeedRandom", "[", "20261024", "]"}], 
+            ";", "\[IndentingNewLine]", RowBox[{"blocks", "=", 
+              RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{RowBox[{"{", 
+                        RowBox[{"{", "0.", "}"}], "}"}], ",", RowBox[
+                       {"{", RowBox[{"{", "0.", "}"}], "}"}]}], "}"}], ",", 
+                  RowBox[{"{", RowBox[{"{", RowBox[{"{", RowBox[{"-", "1."}], 
+                        "}"}], "}"}], "}"}]}], "}"}]}], ";", 
+            "\[IndentingNewLine]", RowBox[{RowBox[{RowBox[
+                 {"HCSRBlocksAndersonDisordered", "[", "2", "]"}], "[", 
+                RowBox[{"0.4", ",", RowBox[{"{", RowBox[{"{", "1.", "}"}], 
+                    "}"}]}], "]"}], "[", "blocks", "]"}]}]], "Input", 
+         CellID -> 1272618968], Cell[BoxData[
+          RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{RowBox[{"{", RowBox[
+                     {RowBox[{"{", RowBox[{"{", "0.15031535576286437`", 
+                          "}"}], "}"}], ",", RowBox[{"{", RowBox[{"{", 
+                          RowBox[{"-", "0.18326309085138648`"}], "}"}], 
+                        "}"}]}], "}"}], ",", RowBox[{"{", RowBox[{"{", 
+                      RowBox[{"{", RowBox[{"-", "1.`"}], "}"}], "}"}], 
+                    "}"}]}], "}"}], ",", RowBox[{"{", RowBox[
+                 {RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{"{", RowBox[
+                          {"-", "0.05491750909385973`"}], "}"}], "}"}], ",", 
+                      RowBox[{"{", RowBox[{"{", "0.023489223132857173`", 
+                          "}"}], "}"}]}], "}"}], ",", RowBox[{"{", 
+                    RowBox[{"{", RowBox[{"{", RowBox[{"-", "1.`"}], "}"}], 
+                      "}"}], "}"}]}], "}"}]}], "}"}]], "Output", 
+         CellID -> 673606550]}, Open]], 
+     Cell[CellGroupData[{Cell[BoxData[InterpretationBox[
+           Cell["\t", "ExampleDelimiter"], $Line = 0; ]], "ExampleDelimiter", 
+         CellID -> 818677254], Cell[TextData[{"Combine two independent \
+disorder channels while retaining interlayer hoppings."}], "ExampleText", 
+         CellID -> 1042892811], Cell[BoxData[RowBox[{"Needs", "[", 
+            "\"TBMethod`\"", "]"}]], "Input", CellID -> 1033057787], 
+        Cell[CellGroupData[{Cell[BoxData[RowBox[{RowBox[{"SeedRandom", "[", 
+                 "20261025", "]"}], ";", "\[IndentingNewLine]", RowBox[
+                {"blocks", "=", RowBox[{"{", RowBox[{RowBox[{"{", RowBox[
+                        {RowBox[{"{", RowBox[{"{", "0.", "}"}], "}"}], ",", 
+                         RowBox[{"{", RowBox[{"{", "0.", "}"}], "}"}]}], 
+                       "}"}], ",", RowBox[{"{", RowBox[{"{", RowBox[{"{", 
+                          RowBox[{"-", "1."}], "}"}], "}"}], "}"}]}], 
+                   "}"}]}], ";", "\[IndentingNewLine]", RowBox[
+                {RowBox[{RowBox[{"HCSRBlocksAndersonDisordered", "[", "2", 
+                     "]"}], "[", RowBox[{RowBox[{"{", RowBox[{"0.2", ",", 
+                         "0.4"}], "}"}], ",", RowBox[{"{", RowBox[
+                        {RowBox[{"{", RowBox[{"{", "1.", "}"}], "}"}], ",", 
+                         RowBox[{"{", RowBox[{"{", RowBox[{"-", "1."}], 
+                          "}"}], "}"}]}], "}"}]}], "]"}], "[", "blocks", 
+                 "]"}]}]], "Input", CellID -> 362874158], 
+           Cell[BoxData[RowBox[{"{", RowBox[{RowBox[{"{", RowBox[
+                    {RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{"{", 
+                          "0.096244807718743`", "}"}], "}"}], ",", RowBox[
+                          {"{", RowBox[{"{", RowBox[{"-", 
+                          "0.10281513954516325`"}], "}"}], "}"}]}], "}"}], 
+                     ",", RowBox[{"{", RowBox[{"{", RowBox[{"{", RowBox[
+                          {"-", "1.`"}], "}"}], "}"}], "}"}]}], "}"}], ",", 
+                 RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{RowBox[{"{", 
+                          RowBox[{"{", "0.12645955592405628`", "}"}], "}"}], 
+                         ",", RowBox[{"{", RowBox[{"{", 
+                          "0.020447063646563457`", "}"}], "}"}]}], "}"}], 
+                     ",", RowBox[{"{", RowBox[{"{", RowBox[{"{", RowBox[
+                          {"-", "1.`"}], "}"}], "}"}], "}"}]}], "}"}]}], 
+               "}"}]], "Output", CellID -> 1819758134]}, Open]]}, Open]]}, 
+    Open]], Cell[CellGroupData[{Cell["More Examples", 
+      "ExtendedExamplesSection", CellTags -> "ExtendedExamples", 
+      CellID -> 775313890]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 1209598486], 
+     Cell[TextData[{Cell[BoxData[ButtonBox["HCSRDiagOffDiagBlocks", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/HCSRDiagOffDiagBlocks"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["CentralBlockGreens", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/CentralBlockGreens"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["RandomReal", 
+           BaseStyle -> "Link", ButtonData -> "paclet:ref/RandomReal"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["SeedRandom", 
+           BaseStyle -> "Link", ButtonData -> "paclet:ref/SeedRandom"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}]}], "SeeAlso", CellID -> 393304785]}, 
+    Open]], Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 1784699512], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 858939559]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 1802353060], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 1740722659]}, Open]]}, 
+ WindowTitle -> "HCSRBlocksAndersonDisordered", Saveable -> True, 
+ Editable -> True, CellContext -> "Global`", 
+ TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]

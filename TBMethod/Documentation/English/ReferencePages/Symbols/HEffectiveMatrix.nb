@@ -1,0 +1,179 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 1144838810], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 438235303], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 927256384], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 1066852190], Cell["TBMethod`MDConstruct`", "Categorization", 
+      CellLabel -> "Context", CellID -> 1904032867], 
+     Cell["TBMethod/ref/HEffectiveMatrix", "Categorization", 
+      CellLabel -> "URI", CellID -> 1206543231]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 1879944543], 
+     Cell["HEffectiveMatrix, tight binding, TBMethod", "Keywords", 
+      CellID -> 1563081799]}, Closed]], 
+  Cell[CellGroupData[{Cell["HEffectiveMatrix", "ObjectName", 
+      CellID -> 291803092], Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["HEffectiveMatrix", BaseStyle -> 
+              "Link", ButtonData -> "paclet:TBMethod/ref/HEffectiveMatrix"], 
+            "[", RowBox[{StyleBox["h", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"], ",", StyleBox["deltaK", "TI", 
+               FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+              StyleBox["k0", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"], ",", StyleBox["dimensions", "TI", FontFamily -> 
+                "Times", FontSlant -> "Italic"]}], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", 
+        "returns the first-order Taylor approximation of ", 
+        Cell[BoxData[StyleBox["h", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], " about ", 
+        Cell[BoxData[StyleBox["k0", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], 
+        " as Pauli/Gell-Mann coefficients.", "\n", Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["HEffectiveMatrix", BaseStyle -> 
+              "Link", ButtonData -> "paclet:TBMethod/ref/HEffectiveMatrix"], 
+            "[", RowBox[{StyleBox["h", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"], ",", StyleBox["deltaK", "TI", 
+               FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+              StyleBox["k0", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"], ",", StyleBox["dimensions", "TI", FontFamily -> 
+                "Times", FontSlant -> "Italic"], ",", StyleBox["order", "TI", 
+               FontFamily -> "Times", FontSlant -> "Italic"]}], "]"}]], 
+         "InlineFormula"], " \[LineSeparator]", "retains terms through the \
+specified Taylor order in the momentum increment ", 
+        Cell[BoxData[StyleBox["deltaK", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], "."}], "Usage", 
+      CellID -> 1658988633], Cell[TextData[{"Expands ", 
+        Cell[BoxData[RowBox[{StyleBox["h", "TI"], "[", 
+            RowBox[{RowBox[{StyleBox["s", "TI"], " ", StyleBox["deltaK", 
+                 "TI"]}], "+", StyleBox["k0", "TI"]}], "]"}]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        " in the single scale parameter ", 
+        Cell[BoxData[FormBox[TagBox["s", HoldForm], TraditionalForm]], 
+         "InlineMath", ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], 
+        " through the requested total order, then applies ", 
+        Cell[BoxData[RowBox[{StyleBox["s", "TI"], "\[Rule]", "1"}]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        ". The default order is ", Cell[BoxData["1"], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], "."}], "Notes", 
+      CellID -> 1781316908], 
+     Cell[TextData[{Cell[BoxData[StyleBox["dimensions", "TI"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        " is the ordered list of internal factors, each ", 
+        Cell[BoxData["2"], "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        " or ", Cell[BoxData["3"], "InlineFormula", FontFamily -> 
+          "Source Sans Pro"], ", required by ", 
+        Cell[BoxData[ButtonBox["PauliGellMannDecomposition", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/PauliGellMannDecomposition"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], ". Returns a \
+coefficient association rather than the effective matrix itself."}], "Notes", 
+      CellID -> 925556770], Cell[TextData[{"Applies ", 
+        Cell[BoxData[ButtonBox["ComplexExpand", BaseStyle -> "Link", 
+           ButtonData -> "paclet:ref/ComplexExpand"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        ", so symbolic momentum components are treated as real. Use ", 
+        Cell[BoxData[ButtonBox["PauliGellMannAbstract", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/PauliGellMannAbstract"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], " and ", 
+        Cell[BoxData[ButtonBox["PauliGellMannRepresent", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/PauliGellMannRepresent"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        " to recover a matrix expression."}], "Notes", CellID -> 333846244]}, 
+    Open]], Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 1803248161], 
+     Cell[TextData[
+       {"Use the default first-order expansion around zero momentum."}], 
+      "ExampleText", CellID -> 659434128], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 346982655], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{RowBox[{"hamiltonian", "=", RowBox[{"Function", 
+                "[", RowBox[{"q", ",", RowBox[{RowBox[{RowBox[{"Sin", "[", 
+                        RowBox[{"q", "\[LeftDoubleBracket]", "1", 
+                          "\[RightDoubleBracket]"}], "]"}], " ", RowBox[
+                       {"PauliMatrix", "[", "1", "]"}]}], "+", RowBox[
+                     {RowBox[{"(", RowBox[{"1", "-", RowBox[{"Cos", "[", 
+                          RowBox[{"q", "\[LeftDoubleBracket]", "1", 
+                          "\[RightDoubleBracket]"}], "]"}]}], ")"}], " ", 
+                      RowBox[{"PauliMatrix", "[", "3", "]"}]}]}]}], "]"}]}], 
+            ";", "\[IndentingNewLine]", RowBox[{"HEffectiveMatrix", "[", 
+              RowBox[{"hamiltonian", ",", RowBox[{"{", "kx", "}"}], ",", 
+                RowBox[{"{", "0", "}"}], ",", RowBox[{"{", "2", "}"}]}], 
+              "]"}]}]], "Input", CellID -> 211498249], 
+        Cell[BoxData[RowBox[{"\[LeftAssociation]", 
+            RowBox[{RowBox[{"{", "1", "}"}], "\[Rule]", "kx"}], 
+            "\[RightAssociation]"}]], "Output", CellID -> 838458847]}, 
+       Open]], Cell[CellGroupData[
+       {Cell[BoxData[InterpretationBox[Cell["\t", "ExampleDelimiter"], 
+           $Line = 0; ]], "ExampleDelimiter", CellID -> 1178327668], 
+        Cell[TextData[
+          {"Keep the second-order mass correction in the effective \
+Hamiltonian."}], "ExampleText", CellID -> 480149240], 
+        Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+         CellID -> 1760734940], Cell[CellGroupData[
+          {Cell[BoxData[RowBox[{RowBox[{"hamiltonian", "=", RowBox[
+                  {"Function", "[", RowBox[{"q", ",", RowBox[{RowBox[
+                        {RowBox[{"Sin", "[", RowBox[{"q", 
+                          "\[LeftDoubleBracket]", "1", 
+                          "\[RightDoubleBracket]"}], "]"}], " ", RowBox[
+                          {"PauliMatrix", "[", "1", "]"}]}], "+", RowBox[
+                        {RowBox[{"(", RowBox[{"1", "-", RowBox[{"Cos", "[", 
+                          RowBox[{"q", "\[LeftDoubleBracket]", "1", 
+                          "\[RightDoubleBracket]"}], "]"}]}], ")"}], " ", 
+                         RowBox[{"PauliMatrix", "[", "3", "]"}]}]}]}], 
+                   "]"}]}], ";", "\[IndentingNewLine]", RowBox[
+                {"HEffectiveMatrix", "[", RowBox[{"hamiltonian", ",", 
+                   RowBox[{"{", "kx", "}"}], ",", RowBox[{"{", "0", "}"}], 
+                   ",", RowBox[{"{", "2", "}"}], ",", "2"}], "]"}]}]], 
+            "Input", CellID -> 467500974], Cell[BoxData[
+             RowBox[{"\[LeftAssociation]", RowBox[{RowBox[{RowBox[{"{", "1", 
+                     "}"}], "\[Rule]", "kx"}], ",", RowBox[
+                  {RowBox[{"{", "3", "}"}], "\[Rule]", FractionBox[
+                    SuperscriptBox["kx", "2"], "2"]}]}], 
+               "\[RightAssociation]"}]], "Output", CellID -> 409687189]}, 
+          Open]]}, Open]]}, Open]], 
+  Cell[CellGroupData[{Cell["More Examples", "ExtendedExamplesSection", 
+      CellTags -> "ExtendedExamples", CellID -> 1130283890]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 970826434], 
+     Cell[TextData[{Cell[BoxData[ButtonBox["HBloch", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/HBloch"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox[
+           "PauliGellMannDecomposition", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/PauliGellMannDecomposition"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["PauliGellMannAbstract", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/PauliGellMannAbstract"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["PauliGellMannRepresent", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/PauliGellMannRepresent"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["Series", 
+           BaseStyle -> "Link", ButtonData -> "paclet:ref/Series"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}]}], "SeeAlso", CellID -> 2000226395]}, 
+    Open]], Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 310686599], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 1828785285]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 2073508425], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 1378155704]}, Open]]}, WindowTitle -> "HEffectiveMatrix", 
+ Saveable -> True, Editable -> True, CellContext -> "Global`", 
+ TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]

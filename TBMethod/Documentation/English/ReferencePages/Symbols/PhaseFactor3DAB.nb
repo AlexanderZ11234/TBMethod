@@ -1,0 +1,177 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 1873714330], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 121104912], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 590159723], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 510727140], Cell["TBMethod`MDConstruct`", "Categorization", 
+      CellLabel -> "Context", CellID -> 1216149178], 
+     Cell["TBMethod/ref/PhaseFactor3DAB", "Categorization", 
+      CellLabel -> "URI", CellID -> 1696494098]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 1528736752], Cell["PhaseFactor3DAB, tight binding, TBMethod", 
+      "Keywords", CellID -> 1393266597]}, Closed]], 
+  Cell[CellGroupData[{Cell["PhaseFactor3DAB", "ObjectName", 
+      CellID -> 646350580], Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{RowBox[{ButtonBox["PhaseFactor3DAB", 
+               BaseStyle -> "Link", ButtonData -> 
+                "paclet:TBMethod/ref/PhaseFactor3DAB"], "[", 
+              StyleBox["bz", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"], "]"}], "[", RowBox[{RowBox[{"{", RowBox[
+                 {StyleBox["xf", "TI", FontFamily -> "Times", FontSlant -> 
+                    "Italic"], ",", StyleBox["yf", "TI", FontFamily -> 
+                    "Times", FontSlant -> "Italic"]}], "}"}], ",", 
+              RowBox[{"{", RowBox[{StyleBox["xi", "TI", FontFamily -> 
+                    "Times", FontSlant -> "Italic"], ",", StyleBox["yi", 
+                   "TI", FontFamily -> "Times", FontSlant -> "Italic"]}], 
+                "}"}]}], "]"}]], "InlineFormula"], " \[LineSeparator]", "give\
+s the Peierls phase for a perpendicular magnetic field and two planar \
+endpoints.", "\n", Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{RowBox[{ButtonBox["PhaseFactor3DAB", 
+               BaseStyle -> "Link", ButtonData -> 
+                "paclet:TBMethod/ref/PhaseFactor3DAB"], "[", RowBox[{"{", 
+                RowBox[{StyleBox["bx", "TI", FontFamily -> "Times", 
+                   FontSlant -> "Italic"], ",", StyleBox["by", "TI", 
+                   FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                  StyleBox["bz", "TI", FontFamily -> "Times", FontSlant -> 
+                    "Italic"]}], "}"}], "]"}], "[", 
+            RowBox[{StyleBox["finalPoint", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"], ",", StyleBox["initialPoint", "TI", 
+               FontFamily -> "Times", FontSlant -> "Italic"]}], "]"}]], 
+         "InlineFormula"], " \[LineSeparator]", "gives the symmetric-gauge \
+Peierls phase for a magnetic field in an arbitrary direction."}], "Usage", 
+      CellID -> 1713259257], 
+     Cell[TextData[{"The scalar-field form embeds the planar endpoints at ", 
+        Cell[BoxData[FormBox[TagBox[RowBox[{"z", "\[LongEqual]", "0"}], 
+            HoldForm], TraditionalForm]], "InlineMath", ScriptLevel -> 0, 
+         FractionBoxOptions -> {BaseStyle -> {ScriptLevel -> 0}}], 
+        " and places the field along the third direction."}], "Notes", 
+      CellID -> 540802353], 
+     Cell[TextData[
+       {"The implemented sign convention is for electron charge ", 
+        Cell[BoxData[FormBox[TagBox[RowBox[{"q", "\[LongEqual]", 
+              RowBox[{"-", "e"}]}], HoldForm], TraditionalForm]], 
+         "InlineMath", ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], ", with ", 
+        Cell[BoxData[FormBox[TagBox[RowBox[{"e", ">", "0"}], HoldForm], 
+           TraditionalForm]], "InlineMath", ScriptLevel -> 0, 
+         FractionBoxOptions -> {BaseStyle -> {ScriptLevel -> 0}}], ". The \
+determinant in the formula below has the final endpoint, field vector, and \
+initial endpoint as its rows, in that order."}], "Notes", 
+      CellID -> 123325016], Cell[TextData[{"Inputs must already use mutually \
+consistent charge, flux, and length units. No additional physical constants \
+are inserted."}], "Notes", CellID -> 1061714274], 
+     Cell[TextData[{"For a real magnetic field and real endpoints, reversing \
+the endpoint order or reversing the field gives the complex-conjugate phase. \
+Zero field or coincident endpoints give ", Cell[BoxData["1"], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], "."}], "Notes", 
+      CellID -> 1783113998], 
+     Cell[TextData[
+       {"The symmetric-gauge phase uses the electron sign convention. Here ", 
+        Cell[BoxData[FormBox[TagBox[SubscriptBox[StyleBox["r", 
+              FontWeight -> "Bold", FontSlant -> "Italic", StripOnInput -> 
+               False], StyleBox["f", FontSlant -> "Plain", StripOnInput -> 
+               False]], HoldForm], TraditionalForm]], "InlineMath", 
+         ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], " and ", 
+        Cell[BoxData[FormBox[TagBox[SubscriptBox[StyleBox["r", 
+              FontWeight -> "Bold", FontSlant -> "Italic", StripOnInput -> 
+               False], StyleBox["i", FontSlant -> "Plain", StripOnInput -> 
+               False]], HoldForm], TraditionalForm]], "InlineMath", 
+         ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], 
+        " are the final and initial position vectors, and ", 
+        Cell[BoxData[FormBox[TagBox[StyleBox["B", FontWeight -> "Bold", 
+             FontSlant -> "Italic", StripOnInput -> False], HoldForm], 
+           TraditionalForm]], "InlineMath", ScriptLevel -> 0, 
+         FractionBoxOptions -> {BaseStyle -> {ScriptLevel -> 0}}], 
+        " is the magnetic-field vector:", "\[LineSeparator]", 
+        Cell[BoxData[FormBox[TagBox[RowBox[{RowBox[{"u", "(", RowBox[
+                 {SubscriptBox[StyleBox["r", FontWeight -> "Bold", 
+                    FontSlant -> "Italic", StripOnInput -> False], 
+                   StyleBox["f", FontSlant -> "Plain", StripOnInput -> 
+                     False]], ",", SubscriptBox[StyleBox["r", FontWeight -> 
+                     "Bold", FontSlant -> "Italic", StripOnInput -> False], 
+                   StyleBox["i", FontSlant -> "Plain", StripOnInput -> 
+                     False]]}], ")"}], "\[LongEqual]", RowBox[{"exp", "(", 
+                RowBox[{RowBox[{"-", StyleBox["\[ImaginaryI]", FontSlant -> 
+                      "Plain", StripOnInput -> False]}], " ", StyleBox[
+                   "\[Pi]", FontSlant -> "Plain", StripOnInput -> False], 
+                  " ", TemplateBox[{RowBox[{"{", RowBox[{SubscriptBox[
+                         StyleBox["r", FontWeight -> "Bold", FontSlant -> 
+                          "Italic", StripOnInput -> False], StyleBox["f", 
+                          FontSlant -> "Plain", StripOnInput -> False]], ",", 
+                        StyleBox["B", FontWeight -> "Bold", FontSlant -> 
+                          "Italic", StripOnInput -> False], ",", SubscriptBox[
+                         StyleBox["r", FontWeight -> "Bold", FontSlant -> 
+                          "Italic", StripOnInput -> False], StyleBox["i", 
+                          FontSlant -> "Plain", StripOnInput -> False]]}], 
+                      "}"}]}, "Det"]}], ")"}]}], HoldForm], 
+           TraditionalForm]], "InlineMath", ScriptLevel -> 0, FontSize -> 14, 
+         FractionBoxOptions -> {BaseStyle -> {ScriptLevel -> 0}}]}], "Notes", 
+      CellID -> 1317230952]}, Open]], 
+  Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 2033365389], 
+     Cell[TextData[
+       {"Evaluate a symmetric-gauge bond phase in the xy plane."}], 
+      "ExampleText", CellID -> 1893253409], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 773937197], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{RowBox[{"PhaseFactor3DAB", "[", 
+              FractionBox["1", "2"], "]"}], "[", RowBox[
+             {RowBox[{"{", RowBox[{"1", ",", "0"}], "}"}], ",", 
+              RowBox[{"{", RowBox[{"0", ",", "1"}], "}"}]}], "]"}]], "Input", 
+         CellID -> 269716842], Cell[BoxData["\[ImaginaryI]"], "Output", 
+         CellID -> 1681818740]}, Open]], 
+     Cell[CellGroupData[{Cell[BoxData[InterpretationBox[
+           Cell["\t", "ExampleDelimiter"], $Line = 0; ]], "ExampleDelimiter", 
+         CellID -> 961703315], Cell[TextData[
+          {
+           "Specify a magnetic-field vector and three-dimensional endpoints."}\
+], "ExampleText", CellID -> 1079991993], 
+        Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+         CellID -> 889428443], Cell[CellGroupData[
+          {Cell[BoxData[RowBox[{RowBox[{"PhaseFactor3DAB", "[", 
+                 RowBox[{"{", RowBox[{"0", ",", "0", ",", FractionBox["1", 
+                      "2"]}], "}"}], "]"}], "[", RowBox[
+                {RowBox[{"{", RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+                 RowBox[{"{", RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], 
+               "]"}]], "Input", CellID -> 1182054117], 
+           Cell[BoxData["\[ImaginaryI]"], "Output", CellID -> 1314909883]}, 
+          Open]]}, Open]]}, Open]], 
+  Cell[CellGroupData[{Cell["More Examples", "ExtendedExamplesSection", 
+      CellTags -> "ExtendedExamples", CellID -> 383175285]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 1348205122], 
+     Cell[TextData[{Cell[BoxData[ButtonBox["PhaseFactor2DAB", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/PhaseFactor2DAB"]], "InlineSeeAlsoFunction", 
+         TaggingRules -> {"PageType" -> "Function"}], 
+        StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"], 
+        Cell[BoxData[ButtonBox["UGaugeTransformMatrix", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/UGaugeTransformMatrix"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["SigmaGaugeTransform", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/SigmaGaugeTransform"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}]}], "SeeAlso", CellID -> 1114552680]}, 
+    Open]], Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 271418414], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 1785093476]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 1166429332], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 1038368377]}, Open]]}, WindowTitle -> "PhaseFactor3DAB", 
+ Saveable -> True, Editable -> True, CellContext -> "Global`", 
+ TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]

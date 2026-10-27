@@ -1,0 +1,286 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 549921720], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 284853918], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 2076127171], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 1794049853], Cell["TBMethod`LGFF`", "Categorization", 
+      CellLabel -> "Context", CellID -> 152354767], 
+     Cell["TBMethod/ref/CentralGreenOverlap", "Categorization", 
+      CellLabel -> "URI", CellID -> 948743112]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 1651885726], 
+     Cell["CentralGreenOverlap, tight binding, TBMethod", "Keywords", 
+      CellID -> 1326585519]}, Closed]], 
+  Cell[CellGroupData[{Cell["CentralGreenOverlap", "ObjectName", 
+      CellID -> 1907883747], Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["CentralGreenOverlap", 
+             BaseStyle -> "Link", ButtonData -> 
+              "paclet:TBMethod/ref/CentralGreenOverlap"], "[", 
+            RowBox[{StyleBox["z", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"], ",", RowBox[{"{", RowBox[{StyleBox["h", "TI", 
+                   FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                  StyleBox["s", "TI", FontFamily -> "Times", FontSlant -> 
+                    "Italic"]}], "}"}], ",", StyleBox["sigmas", "TI", 
+               FontFamily -> "Times", FontSlant -> "Italic"]}], "]"}]], 
+         "InlineFormula"], " \[LineSeparator]", 
+        "computes the full device Green matrix with Hamiltonian ", 
+        Cell[BoxData[StyleBox["h", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], ", overlap matrix ", 
+        Cell[BoxData[StyleBox["s", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], 
+        ", and contact self-energies ", Cell[BoxData[StyleBox["sigmas", "TI", 
+           FontFamily -> "Times", FontSlant -> "Italic"]], "InlineFormula"], 
+        ".", "\n", Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["CentralGreenOverlap", 
+             BaseStyle -> "Link", ButtonData -> 
+              "paclet:TBMethod/ref/CentralGreenOverlap"], "[", 
+            RowBox[{StyleBox["z", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"], ",", RowBox[{"{", RowBox[{StyleBox["h", "TI", 
+                   FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                  StyleBox["s", "TI", FontFamily -> "Times", FontSlant -> 
+                    "Italic"]}], "}"}], ",", StyleBox["sigmas", "TI", 
+               FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+              StyleBox["method", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"]}], "]"}]], "InlineFormula"], " \[LineSeparator]", 
+        "uses the specified matrix-inversion method."}], "Usage", 
+      CellID -> 1204333937], 
+     Cell[TextData[{Cell[BoxData[StyleBox["h", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " and ", 
+        Cell[BoxData[StyleBox["s", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " are the Hamiltonian and overlap \
+matrices in the full device basis. Self-energies must use that same basis."}]\
+, "Notes", CellID -> 1281205981], 
+     Cell[TextData[{"The default matrix-inversion ", 
+        Cell[BoxData[StyleBox["method", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " is ", Cell[BoxData["1"], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], ", as in ", 
+        Cell[BoxData[ButtonBox["CentralGreen", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/CentralGreen"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], "."}], "Notes", 
+      CellID -> 496775348], Cell[TextData[{"The shared overlap-transform \
+dispatcher can confuse full-device matrix pairs of dimensions ", 
+        Cell[BoxData[RowBox[{"{", RowBox[{"2", ",", "2"}], "}"}]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], " or ", 
+        Cell[BoxData[RowBox[{"{", RowBox[{"3", ",", "3"}], "}"}]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], " with lead-block \
+input. The basic example uses four sites to avoid this implementation \
+ambiguity."}], "Notes", CellID -> 753217971], 
+     Cell[TextData[{"The overlap matrix enters the device resolvent as", 
+        "\[LineSeparator]", Cell[BoxData[FormBox[
+           TagBox[RowBox[{RowBox[{SubscriptBox["G", "C"], "(", "z", ")"}], 
+              "\[LongEqual]", TemplateBox[{RowBox[{"(", RowBox[
+                   {RowBox[{"z", " ", SubscriptBox["S", "C"]}], "-", 
+                    SubscriptBox["H", "C"], "-", RowBox[{UnderoverscriptBox[
+                       "\[Sum]", RowBox[{"p", "=", "1"}], SubscriptBox["N", 
+                        "L"]], RowBox[{SubscriptBox["\[CapitalSigma]", "p"], 
+                        "(", "z", ")"}]}]}], ")"}]}, "Inverse", SyntaxForm -> 
+                SuperscriptBox]}], HoldForm], TraditionalForm]], 
+         "InlineMath", ScriptLevel -> 0, FontSize -> 14, 
+         FractionBoxOptions -> {BaseStyle -> {ScriptLevel -> 0}}]}], "Notes", 
+      CellID -> 630808478]}, Open]], 
+  Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 1884379918], 
+     Cell[TextData[
+       {"Check a four-site device with nonzero nearest-neighbor overlap."}], 
+      "ExampleText", CellID -> 634142811], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 1511135494], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{RowBox[{"z", "=", RowBox[{RowBox[{"0.2", 
+                  "\[VeryThinSpace]"}], "+", RowBox[{"0.1", " ", 
+                  "\[ImaginaryI]"}]}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"h", "=", RowBox[{RowBox[{"DiagonalMatrix", "[", 
+                  RowBox[{RowBox[{"ConstantArray", "[", RowBox[{RowBox[
+                         {"-", "0.5"}], ",", "3"}], "]"}], ",", "1"}], "]"}], 
+                "+", RowBox[{"DiagonalMatrix", "[", RowBox[{RowBox[
+                     {"ConstantArray", "[", RowBox[{RowBox[{"-", "0.5"}], 
+                        ",", "3"}], "]"}], ",", RowBox[{"-", "1"}]}], 
+                  "]"}]}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"sigma", "=", RowBox[{RowBox[{"-", "0.1"}], " ", 
+                "\[ImaginaryI]", " ", RowBox[{"IdentityMatrix", "[", "4", 
+                  "]"}]}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"s", "=", RowBox[{RowBox[{"IdentityMatrix", "[", "4", 
+                  "]"}], "+", RowBox[{"0.04", " ", RowBox[{"(", RowBox[
+                     {RowBox[{"DiagonalMatrix", "[", RowBox[{RowBox[
+                          {"ConstantArray", "[", RowBox[{"1.", ",", "3"}], 
+                          "]"}], ",", "1"}], "]"}], "+", RowBox[
+                       {"DiagonalMatrix", "[", RowBox[{RowBox[
+                          {"ConstantArray", "[", RowBox[{"1.", ",", "3"}], 
+                          "]"}], ",", RowBox[{"-", "1"}]}], "]"}]}], 
+                    ")"}]}]}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"CentralGreenOverlap", "[", RowBox[{"z", ",", 
+                RowBox[{"{", RowBox[{"h", ",", "s"}], "}"}], ",", 
+                RowBox[{"{", "sigma", "}"}]}], "]"}]}]], "Input", 
+         CellID -> 1020976944], Cell[BoxData[
+          RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{RowBox[{RowBox[
+                     {"-", "0.25612518880543744`"}], "-", RowBox[
+                     {"1.7035794937972226`", " ", "\[ImaginaryI]"}]}], ",", 
+                  RowBox[{RowBox[{"1.4046280469579846`", 
+                      "\[VeryThinSpace]"}], "+", RowBox[
+                     {"0.7604772132533468`", " ", "\[ImaginaryI]"}]}], ",", 
+                  RowBox[{RowBox[{"-", "0.004173202827235634`"}], "+", 
+                    RowBox[{"0.8532254416796332`", " ", "\[ImaginaryI]"}]}], 
+                  ",", RowBox[{RowBox[{"-", "1.0697223568974765`"}], "-", 
+                    RowBox[{"1.0973868009122474`", " ", 
+                      "\[ImaginaryI]"}]}]}], "}"}], ",", RowBox[{"{", 
+                RowBox[{RowBox[{RowBox[{"1.4046280469579848`", 
+                      "\[VeryThinSpace]"}], "+", RowBox[
+                     {"0.7604772132533466`", " ", "\[ImaginaryI]"}]}], ",", 
+                  RowBox[{RowBox[{"-", "0.2602983916326731`"}], "-", 
+                    RowBox[{"0.8503540521175897`", " ", "\[ImaginaryI]"}]}], 
+                  ",", RowBox[{RowBox[{"0.33490569006050824`", 
+                      "\[VeryThinSpace]"}], "-", RowBox[
+                     {"0.3369095876589007`", " ", "\[ImaginaryI]"}]}], ",", 
+                  RowBox[{RowBox[{"-", "0.0041732028272354945`"}], "+", 
+                    RowBox[{"0.8532254416796333`", " ", 
+                      "\[ImaginaryI]"}]}]}], "}"}], ",", RowBox[{"{", 
+                RowBox[{RowBox[{RowBox[{"-", "0.004173202827235426`"}], "+", 
+                    RowBox[{"0.8532254416796334`", " ", "\[ImaginaryI]"}]}], 
+                  ",", RowBox[{RowBox[{"0.33490569006050824`", 
+                      "\[VeryThinSpace]"}], "-", RowBox[
+                     {"0.3369095876589008`", " ", "\[ImaginaryI]"}]}], ",", 
+                  RowBox[{RowBox[{"-", "0.26029839163267315`"}], "-", 
+                    RowBox[{"0.8503540521175897`", " ", "\[ImaginaryI]"}]}], 
+                  ",", RowBox[{RowBox[{"1.4046280469579848`", 
+                      "\[VeryThinSpace]"}], "+", RowBox[
+                     {"0.7604772132533467`", " ", "\[ImaginaryI]"}]}]}], 
+                "}"}], ",", RowBox[{"{", RowBox[{RowBox[{RowBox[{"-", 
+                      "1.0697223568974767`"}], "-", RowBox[
+                     {"1.0973868009122474`", " ", "\[ImaginaryI]"}]}], ",", 
+                  RowBox[{RowBox[{"-", "0.004173202827235571`"}], "+", 
+                    RowBox[{"0.8532254416796332`", " ", "\[ImaginaryI]"}]}], 
+                  ",", RowBox[{RowBox[{"1.4046280469579846`", 
+                      "\[VeryThinSpace]"}], "+", RowBox[
+                     {"0.7604772132533467`", " ", "\[ImaginaryI]"}]}], ",", 
+                  RowBox[{RowBox[{"-", "0.25612518880543755`"}], "-", 
+                    RowBox[{"1.7035794937972226`", " ", 
+                      "\[ImaginaryI]"}]}]}], "}"}]}], "}"}]], "Output", 
+         CellID -> 886355539]}, Open]], 
+     Cell[CellGroupData[{Cell[BoxData[InterpretationBox[
+           Cell["\t", "ExampleDelimiter"], $Line = 0; ]], "ExampleDelimiter", 
+         CellID -> 846647391], Cell[TextData[
+          {"Select the direct linear solver with a nonidentity overlap \
+matrix."}], "ExampleText", CellID -> 284836966], 
+        Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+         CellID -> 1674680538], Cell[CellGroupData[
+          {Cell[BoxData[RowBox[{RowBox[{"z", "=", RowBox[{RowBox[{"0.2", 
+                     "\[VeryThinSpace]"}], "+", RowBox[{"0.1", " ", 
+                     "\[ImaginaryI]"}]}]}], ";", "\[IndentingNewLine]", 
+               RowBox[{"h", "=", RowBox[{RowBox[{"DiagonalMatrix", "[", 
+                     RowBox[{RowBox[{"ConstantArray", "[", RowBox[
+                          {RowBox[{"-", "0.5"}], ",", "3"}], "]"}], ",", 
+                       "1"}], "]"}], "+", RowBox[{"DiagonalMatrix", "[", 
+                     RowBox[{RowBox[{"ConstantArray", "[", RowBox[
+                          {RowBox[{"-", "0.5"}], ",", "3"}], "]"}], ",", 
+                       RowBox[{"-", "1"}]}], "]"}]}]}], ";", 
+               "\[IndentingNewLine]", RowBox[{"sigma", "=", RowBox[
+                  {RowBox[{"-", "0.1"}], " ", "\[ImaginaryI]", " ", 
+                   RowBox[{"IdentityMatrix", "[", "4", "]"}]}]}], ";", 
+               "\[IndentingNewLine]", RowBox[{"s", "=", RowBox[
+                  {RowBox[{"IdentityMatrix", "[", "4", "]"}], "+", 
+                   RowBox[{"0.04", " ", RowBox[{"(", RowBox[{RowBox[
+                          {"DiagonalMatrix", "[", RowBox[{RowBox[
+                          {"ConstantArray", "[", RowBox[{"1.", ",", "3"}], 
+                          "]"}], ",", "1"}], "]"}], "+", RowBox[
+                          {"DiagonalMatrix", "[", RowBox[{RowBox[
+                          {"ConstantArray", "[", RowBox[{"1.", ",", "3"}], 
+                          "]"}], ",", RowBox[{"-", "1"}]}], "]"}]}], 
+                       ")"}]}]}]}], ";", "\[IndentingNewLine]", RowBox[
+                {"CentralGreenOverlap", "[", RowBox[{"z", ",", RowBox[
+                    {"{", RowBox[{"h", ",", "s"}], "}"}], ",", RowBox[
+                    {"{", "sigma", "}"}], ",", "1"}], "]"}]}]], "Input", 
+            CellID -> 1634359169], Cell[BoxData[RowBox[{"{", RowBox[
+                {RowBox[{"{", RowBox[{RowBox[{RowBox[{"-", 
+                         "0.25612518880543744`"}], "-", RowBox[
+                        {"1.7035794937972226`", " ", "\[ImaginaryI]"}]}], 
+                     ",", RowBox[{RowBox[{"1.4046280469579846`", 
+                         "\[VeryThinSpace]"}], "+", RowBox[
+                        {"0.7604772132533468`", " ", "\[ImaginaryI]"}]}], 
+                     ",", RowBox[{RowBox[{"-", "0.004173202827235634`"}], 
+                       "+", RowBox[{"0.8532254416796332`", " ", 
+                         "\[ImaginaryI]"}]}], ",", RowBox[{RowBox[{"-", 
+                         "1.0697223568974765`"}], "-", RowBox[
+                        {"1.0973868009122474`", " ", "\[ImaginaryI]"}]}]}], 
+                   "}"}], ",", RowBox[{"{", RowBox[{RowBox[{RowBox[
+                        {"1.4046280469579848`", "\[VeryThinSpace]"}], "+", 
+                       RowBox[{"0.7604772132533466`", " ", 
+                         "\[ImaginaryI]"}]}], ",", RowBox[{RowBox[{"-", 
+                         "0.2602983916326731`"}], "-", RowBox[
+                        {"0.8503540521175897`", " ", "\[ImaginaryI]"}]}], 
+                     ",", RowBox[{RowBox[{"0.33490569006050824`", 
+                         "\[VeryThinSpace]"}], "-", RowBox[
+                        {"0.3369095876589007`", " ", "\[ImaginaryI]"}]}], 
+                     ",", RowBox[{RowBox[{"-", "0.0041732028272354945`"}], 
+                       "+", RowBox[{"0.8532254416796333`", " ", 
+                         "\[ImaginaryI]"}]}]}], "}"}], ",", RowBox[
+                  {"{", RowBox[{RowBox[{RowBox[{"-", 
+                         "0.004173202827235426`"}], "+", RowBox[
+                        {"0.8532254416796334`", " ", "\[ImaginaryI]"}]}], 
+                     ",", RowBox[{RowBox[{"0.33490569006050824`", 
+                         "\[VeryThinSpace]"}], "-", RowBox[
+                        {"0.3369095876589008`", " ", "\[ImaginaryI]"}]}], 
+                     ",", RowBox[{RowBox[{"-", "0.26029839163267315`"}], "-", 
+                       RowBox[{"0.8503540521175897`", " ", 
+                         "\[ImaginaryI]"}]}], ",", RowBox[{RowBox[
+                        {"1.4046280469579848`", "\[VeryThinSpace]"}], "+", 
+                       RowBox[{"0.7604772132533467`", " ", 
+                         "\[ImaginaryI]"}]}]}], "}"}], ",", RowBox[
+                  {"{", RowBox[{RowBox[{RowBox[{"-", "1.0697223568974767`"}], 
+                       "-", RowBox[{"1.0973868009122474`", " ", 
+                         "\[ImaginaryI]"}]}], ",", RowBox[{RowBox[{"-", 
+                         "0.004173202827235571`"}], "+", RowBox[
+                        {"0.8532254416796332`", " ", "\[ImaginaryI]"}]}], 
+                     ",", RowBox[{RowBox[{"1.4046280469579846`", 
+                         "\[VeryThinSpace]"}], "+", RowBox[
+                        {"0.7604772132533467`", " ", "\[ImaginaryI]"}]}], 
+                     ",", RowBox[{RowBox[{"-", "0.25612518880543755`"}], "-", 
+                       RowBox[{"1.7035794937972226`", " ", 
+                         "\[ImaginaryI]"}]}]}], "}"}]}], "}"}]], "Output", 
+            CellID -> 1903196685]}, Open]]}, Open]]}, Open]], 
+  Cell[CellGroupData[{Cell["More Examples", "ExtendedExamplesSection", 
+      CellTags -> "ExtendedExamples", CellID -> 241164790]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 314007077], 
+     Cell[TextData[{Cell[BoxData[ButtonBox["CentralGreen", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/CentralGreen"]], "InlineSeeAlsoFunction", 
+         TaggingRules -> {"PageType" -> "Function"}], 
+        StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"], 
+        Cell[BoxData[ButtonBox["CentralBlockGreensOverlap", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/CentralBlockGreensOverlap"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox[
+           "CentralDiagonalBlockGreensOverlap", BaseStyle -> "Link", 
+           ButtonData -> 
+            "paclet:TBMethod/ref/CentralDiagonalBlockGreensOverlap"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["SigmaOverlap", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/SigmaOverlap"]], "InlineSeeAlsoFunction", 
+         TaggingRules -> {"PageType" -> "Function"}], 
+        StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"], 
+        Cell[BoxData[ButtonBox["Inverse", BaseStyle -> "Link", 
+           ButtonData -> "paclet:ref/Inverse"]], "InlineSeeAlsoFunction", 
+         TaggingRules -> {"PageType" -> "Function"}]}], "SeeAlso", 
+      CellID -> 1537544189]}, Open]], 
+  Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 1301345797], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 914045798]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 1234760166], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 117425764]}, Open]]}, WindowTitle -> "CentralGreenOverlap", 
+ Saveable -> True, Editable -> True, CellContext -> "Global`", 
+ TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]

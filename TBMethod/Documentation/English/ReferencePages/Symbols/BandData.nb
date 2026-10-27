@@ -1,0 +1,238 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 1700384401], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 817329444], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 849534556], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 1755151458], Cell["TBMethod`EigenSpect`", "Categorization", 
+      CellLabel -> "Context", CellID -> 729954755], 
+     Cell["TBMethod/ref/BandData", "Categorization", CellLabel -> "URI", 
+      CellID -> 1729931397]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 176687802], Cell["BandData, tight binding, TBMethod", 
+      "Keywords", CellID -> 549982098]}, Closed]], 
+  Cell[CellGroupData[{Cell["BandData", "ObjectName", CellID -> 1146029128], 
+     Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["BandData", BaseStyle -> "Link", 
+             ButtonData -> "paclet:TBMethod/ref/BandData"], "[", 
+            RowBox[{StyleBox["h", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"], ",", StyleBox["samples", "TI", FontFamily -> 
+                "Times", FontSlant -> "Italic"]}], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", "collects the sorted eigenvalues of ", 
+        Cell[BoxData[StyleBox["h", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], 
+        " at each sample, with one output list per band.", "\n", 
+        Cell["   ", "ModInfo"], Cell[BoxData[
+          RowBox[{ButtonBox["BandData", BaseStyle -> "Link", 
+             ButtonData -> "paclet:TBMethod/ref/BandData"], "[", 
+            RowBox[{StyleBox["h", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"], ",", StyleBox["samples", "TI", FontFamily -> 
+                "Times", FontSlant -> "Italic"], ",", StyleBox["n", "TI", 
+               FontFamily -> "Times", FontSlant -> "Italic"]}], "]"}]], 
+         "InlineFormula"], " \[LineSeparator]", "retains the ", 
+        Cell[BoxData[StyleBox["n", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], 
+        " eigenvalues selected by ", Cell[BoxData[ButtonBox["Eigenvalues", 
+           BaseStyle -> "Link", ButtonData -> "paclet:ref/Eigenvalues"]], 
+         "InlineFormula"], " at each sample.", "\n", Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["BandData", BaseStyle -> "Link", 
+             ButtonData -> "paclet:TBMethod/ref/BandData"], "[", 
+            RowBox[{RowBox[{"{", RowBox[{StyleBox["h", "TI", FontFamily -> 
+                    "Times", FontSlant -> "Italic"], ",", StyleBox["s", "TI", 
+                   FontFamily -> "Times", FontSlant -> "Italic"]}], "}"}], 
+              ",", StyleBox["samples", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"]}], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", 
+        "solves the generalized eigenvalue problem for the Hamiltonian ", 
+        Cell[BoxData[StyleBox["h", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], " and overlap matrix ", 
+        Cell[BoxData[StyleBox["s", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], ".", "\n", 
+        Cell["   ", "ModInfo"], Cell[BoxData[
+          RowBox[{ButtonBox["BandData", BaseStyle -> "Link", 
+             ButtonData -> "paclet:TBMethod/ref/BandData"], "[", 
+            RowBox[{RowBox[{"{", RowBox[{StyleBox["h", "TI", FontFamily -> 
+                    "Times", FontSlant -> "Italic"], ",", StyleBox["s", "TI", 
+                   FontFamily -> "Times", FontSlant -> "Italic"]}], "}"}], 
+              ",", StyleBox["samples", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"], ",", StyleBox["n", "TI", FontFamily -> 
+                "Times", FontSlant -> "Italic"]}], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", "retains ", 
+        Cell[BoxData[StyleBox["n", "TI", FontFamily -> "Times", 
+           FontSlant -> "Italic"]], "InlineFormula"], 
+        " eigenvalues from each generalized eigenvalue problem."}], "Usage", 
+      CellID -> 1319283534], 
+     Cell[TextData[{Cell[BoxData[RowBox[{StyleBox["h", "TI"], "[", 
+            StyleBox["k", "TI"], "]"}]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        " returns the Hamiltonian matrix at sample ", 
+        Cell[BoxData[StyleBox["k", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], ". ", 
+        Cell[BoxData[StyleBox["samples", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        " may contain scalar parameters or momentum vectors."}], "Notes", 
+      CellID -> 1631186814], Cell[TextData[{"The output has one row per \
+retained band and one column per sample. Eigenvalues are sorted separately at \
+each sample, so bands are ordered by energy rather than tracked through \
+crossings."}], "Notes", CellID -> 619330966], 
+     Cell[TextData[{"The ", Cell[BoxData[RowBox[
+           {"{", RowBox[{StyleBox["h", "TI"], ",", StyleBox["s", "TI"]}], 
+            "}"}]], "InlineFormula", FontFamily -> "Source Sans Pro"], " form \
+solves the generalized eigenvalue problem with overlap matrix ", 
+        Cell[BoxData[RowBox[{StyleBox["s", "TI"], "[", StyleBox["k", "TI"], 
+            "]"}]], "InlineFormula", FontFamily -> "Source Sans Pro"], "."}], 
+      "Notes", CellID -> 1013882837], 
+     Cell[TextData[{Cell[BoxData[StyleBox["n", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " is passed to ", 
+        Cell[BoxData[ButtonBox["Eigenvalues", BaseStyle -> "Link", 
+           ButtonData -> "paclet:ref/Eigenvalues"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], ". Options for ", 
+        Cell[BoxData[ButtonBox["Eigenvalues", BaseStyle -> "Link", 
+           ButtonData -> "paclet:ref/Eigenvalues"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " are accepted, and ", 
+        Cell[BoxData[RowBox[{ButtonBox["Method", BaseStyle -> "Link", 
+             ButtonData -> "paclet:ref/Method"], "\[Rule]", "\"Direct\""}]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        " is supplied internally."}], "Notes", CellID -> 108075650]}, Open]], 
+  Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 1108191627], 
+     Cell[TextData[
+       {"Sample the two energies of a diagonal two-level model."}], 
+      "ExampleText", CellID -> 703153077], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 1655911536], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{RowBox[{"Clear", "[", "h", "]"}], ";", 
+            "\[IndentingNewLine]", RowBox[{RowBox[{"h", "[", "k_", "]"}], 
+              ":=", RowBox[{"DiagonalMatrix", "[", RowBox[{"{", RowBox[
+                   {RowBox[{RowBox[{"-", "1."}], "-", "k"}], ",", RowBox[
+                     {RowBox[{"1.", "\[VeryThinSpace]"}], "+", "k"}]}], 
+                  "}"}], "]"}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"BandData", "[", RowBox[{"h", ",", RowBox[{"{", 
+                  RowBox[{"0.", ",", "0.5", ",", "1."}], "}"}]}], "]"}]}]], 
+         "Input", CellID -> 145460401], 
+        Cell[BoxData[RowBox[{"{", RowBox[{RowBox[{"{", RowBox[
+                 {RowBox[{"-", "1.`"}], ",", RowBox[{"-", "1.5`"}], ",", 
+                  RowBox[{"-", "2.`"}]}], "}"}], ",", RowBox[{"{", 
+                RowBox[{"1.`", ",", "1.5`", ",", "2.`"}], "}"}]}], "}"}]], 
+         "Output", CellID -> 148955159]}, Open]], 
+     Cell[CellGroupData[{Cell[BoxData[InterpretationBox[
+           Cell["\t", "ExampleDelimiter"], $Line = 0; ]], "ExampleDelimiter", 
+         CellID -> 110074629], Cell[TextData[
+          {"Request only the eigenvalue nearest zero at each sample."}], 
+         "ExampleText", CellID -> 1423984906], 
+        Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+         CellID -> 1369242650], Cell[CellGroupData[
+          {Cell[BoxData[RowBox[{RowBox[{"Clear", "[", RowBox[{"h", ",", 
+                   "s"}], "]"}], ";", "\[IndentingNewLine]", RowBox[
+                {RowBox[{"h", "[", "k_", "]"}], ":=", RowBox[
+                  {"DiagonalMatrix", "[", RowBox[{"{", RowBox[{RowBox[
+                        {RowBox[{"-", "1."}], "-", "k"}], ",", RowBox[
+                        {RowBox[{"1.", "\[VeryThinSpace]"}], "+", "k"}]}], 
+                     "}"}], "]"}]}], ";", "\[IndentingNewLine]", RowBox[
+                {RowBox[{"s", "[", "k_", "]"}], ":=", RowBox[{"2.", " ", 
+                   RowBox[{"IdentityMatrix", "[", "2", "]"}]}]}], ";", 
+               "\[IndentingNewLine]", RowBox[{"BandData", "[", RowBox[
+                  {"h", ",", RowBox[{"{", RowBox[{"0.", ",", "0.5", ",", 
+                       "1."}], "}"}], ",", RowBox[{"-", "1"}]}], "]"}]}]], 
+            "Input", CellID -> 1916938766], 
+           Cell[BoxData[RowBox[{"{", RowBox[{"{", RowBox[{"1.`", ",", "1.5`", 
+                   ",", "2.`"}], "}"}], "}"}]], "Output", 
+            CellID -> 910936003]}, Open]]}, Open]], 
+     Cell[CellGroupData[{Cell[BoxData[InterpretationBox[
+           Cell["\t", "ExampleDelimiter"], $Line = 0; ]], "ExampleDelimiter", 
+         CellID -> 2091679646], Cell[TextData[{"Solve a generalized \
+eigenvalue problem with a nonidentity overlap matrix."}], "ExampleText", 
+         CellID -> 1242054898], Cell[BoxData[RowBox[{"Needs", "[", 
+            "\"TBMethod`\"", "]"}]], "Input", CellID -> 1648365486], 
+        Cell[CellGroupData[{Cell[BoxData[RowBox[{RowBox[{"Clear", "[", 
+                 RowBox[{"h", ",", "s"}], "]"}], ";", "\[IndentingNewLine]", 
+               RowBox[{RowBox[{"h", "[", "k_", "]"}], ":=", RowBox[
+                  {"DiagonalMatrix", "[", RowBox[{"{", RowBox[{RowBox[
+                        {RowBox[{"-", "1."}], "-", "k"}], ",", RowBox[
+                        {RowBox[{"1.", "\[VeryThinSpace]"}], "+", "k"}]}], 
+                     "}"}], "]"}]}], ";", "\[IndentingNewLine]", RowBox[
+                {RowBox[{"s", "[", "k_", "]"}], ":=", RowBox[{"2.", " ", 
+                   RowBox[{"IdentityMatrix", "[", "2", "]"}]}]}], ";", 
+               "\[IndentingNewLine]", RowBox[{"BandData", "[", RowBox[
+                  {RowBox[{"{", RowBox[{"h", ",", "s"}], "}"}], ",", 
+                   RowBox[{"{", RowBox[{"0.", ",", "0.5", ",", "1."}], 
+                     "}"}]}], "]"}]}]], "Input", CellID -> 1724517508], 
+           Cell[BoxData[RowBox[{"{", RowBox[{RowBox[{"{", RowBox[
+                    {RowBox[{"-", "0.4999999999999999`"}], ",", RowBox[
+                      {"-", "0.7499999999999999`"}], ",", RowBox[{"-", 
+                       "0.9999999999999998`"}]}], "}"}], ",", RowBox[
+                  {"{", RowBox[{"0.4999999999999999`", ",", 
+                     "0.7499999999999999`", ",", "0.9999999999999998`"}], 
+                   "}"}]}], "}"}]], "Output", CellID -> 885478928]}, Open]]}, 
+       Open]], Cell[CellGroupData[
+       {Cell[BoxData[InterpretationBox[Cell["\t", "ExampleDelimiter"], 
+           $Line = 0; ]], "ExampleDelimiter", CellID -> 302500120], 
+        Cell[TextData[
+          {"Select a single band from a generalized eigenvalue problem."}], 
+         "ExampleText", CellID -> 1864990550], 
+        Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+         CellID -> 1446603973], Cell[CellGroupData[
+          {Cell[BoxData[RowBox[{RowBox[{"Clear", "[", RowBox[{"h", ",", 
+                   "s"}], "]"}], ";", "\[IndentingNewLine]", RowBox[
+                {RowBox[{"h", "[", "k_", "]"}], ":=", RowBox[
+                  {"DiagonalMatrix", "[", RowBox[{"{", RowBox[{RowBox[
+                        {RowBox[{"-", "1."}], "-", "k"}], ",", RowBox[
+                        {RowBox[{"1.", "\[VeryThinSpace]"}], "+", "k"}]}], 
+                     "}"}], "]"}]}], ";", "\[IndentingNewLine]", RowBox[
+                {RowBox[{"s", "[", "k_", "]"}], ":=", RowBox[{"2.", " ", 
+                   RowBox[{"IdentityMatrix", "[", "2", "]"}]}]}], ";", 
+               "\[IndentingNewLine]", RowBox[{"BandData", "[", RowBox[
+                  {RowBox[{"{", RowBox[{"h", ",", "s"}], "}"}], ",", 
+                   RowBox[{"{", RowBox[{"0.", ",", "0.5", ",", "1."}], "}"}], 
+                   ",", RowBox[{"-", "1"}]}], "]"}]}]], "Input", 
+            CellID -> 211633885], Cell[BoxData[RowBox[{"{", RowBox[
+                {"{", RowBox[{"0.4999999999999999`", ",", 
+                   "0.7499999999999999`", ",", "0.9999999999999998`"}], 
+                 "}"}], "}"}]], "Output", CellID -> 1596523173]}, Open]]}, 
+       Open]]}, Open]], 
+  Cell[CellGroupData[{Cell["More Examples", "ExtendedExamplesSection", 
+      CellTags -> "ExtendedExamples", CellID -> 2059990619]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 1334181814], 
+     Cell[TextData[{Cell[BoxData[ButtonBox["ParallelBandData", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/ParallelBandData"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["EigenspectralData", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/EigenspectralData"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["BandDataWithWeight", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/BandDataWithWeight"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["BandPlot", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/BandPlot"]], "InlineSeeAlsoFunction", 
+         TaggingRules -> {"PageType" -> "Function"}], 
+        StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"], 
+        Cell[BoxData[ButtonBox["PathSample", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/PathSample"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}]}], "SeeAlso", CellID -> 2016310611]}, 
+    Open]], Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 651232187], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 1552116011]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 1629494950], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 1848819992]}, Open]]}, WindowTitle -> "BandData", 
+ Saveable -> True, Editable -> True, CellContext -> "Global`", 
+ TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]

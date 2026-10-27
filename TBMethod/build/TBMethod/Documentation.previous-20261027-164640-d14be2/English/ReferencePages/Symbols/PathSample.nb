@@ -1,0 +1,1150 @@
+(* Content-type: application/vnd.wolfram.cdf.text *)
+
+(*** Wolfram CDF File ***)
+(* http://www.wolfram.com/cdf *)
+
+(* CreatedBy='Wolfram 15.0' *)
+
+(*************************************************************************)
+(*                                                                       *)
+(*                                                                       *)
+(*  This file was created under the Wolfram Enterprise licensing terms.  *)
+(*                                                                       *)
+(*       For additional information concerning CDF licensing see:        *)
+(*                                                                       *)
+(*        www.wolfram.com/cdf/adopting-cdf/licensing-options.html        *)
+(*                                                                       *)
+(*                                                                       *)
+(*                                                                       *)
+(*************************************************************************)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[      1060,         20]
+NotebookDataLength[     41323,       1128]
+NotebookOptionsPosition[     34853,        989]
+NotebookOutlinePosition[     36967,       1040]
+CellTagsIndexPosition[     36924,       1037]
+WindowTitle->PathSample
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {GridBox[{
+      {
+       ItemBox[Cell[BoxData[
+         RowBox[{
+          TemplateBox[{12},
+           "Spacer1"], Cell["T B METHOD SYMBOL", "PacletNameCell",
+           TextAlignment->Center,ExpressionUUID->
+           "218f4ade-f88e-0740-b378-b324d8e62e5e"], 
+          TemplateBox[{8},
+           "Spacer1"]}]],
+         TextAlignment->Center,ExpressionUUID->
+         "2a66a073-4710-204d-9973-c980bb9c32e3"],
+        Background->LightDarkSwitched[
+          RGBColor[0.490196, 0.576471, 0.690196]],
+        ItemSize->Full], ""}
+     },
+     GridBoxAlignment->{"Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {Full, 
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[{
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "See Also",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "03aaa925-9b83-184e-a19f-6a90f8528083"]
+         }],ExpressionUUID->"a5b0e16e-04e7-4940-8702-a5c266a8b87e"],
+         StripOnInput->False],{
+        StyleBox[
+          "\"LabelPathSamplings\"", "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup["paclet:TBMethod/ref/LabelPathSamplings"], 
+         StyleBox["\"BandData\"", "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup["paclet:TBMethod/ref/BandData"], 
+         StyleBox["\"BandPlot\"", "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup["paclet:TBMethod/ref/BandPlot"], 
+         StyleBox[
+          "\"RegionPolarSample\"", "SeeAlsoRelated", StripOnInput -> False] :> 
+         Documentation`HelpLookup["paclet:TBMethod/ref/RegionPolarSample"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"SeeAlso"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "865c4a09-d6b6-1e49-a5ec-c529d4c21a23"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "Related Guides",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "838da2a2-5339-b447-9a6f-5e3691c155b7"]
+         }],ExpressionUUID->"11226df3-876e-1245-97d4-952eeb317996"],
+         StripOnInput->False],{
+        "\"TBMethod\"" :> 
+         Documentation`HelpLookup["paclet:TBMethod/guide/TBMethod"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"MoreAbout"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "74d7e222-b553-a64f-af8f-c6bf75be2175"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "Tech Notes",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "171dc1a7-963e-0f41-aec1-7c5dd3fafc7d"]
+         }],ExpressionUUID->"481055a7-cfec-c748-9788-42847e4ec2d1"],
+         StripOnInput->False],{
+        "\"Getting Started with TBMethod\"" :> 
+         Documentation`HelpLookup["paclet:TBMethod/tutorial/GettingStarted"]},
+        
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"Tutorials"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "f5251165-93c5-5e41-845c-83b644c9a6bc"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "URL",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "b9ba813a-f591-b449-aff1-a7309d9560b7"]
+         }],ExpressionUUID->"018be310-1e7f-eb49-a480-ab94676c2279"],
+         StripOnInput->False],{
+        "\"TBMethod/ref/PathSample\"" :> None, 
+         "\"Copy Wolfram Documentation Center URL\"" :> 
+         CopyToClipboard["TBMethod/ref/PathSample"], Delimiter, 
+         "\"Copy web URL\"" :> 
+         Module[{DocumentationSearch`Private`nb$}, 
+           DocumentationSearch`Private`nb$ = 
+            NotebookPut[
+             Notebook[{
+               Cell[BoxData[
+                 MakeBoxes[
+                  Hyperlink[
+                   "http://reference.wolfram.com/language/TBMethod/ref/\
+PathSample.html"], StandardForm]], "Input", TextClipboardType -> 
+                 "PlainText"]}, Visible -> False]]; 
+           SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+           FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+           NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+         "\"Go to web URL\"" :> 
+         FrontEndExecute[{
+           NotebookLocate[{
+             URL[If[TrueQ[False], 
+                 "http://reference.wolfram.com/system-modeler/", 
+                 "http://reference.wolfram.com/language/"] <> 
+               "TBMethod/ref/PathSample" <> ".html"], None}]}]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"URLMenu"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "6bbdf69e-d7d5-ff4e-8058-5a1ea6a6dfa5"]
+    }], "AnchorBar",
+     CacheGraphics->False,ExpressionUUID->
+     "3a8dd120-f595-8e4a-8fcb-787b2bd76a2b"]}
+  }]], "AnchorBarGrid",
+ CellID->1,ExpressionUUID->"d2badcd3-2bf4-a64d-99b0-26794f9dd2a4"],
+
+Cell["TBMethod`EigenSpect`", "ContextNameCell",ExpressionUUID->"77325e42-5070-4c49-ba26-696c76601679"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {Cell[TextData[{
+     Cell[
+     "PathSample", "ObjectName",ExpressionUUID->
+      "d18c4f6a-a328-1c40-b7b1-a9438c7ecdda"],
+     Cell[BoxData[
+      TemplateBox[{8},
+       "Spacer1"]],ExpressionUUID->"85a22f70-eaa5-cc4f-b277-48d196e71538"],
+     Cell[BoxData[
+     ""], "ObjectNameTranslation",ExpressionUUID->
+      "22030615-d180-9040-8e30-30fc5f670997"]
+    }],ExpressionUUID->"2568f617-d03a-d24f-8f20-7e00b9ce30b8"], 
+    "\[SpanFromLeft]"}
+  }]], "ObjectNameGrid",ExpressionUUID->"63087fd4-ff0b-6047-aa9e-\
+8e8885a190b7"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["PathSample"]], "paclet:TBMethod/ref/PathSample", 
+         "TBMethod Package Symbol"},
+        "PackageLink",
+        BaseStyle->"InlineFormula"], "[", 
+       RowBox[{
+        StyleBox["vertices", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"], ",", 
+        StyleBox["nleast", "TI",
+         FontFamily->"Times",
+         FontSlant->"Italic"]}], "]"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "8f7dca0d-3617-4947-b2b9-7fc1d3b620b7"],
+     " \[LineSeparator]",
+     "samples a piecewise straight path with a common approximate spacing and \
+returns sample-index markers for its vertices."
+    }],ExpressionUUID->"2b5eb920-e2ec-1e48-b509-4fd69f03dbcd"]}
+  }]], "Usage",
+ CellID->126213490,ExpressionUUID->"2cd4a3f1-fd6d-764e-b53f-a15131ebfa3c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[Cell[TextData[{
+  Cell[BoxData[
+   DynamicBox[ToBoxes[
+     If[CurrentValue[
+        EvaluationCell[], "CellGroupOpen"] =!= Closed, 
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], 
+      Rotate[
+       Style[
+        Graphics[{
+          Thickness[0.18], 
+          RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+          Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+         PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+        0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+    ImageSizeCache->{
+     13.600000000000001`, {-0.16630120645742785`, 13.76630120645743}}]],
+   ExpressionUUID->"b29a12a5-65f9-2443-81f0-6a9a4318ac7f"],
+  Cell[BoxData[
+   TemplateBox[{1},
+    "Spacer1"]],ExpressionUUID->"b63f75af-66f8-7e4e-bc1f-4c796e977ed7"],
+  "Details and Options"
+ }], "NotesFrameText",ExpressionUUID->
+  "68f9a295-8e24-ee48-8fbc-a2cb77970741"]],ExpressionUUID->"a037e589-20ed-\
+1f49-8521-f94af2bdbce3"]], "NotesSection",
+ ShowGroupOpener->"Thumbnail",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CacheGraphics->False,
+ CellID->101442386,ExpressionUUID->"2dcc94af-6c28-ca45-822b-134ee832d730"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox["vertices", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "320e2506-012f-ca40-990a-47b421027f60"],
+ " contains at least three numeric coordinate vectors of the same dimension. \
+Consecutive vertices must be distinct; the implementation does not handle \
+zero-length segments."
+}], "Notes",
+ CellID->1087090892,ExpressionUUID->"b48cbcfc-db2d-b94f-927d-cb5c106618e2"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox["nleast", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "4b6bfd46-b2ea-a042-bc25-20fbbdc25d43"],
+ " is a positive integer giving the number of subdivisions on the shortest \
+segment. Other subdivision counts are computed as ",
+ Cell[BoxData[
+  RowBox[{
+   TemplateBox[{
+     Cell[
+      TextData["Floor"]], "paclet:ref/Floor"},
+    "RefLink",
+    BaseStyle->{"InlineFormula"}], "[", 
+   FractionBox[
+    RowBox[{
+     StyleBox["nleast", "TI"], " ", 
+     StyleBox["length", "TI"]}], 
+    StyleBox["shortestLength", "TI"]], "]"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "bc935530-07ab-724b-9f4e-a94650a164ad"],
+ "."
+}], "Notes",
+ CellID->1032985669,ExpressionUUID->"6e00e771-b5fd-9c4b-abc5-590d4d9ff7af"],
+
+Cell[TextData[{
+ "Returns ",
+ Cell[BoxData[
+  RowBox[{"{", 
+   RowBox[{
+    StyleBox["samples", "TI"], ",", 
+    StyleBox["vertexMarkers", "TI"]}], "}"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "e59d2e85-56e4-c94c-9051-9a2528b6b673"],
+ ". Each segment contributes its initial point but omits its endpoint, so \
+internal vertices appear once and the last vertex is omitted."
+}], "Notes",
+ CellID->201865253,ExpressionUUID->"feb5c74c-c6e1-4641-b7d4-878be18edb65"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox["vertexMarkers", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "fa521f44-1a10-9646-ad09-31f7188083bb"],
+ " starts at ",
+ Cell[BoxData["1"], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "5b22f32e-29b4-dd4b-abb5-80e1a351a11d"],
+ ". Its last marker is ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{
+    TemplateBox[{
+      Cell[
+       TextData["Length"]], "paclet:ref/Length"},
+     "RefLink",
+     BaseStyle->{"InlineFormula"}], "[", 
+    StyleBox["samples", "TI"], "]"}], "+", "1"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "4aaaba27-0e94-dd4b-83b8-cc14601c8a28"],
+ ", representing the omitted terminal vertex."
+}], "Notes",
+ CellID->535904038,ExpressionUUID->"ba60d02a-6f96-1a4f-bd2f-afdb27f6991b"]
+}, Closed]],
+
+Cell["", "PageDelimiter",ExpressionUUID->"4cd5ad63-266a-b94b-8b7a-38bb38fceac7"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[
+     MatchQ[
+      CurrentValue[
+       EvaluationNotebook[], {
+       TaggingRules, "Openers", "PrimaryExamplesSection"}, Open], 
+      Alternatives[True, Open]], 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+   ImageSizeCache->{
+    13.600000000000001`, {4.253698793542572, 9.34630120645743}}]],
+  ExpressionUUID->"102e5dc6-c6d0-014e-bfe4-aa9642d1cd4d"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"d70dc3a1-cf1e-c544-b2cd-0328a9971e78"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount",ExpressionUUID->
+  "016132bf-c578-5045-a9e8-7eb4b6519088"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellID->20463900,ExpressionUUID->"1bba10e7-7e55-1d43-bd93-690347b279bc"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[CurrentValue[
+       EvaluationCell[], "CellGroupOpen"] =!= Closed, 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]]]],ExpressionUUID->
+  "a1f052bd-50f7-4949-b96e-491043e97922"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"31ecd6ae-5cfc-1a48-86d3-215ad10f06d6"],
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "6a90d2b8-1833-7147-80e0-ecf882531fe4"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellID->35852367,ExpressionUUID->"1a66dc91-9a87-7646-a57f-d3db27d9a784"],
+
+Cell["Take two subdivisions along each side of a right-angle path.", \
+"ExampleText",
+ CellID->328344992,ExpressionUUID->"9de71316-27e6-494e-b643-570dbbf24eba"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<TBMethod`\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->215035592,ExpressionUUID->"b646f0f2-ddd2-6749-8f93-76b3ad9c3f56"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PathSample", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1"}], "}"}]}], "}"}], ",", "2"}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->2028177340,ExpressionUUID->"e606339b-8d5f-f74b-9daa-116cafba8b23"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       FractionBox["1", "2"], ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       FractionBox["1", "2"]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "3", ",", "5"}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->746308992,ExpressionUUID->"060b93fc-70ff-8940-b068-48786811d12f"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[CurrentValue[
+       EvaluationCell[], "CellGroupOpen"] =!= Closed, 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]]]],ExpressionUUID->
+  "60caba15-bafd-ee4f-9468-756e83da0fc1"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"96cb6e32-c0b1-4e4d-94d9-5f9cf13a694c"],
+ "Additional Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount",ExpressionUUID->
+  "84959551-ed21-0641-ac59-232a8ddb2acb"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellID->604750982,ExpressionUUID->"cf9f374b-a433-8b4c-9df9-286b6d758da5"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  RowBox[{"PathSample", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      SubscriptBox[
+       StyleBox["pt",
+        FontSlant->"Italic"], "1"], ",", " ", 
+      SubscriptBox[
+       StyleBox["pt",
+        FontSlant->"Italic"], "2"], ",", "...", ",", " ", 
+      StyleBox[
+       SubscriptBox["pt", "i"],
+       FontSlant->"Italic"], ",", "...", ",", 
+      StyleBox[
+       SubscriptBox["pt", "k"],
+       FontSlant->"Italic"]}], "}"}], ",", " ", 
+    StyleBox["n",
+     FontSlant->"Italic"]}], "]"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "e958bbc9-583d-824b-a50a-4acd9464f6c1"],
+ " evenly and length-proportionally samples out coordinates on a path \
+consisting of straight line segments with sequentially ",
+ Cell[BoxData[
+  StyleBox["k",
+   FontSlant->"Italic"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "3b8ae7e1-2c79-1641-a3d3-cb94b03ef4f1"],
+ " different node points ",
+ Cell[BoxData[
+  RowBox[{"{", 
+   RowBox[{
+    SubscriptBox[
+     StyleBox["pt",
+      FontSlant->"Italic"], "1"], ",", " ", 
+    SubscriptBox[
+     StyleBox["pt",
+      FontSlant->"Italic"], "2"], ",", "...", ",", " ", 
+    StyleBox[
+     SubscriptBox["pt", "i"],
+     FontSlant->"Italic"], ",", "...", ",", 
+    StyleBox[
+     SubscriptBox["pt", "k"],
+     FontSlant->"Italic"]}], "}"}]],ExpressionUUID->
+  "a5d1c670-47e9-244a-8409-2c5012dbcc3c"],
+ ", where ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " is the number of points intended to be sampled on the shortest segment, \
+together with a ",
+ ButtonBox["List",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/List"],
+ " of the ordinal number in the samplings for each node."
+}], "ExampleText",
+ CellID->427493852,ExpressionUUID->"3f5217ac-2153-ec41-91c3-4491fbaf3e26"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox[
+   SubscriptBox["pt", "i"],
+   FontSlant->"Italic"]],ExpressionUUID->
+  "46dd9782-bcb9-4b4b-9d11-9618066af0f4"],
+ "s are typically 2D and 3D points coordinates."
+}], "ExampleText",
+ CellID->582441303,ExpressionUUID->"349315b9-0804-3e4e-b847-19e7ad61146a"],
+
+Cell["Load the package", "ExampleText",
+ CellID->11904999,ExpressionUUID->"2fc7d07e-4b6b-8845-b67e-9b38aeba4258"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<TBMethod`\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->226833854,ExpressionUUID->"47c72bd7-b406-a649-9172-e9bb32a61244"],
+
+Cell["Given a list of node points in 2D", "ExampleText",
+ CellID->659870087,ExpressionUUID->"b335dfe0-8aaa-c545-bcc8-dceabfd0663e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ptnode2d", "=", 
+  RowBox[{
+   RowBox[{"RandomInteger", "[", 
+    RowBox[{
+     RowBox[{"10", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", "1"}], "}"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "2"}], "}"}]}], "]"}], "//", "N"}]}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->654674311,ExpressionUUID->"53edc3aa-6d99-c141-97b7-18be226746c8"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "9.`"}], ",", 
+     RowBox[{"-", "6.`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "10.`"}], ",", "3.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"5.`", ",", 
+     RowBox[{"-", "10.`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "9.`"}], ",", "10.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2.`"}], ",", 
+     RowBox[{"-", "9.`"}]}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->53583805,ExpressionUUID->"8d8614f5-d750-e94f-bb3a-8f0fe337a793"]
+}, Open  ]],
+
+Cell["Then the 2D samplings are", "ExampleText",
+ CellID->194552791,ExpressionUUID->"8834cb98-e5e8-664c-b94c-6102aeac17c4"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"pathpts2d", "=", 
+    RowBox[{"PathSample", "[", 
+     RowBox[{"ptnode2d", ",", "10"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->5027832,ExpressionUUID->"2b09c2c9-4b65-9644-b36a-840163436c91"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"pathpts2d", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}],
+   "]"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->495395095,ExpressionUUID->"14882382-fea5-aa41-9867-33882b5f4816"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.011000000000000001`], 
+    AbsoluteThickness[1.6], PointBox[CompressedData["
+1:eJxVU89LVFEUHn9kk03j/HjNvGl0fPNmomhhU7kIFO7dWNhCIWpp4IS2kjYV
++Q8I9mPjrkAra9VOCDMJ7kdjOzOtQKONEPiDbNNguRBq7jlnBrq8me/e75zz
+ne+ex8sWb14eqg8EAv2Vn0VePhhdnKPl48awXQ4Ihn0sLdoVweNHdvkYIr4Z
+RC/6OEt1DaKTE9wzrJfDecLvhvVyKND5s2K9HDrpXFYfSC8HxoBmnbzoBfXx
+3ol874SPd4VQqRBq0HTMZ3GkZIl99W12pPK0g+jeX4pgohWdNr20rkYoIQVv
+bNAdG5wzc0Qk8Ipww3AfB1eu2rVrLpFQFEvl7o/l7r8mR3ohsG4jXlNdE6ya
+O3YI7KcOTzZHpzZHw2D934b7Rmt9yE7BQfUNvKSVwFuOK+6bwizXK5KbSlf1
+Ndl3M9X+mu/ria+QZj9ZyY/qM9Sw+p6d2lzvTa6NT65FdfHEncrj46SFYot+
+37ez0LfjoXsm3jUTP6z77XEhA8Ym7XTZQBpcV6+tyvikCwr37aspIo6C88qK
+82K4S5sNxTphRCheUlwfBOOauc66eErET/OF+D1zivz9Mct03pL3FajN8Qf1
+b4TE1aroSr2i8E4Ioq+/Eh+RvkG5Z0zuGZY5OHLPmCa78STkfpqOXSmpdzWl
+FdNy77TmvDbRy8jc2iHzrc1Z5q///x7z+tqtlZ7kQBYXkwOVna/nt6bvd8x7
+qPxVdp4mOunhBRFtetuGtzKgcMcxPc08uC4heq2iF5f6NJ5RXov+1GOZFN5Q
+flA/ICEXK8TX6R4uwDJtdhX7TIjfdcV9HLDwqrlNhXHxVzanKSEmfgJgvxGw
+z4Ng/RY8pL5hyQsJxsD1zYKJWt1zwhTY3gHBNrD/elwgwsM/H5wuMA==
+     "]]}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotRange->{{-10., 5.}, {-10., 10.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellLabel->"Out[4]=",
+ CellID->693213752,ExpressionUUID->"05348516-60b3-e046-9d16-86c1a96d818a"]
+}, Open  ]],
+
+Cell[TextData[{
+ "And the node points are respectively the ",
+ Cell[BoxData[
+  StyleBox["m",
+   FontSlant->"Italic"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "e5b56248-9b77-724d-887f-0cd023e5b0cc"],
+ "th point in the whole samplings, where ",
+ Cell[BoxData[
+  StyleBox["m",
+   FontSlant->"Italic"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "bfdb618a-68ad-e342-addc-c92eaf2face4"],
+ " is:"
+}], "ExampleText",
+ CellID->313932860,ExpressionUUID->"97ae3aaf-0c8d-814f-9ac5-07dc85d82cd8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"pathpts2d", "\[LeftDoubleBracket]", "2", 
+  "\[RightDoubleBracket]"}]], "Input",
+ CellLabel->"In[5]:=",
+ CellID->110839909,ExpressionUUID->"ebbb437d-81c1-e140-95ca-35a7ee1562bc"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "11", ",", "32", ",", "58", ",", "80"}], "}"}]], "Output",\
+
+ CellLabel->"Out[5]=",
+ CellID->31604701,ExpressionUUID->"5f10e42d-b0d3-ff47-ab83-45c5e6956c0f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "79e33342-d8d5-444c-bff5-7c2a90150956"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->326914665,ExpressionUUID->"dab83efe-beb6-f849-917c-eb50769b719d"],
+
+Cell["Given a list of node points in 3D", "ExampleText",
+ CellID->508310465,ExpressionUUID->"c18ac683-4f58-1741-848a-9dc2c05a3249"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ptnode3d", "=", 
+  RowBox[{
+   RowBox[{"RandomInteger", "[", 
+    RowBox[{
+     RowBox[{"10", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", "1"}], "}"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"6", ",", "3"}], "}"}]}], "]"}], "//", "N"}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->597990881,ExpressionUUID->"8fa7bcd2-cf3f-e44f-8f64-ebedf50cf5eb"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "4.`"}], ",", "0.`", ",", "3.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "8.`"}], ",", "4.`", ",", 
+     RowBox[{"-", "7.`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "9.`"}], ",", "6.`", ",", 
+     RowBox[{"-", "10.`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "3.`"}], ",", "8.`", ",", "4.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4.`", ",", "8.`", ",", 
+     RowBox[{"-", "8.`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "5.`"}], ",", "0.`", ",", 
+     RowBox[{"-", "1.`"}]}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->173740766,ExpressionUUID->"eb3d0f43-4e66-9c46-9cb6-e68546431c48"]
+}, Open  ]],
+
+Cell["Then the 3D samplings are", "ExampleText",
+ CellID->79125653,ExpressionUUID->"986f9411-3d4c-0245-885a-ee1da08fdd6e"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"pathpts3d", "=", 
+    RowBox[{"PathSample", "[", 
+     RowBox[{"ptnode3d", ",", "5"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->664640061,ExpressionUUID->"75de8a16-820e-2c42-8b04-48453cffcf85"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPointPlot3D", "[", 
+  RowBox[{"pathpts3d", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}],
+   "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->809317862,ExpressionUUID->"49a6716f-3678-034e-a414-0bf80e5c8799"],
+
+Cell[BoxData[
+ Graphics3DBox[{{
+    {RGBColor[0.3315753, 0.4561011, 0.6388182], PointSize[
+      NCache[
+       Rational[1, 60], 0.016666666666666666`]], Point3DBox[CompressedData["
+1:eJxdVcFOU1EQfZQiBdvYQlva19cHJX6BuMDVnYVLF8YIH2AiLk2NCX6CK/e4
+cq3+gSR3dtUEFyzcqcEoC5NGaxSFBlTezJmbvE4gkzd35pyZuTO3vTv3b90t
+RFF04/x/OjKpcpSTEtVUWNW+ey5SoFWRBdg/uRdiH7ura5ks8tOdTL66KcEZ
+uesidfj/cDc3MnnnRG00WPWR2f2WSBM4J66gOP7RdiZL/PFDJmfIZ+wfi7SA
+P0WaTwHxbZa01qYJdbHGxeCdoduiK/xKpMNCsz1Lel7jt3uZJMCbA04deXR5
+V+IukuI2+fu3TFKcV4DTRn9XoKvASfie1LsC/BrpdwreFUZfaQt+Wk+P5Xiv
+ThrXY9Ma3ySNXwWf6RZ4L7Pi9aBbwFkNvKpbZHyqjb8N/2Xkt2z9JuuX8qTQ
+MXhj5J2ANwb+EuI74I1Rb938wNsBbw28bYuDvWJ1Qifh3hW3if4kwLc5adg9
+A+fEG7/ydknzHvormHNx2+nSM9FvvPIsWN3gPXCKWwVvSpr3T6c4l9CPFPn8
+hX/Z+op+FnE+D95l+w71Yb7I5mv9yefzv2Kw63zO04Nk0E8GU8Fue7Ap+szn
+cSJ63c8C/gT7JvZV8UfBrnt06PT8cBIneii8+5P+vpqZ+7subz/y1r8JHE7F
+fxjsyjfDXbH/CvaXWi/2fTyBU2VJpx9Rvj8L/EUKm6Y8foP1XblAeZwWS3sG
+cxM4MV+T/pSDXfvcZbufPI69C2WSsPWUND/bnxK+E9yr7VcR712MPDts96b8
+Ldy3vT/HTmGWwGN7MrL3OLxjBfRf+7GIOWgYfqS4NcI57Ac+X5/tw8hr/mXU
+UWX9fTj2mmcJeVb4n4q3ucTcWr2M+QXvrPUH93nqVBeBXw6/L6pt7u3+h/A/
+Dfur3++d9ue3/w/nhHyE
+      "]]}, {}, {}}, {}},
+  Axes->True,
+  AxesLabel->{None, None, None},
+  BoxRatios->{1, 1, 0.4},
+  DisplayFunction->Identity,
+  FaceGrids->None,
+  FaceGridsStyle->Automatic,
+  ImageSize->{402.74026788695903`, 320.86235932424535`},
+  ImageSizeRaw->Automatic,
+  Lighting->{{"Ambient", 
+     GrayLevel[0.5]}, {"Directional", 
+     GrayLevel[0.5], 
+     ImageScaled[{0, 2, 2}]}, {"Directional", 
+     GrayLevel[0.5], 
+     ImageScaled[{2, 2, 2}]}, {"Directional", 
+     GrayLevel[0.5], 
+     ImageScaled[{2, 0, 2}]}},
+  PlotRange->{{-9., 4.}, {0., 8.}, Automatic},
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.02]}, {0, 0}},
+  Ticks->{Automatic, Automatic, Automatic},
+  ViewPoint->{1.5299699081338265`, -2.361811232805244, 1.8791061121714079`},
+  ViewVertical->{0.011519043844656407`, -0.013338277325896711`, 
+   0.9998446889326772}]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->132949737,ExpressionUUID->"5c7a1f87-2807-414f-a39b-0393fea9702d"]
+}, Open  ]]
+}, Open  ]]
+}, Closed]]
+}, Open  ]],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, 
+       "RelatedFunction.png"]],
+     ImageSizeCache->{50., {26.472656144876964`, 33.527343855123036`}}], 
+    GridBox[{
+      {
+       StyleBox[
+        RowBox[{"See", " ", "Also"}], "SeeAlsoSection"]},
+      {Cell[TextData[{
+        Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["LabelPathSamplings"]], 
+           "paclet:TBMethod/ref/LabelPathSamplings", 
+           "TBMethod Package Symbol"},
+          "PackageLink",
+          BaseStyle->"InlineFormula"]], "InlineFormula",
+         FontFamily->"Source Sans Pro",ExpressionUUID->
+         "86aa0408-6491-e345-a7b5-d29d627ea419"],
+        "\[NonBreakingSpace]",
+        StyleBox[
+        "\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+         "InlineSeparator"],
+        " ",
+        Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["BandData"]], "paclet:TBMethod/ref/BandData", 
+           "TBMethod Package Symbol"},
+          "PackageLink",
+          BaseStyle->"InlineFormula"]], "InlineFormula",
+         FontFamily->"Source Sans Pro",ExpressionUUID->
+         "38069df0-75c4-d14d-9ac4-3c544383af9e"],
+        "\[NonBreakingSpace]",
+        StyleBox[
+        "\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+         "InlineSeparator"],
+        " ",
+        Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["BandPlot"]], "paclet:TBMethod/ref/BandPlot", 
+           "TBMethod Package Symbol"},
+          "PackageLink",
+          BaseStyle->"InlineFormula"]], "InlineFormula",
+         FontFamily->"Source Sans Pro",ExpressionUUID->
+         "e191cb9f-d087-9e4f-875e-6e37a6added8"],
+        "\[NonBreakingSpace]",
+        StyleBox[
+        "\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+         "InlineSeparator"],
+        " ",
+        Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["RegionPolarSample"]], 
+           "paclet:TBMethod/ref/RegionPolarSample", "TBMethod Package Symbol"},
+          "PackageLink",
+          BaseStyle->"InlineFormula"]], "InlineFormula",
+         FontFamily->"Source Sans Pro",ExpressionUUID->
+         "a3672a7c-9c3e-6b49-932d-d5bbda814d39"]
+       }], "SeeAlso",ExpressionUUID->"9711afdf-991d-cb45-9c23-4ccf3023cfca"]}
+     }]}
+  }]], "SeeAlsoSection",ExpressionUUID->"4a07ca87-0f40-5748-9d92-\
+d4f3f3b00a3f"],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, 
+       "RelatedTutorial.png"]],
+     ImageSizeCache->{50., {26.472656144876964`, 33.527343855123036`}}], 
+    GridBox[{
+      {
+       StyleBox[
+        RowBox[{"Tech", " ", "Notes"}], "TutorialsSection"]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["Getting Started with TBMethod"]], 
+           "paclet:TBMethod/tutorial/GettingStarted"},
+          "RefLinkPlain",
+          BaseStyle->{"Tutorials"}]], "Tutorials",ExpressionUUID->
+         "3df88572-84a9-044c-9b52-6f84a1a173f8"]}]}
+     }]}
+  }]], "TutorialsSection",ExpressionUUID->"f69ebedb-aeec-e24d-9fe8-\
+1ffcbef8e7c9"],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, "RelatedGuide.png"]],
+     ImageSizeCache->{50., {26.472656144876964`, 33.527343855123036`}}], 
+    GridBox[{
+      {
+       StyleBox[
+        RowBox[{"Related", " ", "Guides"}], "MoreAboutSection"]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["TBMethod"]], "paclet:TBMethod/guide/TBMethod"},
+          "RefLinkPlain",
+          BaseStyle->{"MoreAbout"}]], "MoreAbout",ExpressionUUID->
+         "1243472c-56d7-c84e-9a40-a813b13f449e"]}]}
+     }]}
+  }]], "MoreAboutSection",ExpressionUUID->"b1b0e799-7e7e-c24c-be5c-\
+38e78f9db48c"],
+
+Cell[" ", "FooterCell",ExpressionUUID->"f500c2a4-64ee-7142-9627-e22b4d1fe364"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{900, 845.25},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"PathSample",
+Visible->True,
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
+  "ExampleCounter" -> 1, 
+  "Openers" -> {
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}, 
+    "AllOptsTable" -> Closed}, "NewStyles" -> True, 
+  "CitationPopupData" -> $Failed, "ShowCitation" -> False, "HasOptions" -> 
+  True, "RootCaptions" -> "", "HeaderCoreAreaLink" -> {}, 
+  "Metadata" -> {
+   "built" -> "{2026, 10, 26, 16, 55, 53.5415561}", 
+    "history" -> {"", "", "", ""}, "context" -> "TBMethod`EigenSpect`", 
+    "keywords" -> {"PathSample tight binding TBMethod"}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "T B Method Symbol", "language" -> "en", "paclet" -> 
+    "TBMethod", "status" -> "None", "summary" -> 
+    "PathSample[vertices, nleast] samples a piecewise straight path with a \
+common approximate spacing and returns sample-index markers for its \
+vertices.", "synonyms" -> {}, "tabletags" -> {}, "title" -> "PathSample", 
+    "titlemodifier" -> "", "metadescription" -> "", "windowtitle" -> 
+    "PathSample", "type" -> "Symbol", "uri" -> "TBMethod/ref/PathSample", 
+    "WorkflowDockedCell" -> ""}, "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"15.0 for Microsoft Windows (64-bit) (July 2, 2026)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "15.0 for Microsoft Windows (64-bit) (July 2, 2026)", 
+  StyleDefinitions -> "PrivateStylesheetFormatting.nb"],
+ExpressionUUID->"285b4470-89d6-4743-919c-78bbc4a27144"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[1484, 34, 6491, 157, 70, "AnchorBarGrid",ExpressionUUID->"d2badcd3-2bf4-a64d-99b0-26794f9dd2a4",
+ CellID->1],
+Cell[7821, 193, 102, 0, 70, "ContextNameCell",ExpressionUUID->"77325e42-5070-4c49-ba26-696c76601679"],
+Cell[CellGroupData[{
+Cell[7948, 197, 567, 14, 70, "ObjectNameGrid",ExpressionUUID->"63087fd4-ff0b-6047-aa9e-8e8885a190b7"],
+Cell[8504, 213, 961, 24, 70, "Usage",ExpressionUUID->"2cd4a3f1-fd6d-764e-b53f-a15131ebfa3c",
+ CellID->126213490]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9478, 242, 1481, 34, 70, "NotesSection",ExpressionUUID->"2dcc94af-6c28-ca45-822b-134ee832d730",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->101442386],
+Cell[10928, 278, 446, 9, 70, "Notes",ExpressionUUID->"b48cbcfc-db2d-b94f-927d-cb5c106618e2",
+ CellID->1087090892],
+Cell[11368, 289, 828, 23, 70, "Notes",ExpressionUUID->"6e00e771-b5fd-9c4b-abc5-590d4d9ff7af",
+ CellID->1032985669],
+Cell[12176, 314, 503, 12, 70, "Notes",ExpressionUUID->"feb5c74c-c6e1-4641-b7d4-878be18edb65",
+ CellID->201865253],
+Cell[12670, 328, 840, 23, 70, "Notes",ExpressionUUID->"ba60d02a-6f96-1a4f-bd2f-afdb27f6991b",
+ CellID->535904038]
+}, Closed]],
+Cell[13502, 354, 80, 0, 70, "PageDelimiter",ExpressionUUID->"4cd5ad63-266a-b94b-8b7a-38bb38fceac7"],
+Cell[CellGroupData[{
+Cell[13607, 358, 1438, 37, 70, "PrimaryExamplesSection",ExpressionUUID->"1bba10e7-7e55-1d43-bd93-690347b279bc",
+ CellID->20463900],
+Cell[CellGroupData[{
+Cell[15033, 399, 1265, 31, 70, "ExampleSection",ExpressionUUID->"1a66dc91-9a87-7646-a57f-d3db27d9a784",
+ CellID->35852367],
+Cell[16270, 432, 162, 2, 70, "ExampleText",ExpressionUUID->"9de71316-27e6-494e-b643-570dbbf24eba",
+ CellID->328344992],
+Cell[16433, 436, 175, 3, 70, "Input",ExpressionUUID->"b646f0f2-ddd2-6749-8f93-76b3ad9c3f56",
+ CellID->215035592],
+Cell[CellGroupData[{
+Cell[16630, 443, 415, 12, 70, "Input",ExpressionUUID->"e606339b-8d5f-f74b-9daa-116cafba8b23",
+ CellID->2028177340],
+Cell[17036, 457, 581, 18, 70, "Output",ExpressionUUID->"060b93fc-70ff-8940-b068-48786811d12f",
+ CellID->746308992]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17648, 481, 1271, 31, 70, "ExampleSection",ExpressionUUID->"cf9f374b-a433-8b4c-9df9-286b6d758da5",
+ CellID->604750982],
+Cell[18891, 514, 1854, 56, 70, "ExampleText",ExpressionUUID->"3f5217ac-2153-ec41-91c3-4491fbaf3e26",
+ CellID->427493852],
+Cell[20692, 572, 306, 8, 70, "ExampleText",ExpressionUUID->"349315b9-0804-3e4e-b847-19e7ad61146a",
+ CellID->582441303],
+Cell[20993, 582, 114, 1, 70, "ExampleText",ExpressionUUID->"2fc7d07e-4b6b-8845-b67e-9b38aeba4258",
+ CellID->11904999],
+Cell[21109, 585, 175, 3, 70, "Input",ExpressionUUID->"47c72bd7-b406-a649-9172-e9bb32a61244",
+ CellID->226833854],
+Cell[21284, 590, 132, 1, 70, "ExampleText",ExpressionUUID->"b335dfe0-8aaa-c545-bcc8-dceabfd0663e",
+ CellID->659870087],
+Cell[CellGroupData[{
+Cell[21440, 595, 410, 12, 70, "Input",ExpressionUUID->"53edc3aa-6d99-c141-97b7-18be226746c8",
+ CellID->654674311],
+Cell[21841, 609, 636, 21, 70, "Output",ExpressionUUID->"8d8614f5-d750-e94f-bb3a-8f0fe337a793",
+ CellID->53583805]
+}, Open  ]],
+Cell[22471, 633, 124, 1, 70, "ExampleText",ExpressionUUID->"8834cb98-e5e8-664c-b94c-6102aeac17c4",
+ CellID->194552791],
+Cell[22597, 636, 292, 8, 70, "Input",ExpressionUUID->"2b09c2c9-4b65-9644-b36a-840163436c91",
+ CellID->5027832],
+Cell[CellGroupData[{
+Cell[22906, 648, 242, 5, 70, "Input",ExpressionUUID->"14882382-fea5-aa41-9867-33882b5f4816",
+ CellID->495395095],
+Cell[23146, 655, 2196, 51, 70, "Output",ExpressionUUID->"05348516-60b3-e046-9d16-86c1a96d818a",
+ CellID->693213752]
+}, Open  ]],
+Cell[25306, 709, 554, 15, 70, "ExampleText",ExpressionUUID->"97ae3aaf-0c8d-814f-9ac5-07dc85d82cd8",
+ CellID->313932860],
+Cell[CellGroupData[{
+Cell[25870, 728, 206, 4, 70, "Input",ExpressionUUID->"ebbb437d-81c1-e140-95ca-35a7ee1562bc",
+ CellID->110839909],
+Cell[26075, 734, 211, 5, 70, "Output",ExpressionUUID->"5f10e42d-b0d3-ff47-ab83-45c5e6956c0f",
+ CellID->31604701]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26318, 744, 247, 5, 70, "ExampleDelimiter",ExpressionUUID->"dab83efe-beb6-f849-917c-eb50769b719d",
+ CellID->326914665],
+Cell[26563, 751, 132, 1, 70, "ExampleText",ExpressionUUID->"c18ac683-4f58-1741-848a-9dc2c05a3249",
+ CellID->508310465],
+Cell[CellGroupData[{
+Cell[26719, 756, 410, 12, 70, "Input",ExpressionUUID->"8fa7bcd2-cf3f-e44f-8f64-ebedf50cf5eb",
+ CellID->597990881],
+Cell[27120, 770, 816, 25, 70, "Output",ExpressionUUID->"eb3d0f43-4e66-9c46-9cb6-e68546431c48",
+ CellID->173740766]
+}, Open  ]],
+Cell[27926, 798, 123, 1, 70, "ExampleText",ExpressionUUID->"986f9411-3d4c-0245-885a-ee1da08fdd6e",
+ CellID->79125653],
+Cell[28051, 801, 293, 8, 70, "Input",ExpressionUUID->"75de8a16-820e-2c42-8b04-48453cffcf85",
+ CellID->664640061],
+Cell[CellGroupData[{
+Cell[28361, 813, 249, 5, 70, "Input",ExpressionUUID->"49a6716f-3678-034e-a414-0bf80e5c8799",
+ CellID->809317862],
+Cell[28608, 820, 2165, 49, 70, "Output",ExpressionUUID->"5c7a1f87-2807-414f-a39b-0393fea9702d",
+ CellID->132949737]
+}, Open  ]]
+}, Open  ]]
+}, Closed]]
+}, Open  ]],
+Cell[30775, 875, 2530, 66, 70, "SeeAlsoSection",ExpressionUUID->"4a07ca87-0f40-5748-9d92-d4f3f3b00a3f"],
+Cell[33242, 943, 807, 21, 70, "TutorialsSection",ExpressionUUID->"f69ebedb-aeec-e24d-9fe8-1ffcbef8e7c9"],
+Cell[34031, 966, 756, 19, 70, "MoreAboutSection",ExpressionUUID->"b1b0e799-7e7e-c24c-be5c-38e78f9db48c"],
+Cell[34771, 987, 78, 0, 70, "FooterCell",ExpressionUUID->"f500c2a4-64ee-7142-9627-e22b4d1fe364"]
+}
+]
+*)
+
+(* End of internal cache information *)

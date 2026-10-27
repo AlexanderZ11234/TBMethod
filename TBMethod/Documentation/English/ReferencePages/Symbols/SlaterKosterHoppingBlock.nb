@@ -1,0 +1,264 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 1131094400], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 1738855664], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 272284796], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 367037017], Cell["TBMethod`MDConstruct`", "Categorization", 
+      CellLabel -> "Context", CellID -> 400334162], 
+     Cell["TBMethod/ref/SlaterKosterHoppingBlock", "Categorization", 
+      CellLabel -> "URI", CellID -> 1947914940]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 1845969622], 
+     Cell["SlaterKosterHoppingBlock, tight binding, TBMethod", "Keywords", 
+      CellID -> 1373881595]}, Closed]], 
+  Cell[CellGroupData[{Cell["SlaterKosterHoppingBlock", "ObjectName", 
+      CellID -> 1902549903], Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{RowBox[{RowBox[{ButtonBox[
+                 "SlaterKosterHoppingBlock", BaseStyle -> "Link", 
+                 ButtonData -> 
+                  "paclet:TBMethod/ref/SlaterKosterHoppingBlock"], "[", 
+                "\"sp\"", "]"}], "[", RowBox[{"{", RowBox[{StyleBox["vss", 
+                   "TI", FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                  StyleBox["vsp", "TI", FontFamily -> "Times", FontSlant -> 
+                    "Italic"], ",", StyleBox["vppSigma", "TI", FontFamily -> 
+                    "Times", FontSlant -> "Italic"], ",", StyleBox["vppPi", 
+                   "TI", FontFamily -> "Times", FontSlant -> "Italic"]}], 
+                "}"}], "]"}], "[", RowBox[{StyleBox["finalPoint", "TI", 
+               FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+              StyleBox["initialPoint", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"]}], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", "constructs the s\[Dash]p hopping block using \
+one shared s\[Dash]p coupling parameter.", "\n", Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{RowBox[{RowBox[{ButtonBox[
+                 "SlaterKosterHoppingBlock", BaseStyle -> "Link", 
+                 ButtonData -> 
+                  "paclet:TBMethod/ref/SlaterKosterHoppingBlock"], "[", 
+                "\"sp\"", "]"}], "[", RowBox[{"{", RowBox[{StyleBox["vss", 
+                   "TI", FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                  StyleBox["vsp", "TI", FontFamily -> "Times", FontSlant -> 
+                    "Italic"], ",", StyleBox["vps", "TI", FontFamily -> 
+                    "Times", FontSlant -> "Italic"], ",", StyleBox[
+                   "vppSigma", "TI", FontFamily -> "Times", FontSlant -> 
+                    "Italic"], ",", StyleBox["vppPi", "TI", FontFamily -> 
+                    "Times", FontSlant -> "Italic"]}], "}"}], "]"}], "[", 
+            RowBox[{StyleBox["finalPoint", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"], ",", StyleBox["initialPoint", "TI", 
+               FontFamily -> "Times", FontSlant -> "Italic"]}], "]"}]], 
+         "InlineFormula"], " \[LineSeparator]", 
+        "uses distinct s\[Dash]p and p\[Dash]s coupling parameters.", "\n", 
+        Cell["   ", "ModInfo"], Cell[BoxData[
+          RowBox[{RowBox[{RowBox[{ButtonBox["SlaterKosterHoppingBlock", 
+                 BaseStyle -> "Link", ButtonData -> 
+                  "paclet:TBMethod/ref/SlaterKosterHoppingBlock"], "[", 
+                "\"spd\"", "]"}], "[", StyleBox["parameters", "TI", 
+               FontFamily -> "Times", FontSlant -> "Italic"], "]"}], "[", 
+            RowBox[{StyleBox["finalPoint", "TI", FontFamily -> "Times", 
+               FontSlant -> "Italic"], ",", StyleBox["initialPoint", "TI", 
+               FontFamily -> "Times", FontSlant -> "Italic"]}], "]"}]], 
+         "InlineFormula"], " \[LineSeparator]", 
+        "constructs the hopping block including s, p, and d orbitals."}], 
+      "Usage", CellID -> 1596140596], 
+     Cell[TextData[{"The bond direction is ", 
+        Cell[BoxData[RowBox[{ButtonBox["Normalize", BaseStyle -> "Link", 
+             ButtonData -> "paclet:ref/Normalize"], "[", 
+            RowBox[{StyleBox["finalPoint", "TI"], "-", StyleBox[
+               "initialPoint", "TI"]}], "]"}]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], ". Supply distinct three-component \
+points. No radial dependence or distance cutoff is applied to the supplied \
+integrals."}], "Notes", CellID -> 1847702143], 
+     Cell[TextData[{"The orbital order is ", 
+        Cell[BoxData[FormBox[TagBox["s", HoldForm], TraditionalForm]], 
+         "InlineMath", ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], ", ", 
+        Cell[BoxData[FormBox[TagBox[SubscriptBox["p", "x"], HoldForm], 
+           TraditionalForm]], "InlineMath", ScriptLevel -> 0, 
+         FractionBoxOptions -> {BaseStyle -> {ScriptLevel -> 0}}], ", ", 
+        Cell[BoxData[FormBox[TagBox[SubscriptBox["p", "y"], HoldForm], 
+           TraditionalForm]], "InlineMath", ScriptLevel -> 0, 
+         FractionBoxOptions -> {BaseStyle -> {ScriptLevel -> 0}}], ", ", 
+        Cell[BoxData[FormBox[TagBox[SubscriptBox["p", "z"], HoldForm], 
+           TraditionalForm]], "InlineMath", ScriptLevel -> 0, 
+         FractionBoxOptions -> {BaseStyle -> {ScriptLevel -> 0}}], ", ", 
+        Cell[BoxData[FormBox[TagBox[SubscriptBox["d", 
+             RowBox[{"x", " ", "y"}]], HoldForm], TraditionalForm]], 
+         "InlineMath", ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], ", ", 
+        Cell[BoxData[FormBox[TagBox[SubscriptBox["d", 
+             RowBox[{"y", " ", "z"}]], HoldForm], TraditionalForm]], 
+         "InlineMath", ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], ", ", 
+        Cell[BoxData[FormBox[TagBox[SubscriptBox["d", 
+             RowBox[{"z", " ", "x"}]], HoldForm], TraditionalForm]], 
+         "InlineMath", ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], ", ", 
+        Cell[BoxData[FormBox[TagBox[SubscriptBox["d", 
+             RowBox[{SuperscriptBox["x", "2"], "-", SuperscriptBox["y", 
+                "2"]}]], HoldForm], TraditionalForm]], "InlineMath", 
+         ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], ", ", 
+        Cell[BoxData[FormBox[TagBox[SubscriptBox["d", 
+             RowBox[{RowBox[{"3", " ", SuperscriptBox["z", "2"]}], "-", 
+               SuperscriptBox["r", "2"]}]], HoldForm], TraditionalForm]], 
+         "InlineMath", ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], 
+        ", omitting the d orbitals for ", Cell[BoxData["\"sp\""], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], "."}], "Notes", 
+      CellID -> 1936911911], Cell[TextData[{"The 10-parameter ", 
+        Cell[BoxData["\"spd\""], "InlineFormula", FontFamily -> 
+          "Source Sans Pro"], " form uses ", 
+        Cell[BoxData[RowBox[{"{", RowBox[{StyleBox["ssSigma", "TI"], ",", 
+              StyleBox["spSigma", "TI"], ",", StyleBox["sdSigma", "TI"], ",", 
+              StyleBox["ppSigma", "TI"], ",", StyleBox["ppPi", "TI"], ",", 
+              StyleBox["pdSigma", "TI"], ",", StyleBox["pdPi", "TI"], ",", 
+              StyleBox["ddSigma", "TI"], ",", StyleBox["ddPi", "TI"], ",", 
+              StyleBox["ddDelta", "TI"]}], "}"}]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], ". Reverse-shell parameters are \
+identified with their forward counterparts."}], "Notes", 
+      CellID -> 1501187129], Cell[TextData[{"The 14-parameter ", 
+        Cell[BoxData["\"spd\""], "InlineFormula", FontFamily -> 
+          "Source Sans Pro"], " form uses ", 
+        Cell[BoxData[RowBox[{"{", RowBox[{StyleBox["ssSigma", "TI"], ",", 
+              StyleBox["spSigma", "TI"], ",", StyleBox["sdSigma", "TI"], ",", 
+              StyleBox["psSigma", "TI"], ",", StyleBox["ppSigma", "TI"], ",", 
+              StyleBox["ppPi", "TI"], ",", StyleBox["pdSigma", "TI"], ",", 
+              StyleBox["pdPi", "TI"], ",", StyleBox["dsSigma", "TI"], ",", 
+              StyleBox["dpSigma", "TI"], ",", StyleBox["dpPi", "TI"], ",", 
+              StyleBox["ddSigma", "TI"], ",", StyleBox["ddPi", "TI"], ",", 
+              StyleBox["ddDelta", "TI"]}], "}"}]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], "."}], "Notes", 
+      CellID -> 1298001147], Cell[TextData[{"Reverse-shell signs use ordinary \
+transpose: p-to-s and d-to-p are negated, while d-to-s is not. For complex \
+integrals, ensure the opposite directed bond is supplied consistently."}], 
+      "Notes", CellID -> 1175480325]}, Open]], 
+  Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 1157231515], Cell[TextData[{"Compare longitudinal and \
+transverse orbital hopping amplitudes along the first coordinate axis."}], 
+      "ExampleText", CellID -> 1293101766], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 1894687143], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{RowBox[{RowBox[{"SlaterKosterHoppingBlock", "[", 
+                "\"sp\"", "]"}], "[", RowBox[{"{", RowBox[
+                 {RowBox[{"-", "1."}], ",", "1.", ",", "2.", ",", 
+                  RowBox[{"-", "0.5"}]}], "}"}], "]"}], "[", 
+            RowBox[{RowBox[{"{", RowBox[{"1.", ",", "0.", ",", "0."}], "}"}], 
+              ",", RowBox[{"{", RowBox[{"0.", ",", "0.", ",", "0."}], 
+                "}"}]}], "]"}]], "Input", CellID -> 1995349546], 
+        Cell[BoxData[RowBox[{"{", RowBox[{RowBox[{"{", RowBox[
+                 {RowBox[{"-", "1.`"}], ",", "1.`", ",", "0.`", ",", "0.`"}], 
+                "}"}], ",", RowBox[{"{", RowBox[{RowBox[{"-", "1.`"}], ",", 
+                  "2.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+              RowBox[{"{", RowBox[{"0.`", ",", "0.`", ",", RowBox[
+                   {"-", "0.5`"}], ",", "0.`"}], "}"}], ",", RowBox[{"{", 
+                RowBox[{"0.`", ",", "0.`", ",", "0.`", ",", RowBox[
+                   {"-", "0.5`"}]}], "}"}]}], "}"}]], "Output", 
+         CellID -> 1099442615]}, Open]], 
+     Cell[CellGroupData[{Cell[BoxData[InterpretationBox[
+           Cell["\t", "ExampleDelimiter"], $Line = 0; ]], "ExampleDelimiter", 
+         CellID -> 1560591719], Cell[TextData[
+          {"Set the two oriented s-p hopping amplitudes independently."}], 
+         "ExampleText", CellID -> 1364511633], 
+        Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+         CellID -> 1416411233], Cell[CellGroupData[
+          {Cell[BoxData[RowBox[{RowBox[{RowBox[{"SlaterKosterHoppingBlock", 
+                   "[", "\"sp\"", "]"}], "[", RowBox[{"{", RowBox[
+                    {RowBox[{"-", "1."}], ",", "1.", ",", "3.", ",", "2.", 
+                     ",", RowBox[{"-", "0.5"}]}], "}"}], "]"}], "[", RowBox[
+                {RowBox[{"{", RowBox[{"1.", ",", "0.", ",", "0."}], "}"}], 
+                 ",", RowBox[{"{", RowBox[{"0.", ",", "0.", ",", "0."}], 
+                   "}"}]}], "]"}]], "Input", CellID -> 887778084], 
+           Cell[BoxData[RowBox[{"{", RowBox[{RowBox[{"{", RowBox[
+                    {RowBox[{"-", "1.`"}], ",", "1.`", ",", "0.`", ",", 
+                     "0.`"}], "}"}], ",", RowBox[{"{", RowBox[
+                    {RowBox[{"-", "3.`"}], ",", "2.`", ",", "0.`", ",", 
+                     "0.`"}], "}"}], ",", RowBox[{"{", RowBox[{"0.`", ",", 
+                     "0.`", ",", RowBox[{"-", "0.5`"}], ",", "0.`"}], "}"}], 
+                 ",", RowBox[{"{", RowBox[{"0.`", ",", "0.`", ",", "0.`", 
+                     ",", RowBox[{"-", "0.5`"}]}], "}"}]}], "}"}]], "Output", 
+            CellID -> 234274782]}, Open]]}, Open]], 
+     Cell[CellGroupData[{Cell[BoxData[InterpretationBox[
+           Cell["\t", "ExampleDelimiter"], $Line = 0; ]], "ExampleDelimiter", 
+         CellID -> 664655088], Cell[TextData[{"Extend the hopping block to \
+nine orbitals with isotropic d-orbital coupling."}], "ExampleText", 
+         CellID -> 1917057636], Cell[BoxData[RowBox[{"Needs", "[", 
+            "\"TBMethod`\"", "]"}]], "Input", CellID -> 175329448], 
+        Cell[CellGroupData[{Cell[BoxData[RowBox[{RowBox[
+                {RowBox[{"SlaterKosterHoppingBlock", "[", "\"spd\"", "]"}], 
+                 "[", RowBox[{"{", RowBox[{RowBox[{"-", "1."}], ",", "1.", 
+                     ",", "0.", ",", "2.", ",", RowBox[{"-", "0.5"}], ",", 
+                     "0.", ",", "0.", ",", "3.", ",", "3.", ",", "3."}], 
+                   "}"}], "]"}], "[", RowBox[{RowBox[{"{", RowBox[{"1.", ",", 
+                     "0.", ",", "0."}], "}"}], ",", RowBox[{"{", RowBox[
+                    {"0.", ",", "0.", ",", "0."}], "}"}]}], "]"}]], "Input", 
+            CellID -> 481354013], Cell[BoxData[RowBox[{"{", RowBox[
+                {RowBox[{"{", RowBox[{RowBox[{"-", "1.`"}], ",", "1.`", ",", 
+                     "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", 
+                     ",", "0.`", ",", "0.`"}], "}"}], ",", RowBox[
+                  {"{", RowBox[{RowBox[{"-", "1.`"}], ",", "2.`", ",", "0.`", 
+                     ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+                     "0.`", ",", "0.`"}], "}"}], ",", RowBox[{"{", 
+                   RowBox[{"0.`", ",", "0.`", ",", RowBox[{"-", "0.5`"}], 
+                     ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+                     "0.`", ",", "0.`"}], "}"}], ",", RowBox[{"{", 
+                   RowBox[{"0.`", ",", "0.`", ",", "0.`", ",", RowBox[
+                      {"-", "0.5`"}], ",", "0.`", ",", "0.`", ",", "0.`", 
+                     ",", "0.`", ",", "0.`"}], "}"}], ",", RowBox[
+                  {"{", RowBox[{"0.`", ",", "0.`", ",", "0.`", ",", "0.`", 
+                     ",", "3.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+                     "0.`"}], "}"}], ",", RowBox[{"{", RowBox[{"0.`", ",", 
+                     "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "3.`", 
+                     ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+                 RowBox[{"{", RowBox[{"0.`", ",", "0.`", ",", "0.`", ",", 
+                     "0.`", ",", "0.`", ",", "0.`", ",", "3.`", ",", "0.`", 
+                     ",", "0.`"}], "}"}], ",", RowBox[{"{", RowBox[{"0.`", 
+                     ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+                     "0.`", ",", "0.`", ",", "3.`", ",", RowBox[{"-", 
+                       "1.1102230246251565`*^-16"}]}], "}"}], ",", 
+                 RowBox[{"{", RowBox[{"0.`", ",", "0.`", ",", "0.`", ",", 
+                     "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+                     RowBox[{"-", "1.1102230246251565`*^-16"}], ",", "3.`"}], 
+                   "}"}]}], "}"}]], "Output", CellID -> 1965869555]}, 
+          Open]]}, Open]]}, Open]], 
+  Cell[CellGroupData[{Cell["More Examples", "ExtendedExamplesSection", 
+      CellTags -> "ExtendedExamples", CellID -> 1230531420]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 816594127], 
+     Cell[TextData[{Cell[BoxData[ButtonBox["SlaterKosterOnsiteBlock", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/SlaterKosterOnsiteBlock"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox[
+           "SlaterKosterSOCOnsiteBlock", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/SlaterKosterSOCOnsiteBlock"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["HMatrixFromHoppings", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/HMatrixFromHoppings"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["FillWithDistance", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/FillWithDistance"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}]}], "SeeAlso", CellID -> 1900144605]}, 
+    Open]], Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 1192792680], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 142319413]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 423479263], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 204654527]}, Open]]}, 
+ WindowTitle -> "SlaterKosterHoppingBlock", Saveable -> True, 
+ Editable -> True, CellContext -> "Global`", 
+ TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]

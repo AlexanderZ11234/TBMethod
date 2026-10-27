@@ -1,0 +1,148 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 597473230], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 666281717], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 1265158443], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 1702727076], Cell["TBMethod`MDConstruct`", "Categorization", 
+      CellLabel -> "Context", CellID -> 780107915], 
+     Cell["TBMethod/ref/HLeadBlocksFloquetDownfold", "Categorization", 
+      CellLabel -> "URI", CellID -> 1574188111]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 459242942], 
+     Cell["HLeadBlocksFloquetDownfold, tight binding, TBMethod", "Keywords", 
+      CellID -> 242014508]}, Closed]], 
+  Cell[CellGroupData[{Cell["HLeadBlocksFloquetDownfold", "ObjectName", 
+      CellID -> 1732063868], Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{RowBox[{ButtonBox["HLeadBlocksFloquetDownfold", 
+               BaseStyle -> "Link", ButtonData -> 
+                "paclet:TBMethod/ref/HLeadBlocksFloquetDownfold"], "[", 
+              RowBox[{StyleBox["omega", "TI", FontFamily -> "Times", 
+                 FontSlant -> "Italic"], ",", StyleBox["m", "TI", 
+                 FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                StyleBox["csrBlocks", "TI", FontFamily -> "Times", 
+                 FontSlant -> "Italic"]}], "]"}], "[", 
+            RowBox[{"{", RowBox[{StyleBox["h0", "TI", FontFamily -> "Times", 
+                 FontSlant -> "Italic"], ",", StyleBox["h1", "TI", 
+                 FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                StyleBox["v", "TI", FontFamily -> "Times", FontSlant -> 
+                  "Italic"]}], "}"}], "]"}]], "InlineFormula"], 
+        " \[LineSeparator]", "project extended lead blocks to photon sector \
+zero, with an optional interface micromotion correction."}], "Usage", 
+      CellID -> 911075498], Cell[TextData[{"Projects the lead onsite block ", 
+        Cell[BoxData[StyleBox["h0", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " and intercell block ", 
+        Cell[BoxData[StyleBox["h1", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " onto their photon-zero sectors. \
+Projects the scattering-region-to-lead coupling ", 
+        Cell[BoxData[StyleBox["v", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        " onto photon zero on both sides."}], "Notes", CellID -> 1374124735], 
+     Cell[TextData[
+       {"Input matrices use internal-major, photon-minor ordering with ", 
+        Cell[BoxData[FormBox[TagBox[RowBox[{RowBox[{"2", " ", "m"}], "+", 
+              "1"}], HoldForm], TraditionalForm]], "InlineMath", 
+         ScriptLevel -> 0, FractionBoxOptions -> 
+          {BaseStyle -> {ScriptLevel -> 0}}], " photon sectors. The result is \
+the three-element lead block list for the reduced space."}], "Notes", 
+      CellID -> 223562227], Cell[TextData[{"The options are ", 
+        Cell[BoxData[RowBox[{"\"ExpansionOrder\"", "\[Rule]", "1"}]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], " and ", 
+        Cell[BoxData[RowBox[{"\"MicromotionCorrection\"", "\[Rule]", 
+            ButtonBox["False", BaseStyle -> "Link", ButtonData -> 
+              "paclet:ref/False"]}]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        ". The coupling correction is applied only when the order is ", 
+        Cell[BoxData["2"], "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        " and micromotion correction is ", 
+        Cell[BoxData[ButtonBox["True", BaseStyle -> "Link", 
+           ButtonData -> "paclet:ref/True"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], ". ", 
+        Cell[BoxData[StyleBox["csrBlocks", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " supplies the extended \
+scattering-region blocks used by that correction."}], "Notes", 
+      CellID -> 1916914075], Cell[TextData[{"The default behavior is \
+projection. Use the effective-Hamiltonian routines when van Vleck corrections \
+to the Hamiltonian blocks themselves are required."}], "Notes", 
+      CellID -> 194227000]}, Open]], 
+  Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 444169966], Cell[TextData[{"Project a static lead with three \
+photon sectors down to its two internal states."}], "ExampleText", 
+      CellID -> 1582073237], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 1736969630], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{RowBox[{"h0", "=", RowBox[{"KroneckerProduct", 
+                "[", RowBox[{RowBox[{"PauliMatrix", "[", "3", "]"}], ",", 
+                  RowBox[{"IdentityMatrix", "[", "3", "]"}]}], "]"}]}], ";", 
+            "\[IndentingNewLine]", RowBox[{"h1", "=", RowBox[{
+                "KroneckerProduct", "[", RowBox[{RowBox[{"-", FractionBox[
+                     RowBox[{"PauliMatrix", "[", "0", "]"}], "5"]}], ",", 
+                  RowBox[{"IdentityMatrix", "[", "3", "]"}]}], "]"}]}], ";", 
+            "\[IndentingNewLine]", RowBox[{"v", "=", RowBox[{
+                "KroneckerProduct", "[", RowBox[{RowBox[{"-", FractionBox[
+                     RowBox[{"PauliMatrix", "[", "0", "]"}], "2"]}], ",", 
+                  RowBox[{"IdentityMatrix", "[", "3", "]"}]}], "]"}]}], ";", 
+            "\[IndentingNewLine]", RowBox[{"csrBlocks", "=", RowBox[{"{", 
+                RowBox[{RowBox[{"{", RowBox[{"h0", ",", "h0"}], "}"}], ",", 
+                  RowBox[{"{", "h1", "}"}]}], "}"}]}], ";", 
+            "\[IndentingNewLine]", RowBox[
+             {RowBox[{"HLeadBlocksFloquetDownfold", "[", RowBox[{"10.", ",", 
+                  "1", ",", "csrBlocks"}], "]"}], "[", RowBox[{"{", 
+                RowBox[{"h0", ",", "h1", ",", "v"}], "}"}], "]"}]}]], 
+         "Input", CellID -> 172854719], 
+        Cell[BoxData[RowBox[{"{", RowBox[{RowBox[{"{", RowBox[
+                 {RowBox[{"{", RowBox[{"1", ",", "0"}], "}"}], ",", 
+                  RowBox[{"{", RowBox[{"0", ",", RowBox[{"-", "1"}]}], 
+                    "}"}]}], "}"}], ",", RowBox[{"{", RowBox[
+                 {RowBox[{"{", RowBox[{RowBox[{"-", FractionBox["1", "5"]}], 
+                      ",", "0"}], "}"}], ",", RowBox[{"{", RowBox[{"0", ",", 
+                      RowBox[{"-", FractionBox["1", "5"]}]}], "}"}]}], "}"}], 
+              ",", RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{RowBox[
+                       {"-", FractionBox["1", "2"]}], ",", "0"}], "}"}], ",", 
+                  RowBox[{"{", RowBox[{"0", ",", RowBox[{"-", FractionBox[
+                         "1", "2"]}]}], "}"}]}], "}"}]}], "}"}]], "Output", 
+         CellID -> 1015842369]}, Open]]}, Open]], 
+  Cell[CellGroupData[{Cell["More Examples", "ExtendedExamplesSection", 
+      CellTags -> "ExtendedExamples", CellID -> 1644870775]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 1638063396], 
+     Cell[TextData[{Cell[BoxData[ButtonBox["HLeadBlocks", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/HLeadBlocks"]], "InlineSeeAlsoFunction", 
+         TaggingRules -> {"PageType" -> "Function"}], 
+        StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"], 
+        Cell[BoxData[ButtonBox["HFloquetEffectiveBlochMatrixFromExtended", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/HFloquetEffectiveBlochMatrixFromExtended"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox[
+           "HFloquetEffectiveHoppingMatricesFromExtended", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/HFloquetEffectiveHoppingMatricesFromExtended\
+"]], "InlineSeeAlsoFunction", TaggingRules -> {"PageType" -> "Function"}], 
+        StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"], 
+        Cell[BoxData[ButtonBox["PhotonBlockProjectionMatrix", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/PhotonBlockProjectionMatrix"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}]}], "SeeAlso", CellID -> 1106130282]}, 
+    Open]], Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 1552159885], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 989007126]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 1144958094], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 1515701627]}, Open]]}, 
+ WindowTitle -> "HLeadBlocksFloquetDownfold", Saveable -> True, 
+ Editable -> True, CellContext -> "Global`", 
+ TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]

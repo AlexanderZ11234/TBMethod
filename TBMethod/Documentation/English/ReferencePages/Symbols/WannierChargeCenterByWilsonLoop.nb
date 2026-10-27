@@ -1,0 +1,127 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 1918019079], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 404082315], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 680094352], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 1420258595], Cell["TBMethod`EigenSpect`", "Categorization", 
+      CellLabel -> "Context", CellID -> 1437018420], 
+     Cell["TBMethod/ref/WannierChargeCenterByWilsonLoop", "Categorization", 
+      CellLabel -> "URI", CellID -> 402152948]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 1936188468], 
+     Cell["WannierChargeCenterByWilsonLoop, tight binding, TBMethod", 
+      "Keywords", CellID -> 1128210251]}, Closed]], 
+  Cell[CellGroupData[{Cell["WannierChargeCenterByWilsonLoop", "ObjectName", 
+      CellID -> 1046194512], Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["WannierChargeCenterByWilsonLoop", 
+             BaseStyle -> "Link", ButtonData -> 
+              "paclet:TBMethod/ref/WannierChargeCenterByWilsonLoop"], "[", 
+            RowBox[{StyleBox["h", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"], ",", StyleBox["momenta", "TI", FontFamily -> 
+                "Times", FontSlant -> "Italic"], ",", StyleBox["nOccupied", 
+               "TI", FontFamily -> "Times", FontSlant -> "Italic"]}], "]"}]], 
+         "InlineFormula"], " \[LineSeparator]", "computes occupied-subspace \
+Wilson-loop eigenphases along a closed momentum path."}], "Usage", 
+      CellID -> 732761466], 
+     Cell[TextData[{Cell[BoxData[RowBox[{StyleBox["h", "TI"], "[", 
+            StyleBox["k", "TI"], "]"}]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], 
+        " returns a Hermitian Hamiltonian. The ", 
+        Cell[BoxData[StyleBox["nOccupied", "TI"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " lowest-energy eigenstates are \
+retained after sorting at each sample."}], "Notes", CellID -> 685223655], 
+     Cell[TextData[{"The path is closed internally by connecting the final \
+occupied subspace back to the first; a repeated endpoint is optional."}], 
+      "Notes", CellID -> 562497456], 
+     Cell[TextData[{"The package multiplies eigenphases by ", 
+        Cell[BoxData[FormBox[TagBox[RowBox[{"-", FractionBox["1", "\[Pi]"]}], 
+            HoldForm], TraditionalForm]], "InlineMath", ScriptLevel -> 0, 
+         FractionBoxOptions -> {BaseStyle -> {ScriptLevel -> 0}}], ", as \
+shown below. This differs by a factor of two from conventions expressed in \
+units of ", Cell[BoxData[FormBox[TagBox[RowBox[{"2", " ", "\[Pi]"}], 
+            HoldForm], TraditionalForm]], "InlineMath", ScriptLevel -> 0, 
+         FractionBoxOptions -> {BaseStyle -> {ScriptLevel -> 0}}], "."}], 
+      "Notes", CellID -> 1620805162], 
+     Cell[TextData[{"A separated occupied subspace and a sufficiently dense \
+path are needed for a stable result."}], "Notes", CellID -> 1674627728], 
+     Cell[TextData[{"Options for ", Cell[BoxData[ButtonBox["Eigensystem", 
+           BaseStyle -> "Link", ButtonData -> "paclet:ref/Eigensystem"]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        " are accepted, with ", Cell[BoxData[
+          RowBox[{ButtonBox["Method", BaseStyle -> "Link", ButtonData -> 
+              "paclet:ref/Method"], "\[Rule]", "\"Direct\""}]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], 
+        " supplied internally."}], "Notes", CellID -> 2042240001], 
+     Cell[TextData[{"If the eigenvalues of the occupied-subspace Wilson \
+product are denoted by ", Cell[BoxData[FormBox[TagBox["\[Lambda]", HoldForm], 
+           TraditionalForm]], "InlineMath", ScriptLevel -> 0, 
+         FractionBoxOptions -> {BaseStyle -> {ScriptLevel -> 0}}], 
+        ", the normalization used here is", "\[LineSeparator]", 
+        Cell[BoxData[FormBox[TagBox[RowBox[{SubscriptBox["\[Nu]", "j"], 
+              "\[LongEqual]", RowBox[{"-", FractionBox[RowBox[{"arg", "(", 
+                   RowBox[{SubscriptBox["\[Lambda]", "j"], "(", "W", ")"}], 
+                   ")"}], "\[Pi]"]}]}], HoldForm], TraditionalForm]], 
+         "InlineMath", ScriptLevel -> 0, FontSize -> 14, 
+         FractionBoxOptions -> {BaseStyle -> {ScriptLevel -> 0}}]}], "Notes", 
+      CellID -> 1768337914]}, Open]], 
+  Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 671813444], Cell[TextData[{"The occupied eigenstate of a \
+constant Hamiltonian has zero phase around a square loop."}], "ExampleText", 
+      CellID -> 671716816], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 2088650065], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{RowBox[{"Clear", "[", "h", "]"}], ";", 
+            "\[IndentingNewLine]", RowBox[{RowBox[{"h", "[", "k_", "]"}], 
+              ":=", RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{RowBox[
+                       {"-", "1."}], ",", "0."}], "}"}], ",", RowBox[
+                   {"{", RowBox[{"0.", ",", "1."}], "}"}]}], "}"}]}], ";", 
+            "\[IndentingNewLine]", RowBox[{"loop", "=", RowBox[{"{", 
+                RowBox[{RowBox[{"{", RowBox[{"0.", ",", "0."}], "}"}], ",", 
+                  RowBox[{"{", RowBox[{"1.", ",", "0."}], "}"}], ",", 
+                  RowBox[{"{", RowBox[{"1.", ",", "1."}], "}"}], ",", 
+                  RowBox[{"{", RowBox[{"0.", ",", "1."}], "}"}]}], "}"}]}], 
+            ";", "\[IndentingNewLine]", RowBox[
+             {"WannierChargeCenterByWilsonLoop", "[", RowBox[{"h", ",", 
+                "loop", ",", "1"}], "]"}]}]], "Input", CellID -> 325292245], 
+        Cell[BoxData[RowBox[{"{", "0", "}"}]], "Output", 
+         CellID -> 991725502]}, Open]]}, Open]], 
+  Cell[CellGroupData[{Cell["More Examples", "ExtendedExamplesSection", 
+      CellTags -> "ExtendedExamples", CellID -> 1216785900]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 2036673485], 
+     Cell[TextData[{Cell[BoxData[ButtonBox["ChernNumberByWilsonLoop", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/ChernNumberByWilsonLoop"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox[
+           "ParallelogramCartesianSample", BaseStyle -> "Link", 
+           ButtonData -> 
+            "paclet:TBMethod/ref/ParallelogramCartesianSample"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["PathSample", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/PathSample"]], "InlineSeeAlsoFunction", 
+         TaggingRules -> {"PageType" -> "Function"}]}], "SeeAlso", 
+      CellID -> 643806009]}, Open]], 
+  Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 1480824423], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 1030577056]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 153740124], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 1881269381]}, Open]]}, 
+ WindowTitle -> "WannierChargeCenterByWilsonLoop", Saveable -> True, 
+ Editable -> True, CellContext -> "Global`", 
+ TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]

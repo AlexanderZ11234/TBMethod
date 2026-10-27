@@ -1,0 +1,161 @@
+Notebook[{Cell[TextData[{"New in: ", Cell[" ", "HistoryData", 
+      CellTags -> "New"], " | Modified in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Modified"], " | Obsolete in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Obsolete"], " | Excised in: ", Cell[" ", "HistoryData", 
+      CellTags -> "Excised"]}], "History", CellID -> 268239764], 
+  Cell[CellGroupData[{Cell["Categorization", "CategorizationSection", 
+      CellID -> 713570616], Cell["Symbol", "Categorization", 
+      CellLabel -> "Entity Type", CellID -> 210134805], 
+     Cell["TBMethod", "Categorization", CellLabel -> "Paclet Name", 
+      CellID -> 749446140], Cell["TBMethod`LGFF`", "Categorization", 
+      CellLabel -> "Context", CellID -> 468734440], 
+     Cell["TBMethod/ref/TransportCoefficient", "Categorization", 
+      CellLabel -> "URI", CellID -> 692537661]}, Closed]], 
+  Cell[CellGroupData[{Cell["Keywords", "KeywordsSection", 
+      CellID -> 942396766], 
+     Cell["TransportCoefficient, tight binding, TBMethod", "Keywords", 
+      CellID -> 377632557]}, Closed]], 
+  Cell[CellGroupData[{Cell["TransportCoefficient", "ObjectName", 
+      CellID -> 1050554520], Cell[TextData[{Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["TransportCoefficient", 
+             BaseStyle -> "Link", ButtonData -> 
+              "paclet:TBMethod/ref/TransportCoefficient"], "[", 
+            RowBox[{StyleBox["g", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"], ",", RowBox[{"{", RowBox[{StyleBox["sigmaP", "TI", 
+                   FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                  StyleBox["sigmaQ", "TI", FontFamily -> "Times", 
+                   FontSlant -> "Italic"]}], "}"}]}], "]"}]], 
+         "InlineFormula"], " \[LineSeparator]", "computes a transmission \
+coefficient for different contact matrices, or a reflection coefficient when \
+the two matrices are equal.", "\n", Cell["   ", "ModInfo"], 
+        Cell[BoxData[RowBox[{ButtonBox["TransportCoefficient", 
+             BaseStyle -> "Link", ButtonData -> 
+              "paclet:TBMethod/ref/TransportCoefficient"], "[", 
+            RowBox[{StyleBox["g", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"], ",", RowBox[{"{", RowBox[{StyleBox["sigmaP", "TI", 
+                   FontFamily -> "Times", FontSlant -> "Italic"], ",", 
+                  StyleBox["sigmaQ", "TI", FontFamily -> "Times", 
+                   FontSlant -> "Italic"]}], "}"}], ",", StyleBox[
+               "tolerance", "TI", FontFamily -> "Times", FontSlant -> 
+                "Italic"]}], "]"}]], "InlineFormula"], " \[LineSeparator]", 
+        "uses ", Cell[BoxData[StyleBox["tolerance", "TI", 
+           FontFamily -> "Times", FontSlant -> "Italic"]], "InlineFormula"], 
+        " in the reflection-channel rank calculation."}], "Usage", 
+      CellID -> 410163391], 
+     Cell[TextData[{"The transmission branch is selected when ", 
+        Cell[BoxData[RowBox[{StyleBox["sigmaP", "TI"], "\[Equal]", 
+            StyleBox["sigmaQ", "TI"]}]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " is ", 
+        Cell[BoxData[ButtonBox["False", BaseStyle -> "Link", 
+           ButtonData -> "paclet:ref/False"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], "."}], "Notes", 
+      CellID -> 1005276190], 
+     Cell[TextData[{"When ", Cell[BoxData[RowBox[{StyleBox["sigmaP", "TI"], 
+            "\[Equal]", StyleBox["sigmaQ", "TI"]}]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " is ", 
+        Cell[BoxData[ButtonBox["True", BaseStyle -> "Link", 
+           ButtonData -> "paclet:ref/True"]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], ", the reflection branch includes \
+a channel-rank correction. Distinct physical contacts with identical \
+self-energy matrices therefore need care."}], "Notes", CellID -> 1489710921], 
+     Cell[TextData[{"The default ", Cell[BoxData[StyleBox["tolerance", 
+           "TI"]], "InlineFormula", FontFamily -> "Source Sans Pro"], " is ", 
+        Cell[BoxData["0.0001"], "InlineFormula", FontFamily -> 
+          "Source Sans Pro"], ". The channel-rank calculation uses ", 
+        Cell[BoxData[RowBox[{ButtonBox["Tolerance", BaseStyle -> "Link", 
+             ButtonData -> "paclet:ref/Tolerance"], "\[Rule]", 
+            StyleBox["tolerance", "TI"]}]], "InlineFormula", 
+         FontFamily -> "Source Sans Pro"], " and ", 
+        Cell[BoxData[RowBox[{ButtonBox["ZeroTest", BaseStyle -> "Link", 
+             ButtonData -> "paclet:ref/ZeroTest"], "\[Rule]", 
+            RowBox[{"(", RowBox[{RowBox[{SuperscriptBox[RowBox[
+                    {ButtonBox["Abs", BaseStyle -> "Link", ButtonData -> 
+                       "paclet:ref/Abs"], "[", "#1", "]"}], "2"], "<", 
+                  StyleBox["tolerance", "TI"]}], "&"}], ")"}]}]], 
+         "InlineFormula", FontFamily -> "Source Sans Pro"], "."}], "Notes", 
+      CellID -> 507817480]}, Open]], 
+  Cell[CellGroupData[{Cell["Examples", "PrimaryExamplesSection", 
+      CellID -> 2076048588], 
+     Cell[TextData[
+       {"For distinct contacts, check agreement with the Caroli \
+transmission."}], "ExampleText", CellID -> 2037747176], 
+     Cell[BoxData[RowBox[{"Needs", "[", "\"TBMethod`\"", "]"}]], "Input", 
+      CellID -> 1540356013], Cell[CellGroupData[
+       {Cell[BoxData[RowBox[{RowBox[{"z", "=", RowBox[{RowBox[{"0.2", 
+                  "\[VeryThinSpace]"}], "+", RowBox[{"0.1", " ", 
+                  "\[ImaginaryI]"}]}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"sigmas", "=", RowBox[{"{", RowBox[{RowBox[{"{", 
+                    RowBox[{"{", RowBox[{RowBox[{"-", "0.1"}], " ", 
+                        "\[ImaginaryI]"}], "}"}], "}"}], ",", RowBox[
+                   {"{", RowBox[{"{", RowBox[{RowBox[{"-", "0.2"}], " ", 
+                        "\[ImaginaryI]"}], "}"}], "}"}]}], "}"}]}], ";", 
+            "\[IndentingNewLine]", RowBox[{"g", "=", RowBox[{"CentralGreen", 
+                "[", RowBox[{"z", ",", RowBox[{"{", RowBox[{"{", "0.", "}"}], 
+                    "}"}], ",", "sigmas"}], "]"}]}], ";", 
+            "\[IndentingNewLine]", RowBox[{"TransportCoefficient", "[", 
+              RowBox[{"g", ",", "sigmas"}], "]"}]}]], "Input", 
+         CellID -> 2093402414], Cell[BoxData[
+          RowBox[{RowBox[{"0.4`", "\[VeryThinSpace]"}], "+", 
+            RowBox[{"0.`", " ", "\[ImaginaryI]"}]}]], "Output", 
+         CellID -> 1484917619]}, Open]], 
+     Cell[CellGroupData[{Cell[BoxData[InterpretationBox[
+           Cell["\t", "ExampleDelimiter"], $Line = 0; ]], "ExampleDelimiter", 
+         CellID -> 423414334], Cell[TextData[
+          {"Set the channel-rank tolerance explicitly."}], "ExampleText", 
+         CellID -> 1676597703], Cell[BoxData[RowBox[{"Needs", "[", 
+            "\"TBMethod`\"", "]"}]], "Input", CellID -> 1958321477], 
+        Cell[CellGroupData[{Cell[BoxData[RowBox[{RowBox[{"z", "=", 
+                 RowBox[{RowBox[{"0.2", "\[VeryThinSpace]"}], "+", 
+                   RowBox[{"0.1", " ", "\[ImaginaryI]"}]}]}], ";", 
+               "\[IndentingNewLine]", RowBox[{"sigmas", "=", RowBox[
+                  {"{", RowBox[{RowBox[{"{", RowBox[{"{", RowBox[{RowBox[
+                          {"-", "0.1"}], " ", "\[ImaginaryI]"}], "}"}], 
+                       "}"}], ",", RowBox[{"{", RowBox[{"{", RowBox[
+                          {RowBox[{"-", "0.2"}], " ", "\[ImaginaryI]"}], 
+                         "}"}], "}"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+               RowBox[{"g", "=", RowBox[{"CentralGreen", "[", RowBox[
+                    {"z", ",", RowBox[{"{", RowBox[{"{", "0.", "}"}], "}"}], 
+                     ",", "sigmas"}], "]"}]}], ";", "\[IndentingNewLine]", 
+               RowBox[{"TransportCoefficient", "[", RowBox[{"g", ",", 
+                   "sigmas", ",", FractionBox["1", SuperscriptBox["10", 
+                     "6"]]}], "]"}]}]], "Input", CellID -> 148385144], 
+           Cell[BoxData[RowBox[{RowBox[{"0.4`", "\[VeryThinSpace]"}], "+", 
+               RowBox[{"0.`", " ", "\[ImaginaryI]"}]}]], "Output", 
+            CellID -> 314772594]}, Open]]}, Open]]}, Open]], 
+  Cell[CellGroupData[{Cell["More Examples", "ExtendedExamplesSection", 
+      CellTags -> "ExtendedExamples", CellID -> 272963333]}, Closed]], 
+  Cell[CellGroupData[{Cell["See Also", "SeeAlsoSection", 
+      CellID -> 1357827630], 
+     Cell[TextData[{Cell[BoxData[ButtonBox["Transmission", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/Transmission"]], "InlineSeeAlsoFunction", 
+         TaggingRules -> {"PageType" -> "Function"}], 
+        StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"], 
+        Cell[BoxData[ButtonBox["CentralGreen", BaseStyle -> "Link", 
+           ButtonData -> "paclet:TBMethod/ref/CentralGreen"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["CentralBlockGreens", 
+           BaseStyle -> "Link", ButtonData -> 
+            "paclet:TBMethod/ref/CentralBlockGreens"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}], StyleBox[" \[FilledVerySmallSquare] ", 
+         "InlineSeparator"], Cell[BoxData[ButtonBox["Sigma", 
+           BaseStyle -> "Link", ButtonData -> "paclet:TBMethod/ref/Sigma"]], 
+         "InlineSeeAlsoFunction", TaggingRules -> 
+          {"PageType" -> "Function"}]}], "SeeAlso", CellID -> 855410811]}, 
+    Open]], Cell[CellGroupData[{Cell["Related Guides", "MoreAboutSection", 
+      CellID -> 358160953], 
+     Cell[TextData[{ButtonBox["TBMethod", BaseStyle -> "Link", 
+         ButtonData -> "paclet:TBMethod/guide/TBMethod"]}], "MoreAbout", 
+      CellID -> 209967694]}, Open]], 
+  Cell[CellGroupData[{Cell["Tech Notes", "TutorialsSection", 
+      CellID -> 2089512765], 
+     Cell[TextData[{ButtonBox["Getting Started with TBMethod", 
+         BaseStyle -> "Link", ButtonData -> 
+          "paclet:TBMethod/tutorial/GettingStarted"]}], "Tutorials", 
+      CellID -> 762496118]}, Open]]}, WindowTitle -> "TransportCoefficient", 
+ Saveable -> True, Editable -> True, CellContext -> "Global`", 
+ TaggingRules -> <|"Paclet" -> "TBMethod"|>, 
+ StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, 
+   "FunctionPageStylesExt.nb", CharacterEncoding -> "UTF-8"]]
